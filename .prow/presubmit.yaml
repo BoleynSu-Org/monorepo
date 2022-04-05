@@ -1,0 +1,13 @@
+presubmits:
+  - name: test-presubmit
+    branches:
+    - main
+    always_run: true
+    decorate: true
+    skip_report: false
+    spec:
+      containers:
+      - image: alpine
+        command:
+        - "/bin/echo"
+        - "test"
