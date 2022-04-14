@@ -11,4 +11,5 @@ presubmits:
         command:
         - "bazel"
         - "test"
+        - "--config=remote"
         - "//..."
