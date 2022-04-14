@@ -1,5 +1,5 @@
 postsubmits:
-  - name: "bazel test //..."
+  - name: test-postsubmit
     branches:
     - main
     decorate: true
@@ -9,6 +9,5 @@ postsubmits:
       containers:
       - image: alpine
         command:
-        - "bazel"
+        - "/bin/echo"
         - "test"
-        - "//..."
