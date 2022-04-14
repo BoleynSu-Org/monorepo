@@ -1,5 +1,5 @@
 presubmits:
-  - name: test-presubmit
+  - name: "bazel test //..."
     branches:
     - main
     always_run: true
@@ -9,5 +9,6 @@ presubmits:
       containers:
       - image: alpine
         command:
-        - "/bin/echo"
+        - "bazel"
         - "test"
+        - "//..."
