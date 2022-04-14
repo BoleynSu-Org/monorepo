@@ -1,5 +1,5 @@
 postsubmits:
-  - name: test-postsubmit
+  - name: "bazel-test-all"
     branches:
     - main
     decorate: true
@@ -7,7 +7,8 @@ postsubmits:
     skip_report: false
     spec:
       containers:
-      - image: alpine
+      - image: quay.io/boleynsu/bazel
         command:
-        - "/bin/echo"
+        - "bazel"
         - "test"
+        - "//..."
