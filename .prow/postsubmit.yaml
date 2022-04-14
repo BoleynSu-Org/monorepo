@@ -11,4 +11,5 @@ postsubmits:
         command:
         - "bazel"
         - "test"
+        - "--config=remote"
         - "//..."

@@ -1,0 +1,27 @@
+common --experimental_repo_remote_exec
+
+build --cxxopt=-std=c++17
+
+# https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
+build:remote_common --jobs=24
+build:remote_common --java_runtime_version=rbe_jdk
+build:remote_common --tool_java_runtime_version=rbe_jdk
+build:remote_common --extra_toolchains=//configs/build/remote/java:all
+build:remote_common --crosstool_top=//configs/build/remote/cc:toolchain
+build:remote_common --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:remote_common --extra_toolchains=//configs/build/remote/config:cc-toolchain
+build:remote_common --extra_execution_platforms=//configs/build/remote/config:platform
+build:remote_common --host_platform=//configs/build/remote/config:platform
+build:remote_common --platforms=//configs/build/remote/config:platform
+build:remote_common --remote_executor=grpc://build.boleyn.su:8980
+build:remote_common --remote_instance_name=remote-monorepo
+build:remote_common --incompatible_strict_action_env=true
+build:remote_common --remote_timeout=3600
+
+build:remote --config=remote_common
+build:remote --remote_download_minimal
+
+build:remote_toplevel --config=remote_common
+build:remote_toplevel --remote_download_toplevel
+
+build:remote_all --config=remote_common
