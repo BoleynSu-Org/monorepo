@@ -7,7 +7,7 @@ postsubmits:
     skip_report: false
     spec:
       containers:
-      - image: alpine
+      - image: gcr.io/cloud-marketplace-containers/google/bazel
         command:
-        - "/bin/echo"
         - "test"
+        - "//..."
