@@ -13,3 +13,5 @@ postsubmits:
         - "test"
         - "--config=remote"
         - "//..."
+        - "@boleynsu_oj//..."
+        - "@boleynsu_urlshortener//..."

@@ -13,3 +13,5 @@ presubmits:
         - "test"
         - "--config=remote"
         - "//..."
+        - "@boleynsu_oj//..."
+        - "@boleynsu_urlshortener//..."
