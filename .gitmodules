@@ -1,0 +1,6 @@
+[submodule "third_party/oj"]
+	path = third_party/oj
+	url = https://github.com/BoleynSu/oj.git
+[submodule "third_party/urlshortener"]
+	path = third_party/urlshortener
+	url = https://github.com/BoleynSu/urlshortener.git
