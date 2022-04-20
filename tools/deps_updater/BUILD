@@ -12,7 +12,7 @@ py_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
-        requirement("johnnydep"),
+        "//tools/deps_updater/github:lib",
         requirement("ruamel.yaml"),
         requirement("requests"),
     ],

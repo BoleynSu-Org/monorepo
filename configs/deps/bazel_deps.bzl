@@ -1,22 +1,26 @@
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-load("//configs/deps:deps.bzl", "deps")
+load(":deps.bzl", "deps")
 
 _LOCAL_ARCHIVES = [
     {
         "name": "boleynsu_oj",
         "path": "third_party/oj",
     },
+    {
+        "name": "boleynsu_urlshortener",
+        "path": "third_party/urlshortener",
+    },
 ]
 
-def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patch = None, **kwargs):
+def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, **kwargs):
     return {
         "name": name,
         "sha256": sha256,
         "url": url,
         "urls": urls,
         "strip_prefix": strip_prefix,
-        "patch": patch,
+        "patches": [Label(patch) for patch in patches] if (patches != None) else [],
     }
 
 def bazel_deps():
