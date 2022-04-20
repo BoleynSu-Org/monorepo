@@ -1,3 +1,6 @@
+"""
+deps.bzl updater.
+"""
 import copy
 import datetime
 import math
@@ -16,23 +19,25 @@ updaters = {
     "bazel_deps": tools.deps_updater.bazel_updater.update,
 }
 
-deps_yaml_prefix = "'''\n# BEGIN deps.yaml\n"
-deps_yaml_suffix = "\n# END deps.yaml\n'''\n"
+DEPS_YAML_PREFIX = "'''\n# BEGIN deps.yaml\n"
+DEPS_YAML_SUFFIX = "\n# END deps.yaml\n'''\n"
 
 
-def load_deps_yaml(path):
+def _load_deps_yaml(path):
     yaml = ruamel.yaml.YAML()
-    with open(path) as f:
-        content = f.read()
-        begin = content.find(deps_yaml_prefix) + len(deps_yaml_prefix)
-        end = content.find(deps_yaml_suffix)
+    with open(path, encoding="utf-8") as file:
+        content = file.read()
+        begin = content.find(DEPS_YAML_PREFIX) + len(DEPS_YAML_PREFIX)
+        end = content.find(DEPS_YAML_SUFFIX)
         return yaml.load(content[begin:end])
 
 
-def pinned(dep):
+def _pinned(dep):
     if "pinned_until" in dep:
-        if datetime.datetime.strptime(
-                dep["pinned_until"], "%Y-%m-%d") < datetime.datetime.now():
+        if (
+            datetime.datetime.strptime(dep["pinned_until"], "%Y-%m-%d")
+            < datetime.datetime.now()
+        ):
             print("A pinned dependency has expired.")
             print(dep)
             sys.exit(1)
@@ -41,26 +46,35 @@ def pinned(dep):
 
 
 def main(argv):
-    assert len(argv) >= 1
+    """The main function."""
+    assert len(argv) >= 2
     if "BUILD_WORKSPACE_DIRECTORY" in os.environ:
         os.chdir(os.environ["BUILD_WORKSPACE_DIRECTORY"])
     deps_bzl_path = os.path.abspath(argv[0])
+    deps_bzl_out_path = os.path.abspath(argv[1])
 
-    deps = load_deps_yaml(deps_bzl_path)
+    deps = _load_deps_yaml(deps_bzl_path)
 
     for dep in deps:
         updater = updaters.get(dep, lambda x: x)
         updated = []
         for item in deps[dep]:
-            if pinned(item):
+            if _pinned(item):
                 updated.append(item)
             else:
                 original_time = copy.deepcopy(item)
                 updated_item = updater(item)
                 if "updated_at" in original_time and original_time == updated_item:
-                    if datetime.datetime.strptime(original_time["updated_at"], "%Y-%m-%d") + datetime.timedelta(days=365) < datetime.datetime.now():
+                    update_at = datetime.datetime.strptime(
+                        original_time["updated_at"], "%Y-%m-%d"
+                    )
+                    if (
+                        update_at + datetime.timedelta(days=365)
+                        < datetime.datetime.now()
+                    ):
                         print(
-                            "A dependency has not been updated for more than one year.")
+                            "A dependency has not been updated for more than one year."
+                        )
                         print(original_time)
                         sys.exit(1)
                 else:
@@ -69,18 +83,20 @@ def main(argv):
                         print(original_time)
                         sys.exit(1)
                     updated_item["updated_at"] = datetime.datetime.now().strftime(
-                        "%Y-%m-%d")
+                        "%Y-%m-%d"
+                    )
                 updated.append(updated_item)
         deps[dep] = updated
 
-    with open(deps_bzl_path, "w") as f:
+    with open(deps_bzl_out_path, "w", encoding="utf-8") as file:
         yaml = ruamel.yaml.YAML()
         yaml.width = math.inf
-        f.write(deps_yaml_prefix)
-        yaml.dump(deps, f)
-        f.write(deps_yaml_suffix)
-        f.write(
-            'def ordereddict(l): return {{ k: v for (k, v) in l }}\ndeps={}\n'.format(deps))
+        file.write(DEPS_YAML_PREFIX)
+        yaml.dump(deps, file)
+        file.write(DEPS_YAML_SUFFIX)
+        file.write(
+            f"def ordereddict(l): return {{ k: v for (k, v) in l }}\ndeps={deps}\n"
+        )
 
 
 if __name__ == "__main__":

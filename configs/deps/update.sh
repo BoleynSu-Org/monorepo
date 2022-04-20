@@ -1,23 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-deps_updater=$1
-deps_bzl=$2
-gen_requirements_in=$3
-requirements_in=$4
-requirements_update=$5
-requirements_txt=$6
-requirements_update_label=$7
-maven_pin=$8
-jq=$9
-unsorted_deps_json=${10}
+if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
+    cd "$BUILD_WORKSPACE_DIRECTORY"
+fi
 
-"$deps_updater" "$deps_bzl"
-(
-    if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
-        requirements_in=$BUILD_WORKSPACE_DIRECTORY/$requirements_in
-    fi
-    cp "$gen_requirements_in" "$requirements_in"
-)
-"$requirements_update" "$requirements_in" "$requirements_txt" "$requirements_update_label" --allow-unsafe
-"$maven_pin" "$jq" "$unsorted_deps_json"
+bazel run "${@:1}" //tools/deps_updater -- configs/deps/deps.bzl configs/deps/deps.bzl
+bazel run "${@:1}" //configs/deps:requirements_in.update
+bazel run "${@:1}" //configs/deps:requirements.update
+bazel run "${@:1}" @unpinned_maven//:pin
