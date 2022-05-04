@@ -3,9 +3,12 @@ set -euo pipefail
 
 if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
     cd "$BUILD_WORKSPACE_DIRECTORY"
+    # https://docs.bazel.build/versions/main/user-manual.html#run
+    unset BUILD_WORKSPACE_DIRECTORY
+    unset BUILD_WORKING_DIRECTORY
 fi
 
-bazel run "${@:1}" //tools/deps_updater -- configs/deps/deps.bzl configs/deps/deps.bzl
-bazel run "${@:1}" //configs/deps:requirements_in.update
-bazel run "${@:1}" //configs/deps:requirements.update
-bazel run "${@:1}" @unpinned_maven//:pin
+REPIN=1 bazel run "${@:1}" @unpinned_maven//:pin
+bazel run "${@:1}" @unpinned_pip//:pin.update
+bazel run "${@:1}" @unpinned_gazelle_go_deps//:pin
+
