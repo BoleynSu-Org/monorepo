@@ -1,3 +1,4 @@
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
@@ -18,6 +19,8 @@ load("//configs/deps:container_deps.bzl", more_container_deps = "container_deps"
 load("//configs/deps:go_deps.bzl", more_go_deps = "go_deps")
 
 def workspace():
+    rules_cc_dependencies()
+    rules_cc_toolchains()
     rules_pkg_dependencies()
     bazel_skylib_workspace()
     go_rules_dependencies()
@@ -41,4 +44,4 @@ def workspace():
     )
     more_maven_deps()
     more_container_deps()
-    more_go_deps()
+    more_go_deps(go_version = "1.18")

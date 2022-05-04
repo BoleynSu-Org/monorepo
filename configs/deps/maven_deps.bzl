@@ -1,5 +1,5 @@
 load("@bazel_skylib//lib:dicts.bzl", "dicts")
-load("@rules_jvm_external//:defs.bzl", jvm_external_maven_install = "maven_install")
+load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 load(":deps.bzl", "deps")
 
@@ -25,8 +25,8 @@ def _filter_targets(targets):
 
 MAVEN_OVERRIDE_TARGETS = dicts.add(_MAVEN_OVERRIDE_TARGETS, _filter_targets(IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS))
 
-def maven_deps():
-    jvm_external_maven_install(
+def maven_deps(
+        *,
         name = "maven",
         artifacts = MAVEN_ARTIFACTS,
         maven_install_json = Label("//:maven_install.json"),
@@ -35,4 +35,14 @@ def maven_deps():
         repositories = [
             "https://repo1.maven.org/maven2",
         ],
+        fail_if_repin_required = True,
+        **kwargs):
+    maven_install(
+        name = name,
+        artifacts = artifacts,
+        maven_install_json = maven_install_json,
+        override_targets = override_targets,
+        generate_compat_repositories = generate_compat_repositories,
+        repositories = repositories,
+        fail_if_repin_required = fail_if_repin_required,
     )

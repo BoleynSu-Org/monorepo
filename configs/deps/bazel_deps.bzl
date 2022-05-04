@@ -13,7 +13,7 @@ _LOCAL_ARCHIVES = [
     },
 ]
 
-def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, **kwargs):
+def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, build_file_content = None, workspace_file_content = None, **kwargs):
     return {
         "name": name,
         "sha256": sha256,
@@ -21,17 +21,19 @@ def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None
         "urls": urls,
         "strip_prefix": strip_prefix,
         "patches": [Label(patch) for patch in patches] if (patches != None) else [],
+        "build_file_content": build_file_content,
+        "workspace_file_content": build_file_content,
     }
 
 def bazel_deps():
-    for dep in deps["bazel_deps"]:
-        maybe(
-            http_archive,
-            **_bazel_archive(**dep)
-        )
-
     for archive in _LOCAL_ARCHIVES:
         maybe(
             native.local_repository,
             **archive
+        )
+
+    for dep in deps["bazel_deps"]:
+        maybe(
+            http_archive,
+            **_bazel_archive(**dep)
         )
