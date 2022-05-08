@@ -8,7 +8,6 @@ if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
     unset BUILD_WORKING_DIRECTORY
 fi
 
-REPIN=1 bazel run "${@:1}" @unpinned_maven//:pin
-bazel run "${@:1}" @unpinned_pip//:pin.update
-bazel run "${@:1}" @unpinned_gazelle_go_deps//:pin
-
+REPIN=1 bazel run @unpinned_maven//:pin
+REPIN=1 bazel run @unpinned_pip//:pin
+REPIN=1 bazel run @unpinned_gazelle_go_deps//:pin

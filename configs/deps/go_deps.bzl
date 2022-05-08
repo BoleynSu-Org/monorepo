@@ -1,6 +1,27 @@
-load(":deps.bzl", "deps")
+load(":deps.bzl", "DEPS")
 
-GO_PACKAGES = {repo["name"]: repo["version"] for repo in deps["go_deps"]}
+GO_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["go_deps"]}
+
+def _header_with_hash(repository_ctx, go_sum):
+    data = {
+        "module": repository_ctx.attr.module,
+        "go_version": repository_ctx.attr.go_version,
+        "packages": repository_ctx.attr.packages,
+        "go_sum": go_sum,
+    }
+    tpl = """// DO NOT EDIT! This file is auto-generated.
+// hash = {}
+"""
+    return tpl.format(hash(json.encode(data)))
+
+def _generate_go_mod(repository_ctx):
+    return "".join(
+        ["module {}\n".format(repository_ctx.attr.module)] +
+        (["go {}\n".format(repository_ctx.attr.go_version)] if repository_ctx.attr.go_version else []) +
+        ["require (\n"] +
+        ["\t{name} {version}\n".format(name = name, version = version) for (name, version) in repository_ctx.attr.packages.items()] +
+        [")\n"],
+    )
 
 def _get_path(label):
     package_path = label.package
@@ -11,6 +32,14 @@ def _get_path(label):
         return "/".join([package_path, file_name])
 
 def _gazelle_go_deps_impl(repository_ctx):
+    go_mod = repository_ctx.read(repository_ctx.attr.go_mod)
+    go_sum = repository_ctx.read(repository_ctx.attr.go_sum)
+    header = _header_with_hash(repository_ctx, go_sum)
+    if "REPIN" not in repository_ctx.os.environ and go_mod != header + _generate_go_mod(repository_ctx):
+        fail("""go.sum or go.mod contains an invalid input signature and must be regenerated.
+    Please run `REPIN=1 bazel run @{}//:pin` to regenerate them.
+""".format("unpinned_" + repository_ctx.name))
+
     repository_ctx.file("WORKSPACE", content = "workspace(name=\"{}\")".format(repository_ctx.name))
     repository_ctx.file("BUILD")
 
@@ -37,7 +66,6 @@ def _gazelle_go_deps_impl(repository_ctx):
                 )
 
     repository_ctx.file("gazelle_go_deps.bzl", content = """
-# DO NOT EDIT! This file is auto-generated.
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 
 def go_dependencies():
@@ -84,13 +112,7 @@ test_suite(
 
     repository_ctx.file(
         "go.mod",
-        content = "".join(
-            ["module {}\n".format(repository_ctx.attr.module)] +
-            (["go {}\n".format(repository_ctx.attr.go_version)] if repository_ctx.attr.go_version else []) +
-            ["require (\n"] +
-            ["\t{name} {version}\n".format(name = name, version = version) for (name, version) in repository_ctx.attr.packages.items()] +
-            [")\n"],
-        ),
+        content = _generate_go_mod(repository_ctx),
     )
 
     repository_ctx.file("pin.sh", content = """
@@ -121,9 +143,16 @@ cat "$go_sum" >"$BUILD_WORKSPACE_DIRECTORY/{go_sum}"
     if result.return_code:
         fail("failed to go mod download all: " + result.stderr)
 
+    header = _header_with_hash(repository_ctx, repository_ctx.read("go.sum"))
+    repository_ctx.file("go.mod", content = header + _generate_go_mod(repository_ctx))
+
 _gazelle_go_deps = repository_rule(
     implementation = _gazelle_go_deps_impl,
     attrs = {
+        "module": attr.string(mandatory = True),
+        "go_version": attr.string(),
+        "packages": attr.string_dict(default = {}),
+        "go_mod": attr.label(allow_single_file = True, mandatory = True),
         "go_sum": attr.label(allow_single_file = True, mandatory = True),
     },
 )
@@ -152,7 +181,12 @@ def go_deps(
         **kwargs):
     _gazelle_go_deps(
         name = name,
+        module = module,
+        go_version = go_version,
+        packages = packages,
+        go_mod = go_mod,
         go_sum = go_sum,
+        **kwargs
     )
     _unpinned_gazelle_go_deps(
         name = "unpinned_" + name,
@@ -162,4 +196,5 @@ def go_deps(
         go_mod = go_mod,
         go_sum = go_sum,
         go_env = go_env,
+        **kwargs
     )

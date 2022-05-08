@@ -1,47 +1,102 @@
+# languages related
+## c and cpp
 load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
-load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
-load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+## java
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+
+## python
+load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+
+## protobuf
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+
+## golang
+load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
+
+# container and k8s related
+## container
 load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
-load("@io_bazel_rules_docker//java:image.bzl", container_java_image_repositories = "repositories")
-load("@io_bazel_rules_docker//python3:image.bzl", container_python3_image_repositories = "repositories")
-load("@io_bazel_rules_docker//go:image.bzl", container_go_image_repositories = "repositories")
+
+## k8s
 load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_repositories")
 load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
-load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
-load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
-load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+
+## base images
+### base image for python3
+load("@io_bazel_rules_docker//python3:image.bzl", container_python3_image_repositories = "repositories")
+
+### base image for golang
+load("@io_bazel_rules_docker//go:image.bzl", container_go_image_repositories = "repositories")
+
+# local configs
+## toolchains
+load("//configs/deps:toolchain_deps.bzl", "GOLANG_VERSION", "PYTHON_VERSION")
+
+## maven deps
 load("//configs/deps:maven_deps.bzl", more_maven_deps = "maven_deps")
-load("//configs/deps:container_deps.bzl", more_container_deps = "container_deps")
+
+## go deps
 load("//configs/deps:go_deps.bzl", more_go_deps = "go_deps")
 
+## container deps
+load("//configs/deps:container_deps.bzl", more_container_deps = "container_deps")
+
+# misc
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
+
 def workspace():
+    # c and cpp
     rules_cc_dependencies()
     rules_cc_toolchains()
-    rules_pkg_dependencies()
-    bazel_skylib_workspace()
-    go_rules_dependencies()
-    go_register_toolchains(version = "1.18")
-    gazelle_dependencies()
-    container_repositories()
-    container_deps()
-    container_java_image_repositories()
-    container_python3_image_repositories()
-    container_go_image_repositories()
-    k8s_repositories()
-    k8s_go_deps()
+
+    # java
     rules_java_dependencies()
     rules_java_toolchains()
+
+    # python
+    python_register_toolchains(
+        name = "python_sdk",
+        python_version = PYTHON_VERSION,
+    )
+
+    # protobuf
     rules_proto_dependencies()
     rules_proto_toolchains()
-    grpc_java_repositories()
-    python_register_toolchains(
-        name = "python3_10",
-        python_version = "3.10",
-    )
+
+    # golang
+    go_rules_dependencies()
+    go_register_toolchains(version = GOLANG_VERSION)
+
+    # container
+    container_repositories()
+    container_deps()
+
+    # base image for python3
+    container_python3_image_repositories()
+
+    # base image for golang
+    container_go_image_repositories()
+
+    # k8s
+    k8s_repositories()
+    k8s_go_deps()
+
+    # maven deps
     more_maven_deps()
+
+    # go deps
+    more_go_deps(go_version = GOLANG_VERSION)
+
+    # container deps
     more_container_deps()
-    more_go_deps(go_version = "1.18")
+
+    # misc
+    bazel_skylib_workspace()
+    gazelle_dependencies()
+    rules_pkg_dependencies()
+    grpc_java_repositories()
