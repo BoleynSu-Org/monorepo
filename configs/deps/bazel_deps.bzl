@@ -1,19 +1,14 @@
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-load(":deps.bzl", "deps")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
+load(":deps.bzl", "DEPS")
 
-_LOCAL_ARCHIVES = [
-    {
-        "name": "boleynsu_oj",
-        "path": "third_party/oj",
-    },
-    {
-        "name": "boleynsu_urlshortener",
-        "path": "third_party/urlshortener",
-    },
-]
+def _local_repository(*, name, path, **kwargs):
+    return {
+        "name": name,
+        "path": path,
+    }
 
-def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, build_file_content = None, workspace_file_content = None, **kwargs):
+def _http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, build_file_content = None, workspace_file_content = None, **kwargs):
     return {
         "name": name,
         "sha256": sha256,
@@ -25,15 +20,23 @@ def _bazel_archive(*, name, sha256, url = None, urls = None, strip_prefix = None
         "workspace_file_content": build_file_content,
     }
 
-def bazel_deps():
-    for archive in _LOCAL_ARCHIVES:
-        maybe(
-            native.local_repository,
-            **archive
-        )
+def _http_file(*, name, sha256, url = None, urls = None, executable = None, **kwargs):
+    return {
+        "name": name,
+        "sha256": sha256,
+        "urls": [url] if url else urls,
+        "executable": executable,
+    }
 
-    for dep in deps["bazel_deps"]:
-        maybe(
-            http_archive,
-            **_bazel_archive(**dep)
-        )
+_TYPE_TO_RULE_MAPPING = {
+    "local_repository": (native.local_repository, _local_repository),
+    "http_archive": (http_archive, _http_archive),
+    "http_file": (http_file, _http_file),
+}
+
+BAZEL_DEPS = {dep["name"]: dep for dep in DEPS["bazel_deps"]}
+
+def bazel_deps(*, type_to_rule_mapping = _TYPE_TO_RULE_MAPPING, deps = BAZEL_DEPS):
+    for dep in deps.values():
+        rule, _rule = type_to_rule_mapping[dep["type"]]
+        maybe(rule, **_rule(**dep))
