@@ -1,4 +1,3 @@
-    # install pip deps
 # install pip deps
 load("@pip//:requirements.bzl", pip_install_deps = "install_deps")
 

@@ -45,11 +45,10 @@ load("//configs/deps:container_deps.bzl", more_container_deps = "container_deps"
 
 # misc
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
-def workspace():
+def workspace(*, enable_maven_deps = True, enable_go_deps = True, enable_container_deps = True):
     # c and cpp
     rules_cc_dependencies()
     rules_cc_toolchains()
@@ -87,16 +86,18 @@ def workspace():
     k8s_go_deps()
 
     # maven deps
-    more_maven_deps()
+    if enable_maven_deps:
+        more_maven_deps()
 
     # go deps
-    more_go_deps(go_version = GOLANG_VERSION)
+    if enable_go_deps:
+        more_go_deps()
 
     # container deps
-    more_container_deps()
+    if enable_container_deps:
+        more_container_deps()
 
     # misc
     bazel_skylib_workspace()
-    gazelle_dependencies()
     rules_pkg_dependencies()
     grpc_java_repositories()

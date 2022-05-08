@@ -1,3 +1,5 @@
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+load("//configs/deps:toolchain_deps.bzl", "GOLANG_VERSION")
 load(":deps.bzl", "DEPS")
 
 GO_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["go_deps"]}
@@ -173,12 +175,13 @@ def go_deps(
         *,
         name = "gazelle_go_deps",
         module = "golang.boleyn.su",
-        go_version = None,
+        go_version = GOLANG_VERSION,
         packages = GO_PACKAGES,
         go_mod = Label("//:go.mod"),
         go_sum = Label("//:go.sum"),
         go_env = Label("@bazel_gazelle_go_repository_cache//:go.env"),
         **kwargs):
+    gazelle_dependencies()
     _gazelle_go_deps(
         name = name,
         module = module,

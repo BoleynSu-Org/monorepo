@@ -1,4 +1,5 @@
 load("@rules_python//python:pip.bzl", "pip_parse")
+load("@python_sdk//:defs.bzl", "interpreter")
 load(":deps.bzl", "DEPS")
 
 PIP_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["pip_deps"]}
@@ -112,7 +113,7 @@ def pip_deps(
         name = "pip",
         packages = PIP_PACKAGES,
         requirements_lock_file = Label("//:requirements.txt"),
-        python_interpreter_target = None,
+        python_interpreter_target = interpreter,
         extra_args = ["--allow-unsafe"],
         **kwargs):
     _pinned_pip(

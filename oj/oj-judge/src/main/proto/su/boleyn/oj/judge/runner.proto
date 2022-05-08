@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package su.boleyn.oj.judge;
+
+message Task {
+    string source = 1;
+    string input = 2;
+}
+
+message Result {
+    string result = 1;
+    string output = 2;
+    int32 time = 3;
+    int32 memory = 4;
+}
+
+service Runner {
+    rpc Run (Task) returns (Result) {
+    }
+}

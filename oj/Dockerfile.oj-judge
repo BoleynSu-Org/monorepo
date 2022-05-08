@@ -1,0 +1,33 @@
+FROM docker.io/library/maven@sha256:fedcf9148b713e68fde2a663e311f99cee136b866c9ae843132bcbe3928245ed AS builder
+RUN microdnf install -y gcc
+WORKDIR /cache
+COPY ./pom.xml ./
+COPY ./oj-c99runner/pom.xml ./oj-c99runner/
+COPY ./oj-core/pom.xml ./oj-core/
+COPY ./oj-judge/pom.xml ./oj-judge/
+COPY ./oj-server/pom.xml ./oj-server/
+RUN mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies
+WORKDIR /build
+COPY ./ ./
+
+RUN mvn package
+RUN mkdir -p out
+RUN mvn help:evaluate -q -Dexpression=project.version -DforceStdout > out/version
+RUN mv oj-judge/target/oj-judge-$(cat out/version)-jar-with-dependencies.jar out/oj-judge.jar
+
+FROM docker.io/library/openjdk:11-jre@sha256:331488bf8ecda52620393aad8260b019337aac038af9a448e7981eb69968f534
+COPY --from=builder /build/out /oj-judge
+
+RUN useradd -r oj-judge
+USER oj-judge
+VOLUME /data
+
+ENV RUNNER_HOST localhost
+ENV RUNNER_PORT 1993
+ENV DB_HOST localhost
+ENV DB_NAME online_judge
+# ENV DB_USER
+# ENV DB_PASSWD
+ENV DATA /data
+
+CMD java -jar /oj-judge/oj-judge.jar

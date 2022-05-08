@@ -1,7 +1,7 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 load(":deps.bzl", "DEPS")
 
-def _container_image(*, name, repository, digest, registry, **kwargs):
+def to_container_image(*, name, repository, digest, registry, **kwargs):
     return {
         "name": name,
         "registry": registry,
@@ -10,7 +10,7 @@ def _container_image(*, name, repository, digest, registry, **kwargs):
     }
 
 CONTAINER_IMAGES = {
-    dep["name"]: _container_image(**dep)
+    dep["name"]: to_container_image(**dep)
     for dep in DEPS["container_deps"]
 }
 

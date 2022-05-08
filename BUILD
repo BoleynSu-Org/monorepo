@@ -1,11 +1,14 @@
-filegroup(
-    name = "bazel_version",
-    srcs = [".bazelversion"],
-    visibility = ["//visibility:public"],
+load("//tools/build/rules:genfile.bzl", "genfile")
+
+genfile(
+    name = "bazelrc",
+    src = "@boleynsu_org//configs/bazel:bazelrc",
+    out = ".bazelrc",
 )
 
-filegroup(
-    name = "requirements_txt",
-    srcs = ["requirements.txt"],
-    visibility = ["//visibility:public"],
+genfile(
+    name = "bazelversion",
+    src = "@boleynsu_org//configs/bazel:bazelversion",
+    out = ".bazelversion",
+    headers = [],
 )
