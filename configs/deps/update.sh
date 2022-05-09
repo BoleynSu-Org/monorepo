@@ -1,12 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
-    cd "$BUILD_WORKSPACE_DIRECTORY"
-    # https://docs.bazel.build/versions/main/user-manual.html#run
-    unset BUILD_WORKSPACE_DIRECTORY
-    unset BUILD_WORKING_DIRECTORY
-fi
+cd "$BUILD_WORKSPACE_DIRECTORY"
+# https://docs.bazel.build/versions/main/user-manual.html#run
+unset BUILD_WORKSPACE_DIRECTORY
+unset BUILD_WORKING_DIRECTORY
 
 REPIN=1 bazel run @unpinned_maven//:pin
 REPIN=1 bazel run @unpinned_pip//:pin
