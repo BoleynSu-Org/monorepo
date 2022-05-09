@@ -48,6 +48,18 @@ def dump_deps_bzl(deps, path):
     """Dump deps as deps.bzl."""
     metadata = deps["metadata"]
 
+    update_msg, pin_msg = "", ""
+    if "update_cmd" in metadata:
+        update_msg = f"""
+To update all deps to latest versions,
+    please run `{metadata["update_cmd"]}`.
+"""
+    if "pin_cmd" in metadata:
+        pin_msg = f"""
+To manually update some deps,
+    please edit _DPES_YAML and then run `{metadata["pin_cmd"]}`.
+"""
+
     yaml = ruamel.yaml.YAML()
     yaml.width = math.inf
     deps_yaml_writer = _Writer()
@@ -62,13 +74,7 @@ def dump_deps_bzl(deps, path):
     deps_json_hash = _hash(deps_json)
     output = f'''"""
 deps.bzl
-
-To update all deps to latest versions,
-    please run `{metadata["update_cmd"]}`.
-
-To manually update some deps,
-    please edit _DPES_YAML and then run `{metadata["pin_cmd"]}`.
-"""
+{update_msg}{pin_msg}"""
 {DEPS_YAML_PREFIX}{deps_yaml}{DEPS_YAML_SUFFIX}
 # DO NOT EDIT THE NEXT LINES! They are auto-generated.
 
