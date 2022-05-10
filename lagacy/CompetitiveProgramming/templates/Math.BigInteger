@@ -1,0 +1,4 @@
+#ifndef SCL_MATH_BI
+#define SCL_MATH_BI
+#include <Math.BigInteger.hpp>
+#endif
