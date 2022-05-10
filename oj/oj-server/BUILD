@@ -1,4 +1,12 @@
+load("//tools/build/rules:genfile.bzl", "genfile")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+
+genfile(
+    name = "favicon",
+    src = "@boleynsu_org//storages/public/assets:favicon",
+    out = "src/main/webapp/favicon.ico",
+    headers = [],
+)
 
 java_image(
     name = "oj-server",
