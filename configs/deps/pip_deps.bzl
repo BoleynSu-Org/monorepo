@@ -95,7 +95,7 @@ _pinned_pip = repository_rule(
     implementation = _pinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
-        "requirements_txt": attr.label(allow_single_file = True),
+        "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
     },
 )
 
@@ -103,7 +103,7 @@ _unpinned_pip = repository_rule(
     implementation = _unpinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
-        "requirements_txt": attr.label(allow_single_file = True),
+        "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
         "extra_args": attr.string_list(),
     },
 )
