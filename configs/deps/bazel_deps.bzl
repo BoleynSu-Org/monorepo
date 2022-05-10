@@ -9,6 +9,10 @@ def to_local_repository(*, name, path, **kwargs):
     }
 
 def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, build_file_content = None, workspace_file_content = None, **kwargs):
+    if patches:
+        for patch in patches:
+            if not patch.startswith("@"):
+                fail("The target for patches must specify workspace name.")
     return {
         "name": name,
         "sha256": sha256,
