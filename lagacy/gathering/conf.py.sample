@@ -1,0 +1,6 @@
+EMAIL = "youremail+gathering@gmail.com"
+USER = "youremail"
+PASSWD = "USE AN APP PASSWORD INSTEAD OF THE REAL PASSWORD"
+
+def onError(error):
+  print(error)
