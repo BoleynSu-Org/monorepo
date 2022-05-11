@@ -1,5 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
+load("//tools/build/repo_rules:http_binary.bzl", "http_binary")
 load(":deps.bzl", "DEPS")
 
 def to_local_repository(*, name, path, **kwargs):
@@ -24,18 +25,28 @@ def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = Non
         "workspace_file_content": build_file_content,
     }
 
-def to_http_file(*, name, sha256, url = None, urls = None, executable = None, **kwargs):
+def to_http_file(*, name, sha256, url = None, urls = None, executable = None, downloaded_file_path = None, **kwargs):
     return {
         "name": name,
         "sha256": sha256,
         "urls": [url] if url else urls,
         "executable": executable,
+        "downloaded_file_path": downloaded_file_path,
+    }
+
+def to_http_binary(*, name, sha256, url = None, executable_path = None, **kwargs):
+    return {
+        "name": name,
+        "sha256": sha256,
+        "url": url,
+        "executable_path": executable_path,
     }
 
 TYPE_TO_RULE_MAPPING = {
     "local_repository": (native.local_repository, to_local_repository),
     "http_archive": (http_archive, to_http_archive),
     "http_file": (http_file, to_http_file),
+    "http_binary": (http_binary, to_http_binary),
 }
 
 BAZEL_DEPS = {dep["name"]: dep for dep in DEPS["bazel_deps"]}
