@@ -4,7 +4,6 @@ load("//configs/deps:toolchain_deps.bzl", "BAZEL_VERSION", "CPP_VERSION", "C_VER
 
 expand_template(
     name = "bazelrc",
-    out = ".bazelrc",
     substitutions = {
         "{c_version}": C_VERSION,
         "{cpp_version}": CPP_VERSION,

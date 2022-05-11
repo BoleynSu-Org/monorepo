@@ -14,7 +14,7 @@ genfile(
 )
 
 genfile(
-    name = "prow_yaml",
-    src = "@boleynsu_org//configs/prow:prow_yaml",
+    name = "prow.yaml",
+    src = "@boleynsu_org//configs/prow:prow.yaml",
     out = ".prow.yaml",
 )

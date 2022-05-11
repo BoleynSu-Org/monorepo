@@ -1,5 +1,5 @@
 # DO NOT EDIT! This file is auto-generated.
-# Run `bazel run //:prow_yaml.genfile` to regenerate.
+# Run `bazel run //:prow.yaml.genfile` to regenerate.
 presubmits:
   - name: "bazel-test-all"
     branches:
