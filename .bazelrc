@@ -1,5 +1,5 @@
 # DO NOT EDIT! This file is auto-generated.
-# Run `bazel run //:bazelrc` to regenerate.
+# Run `bazel run //:bazelrc.genfile` to regenerate.
 common --experimental_repo_remote_exec
 
 # See https://github.com/bazelbuild/rules_docker/blob/6ea707babdcd54514e0884278ac624fb8bda19c1/docs/container.md

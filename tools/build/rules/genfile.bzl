@@ -1,64 +1,38 @@
-load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 
 def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, **kwargs):
     if headers == None:
-        headers = ["DO NOT EDIT! This file is auto-generated.", "Run `bazel run //{}:{}` to regenerate.".format(native.package_name(), name)]
+        headers = ["DO NOT EDIT! This file is auto-generated.", "Run `bazel run //{}:{}.genfile` to regenerate.".format(native.package_name(), name)]
+    if failure_message == None:
+        failure_message = "The file is outdated. bazel run //{}:{}.genfile to regenerate."
 
     if comment:
         for i, hdr_i in enumerate(headers):
             headers[i] = comment + hdr_i
 
-    hdr = "{}.genfile.header".format(name)
-    write_file(
-        name = hdr,
-        out = "{}.genfile.header.out".format(name),
-        content = headers + [""],
-    )
+    for hdr in headers:
+        if "'" in hdr:
+            fail("' is not allowed in headers!")
 
-    write_file(
-        name = "{}.genfile.update".format(name),
-        out = "{}.genfile.update.sh".format(name),
-        content = ["""
-#!/bin/bash
-set -euo pipefail
-hdr=$1
-src=$2
-out=$3
-
-if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
-    out=$BUILD_WORKSPACE_DIRECTORY/$out
-fi
-
-cat "$hdr" >"$out"
-cat "$src" >>"$out"
-"""],
-        **kwargs
-    )
-
-    gen = "{}.genfile".format(name)
     native.genrule(
-        name = gen,
-        srcs = [src, hdr],
+        name = name,
+        srcs = [src],
         outs = ["{}.genfile.out".format(name)],
-        cmd = """
-cat "$(execpath {hdr})" >"$@"
-cat "$(execpath {src})" >>"$@"
-""".format(src = src, hdr = hdr),
+        cmd = " && ".join(["printf '%s\n' '{}' >>'$@'".format(hdr) for hdr in headers] + ['cat "$(execpath {})" >>"$@"'.format(src)]),
     )
 
     native.sh_binary(
-        name = name,
-        srcs = [":{}.genfile.update".format(name)],
-        args = ["$(rootpath {})".format(hdr), "$(rootpath {})".format(src), "$(rootpath {})".format(out)],
-        data = [src, out, hdr],
+        name = "{}.genfile".format(name),
+        srcs = [Label("//tools/build/rules:genfile.sh")],
+        args = ["$(rootpath {})".format(src), "$(rootpath {})".format(out)] + [repr(hdr) for hdr in headers],
+        data = [src, out],
         **kwargs
     )
 
     if test:
         diff_test(
             "{}.genfile.test".format(name),
-            gen,
+            name,
             out,
             failure_message = failure_message,
             **kwargs
