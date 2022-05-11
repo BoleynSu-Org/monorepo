@@ -20,7 +20,7 @@ _expand_template = rule(
 
 def expand_template(*, name, substitutions, template = None, out = None, **kwargs):
     if not substitutions:
-        fail("Please use write_file provided by @bazel_skylib instead!")
+        fail("Please use copy_file provided by @bazel_skylib instead!")
     if template == None:
         template = name + ".tpl"
     if out == None:
