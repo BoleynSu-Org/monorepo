@@ -12,3 +12,9 @@ genfile(
     out = ".bazelversion",
     headers = [],
 )
+
+genfile(
+    name = "prow_yaml",
+    src = "@boleynsu_org//configs/prow:prow_yaml",
+    out = ".prow.yaml",
+)
