@@ -1,6 +1,4 @@
-# DO NOT EDIT! This file is auto-generated.
-# Run `bazel run //.prow:presubmit.genfile` to regenerate.
-presubmits:
+postsubmits:
   - name: "bazel-test-all"
     branches:
     - main
@@ -9,7 +7,7 @@ presubmits:
     skip_report: false
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:7ee41e9c3544fb49378bcab561873aa0150333dc685a2c90cf30188f821f90f9
+      - image: {ci_runner_image}
         command:
         - "bazel"
         - "test"
