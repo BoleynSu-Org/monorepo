@@ -9,6 +9,7 @@ expand_template(
         "{cpp_version}": CPP_VERSION,
         "{java_version}": JAVA_VERSION,
     },
+    template = ".bazelrc",
     visibility = ["//visibility:public"],
 )
 

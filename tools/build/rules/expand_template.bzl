@@ -3,6 +3,7 @@ def _expand_template_impl(ctx):
         template = ctx.file.template,
         output = ctx.outputs.out,
         substitutions = ctx.attr.substitutions,
+        is_executable = True,
     )
     files = depset(direct = [ctx.outputs.out])
     runfiles = ctx.runfiles(files = [ctx.outputs.out])
