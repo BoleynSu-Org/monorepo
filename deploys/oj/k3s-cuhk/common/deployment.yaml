@@ -307,12 +307,12 @@ spec:
         readinessProbe:
           httpGet:
             path: /file
-            port: 8080
+            port: http
           periodSeconds: 3
           failureThreshold: 100
         livenessProbe:
           httpGet:
             path: /file
-            port: 8080
+            port: http
           periodSeconds: 10
           failureThreshold: 3
