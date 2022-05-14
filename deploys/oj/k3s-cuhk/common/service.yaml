@@ -7,7 +7,6 @@ spec:
     - name: http
       port: 80
       targetPort: http
-      protocol: TCP
   selector:
     app: oj-server
 ---
@@ -20,7 +19,6 @@ spec:
     - name: mariadb
       port: 3306
       targetPort: mariadb
-      protocol: TCP
   selector:
     app: oj-db
 ---
@@ -33,7 +31,6 @@ spec:
     - name: http
       port: 80
       targetPort: http
-      protocol: TCP
   selector:
     app: oj-adminer
 ---
@@ -46,7 +43,6 @@ spec:
     - name: http
       port: 80
       targetPort: http
-      protocol: TCP
   selector:
     app: oj-filebrowser
 ---
@@ -59,6 +55,5 @@ spec:
     - name: oj-runner
       port: 1993
       targetPort: oj-runner
-      protocol: TCP
   selector:
     app: oj-c99runner

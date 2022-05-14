@@ -19,7 +19,6 @@ spec:
           app.kubernetes.io/name: ingress-nginx
     ports:
     - port: http
-      protocol: TCP
   egress:
   - to:
     - podSelector:
@@ -27,14 +26,12 @@ spec:
           app: oj-db
     ports:
     - port: mariadb
-      protocol: TCP
   - to:
     - podSelector:
         matchLabels:
           app: oj-c99runner
     ports:
     - port: oj-runner
-      protocol: TCP
   - to:
     - namespaceSelector:
         matchLabels:
@@ -65,14 +62,12 @@ spec:
           app: oj-db
     ports:
     - port: mariadb
-      protocol: TCP
   - to:
     - podSelector:
         matchLabels:
           app: oj-c99runner
     ports:
     - port: oj-runner
-      protocol: TCP
   - to:
     - namespaceSelector:
         matchLabels:
@@ -107,7 +102,6 @@ spec:
           - oj-adminer
     ports:
     - port: mariadb
-      protocol: TCP
   egress: []
 ---
 apiVersion: networking.k8s.io/v1
@@ -131,7 +125,6 @@ spec:
           app.kubernetes.io/name: ingress-nginx
     ports:
     - port: http
-      protocol: TCP
   egress:
   - to:
     - podSelector:
@@ -139,7 +132,6 @@ spec:
           app: oj-db
     ports:
     - port: mariadb
-      protocol: TCP
   - to:
     - namespaceSelector:
         matchLabels:
@@ -172,7 +164,6 @@ spec:
           app.kubernetes.io/name: ingress-nginx
     ports:
     - port: http
-      protocol: TCP
   egress: []
 ---
 apiVersion: networking.k8s.io/v1
@@ -197,5 +188,4 @@ spec:
           - oj-server
     ports:
     - port: ci-runner
-      protocol: TCP
   egress: []
