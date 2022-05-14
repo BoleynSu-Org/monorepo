@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oj-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod-cluster-issuer"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Robots-Tag "noindex, nofollow";
+spec:
+  tls:
+    - hosts:
+        - oj.sujiao.de
+      secretName: oj-sujiao-de-tls
+  rules:
+    - host: oj.sujiao.de
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: oj-server-service
+                port:
+                  name: http
+          - pathType: Prefix
+            path: /db
+            backend:
+              service:
+                name: oj-adminer-service
+                port:
+                  name: http
+          - pathType: Prefix
+            path: /file
+            backend:
+              service:
+                name: oj-filebrowser-service
+                port:
+                  name: http
+  ingressClassName: nginx
