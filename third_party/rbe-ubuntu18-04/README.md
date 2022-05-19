@@ -8,5 +8,6 @@ rbe_configs_gen \
     --exec_os=linux \
     --target_os=linux \
     --bazel_version=5.1.0 \
-    --output_src_root third_party/rbe-ubuntu18-04
+    --output_src_root $(bazel info workspace) \
+    --output_config_path=third_party/rbe-ubuntu18-04
 ```
