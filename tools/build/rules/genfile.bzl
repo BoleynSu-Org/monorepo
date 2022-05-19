@@ -4,7 +4,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
     if headers == None:
         headers = ["DO NOT EDIT! This file is auto-generated.", "Run `bazel run //{}:{}.genfile` to regenerate.".format(native.package_name(), name)]
     if failure_message == None:
-        failure_message = "The file is outdated. bazel run //{}:{}.genfile to regenerate."
+        failure_message = "The file is outdated. bazel run //{}:{}.genfile to regenerate.".format(native.package_name(), name)
 
     if comment:
         for i, hdr_i in enumerate(headers):
