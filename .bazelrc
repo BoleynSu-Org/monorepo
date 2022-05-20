@@ -40,3 +40,5 @@ build:remote_toplevel --config=remote_common
 build:remote_toplevel --remote_download_toplevel
 
 build:remote_all --config=remote_common
+
+try-import %workspace%/configs/bazel/lint.bazelrc
