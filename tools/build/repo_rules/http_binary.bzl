@@ -11,8 +11,8 @@ def _http_binary_impl(ctx):
 http_binary = repository_rule(
     implementation = _http_binary_impl,
     attrs = {
-        "url": attr.string(),
-        "sha256": attr.string(),
-        "executable_path": attr.string(),
+        "url": attr.string(mandatory = True),
+        "sha256": attr.string(mandatory = True),
+        "executable_path": attr.string(default = "executable"),
     },
 )
