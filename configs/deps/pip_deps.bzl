@@ -113,7 +113,7 @@ def pip_deps(
         *,
         name = "pip",
         packages = PIP_PACKAGES,
-        requirements_lock_file = Label("//:requirements.txt"),
+        requirements_lock_file = Label("@//:requirements.txt"),
         python_sdk = "python_sdk",
         python_interpreter_target = None,
         extra_args = ["--allow-unsafe"],

@@ -177,8 +177,8 @@ def go_deps(
         module = "golang.boleyn.su",
         go_version = GOLANG_VERSION,
         packages = GO_PACKAGES,
-        go_mod = Label("//:go.mod"),
-        go_sum = Label("//:go.sum"),
+        go_mod = Label("@//:go.mod"),
+        go_sum = Label("@//:go.sum"),
         go_env = Label("@bazel_gazelle_go_repository_cache//:go.env"),
         **kwargs):
     gazelle_dependencies()

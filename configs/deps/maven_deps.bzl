@@ -25,7 +25,7 @@ def maven_deps(
         *,
         name = "maven",
         artifacts = MAVEN_ARTIFACTS,
-        maven_install_json = Label("//:maven_install.json"),
+        maven_install_json = Label("@//:maven_install.json"),
         override_targets = MAVEN_OVERRIDE_TARGETS,
         generate_compat_repositories = True,
         repositories = [
