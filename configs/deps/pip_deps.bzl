@@ -1,5 +1,6 @@
+load("@local_config_platform//:constraints.bzl", "HOST_CONSTRAINTS")
+load("@rules_python//python:versions.bzl", "PLATFORMS")
 load("@rules_python//python:pip.bzl", "pip_parse")
-load("@python_sdk//:defs.bzl", "interpreter")
 load(":deps.bzl", "DEPS")
 
 PIP_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["pip_deps"]}
@@ -113,7 +114,8 @@ def pip_deps(
         name = "pip",
         packages = PIP_PACKAGES,
         requirements_lock_file = Label("//:requirements.txt"),
-        python_interpreter_target = interpreter,
+        python_sdk = "python_sdk",
+        python_interpreter_target = None,
         extra_args = ["--allow-unsafe"],
         **kwargs):
     _pinned_pip(
@@ -129,6 +131,11 @@ def pip_deps(
         extra_args = extra_args,
         **kwargs
     )
+    if not python_interpreter_target:
+        for platform, info in PLATFORMS.items():
+            if sorted(info.compatible_with) == sorted(HOST_CONSTRAINTS):
+                path = "python.exe" if "@platforms//os:windows" in info.compatible_with else "bin/python3"
+                python_interpreter_target = "@{}_{}//:{}".format(python_sdk, platform, path)
     pip_parse(
         name = name,
         requirements_lock = "@pinned_{}//:requirements.txt".format(name),

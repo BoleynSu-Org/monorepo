@@ -37,6 +37,9 @@ load("//configs/deps:toolchain_deps.bzl", "GOLANG_VERSION", "PYTHON_VERSION")
 ## maven deps
 load("//configs/deps:maven_deps.bzl", more_maven_deps = "maven_deps")
 
+# pip deps
+load("//configs/deps:pip_deps.bzl", more_pip_deps = "pip_deps")
+
 ## go deps
 load("//configs/deps:go_deps.bzl", more_go_deps = "go_deps")
 
@@ -48,7 +51,7 @@ load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
 
-def workspace(*, enable_maven_deps = True, enable_go_deps = True, enable_container_deps = True):
+def workspace(*, enable_maven_deps = True, enable_pip_deps = True, enable_go_deps = True, enable_container_deps = True):
     # c and cpp
     rules_cc_dependencies()
     rules_cc_toolchains()
@@ -88,6 +91,10 @@ def workspace(*, enable_maven_deps = True, enable_go_deps = True, enable_contain
     # maven deps
     if enable_maven_deps:
         more_maven_deps()
+
+    # pip deps
+    if enable_pip_deps:
+        more_pip_deps()
 
     # go deps
     if enable_go_deps:

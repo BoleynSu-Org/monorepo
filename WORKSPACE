@@ -16,7 +16,3 @@ workspace_1()
 load("//configs/build:workspace_2.bzl", workspace_2 = "workspace")
 
 workspace_2()
-
-load("//configs/build:workspace_3.bzl", workspace_3 = "workspace")
-
-workspace_3()
