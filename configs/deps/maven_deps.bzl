@@ -32,6 +32,9 @@ def maven_deps(
             "https://repo1.maven.org/maven2",
         ],
         fail_if_repin_required = True,
+        version_conflict_policy = "pinned",
+        duplicate_version_warning = "error",
+        strict_visibility = True,
         **kwargs):
     maven_install(
         name = name,
@@ -41,5 +44,8 @@ def maven_deps(
         generate_compat_repositories = generate_compat_repositories,
         repositories = repositories,
         fail_if_repin_required = fail_if_repin_required,
+        version_conflict_policy = version_conflict_policy,
+        duplicate_version_warning = duplicate_version_warning,
+        strict_visibility = strict_visibility,
         **kwargs
     )

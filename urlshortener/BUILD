@@ -12,10 +12,10 @@ java_image(
     ],
     main_class = "su.boleyn.urlshortener.URLShortenerServer",
     visibility = ["//visibility:public"],
+    runtime_deps = ["@maven//:org_wildfly_common_wildfly_common"],
     deps = [
         "@maven//:commons_codec_commons_codec",
         "@maven//:commons_validator_commons_validator",
         "@maven//:io_undertow_undertow_core",
-        "@maven//:org_wildfly_common_wildfly_common",
     ],
 )

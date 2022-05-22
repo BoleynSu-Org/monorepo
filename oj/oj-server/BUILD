@@ -43,6 +43,8 @@ java_image(
     visibility = ["//visibility:public"],
     runtime_deps = [
         "@io_grpc_grpc_java//netty",
+        "@maven//:org_webjars_bootstrap",
+        "@maven//:org_webjars_jquery",
     ],
     deps = [
         "//oj/oj-core:lib",
@@ -52,7 +54,5 @@ java_image(
         "@maven//:commons_io_commons_io",
         "@maven//:org_apache_tomcat_embed_tomcat_embed_core",
         "@maven//:org_apache_tomcat_embed_tomcat_embed_jasper",
-        "@maven//:org_webjars_bootstrap",
-        "@maven//:org_webjars_jquery",
     ],
 )
