@@ -1,4 +1,4 @@
-load(":deps.bzl", "DEPS")
+load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 TOOLCHAINS = {dep["name"]: dep["version"] for dep in DEPS["toolchain_deps"]}
 

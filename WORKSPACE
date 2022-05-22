@@ -1,5 +1,11 @@
 workspace(name = "boleynsu_org")
 
+new_local_repository(
+    name = "boleynsu_deps_bzl",
+    build_file_content = "",
+    path = "configs/deps",
+)
+
 local_repository(
     name = "boleynsu",
     path = "../..",

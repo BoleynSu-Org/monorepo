@@ -1,7 +1,7 @@
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 load("//tools/build/utils:utils.bzl", "resolve_conflicts")
-load(":deps.bzl", "DEPS")
+load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 def parse_artifacts(artifacts):
     return {

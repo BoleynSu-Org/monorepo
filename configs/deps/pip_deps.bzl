@@ -1,7 +1,7 @@
 load("@local_config_platform//:constraints.bzl", "HOST_CONSTRAINTS")
 load("@rules_python//python:versions.bzl", "PLATFORMS")
 load("@rules_python//python:pip.bzl", "pip_parse")
-load(":deps.bzl", "DEPS")
+load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 PIP_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["pip_deps"]}
 

@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
-load(":deps.bzl", "DEPS")
+load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 def to_local_repository(*, name, path, **kwargs):
     return {
