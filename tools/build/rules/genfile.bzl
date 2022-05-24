@@ -1,6 +1,6 @@
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 
-def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, **kwargs):
+def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, visibility = None, **kwargs):
     if headers == None:
         headers = ["DO NOT EDIT! This file is auto-generated.", "Run `bazel run //{}:{}.genfile` to regenerate.".format(native.package_name(), name)]
     if failure_message == None:
@@ -13,19 +13,24 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
     for hdr in headers:
         if "'" in hdr:
             fail("' is not allowed in headers!")
+    if out.startswith("@"):
+        fail("out should points to a file in the current repo.")
 
     native.genrule(
         name = name,
         srcs = [src],
         outs = ["{}.genfile.out".format(name)],
         cmd = " && ".join(["printf '%s\n' '{}' >>'$@'".format(hdr) for hdr in headers] + ['cat "$(execpath {})" >>"$@"'.format(src)]),
+        visibility = visibility,
+        **kwargs
     )
 
     native.sh_binary(
         name = "{}.genfile".format(name),
         srcs = [Label("//tools/build/rules:genfile.sh")],
-        args = ["$(rootpath {})".format(src), "$(rootpath {})".format(out)] + [repr(hdr) for hdr in headers],
-        data = [src, out],
+        args = ["$(rootpath {})".format(name), "$(rootpath {})".format(out)],
+        data = [name, out],
+        visibility = ["//visibility:private"],
         **kwargs
     )
 
@@ -35,5 +40,6 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
             name,
             out,
             failure_message = failure_message,
+            visibility = ["//visibility:private"],
             **kwargs
         )
