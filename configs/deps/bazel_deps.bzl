@@ -19,7 +19,7 @@ def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = Non
         "url": url,
         "urls": urls,
         "strip_prefix": strip_prefix,
-        "patches": [Label(patch) for patch in patches] if (patches != None) else [],
+        "patches": patches,
         "build_file_content": build_file_content,
         "workspace_file_content": build_file_content,
     }

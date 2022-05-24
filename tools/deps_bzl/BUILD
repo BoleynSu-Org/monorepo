@@ -9,8 +9,18 @@ py_library(
     ],
 )
 
+py_library(
+    name = "include",
+    srcs = ["include.py"],
+    visibility = ["//visibility:public"],
+)
+
 py_binary(
     name = "regenerate",
     srcs = ["regenerate.py"],
-    deps = [":parser"],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":include",
+        ":parser",
+    ],
 )
