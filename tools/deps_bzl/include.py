@@ -21,4 +21,12 @@ def include(deps, included_deps):
                 if dep.get("included_from") == included_deps_name:
                     dep.clear()
                     dep.update(included_dep)
+        mapping = {dep["name"]: dep for dep in included_deps[kind]}
+        deps[kind] = list(
+            filter(
+                lambda dep: dep.get("included_from") != included_deps_name
+                or dep["name"] in mapping,  # pylint: disable=cell-var-from-loop
+                deps[kind],
+            )
+        )
     return deps
