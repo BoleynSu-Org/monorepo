@@ -8,26 +8,14 @@ DEPS_YAML_SUFFIX = '"""\n# END deps.yaml\n'
 write_file(
     name = "deps.bzl",
     out = "out/deps.bzl",
-    content = [DEPS_YAML_PREFIX] + ["""
-metadata:
-  name: io_grpc_grpc_java
-maven_deps:
-  """] + [
-        """
-- name: {}
-  version: {}
-""".format(
+    content = [DEPS_YAML_PREFIX + "metadata:\n  name: io_grpc_grpc_java\n\nmaven_deps:"] + [
+        "- name: {}\n  version: {}".format(
             repr(artifact),
             repr(version),
         )
         for artifact, version in [tuple(artifact.rsplit(":", 1)) for artifact in IO_GRPC_GRPC_JAVA_ARTIFACTS]
     ] + [
-        """
-- name: {}
-  version: override
-  override_target: {}
-
-""".format(
+        "- name: {}\n  version: override\n  override_target: {}".format(
             repr(artifact),
             repr(target),
         )
