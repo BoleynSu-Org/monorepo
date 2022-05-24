@@ -1,6 +1,7 @@
 load("//tools/build/rules:genfile.bzl", "genfile")
+load(":deps.bzl", "DEPS")
 
-INCLUDES = ["@boleynsu_org//third_party/io_grpc_grpc_java_deps_bzl:deps.bzl"]
+INCLUDES = DEPS["metadata"]["include"]
 
 genrule(
     name = "updated_deps_bzl",
