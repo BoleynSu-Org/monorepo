@@ -2,7 +2,6 @@
 The deps.bzl regenerator.
 """
 import argparse
-import os
 import sys
 
 import boleynsu_org.tools.deps_bzl.parser
