@@ -16,4 +16,5 @@ genfile(
     src = ":updated_deps_bzl",
     out = "deps.bzl",
     headers = [],
+    visibility = ["//visibility:public"],
 )

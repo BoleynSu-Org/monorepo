@@ -86,11 +86,12 @@ def workspace(*, enable_maven_deps = True, enable_pip_deps = True, enable_go_dep
 
     # k8s
     k8s_repositories()
-    k8s_go_deps()
+    k8s_go_deps(go_version = None)
 
     # maven deps
     if enable_maven_deps:
-        more_maven_deps()
+        # FIXME(https://github.com/grpc/grpc-java/issues/9288): remove strict_visibility=False after the upstream issue is fixed.
+        more_maven_deps(strict_visibility = False)
 
     # pip deps
     if enable_pip_deps:

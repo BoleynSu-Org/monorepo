@@ -6,8 +6,8 @@ DEPS_YAML_PREFIX = '\n# BEGIN deps.yaml\n_DEPS_YAML = r"""\n'
 DEPS_YAML_SUFFIX = '"""\n# END deps.yaml\n'
 
 write_file(
-    name = "deps.bzl",
-    out = "out/deps.bzl",
+    name = "deps_bzl",
+    out = "deps.bzl",
     content = [DEPS_YAML_PREFIX + "metadata:\n  name: io_grpc_grpc_java\n\nmaven_deps:"] + [
         "- name: {}\n  version: {}".format(
             repr(artifact),

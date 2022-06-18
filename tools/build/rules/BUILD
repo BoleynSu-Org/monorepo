@@ -1,6 +1,5 @@
-exports_files(["genfile.sh"])
-
-sh_library(
-    name = "genfile",
+filegroup(
+    name = "genfile_sh",
     srcs = ["genfile.sh"],
+    visibility = ["//visibility:public"],
 )

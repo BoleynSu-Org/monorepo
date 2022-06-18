@@ -27,7 +27,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
 
     native.sh_binary(
         name = "{}.genfile".format(name),
-        srcs = [Label("//tools/build/rules:genfile.sh")],
+        srcs = [Label("//tools/build/rules:genfile_sh")],
         args = ["$(rootpath {})".format(name), "$(rootpath {})".format(out)],
         data = [name, out],
         visibility = ["//visibility:private"],
