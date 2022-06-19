@@ -122,7 +122,7 @@ public class User extends Config {
     public void runCustomTest() throws IOException {
         PrintWriter out = response.getWriter();
         if (!hasLogin()) {
-            out.println("Please login in firet.");
+            out.println("Please login in first.");
         } else {
             Task task = Task.newBuilder().setSource(get("source")).setInput(get("input")).build();
             String output = runner.run(task).getOutput();
