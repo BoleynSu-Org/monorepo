@@ -5,7 +5,7 @@ metadata:
   labels:
     k8s.boleyn.su/backup: restic
   annotations:
-    k8s.boleyn.su/backup-include: "db"
+    k8s.boleyn.su/backup-include: "db data filebrowser-conf"
 spec:
   accessModes:
     - ReadWriteOnce
