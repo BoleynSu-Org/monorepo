@@ -64,6 +64,13 @@ diff_test(
 
     repository_ctx.symlink(repository_ctx.attr.requirements_txt, "imported_requirements.txt")
 
+    result = repository_ctx.execute([repository_ctx.attr.python_interpreter_target, "-m", "venv", "venv"])
+    if result.return_code:
+        fail("failed to run python -m venv: " + result.stderr)
+    result = repository_ctx.execute(["./venv/bin/pip", "install", "pip_tools"])
+    if result.return_code:
+        fail("failed to run pip: " + result.stderr)
+
     repository_ctx.file("pin.sh", content = """
 #!/bin/bash
 set -euo pipefail
@@ -75,19 +82,13 @@ cat "$requirements_txt" >"$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
         requirements_txt = _get_path(repository_ctx.attr.requirements_txt),
     ))
 
-    pip_compile = repository_ctx.which("pip-compile")
-    if not pip_compile:
-        fail("""Please make sure pip-compile is installed.
-    You can run `pip install --user pip_tools` to install it.
-""")
-
     repository_ctx.file("requirements.txt")
     result = repository_ctx.execute(
-        [pip_compile, "--no-header", "--generate-hashes", "--output-file", "requirements.txt", "requirements.in"] + repository_ctx.attr.extra_args,
+        ["./venv/bin/pip-compile", "--no-header", "--generate-hashes", "--output-file", "requirements.txt", "requirements.in"] + repository_ctx.attr.extra_args,
         timeout = 86400,  # use a very large timeout, i.e. one day, to avoid timeout errors
     )
     if result.return_code:
-        fail("failed to go mod download all: " + result.stderr)
+        fail("failed to run pip-compile: " + result.stderr)
 
     requirements_txt = repository_ctx.read("requirements.txt")
     repository_ctx.file("requirements.txt", content = _updater_header(repository_ctx, requirements_txt))
@@ -105,6 +106,7 @@ _unpinned_pip = repository_rule(
     attrs = {
         "packages": attr.string_dict(),
         "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
+	"python_interpreter_target": attr.label(allow_single_file = True, mandatory=True),
         "extra_args": attr.string_list(),
     },
 )
@@ -124,18 +126,19 @@ def pip_deps(
         requirements_txt = requirements_lock_file,
         **kwargs
     )
-    _unpinned_pip(
-        name = "unpinned_" + name,
-        packages = packages,
-        requirements_txt = requirements_lock_file,
-        extra_args = extra_args,
-        **kwargs
-    )
     if not python_interpreter_target:
         for platform, info in PLATFORMS.items():
             if sorted(info.compatible_with) == sorted(HOST_CONSTRAINTS):
                 path = "python.exe" if "@platforms//os:windows" in info.compatible_with else "bin/python3"
                 python_interpreter_target = "@{}_{}//:{}".format(python_sdk, platform, path)
+    _unpinned_pip(
+        name = "unpinned_" + name,
+        packages = packages,
+        requirements_txt = requirements_lock_file,
+        python_interpreter_target = python_interpreter_target,
+        extra_args = extra_args,
+        **kwargs
+    )
     pip_parse(
         name = name,
         requirements_lock = "@pinned_{}//:requirements.txt".format(name),
