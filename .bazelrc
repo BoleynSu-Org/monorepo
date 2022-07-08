@@ -1,7 +1,5 @@
 # DO NOT EDIT! This file is auto-generated.
 # Run `bazel run //:bazelrc.genfile` to regenerate.
-common --experimental_repo_remote_exec
-
 # See https://github.com/bazelbuild/rules_docker/blob/6ea707babdcd54514e0884278ac624fb8bda19c1/docs/container.md
 build --loading_phase_threads=1
 
@@ -27,20 +25,13 @@ build:remote_common --remote_executor=grpc://build.boleyn.su:8980
 build:remote_common --remote_instance_name=remote-monorepo
 build:remote_common --remote_timeout=3600
 ## Platform
-build:remote_common --platforms=@boleynsu_org//third_party/rbe-ubuntu18-04/config:platform
-build:remote_common --host_platform=@boleynsu_org//third_party/rbe-ubuntu18-04/config:platform
-build:remote_common --extra_execution_platforms=@boleynsu_org//third_party/rbe-ubuntu18-04/config:platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
 build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-ubuntu18-04_platform
 ## Toolchain
-build:remote_common --extra_toolchains=@boleynsu_org//third_party/rbe-ubuntu18-04/config:cc-toolchain
-build:remote_common --extra_toolchains=@boleynsu_org//third_party/rbe-ubuntu18-04/java:all
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/toolchains/BUILD
 build:remote_common --extra_toolchains=@boleynsu_org//configs/build/toolchains:rbe-ubuntu18-04_cc_toolchain
 ## Misc
 build:remote_common --jobs=24
-build:remote_common --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
-build:remote_common --crosstool_top=@boleynsu_org//third_party/rbe-ubuntu18-04/cc:toolchain
 
 build:remote --config=remote_common
 build:remote --remote_download_minimal
