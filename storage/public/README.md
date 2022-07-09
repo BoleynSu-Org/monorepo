@@ -1,3 +1,3 @@
 # Public Storages
 
-The files in this directory are publish at <https://public.storage.boleyn.su/>.
+The files in this directory are published at <https://public.storage.boleyn.su/>.
