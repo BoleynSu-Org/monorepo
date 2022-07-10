@@ -1,5 +1,5 @@
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
-load("//configs/deps:toolchain_deps.bzl", "GOLANG_VERSION")
+load(":toolchain_deps.bzl", "GOLANG_VERSION")
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 GO_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["go_deps"]}

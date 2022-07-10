@@ -11,14 +11,22 @@ local_repository(
     path = "../..",
 )
 
-load("//configs/build:workspace_0.bzl", workspace_0 = "workspace")
+load("@boleynsu_org//tools/build/repo_rules/workspace:bazel_deps.bzl", "bazel_deps")
 
-workspace_0()
+bazel_deps()
 
-load("//configs/build:workspace_1.bzl", workspace_1 = "workspace")
+load("@bazel_deps//:indirect_deps.bzl", "indirect_deps")
 
-workspace_1()
+indirect_deps()
 
-load("//configs/build:workspace_2.bzl", workspace_2 = "workspace")
+load("@bazel_deps//:nonbazel_deps.bzl", "nonbazel_deps")
 
-workspace_2()
+nonbazel_deps(
+    maven_deps_config = dict(
+        strict_visibility = False,  # FIXME(https://github.com/grpc/grpc-java/issues/9288): remove strict_visibility=False after the upstream issue is fixed.
+    ),
+)
+
+load("@bazel_deps//:install_nonbazel_deps.bzl", "install_nonbazel_deps")
+
+install_nonbazel_deps()

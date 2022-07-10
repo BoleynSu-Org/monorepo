@@ -8,7 +8,7 @@ load("@pip//:requirements.bzl", pip_install_deps = "install_deps")
 # install go deps
 load("@gazelle_go_deps//:gazelle_go_deps.bzl", "go_dependencies")
 
-def workspace():
+def install_nonbazel_deps():
     # install maven deps
     maven_compat_repositories()
     maven_pinned_maven_install()

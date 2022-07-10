@@ -8,3 +8,6 @@ CPP_VERSION = TOOLCHAINS["cpp"]
 JAVA_VERSION = TOOLCHAINS["java"]
 PYTHON_VERSION = TOOLCHAINS["python"]
 GOLANG_VERSION = TOOLCHAINS["golang"]
+
+def toolchain_deps():
+    pass
