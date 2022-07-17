@@ -26,11 +26,12 @@ build:remote_common --remote_executor=grpc://build.boleyn.su:8980
 build:remote_common --remote_instance_name=remote-monorepo
 build:remote_common --remote_timeout=3600
 ## Platform
+build:remote_common --host_platform=@boleynsu_org//configs/build/platforms:rbe-ubuntu18-04
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-ubuntu18-04_platform
+build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-ubuntu18-04
 ## Toolchain
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/toolchains/BUILD
-build:remote_common --extra_toolchains=@boleynsu_org//configs/build/toolchains:rbe-ubuntu18-04_cc_toolchain
+build:remote_common --extra_toolchains=@boleynsu_org//configs/build/toolchains:cc_toolchain_rbe-ubuntu18-04
 ## Misc
 build:remote_common --jobs=24
 ### FIXME(https://github.com/bazelbuild/bazel/issues/12712)
