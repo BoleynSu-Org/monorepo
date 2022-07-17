@@ -1,4 +1,3 @@
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 load(":toolchain_deps.bzl", "GOLANG_VERSION")
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
@@ -47,24 +46,42 @@ def _gazelle_go_deps_impl(repository_ctx):
 
     dependency_template = """
     go_repository(
-        name = "{name}",
-        importpath = "{importpath}",
-        sum = "{sum}",
-        version = "{version}",
+        name = {name},
+        importpath = {importpath},
+        sum = {sum},
+        version = {version},
+        build_external = {build_external},
+        build_file_proto_mode = {build_file_proto_mode},
+        build_config = Label("//:build_config"),
     )
 """
     dependencies = ""
+    build_config = ""
     for line in repository_ctx.read(repository_ctx.attr.go_sum).split("\n"):
         if line:
             importpath, version, sum = line.split(" ")
             path = importpath.split("/")
-            name = "_".join(reversed(path[0].split(".")) + path[1:]).replace(".", "_").replace("-", "_").replace("/", "_")
+            name = "_".join(reversed(path[0].split(".")) + path[1:]).replace(".", "_").replace("-", "_").replace("/", "_").lower()
             if not version.endswith("/go.mod"):
+                build_external = None
+                build_file_proto_mode = None
+                if importpath in GO_PACKAGES:
+                    package = GO_PACKAGES[importpath]
+                    if "build_external" in package:
+                        build_external = package["build_external"]
+                    if "build_file_proto_mode" in package:
+                        build_file_proto_mode = package["build_file_proto_mode"]
                 dependencies += dependency_template.format(
+                    name = repr(name),
+                    importpath = repr(importpath),
+                    sum = repr(sum),
+                    version = repr(version),
+                    build_external = repr(build_external),
+                    build_file_proto_mode = repr(build_file_proto_mode),
+                )
+                build_config += "# gazelle:repository go_repository name={name} importpath={importpath}\n".format(
                     name = name,
                     importpath = importpath,
-                    sum = sum,
-                    version = version,
                 )
 
     repository_ctx.file("gazelle_go_deps.bzl", content = """
@@ -73,6 +90,7 @@ load("@bazel_gazelle//:deps.bzl", "go_repository")
 def go_dependencies():
 {dependencies}
 """.format(dependencies = dependencies if dependencies else "    pass"))
+    repository_ctx.file("build_config", content = build_config)
 
 def _unpinned_gazelle_go_deps_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "workspace(name=\"{}\")".format(repository_ctx.name))
@@ -181,7 +199,6 @@ def go_deps(
         go_sum = Label("@//:go.sum"),
         go_env = Label("@bazel_gazelle_go_repository_cache//:go.env"),
         **kwargs):
-    gazelle_dependencies()
     _gazelle_go_deps(
         name = name,
         module = module,

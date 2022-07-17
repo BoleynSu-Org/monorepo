@@ -2,7 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
-def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, build_file_content = None, workspace_file_content = None, **kwargs):
+def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, patch_cmds = None, build_file_content = None, workspace_file_content = None, **kwargs):
     if patches:
         for patch in patches:
             if not patch.startswith("@"):
@@ -14,6 +14,7 @@ def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = Non
         "urls": urls,
         "strip_prefix": strip_prefix,
         "patches": patches,
+        "patch_cmds": patch_cmds,
         "build_file_content": build_file_content,
         "workspace_file_content": build_file_content,
     }
@@ -34,26 +35,28 @@ TYPE_TO_RULE_MAPPING = {
 
 BAZEL_DEPS = {dep["name"]: dep for dep in DEPS["bazel_deps"]}
 
-def _bazel_indirect_deps_impl(repository_ctx):
+def _bazel_deps_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "workspace(name=\"{}\")".format(repository_ctx.name))
 
     repository_ctx.file("BUILD", content = "")
 
     load_content = ""
-    indirect_deps_content = "def indirect_deps():\n"
-    for name, load_deps in zip(repository_ctx.attr.deps_name, repository_ctx.attr.deps_load_deps):
-        repository_ctx.file("repos/{}.bzl".format(name), content = load_deps)
-        load_content += 'load(":repos/{name}.bzl", {name}_deps = "deps")\n'.format(name = name)
-        indirect_deps_content += "    {name}_deps()\n".format(name = name)
-    indirect_deps_content += "    pass\n"
+    install_bazel_deps_content = "def install_bazel_deps():\n"
+    if repository_ctx.attr.deps_name:
+        for name, load_deps in zip(repository_ctx.attr.deps_name, repository_ctx.attr.deps_load_deps):
+            repository_ctx.file("repos/{}.bzl".format(name), content = load_deps)
+            load_content += 'load(":repos/{name}.bzl", {name}_deps = "deps")\n'.format(name = name)
+            install_bazel_deps_content += "    {name}_deps()\n".format(name = name)
+    else:
+        install_bazel_deps_content += "    pass\n"
 
-    repository_ctx.file("indirect_deps.bzl", content = load_content + indirect_deps_content)
+    repository_ctx.file("install_bazel_deps.bzl", content = load_content + install_bazel_deps_content)
 
     for path, label in zip(repository_ctx.attr.paths, repository_ctx.attr.labels):
         repository_ctx.symlink(label, path)
 
-_bazel_indirect_deps = repository_rule(
-    implementation = _bazel_indirect_deps_impl,
+_bazel_deps = repository_rule(
+    implementation = _bazel_deps_impl,
     attrs = {
         "deps_name": attr.string_list(default = []),
         "deps_load_deps": attr.string_list(default = []),
@@ -68,15 +71,16 @@ def bazel_deps(
         type_to_rule_mapping = TYPE_TO_RULE_MAPPING,
         deps = BAZEL_DEPS,
         local_config_platform_name = "local_config_platform"):
-    native.local_config_platform(name = local_config_platform_name)
-    indirect_deps_name = []
-    indirect_deps_load_deps = []
+    if local_config_platform_name != None:
+        native.local_config_platform(name = local_config_platform_name)
+    install_bazel_deps_name = []
+    install_bazel_deps_load_deps = []
     for dep in deps.values():
         rule, _rule = type_to_rule_mapping[dep["type"]]
         maybe(rule, **_rule(**dep))
         if "load_deps" in dep:
-            indirect_deps_name.append(dep["name"])
-            indirect_deps_load_deps.append(dep["load_deps"])
+            install_bazel_deps_name.append(dep["name"])
+            install_bazel_deps_load_deps.append(dep["load_deps"])
 
     files = [
         "container_deps.bzl",
@@ -87,10 +91,10 @@ def bazel_deps(
         "pip_deps.bzl",
         "toolchain_deps.bzl",
     ]
-    _bazel_indirect_deps(
+    _bazel_deps(
         name = name,
-        deps_name = indirect_deps_name,
-        deps_load_deps = indirect_deps_load_deps,
+        deps_name = install_bazel_deps_name,
+        deps_load_deps = install_bazel_deps_load_deps,
         paths = files,
         labels = [Label("//tools/build/repo_rules/workspace:{}".format(file)) for file in files],
     )

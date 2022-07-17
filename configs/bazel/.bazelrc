@@ -1,5 +1,8 @@
 # See https://github.com/bazelbuild/rules_docker/blob/6ea707babdcd54514e0884278ac624fb8bda19c1/docs/container.md
 build --loading_phase_threads=1
+query --loading_phase_threads=1
+fetch --loading_phase_threads=1
+sync --loading_phase_threads=1
 
 build --conlyopt=-std=c{c_version}
 build --host_conlyopt=-std=c{c_version}

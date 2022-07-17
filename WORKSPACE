@@ -15,9 +15,9 @@ load("@boleynsu_org//tools/build/repo_rules/workspace:bazel_deps.bzl", "bazel_de
 
 bazel_deps()
 
-load("@bazel_deps//:indirect_deps.bzl", "indirect_deps")
+load("@bazel_deps//:install_bazel_deps.bzl", "install_bazel_deps")
 
-indirect_deps()
+install_bazel_deps()
 
 load("@bazel_deps//:nonbazel_deps.bzl", "nonbazel_deps")
 
