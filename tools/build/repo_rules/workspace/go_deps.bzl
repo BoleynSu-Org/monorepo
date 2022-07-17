@@ -50,8 +50,8 @@ def _gazelle_go_deps_impl(repository_ctx):
         importpath = {importpath},
         sum = {sum},
         version = {version},
-        build_external = {build_external},
-        build_file_proto_mode = {build_file_proto_mode},
+        build_external = "external",
+        build_file_proto_mode = "disable",
         build_config = Label("//:build_config"),
     )
 """
@@ -63,21 +63,11 @@ def _gazelle_go_deps_impl(repository_ctx):
             path = importpath.split("/")
             name = "_".join(reversed(path[0].split(".")) + path[1:]).replace(".", "_").replace("-", "_").replace("/", "_").lower()
             if not version.endswith("/go.mod"):
-                build_external = None
-                build_file_proto_mode = None
-                if importpath in GO_PACKAGES:
-                    package = GO_PACKAGES[importpath]
-                    if "build_external" in package:
-                        build_external = package["build_external"]
-                    if "build_file_proto_mode" in package:
-                        build_file_proto_mode = package["build_file_proto_mode"]
                 dependencies += dependency_template.format(
                     name = repr(name),
                     importpath = repr(importpath),
                     sum = repr(sum),
                     version = repr(version),
-                    build_external = repr(build_external),
-                    build_file_proto_mode = repr(build_file_proto_mode),
                 )
                 build_config += "# gazelle:repository go_repository name={name} importpath={importpath}\n".format(
                     name = name,
