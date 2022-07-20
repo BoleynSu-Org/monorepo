@@ -17,7 +17,7 @@ def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = Non
         "patch_cmds": patch_cmds,
         "build_file": build_file,
         "build_file_content": build_file_content,
-        "workspace_file_content": build_file_content,
+        "workspace_file_content": workspace_file_content,
     }
 
 def to_http_file(*, name, sha256, url = None, urls = None, executable = None, downloaded_file_path = None, **kwargs):
