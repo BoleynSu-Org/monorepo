@@ -21,11 +21,7 @@ install_bazel_deps()
 
 load("@bazel_deps//:nonbazel_deps.bzl", "nonbazel_deps")
 
-nonbazel_deps(
-    maven_deps_config = dict(
-        strict_visibility = False,  # FIXME(https://github.com/grpc/grpc-java/issues/9288): remove strict_visibility=False after the upstream issue is fixed.
-    ),
-)
+nonbazel_deps()
 
 load("@bazel_deps//:install_nonbazel_deps.bzl", "install_nonbazel_deps")
 
