@@ -45,6 +45,7 @@ def _bazel_deps_impl(repository_ctx):
     install_bazel_deps_content = "def install_bazel_deps():\n"
     if repository_ctx.attr.deps_name:
         for name, load_deps in zip(repository_ctx.attr.deps_name, repository_ctx.attr.deps_load_deps):
+            name = name.replace("-", "_")
             repository_ctx.file("repos/{}.bzl".format(name), content = load_deps)
             load_content += 'load(":repos/{name}.bzl", {name}_deps = "deps")\n'.format(name = name)
             install_bazel_deps_content += "    {name}_deps()\n".format(name = name)
