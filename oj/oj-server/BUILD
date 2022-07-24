@@ -3,7 +3,7 @@ load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 
 genfile(
     name = "favicon",
-    src = "@boleynsu_org//storage/public/assets:favicon",
+    src = "//storage/public/assets:favicon",
     out = "src/main/webapp/favicon.ico",
     headers = [],
 )
