@@ -1,5 +1,26 @@
 load("//tools/build/rules:genfile.bzl", "genfile")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
+load("@rules_pkg//:pkg.bzl", "pkg_zip")
+load("@rules_java//java:defs.bzl", "java_import")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+
+pkg_files(
+    name = "editarea_srcs",
+    srcs = ["@com_github_cdolivet_editarea//:editarea"],
+    prefix = "webapp/static/editarea",
+    strip_prefix = strip_prefix.from_root("/edit_area"),
+)
+
+pkg_zip(
+    name = "editarea_jar",
+    srcs = ["editarea_srcs"],
+    out = "editarea.jar",
+)
+
+java_import(
+    name = "editarea",
+    jars = [":editarea_jar"],
+)
 
 genfile(
     name = "favicon",
@@ -36,12 +57,10 @@ java_image(
         "src/main/webapp/static/my.js",
         # config
         "src/main/webapp/WEB-INF/web.xml",
-    ] + glob([
-        # editarea
-        "src/main/webapp/static/editarea/**",
-    ]),
+    ],
     visibility = ["//visibility:public"],
     runtime_deps = [
+        ":editarea",
         "@io_grpc_grpc_java//netty",
         "@maven//:org_webjars_bootstrap",
         "@maven//:org_webjars_jquery",
