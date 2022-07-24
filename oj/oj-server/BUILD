@@ -7,13 +7,13 @@ load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 pkg_files(
     name = "editarea_srcs",
     srcs = ["@com_github_cdolivet_editarea//:editarea"],
-    prefix = "webapp/static/editarea",
+    prefix = "META-INF/resources/static/editarea",
     strip_prefix = strip_prefix.from_root("/edit_area"),
 )
 
 pkg_zip(
     name = "editarea_jar",
-    srcs = ["editarea_srcs"],
+    srcs = [":editarea_srcs"],
     out = "editarea.jar",
 )
 
