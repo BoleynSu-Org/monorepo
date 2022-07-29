@@ -183,6 +183,8 @@ bazel_deps:
   updated_at: '2022-07-17'
   version: v0.26.0
   strip_prefix: bazel-gazelle-0.26.0
+  # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
+  # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
   - "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl"
   - sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl
@@ -1241,6 +1243,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -671423664 or hash(_DEPS_JSON) != 464300573 else None]
+""") if hash(_DEPS_YAML) != 816505437 or hash(_DEPS_JSON) != 464300573 else None]
 
 DEPS = json.decode(_DEPS_JSON)
