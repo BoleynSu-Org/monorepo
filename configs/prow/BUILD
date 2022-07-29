@@ -1,5 +1,5 @@
+load("@bazel_deps//:container_deps.bzl", "CONTAINER_IMAGES")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
-load("//tools/build/repo_rules/workspace:container_deps.bzl", "CONTAINER_IMAGES")
 
 CI_RUNNER_IMAGE = CONTAINER_IMAGES["io_quay_boleynsu_ci_runner"]
 

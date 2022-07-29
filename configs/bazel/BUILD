@@ -1,6 +1,6 @@
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@bazel_deps//:toolchain_deps.bzl", "BAZEL_VERSION", "CPP_VERSION", "C_VERSION", "JAVA_VERSION")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
-load("//tools/build/repo_rules/workspace:toolchain_deps.bzl", "BAZEL_VERSION", "CPP_VERSION", "C_VERSION", "JAVA_VERSION")
 
 expand_template(
     name = "bazelrc",

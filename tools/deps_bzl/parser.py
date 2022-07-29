@@ -70,15 +70,22 @@ To manually update some deps,
         eval('r"""\n' + f"{deps_yaml}" + '"""')  # pylint: disable=eval-used
     )
 
-    deps_json = json.dumps(deps)
-    deps_json_hash = _hash(deps_json)
+    deps_json = json.dumps(deps, indent=2)
+    assert '"""' not in deps_json, '""" is not allowed in the generated json'
+    deps_json_hash = _hash(
+        f"""
+{deps_json}
+"""
+    )
     output = f'''"""
 deps.bzl
 {update_msg}{pin_msg}"""
 {DEPS_YAML_PREFIX}{deps_yaml}{DEPS_YAML_SUFFIX}
 # DO NOT EDIT THE NEXT LINES! They are auto-generated.
 
-_DEPS_JSON = {repr(deps_json)}
+_DEPS_JSON = r"""
+{deps_json}
+"""
 
 [print("""
 deps.bzl is outdated!

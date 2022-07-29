@@ -3,10 +3,12 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file"
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, patch_cmds = None, build_file = None, build_file_content = None, workspace_file_content = None, **kwargs):
-    if patches:
+    if patches != None:
         for patch in patches:
             if not patch.startswith("@"):
                 fail("The target for patches must specify workspace name.")
+    if build_file != None and not build_file.startswith("@"):
+        fail("The target for build_file must specify workspace name.")
     return {
         "name": name,
         "sha256": sha256,
@@ -85,6 +87,7 @@ def bazel_deps(
             install_bazel_deps_load_deps.append(dep["load_deps"])
 
     files = [
+        "bazel_deps.bzl",
         "container_deps.bzl",
         "go_deps.bzl",
         "install_nonbazel_deps.bzl",
