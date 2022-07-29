@@ -3,7 +3,7 @@ def _expand_template_impl(ctx):
         template = ctx.file.template,
         output = ctx.outputs.out,
         substitutions = ctx.attr.substitutions,
-        is_executable = True,
+        is_executable = ctx.attr.is_executable,
     )
     files = depset(direct = [ctx.outputs.out])
     runfiles = ctx.runfiles(files = [ctx.outputs.out])
@@ -15,11 +15,12 @@ _expand_template = rule(
         "template": attr.label(allow_single_file = True, mandatory = True),
         "substitutions": attr.string_dict(mandatory = True),
         "out": attr.output(mandatory = True),
+        "is_executable": attr.bool(mandatory = True),
     },
-    output_to_genfiles = True,
+    provides = [DefaultInfo],
 )
 
-def expand_template(*, name, substitutions, template = None, out = None, **kwargs):
+def expand_template(*, name, substitutions, template = None, out = None, is_executable = False, **kwargs):
     if not substitutions:
         fail("Please use copy_file provided by @bazel_skylib instead!")
     if template == None:
@@ -31,5 +32,6 @@ def expand_template(*, name, substitutions, template = None, out = None, **kwarg
         template = template,
         substitutions = substitutions,
         out = out,
+        is_executable = is_executable,
         **kwargs
     )
