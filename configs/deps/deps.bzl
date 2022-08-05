@@ -167,11 +167,11 @@ bazel_deps:
       rules_pkg_dependencies()
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: f6ecacf924da06aa1c97b4339a74e8d4e345af083b5d197d0758c90881205108
-  strip_prefix: grpc-java-1.48.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.48.0.tar.gz
-  updated_at: '2022-07-22'
-  version: v1.48.0
+  sha256: 88b12b2b4e0beb849eddde98d5373f2f932513229dbf9ec86cc8e4912fc75e79
+  strip_prefix: grpc-java-1.48.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.48.1.tar.gz
+  updated_at: '2022-08-05'
+  version: v1.48.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -459,8 +459,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:fdef718df26ad3f74ebadac9568a60c0507d045c3a28ac8fdccf412a8bebe85b
-  updated_at: '2022-07-26'
+  digest: sha256:dbe91fb3bce46aa30cfc04c625f09badf056c36b53915f25162d5e6949ca5588
+  updated_at: '2022-08-05'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
@@ -685,11 +685,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "f6ecacf924da06aa1c97b4339a74e8d4e345af083b5d197d0758c90881205108",
-      "strip_prefix": "grpc-java-1.48.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.48.0.tar.gz",
-      "updated_at": "2022-07-22",
-      "version": "v1.48.0",
+      "sha256": "88b12b2b4e0beb849eddde98d5373f2f932513229dbf9ec86cc8e4912fc75e79",
+      "strip_prefix": "grpc-java-1.48.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.48.1.tar.gz",
+      "updated_at": "2022-08-05",
+      "version": "v1.48.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -1113,8 +1113,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:fdef718df26ad3f74ebadac9568a60c0507d045c3a28ac8fdccf412a8bebe85b",
-      "updated_at": "2022-07-26"
+      "digest": "sha256:dbe91fb3bce46aa30cfc04c625f09badf056c36b53915f25162d5e6949ca5588",
+      "updated_at": "2022-08-05"
     },
     {
       "name": "java_image_base",
@@ -1243,6 +1243,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 816505437 or hash(_DEPS_JSON) != 464300573 else None]
+""") if hash(_DEPS_YAML) != -1862615679 or hash(_DEPS_JSON) != 1778078239 else None]
 
 DEPS = json.decode(_DEPS_JSON)
