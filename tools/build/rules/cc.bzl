@@ -51,16 +51,12 @@ def _cc_build_failure_impl(ctx):
         args.add(output_file)
         args.add(cc_compiler_path)
         args.add_all(command_line)
-        for define in compilation_context.defines.to_list():
-            args.add("-D" + define)
-        for define in compilation_context.local_defines.to_list():
-            args.add("-D" + define)
-        for i in compilation_context.framework_includes.to_list():
-            args.add("-F" + i)
-        for i in compilation_context.includes.to_list():
-            args.add("-I" + i)
-        args.add_all(compilation_context.quote_includes.to_list(), before_each = "-iquote")
-        args.add_all(compilation_context.system_includes.to_list(), before_each = "-isystem")
+        args.add_all(compilation_context.defines, before_each = "-D")
+        args.add_all(compilation_context.local_defines, before_each = "-D")
+        args.add_all(compilation_context.framework_includes, before_each = "-F")
+        args.add_all(compilation_context.includes, before_each = "-I")
+        args.add_all(compilation_context.quote_includes, before_each = "-iquote")
+        args.add_all(compilation_context.system_includes, before_each = "-isystem")
         ctx.actions.run(
             executable = ctx.executable._cc_build_failure,
             arguments = [args],
