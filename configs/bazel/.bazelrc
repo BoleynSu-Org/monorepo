@@ -35,7 +35,7 @@ build:remote_common --extra_toolchains=@boleynsu_org//configs/build/toolchains:c
 ## Misc
 build:remote_common --jobs=24
 ### FIXME(https://github.com/bazelbuild/bazel/issues/12712)
-build --crosstool_top=@boleynsu_org//third_party/rbe-ubuntu18-04/cc:toolchain
+build:remote_common --crosstool_top=@boleynsu_org//third_party/rbe-ubuntu18-04/cc:toolchain
 
 build:remote --config=remote_common
 build:remote --remote_download_minimal
