@@ -83,6 +83,8 @@ spec:
         securityContext:
           runAsUser: 1993
           runAsGroup: 1993
+      imagePullSecrets:
+        - name: registry-access-token-secret
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -138,45 +140,8 @@ spec:
         securityContext:
           runAsUser: 1993
           runAsGroup: 1993
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: oj-db
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: oj-db
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        app: oj-db
-    spec:
-      volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: oj-pv-claim
-      containers:
-      - name: oj-db
-        volumeMounts:
-        - name: data
-          mountPath: /var/lib/mysql
-          subPath: "db"
-        image: docker.io/library/mariadb
-        ports:
-        - name: mariadb
-          containerPort: 3306
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: oj-secret
-              key: DB_PASSWORD
-        - name: TZ
-          value: Hongkong
+      imagePullSecrets:
+        - name: registry-access-token-secret
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -217,6 +182,47 @@ spec:
         securityContext:
           runAsUser: 1993
           runAsGroup: 1993
+      imagePullSecrets:
+        - name: registry-access-token-secret
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oj-db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: oj-db
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: oj-pv-claim
+      containers:
+      - name: oj-db
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/mysql
+          subPath: "db"
+        image: docker.io/library/mariadb
+        ports:
+        - name: mariadb
+          containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: oj-secret
+              key: DB_PASSWORD
+        - name: TZ
+          value: Hongkong
 ---
 apiVersion: apps/v1
 kind: Deployment
