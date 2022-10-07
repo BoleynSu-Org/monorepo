@@ -40,11 +40,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: b593d13bb43c94ce94b483c2858e53a9b811f6f10e1e0eedc61073bd90e58d9c
-  strip_prefix: rules_python-0.12.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.12.0.tar.gz
-  updated_at: '2022-09-16'
-  version: 0.12.0
+  sha256: 8c8fe44ef0a9afc256d1e75ad5f448bb59b81aba149b8958f02f7b3a98f5d9b4
+  strip_prefix: rules_python-0.13.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.13.0.tar.gz
+  updated_at: '2022-10-07'
+  version: 0.13.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -167,11 +167,11 @@ bazel_deps:
       rules_pkg_dependencies()
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: d1b8977d11d73ccf39642b1d26b87022fb745678ffabe60906087c8e94c0507a
-  strip_prefix: grpc-java-1.49.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.49.1.tar.gz
-  updated_at: '2022-09-23'
-  version: v1.49.1
+  sha256: 1b7d8fa9cf549234e68c79a593fe840bb7c7d9bea05b6ad486b90f8e7599b8aa
+  strip_prefix: grpc-java-1.49.2
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.49.2.tar.gz
+  updated_at: '2022-10-07'
+  version: v1.49.2
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -222,11 +222,11 @@ maven_deps:
   version: 8.0.30
   updated_at: '2022-07-26'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.0.23
-  updated_at: '2022-07-26'
+  version: 10.1.0
+  updated_at: '2022-10-07'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.0.23
-  updated_at: '2022-07-26'
+  version: 10.1.0
+  updated_at: '2022-10-07'
 - name: org.webjars:jquery
   version: 3.6.1
   updated_at: '2022-09-16'
@@ -459,64 +459,64 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:41369fd7e1a25c065cf21ab9794ec39dac145ed5686037ec5a2abc218d8a98f5
-  updated_at: '2022-09-23'
+  digest: sha256:aab1d04b73dfb7017e8bca30f7418707f4d84bfc73740c07797ed7fe0db9ecf3
+  updated_at: '2022-10-07'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:c0ab51f8e35f6d16d91817b45ce3d6ba5d0e5fddcbf74208ed538632e30bf6ab
-  updated_at: '2022-09-23'
+  digest: sha256:edf8cfa422fc2b04962d016d3310ba0e13b26a862dbdd5316045b65eef83a89f
+  updated_at: '2022-10-07'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:beac61d51a5803f65cb62d0f8b3da017017b26a939a617597b7042d8b94ef67a
-  updated_at: '2022-09-23'
+  digest: sha256:39aa7ca0411a0cd3a7dd251a274383b41ff5d934c710f7c1984272e28d098d7e
+  updated_at: '2022-10-07'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:9ec051de2b75e7d413534ea0e9934210db769973a96d11f8ab6607d15f4b9635
-  updated_at: '2022-09-23'
+  digest: sha256:6d35ff84008bb0f369f0c2af94843667f5f17d806a1e4fc058421bbef4b02aeb
+  updated_at: '2022-10-07'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:e4a7a5d73ebf41921cc9cdd043946c233d3d6650f4495b4383770ccaabc458a6
-  updated_at: '2022-09-16'
+  digest: sha256:8d05e80884a162e076008b5ac4ee75e0907ae7b12cf90cd77fb9ad485d4eebd9
+  updated_at: '2022-10-07'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:4266c0b1808b25215515a8e4359df08a6b0c0058cb6055b14ed1508de40dbd1e
-  updated_at: '2022-09-16'
+  digest: sha256:826bce53be26d70d4c7a99d1bdadef47f73134ed47b90b8480a2f4a96b300461
+  updated_at: '2022-10-07'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:6534498fd01b529f0297061e26055ada911f9665a80cd1543367601f704d791a
-  updated_at: '2022-09-16'
+  digest: sha256:e7f4cabc684d5038251e217d8c959bb9bbcda958568be3b960ac78f19d7204be
+  updated_at: '2022-10-07'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:a7436badb916baa7d92533dfbc7140c329a0d9db1bf81c14151cf89bc01928b4
-  updated_at: '2022-09-16'
+  digest: sha256:99252947b483b5c14d0004c633964d1a235776a3d70f5ca355e9ef8d24cb8275
+  updated_at: '2022-10-07'
 - name: io_quay_boleynsu_ci_runner
   version: '20220923'
   registry: quay.io
@@ -590,11 +590,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "b593d13bb43c94ce94b483c2858e53a9b811f6f10e1e0eedc61073bd90e58d9c",
-      "strip_prefix": "rules_python-0.12.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.12.0.tar.gz",
-      "updated_at": "2022-09-16",
-      "version": "0.12.0",
+      "sha256": "8c8fe44ef0a9afc256d1e75ad5f448bb59b81aba149b8958f02f7b3a98f5d9b4",
+      "strip_prefix": "rules_python-0.13.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.13.0.tar.gz",
+      "updated_at": "2022-10-07",
+      "version": "0.13.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
@@ -688,11 +688,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "d1b8977d11d73ccf39642b1d26b87022fb745678ffabe60906087c8e94c0507a",
-      "strip_prefix": "grpc-java-1.49.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.49.1.tar.gz",
-      "updated_at": "2022-09-23",
-      "version": "v1.49.1",
+      "sha256": "1b7d8fa9cf549234e68c79a593fe840bb7c7d9bea05b6ad486b90f8e7599b8aa",
+      "strip_prefix": "grpc-java-1.49.2",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.49.2.tar.gz",
+      "updated_at": "2022-10-07",
+      "version": "v1.49.2",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -750,13 +750,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.0.23",
-      "updated_at": "2022-07-26"
+      "version": "10.1.0",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.0.23",
-      "updated_at": "2022-07-26"
+      "version": "10.1.0",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "org.webjars:jquery",
@@ -1116,8 +1116,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:41369fd7e1a25c065cf21ab9794ec39dac145ed5686037ec5a2abc218d8a98f5",
-      "updated_at": "2022-09-23"
+      "digest": "sha256:aab1d04b73dfb7017e8bca30f7418707f4d84bfc73740c07797ed7fe0db9ecf3",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "java_image_base",
@@ -1126,8 +1126,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:c0ab51f8e35f6d16d91817b45ce3d6ba5d0e5fddcbf74208ed538632e30bf6ab",
-      "updated_at": "2022-09-23"
+      "digest": "sha256:edf8cfa422fc2b04962d016d3310ba0e13b26a862dbdd5316045b65eef83a89f",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "py3_debug_image_base",
@@ -1136,8 +1136,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:beac61d51a5803f65cb62d0f8b3da017017b26a939a617597b7042d8b94ef67a",
-      "updated_at": "2022-09-23"
+      "digest": "sha256:39aa7ca0411a0cd3a7dd251a274383b41ff5d934c710f7c1984272e28d098d7e",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "py3_image_base",
@@ -1146,8 +1146,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:9ec051de2b75e7d413534ea0e9934210db769973a96d11f8ab6607d15f4b9635",
-      "updated_at": "2022-09-23"
+      "digest": "sha256:6d35ff84008bb0f369f0c2af94843667f5f17d806a1e4fc058421bbef4b02aeb",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "go_debug_image_base",
@@ -1156,8 +1156,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:e4a7a5d73ebf41921cc9cdd043946c233d3d6650f4495b4383770ccaabc458a6",
-      "updated_at": "2022-09-16"
+      "digest": "sha256:8d05e80884a162e076008b5ac4ee75e0907ae7b12cf90cd77fb9ad485d4eebd9",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "go_image_base",
@@ -1166,8 +1166,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:4266c0b1808b25215515a8e4359df08a6b0c0058cb6055b14ed1508de40dbd1e",
-      "updated_at": "2022-09-16"
+      "digest": "sha256:826bce53be26d70d4c7a99d1bdadef47f73134ed47b90b8480a2f4a96b300461",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "go_debug_image_static",
@@ -1176,8 +1176,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:6534498fd01b529f0297061e26055ada911f9665a80cd1543367601f704d791a",
-      "updated_at": "2022-09-16"
+      "digest": "sha256:e7f4cabc684d5038251e217d8c959bb9bbcda958568be3b960ac78f19d7204be",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "go_image_static",
@@ -1186,8 +1186,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:a7436badb916baa7d92533dfbc7140c329a0d9db1bf81c14151cf89bc01928b4",
-      "updated_at": "2022-09-16"
+      "digest": "sha256:99252947b483b5c14d0004c633964d1a235776a3d70f5ca355e9ef8d24cb8275",
+      "updated_at": "2022-10-07"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1251,6 +1251,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -234520668 or hash(_DEPS_JSON) != 1707043261 else None]
+""") if hash(_DEPS_YAML) != 1383859943 or hash(_DEPS_JSON) != 902591690 else None]
 
 DEPS = json.decode(_DEPS_JSON)
