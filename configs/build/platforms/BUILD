@@ -1,8 +1,7 @@
-# See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
 platform(
-    name = "rbe-ubuntu18-04",
+    name = "rbe-ubuntu18-04_container",
     constraint_values = [
-        "@io_bazel_rules_docker//platforms:run_in_container",
+        "@io_bazel_rules_docker//platforms:run_in_container",  # See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
     ],
     parents = ["@boleynsu_org//third_party/rbe-ubuntu18-04/config:platform"],
     visibility = ["//visibility:public"],
