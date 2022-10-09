@@ -43,7 +43,7 @@ public class Main extends RunnerGrpc.RunnerImplBase {
         Runtime r = Runtime.getRuntime();
         for (String CC : new String[] { "gcc", "clang" }) {
             try {
-                if (r.exec(new String[] { "/bin/sh", "-c", "which " + CC }).waitFor() == 0) {
+                if (r.exec(new String[] { "/bin/sh", "-c", "command -v " + CC }).waitFor() == 0) {
                     return CC;
                 }
             } catch (Exception e) {
