@@ -208,6 +208,12 @@ bazel_deps:
   updated_at: '2022-07-24'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
+- name: rbe-fedora-clang
+  type: http_archive
+  url: https://build.storage.boleyn.su/rbe-fedora-clang/20220920/rbe-fedora-clang.tar.gz
+  sha256: 505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469
+  updated_at: '2022-10-09'
+  version: 20220920
 
 pip_deps:
 - name: ruamel.yaml
@@ -728,6 +734,14 @@ _DEPS_JSON = r"""
       "updated_at": "2022-07-24",
       "version": "v0.8.2",
       "build_file": "@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD"
+    },
+    {
+      "name": "rbe-fedora-clang",
+      "type": "http_archive",
+      "url": "https://build.storage.boleyn.su/rbe-fedora-clang/20220920/rbe-fedora-clang.tar.gz",
+      "sha256": "505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469",
+      "updated_at": "2022-10-09",
+      "version": 20220920
     }
   ],
   "pip_deps": [
@@ -1251,6 +1265,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1383859943 or hash(_DEPS_JSON) != 902591690 else None]
+""") if hash(_DEPS_YAML) != -574276846 or hash(_DEPS_JSON) != -1355792844 else None]
 
 DEPS = json.decode(_DEPS_JSON)
