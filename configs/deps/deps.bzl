@@ -213,7 +213,7 @@ bazel_deps:
   url: https://build.storage.boleyn.su/rbe-fedora-clang/20220920/rbe-fedora-clang.tar.gz
   sha256: 505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469
   updated_at: '2022-10-09'
-  version: 20220920
+  version: '20220920'
 
 pip_deps:
 - name: ruamel.yaml
@@ -244,9 +244,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   pinned_until: '2023-04-09'
 - name: io.undertow:undertow-core
-  version: 2.2.19.Final
+  version: 2.2.20.Final
   version_regex: (.*)\.Final
-  updated_at: '2022-09-16'
+  updated_at: '2022-10-09'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -524,12 +524,12 @@ container_deps:
   digest: sha256:99252947b483b5c14d0004c633964d1a235776a3d70f5ca355e9ef8d24cb8275
   updated_at: '2022-10-07'
 - name: io_quay_boleynsu_ci_runner
-  version: '20220923'
+  version: '20221009'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20220923'
-  digest: sha256:054b8a35cf661b2017390a81dffbedb6f45b27def4b868dc1ec07b52b481a3a1
-  updated_at: '2022-09-23'
+  tag: '20221009'
+  digest: sha256:2e551778a6d402a938603b7333460ae5d100e8fa0bb320aa29c6621cbf86607b
+  updated_at: '2022-10-09'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -741,7 +741,7 @@ _DEPS_JSON = r"""
       "url": "https://build.storage.boleyn.su/rbe-fedora-clang/20220920/rbe-fedora-clang.tar.gz",
       "sha256": "505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469",
       "updated_at": "2022-10-09",
-      "version": 20220920
+      "version": "20220920"
     }
   ],
   "pip_deps": [
@@ -786,9 +786,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.2.19.Final",
+      "version": "2.2.20.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2022-09-16"
+      "updated_at": "2022-10-09"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1205,12 +1205,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20220923",
+      "version": "20221009",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20220923",
-      "digest": "sha256:054b8a35cf661b2017390a81dffbedb6f45b27def4b868dc1ec07b52b481a3a1",
-      "updated_at": "2022-09-23"
+      "tag": "20221009",
+      "digest": "sha256:2e551778a6d402a938603b7333460ae5d100e8fa0bb320aa29c6621cbf86607b",
+      "updated_at": "2022-10-09"
     }
   ],
   "go_deps": [
@@ -1265,6 +1265,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -574276846 or hash(_DEPS_JSON) != -1355792844 else None]
+""") if hash(_DEPS_YAML) != -838403516 or hash(_DEPS_JSON) != -955100290 else None]
 
 DEPS = json.decode(_DEPS_JSON)
