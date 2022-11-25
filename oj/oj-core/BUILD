@@ -8,5 +8,5 @@ java_library(
         "src/main/java/su/boleyn/oj/core/SQL.java",
     ],
     visibility = ["//visibility:public"],
-    deps = ["@maven//:mysql_mysql_connector_java"],
+    deps = ["@maven//:com_mysql_mysql_connector_j"],
 )
