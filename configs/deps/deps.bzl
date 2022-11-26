@@ -53,13 +53,23 @@ bazel_deps:
         name = "python_sdk",
         python_version = PYTHON_VERSION,
       )
+- name: com_github_protocolbuffers_protobuf
+  type: http_archive
+  sha256: 0aa7df8289c957a4c54cbe694fbabe99b180e64ca0f8fdb5e2f76dcf56ff2422
+  strip_prefix: protobuf-21.9
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.9.tar.gz
+  updated_at: '2022-11-26'
+  version: v21.9
 - name: rules_proto
   type: http_archive
   sha256: 66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1
   strip_prefix: rules_proto-4.0.0
   url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz
-  updated_at: '2022-04-10'
+  updated_at: '2022-11-26'
   version: 4.0.0
+  version_regex: ([^-]*).*
+  version_skip:
+  - 5.3.0
   load_deps: |
     load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
     def deps():
@@ -228,11 +238,15 @@ maven_deps:
   version: 8.0.31
   updated_at: '2022-11-25'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.2
+  version: 10.1.1
+  version_skip:
+  - 10.1.2 # See https://github.com/spring-projects/spring-boot/issues/33167
   updated_at: '2022-11-25'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.2
-  updated_at: '2022-11-25'
+  version: 10.1.1
+  version_skip:
+  - 10.1.2 # See https://github.com/spring-projects/spring-boot/issues/33167
+  updated_at: '2022-11-26'
 - name: org.webjars:jquery
   version: 3.6.1
   updated_at: '2022-09-16'
@@ -604,13 +618,26 @@ _DEPS_JSON = r"""
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
+      "name": "com_github_protocolbuffers_protobuf",
+      "type": "http_archive",
+      "sha256": "0aa7df8289c957a4c54cbe694fbabe99b180e64ca0f8fdb5e2f76dcf56ff2422",
+      "strip_prefix": "protobuf-21.9",
+      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.9.tar.gz",
+      "updated_at": "2022-11-26",
+      "version": "v21.9"
+    },
+    {
       "name": "rules_proto",
       "type": "http_archive",
       "sha256": "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
       "strip_prefix": "rules_proto-4.0.0",
       "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
-      "updated_at": "2022-04-10",
+      "updated_at": "2022-11-26",
       "version": "4.0.0",
+      "version_regex": "([^-]*).*",
+      "version_skip": [
+        "5.3.0"
+      ],
       "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\", \"rules_proto_toolchains\")\ndef deps():\n  rules_proto_dependencies()\n  rules_proto_toolchains()\n"
     },
     {
@@ -764,13 +791,19 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.2",
+      "version": "10.1.1",
+      "version_skip": [
+        "10.1.2"
+      ],
       "updated_at": "2022-11-25"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.2",
-      "updated_at": "2022-11-25"
+      "version": "10.1.1",
+      "version_skip": [
+        "10.1.2"
+      ],
+      "updated_at": "2022-11-26"
     },
     {
       "name": "org.webjars:jquery",
@@ -1265,6 +1298,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1989568306 or hash(_DEPS_JSON) != 1994818624 else None]
+""") if hash(_DEPS_YAML) != 1272123634 or hash(_DEPS_JSON) != -414741000 else None]
 
 DEPS = json.decode(_DEPS_JSON)
