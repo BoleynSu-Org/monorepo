@@ -18,6 +18,7 @@ postsubmits:
   - name: "bazel-test-all"
     branches:
     - main
+    - ^v\d+
     decorate: true
     always_run: true
     skip_report: false
