@@ -33,15 +33,12 @@ build:remote_common --remote_executor=grpc://build.boleyn.su:8980
 build:remote_common --remote_instance_name=remote-monorepo
 build:remote_common --remote_timeout=3600
 ## Platform
-build:remote_common --host_platform=@rbe-fedora-clang//config:platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
 build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora-clang_container
-## Toolchain
-build:remote_common --extra_toolchains=@rbe-fedora-clang//config:cc-toolchain
 ## Misc
 build:remote_common --jobs=24
 ### FIXME(https://github.com/bazelbuild/bazel/issues/12712)
-build:remote_common --crosstool_top=@rbe-fedora-clang//cc:toolchain
+build:remote_common --crosstool_top=@boleynsu_org//configs/build/toolchains:fake_crosstool_top
 
 build:remote --config=remote_common
 build:remote --remote_download_minimal

@@ -73,10 +73,9 @@ def bazel_deps(
         *,
         name = "bazel_deps",
         type_to_rule_mapping = TYPE_TO_RULE_MAPPING,
-        deps = BAZEL_DEPS,
-        local_config_platform_name = "local_config_platform"):
-    if local_config_platform_name != None:
-        native.local_config_platform(name = local_config_platform_name)
+        deps = BAZEL_DEPS):
+    native.local_config_platform(name = "boleynsu_bzl_deps_local_config_platform")
+
     install_bazel_deps_name = []
     install_bazel_deps_load_deps = []
     for dep in deps.values():

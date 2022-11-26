@@ -22,10 +22,9 @@ bazel_deps:
   strip_prefix: rules_cc-0.0.4
   updated_at: '2022-09-23'
   load_deps: |
-    load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
+    load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies")
     def deps():
       rules_cc_dependencies()
-      rules_cc_toolchains()
 - name: rules_java
   type: http_archive
   sha256: 7df0811e29830e79be984f9d5bf6839ce151702d694038126d7c23296785bf97
@@ -224,6 +223,35 @@ bazel_deps:
   sha256: 505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469
   updated_at: '2022-10-09'
   version: '20220920'
+- name: com_grail_bazel_toolchain_llvm_version
+  type: http_archive
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-14.0.0.tar.gz
+  sha256: 87b1a068b370df5b79a892fdb2935922a8efb1fddec4cc506e30fe57b6a1d9c4
+  strip_prefix: llvm-project-llvmorg-14.0.0
+  version: llvmorg-14.0.0
+  version_regex: llvmorg-(.*)
+  updated_at: '2022-11-27'
+  pinned_until: '2023-11-27'
+  build_file_content: ''
+- name: com_grail_bazel_toolchain
+  type: http_archive
+  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.7.2.tar.gz
+  sha256: f7aa8e59c9d3cafde6edb372d9bd25fb4ee7293ab20b916d867cd0baaa642529
+  strip_prefix: bazel-toolchain-0.7.2
+  updated_at: '2022-10-11'
+  version: 0.7.2
+  patches:
+  - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
+  load_deps: |
+    load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
+    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
+
+    def deps():
+        llvm_toolchain(
+            name = "llvm_toolchain",
+            llvm_version = BAZEL_DEPS["com_grail_bazel_toolchain_llvm_version"]["version"][len("llvmorg-"):],
+        )
+        native.register_toolchains("@llvm_toolchain//:all")
 
 pip_deps:
 - name: ruamel.yaml
@@ -595,7 +623,7 @@ _DEPS_JSON = r"""
       "version": "0.0.4",
       "strip_prefix": "rules_cc-0.0.4",
       "updated_at": "2022-09-23",
-      "load_deps": "load(\"@rules_cc//cc:repositories.bzl\", \"rules_cc_dependencies\", \"rules_cc_toolchains\")\ndef deps():\n  rules_cc_dependencies()\n  rules_cc_toolchains()\n"
+      "load_deps": "load(\"@rules_cc//cc:repositories.bzl\", \"rules_cc_dependencies\")\ndef deps():\n  rules_cc_dependencies()\n"
     },
     {
       "name": "rules_java",
@@ -769,6 +797,31 @@ _DEPS_JSON = r"""
       "sha256": "505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469",
       "updated_at": "2022-10-09",
       "version": "20220920"
+    },
+    {
+      "name": "com_grail_bazel_toolchain_llvm_version",
+      "type": "http_archive",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-14.0.0.tar.gz",
+      "sha256": "87b1a068b370df5b79a892fdb2935922a8efb1fddec4cc506e30fe57b6a1d9c4",
+      "strip_prefix": "llvm-project-llvmorg-14.0.0",
+      "version": "llvmorg-14.0.0",
+      "version_regex": "llvmorg-(.*)",
+      "updated_at": "2022-11-27",
+      "pinned_until": "2023-11-27",
+      "build_file_content": ""
+    },
+    {
+      "name": "com_grail_bazel_toolchain",
+      "type": "http_archive",
+      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.7.2.tar.gz",
+      "sha256": "f7aa8e59c9d3cafde6edb372d9bd25fb4ee7293ab20b916d867cd0baaa642529",
+      "strip_prefix": "bazel-toolchain-0.7.2",
+      "updated_at": "2022-10-11",
+      "version": "0.7.2",
+      "patches": [
+        "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
+      ],
+      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\n\ndef deps():\n    llvm_toolchain(\n        name = \"llvm_toolchain\",\n        llvm_version = BAZEL_DEPS[\"com_grail_bazel_toolchain_llvm_version\"][\"version\"][len(\"llvmorg-\"):],\n    )\n    native.register_toolchains(\"@llvm_toolchain//:all\")\n"
     }
   ],
   "pip_deps": [
@@ -1298,6 +1351,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1272123634 or hash(_DEPS_JSON) != -414741000 else None]
+""") if hash(_DEPS_YAML) != -909781452 or hash(_DEPS_JSON) != -493777107 else None]
 
 DEPS = json.decode(_DEPS_JSON)

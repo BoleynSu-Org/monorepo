@@ -1,0 +1,12 @@
+diff --git toolchain/BUILD.llvm_repo toolchain/BUILD.llvm_repo
+index 519c1a4..9c54cce 100644
+--- toolchain/BUILD.llvm_repo
++++ toolchain/BUILD.llvm_repo
+@@ -57,6 +57,7 @@ filegroup(
+         [
+             "lib/**/lib*.a",
+             "lib/clang/*/lib/**/*.a",
++            "lib/clang/*/lib/**/*.o",
+         ],
+         exclude = [
+             "lib/libLLVM*.a",
