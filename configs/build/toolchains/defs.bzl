@@ -1,4 +1,4 @@
-def _fake_cc_toolcahin_config_impl(ctx):
+def _fake_cc_toolchain_config_impl(ctx):
     return cc_common.create_cc_toolchain_config_info(
         ctx = ctx,
         toolchain_identifier = "fake_cc",
@@ -8,8 +8,8 @@ def _fake_cc_toolcahin_config_impl(ctx):
         compiler = "fake",
     )
 
-fake_cc_toolcahin_config = rule(
-    implementation = _fake_cc_toolcahin_config_impl,
+fake_cc_toolchain_config = rule(
+    implementation = _fake_cc_toolchain_config_impl,
     attrs = {},
     provides = [CcToolchainConfigInfo],
 )

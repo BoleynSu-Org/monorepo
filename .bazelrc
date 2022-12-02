@@ -17,6 +17,9 @@ build --java_runtime_version=remotejdk_11
 build --tool_java_language_version=11
 build --tool_java_runtime_version=remotejdk_11
 
+### FIXME(https://github.com/bazelbuild/bazel/issues/12712)
+build --crosstool_top=@boleynsu_org//configs/build/toolchains:fake_crosstool_top
+
 # See https://github.com/bazelbuild/bazel/issues/6648#issuecomment-1133656002
 build --incompatible_strict_action_env=true
 # See https://github.com/bazelbuild/bazel/issues/7260
@@ -37,8 +40,6 @@ build:remote_common --remote_timeout=3600
 build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora-clang_container
 ## Misc
 build:remote_common --jobs=24
-### FIXME(https://github.com/bazelbuild/bazel/issues/12712)
-build:remote_common --crosstool_top=@boleynsu_org//configs/build/toolchains:fake_crosstool_top
 
 build:remote --config=remote_common
 build:remote --remote_download_minimal

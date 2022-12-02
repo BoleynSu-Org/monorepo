@@ -1,6 +1,6 @@
 load("@rules_cc//cc:defs.bzl", "cc_toolchain", "cc_toolchain_suite")
 load("@io_bazel_rules_k8s//toolchains/kubectl:kubectl_toolchain.bzl", "kubectl_toolchain")
-load("defs.bzl", "fake_cc_toolcahin_config")
+load(":defs.bzl", "fake_cc_toolchain_config")
 
 cc_toolchain_suite(
     name = "fake_crosstool_top",
@@ -19,8 +19,8 @@ filegroup(
     srcs = [],
 )
 
-fake_cc_toolcahin_config(
-    name = "fake_cc_toolcahin_config",
+fake_cc_toolchain_config(
+    name = "fake_cc_toolchain_config",
 )
 
 cc_toolchain(
@@ -34,7 +34,7 @@ cc_toolchain(
     objcopy_files = ":empty",
     strip_files = ":empty",
     supports_param_files = 1,
-    toolchain_config = ":fake_cc_toolcahin_config",
+    toolchain_config = ":fake_cc_toolchain_config",
 )
 
 kubectl_toolchain(
