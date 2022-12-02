@@ -39,11 +39,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: a868059c8c6dd6ad45a205cca04084c652cfe1852e6df2d5aca036f6e5438380
-  strip_prefix: rules_python-0.14.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.14.0.tar.gz
-  updated_at: '2022-11-25'
-  version: 0.14.0
+  sha256: bc4e59e17c7809a5b373ba359e2c974ed2386c58634819ac5a89c0813c15705c
+  strip_prefix: rules_python-0.15.1
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.15.1.tar.gz
+  updated_at: '2022-12-02'
+  version: 0.15.1
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -54,11 +54,11 @@ bazel_deps:
       )
 - name: com_github_protocolbuffers_protobuf
   type: http_archive
-  sha256: 0aa7df8289c957a4c54cbe694fbabe99b180e64ca0f8fdb5e2f76dcf56ff2422
-  strip_prefix: protobuf-21.9
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.9.tar.gz
-  updated_at: '2022-11-26'
-  version: v21.9
+  sha256: f3f9ce6dc288f2f939bdc9d277ebdfbc8dbcd51741071f93da70e0e62919f57f
+  strip_prefix: protobuf-21.10
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.10.tar.gz
+  updated_at: '2022-12-02'
+  version: v21.10
 - name: rules_proto
   type: http_archive
   sha256: 66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1
@@ -566,12 +566,12 @@ container_deps:
   digest: sha256:ebd8cc37d22551dce0957ba8e58f03b22a8448bbf844c8c9ded4feef883b36bc
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_ci_runner
-  version: '20221009'
+  version: '20221127'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20221009'
-  digest: sha256:2e551778a6d402a938603b7333460ae5d100e8fa0bb320aa29c6621cbf86607b
-  updated_at: '2022-10-09'
+  tag: '20221127'
+  digest: sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f
+  updated_at: '2022-12-02'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -638,21 +638,21 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "a868059c8c6dd6ad45a205cca04084c652cfe1852e6df2d5aca036f6e5438380",
-      "strip_prefix": "rules_python-0.14.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.14.0.tar.gz",
-      "updated_at": "2022-11-25",
-      "version": "0.14.0",
+      "sha256": "bc4e59e17c7809a5b373ba359e2c974ed2386c58634819ac5a89c0813c15705c",
+      "strip_prefix": "rules_python-0.15.1",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.15.1.tar.gz",
+      "updated_at": "2022-12-02",
+      "version": "0.15.1",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
       "name": "com_github_protocolbuffers_protobuf",
       "type": "http_archive",
-      "sha256": "0aa7df8289c957a4c54cbe694fbabe99b180e64ca0f8fdb5e2f76dcf56ff2422",
-      "strip_prefix": "protobuf-21.9",
-      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.9.tar.gz",
-      "updated_at": "2022-11-26",
-      "version": "v21.9"
+      "sha256": "f3f9ce6dc288f2f939bdc9d277ebdfbc8dbcd51741071f93da70e0e62919f57f",
+      "strip_prefix": "protobuf-21.10",
+      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.10.tar.gz",
+      "updated_at": "2022-12-02",
+      "version": "v21.10"
     },
     {
       "name": "rules_proto",
@@ -1291,12 +1291,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20221009",
+      "version": "20221127",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20221009",
-      "digest": "sha256:2e551778a6d402a938603b7333460ae5d100e8fa0bb320aa29c6621cbf86607b",
-      "updated_at": "2022-10-09"
+      "tag": "20221127",
+      "digest": "sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f",
+      "updated_at": "2022-12-02"
     }
   ],
   "go_deps": [
@@ -1351,6 +1351,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -909781452 or hash(_DEPS_JSON) != -493777107 else None]
+""") if hash(_DEPS_YAML) != -1194699414 or hash(_DEPS_JSON) != -1683038131 else None]
 
 DEPS = json.decode(_DEPS_JSON)
