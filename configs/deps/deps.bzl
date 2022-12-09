@@ -39,11 +39,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: bc4e59e17c7809a5b373ba359e2c974ed2386c58634819ac5a89c0813c15705c
-  strip_prefix: rules_python-0.15.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.15.1.tar.gz
-  updated_at: '2022-12-02'
-  version: 0.15.1
+  sha256: 497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a
+  strip_prefix: rules_python-0.16.1
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz
+  updated_at: '2022-12-09'
+  version: 0.16.1
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -54,11 +54,11 @@ bazel_deps:
       )
 - name: com_github_protocolbuffers_protobuf
   type: http_archive
-  sha256: f3f9ce6dc288f2f939bdc9d277ebdfbc8dbcd51741071f93da70e0e62919f57f
-  strip_prefix: protobuf-21.10
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.10.tar.gz
-  updated_at: '2022-12-02'
-  version: v21.10
+  sha256: b1d6dd2cbb5d87e17af41cadb720322ce7e13af826268707bd8db47e5654770b
+  strip_prefix: protobuf-21.11
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.11.tar.gz
+  updated_at: '2022-12-09'
+  version: v21.11
 - name: rules_proto
   type: http_archive
   sha256: 66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1
@@ -76,11 +76,11 @@ bazel_deps:
       rules_proto_toolchains()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: 667aa901ff13d19b2ed56534f8d4a99903534e7a65be24264c7f182cf0af3d7b
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.36.0.tar.gz
-  updated_at: '2022-11-25'
-  version: v0.36.0
-  strip_prefix: rules_go-0.36.0
+  sha256: 72a48b34d1ffd40c11899123dd1613daef4f618c536092b0fe7be061f919cceb
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.37.0.tar.gz
+  updated_at: '2022-12-09'
+  version: v0.37.0
+  strip_prefix: rules_go-0.37.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -203,11 +203,11 @@ bazel_deps:
       gazelle_dependencies(go_sdk = "go_sdk")
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.25.4.tar.gz
-  sha256: bf6ae12df9da5aed9f724bd7b44a55d0a96e7e387c28055314bc1ac7b137401b
-  strip_prefix: kubernetes-1.25.4
-  updated_at: '2022-11-25'
-  version: v1.25.4
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.0.tar.gz
+  sha256: a0de781db6d09d91f39306740420f150c5912606f52e4c9a859649f4313fe508
+  strip_prefix: kubernetes-1.26.0
+  updated_at: '2022-12-09'
+  version: v1.26.0
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -507,8 +507,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:1cb07264908cd37070132fd3f329e35b9d1727c582235c4b34b0d78eecaa38e0
-  updated_at: '2022-11-25'
+  digest: sha256:7c47e92d0d245cae3168bbca389aa1bf78e37b58b842dfb0c0ad37a7d590a3cb
+  updated_at: '2022-12-09'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
@@ -523,8 +523,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:c8d62e4e459225bdffb54f4dff098e6cc6f7750d98e86036f5727141f6d970e2
-  updated_at: '2022-11-25'
+  digest: sha256:e29acad938bb9f9dfda37d079920daccc0bba47cd844c0a229fdb7e1fa254ce4
+  updated_at: '2022-12-09'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
@@ -539,8 +539,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:65668d2b78d25df3d8ccf5a778d017fcaba513b52078c700083eaeef212b9979
-  updated_at: '2022-11-25'
+  digest: sha256:d8eda7950b5c73777fb68cae7b7042faccf3f29461f7291b215863b0c82fca86
+  updated_at: '2022-12-09'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
@@ -555,8 +555,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:56655dceb80c142846d72bf164b02a15c2e8a4d7537900fde710a408eb66fad2
-  updated_at: '2022-11-25'
+  digest: sha256:88be3769dd1d1693678a1daf4dfe9d26c83c6b3d777cf5add4a241fdbadd698d
+  updated_at: '2022-12-09'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
@@ -575,11 +575,44 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.25.4
-  updated_at: '2022-11-25'
+  version: v0.26.0
+  # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
+  patch_cmds:
+  - |
+    rm pkg/explain/v2/templates/BUILD.bazel
+    cat <<EOF >pkg/explain/v2/BUILD.bazel
+    load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+    go_library(
+        name = "explain",
+        srcs = [
+            "explain.go",
+            "funcs.go",
+            "generator.go",
+            "template.go",
+        ],
+        embedsrcs = glob([
+            "templates/*.tmpl"
+        ]),
+        importpath = "k8s.io/kubectl/pkg/explain/v2",
+        importpath_aliases = ["k8s.io/kubectl/pkg/explain"],
+        visibility = ["//visibility:public"],
+        deps = [
+            "//pkg/util/term",
+            "@com_github_go_openapi_jsonreference//:jsonreference",
+            "@io_k8s_apimachinery//pkg/runtime",
+            "@io_k8s_apimachinery//pkg/runtime/schema",
+            "@io_k8s_client_go//openapi",
+        ],
+    )
+    EOF
+  updated_at: '2022-12-09'
 - name: k8s.io/client-go
-  version: v0.25.4
-  updated_at: '2022-11-25'
+  version: v0.26.0
+  updated_at: '2022-12-09'
+- name: k8s.io/component-base
+  version: v0.26.0
+  updated_at: '2022-12-09'
 
 toolchain_deps:
 - name: bazel
@@ -598,8 +631,8 @@ toolchain_deps:
   version: '3.10'
   updated_at: '2022-05-05'
 - name: golang
-  version: '1.18'
-  updated_at: '2022-05-05'
+  version: '1.19'
+  updated_at: '2022-12-09'
 """
 # END deps.yaml
 
@@ -638,21 +671,21 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "bc4e59e17c7809a5b373ba359e2c974ed2386c58634819ac5a89c0813c15705c",
-      "strip_prefix": "rules_python-0.15.1",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.15.1.tar.gz",
-      "updated_at": "2022-12-02",
-      "version": "0.15.1",
+      "sha256": "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
+      "strip_prefix": "rules_python-0.16.1",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz",
+      "updated_at": "2022-12-09",
+      "version": "0.16.1",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
       "name": "com_github_protocolbuffers_protobuf",
       "type": "http_archive",
-      "sha256": "f3f9ce6dc288f2f939bdc9d277ebdfbc8dbcd51741071f93da70e0e62919f57f",
-      "strip_prefix": "protobuf-21.10",
-      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.10.tar.gz",
-      "updated_at": "2022-12-02",
-      "version": "v21.10"
+      "sha256": "b1d6dd2cbb5d87e17af41cadb720322ce7e13af826268707bd8db47e5654770b",
+      "strip_prefix": "protobuf-21.11",
+      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.11.tar.gz",
+      "updated_at": "2022-12-09",
+      "version": "v21.11"
     },
     {
       "name": "rules_proto",
@@ -671,11 +704,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "667aa901ff13d19b2ed56534f8d4a99903534e7a65be24264c7f182cf0af3d7b",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.36.0.tar.gz",
-      "updated_at": "2022-11-25",
-      "version": "v0.36.0",
-      "strip_prefix": "rules_go-0.36.0",
+      "sha256": "72a48b34d1ffd40c11899123dd1613daef4f618c536092b0fe7be061f919cceb",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.37.0.tar.gz",
+      "updated_at": "2022-12-09",
+      "version": "v0.37.0",
+      "strip_prefix": "rules_go-0.37.0",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_register_toolchains\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_register_toolchains(version = GOLANG_VERSION)\n"
     },
     {
@@ -773,11 +806,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.25.4.tar.gz",
-      "sha256": "bf6ae12df9da5aed9f724bd7b44a55d0a96e7e387c28055314bc1ac7b137401b",
-      "strip_prefix": "kubernetes-1.25.4",
-      "updated_at": "2022-11-25",
-      "version": "v1.25.4",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.0.tar.gz",
+      "sha256": "a0de781db6d09d91f39306740420f150c5912606f52e4c9a859649f4313fe508",
+      "strip_prefix": "kubernetes-1.26.0",
+      "updated_at": "2022-12-09",
+      "version": "v1.26.0",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -1216,8 +1249,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:1cb07264908cd37070132fd3f329e35b9d1727c582235c4b34b0d78eecaa38e0",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:7c47e92d0d245cae3168bbca389aa1bf78e37b58b842dfb0c0ad37a7d590a3cb",
+      "updated_at": "2022-12-09"
     },
     {
       "name": "java_image_base",
@@ -1236,8 +1269,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:c8d62e4e459225bdffb54f4dff098e6cc6f7750d98e86036f5727141f6d970e2",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:e29acad938bb9f9dfda37d079920daccc0bba47cd844c0a229fdb7e1fa254ce4",
+      "updated_at": "2022-12-09"
     },
     {
       "name": "py3_image_base",
@@ -1256,8 +1289,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:65668d2b78d25df3d8ccf5a778d017fcaba513b52078c700083eaeef212b9979",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:d8eda7950b5c73777fb68cae7b7042faccf3f29461f7291b215863b0c82fca86",
+      "updated_at": "2022-12-09"
     },
     {
       "name": "go_image_base",
@@ -1276,8 +1309,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:56655dceb80c142846d72bf164b02a15c2e8a4d7537900fde710a408eb66fad2",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:88be3769dd1d1693678a1daf4dfe9d26c83c6b3d777cf5add4a241fdbadd698d",
+      "updated_at": "2022-12-09"
     },
     {
       "name": "go_image_static",
@@ -1302,13 +1335,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.25.4",
-      "updated_at": "2022-11-25"
+      "version": "v0.26.0",
+      "patch_cmds": [
+        "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
+      ],
+      "updated_at": "2022-12-09"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.25.4",
-      "updated_at": "2022-11-25"
+      "version": "v0.26.0",
+      "updated_at": "2022-12-09"
+    },
+    {
+      "name": "k8s.io/component-base",
+      "version": "v0.26.0",
+      "updated_at": "2022-12-09"
     }
   ],
   "toolchain_deps": [
@@ -1339,8 +1380,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "golang",
-      "version": "1.18",
-      "updated_at": "2022-05-05"
+      "version": "1.19",
+      "updated_at": "2022-12-09"
     }
   ]
 }
@@ -1351,6 +1392,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1194699414 or hash(_DEPS_JSON) != -1683038131 else None]
+""") if hash(_DEPS_YAML) != -1540710284 or hash(_DEPS_JSON) != 1166090222 else None]
 
 DEPS = json.decode(_DEPS_JSON)

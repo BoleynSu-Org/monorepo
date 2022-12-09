@@ -10,13 +10,13 @@ def parse_artifacts(artifacts):
 MAVEN_ARTIFACTS = {
     dep["name"]: dep["version"]
     for dep in DEPS["maven_deps"]
-    if dep["version"] != "override"
+    if "override_target" not in dep
 }
 
 MAVEN_OVERRIDE_TARGETS = {
     dep["name"]: dep["override_target"]
     for dep in DEPS["maven_deps"]
-    if dep["version"] == "override"
+    if "override_target" in dep
 }
 
 def maven_deps(
