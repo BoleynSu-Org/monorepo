@@ -54,11 +54,11 @@ bazel_deps:
       )
 - name: com_github_protocolbuffers_protobuf
   type: http_archive
-  sha256: b1d6dd2cbb5d87e17af41cadb720322ce7e13af826268707bd8db47e5654770b
-  strip_prefix: protobuf-21.11
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.11.tar.gz
-  updated_at: '2022-12-09'
-  version: v21.11
+  sha256: 22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de
+  strip_prefix: protobuf-21.12
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.12.tar.gz
+  updated_at: '2022-12-15'
+  version: v21.12
 - name: rules_proto
   type: http_archive
   sha256: 66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1
@@ -176,11 +176,11 @@ bazel_deps:
       rules_pkg_dependencies()
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 3762fd9a1045aa83d9a967840da142a1558565b76b470860282a1126e162799b
-  strip_prefix: grpc-java-1.51.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.0.tar.gz
-  updated_at: '2022-11-25'
-  version: v1.51.0
+  sha256: b6cfc524647cc680e66989ab22a10b66dc5de8c6d8499f91a7e633634c594c61
+  strip_prefix: grpc-java-1.51.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.1.tar.gz
+  updated_at: '2022-12-15'
+  version: v1.51.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -266,15 +266,11 @@ maven_deps:
   version: 8.0.31
   updated_at: '2022-11-25'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.1
-  version_skip:
-  - 10.1.2 # See https://github.com/spring-projects/spring-boot/issues/33167
-  updated_at: '2022-11-25'
+  version: 10.1.4
+  updated_at: '2022-12-15'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.1
-  version_skip:
-  - 10.1.2 # See https://github.com/spring-projects/spring-boot/issues/33167
-  updated_at: '2022-11-26'
+  version: 10.1.4
+  updated_at: '2022-12-15'
 - name: org.webjars:jquery
   version: 3.6.1
   updated_at: '2022-09-16'
@@ -286,9 +282,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   pinned_until: '2023-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.0.Final
+  version: 2.3.2.Final
   version_regex: (.*)\.Final
-  updated_at: '2022-11-25'
+  updated_at: '2022-12-15'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -499,8 +495,8 @@ container_deps:
   # the size of library/gcc is too large so we use frolvlad/alpine-gcc instead
   repository: frolvlad/alpine-gcc
   tag: latest
-  digest: sha256:5536c59bfc0d646658e4f523598c5f717089a80316ed149827c4c4754a694f01
-  updated_at: '2022-11-25'
+  digest: sha256:c7849876cdab81e9c382dda7ec9767b7ba599378c190d28a5eb75d975daafdf9
+  updated_at: '2022-12-15'
 - name: java_debug_image_base
   version: debug
   version_regex: ^(debug)$
@@ -681,11 +677,11 @@ _DEPS_JSON = r"""
     {
       "name": "com_github_protocolbuffers_protobuf",
       "type": "http_archive",
-      "sha256": "b1d6dd2cbb5d87e17af41cadb720322ce7e13af826268707bd8db47e5654770b",
-      "strip_prefix": "protobuf-21.11",
-      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.11.tar.gz",
-      "updated_at": "2022-12-09",
-      "version": "v21.11"
+      "sha256": "22fdaf641b31655d4b2297f9981fa5203b2866f8332d3c6333f6b0107bb320de",
+      "strip_prefix": "protobuf-21.12",
+      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v21.12.tar.gz",
+      "updated_at": "2022-12-15",
+      "version": "v21.12"
     },
     {
       "name": "rules_proto",
@@ -782,11 +778,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "3762fd9a1045aa83d9a967840da142a1558565b76b470860282a1126e162799b",
-      "strip_prefix": "grpc-java-1.51.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.0.tar.gz",
-      "updated_at": "2022-11-25",
-      "version": "v1.51.0",
+      "sha256": "b6cfc524647cc680e66989ab22a10b66dc5de8c6d8499f91a7e633634c594c61",
+      "strip_prefix": "grpc-java-1.51.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.1.tar.gz",
+      "updated_at": "2022-12-15",
+      "version": "v1.51.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -877,19 +873,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.1",
-      "version_skip": [
-        "10.1.2"
-      ],
-      "updated_at": "2022-11-25"
+      "version": "10.1.4",
+      "updated_at": "2022-12-15"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.1",
-      "version_skip": [
-        "10.1.2"
-      ],
-      "updated_at": "2022-11-26"
+      "version": "10.1.4",
+      "updated_at": "2022-12-15"
     },
     {
       "name": "org.webjars:jquery",
@@ -905,9 +895,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.0.Final",
+      "version": "2.3.2.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2022-11-25"
+      "updated_at": "2022-12-15"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1239,8 +1229,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "frolvlad/alpine-gcc",
       "tag": "latest",
-      "digest": "sha256:5536c59bfc0d646658e4f523598c5f717089a80316ed149827c4c4754a694f01",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:c7849876cdab81e9c382dda7ec9767b7ba599378c190d28a5eb75d975daafdf9",
+      "updated_at": "2022-12-15"
     },
     {
       "name": "java_debug_image_base",
@@ -1392,6 +1382,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1540710284 or hash(_DEPS_JSON) != 1166090222 else None]
+""") if hash(_DEPS_YAML) != 133222421 or hash(_DEPS_JSON) != -519701203 else None]
 
 DEPS = json.decode(_DEPS_JSON)
