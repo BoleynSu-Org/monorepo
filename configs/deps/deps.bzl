@@ -108,25 +108,16 @@ bazel_deps:
   version: '6.0'
   updated_at: '2022-07-17'
   build_file_content: |
-    # From https://github.com/bazelbuild/rules_k8s/blob/v0.7/k8s/k8s.bzl
-    load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-
-    py_library(
+    alias(
         name = "yaml",
-        srcs = glob(["lib/yaml/*.py"]),
-        imports = [
-            "lib",
-        ],
+        actual = "@pip_pyyaml//:pkg",
         visibility = ["//visibility:public"],
     )
 
-    py_library(
-      name = "yaml3",
-      srcs = glob(["lib3/yaml/*.py"]),
-      imports = [
-          "lib3",
-      ],
-      visibility = ["//visibility:public"],
+    alias(
+        name = "yaml3",
+        actual = "@pip_pyyaml//:pkg",
+        visibility = ["//visibility:public"],
     )
 - name: io_bazel_rules_k8s
   type: http_archive
@@ -725,7 +716,7 @@ _DEPS_JSON = r"""
       "strip_prefix": "pyyaml-6.0",
       "version": "6.0",
       "updated_at": "2022-07-17",
-      "build_file_content": "# From https://github.com/bazelbuild/rules_k8s/blob/v0.7/k8s/k8s.bzl\nload(\"@rules_python//python:defs.bzl\", \"py_binary\", \"py_library\")\n\npy_library(\n    name = \"yaml\",\n    srcs = glob([\"lib/yaml/*.py\"]),\n    imports = [\n        \"lib\",\n    ],\n    visibility = [\"//visibility:public\"],\n)\n\npy_library(\n  name = \"yaml3\",\n  srcs = glob([\"lib3/yaml/*.py\"]),\n  imports = [\n      \"lib3\",\n  ],\n  visibility = [\"//visibility:public\"],\n)\n"
+      "build_file_content": "alias(\n    name = \"yaml\",\n    actual = \"@pip_pyyaml//:pkg\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n    name = \"yaml3\",\n    actual = \"@pip_pyyaml//:pkg\",\n    visibility = [\"//visibility:public\"],\n)\n"
     },
     {
       "name": "io_bazel_rules_k8s",
@@ -1382,6 +1373,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 133222421 or hash(_DEPS_JSON) != -519701203 else None]
+""") if hash(_DEPS_YAML) != -302229760 or hash(_DEPS_JSON) != -3608686 else None]
 
 DEPS = json.decode(_DEPS_JSON)
