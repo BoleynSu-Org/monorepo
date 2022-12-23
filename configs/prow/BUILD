@@ -8,6 +8,6 @@ expand_template(
     substitutions = {
         "{ci_runner_image}": CI_RUNNER_IMAGE["registry"] + "/" + CI_RUNNER_IMAGE["repository"] + "@" + CI_RUNNER_IMAGE["digest"],
     },
-    template = ".prow.yaml",
+    template = "prow.tpl.yaml",
     visibility = ["//visibility:public"],
 )

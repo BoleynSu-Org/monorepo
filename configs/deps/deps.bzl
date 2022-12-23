@@ -226,13 +226,11 @@ bazel_deps:
   build_file_content: ''
 - name: com_grail_bazel_toolchain
   type: http_archive
-  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.7.2.tar.gz
-  sha256: f7aa8e59c9d3cafde6edb372d9bd25fb4ee7293ab20b916d867cd0baaa642529
-  strip_prefix: bazel-toolchain-0.7.2
-  updated_at: '2022-10-11'
-  version: 0.7.2
-  patches:
-  - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
+  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.tar.gz
+  sha256: d3d218287e76c0ad28bc579db711d1fa019fb0463634dfd944a1c2679ef9565b
+  strip_prefix: bazel-toolchain-0.8
+  updated_at: '2022-12-23'
+  version: '0.8'
   load_deps: |
     load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
@@ -243,6 +241,38 @@ bazel_deps:
             llvm_version = BAZEL_DEPS["com_grail_bazel_toolchain_llvm_version"]["version"][len("llvmorg-"):],
         )
         native.register_toolchains("@llvm_toolchain//:all")
+- name: io_bazel
+  type: http_archive
+  version: 6.0.0
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz
+  sha256: 06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397
+  updated_at: '2022-12-23'
+  load_deps: |
+    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
+    def deps():
+      if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
+        print("You are using an unsupported version of Bazel")
+  strip_prefix: bazel-6.0.0
+- name: bazel_linux_x86_64
+  type: http_file
+  version: 6.0.0
+  url: https://github.com/bazelbuild/bazel/releases/download/6.0.0/bazel-6.0.0-linux-x86_64
+  sha256: f03d44ecaac3878e3d19489e37caa4ca1dc57427b686a78a85065ea3c27ebe68
+  updated_at: '2022-12-23'
+  executable: true
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-linux-x86_64
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 
 pip_deps:
 - name: ruamel.yaml
@@ -494,64 +524,64 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:7c47e92d0d245cae3168bbca389aa1bf78e37b58b842dfb0c0ad37a7d590a3cb
-  updated_at: '2022-12-09'
+  digest: sha256:d5f489201e82d49d05ce2c2ab07ea0d585e65d75b952c4983de3d5db1e9283f5
+  updated_at: '2022-12-23'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:e0835ed9898c4e486761b1b1018bf8a92bdd04a8390038cf97e3dc7dbfcf25d8
-  updated_at: '2022-11-25'
+  digest: sha256:45da1463a719ff5d8755d99125e790f9c616f85f515715a51d6a0b8bb8b3515e
+  updated_at: '2022-12-23'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:e29acad938bb9f9dfda37d079920daccc0bba47cd844c0a229fdb7e1fa254ce4
-  updated_at: '2022-12-09'
+  digest: sha256:b79fe9c37f118721576625087d83562f4754f15fc3267db116e27ebdc92021f0
+  updated_at: '2022-12-23'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:c2d08b09ad0a0830df7bd2da92ff823a6c7dfe46fa5f6891af9c090f575c752d
-  updated_at: '2022-11-25'
+  digest: sha256:a464875100f28196138b6fc55cdf9697605be36dbbbfc106e4c523e1982bdfb1
+  updated_at: '2022-12-23'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:d8eda7950b5c73777fb68cae7b7042faccf3f29461f7291b215863b0c82fca86
-  updated_at: '2022-12-09'
+  digest: sha256:70ed73e616cbc7e8f9d8304323bf51ab6b82ed01d5db7597f20244d71713fc7c
+  updated_at: '2022-12-23'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:b9b124f955961599e72630654107a0cf04e08e6fa777fa250b8f840728abd770
-  updated_at: '2022-11-25'
+  digest: sha256:d33b9c8d01976cc9137b32b3022e0d490f68205e7c679cd6e677e0d2588cb25a
+  updated_at: '2022-12-23'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:88be3769dd1d1693678a1daf4dfe9d26c83c6b3d777cf5add4a241fdbadd698d
-  updated_at: '2022-12-09'
+  digest: sha256:6d4c4a1d9b3466559be419893f490402ec06194fcd2dba6bdb543356794f9488
+  updated_at: '2022-12-23'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:ebd8cc37d22551dce0957ba8e58f03b22a8448bbf844c8c9ded4feef883b36bc
-  updated_at: '2022-11-25'
+  digest: sha256:5b2fa762fb6ebf66ff88ae1db2dc4ad8fc6ddf1164477297dfac1a09f20e7339
+  updated_at: '2022-12-23'
 - name: io_quay_boleynsu_ci_runner
   version: '20221127'
   registry: quay.io
@@ -602,9 +632,6 @@ go_deps:
   updated_at: '2022-12-09'
 
 toolchain_deps:
-- name: bazel
-  version: 5.1.0
-  updated_at: '2022-05-06'
 - name: c
   version: '17'
   updated_at: '2022-05-07'
@@ -833,15 +860,61 @@ _DEPS_JSON = r"""
     {
       "name": "com_grail_bazel_toolchain",
       "type": "http_archive",
-      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.7.2.tar.gz",
-      "sha256": "f7aa8e59c9d3cafde6edb372d9bd25fb4ee7293ab20b916d867cd0baaa642529",
-      "strip_prefix": "bazel-toolchain-0.7.2",
-      "updated_at": "2022-10-11",
-      "version": "0.7.2",
-      "patches": [
-        "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
-      ],
+      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.tar.gz",
+      "sha256": "d3d218287e76c0ad28bc579db711d1fa019fb0463634dfd944a1c2679ef9565b",
+      "strip_prefix": "bazel-toolchain-0.8",
+      "updated_at": "2022-12-23",
+      "version": "0.8",
       "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\n\ndef deps():\n    llvm_toolchain(\n        name = \"llvm_toolchain\",\n        llvm_version = BAZEL_DEPS[\"com_grail_bazel_toolchain_llvm_version\"][\"version\"][len(\"llvmorg-\"):],\n    )\n    native.register_toolchains(\"@llvm_toolchain//:all\")\n"
+    },
+    {
+      "name": "io_bazel",
+      "type": "http_archive",
+      "version": "6.0.0",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz",
+      "sha256": "06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397",
+      "updated_at": "2022-12-23",
+      "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
+      "strip_prefix": "bazel-6.0.0"
+    },
+    {
+      "name": "bazel_linux_x86_64",
+      "type": "http_file",
+      "version": "6.0.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.0.0/bazel-6.0.0-linux-x86_64",
+      "sha256": "f03d44ecaac3878e3d19489e37caa4ca1dc57427b686a78a85065ea3c27ebe68",
+      "updated_at": "2022-12-23",
+      "executable": true,
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-linux-x86_64"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "pip_deps": [
@@ -1230,8 +1303,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:7c47e92d0d245cae3168bbca389aa1bf78e37b58b842dfb0c0ad37a7d590a3cb",
-      "updated_at": "2022-12-09"
+      "digest": "sha256:d5f489201e82d49d05ce2c2ab07ea0d585e65d75b952c4983de3d5db1e9283f5",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "java_image_base",
@@ -1240,8 +1313,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:e0835ed9898c4e486761b1b1018bf8a92bdd04a8390038cf97e3dc7dbfcf25d8",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:45da1463a719ff5d8755d99125e790f9c616f85f515715a51d6a0b8bb8b3515e",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "py3_debug_image_base",
@@ -1250,8 +1323,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:e29acad938bb9f9dfda37d079920daccc0bba47cd844c0a229fdb7e1fa254ce4",
-      "updated_at": "2022-12-09"
+      "digest": "sha256:b79fe9c37f118721576625087d83562f4754f15fc3267db116e27ebdc92021f0",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "py3_image_base",
@@ -1260,8 +1333,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:c2d08b09ad0a0830df7bd2da92ff823a6c7dfe46fa5f6891af9c090f575c752d",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:a464875100f28196138b6fc55cdf9697605be36dbbbfc106e4c523e1982bdfb1",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "go_debug_image_base",
@@ -1270,8 +1343,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:d8eda7950b5c73777fb68cae7b7042faccf3f29461f7291b215863b0c82fca86",
-      "updated_at": "2022-12-09"
+      "digest": "sha256:70ed73e616cbc7e8f9d8304323bf51ab6b82ed01d5db7597f20244d71713fc7c",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "go_image_base",
@@ -1280,8 +1353,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:b9b124f955961599e72630654107a0cf04e08e6fa777fa250b8f840728abd770",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:d33b9c8d01976cc9137b32b3022e0d490f68205e7c679cd6e677e0d2588cb25a",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "go_debug_image_static",
@@ -1290,8 +1363,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:88be3769dd1d1693678a1daf4dfe9d26c83c6b3d777cf5add4a241fdbadd698d",
-      "updated_at": "2022-12-09"
+      "digest": "sha256:6d4c4a1d9b3466559be419893f490402ec06194fcd2dba6bdb543356794f9488",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "go_image_static",
@@ -1300,8 +1373,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:ebd8cc37d22551dce0957ba8e58f03b22a8448bbf844c8c9ded4feef883b36bc",
-      "updated_at": "2022-11-25"
+      "digest": "sha256:5b2fa762fb6ebf66ff88ae1db2dc4ad8fc6ddf1164477297dfac1a09f20e7339",
+      "updated_at": "2022-12-23"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1334,11 +1407,6 @@ _DEPS_JSON = r"""
     }
   ],
   "toolchain_deps": [
-    {
-      "name": "bazel",
-      "version": "5.1.0",
-      "updated_at": "2022-05-06"
-    },
     {
       "name": "c",
       "version": "17",
@@ -1373,6 +1441,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -302229760 or hash(_DEPS_JSON) != -3608686 else None]
+""") if hash(_DEPS_YAML) != -1851829306 or hash(_DEPS_JSON) != -1093996511 else None]
 
 DEPS = json.decode(_DEPS_JSON)
