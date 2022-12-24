@@ -82,11 +82,16 @@ bazel_deps:
   version: v0.37.0
   strip_prefix: rules_go-0.37.0
   load_deps: |
-    load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
+    load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
     def deps():
       go_rules_dependencies()
-      go_register_toolchains(version = GOLANG_VERSION)
+      go_download_sdk(
+          name = "go_linux_amd64",
+          goos = "linux",
+          goarch = "amd64",
+          version = GOLANG_VERSION
+      )
 - name: io_bazel_rules_docker
   type: http_archive
   url: https://github.com/bazelbuild/rules_docker/archive/refs/tags/v0.25.0.tar.gz
@@ -191,7 +196,7 @@ bazel_deps:
   load_deps: |
     load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
     def deps():
-      gazelle_dependencies(go_sdk = "go_sdk")
+      gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
   url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.0.tar.gz
@@ -214,16 +219,59 @@ bazel_deps:
   sha256: 505de756d552934ddd5b73c2844f7f30deba8d30b7a37f1a00c08aeadfa28469
   updated_at: '2022-10-09'
   version: '20220920'
-- name: com_grail_bazel_toolchain_llvm_version
+- name: llvm-raw
   type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-14.0.0.tar.gz
-  sha256: 87b1a068b370df5b79a892fdb2935922a8efb1fddec4cc506e30fe57b6a1d9c4
-  strip_prefix: llvm-project-llvmorg-14.0.0
-  version: llvmorg-14.0.0
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-15.0.6.tar.gz
+  sha256: 4d857d7a180918bdacd09a5910bf9743c9861a1e49cb065a85f7a990f812161d
+  strip_prefix: llvm-project-llvmorg-15.0.6
+  version: llvmorg-15.0.6
   version_regex: llvmorg-(.*)
-  updated_at: '2022-11-27'
-  pinned_until: '2023-11-27'
-  build_file_content: ''
+  updated_at: '2022-12-24'
+- name: llvm_linux_x86_64
+  type: http_archive
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+  sha256: 38bc7f5563642e73e69ac5626724e206d6d539fbef653541b34cae0ba9c3f036
+  strip_prefix: clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04
+  version: llvmorg-15.0.6
+  version_regex: llvmorg-(.*)
+  updated_at: '2022-12-24'
+  load_deps: |
+    load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
+    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
+
+    def deps():
+        llvm_toolchain(
+            name = "llvm_toolchain_linux_x86_64",
+            llvm_version = BAZEL_DEPS["llvm_linux_x86_64"]["version"][len("llvmorg-"):],
+            exec_os = "linux",
+            exec_cpu = "x86_64",
+            urls = {
+                "linux_x86_64": [BAZEL_DEPS["llvm_linux_x86_64"]["url"]],
+            },
+            strip_prefix = {
+                "linux_x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["strip_prefix"],
+            },
+            sha256 = {
+                "linux_x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
+            },
+        )
+        native.register_toolchains("@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux")
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      name=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" -sL https://api.github.com/repos/llvm/llvm-project/releases | jq -r '.[] | select(.tag_name == "'${DEPS_UPDATER_version}'") | .assets[] | select(.name | test("x86_64-linux-gnu-ubuntu.*tar.xz$")) | .name')
+      echo DEPS_UPDATER_url=https://github.com/llvm/llvm-project/releases/download/${DEPS_UPDATER_version}/${name}
+      echo DEPS_UPDATER_strip_prefix=${name%.tar.xz}
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 - name: com_grail_bazel_toolchain
   type: http_archive
   url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.tar.gz
@@ -231,16 +279,8 @@ bazel_deps:
   strip_prefix: bazel-toolchain-0.8
   updated_at: '2022-12-23'
   version: '0.8'
-  load_deps: |
-    load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
-    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
-
-    def deps():
-        llvm_toolchain(
-            name = "llvm_toolchain",
-            llvm_version = BAZEL_DEPS["com_grail_bazel_toolchain_llvm_version"]["version"][len("llvmorg-"):],
-        )
-        native.register_toolchains("@llvm_toolchain//:all")
+  patches:
+  - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
 - name: io_bazel
   type: http_archive
   version: 6.0.0
@@ -723,7 +763,7 @@ _DEPS_JSON = r"""
       "updated_at": "2022-12-09",
       "version": "v0.37.0",
       "strip_prefix": "rules_go-0.37.0",
-      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_register_toolchains\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_register_toolchains(version = GOLANG_VERSION)\n"
+      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION\n  )\n"
     },
     {
       "name": "io_bazel_rules_docker",
@@ -815,7 +855,7 @@ _DEPS_JSON = r"""
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
       ],
-      "load_deps": "load(\"@bazel_gazelle//:deps.bzl\", \"gazelle_dependencies\")\ndef deps():\n  gazelle_dependencies(go_sdk = \"go_sdk\")\n"
+      "load_deps": "load(\"@bazel_gazelle//:deps.bzl\", \"gazelle_dependencies\")\ndef deps():\n  gazelle_dependencies()\n"
     },
     {
       "name": "io_k8s_kubernetes",
@@ -846,16 +886,55 @@ _DEPS_JSON = r"""
       "version": "20220920"
     },
     {
-      "name": "com_grail_bazel_toolchain_llvm_version",
+      "name": "llvm-raw",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-14.0.0.tar.gz",
-      "sha256": "87b1a068b370df5b79a892fdb2935922a8efb1fddec4cc506e30fe57b6a1d9c4",
-      "strip_prefix": "llvm-project-llvmorg-14.0.0",
-      "version": "llvmorg-14.0.0",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-15.0.6.tar.gz",
+      "sha256": "4d857d7a180918bdacd09a5910bf9743c9861a1e49cb065a85f7a990f812161d",
+      "strip_prefix": "llvm-project-llvmorg-15.0.6",
+      "version": "llvmorg-15.0.6",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2022-11-27",
-      "pinned_until": "2023-11-27",
-      "build_file_content": ""
+      "updated_at": "2022-12-24"
+    },
+    {
+      "name": "llvm_linux_x86_64",
+      "type": "http_archive",
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04.tar.xz",
+      "sha256": "38bc7f5563642e73e69ac5626724e206d6d539fbef653541b34cae0ba9c3f036",
+      "strip_prefix": "clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04",
+      "version": "llvmorg-15.0.6",
+      "version_regex": "llvmorg-(.*)",
+      "updated_at": "2022-12-24",
+      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\n\ndef deps():\n    llvm_toolchain(\n        name = \"llvm_toolchain_linux_x86_64\",\n        llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n        exec_os = \"linux\",\n        exec_cpu = \"x86_64\",\n        urls = {\n            \"linux_x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n        },\n        strip_prefix = {\n            \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n        },\n        sha256 = {\n            \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n        },\n    )\n    native.register_toolchains(\"@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux\")\n",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "name=$(curl -H \"Authorization: Bearer $GITHUB_TOKEN\" -sL https://api.github.com/repos/llvm/llvm-project/releases | jq -r '.[] | select(.tag_name == \"'${DEPS_UPDATER_version}'\") | .assets[] | select(.name | test(\"x86_64-linux-gnu-ubuntu.*tar.xz$\")) | .name')\necho DEPS_UPDATER_url=https://github.com/llvm/llvm-project/releases/download/${DEPS_UPDATER_version}/${name}\necho DEPS_UPDATER_strip_prefix=${name%.tar.xz}\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "com_grail_bazel_toolchain",
@@ -865,7 +944,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "bazel-toolchain-0.8",
       "updated_at": "2022-12-23",
       "version": "0.8",
-      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\n\ndef deps():\n    llvm_toolchain(\n        name = \"llvm_toolchain\",\n        llvm_version = BAZEL_DEPS[\"com_grail_bazel_toolchain_llvm_version\"][\"version\"][len(\"llvmorg-\"):],\n    )\n    native.register_toolchains(\"@llvm_toolchain//:all\")\n"
+      "patches": [
+        "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
+      ]
     },
     {
       "name": "io_bazel",
@@ -1441,6 +1522,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1851829306 or hash(_DEPS_JSON) != -1093996511 else None]
+""") if hash(_DEPS_YAML) != 1654640837 or hash(_DEPS_JSON) != -1059437819 else None]
 
 DEPS = json.decode(_DEPS_JSON)

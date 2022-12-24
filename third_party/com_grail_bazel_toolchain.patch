@@ -1,0 +1,56 @@
+diff --git toolchain/internal/common.bzl toolchain/internal/common.bzl
+index bb2fcfa..eacd236 100644
+--- toolchain/internal/common.bzl
++++ toolchain/internal/common.bzl
+@@ -47,6 +47,8 @@ def python(rctx):
+         fail("python not found")
+ 
+ def os(rctx):
++    if rctx.attr.exec_os:
++        return rctx.attr.exec_os
+     name = rctx.os.name
+     if name == "linux":
+         return "linux"
+@@ -61,6 +63,8 @@ def os_bzl(os):
+     return {"darwin": "osx", "linux": "linux"}[os]
+ 
+ def arch(rctx):
++    if rctx.attr.exec_cpu:
++        return rctx.attr.exec_cpu
+     exec_result = rctx.execute([
+         python(rctx),
+         "-c",
+diff --git toolchain/internal/llvm_distributions.bzl toolchain/internal/llvm_distributions.bzl
+index aa22de0..ca05c7d 100644
+--- toolchain/internal/llvm_distributions.bzl
++++ toolchain/internal/llvm_distributions.bzl
+@@ -276,7 +276,10 @@ def download_llvm(rctx):
+     return updated_attrs
+ 
+ def _urls(rctx):
+-    key = _host_os_key(rctx)
++    if len(rctx.attr.urls) == 1:
++        (key,) = rctx.attr.urls.keys()
++    else:
++        key = _host_os_key(rctx)
+ 
+     key_orig = key
+     if key not in rctx.attr.urls:
+diff --git toolchain/rules.bzl toolchain/rules.bzl
+index 832d636..0be81e4 100644
+--- toolchain/rules.bzl
++++ toolchain/rules.bzl
+@@ -30,6 +30,13 @@ _common_attrs = {
+         mandatory = True,
+         doc = "One of the supported versions of LLVM, e.g. 12.0.0",
+     ),
++    "exec_os": attr.string(
++        doc = "exec os for the toolchain, default to host os",
++    ),
++    "exec_cpu": attr.string(
++        mandatory = True,
++        doc = "exec cpu for the toolchain, default to host arch",
++    ),
+ }
+ 
+ _llvm_repo_attrs = dict(_common_attrs)
