@@ -623,12 +623,12 @@ container_deps:
   digest: sha256:5b2fa762fb6ebf66ff88ae1db2dc4ad8fc6ddf1164477297dfac1a09f20e7339
   updated_at: '2022-12-23'
 - name: io_quay_boleynsu_ci_runner
-  version: '20221127'
+  version: '20221225'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20221127'
-  digest: sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f
-  updated_at: '2022-12-02'
+  tag: '20221225'
+  digest: sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
+  updated_at: '2022-12-25'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -1459,12 +1459,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20221127",
+      "version": "20221225",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20221127",
-      "digest": "sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f",
-      "updated_at": "2022-12-02"
+      "tag": "20221225",
+      "digest": "sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991",
+      "updated_at": "2022-12-25"
     }
   ],
   "go_deps": [
@@ -1522,6 +1522,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1654640837 or hash(_DEPS_JSON) != -1059437819 else None]
+""") if hash(_DEPS_YAML) != 757795285 or hash(_DEPS_JSON) != -524398249 else None]
 
 DEPS = json.decode(_DEPS_JSON)

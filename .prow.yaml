@@ -9,7 +9,7 @@ presubmits:
     skip_report: false
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f
+      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
         command:
         - "bazel"
         - "test"
@@ -26,7 +26,7 @@ postsubmits:
     skip_report: false
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:2e2a4d951b5deba1ed08adbe2fb6b51a6df772bec00679900c0a891987d7993f
+      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
         command:
         - "bazel"
         - "test"
