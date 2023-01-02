@@ -27,11 +27,11 @@ bazel_deps:
       rules_cc_dependencies()
 - name: rules_java
   type: http_archive
-  sha256: 7df0811e29830e79be984f9d5bf6839ce151702d694038126d7c23296785bf97
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/5.3.5.tar.gz
-  strip_prefix: rules_java-5.3.5
-  updated_at: '2022-11-25'
-  version: 5.3.5
+  sha256: f90111a597b2aa77b7104dbdc685fd35ea0cca3b7c3f807153765e22319cbd88
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/5.4.0.tar.gz
+  strip_prefix: rules_java-5.4.0
+  updated_at: '2023-01-02'
+  version: 5.4.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
     def deps():
@@ -564,8 +564,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:d5f489201e82d49d05ce2c2ab07ea0d585e65d75b952c4983de3d5db1e9283f5
-  updated_at: '2022-12-23'
+  digest: sha256:ce9b4b237b57b9043f9323ffc6af907c9d1e6cd436f933a6e14710448cf4b16b
+  updated_at: '2023-01-02'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
@@ -580,8 +580,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:b79fe9c37f118721576625087d83562f4754f15fc3267db116e27ebdc92021f0
-  updated_at: '2022-12-23'
+  digest: sha256:44e66c87684bcf6d773e17d51d2d71c5ae8075b136cb1183a1893679ff5df585
+  updated_at: '2023-01-02'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
@@ -596,8 +596,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:70ed73e616cbc7e8f9d8304323bf51ab6b82ed01d5db7597f20244d71713fc7c
-  updated_at: '2022-12-23'
+  digest: sha256:a9e98308582ce4417d2a3195d7a82f0196ab03538e8e1f73c8dd369a7e084176
+  updated_at: '2023-01-02'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
@@ -612,8 +612,8 @@ container_deps:
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:6d4c4a1d9b3466559be419893f490402ec06194fcd2dba6bdb543356794f9488
-  updated_at: '2022-12-23'
+  digest: sha256:be7a4c68c3dc29d9e977678be74e4698abb8917e85e1d8d1c0401502ce47acd4
+  updated_at: '2023-01-02'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
@@ -715,11 +715,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "7df0811e29830e79be984f9d5bf6839ce151702d694038126d7c23296785bf97",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/5.3.5.tar.gz",
-      "strip_prefix": "rules_java-5.3.5",
-      "updated_at": "2022-11-25",
-      "version": "5.3.5",
+      "sha256": "f90111a597b2aa77b7104dbdc685fd35ea0cca3b7c3f807153765e22319cbd88",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/5.4.0.tar.gz",
+      "strip_prefix": "rules_java-5.4.0",
+      "updated_at": "2023-01-02",
+      "version": "5.4.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"rules_java_dependencies\", \"rules_java_toolchains\")\ndef deps():\n  rules_java_dependencies()\n  rules_java_toolchains()\n"
     },
     {
@@ -1384,8 +1384,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:d5f489201e82d49d05ce2c2ab07ea0d585e65d75b952c4983de3d5db1e9283f5",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:ce9b4b237b57b9043f9323ffc6af907c9d1e6cd436f933a6e14710448cf4b16b",
+      "updated_at": "2023-01-02"
     },
     {
       "name": "java_image_base",
@@ -1404,8 +1404,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:b79fe9c37f118721576625087d83562f4754f15fc3267db116e27ebdc92021f0",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:44e66c87684bcf6d773e17d51d2d71c5ae8075b136cb1183a1893679ff5df585",
+      "updated_at": "2023-01-02"
     },
     {
       "name": "py3_image_base",
@@ -1424,8 +1424,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:70ed73e616cbc7e8f9d8304323bf51ab6b82ed01d5db7597f20244d71713fc7c",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:a9e98308582ce4417d2a3195d7a82f0196ab03538e8e1f73c8dd369a7e084176",
+      "updated_at": "2023-01-02"
     },
     {
       "name": "go_image_base",
@@ -1444,8 +1444,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:6d4c4a1d9b3466559be419893f490402ec06194fcd2dba6bdb543356794f9488",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:be7a4c68c3dc29d9e977678be74e4698abb8917e85e1d8d1c0401502ce47acd4",
+      "updated_at": "2023-01-02"
     },
     {
       "name": "go_image_static",
@@ -1522,6 +1522,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 757795285 or hash(_DEPS_JSON) != -524398249 else None]
+""") if hash(_DEPS_YAML) != 1282876107 or hash(_DEPS_JSON) != -433545717 else None]
 
 DEPS = json.decode(_DEPS_JSON)
