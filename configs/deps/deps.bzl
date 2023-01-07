@@ -333,8 +333,8 @@ maven_deps:
   version: 10.1.4
   updated_at: '2022-12-15'
 - name: org.webjars:jquery
-  version: 3.6.1
-  updated_at: '2022-09-16'
+  version: 3.6.3
+  updated_at: '2023-01-07'
   manual: true
 - name: org.webjars:bootstrap
   version: 3.4.1
@@ -343,9 +343,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   pinned_until: '2023-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.2.Final
+  version: 2.3.3.Final
   version_regex: (.*)\.Final
-  updated_at: '2022-12-15'
+  updated_at: '2023-01-07'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -564,64 +564,64 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:ce9b4b237b57b9043f9323ffc6af907c9d1e6cd436f933a6e14710448cf4b16b
-  updated_at: '2023-01-02'
+  digest: sha256:8a1f697bfe16d77066eb43a4e395e6c6b6d40b547efbdda2e3599f5d19cfa2f0
+  updated_at: '2023-01-07'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:45da1463a719ff5d8755d99125e790f9c616f85f515715a51d6a0b8bb8b3515e
-  updated_at: '2022-12-23'
+  digest: sha256:ca5414375b5d8a5889d2a46051b42630e93c6237a15a3c83a948adbb92572e13
+  updated_at: '2023-01-07'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:44e66c87684bcf6d773e17d51d2d71c5ae8075b136cb1183a1893679ff5df585
-  updated_at: '2023-01-02'
+  digest: sha256:fe598c9a6c1683f1cfc3203269b6a316ee260a7f851972fc68f57a275a14a579
+  updated_at: '2023-01-07'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:a464875100f28196138b6fc55cdf9697605be36dbbbfc106e4c523e1982bdfb1
-  updated_at: '2022-12-23'
+  digest: sha256:cc5a0db38b135323ca1392a4e7c7a25488297a1b4efb8520ff345d9235fdd893
+  updated_at: '2023-01-07'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:a9e98308582ce4417d2a3195d7a82f0196ab03538e8e1f73c8dd369a7e084176
-  updated_at: '2023-01-02'
+  digest: sha256:9862a5aa7cc9f57ba0358441f4079837e7adb707da115934c51663020d0a6281
+  updated_at: '2023-01-07'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:d33b9c8d01976cc9137b32b3022e0d490f68205e7c679cd6e677e0d2588cb25a
-  updated_at: '2022-12-23'
+  digest: sha256:7b9dc0fa2731bfddc1a94c84994bd2ef87b2d89721596331fc63c5403b8c3f64
+  updated_at: '2023-01-07'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:be7a4c68c3dc29d9e977678be74e4698abb8917e85e1d8d1c0401502ce47acd4
-  updated_at: '2023-01-02'
+  digest: sha256:7ebe6351bf59e01550b4388d3a21f7bfb40a7552d2689f1a27a4ec3639b6f1b6
+  updated_at: '2023-01-07'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:5b2fa762fb6ebf66ff88ae1db2dc4ad8fc6ddf1164477297dfac1a09f20e7339
-  updated_at: '2022-12-23'
+  digest: sha256:be8c71d97739b5860947c2635ca40e8ea8eb6de72239ca52aeddac6b96e4cf53
+  updated_at: '2023-01-07'
 - name: io_quay_boleynsu_ci_runner
   version: '20221225'
   registry: quay.io
@@ -1028,8 +1028,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.webjars:jquery",
-      "version": "3.6.1",
-      "updated_at": "2022-09-16",
+      "version": "3.6.3",
+      "updated_at": "2023-01-07",
       "manual": true
     },
     {
@@ -1040,9 +1040,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.2.Final",
+      "version": "2.3.3.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2022-12-15"
+      "updated_at": "2023-01-07"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1384,8 +1384,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:ce9b4b237b57b9043f9323ffc6af907c9d1e6cd436f933a6e14710448cf4b16b",
-      "updated_at": "2023-01-02"
+      "digest": "sha256:8a1f697bfe16d77066eb43a4e395e6c6b6d40b547efbdda2e3599f5d19cfa2f0",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "java_image_base",
@@ -1394,8 +1394,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:45da1463a719ff5d8755d99125e790f9c616f85f515715a51d6a0b8bb8b3515e",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:ca5414375b5d8a5889d2a46051b42630e93c6237a15a3c83a948adbb92572e13",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "py3_debug_image_base",
@@ -1404,8 +1404,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:44e66c87684bcf6d773e17d51d2d71c5ae8075b136cb1183a1893679ff5df585",
-      "updated_at": "2023-01-02"
+      "digest": "sha256:fe598c9a6c1683f1cfc3203269b6a316ee260a7f851972fc68f57a275a14a579",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "py3_image_base",
@@ -1414,8 +1414,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:a464875100f28196138b6fc55cdf9697605be36dbbbfc106e4c523e1982bdfb1",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:cc5a0db38b135323ca1392a4e7c7a25488297a1b4efb8520ff345d9235fdd893",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "go_debug_image_base",
@@ -1424,8 +1424,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:a9e98308582ce4417d2a3195d7a82f0196ab03538e8e1f73c8dd369a7e084176",
-      "updated_at": "2023-01-02"
+      "digest": "sha256:9862a5aa7cc9f57ba0358441f4079837e7adb707da115934c51663020d0a6281",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "go_image_base",
@@ -1434,8 +1434,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:d33b9c8d01976cc9137b32b3022e0d490f68205e7c679cd6e677e0d2588cb25a",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:7b9dc0fa2731bfddc1a94c84994bd2ef87b2d89721596331fc63c5403b8c3f64",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "go_debug_image_static",
@@ -1444,8 +1444,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:be7a4c68c3dc29d9e977678be74e4698abb8917e85e1d8d1c0401502ce47acd4",
-      "updated_at": "2023-01-02"
+      "digest": "sha256:7ebe6351bf59e01550b4388d3a21f7bfb40a7552d2689f1a27a4ec3639b6f1b6",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "go_image_static",
@@ -1454,8 +1454,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:5b2fa762fb6ebf66ff88ae1db2dc4ad8fc6ddf1164477297dfac1a09f20e7339",
-      "updated_at": "2022-12-23"
+      "digest": "sha256:be8c71d97739b5860947c2635ca40e8ea8eb6de72239ca52aeddac6b96e4cf53",
+      "updated_at": "2023-01-07"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1522,6 +1522,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1282876107 or hash(_DEPS_JSON) != -433545717 else None]
+""") if hash(_DEPS_YAML) != -495818156 or hash(_DEPS_JSON) != -1588168876 else None]
 
 DEPS = json.decode(_DEPS_JSON)
