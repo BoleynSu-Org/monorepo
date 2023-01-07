@@ -39,7 +39,7 @@ spec:
         - mountPath: /app/boleynsu
           name: workdir
         workingDir: /app/boleynsu
-        image: oj/oj-server
+        image: deploys/oj-server
         env:
         - name: DATA
           value: /data
@@ -122,7 +122,7 @@ spec:
           mountPath: /data
           subPath: "data"
           readOnly: true
-        image: oj/oj-judge
+        image: deploys/oj-judge
         env:
         - name: DATA
           value: /data
@@ -168,7 +168,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
       - name: oj-c99runner
-        image: oj/oj-c99runner
+        image: deploys/oj-c99runner
         resources:
           requests:
             memory: "300Mi"
