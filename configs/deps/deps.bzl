@@ -39,11 +39,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: 497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a
-  strip_prefix: rules_python-0.16.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz
-  updated_at: '2022-12-09'
-  version: 0.16.1
+  sha256: 48a838a6e1983e4884b26812b2c748a35ad284fd339eb8e2a6f3adf95307fbcd
+  strip_prefix: rules_python-0.16.2
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.2.tar.gz
+  updated_at: '2023-01-17'
+  version: 0.16.2
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -172,22 +172,22 @@ bazel_deps:
       rules_pkg_dependencies()
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: b6cfc524647cc680e66989ab22a10b66dc5de8c6d8499f91a7e633634c594c61
-  strip_prefix: grpc-java-1.51.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.1.tar.gz
-  updated_at: '2022-12-15'
-  version: v1.51.1
+  sha256: bbcca1bf2fba7ee4eca8528e8b0c9ec0b3d83bb1308115b2bc54bbc751cca960
+  strip_prefix: grpc-java-1.52.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.52.0.tar.gz
+  updated_at: '2023-01-17'
+  version: v1.52.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: ba9636053dce44cd908b6eff44ab0801ffad7f26fad38ba20c9b8587bae435df
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.28.0.tar.gz
-  updated_at: '2022-11-25'
-  version: v0.28.0
-  strip_prefix: bazel-gazelle-0.28.0
+  sha256: 1b4c8e2b2e7d20236810362d61288fdaad192ecdb4e3c49b953ce0c5cee8258a
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.29.0.tar.gz
+  updated_at: '2023-01-17'
+  version: v0.29.0
+  strip_prefix: bazel-gazelle-0.29.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -226,6 +226,8 @@ bazel_deps:
   strip_prefix: llvm-project-llvmorg-15.0.6
   version: llvmorg-15.0.6
   version_regex: llvmorg-(.*)
+  version_skip:
+  - llvmorg-15.0.7
   updated_at: '2022-12-24'
 - name: llvm_linux_x86_64
   type: http_archive
@@ -234,6 +236,8 @@ bazel_deps:
   strip_prefix: clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04
   version: llvmorg-15.0.6
   version_regex: llvmorg-(.*)
+  version_skip:
+  - llvmorg-15.0.7
   updated_at: '2022-12-24'
   load_deps: |
     load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
@@ -327,11 +331,11 @@ maven_deps:
   version: 8.0.31
   updated_at: '2022-11-25'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.4
-  updated_at: '2022-12-15'
+  version: 10.1.5
+  updated_at: '2023-01-17'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.4
-  updated_at: '2022-12-15'
+  version: 10.1.5
+  updated_at: '2023-01-17'
 - name: org.webjars:jquery
   version: 3.6.3
   updated_at: '2023-01-07'
@@ -556,72 +560,72 @@ container_deps:
   # the size of library/gcc is too large so we use frolvlad/alpine-gcc instead
   repository: frolvlad/alpine-gcc
   tag: latest
-  digest: sha256:c7849876cdab81e9c382dda7ec9767b7ba599378c190d28a5eb75d975daafdf9
-  updated_at: '2022-12-15'
+  digest: sha256:e3487dd7b99088d4f7b6eb74b69a2672ef5f4816b9343287baafb7f6bed75bce
+  updated_at: '2023-01-17'
 - name: java_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:8a1f697bfe16d77066eb43a4e395e6c6b6d40b547efbdda2e3599f5d19cfa2f0
-  updated_at: '2023-01-07'
+  digest: sha256:c7ce00e1c32ada90d3c461e21b01693b24a0e027339954f0fbe138f968f6067e
+  updated_at: '2023-01-17'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:ca5414375b5d8a5889d2a46051b42630e93c6237a15a3c83a948adbb92572e13
-  updated_at: '2023-01-07'
+  digest: sha256:266203e60c9d67792f3a0e16d9e4b95caca61d7ea23d044171618c17e26ce2a9
+  updated_at: '2023-01-17'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:fe598c9a6c1683f1cfc3203269b6a316ee260a7f851972fc68f57a275a14a579
-  updated_at: '2023-01-07'
+  digest: sha256:0e63bf5066083135481cdec11d4f645b9f97f25f2267f4ea112205fad7b9411a
+  updated_at: '2023-01-17'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:cc5a0db38b135323ca1392a4e7c7a25488297a1b4efb8520ff345d9235fdd893
-  updated_at: '2023-01-07'
+  digest: sha256:69e09f3d80dd8495c1f547b31d2375132bb38760b077451df4f9bf679ca307cf
+  updated_at: '2023-01-17'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:9862a5aa7cc9f57ba0358441f4079837e7adb707da115934c51663020d0a6281
-  updated_at: '2023-01-07'
+  digest: sha256:1ef1f03de4bd1e7e455250cb86eec13f46fe781b748264e8115ee4fb50399cab
+  updated_at: '2023-01-17'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:7b9dc0fa2731bfddc1a94c84994bd2ef87b2d89721596331fc63c5403b8c3f64
-  updated_at: '2023-01-07'
+  digest: sha256:0216d8712854b61db71b95f836caa48f5ace55fa66584f5a0b346765398b2520
+  updated_at: '2023-01-17'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:7ebe6351bf59e01550b4388d3a21f7bfb40a7552d2689f1a27a4ec3639b6f1b6
-  updated_at: '2023-01-07'
+  digest: sha256:6050f094493edcd83494eb84524523558ff56c1060d545a12308c8e06cbb1724
+  updated_at: '2023-01-17'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:be8c71d97739b5860947c2635ca40e8ea8eb6de72239ca52aeddac6b96e4cf53
-  updated_at: '2023-01-07'
+  digest: sha256:ea2ed73931ecd5d70f0bf3fdaa481c84f556cc205d6ceec78dff335fc4a313b2
+  updated_at: '2023-01-17'
 - name: io_quay_boleynsu_ci_runner
   version: '20221225'
   registry: quay.io
@@ -725,11 +729,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "497ca47374f48c8b067d786b512ac10a276211810f4a580178ee9b9ad139323a",
-      "strip_prefix": "rules_python-0.16.1",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.1.tar.gz",
-      "updated_at": "2022-12-09",
-      "version": "0.16.1",
+      "sha256": "48a838a6e1983e4884b26812b2c748a35ad284fd339eb8e2a6f3adf95307fbcd",
+      "strip_prefix": "rules_python-0.16.2",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.16.2.tar.gz",
+      "updated_at": "2023-01-17",
+      "version": "0.16.2",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
@@ -836,21 +840,21 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "b6cfc524647cc680e66989ab22a10b66dc5de8c6d8499f91a7e633634c594c61",
-      "strip_prefix": "grpc-java-1.51.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.51.1.tar.gz",
-      "updated_at": "2022-12-15",
-      "version": "v1.51.1",
+      "sha256": "bbcca1bf2fba7ee4eca8528e8b0c9ec0b3d83bb1308115b2bc54bbc751cca960",
+      "strip_prefix": "grpc-java-1.52.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.52.0.tar.gz",
+      "updated_at": "2023-01-17",
+      "version": "v1.52.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "ba9636053dce44cd908b6eff44ab0801ffad7f26fad38ba20c9b8587bae435df",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.28.0.tar.gz",
-      "updated_at": "2022-11-25",
-      "version": "v0.28.0",
-      "strip_prefix": "bazel-gazelle-0.28.0",
+      "sha256": "1b4c8e2b2e7d20236810362d61288fdaad192ecdb4e3c49b953ce0c5cee8258a",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.29.0.tar.gz",
+      "updated_at": "2023-01-17",
+      "version": "v0.29.0",
+      "strip_prefix": "bazel-gazelle-0.29.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -893,6 +897,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "llvm-project-llvmorg-15.0.6",
       "version": "llvmorg-15.0.6",
       "version_regex": "llvmorg-(.*)",
+      "version_skip": [
+        "llvmorg-15.0.7"
+      ],
       "updated_at": "2022-12-24"
     },
     {
@@ -903,6 +910,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04",
       "version": "llvmorg-15.0.6",
       "version_regex": "llvmorg-(.*)",
+      "version_skip": [
+        "llvmorg-15.0.7"
+      ],
       "updated_at": "2022-12-24",
       "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\n\ndef deps():\n    llvm_toolchain(\n        name = \"llvm_toolchain_linux_x86_64\",\n        llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n        exec_os = \"linux\",\n        exec_cpu = \"x86_64\",\n        urls = {\n            \"linux_x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n        },\n        strip_prefix = {\n            \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n        },\n        sha256 = {\n            \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n        },\n    )\n    native.register_toolchains(\"@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux\")\n",
       "override_updater": [
@@ -1018,13 +1028,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.4",
-      "updated_at": "2022-12-15"
+      "version": "10.1.5",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.4",
-      "updated_at": "2022-12-15"
+      "version": "10.1.5",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "org.webjars:jquery",
@@ -1374,8 +1384,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "frolvlad/alpine-gcc",
       "tag": "latest",
-      "digest": "sha256:c7849876cdab81e9c382dda7ec9767b7ba599378c190d28a5eb75d975daafdf9",
-      "updated_at": "2022-12-15"
+      "digest": "sha256:e3487dd7b99088d4f7b6eb74b69a2672ef5f4816b9343287baafb7f6bed75bce",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "java_debug_image_base",
@@ -1384,8 +1394,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:8a1f697bfe16d77066eb43a4e395e6c6b6d40b547efbdda2e3599f5d19cfa2f0",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:c7ce00e1c32ada90d3c461e21b01693b24a0e027339954f0fbe138f968f6067e",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "java_image_base",
@@ -1394,8 +1404,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:ca5414375b5d8a5889d2a46051b42630e93c6237a15a3c83a948adbb92572e13",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:266203e60c9d67792f3a0e16d9e4b95caca61d7ea23d044171618c17e26ce2a9",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "py3_debug_image_base",
@@ -1404,8 +1414,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:fe598c9a6c1683f1cfc3203269b6a316ee260a7f851972fc68f57a275a14a579",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:0e63bf5066083135481cdec11d4f645b9f97f25f2267f4ea112205fad7b9411a",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "py3_image_base",
@@ -1414,8 +1424,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:cc5a0db38b135323ca1392a4e7c7a25488297a1b4efb8520ff345d9235fdd893",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:69e09f3d80dd8495c1f547b31d2375132bb38760b077451df4f9bf679ca307cf",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "go_debug_image_base",
@@ -1424,8 +1434,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:9862a5aa7cc9f57ba0358441f4079837e7adb707da115934c51663020d0a6281",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:1ef1f03de4bd1e7e455250cb86eec13f46fe781b748264e8115ee4fb50399cab",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "go_image_base",
@@ -1434,8 +1444,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:7b9dc0fa2731bfddc1a94c84994bd2ef87b2d89721596331fc63c5403b8c3f64",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:0216d8712854b61db71b95f836caa48f5ace55fa66584f5a0b346765398b2520",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "go_debug_image_static",
@@ -1444,8 +1454,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:7ebe6351bf59e01550b4388d3a21f7bfb40a7552d2689f1a27a4ec3639b6f1b6",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:6050f094493edcd83494eb84524523558ff56c1060d545a12308c8e06cbb1724",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "go_image_static",
@@ -1454,8 +1464,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:be8c71d97739b5860947c2635ca40e8ea8eb6de72239ca52aeddac6b96e4cf53",
-      "updated_at": "2023-01-07"
+      "digest": "sha256:ea2ed73931ecd5d70f0bf3fdaa481c84f556cc205d6ceec78dff335fc4a313b2",
+      "updated_at": "2023-01-17"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1522,6 +1532,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -495818156 or hash(_DEPS_JSON) != -1588168876 else None]
+""") if hash(_DEPS_YAML) != -1728308653 or hash(_DEPS_JSON) != -2046601865 else None]
 
 DEPS = json.decode(_DEPS_JSON)
