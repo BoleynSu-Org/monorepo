@@ -74,7 +74,7 @@ public class Main extends RunnerGrpc.RunnerImplBase {
                 Process run = r.exec(new String[] { "/bin/sh", "-c", BINARY_FILE + " < " + INPUT_FILE + " > " + OUTPUT_FILE });
                 if (!run.waitFor(timeLimit, TimeUnit.MILLISECONDS)) {
                     run.destroyForcibly();
-                    builder.setResult("time limit exceeded").setOutput("error: it takes more than " + timeLimit + "ms to run your program.").setTime(5000).setMemory(0);
+                    builder.setResult("time limit exceeded").setOutput("error: it takes more than " + timeLimit + "ms to run your program.").setTime(timeLimit).setMemory(0);
                 } else {
                     int time = Math.min(timeLimit, (int) (System.currentTimeMillis() - start));
                     builder.setResult("accepted").setOutput(read(OUTPUT_FILE)).setTime(time).setMemory(0);

@@ -36,6 +36,8 @@ public class Main extends Config {
                 Task task = Task.newBuilder().setSource(source).setInput(input).setTimeLimit(problem.getInt("time_limit")).build();
                 SQL.setResult(id, "running " + i, time, memory);
                 Result result = runner.run(task);
+                time = Math.max(time, result.getTime());
+                memory = Math.max(memory, result.getMemory());
                 if (!"accepted".equals(result.getResult())) {
                     SQL.setResult(id, result.getResult() + " " + i, time, memory);
                     return;
@@ -44,10 +46,7 @@ public class Main extends Config {
                     if (res) {
                         SQL.setResult(id, "wrong answer " + i, time, memory);
                         return;
-                    } else {
-                        time = Math.max(time, result.getTime());
-                        memory = Math.max(memory, result.getMemory());
-                    }
+                    } 
                 }
             }
             SQL.setResult(id, "accepted", time, memory);
