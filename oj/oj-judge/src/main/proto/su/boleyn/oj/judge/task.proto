@@ -1,0 +1,11 @@
+syntax = "proto3";
+package su.boleyn.oj.judge;
+
+option java_multiple_files = true;
+
+message Task {
+  string source = 1;
+  string input = 2;
+  optional int32 time_limit = 3;
+  optional int32 memory_limit = 4;
+}

@@ -33,7 +33,7 @@ public class Main extends Config {
                 String input = FileUtils.read(inputFilePath);
                 String outputFilePath = "/" + problem.getString("code") + "/" + i + ".out";
                 String output = FileUtils.read(outputFilePath);
-                Task task = Task.newBuilder().setSource(source).setInput(input).build();
+                Task task = Task.newBuilder().setSource(source).setInput(input).setTimeLimit(problem.getInt("time_limit")).build();
                 SQL.setResult(id, "running " + i, time, memory);
                 Result result = runner.run(task);
                 if (!"accepted".equals(result.getResult())) {

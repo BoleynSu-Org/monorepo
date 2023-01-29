@@ -109,10 +109,8 @@ html, body {
                                         <th class="col-md-2">User</th>
                                         <th class="col-md-3">Submit Time</th>
                                         <th class="col-md-3">Result</th>
-                                        <!--
                                         <th class="col-md-1">Time</th>
                                         <th class="col-md-1">Memory</th>
--->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -140,10 +138,8 @@ html, body {
                                             class="<%=result.startsWith("accepted") ? "text-success"
                         : result.startsWith("judge error") ? "text-info"
                                 : result.startsWith("running") || result.startsWith("waiting") ? "" : "text-danger"%>"><%=result%></strong></td>
-                                        <!--
                                         <td><%=rs.getString("time")%>ms</td>
                                         <td><%=rs.getString("memory")%>kb</td>
--->
                                     </tr>
                                     <%
                                         }

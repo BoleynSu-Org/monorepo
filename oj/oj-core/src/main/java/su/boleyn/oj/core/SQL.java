@@ -207,7 +207,7 @@ public class SQL extends Config {
         statement.execute("create table user(username varchar(16) primary key,password varchar(64) not null);");
 
         statement.execute(
-                "create table problem(id bigint auto_increment primary key,title varchar(256) not null,code varchar(16) not null unique,testcase bigint not null,published bool not null);");
+                "create table problem(id bigint auto_increment primary key,title varchar(256) not null,code varchar(16) not null unique,testcase bigint not null,time_limit bigint not null,published bool not null);");
 
         statement.execute(
                 "create table submission(id bigint auto_increment primary key,submit_time timestamp not null,username varchar(16) not null,pid bigint not null,source text not null,result varchar(128),time int,memory int,foreign key(username) references user(username),foreign key(pid) references problem(id));");

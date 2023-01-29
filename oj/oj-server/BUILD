@@ -67,8 +67,10 @@ java_image(
     ],
     deps = [
         "//oj/oj-core:lib",
-        "//oj/oj-judge:java_grpc",
-        "//oj/oj-judge:java_proto",
+        "//oj/oj-judge:result_java_proto",
+        "//oj/oj-judge:runner_java_grpc",
+        "//oj/oj-judge:runner_java_proto",
+        "//oj/oj-judge:task_java_proto",
         "@io_grpc_grpc_java//api",
         "@maven//:commons_io_commons_io",
         "@maven//:org_apache_tomcat_embed_tomcat_embed_core",

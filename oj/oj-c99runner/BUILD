@@ -17,8 +17,10 @@ java_library(
     name = "lib",
     srcs = ["src/main/java/su/boleyn/oj/c99runner/Main.java"],
     deps = [
-        "//oj/oj-judge:java_grpc",
-        "//oj/oj-judge:java_proto",
+        "//oj/oj-judge:result_java_proto",
+        "//oj/oj-judge:runner_java_grpc",
+        "//oj/oj-judge:runner_java_proto",
+        "//oj/oj-judge:task_java_proto",
         "@io_grpc_grpc_java//api",
         "@io_grpc_grpc_java//netty",
         "@io_grpc_grpc_java//stub",

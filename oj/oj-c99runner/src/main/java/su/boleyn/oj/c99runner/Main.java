@@ -69,12 +69,15 @@ public class Main extends RunnerGrpc.RunnerImplBase {
             } else if (compile.exitValue() != 0) {
                 builder.setResult("compilation error").setOutput(read(OUTPUT_FILE)).setTime(0).setMemory(0);
             } else {
+                int timeLimit = task.getTimeLimit() == 0 ? 5000 : task.getTimeLimit();
+                long start = System.currentTimeMillis();
                 Process run = r.exec(new String[] { "/bin/sh", "-c", BINARY_FILE + " < " + INPUT_FILE + " > " + OUTPUT_FILE });
-                if (!run.waitFor(5, TimeUnit.SECONDS)) {
+                if (!run.waitFor(timeLimit, TimeUnit.MILLISECONDS)) {
                     run.destroyForcibly();
-                    builder.setResult("time limit exceeded").setOutput("error: it takes more than 5s to run your program.").setTime(5000).setMemory(0);
+                    builder.setResult("time limit exceeded").setOutput("error: it takes more than " + timeLimit + "ms to run your program.").setTime(5000).setMemory(0);
                 } else {
-                    builder.setResult("accepted").setOutput(read(OUTPUT_FILE)).setTime(0).setMemory(0);
+                    int time = Math.min(timeLimit, (int) (System.currentTimeMillis() - start));
+                    builder.setResult("accepted").setOutput(read(OUTPUT_FILE)).setTime(time).setMemory(0);
                 }
             }
             new File(SOURCE_FILE).delete();
