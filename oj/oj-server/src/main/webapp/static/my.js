@@ -22,7 +22,7 @@ $(function() {
     $('body')
             .append(
                     $('<div style="position:fixed;bottom:50px;right:13%;width:22%;"><div class="panel panel-default" style="height:250px;background:white;margin-bottom:0;" id="chat_div"><div style="width:100%;height:190px;overflow-y:auto;" id="chat_msg"></div><div><textarea class="form-control" id="send_msg" style="width:100%;"></textarea></div></div><button style="width:20%;" class="btn btn-primary btn-xs" id="send_btn">Send</button><button class="btn btn-xs btn-primary" style="width:80%;" id="chat_btn">Show/Hide chat room</button></div>'));
-    if (getCookie('show_chat_room') == 'false') {
+    if (getCookie('show_chat_room') != 'true') {
         $('#chat_div').hide();
         $('#send_btn').hide();
     } else {
