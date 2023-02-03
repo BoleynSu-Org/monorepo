@@ -20,7 +20,8 @@ class BasicAuthHandler implements HttpHandler {
 		HttpHandler handler = next;
 		handler = new AuthenticationCallHandler(handler);
 		handler = new AuthenticationConstraintHandler(handler);
-		handler = new AuthenticationMechanismsHandler(handler, Collections.<AuthenticationMechanism>singletonList(new BasicAuthenticationMechanism("su.boleyn.urlshortener")));
+		handler = new AuthenticationMechanismsHandler(handler, Collections
+				.<AuthenticationMechanism>singletonList(new BasicAuthenticationMechanism("su.boleyn.urlshortener")));
 		handler = new SecurityInitialHandler(AuthenticationMode.PRO_ACTIVE, identityManager, handler);
 		this.next = handler;
 	}

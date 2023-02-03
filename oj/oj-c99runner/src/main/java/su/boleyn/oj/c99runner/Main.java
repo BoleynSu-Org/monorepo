@@ -62,19 +62,24 @@ public class Main extends RunnerGrpc.RunnerImplBase {
                 out.write(task.getInput());
             }
             Runtime r = Runtime.getRuntime();
-            Process compile = r.exec(new String[] { "/bin/sh", "-c", getCC() + " -lm -std=c99 " + SOURCE_FILE + " -o " + BINARY_FILE + " >" + OUTPUT_FILE + " 2>&1" });
+            Process compile = r.exec(new String[] { "/bin/sh", "-c",
+                    getCC() + " -lm -std=c99 " + SOURCE_FILE + " -o " + BINARY_FILE + " >" + OUTPUT_FILE + " 2>&1" });
             if (!compile.waitFor(15, TimeUnit.SECONDS)) {
                 compile.destroyForcibly();
-                builder.setResult("compilation error").setOutput("error: it takes more than 15s to compile your program.").setTime(0).setMemory(0);
+                builder.setResult("compilation error")
+                        .setOutput("error: it takes more than 15s to compile your program.").setTime(0).setMemory(0);
             } else if (compile.exitValue() != 0) {
                 builder.setResult("compilation error").setOutput(read(OUTPUT_FILE)).setTime(0).setMemory(0);
             } else {
                 int timeLimit = task.getTimeLimit() == 0 ? 5000 : task.getTimeLimit();
                 long start = System.currentTimeMillis();
-                Process run = r.exec(new String[] { "/bin/sh", "-c", BINARY_FILE + " < " + INPUT_FILE + " > " + OUTPUT_FILE });
+                Process run = r
+                        .exec(new String[] { "/bin/sh", "-c", BINARY_FILE + " < " + INPUT_FILE + " > " + OUTPUT_FILE });
                 if (!run.waitFor(timeLimit, TimeUnit.MILLISECONDS)) {
                     run.destroyForcibly();
-                    builder.setResult("time limit exceeded").setOutput("error: it takes more than " + timeLimit + "ms to run your program.").setTime(timeLimit).setMemory(0);
+                    builder.setResult("time limit exceeded")
+                            .setOutput("error: it takes more than " + timeLimit + "ms to run your program.")
+                            .setTime(timeLimit).setMemory(0);
                 } else {
                     int time = Math.min(timeLimit, (int) (System.currentTimeMillis() - start));
                     builder.setResult("accepted").setOutput(read(OUTPUT_FILE)).setTime(time).setMemory(0);

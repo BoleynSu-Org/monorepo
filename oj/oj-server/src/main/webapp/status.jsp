@@ -135,9 +135,10 @@ html, body {
                                         <td><%=rs.getString("username")%></td>
                                         <td><%=rs.getDate("submit_time")%> <%=rs.getTime("submit_time")%></td>
                                         <td><strong
-                                            class="<%=result.startsWith("accepted") ? "text-success"
-                        : result.startsWith("judge error") ? "text-info"
-                                : result.startsWith("running") || result.startsWith("waiting") ? "" : "text-danger"%>"><%=result%></strong></td>
+                                            class="<%=result.startsWith("accepted")                                ? "text-success"
+                                                    : result.startsWith("judge error")                             ? "text-info"
+                                                    : result.startsWith("running") || result.startsWith("waiting") ? ""
+                                                    :                                                                "text-danger"%>"><%=result%></strong></td>
                                         <td><%=rs.getString("time")%>ms</td>
                                         <td><%=rs.getString("memory")%>kb</td>
                                     </tr>

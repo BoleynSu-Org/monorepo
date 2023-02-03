@@ -149,13 +149,19 @@ public class URLShortenerServer {
 								expiresAt = null;
 							}
 
-							if (exchange.getQueryParameters().get("token") == null || exchange.getRequestCookie("token") == null || !exchange.getQueryParameters().get("token").getLast().equals(exchange.getRequestCookie("token").getValue())) {
+							if (exchange.getQueryParameters().get("token") == null
+									|| exchange.getRequestCookie("token") == null
+									|| !exchange.getQueryParameters().get("token").getLast()
+											.equals(exchange.getRequestCookie("token").getValue())) {
 								String token = tokenGenerator.createSessionId();
 								exchange.setStatusCode(200);
 								exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/html");
 								exchange.getResponseHeaders().put(Headers.X_FRAME_OPTIONS, "deny");
 								exchange.setResponseCookie(new CookieImpl("token", token));
-								exchange.getResponseSender().send("<!DOCTYPE html><title>Confirm</title><a href='" + exchange.getRequestURI() + "?" + exchange.getQueryString() + "&token=" + token + "'>Confirm</a>");
+								exchange.getResponseSender()
+										.send("<!DOCTYPE html><title>Confirm</title><a href='"
+												+ exchange.getRequestURI() + "?" + exchange.getQueryString() + "&token="
+												+ token + "'>Confirm</a>");
 								return;
 							}
 

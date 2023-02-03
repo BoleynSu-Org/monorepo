@@ -26,7 +26,8 @@ public class Main extends Config {
         connector.setProperty("address", ADDRESS);
         connector.setPort(PORT);
         tomcat.setConnector(connector);
-        try (ZipFile zipFile = new ZipFile(Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).toFile())) {
+        try (ZipFile zipFile = new ZipFile(
+                Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).toFile())) {
             Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry entry = entries.nextElement();
@@ -37,7 +38,8 @@ public class Main extends Config {
                         file.mkdirs();
                     } else {
                         file.getParentFile().mkdirs();
-                        try (InputStream in = zipFile.getInputStream(entry); OutputStream out = new FileOutputStream(file)) {
+                        try (InputStream in = zipFile.getInputStream(entry);
+                                OutputStream out = new FileOutputStream(file)) {
                             IOUtils.copy(in, out);
                         }
                     }
