@@ -23,7 +23,7 @@ public class User extends Config {
     private static final int RUNNER_PORT = Integer.parseInt(getOrElse("RUNNER_PORT", "1993"));
     private static final ManagedChannel channel = ManagedChannelBuilder.forAddress(RUNNER_HOST, RUNNER_PORT)
             .usePlaintext().maxInboundMessageSize(100 * 1024 * 1024).build();
-    private static final RunnerGrpc.RunnerBlockingStub runner = RunnerGrpc.newBlockingStub(channel);
+    private static final RunnerGrpc.RunnerBlockingStub runner = RunnerGrpc.newBlockingStub(channel).withWaitForReady();
 
     static final String ADMIN_ACCOUNT = "boleynsu";
 
