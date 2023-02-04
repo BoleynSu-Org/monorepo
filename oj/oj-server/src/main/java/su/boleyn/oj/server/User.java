@@ -339,7 +339,7 @@ public class User extends Config {
         return cid != 0;
     }
 
-    public ResultSet getAllSubmission() throws SQLException {
+    public ResultSet getAllSubmissions() throws SQLException {
         String condition = "";
         long cid = 0;
         try {

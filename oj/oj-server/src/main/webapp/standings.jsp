@@ -82,49 +82,51 @@ html, body {
                             %>
                             <h3>Standings</h3>
                             <%
-                                ResultSet rs = user.getAllSubmission();
                                 Map<String, Integer> rank = new HashMap<String, Integer>();
                                 ArrayList<String> select = new ArrayList<String>();
                                 Map<String, Set<Long>> solved = new HashMap<String, Set<Long>>();
                                 Map<String, Map<Long, Integer>> tried = new HashMap<String, Map<Long, Integer>>();
                                 Map<String, String> lastAccepted = new HashMap<String, String>();
-                                while (rs.next()) {
-                                    Long pid = rs.getLong("pid");
-                                    String username = rs.getString("username");
-                                    boolean accepted = rs.getString("result").equals("accepted");
-                                    if (rank.get(username) == null) {
-                                        rank.put(username, select.size());
-                                        select.add(username);
-                                        tried.put(username, new HashMap<Long, Integer>());
-                                        solved.put(username, new HashSet<Long>());
-                                    }
-                                    if (accepted && !solved.get(username).contains(pid)) {
-                                        lastAccepted.put(username,
-                                                rs.getDate("submit_time").toString() + " " + rs.getTime("submit_time").toString());
-                                        solved.get(username).add(pid);
-                                        while (!rank.get(username).equals(0)) {
-                                            int r = rank.get(username);
-                                            String p = select.get(r - 1);
-                                            if (solved.get(p).size() < solved.get(username).size()) {
-                                                rank.put(p, r);
-                                                rank.put(username, r - 1);
-                                                select.set(r, p);
-                                                select.set(r - 1, username);
-                                            } else
-                                                break;
+                                try (ResultSet rs = user.getAllSubmissions()) {
+                                    while (rs.next()) {
+                                        Long pid = rs.getLong("pid");
+                                        String username = rs.getString("username");
+                                        boolean accepted = rs.getString("result").equals("accepted");
+                                        if (rank.get(username) == null) {
+                                            rank.put(username, select.size());
+                                            select.add(username);
+                                            tried.put(username, new HashMap<Long, Integer>());
+                                            solved.put(username, new HashSet<Long>());
                                         }
-                                    }
-                                    if (!solved.get(username).contains(pid)) {
-                                        if (tried.get(username).get(pid) == null)
-                                            tried.get(username).put(pid, 0);
-                                        tried.get(username).put(pid, tried.get(username).get(pid) + 1);
+                                        if (accepted && !solved.get(username).contains(pid)) {
+                                            lastAccepted.put(username,
+                                                    rs.getDate("submit_time").toString() + " " + rs.getTime("submit_time").toString());
+                                            solved.get(username).add(pid);
+                                            while (!rank.get(username).equals(0)) {
+                                                int r = rank.get(username);
+                                                String p = select.get(r - 1);
+                                                if (solved.get(p).size() < solved.get(username).size()) {
+                                                    rank.put(p, r);
+                                                    rank.put(username, r - 1);
+                                                    select.set(r, p);
+                                                    select.set(r - 1, username);
+                                                } else
+                                                    break;
+                                            }
+                                        }
+                                        if (!solved.get(username).contains(pid)) {
+                                            if (tried.get(username).get(pid) == null)
+                                                tried.get(username).put(pid, 0);
+                                            tried.get(username).put(pid, tried.get(username).get(pid) + 1);
+                                        }
                                     }
                                 }
                                 ArrayList<Long> problems = new ArrayList<Long>();
-                                rs = user.searchProblem();
-                                while (rs.next()) {
-                                    Long id = rs.getLong("id");
-                                    problems.add(id);
+                                try (ResultSet rs = user.searchProblem()) {
+                                    while (rs.next()) {
+                                        Long id = rs.getLong("id");
+                                        problems.add(id);
+                                    }
                                 }
                                 if (user.isContest()) {
                             %>
