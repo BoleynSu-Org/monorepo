@@ -7,6 +7,8 @@ presubmits:
     decorate: true
     always_run: true
     skip_report: false
+    labels:
+      usecache.k3s-cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
@@ -15,6 +17,67 @@ presubmits:
         - "test"
         - "--config=remote"
         - "//..."
+        volumeMounts:
+        - name: cache
+          mountPath: /home/ci-runner/.cache
+      volumes:
+      - name: cache
+        hostPath:
+          path: /hostpath/cache
+          type: Directory
+      affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname
+  - name: "deploy-oj-to-staging"
+    branches:
+    - main
+    decorate: true
+    always_run: true
+    skip_report: false
+    labels:
+      usecache.k3s-cuhk.servers.boleyn.su: "true"
+    spec:
+      containers:
+      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
+        command:
+        - "bazel"
+        - "run"
+        - "--config=remote"
+        - "-c"
+        - "opt"
+        - "//deploy/oj:staging.apply"
+        - "--"
+        - "--server-side"
+        - "--cluster="
+        env:
+        - name: DOCKER_CONFIG
+          value: /ghcr-dockerconfig
+        volumeMounts:
+        - name: ghcr-dockerconfig
+          mountPath: /ghcr-dockerconfig
+        - name: cache
+          mountPath: /home/ci-runner/.cache
+      volumes:
+      - name: ghcr-dockerconfig
+        secret:
+          secretName: ghcr-dockerconfig
+      - name: cache
+        hostPath:
+          path: /hostpath/cache
+          type: Directory
+      serviceAccountName: oj-staging-deployer
+      automountServiceAccountToken: true
+      affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname
 
 postsubmits:
   - name: "bazel-test-all"
