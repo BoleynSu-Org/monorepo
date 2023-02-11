@@ -322,6 +322,9 @@ pip_deps:
 - name: ruamel.yaml
   version: 0.17.21
   updated_at: '2022-04-09'
+- name: PyYAML
+  version: '6.0'
+  updated_at: '2022-05-11'
 
 maven_deps:
 - name: commons-io:commons-io
@@ -633,6 +636,30 @@ container_deps:
   tag: '20221225'
   digest: sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
   updated_at: '2022-12-25'
+- name: io_docker_library_mariadb
+  version: latest
+  # latest is the stable version.
+  # See https://mariadb.org/mariadb/all-releases/
+  version_regex: ^(latest)$
+  registry: docker.io
+  repository: library/mariadb
+  tag: latest
+  digest: sha256:0d81a2fd3df954f1f29016a841b0d4cb5bdbc7eb7c640156d3dddd48c6ace35b
+  updated_at: '2023-02-11'
+- name: io_docker_library_adminer
+  version: 4.8.1
+  registry: docker.io
+  repository: library/adminer
+  tag: 4.8.1
+  digest: sha256:bab45ccc9eadcb18188070b06ad25562219199100205955fbd08b05640df830c
+  updated_at: '2023-02-11'
+- name: io_docker_filebrowser_filebrowser
+  version: v2.23.0
+  registry: docker.io
+  repository: filebrowser/filebrowser
+  tag: v2.23.0
+  digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
+  updated_at: '2022-11-25'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -691,6 +718,7 @@ toolchain_deps:
 - name: golang
   version: '1.19'
   updated_at: '2022-12-09'
+
 """
 # END deps.yaml
 
@@ -1013,6 +1041,11 @@ _DEPS_JSON = r"""
       "name": "ruamel.yaml",
       "version": "0.17.21",
       "updated_at": "2022-04-09"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0",
+      "updated_at": "2022-05-11"
     }
   ],
   "maven_deps": [
@@ -1475,6 +1508,34 @@ _DEPS_JSON = r"""
       "tag": "20221225",
       "digest": "sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991",
       "updated_at": "2022-12-25"
+    },
+    {
+      "name": "io_docker_library_mariadb",
+      "version": "latest",
+      "version_regex": "^(latest)$",
+      "registry": "docker.io",
+      "repository": "library/mariadb",
+      "tag": "latest",
+      "digest": "sha256:0d81a2fd3df954f1f29016a841b0d4cb5bdbc7eb7c640156d3dddd48c6ace35b",
+      "updated_at": "2023-02-11"
+    },
+    {
+      "name": "io_docker_library_adminer",
+      "version": "4.8.1",
+      "registry": "docker.io",
+      "repository": "library/adminer",
+      "tag": "4.8.1",
+      "digest": "sha256:bab45ccc9eadcb18188070b06ad25562219199100205955fbd08b05640df830c",
+      "updated_at": "2023-02-11"
+    },
+    {
+      "name": "io_docker_filebrowser_filebrowser",
+      "version": "v2.23.0",
+      "registry": "docker.io",
+      "repository": "filebrowser/filebrowser",
+      "tag": "v2.23.0",
+      "digest": "sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2",
+      "updated_at": "2022-11-25"
     }
   ],
   "go_deps": [
@@ -1532,6 +1593,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1689594655 or hash(_DEPS_JSON) != -197286169 else None]
+""") if hash(_DEPS_YAML) != -1638627715 or hash(_DEPS_JSON) != 1885602713 else None]
 
 DEPS = json.decode(_DEPS_JSON)

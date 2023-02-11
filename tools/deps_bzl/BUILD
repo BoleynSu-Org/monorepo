@@ -13,6 +13,9 @@ py_library(
     name = "include",
     srcs = ["include.py"],
     visibility = ["//visibility:public"],
+    deps = [
+        ":parser",
+    ],
 )
 
 py_binary(

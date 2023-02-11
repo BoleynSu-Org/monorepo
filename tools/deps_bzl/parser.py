@@ -99,3 +99,13 @@ DEPS = json.decode(_DEPS_JSON)
 
     with open(path, "w", encoding="utf-8") as file:
         file.write(output)
+
+
+def normalize(obj, extra_newline=False):
+    """Normalize the format of a YAML object"""
+    yaml = ruamel.yaml.YAML()
+    yaml.width = math.inf
+    writer = _Writer()
+    yaml.dump(obj, writer)
+    yaml = ruamel.yaml.YAML()
+    return yaml.load(writer.get().strip("\n") + "\n" + ("\n" if extra_newline else ""))
