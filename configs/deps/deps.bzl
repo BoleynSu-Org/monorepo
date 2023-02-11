@@ -16,11 +16,11 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.4.tar.gz
-  sha256: af6cc82d87db94585bceeda2561cb8a9d55ad435318ccb4ddfee18a43580fb5d
-  version: 0.0.4
-  strip_prefix: rules_cc-0.0.4
-  updated_at: '2022-09-23'
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.5.tar.gz
+  sha256: 2004c71f3e0a88080b2bd3b6d3b73b4c597116db9c9a36676d0ffad39b849214
+  version: 0.0.5
+  strip_prefix: rules_cc-0.0.5
+  updated_at: '2023-02-11'
   load_deps: |
     load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies")
     def deps():
@@ -39,11 +39,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: 8c15896f6686beb5c631a4459a3aa8392daccaab805ea899c9d14215074b60ef
-  strip_prefix: rules_python-0.17.3
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.17.3.tar.gz
-  updated_at: '2023-02-03'
-  version: 0.17.3
+  sha256: 36362b4d54fcb17342f9071e4c38d63ce83e2e57d7d5599ebdde4670b9760664
+  strip_prefix: rules_python-0.18.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.18.0.tar.gz
+  updated_at: '2023-02-11'
+  version: 0.18.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -136,11 +136,11 @@ bazel_deps:
       native.register_toolchains("@boleynsu_org//configs/build/toolchains:kubectl_toolchain")
 - name: bazel_skylib
   type: http_archive
-  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.0.tar.gz
-  sha256: 4dd05f44200db3b78f72f56ebd8b102d5bcdc17c0299955d4eb20c38c6f07cd7
-  updated_at: '2023-02-03'
-  version: 1.4.0
-  strip_prefix: bazel-skylib-1.4.0
+  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz
+  sha256: 060426b186670beede4104095324a72bd7494d8b4e785bf0d84a612978285908
+  updated_at: '2023-02-11'
+  version: 1.4.1
+  strip_prefix: bazel-skylib-1.4.1
   load_deps: |
     load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
     def deps():
@@ -161,11 +161,11 @@ bazel_deps:
   version: v5.1.2
 - name: rules_pkg
   type: http_archive
-  url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.8.0.tar.gz
-  sha256: ab55ed03c8e10b5cfd0748a4f9cf5d55c23cb7a7e623c4d306b75684e57483e4
-  updated_at: '2022-11-25'
-  version: 0.8.0
-  strip_prefix: rules_pkg-0.8.0
+  url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.8.1.tar.gz
+  sha256: 99d56f7cba0854dd1db96cf245fd52157cef58808c8015e96994518d28e3c7ab
+  updated_at: '2023-02-11'
+  version: 0.8.1
+  strip_prefix: rules_pkg-0.8.1
   load_deps: |
     load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
     def deps():
@@ -568,64 +568,64 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:5b36802fe79bf8752bc933d25e5eb418b069d84a88eda3fc1675c1dbe3b695ea
-  updated_at: '2023-02-03'
+  digest: sha256:da9e8295af2e35950c919386300633227ac55be3d20989dc70e0ce05786a2f63
+  updated_at: '2023-02-11'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:940d5d7c67553ea25ab03b9ac455a5c023ba973b32b1a58dd6e071f4dd770045
-  updated_at: '2023-02-03'
+  digest: sha256:28f6bb7beac6ee3e2e20a5baf6e692c11744987afd36a1205fcb1378a82715ba
+  updated_at: '2023-02-11'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:f52eba8aebf8b4855b23c35862a3e9d7dd84392698d0ec8c880fcf3924d1c476
-  updated_at: '2023-02-03'
+  digest: sha256:3a30ab9a10eaed492bae19503d1bdb909cff21fda439ff5efa796c9258295806
+  updated_at: '2023-02-11'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:98f31901214f31006817ec3e54c15ebe4a543cdd1f1af862f45cbe8363fac30d
-  updated_at: '2023-02-03'
+  digest: sha256:9e203cdccf26402b94d8f46236d16dd1fc67c53754c51f79a1e0343e2143be3b
+  updated_at: '2023-02-11'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:1f7ef392ec8c48327b82b94597990260faa0a1606c6044462f705305d96bc80d
-  updated_at: '2023-02-03'
+  digest: sha256:d0b69bf70a15ec6f0ce7e469929e984e4ce04d14d7af489e981e049600a66492
+  updated_at: '2023-02-11'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:8d2104b9cf0cc5145d2acbedb09910e3f5f9f784b14bc505f68878c9a5dd96ae
-  updated_at: '2023-02-03'
+  digest: sha256:c8fc8860fb39438ff2df7e0cfe59383741ccdff36779587665fca0d36f43580e
+  updated_at: '2023-02-11'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:e58cbcc8ffd27ac86209922419b4762e58a08500a7d536c67f29584239bb89c5
-  updated_at: '2023-02-03'
+  digest: sha256:6ea445e70d4882b2abf42512e165c1462158ecb5d3c68763def696006eef5a16
+  updated_at: '2023-02-11'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:390b7a3c81f4556d518d57c5babc6fa617a47c63e670f6bbac9d5cad22f272c1
-  updated_at: '2023-02-03'
+  digest: sha256:6f7c614c97223643a0e8dfd18425933fefc4f90249ba1589fb29e1fd1652489c
+  updated_at: '2023-02-11'
 - name: io_quay_boleynsu_ci_runner
   version: '20221225'
   registry: quay.io
@@ -709,11 +709,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_cc",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.4.tar.gz",
-      "sha256": "af6cc82d87db94585bceeda2561cb8a9d55ad435318ccb4ddfee18a43580fb5d",
-      "version": "0.0.4",
-      "strip_prefix": "rules_cc-0.0.4",
-      "updated_at": "2022-09-23",
+      "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.5.tar.gz",
+      "sha256": "2004c71f3e0a88080b2bd3b6d3b73b4c597116db9c9a36676d0ffad39b849214",
+      "version": "0.0.5",
+      "strip_prefix": "rules_cc-0.0.5",
+      "updated_at": "2023-02-11",
       "load_deps": "load(\"@rules_cc//cc:repositories.bzl\", \"rules_cc_dependencies\")\ndef deps():\n  rules_cc_dependencies()\n"
     },
     {
@@ -729,11 +729,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "8c15896f6686beb5c631a4459a3aa8392daccaab805ea899c9d14215074b60ef",
-      "strip_prefix": "rules_python-0.17.3",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.17.3.tar.gz",
-      "updated_at": "2023-02-03",
-      "version": "0.17.3",
+      "sha256": "36362b4d54fcb17342f9071e4c38d63ce83e2e57d7d5599ebdde4670b9760664",
+      "strip_prefix": "rules_python-0.18.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.18.0.tar.gz",
+      "updated_at": "2023-02-11",
+      "version": "0.18.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
@@ -802,11 +802,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_skylib",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.0.tar.gz",
-      "sha256": "4dd05f44200db3b78f72f56ebd8b102d5bcdc17c0299955d4eb20c38c6f07cd7",
-      "updated_at": "2023-02-03",
-      "version": "1.4.0",
-      "strip_prefix": "bazel-skylib-1.4.0",
+      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz",
+      "sha256": "060426b186670beede4104095324a72bd7494d8b4e785bf0d84a612978285908",
+      "updated_at": "2023-02-11",
+      "version": "1.4.1",
+      "strip_prefix": "bazel-skylib-1.4.1",
       "load_deps": "load(\"@bazel_skylib//:workspace.bzl\", \"bazel_skylib_workspace\")\ndef deps():\n  bazel_skylib_workspace()\n"
     },
     {
@@ -830,11 +830,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_pkg",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.8.0.tar.gz",
-      "sha256": "ab55ed03c8e10b5cfd0748a4f9cf5d55c23cb7a7e623c4d306b75684e57483e4",
-      "updated_at": "2022-11-25",
-      "version": "0.8.0",
-      "strip_prefix": "rules_pkg-0.8.0",
+      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.8.1.tar.gz",
+      "sha256": "99d56f7cba0854dd1db96cf245fd52157cef58808c8015e96994518d28e3c7ab",
+      "updated_at": "2023-02-11",
+      "version": "0.8.1",
+      "strip_prefix": "rules_pkg-0.8.1",
       "load_deps": "load(\"@rules_pkg//:deps.bzl\", \"rules_pkg_dependencies\")\ndef deps():\n  rules_pkg_dependencies()\n"
     },
     {
@@ -1394,8 +1394,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:5b36802fe79bf8752bc933d25e5eb418b069d84a88eda3fc1675c1dbe3b695ea",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:da9e8295af2e35950c919386300633227ac55be3d20989dc70e0ce05786a2f63",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "java_image_base",
@@ -1404,8 +1404,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:940d5d7c67553ea25ab03b9ac455a5c023ba973b32b1a58dd6e071f4dd770045",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:28f6bb7beac6ee3e2e20a5baf6e692c11744987afd36a1205fcb1378a82715ba",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "py3_debug_image_base",
@@ -1414,8 +1414,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:f52eba8aebf8b4855b23c35862a3e9d7dd84392698d0ec8c880fcf3924d1c476",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:3a30ab9a10eaed492bae19503d1bdb909cff21fda439ff5efa796c9258295806",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "py3_image_base",
@@ -1424,8 +1424,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:98f31901214f31006817ec3e54c15ebe4a543cdd1f1af862f45cbe8363fac30d",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:9e203cdccf26402b94d8f46236d16dd1fc67c53754c51f79a1e0343e2143be3b",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "go_debug_image_base",
@@ -1434,8 +1434,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:1f7ef392ec8c48327b82b94597990260faa0a1606c6044462f705305d96bc80d",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:d0b69bf70a15ec6f0ce7e469929e984e4ce04d14d7af489e981e049600a66492",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "go_image_base",
@@ -1444,8 +1444,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:8d2104b9cf0cc5145d2acbedb09910e3f5f9f784b14bc505f68878c9a5dd96ae",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:c8fc8860fb39438ff2df7e0cfe59383741ccdff36779587665fca0d36f43580e",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "go_debug_image_static",
@@ -1454,8 +1454,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:e58cbcc8ffd27ac86209922419b4762e58a08500a7d536c67f29584239bb89c5",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:6ea445e70d4882b2abf42512e165c1462158ecb5d3c68763def696006eef5a16",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "go_image_static",
@@ -1464,8 +1464,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:390b7a3c81f4556d518d57c5babc6fa617a47c63e670f6bbac9d5cad22f272c1",
-      "updated_at": "2023-02-03"
+      "digest": "sha256:6f7c614c97223643a0e8dfd18425933fefc4f90249ba1589fb29e1fd1652489c",
+      "updated_at": "2023-02-11"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1532,6 +1532,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 559210679 or hash(_DEPS_JSON) != 1276689413 else None]
+""") if hash(_DEPS_YAML) != -1689594655 or hash(_DEPS_JSON) != -197286169 else None]
 
 DEPS = json.decode(_DEPS_JSON)
