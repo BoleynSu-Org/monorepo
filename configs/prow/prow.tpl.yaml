@@ -6,7 +6,7 @@ presubmits:
     always_run: true
     skip_report: false
     labels:
-      usecache.k3s-cuhk.servers.boleyn.su: "true"
+      usecache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner
@@ -28,7 +28,7 @@ presubmits:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+                  usecache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
   - name: "deploy-oj-to-staging"
     branches:
@@ -37,7 +37,7 @@ presubmits:
     always_run: true
     skip_report: false
     labels:
-      usecache.k3s-cuhk.servers.boleyn.su: "true"
+      usecache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner
@@ -74,7 +74,7 @@ presubmits:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+                  usecache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
 
 postsubmits:

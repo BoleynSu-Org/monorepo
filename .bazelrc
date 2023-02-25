@@ -36,7 +36,7 @@ build:remote_common --remote_instance_name=remote-monorepo
 build:remote_common --remote_timeout=3600
 ## Platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora-clang_container
+build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora_container
 ## Misc
 build:remote_common --jobs=24
 

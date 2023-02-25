@@ -8,10 +8,10 @@ presubmits:
     always_run: true
     skip_report: false
     labels:
-      usecache.k3s-cuhk.servers.boleyn.su: "true"
+      usecache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
+      - image: quay.io/boleynsu/ci-runner@sha256:6b3be482d4a045bff637a0c31d31f991142d92165321ffb708016e8160beccfa
         command:
         - "bazel"
         - "test"
@@ -30,7 +30,7 @@ presubmits:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+                  usecache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
   - name: "deploy-oj-to-staging"
     branches:
@@ -39,10 +39,10 @@ presubmits:
     always_run: true
     skip_report: false
     labels:
-      usecache.k3s-cuhk.servers.boleyn.su: "true"
+      usecache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
+      - image: quay.io/boleynsu/ci-runner@sha256:6b3be482d4a045bff637a0c31d31f991142d92165321ffb708016e8160beccfa
         command:
         - "bazel"
         - "run"
@@ -76,7 +76,7 @@ presubmits:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s-cuhk.servers.boleyn.su: "true"
+                  usecache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
 
 postsubmits:
@@ -89,7 +89,7 @@ postsubmits:
     skip_report: false
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:f8026d0d4c6fc1a4d817fa445e076620627307f200f20b2328c439f1b6406991
+      - image: quay.io/boleynsu/ci-runner@sha256:6b3be482d4a045bff637a0c31d31f991142d92165321ffb708016e8160beccfa
         command:
         - "bazel"
         - "test"
