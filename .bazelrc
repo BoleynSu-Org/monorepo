@@ -29,23 +29,4 @@ test --test_output=errors
 # See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
 build:local_container --extra_execution_platforms=@io_bazel_rules_docker//platforms:local_container_platform
 
-# See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
-## Remote Build Execution
-build:remote_common --remote_executor=grpc://build.boleyn.su:8980
-build:remote_common --remote_instance_name=remote-monorepo
-build:remote_common --remote_timeout=3600
-## Platform
-### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:remote_common --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora_container
-## Misc
-build:remote_common --jobs=24
-
-build:remote --config=remote_common
-build:remote --remote_download_minimal
-
-build:remote_toplevel --config=remote_common
-build:remote_toplevel --remote_download_toplevel
-
-build:remote_all --config=remote_common
-
 try-import %workspace%/configs/bazel/custom.bazelrc

@@ -6,67 +6,47 @@ presubmits:
     always_run: true
     skip_report: false
     labels:
-      usecache.k3s.cuhk.servers.boleyn.su: "true"
+      use-rbe.k3s.cuhk.servers.boleyn.su: "true"
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bazel"
-        - "test"
-        - "--config=remote"
-        - "//..."
-        volumeMounts:
-        - name: cache
-          mountPath: /home/ci-runner/.cache
-      volumes:
-      - name: cache
-        hostPath:
-          path: /hostpath/cache
-          type: Directory
+        - "bash"
+        - "-c"
+        - |
+          cat >$HOME/.bazelrc <<EOF
+          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
+          EOF
+          bazel test --config=remote //...
       affinity:
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s.cuhk.servers.boleyn.su: "true"
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
   - name: "deploy-oj-to-staging"
     branches:
     - main
     decorate: true
     always_run: true
-    skip_report: false
+    skip_report: true
     labels:
-      usecache.k3s.cuhk.servers.boleyn.su: "true"
+      use-rbe.k3s.cuhk.servers.boleyn.su: "true"
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
+      use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bazel"
-        - "run"
-        - "--config=remote"
+        - "bash"
         - "-c"
-        - "opt"
-        - "//deploy/oj:staging.apply"
-        - "--"
-        - "--server-side"
-        - "--cluster="
-        env:
-        - name: DOCKER_CONFIG
-          value: /ghcr-dockerconfig
-        volumeMounts:
-        - name: ghcr-dockerconfig
-          mountPath: /ghcr-dockerconfig
-        - name: cache
-          mountPath: /home/ci-runner/.cache
-      volumes:
-      - name: ghcr-dockerconfig
-        secret:
-          secretName: ghcr-dockerconfig
-      - name: cache
-        hostPath:
-          path: /hostpath/cache
-          type: Directory
+        - |
+          cat >$HOME/.bazelrc <<EOF
+          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
+          EOF
+          bazel run --config=remote -c opt //deploy/oj:staging.apply -- --server-side --cluster=
       serviceAccountName: oj-staging-deployer
       automountServiceAccountToken: true
       affinity:
@@ -74,7 +54,7 @@ presubmits:
             requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  usecache.k3s.cuhk.servers.boleyn.su: "true"
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
 
 postsubmits:
@@ -85,11 +65,24 @@ postsubmits:
     decorate: true
     always_run: true
     skip_report: false
+    labels:
+      use-rbe.k3s.cuhk.servers.boleyn.su: "true"
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bazel"
-        - "test"
-        - "--config=remote"
-        - "//..."
+        - "bash"
+        - "-c"
+        - |
+          cat >$HOME/.bazelrc <<EOF
+          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
+          EOF
+          bazel test --config=remote //...
+      affinity:
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname
