@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Boleyn Su's Online Judge - Submit</title>
+<title>Boleyn Su's Online Judge - Custom Test</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 html, body {
