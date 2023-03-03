@@ -174,7 +174,7 @@ spec:
             memory: "300Mi"
             cpu: "1m"
           limits:
-            memory: "1Gi"
+            memory: "512Mi"
             cpu: "1000m"
         ports:
         - name: oj-runner
