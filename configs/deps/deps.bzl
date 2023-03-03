@@ -41,11 +41,11 @@ bazel_deps:
       rules_java_toolchains()
 - name: rules_python
   type: http_archive
-  sha256: 29a801171f7ca190c543406f9894abf2d483c206e14d6acbd695623662320097
-  strip_prefix: rules_python-0.18.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.18.1.tar.gz
-  updated_at: '2023-02-18'
-  version: 0.18.1
+  sha256: ffc7b877c95413c82bfd5482c017edcf759a6250d8b24e82f41f3c8b8d9e287e
+  strip_prefix: rules_python-0.19.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.19.0.tar.gz
+  updated_at: '2023-03-03'
+  version: 0.19.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -194,11 +194,11 @@ bazel_deps:
       gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.1.tar.gz
-  sha256: 0e19d477b5123c74d12bb46bc72e5b6f4c407473af3772ef31cfff3a1d64d311
-  strip_prefix: kubernetes-1.26.1
-  updated_at: '2023-01-25'
-  version: v1.26.1
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.2.tar.gz
+  sha256: 7a50f0a8f0b649922f021f811d6ace8c282d09a0e3a30fa69d86b6c28eb51fd1
+  strip_prefix: kubernetes-1.26.2
+  updated_at: '2023-03-03'
+  version: v1.26.2
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -625,15 +625,15 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:48185cd637a96b30924c63168195c170d054e5aebbda29d1fe5827eccdc1c966
-  updated_at: '2023-02-25'
+  digest: sha256:5d8ac14c245bb9fce7063df2eac582c475597a2e1e7188d39ebdefbe615606df
+  updated_at: '2023-03-03'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:bab45ccc9eadcb18188070b06ad25562219199100205955fbd08b05640df830c
-  updated_at: '2023-02-11'
+  digest: sha256:f3249e2dc6a52b92c088b7e21785199f4b97b1375e7517a1f3277c37c56144ac
+  updated_at: '2023-03-03'
 - name: io_docker_filebrowser_filebrowser
   version: v2.23.0
   registry: docker.io
@@ -658,7 +658,7 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.26.1
+  version: v0.26.2
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
   patch_cmds:
   - |
@@ -689,13 +689,13 @@ go_deps:
         ],
     )
     EOF
-  updated_at: '2023-01-25'
+  updated_at: '2023-03-03'
 - name: k8s.io/client-go
-  version: v0.26.1
-  updated_at: '2023-01-25'
+  version: v0.26.2
+  updated_at: '2023-03-03'
 - name: k8s.io/component-base
-  version: v0.26.1
-  updated_at: '2023-01-25'
+  version: v0.26.2
+  updated_at: '2023-03-03'
 
 toolchain_deps:
 - name: c
@@ -755,11 +755,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "29a801171f7ca190c543406f9894abf2d483c206e14d6acbd695623662320097",
-      "strip_prefix": "rules_python-0.18.1",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.18.1.tar.gz",
-      "updated_at": "2023-02-18",
-      "version": "0.18.1",
+      "sha256": "ffc7b877c95413c82bfd5482c017edcf759a6250d8b24e82f41f3c8b8d9e287e",
+      "strip_prefix": "rules_python-0.19.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.19.0.tar.gz",
+      "updated_at": "2023-03-03",
+      "version": "0.19.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
     },
     {
@@ -881,11 +881,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.1.tar.gz",
-      "sha256": "0e19d477b5123c74d12bb46bc72e5b6f4c407473af3772ef31cfff3a1d64d311",
-      "strip_prefix": "kubernetes-1.26.1",
-      "updated_at": "2023-01-25",
-      "version": "v1.26.1",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.26.2.tar.gz",
+      "sha256": "7a50f0a8f0b649922f021f811d6ace8c282d09a0e3a30fa69d86b6c28eb51fd1",
+      "strip_prefix": "kubernetes-1.26.2",
+      "updated_at": "2023-03-03",
+      "version": "v1.26.2",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -1488,8 +1488,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:48185cd637a96b30924c63168195c170d054e5aebbda29d1fe5827eccdc1c966",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:5d8ac14c245bb9fce7063df2eac582c475597a2e1e7188d39ebdefbe615606df",
+      "updated_at": "2023-03-03"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1497,8 +1497,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:bab45ccc9eadcb18188070b06ad25562219199100205955fbd08b05640df830c",
-      "updated_at": "2023-02-11"
+      "digest": "sha256:f3249e2dc6a52b92c088b7e21785199f4b97b1375e7517a1f3277c37c56144ac",
+      "updated_at": "2023-03-03"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1531,21 +1531,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.26.1",
+      "version": "v0.26.2",
       "patch_cmds": [
         "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
       ],
-      "updated_at": "2023-01-25"
+      "updated_at": "2023-03-03"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.26.1",
-      "updated_at": "2023-01-25"
+      "version": "v0.26.2",
+      "updated_at": "2023-03-03"
     },
     {
       "name": "k8s.io/component-base",
-      "version": "v0.26.1",
-      "updated_at": "2023-01-25"
+      "version": "v0.26.2",
+      "updated_at": "2023-03-03"
     }
   ],
   "toolchain_deps": [
@@ -1583,6 +1583,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -264814450 or hash(_DEPS_JSON) != 1138369100 else None]
+""") if hash(_DEPS_YAML) != -263586167 or hash(_DEPS_JSON) != 538634941 else None]
 
 DEPS = json.decode(_DEPS_JSON)
