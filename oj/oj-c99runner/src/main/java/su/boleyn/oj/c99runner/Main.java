@@ -39,19 +39,6 @@ public class Main extends RunnerGrpc.RunnerImplBase {
         }
     }
 
-    public static String getCC() {
-        Runtime r = Runtime.getRuntime();
-        for (String CC : new String[] { "gcc", "clang" }) {
-            try {
-                if (r.exec(new String[] { "/bin/sh", "-c", "command -v " + CC }).waitFor() == 0) {
-                    return CC;
-                }
-            } catch (Exception e) {
-            }
-        }
-        return "false";
-    }
-
     public static synchronized Result run(Task task) {
         Result.Builder builder = Result.newBuilder();
         try {
@@ -61,9 +48,10 @@ public class Main extends RunnerGrpc.RunnerImplBase {
             try (PrintWriter out = new PrintWriter(INPUT_FILE)) {
                 out.write(task.getInput());
             }
-            Runtime r = Runtime.getRuntime();
-            Process compile = r.exec(new String[] { "/bin/sh", "-c",
-                    getCC() + " -lm -std=c99 " + SOURCE_FILE + " -o " + BINARY_FILE + " >" + OUTPUT_FILE + " 2>&1" });
+            ProcessBuilder compileBuilder = new ProcessBuilder("/usr/bin/gcc","-lm","-std=c99", SOURCE_FILE, "-o", BINARY_FILE);
+            compileBuilder.redirectOutput(new File(OUTPUT_FILE));
+            compileBuilder.redirectOutput(new File(OUTPUT_FILE));
+            Process compile = compileBuilder.start();
             if (!compile.waitFor(15, TimeUnit.SECONDS)) {
                 compile.destroyForcibly();
                 builder.setResult("compilation error")
@@ -72,9 +60,11 @@ public class Main extends RunnerGrpc.RunnerImplBase {
                 builder.setResult("compilation error").setOutput(read(OUTPUT_FILE)).setTime(0).setMemory(0);
             } else {
                 int timeLimit = task.getTimeLimit() == 0 ? 5000 : task.getTimeLimit();
+                ProcessBuilder runBuilder = new ProcessBuilder(BINARY_FILE);
+                runBuilder.redirectInput(new File(INPUT_FILE));
+                runBuilder.redirectOutput(new File(OUTPUT_FILE));
                 long start = System.currentTimeMillis();
-                Process run = r
-                        .exec(new String[] { "/bin/sh", "-c", BINARY_FILE + " < " + INPUT_FILE + " > " + OUTPUT_FILE });
+                Process run = runBuilder.start();
                 if (!run.waitFor(timeLimit, TimeUnit.MILLISECONDS)) {
                     run.destroyForcibly();
                     builder.setResult("time limit exceeded")

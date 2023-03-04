@@ -171,11 +171,13 @@ spec:
         image: images_boleynsu_org_oj_oj-c99runner
         resources:
           requests:
-            memory: "300Mi"
-            cpu: "1m"
-          limits:
             memory: "512Mi"
+            cpu: "1m"
+            ephemeral-storage: "2Gi"
+          limits:
+            memory: "1Gi"
             cpu: "1000m"
+            ephemeral-storage: "4Gi"
         ports:
         - name: oj-runner
           containerPort: 1993
