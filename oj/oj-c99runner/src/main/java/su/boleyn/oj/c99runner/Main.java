@@ -50,7 +50,7 @@ public class Main extends RunnerGrpc.RunnerImplBase {
             }
             ProcessBuilder compileBuilder = new ProcessBuilder("/usr/bin/gcc","-lm","-std=c99", SOURCE_FILE, "-o", BINARY_FILE);
             compileBuilder.redirectOutput(new File(OUTPUT_FILE));
-            compileBuilder.redirectOutput(new File(OUTPUT_FILE));
+            compileBuilder.redirectError(new File(OUTPUT_FILE));
             Process compile = compileBuilder.start();
             if (!compile.waitFor(15, TimeUnit.SECONDS)) {
                 compile.destroyForcibly();
