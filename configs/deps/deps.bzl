@@ -142,11 +142,11 @@ bazel_deps:
       bazel_skylib_workspace()
 - name: rules_jvm_external
   type: http_archive
-  sha256: 6e9f2b94ecb6aa7e7ec4a0fbf882b226ff5257581163e88bf70ae521555ad271
-  strip_prefix: rules_jvm_external-4.5
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/4.5.tar.gz
-  updated_at: '2022-11-25'
-  version: '4.5'
+  sha256: 1a5ebb66a52d490bd51e4fb12ce2746bdb9225d7b3188d64d4780c7cacf2decb
+  strip_prefix: rules_jvm_external-5.1
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.1.tar.gz
+  updated_at: '2023-03-12'
+  version: '5.1'
 - name: bazel_toolchains
   type: http_archive
   url: https://github.com/bazelbuild/bazel-toolchains/archive/refs/tags/v5.1.2.tar.gz
@@ -276,22 +276,22 @@ bazel_deps:
   - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
 - name: io_bazel
   type: http_archive
-  version: 6.0.0
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz
-  sha256: 06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397
-  updated_at: '2022-12-23'
+  version: 6.1.0
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.1.0.tar.gz
+  sha256: 00de635068cb293b073a09dff9f1f123cabab0eba704e622b66d6043990f62a0
+  updated_at: '2023-03-12'
   load_deps: |
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
     def deps():
       if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
         print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.0.0
+  strip_prefix: bazel-6.1.0
 - name: bazel_linux_x86_64
   type: http_file
-  version: 6.0.0
-  url: https://github.com/bazelbuild/bazel/releases/download/6.0.0/bazel-6.0.0-linux-x86_64
-  sha256: f03d44ecaac3878e3d19489e37caa4ca1dc57427b686a78a85065ea3c27ebe68
-  updated_at: '2022-12-23'
+  version: 6.1.0
+  url: https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-6.1.0-linux-x86_64
+  sha256: 6c25a6d716545d6b672ec46f770521cd9ebb63d73617b8f4e6747825d1db1839
+  updated_at: '2023-03-12'
   executable: true
   override_updater:
   - type: deps_updater
@@ -323,11 +323,11 @@ maven_deps:
   version: 8.0.32
   updated_at: '2023-01-25'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.6
-  updated_at: '2023-02-25'
+  version: 10.1.7
+  updated_at: '2023-03-12'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.6
-  updated_at: '2023-02-25'
+  version: 10.1.7
+  updated_at: '2023-03-12'
 - name: org.webjars:jquery
   version: 3.6.3
   updated_at: '2023-01-07'
@@ -552,71 +552,71 @@ container_deps:
   registry: gcr.io
   repository: distroless/java11
   tag: debug
-  digest: sha256:de8bbf5df214f89e4a0088452fcb8e3832aa6501d087d3beb908df96f9afb431
-  updated_at: '2023-02-25'
+  digest: sha256:65d9d48d6ec911eaca7e8291d593127b447960a3cf06cc2022f15e9ea30a7441
+  updated_at: '2023-03-12'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java11
   tag: latest
-  digest: sha256:daf98e7efd97916bf247b84b00dc9ef3fbb53124551c3fe2c4ecfd21f7f24ae8
-  updated_at: '2023-02-25'
+  digest: sha256:c59ecfacc7779671bafb37405f3f252d7e90d002ad02b3d536d266b2d90eba50
+  updated_at: '2023-03-12'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:dfff3371dd0d40e4473d468cdf24e97a3f9100ea8418dd6b378b51bf1893a397
-  updated_at: '2023-02-25'
+  digest: sha256:c2e83c3c3133d575a9ab27fdd016bdc39ee1176ca03cd8eb407788e413fc2701
+  updated_at: '2023-03-12'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:f30b373326c5afefad87a139192aae25146147d923c409512839558ae0fd6473
-  updated_at: '2023-02-25'
+  digest: sha256:25c2ad820cb033881d88d11663b3a466ed8cdea5204446e64041d3962e2ce8e3
+  updated_at: '2023-03-12'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:0f503c6bfd207793bc416f20a35bf6b75d769a903c48f180ad73f60f7b60d7bd
-  updated_at: '2023-02-25'
+  digest: sha256:3936b55577a5aff95492d4d6bc948b71845ecd73da6c2d4a01577fd3bc5f2a3f
+  updated_at: '2023-03-12'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:34e682800774ecbd0954b1663d90238505f1ba5543692dbc75feef7dd4839e90
-  updated_at: '2023-02-25'
+  digest: sha256:2259760686e4955ddb1c5e8e584055754358873eef4faa0eaeeccb5685b1b20b
+  updated_at: '2023-03-12'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/static
   tag: debug
-  digest: sha256:5b154c2e08b18f21eb36327d93db998cca897600098c766c8b51e088c3eab0e0
-  updated_at: '2023-02-25'
+  digest: sha256:5f917e336a8fce6a601f432f154c3e6d5023109092e2ab80267b9f47935550a3
+  updated_at: '2023-03-12'
 - name: go_image_static
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/static
   tag: latest
-  digest: sha256:20c99e52d222a1fe9f232acb9dbaba5a02958f0993ef7f251677fdab1856178a
-  updated_at: '2023-02-25'
+  digest: sha256:e85422184b2da835bc3faabc7a89868c25bea18856965f12c83e793cc8b9a73c
+  updated_at: '2023-03-12'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230226'
+  version: '20230312'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230226'
-  digest: sha256:6b3be482d4a045bff637a0c31d31f991142d92165321ffb708016e8160beccfa
-  updated_at: '2023-02-26'
+  tag: '20230312'
+  digest: sha256:f101402f4a98dbf69d231ac23ebf07e4415efa7f538f6310947658c83d4116f5
+  updated_at: '2023-03-12'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -642,19 +642,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230226'
+  version: '20230312'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230226'
-  digest: sha256:afa04210ee759fd8f1b051b3dbb71e7d6365ffa8b33dba1c54bdf1dfdb79a1a9
-  updated_at: '2023-02-26'
+  tag: '20230312'
+  digest: sha256:d9e518b64de3dcb923bcc19ce1608771ab15c86664de3dfa49385f2e698ec86b
+  updated_at: '2023-03-12'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230226'
+  version: '20230312'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230226'
-  digest: sha256:2ef81e723ab2f327d72934fd92bc815121e39f0e2615bfab5c91d0e06760adfd
-  updated_at: '2023-02-26'
+  tag: '20230312'
+  digest: sha256:84933b01354c6ddf6c3f2b2587bc2c5efe19260166bbd31914988dd9b4e42224
+  updated_at: '2023-03-12'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -829,11 +829,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_jvm_external",
       "type": "http_archive",
-      "sha256": "6e9f2b94ecb6aa7e7ec4a0fbf882b226ff5257581163e88bf70ae521555ad271",
-      "strip_prefix": "rules_jvm_external-4.5",
-      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/4.5.tar.gz",
-      "updated_at": "2022-11-25",
-      "version": "4.5"
+      "sha256": "1a5ebb66a52d490bd51e4fb12ce2746bdb9225d7b3188d64d4780c7cacf2decb",
+      "strip_prefix": "rules_jvm_external-5.1",
+      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.1.tar.gz",
+      "updated_at": "2023-03-12",
+      "version": "5.1"
     },
     {
       "name": "bazel_toolchains",
@@ -970,20 +970,20 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel",
       "type": "http_archive",
-      "version": "6.0.0",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.0.0.tar.gz",
-      "sha256": "06d3dbcba2286d45fc6479a87ccc649055821fc6da0c3c6801e73da780068397",
-      "updated_at": "2022-12-23",
+      "version": "6.1.0",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.1.0.tar.gz",
+      "sha256": "00de635068cb293b073a09dff9f1f123cabab0eba704e622b66d6043990f62a0",
+      "updated_at": "2023-03-12",
       "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.0.0"
+      "strip_prefix": "bazel-6.1.0"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_file",
-      "version": "6.0.0",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.0.0/bazel-6.0.0-linux-x86_64",
-      "sha256": "f03d44ecaac3878e3d19489e37caa4ca1dc57427b686a78a85065ea3c27ebe68",
-      "updated_at": "2022-12-23",
+      "version": "6.1.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.1.0/bazel-6.1.0-linux-x86_64",
+      "sha256": "6c25a6d716545d6b672ec46f770521cd9ebb63d73617b8f4e6747825d1db1839",
+      "updated_at": "2023-03-12",
       "executable": true,
       "override_updater": [
         {
@@ -1042,13 +1042,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.6",
-      "updated_at": "2023-02-25"
+      "version": "10.1.7",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.6",
-      "updated_at": "2023-02-25"
+      "version": "10.1.7",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "org.webjars:jquery",
@@ -1399,8 +1399,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "debug",
-      "digest": "sha256:de8bbf5df214f89e4a0088452fcb8e3832aa6501d087d3beb908df96f9afb431",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:65d9d48d6ec911eaca7e8291d593127b447960a3cf06cc2022f15e9ea30a7441",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "java_image_base",
@@ -1409,8 +1409,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java11",
       "tag": "latest",
-      "digest": "sha256:daf98e7efd97916bf247b84b00dc9ef3fbb53124551c3fe2c4ecfd21f7f24ae8",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:c59ecfacc7779671bafb37405f3f252d7e90d002ad02b3d536d266b2d90eba50",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "py3_debug_image_base",
@@ -1419,8 +1419,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:dfff3371dd0d40e4473d468cdf24e97a3f9100ea8418dd6b378b51bf1893a397",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:c2e83c3c3133d575a9ab27fdd016bdc39ee1176ca03cd8eb407788e413fc2701",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "py3_image_base",
@@ -1429,8 +1429,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:f30b373326c5afefad87a139192aae25146147d923c409512839558ae0fd6473",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:25c2ad820cb033881d88d11663b3a466ed8cdea5204446e64041d3962e2ce8e3",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "go_debug_image_base",
@@ -1439,8 +1439,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:0f503c6bfd207793bc416f20a35bf6b75d769a903c48f180ad73f60f7b60d7bd",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:3936b55577a5aff95492d4d6bc948b71845ecd73da6c2d4a01577fd3bc5f2a3f",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "go_image_base",
@@ -1449,8 +1449,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:34e682800774ecbd0954b1663d90238505f1ba5543692dbc75feef7dd4839e90",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:2259760686e4955ddb1c5e8e584055754358873eef4faa0eaeeccb5685b1b20b",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "go_debug_image_static",
@@ -1459,8 +1459,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "debug",
-      "digest": "sha256:5b154c2e08b18f21eb36327d93db998cca897600098c766c8b51e088c3eab0e0",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:5f917e336a8fce6a601f432f154c3e6d5023109092e2ab80267b9f47935550a3",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "go_image_static",
@@ -1469,17 +1469,17 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/static",
       "tag": "latest",
-      "digest": "sha256:20c99e52d222a1fe9f232acb9dbaba5a02958f0993ef7f251677fdab1856178a",
-      "updated_at": "2023-02-25"
+      "digest": "sha256:e85422184b2da835bc3faabc7a89868c25bea18856965f12c83e793cc8b9a73c",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230226",
+      "version": "20230312",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230226",
-      "digest": "sha256:6b3be482d4a045bff637a0c31d31f991142d92165321ffb708016e8160beccfa",
-      "updated_at": "2023-02-26"
+      "tag": "20230312",
+      "digest": "sha256:f101402f4a98dbf69d231ac23ebf07e4415efa7f538f6310947658c83d4116f5",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1511,21 +1511,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230226",
+      "version": "20230312",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230226",
-      "digest": "sha256:afa04210ee759fd8f1b051b3dbb71e7d6365ffa8b33dba1c54bdf1dfdb79a1a9",
-      "updated_at": "2023-02-26"
+      "tag": "20230312",
+      "digest": "sha256:d9e518b64de3dcb923bcc19ce1608771ab15c86664de3dfa49385f2e698ec86b",
+      "updated_at": "2023-03-12"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230226",
+      "version": "20230312",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230226",
-      "digest": "sha256:2ef81e723ab2f327d72934fd92bc815121e39f0e2615bfab5c91d0e06760adfd",
-      "updated_at": "2023-02-26"
+      "tag": "20230312",
+      "digest": "sha256:84933b01354c6ddf6c3f2b2587bc2c5efe19260166bbd31914988dd9b4e42224",
+      "updated_at": "2023-03-12"
     }
   ],
   "go_deps": [
@@ -1583,6 +1583,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -263586167 or hash(_DEPS_JSON) != 538634941 else None]
+""") if hash(_DEPS_YAML) != 1992204591 or hash(_DEPS_JSON) != 1118160047 else None]
 
 DEPS = json.decode(_DEPS_JSON)
