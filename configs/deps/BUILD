@@ -18,3 +18,5 @@ genfile(
     headers = [],
     visibility = ["//visibility:public"],
 )
+
+exports_files(["deps.bzl"])
