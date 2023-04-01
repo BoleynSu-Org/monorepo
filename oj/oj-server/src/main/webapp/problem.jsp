@@ -1,19 +1,30 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet"%>
 <%
     User user = new User(request, response);
+    String cid = user.get("cid");
+    try {
+        Long.parseLong(cid);
+    } catch (NumberFormatException e) {
+        cid = "";
+    }
     String pid = user.get("pid");
+    try {
+        Long.parseLong(pid);
+    } catch (NumberFormatException e) {
+        pid = "";
+    }
     String title = user.getProblemTitle();
     String content = user.getProblemContent();
     if (title == null) {
-        user.go("No such problem", "/problemset?cid=" + user.get("cid"));
+        user.go("No such problem", "/problemset?cid=" + cid);
     }
 %>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Boleyn Su's Online Judge - Problem - <%=title%></title>
+<title>Boleyn Su's Online Judge - Problem - <%=HtmlUtils.sanitizeTextContent(title)%></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 html, body {
@@ -76,24 +87,24 @@ pre {
                     %>
                     <article class="panel panel-default">
                         <header class="panel-heading">
-                            <h1 class="panel-title"><%=user.getContestTitle()%></h1>
+                            <h1 class="panel-title"><%=HtmlUtils.sanitizeTextContent(user.getContestTitle())%></h1>
                         </header>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a href="/problemset?cid=<%=user.get("cid")%>">Problems</a></li>
-                                <li><a href="/submit?cid=<%=user.get("cid")%>">Submit</a></li>
-                                <li><a href="/status?cid=<%=user.get("cid")%>">Status</a></li>
-                                <li><a href="/standings?cid=<%=user.get("cid")%>">Standings</a></li>
+                                <li><a href="/problemset?cid=<%=cid%>">Problems</a></li>
+                                <li><a href="/submit?cid=<%=cid%>">Submit</a></li>
+                                <li><a href="/status?cid=<%=cid%>">Status</a></li>
+                                <li><a href="/standings?cid=<%=cid%>">Standings</a></li>
                             </ul>
                             <%
                                 }
                             %>
-                            <h3><%=title%></h3>
+                            <h3><%=HtmlUtils.sanitizeTextContent(title)%></h3>
                             <div>
-                                <%=content%>
+                                <%=HtmlUtils.sanitize(content)%>
                             </div>
                             <a class="btn btn-primary"
-                                href="/submit?cid=<%=user.get("cid")%>&pid=<%=pid%>">Submit</a>
+                                href="/submit?cid=<%=cid%>&pid=<%=pid%>">Submit</a>
                             <%
                                 if (user.isContest()) {
                             %>

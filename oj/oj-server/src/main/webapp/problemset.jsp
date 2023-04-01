@@ -1,7 +1,13 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet"%>
 <%
     User user = new User(request, response);
+    String cid = user.get("cid");
+    try {
+        Long.parseLong(cid);
+    } catch (NumberFormatException e) {
+        cid = "";
+    }
     ResultSet rs = null;
     try {
         rs = user.searchProblem();
@@ -76,15 +82,15 @@ html, body {
                     %>
                     <article class="panel panel-default">
                         <header class="panel-heading">
-                            <h1 class="panel-title"><%=user.getContestTitle()%></h1>
+                            <h1 class="panel-title"><%=HtmlUtils.sanitizeTextContent(user.getContestTitle())%></h1>
                         </header>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a
-                                    href="/problemset?cid=<%=user.get("cid")%>">Problems</a></li>
-                                <li><a href="/submit?cid=<%=user.get("cid")%>">Submit</a></li>
-                                <li><a href="/status?cid=<%=user.get("cid")%>">Status</a></li>
-                                <li><a href="/standings?cid=<%=user.get("cid")%>">Standings</a></li>
+                                    href="/problemset?cid=<%=cid%>">Problems</a></li>
+                                <li><a href="/submit?cid=<%=cid%>">Submit</a></li>
+                                <li><a href="/status?cid=<%=cid%>">Status</a></li>
+                                <li><a href="/standings?cid=<%=cid%>">Standings</a></li>
                             </ul>
                             <%
                                 }
@@ -105,11 +111,11 @@ html, body {
                                     %><tr>
                                         <td><%=id%></td>
                                         <td><a
-                                            href="/problem?cid=<%=user.get("cid")%>&pid=<%=id%>"><%=rs.getString("title")%></a></td>
+                                            href="/problem?cid=<%=cid%>&pid=<%=id%>"><%=HtmlUtils.sanitizeTextContent(rs.getString("title"))%></a></td>
                                         <td><a
-                                            href="/status?cid=<%=user.get("cid")%>&pid=<%=id%>&result=accepted">
+                                            href="/status?cid=<%=cid%>&pid=<%=id%>&result=accepted">
                                                 <%=user.getAcceptedOfProblem(id)%>
-                                        </a>/ <a href="/status?cid=<%=user.get("cid")%>&pid=<%=id%>">
+                                        </a>/ <a href="/status?cid=<%=cid%>&pid=<%=id%>">
                                                 <%=user.getSubmissionsOfProblem(id)%>
                                         </a></td>
                                     </tr>
@@ -123,9 +129,9 @@ html, body {
                             %>
                             <ul class="pagination">
                                 <%
-                                    int cur = 1;
+                                    long cur = 1;
                                         try {
-                                            cur = Math.max(1, Integer.parseInt(user.get("page")));
+                                            cur = Math.max(1, Long.parseLong(user.get("page")));
                                         } catch (NumberFormatException e) {
                                         }
                                 %>

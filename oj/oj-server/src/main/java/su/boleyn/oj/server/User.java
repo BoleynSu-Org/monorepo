@@ -166,9 +166,9 @@ public class User extends Config {
     public ResultSet searchSubmission() throws SQLException {
         String condition = "";
         String order = "order by id desc";
-        int page = 1;
+        long page = 1;
         try {
-            page = Math.max(page, Integer.parseInt(get("page")));
+            page = Math.max(page, Long.parseLong(get("page")));
         } catch (NumberFormatException e) {
         }
         long pid = 0;
@@ -224,9 +224,9 @@ public class User extends Config {
     public ResultSet searchProblem() throws SQLException {
         String condition = "";
         String order = "";
-        int page = 1;
+        long page = 1;
         try {
-            page = Math.max(page, Integer.parseInt(get("page")));
+            page = Math.max(page, Long.parseLong(get("page")));
         } catch (NumberFormatException e) {
         }
         if (!isAdmin()) {
@@ -251,7 +251,7 @@ public class User extends Config {
         return SQL.searchProblem(condition, order, page);
     }
 
-    public int getAcceptedOfProblem(long id) throws SQLException {
+    public long getAcceptedOfProblem(long id) throws SQLException {
         String condition = "";
         long cid = 0;
         try {
@@ -266,7 +266,7 @@ public class User extends Config {
         return SQL.getAcceptedOfProblem(id, condition);
     }
 
-    public int getSubmissionsOfProblem(long id) throws SQLException {
+    public long getSubmissionsOfProblem(long id) throws SQLException {
         String condition = "";
         long cid = 0;
         try {
@@ -311,9 +311,9 @@ public class User extends Config {
     public ResultSet searchContest() throws SQLException {
         String condition = "";
         String order = "order by id desc";
-        int page = 1;
+        long page = 1;
         try {
-            page = Math.max(page, Integer.parseInt(get("page")));
+            page = Math.max(page, Long.parseLong(get("page")));
         } catch (NumberFormatException e) {
         }
         return SQL.searchContest(condition, order, page);

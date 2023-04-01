@@ -1,8 +1,20 @@
 <%@page import="java.awt.List"%>
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet"%>
 <%
     User user = new User(request, response);
+    String cid = user.get("cid");
+    try {
+        Long.parseLong(cid);
+    } catch (NumberFormatException e) {
+        cid = "";
+    }
+    String pid = user.get("pid");
+    try {
+        Long.parseLong(pid);
+    } catch (NumberFormatException e) {
+        pid = "";
+    }
     ResultSet rs = null;
     try {
         rs = user.searchSubmission();
@@ -77,15 +89,15 @@ html, body {
                     %>
                     <article class="panel panel-default">
                         <header class="panel-heading">
-                            <h1 class="panel-title"><%=user.getContestTitle()%></h1>
+                            <h1 class="panel-title"><%=HtmlUtils.sanitizeTextContent(user.getContestTitle())%></h1>
                         </header>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a href="/problemset?cid=<%=user.get("cid")%>">Problems</a></li>
-                                <li><a href="/submit?cid=<%=user.get("cid")%>">Submit</a></li>
+                                <li><a href="/problemset?cid=<%=cid%>">Problems</a></li>
+                                <li><a href="/submit?cid=<%=cid%>">Submit</a></li>
                                 <li class="active"><a
-                                    href="/status?cid=<%=user.get("cid")%>">Status</a></li>
-                                <li><a href="/standings?cid=<%=user.get("cid")%>">Standings</a></li>
+                                    href="/status?cid=<%=cid%>">Status</a></li>
+                                <li><a href="/standings?cid=<%=cid%>">Standings</a></li>
                             </ul>
                             <%
                                 }
@@ -95,7 +107,7 @@ html, body {
                                 if (user.hasLogin()) {
                             %>
                                 |<small><a
-                                    href="/status?cid=<%=user.get("cid")%>&username=<%=user.getUsername()%>">My
+                                    href="/status?cid=<%=cid%>&username=<%=HtmlUtils.sanitizeAttribute(user.getUsername())%>">My
                                         status</a></small>
                                 <%
                                     }
@@ -123,24 +135,24 @@ html, body {
                                             <%
                                                 if (hasLogin && (user.getUsername().equals(rs.getString("username")) || user.isAdmin())) {
                                             %><a
-                                            href="/submission?cid=<%=user.get("cid")%>&sid=<%=rs.getString("id")%>"><%=rs.getString("id")%></a>
+                                            href="/submission?cid=<%=cid%>&sid=<%=rs.getLong("id")%>"><%=rs.getLong("id")%></a>
                                             <%
                                                 } else {
-                                            %><%=rs.getString("id")%> <%
+                                            %><%=rs.getLong("id")%> <%
      }
  %>
                                         </td>
                                         <td><a
-                                            href="/problem?cid=<%=user.get("cid")%>&pid=<%=rs.getString("pid")%>"><%=rs.getString("pid")%></a></td>
-                                        <td><%=rs.getString("username")%></td>
+                                            href="/problem?cid=<%=cid%>&pid=<%=rs.getLong("pid")%>"><%=rs.getLong("pid")%></a></td>
+                                        <td><%=HtmlUtils.sanitizeTextContent(rs.getString("username"))%></td>
                                         <td><%=rs.getDate("submit_time")%> <%=rs.getTime("submit_time")%></td>
                                         <td><strong
                                             class="<%=result.startsWith("accepted")                                ? "text-success"
                                                     : result.startsWith("judge error")                             ? "text-info"
                                                     : result.startsWith("running") || result.startsWith("waiting") ? ""
-                                                    :                                                                "text-danger"%>"><%=result%></strong></td>
-                                        <td><%=rs.getString("time")%>ms</td>
-                                        <td><%=rs.getString("memory")%>kb</td>
+                                                    :                                                                "text-danger"%>"><%=HtmlUtils.sanitizeTextContent(result)%></strong></td>
+                                        <td><%=rs.getInt("time")%>ms</td>
+                                        <td><%=rs.getInt("memory")%>kb</td>
                                     </tr>
                                     <%
                                         }
@@ -149,17 +161,17 @@ html, body {
                             </table>
                             <ul class="pagination">
                                 <%
-                                    int cur = 1;
+                                    long cur = 1;
                                     try {
-                                        cur = Math.max(1, Integer.parseInt(user.get("page")));
+                                        cur = Math.max(1, Long.parseLong(user.get("page")));
                                     } catch (NumberFormatException e) {
                                     }
                                 %>
                                 <li><a
-                                    href="/status?cid=<%=user.get("cid")%>&page=<%=(cur - 1)%>&username=<%=user.get("username")%>&pid=<%=user.get("pid")%>&result=<%=user.get("result")%>">&laquo;</a></li>
+                                    href="/status?cid=<%=cid%>&page=<%=(cur - 1)%>&username=<%=HtmlUtils.sanitizeAttribute(user.get("username"))%>&pid=<%=pid%>&result=<%=HtmlUtils.sanitizeAttribute(user.get("result"))%>">&laquo;</a></li>
                                 <li><a><%=cur%></a></li>
                                 <li><a
-                                    href="/status?cid=<%=user.get("cid")%>&page=<%=(cur + 1)%>&username=<%=user.get("username")%>&pid=<%=user.get("pid")%>&result=<%=user.get("result")%>">&raquo;</a></li>
+                                    href="/status?cid=<%=cid%>&page=<%=(cur + 1)%>&username=<%=HtmlUtils.sanitizeAttribute(user.get("username"))%>&pid=<%=pid%>&result=<%=HtmlUtils.sanitizeAttribute(user.get("result"))%>">&raquo;</a></li>
                             </ul>
                             <%
                                 if (user.isContest()) {

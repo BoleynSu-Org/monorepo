@@ -1,17 +1,15 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet"%><%
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet"%><%
     User user = new User(request, response);
     if (user.isSend()) {
-%><%=user.sendChatMessage()%><%
+%><%=HtmlUtils.sanitizeTextContent(user.sendChatMessage())%><%
     } else {
         ResultSet rs = user.getChatMessage();
         while (rs.next()) {
 %>
 <p>
-    <span class="user"><%=rs.getString("sender").replaceAll("<", "&lt;")
-                            .replaceAll(">", "&gt;")%></span>
-    : <span class="message"><%=rs.getString("message").replaceAll("<", "&lt;")
-                            .replaceAll(">", "&gt;")%></span>
+    <span class="user"><%=HtmlUtils.sanitizeTextContent(rs.getString("sender"))%></span>
+    : <span class="message"><%=HtmlUtils.sanitizeTextContent(rs.getString("message"))%></span>
 </p>
 <%
     }

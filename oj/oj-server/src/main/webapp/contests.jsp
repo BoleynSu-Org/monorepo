@@ -1,6 +1,6 @@
 <%@page import="java.awt.List"%>
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet,java.util.ArrayList"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet,java.util.ArrayList"%>
 <%
     User user = new User(request, response);
     boolean isContest = user.isContest();
@@ -88,8 +88,8 @@ html, body {
                                 while (rs.next()) {
                             %>
                             <tr>
-                                <td><%=rs.getString("id")%></td>
-                                <td><a href="/problemset?cid=<%=rs.getString("id")%>"><%=rs.getString("title")%></a></td>
+                                <td><%=rs.getLong("id")%></td>
+                                <td><a href="/problemset?cid=<%=rs.getLong("id")%>"><%=HtmlUtils.sanitizeTextContent(rs.getString("title"))%></a></td>
                                 <td><%=rs.getDate("begin")%> <%=rs.getTime("begin")%></td>
                                 <td><%=rs.getDate("end")%> <%=rs.getTime("end")%></td>
                                 <td>
@@ -121,9 +121,9 @@ html, body {
                     </table>
                     <ul class="pagination">
                         <%
-                            int cur = 1;
+                            long cur = 1;
                             try {
-                                cur = Math.max(1, Integer.parseInt(user.get("page")));
+                                cur = Math.max(1, Long.parseLong(user.get("page")));
                             } catch (NumberFormatException e) {
                             }
                         %>

@@ -1,7 +1,13 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User,java.sql.ResultSet,java.util.*"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User,java.sql.ResultSet,java.util.*"%>
 <%
     User user = new User(request, response);
+    String cid = user.get("cid");
+    try {
+        Long.parseLong(cid);
+    } catch (NumberFormatException e) {
+        cid = "";
+    }
 %>
 <!doctype html>
 <html lang="en">
@@ -67,15 +73,15 @@ html, body {
                     %>
                     <article class="panel panel-default">
                         <header class="panel-heading">
-                            <h1 class="panel-title"><%=user.getContestTitle()%></h1>
+                            <h1 class="panel-title"><%=HtmlUtils.sanitizeTextContent(user.getContestTitle())%></h1>
                         </header>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a href="/problemset?cid=<%=user.get("cid")%>">Problems</a></li>
-                                <li><a href="/submit?cid=<%=user.get("cid")%>">Submit</a></li>
-                                <li><a href="/status?cid=<%=user.get("cid")%>">Status</a></li>
+                                <li><a href="/problemset?cid=<%=cid%>">Problems</a></li>
+                                <li><a href="/submit?cid=<%=cid%>">Submit</a></li>
+                                <li><a href="/status?cid=<%=cid%>">Status</a></li>
                                 <li class="active"><a
-                                    href="/standings?cid=<%=user.get("cid")%>">Standings</a></li>
+                                    href="/standings?cid=<%=cid%>">Standings</a></li>
                             </ul>
                             <%
                                 }
@@ -151,7 +157,7 @@ html, body {
                                     %>
                                     <tr>
                                         <td><%=r + 1%></td>
-                                        <td><%=username%></td>
+                                        <td><%=HtmlUtils.sanitizeTextContent(username)%></td>
                                         <td><%=solved.get(username).size()%></td>
                                         <%
                                             for (int i = 0; i < problems.size(); i++) {
@@ -197,7 +203,7 @@ html, body {
                                     %>
                                     <tr>
                                         <td><%=r + 1%></td>
-                                        <td><%=username%></td>
+                                        <td><%=HtmlUtils.sanitizeTextContent(username)%></td>
                                         <td><%=solved.get(username).size()%></td>
                                         <td><%=lastAccepted.getOrDefault(username, "")%></td>
                                     </tr>

@@ -75,7 +75,7 @@ public class SQL extends Config {
         ps.setString(1, username);
         ps.setString(2, password);
         ResultSet rs = ps.executeQuery();
-        return rs.next() && rs.getInt(1) == 1;
+        return rs.next() && rs.getLong(1) == 1;
     }
 
     public static String generateToken(String username) throws SQLException {
@@ -93,7 +93,7 @@ public class SQL extends Config {
         ps.setString(1, username);
         ps.setString(2, token);
         ResultSet rs = ps.executeQuery();
-        return rs.next() && rs.getInt(1) == 1;
+        return rs.next() && rs.getLong(1) == 1;
     }
 
     public static ResultSet getUsers() throws SQLException {
@@ -139,33 +139,33 @@ public class SQL extends Config {
         }
     }
 
-    public static ResultSet searchSubmission(String condition, String order, int page) throws SQLException {
+    public static ResultSet searchSubmission(String condition, String order, long page) throws SQLException {
         Statement st = createStatement();
         return st.executeQuery("select * from submission where true " + condition + " " + order + " limit "
                 + (page - 1) * 20 + ",20;");
     }
 
-    public static ResultSet searchProblem(String condition, String order, int page) throws SQLException {
+    public static ResultSet searchProblem(String condition, String order, long page) throws SQLException {
         Statement st = createStatement();
         return st.executeQuery(
                 "select * from problem where true " + condition + " " + order + " limit " + (page - 1) * 20 + ",20;");
     }
 
-    public static int getAcceptedOfProblem(long id, String condition) throws SQLException {
+    public static long getAcceptedOfProblem(long id, String condition) throws SQLException {
         PreparedStatement ps = prepareStatement(
                 "select count(*) from submission where pid=? and result='accepted'" + condition + ";");
         ps.setLong(1, id);
         ResultSet rs = ps.executeQuery();
         rs.next();
-        return rs.getInt(1);
+        return rs.getLong(1);
     }
 
-    public static int getSubmissionsOfProblem(long id, String condition) throws SQLException {
+    public static long getSubmissionsOfProblem(long id, String condition) throws SQLException {
         PreparedStatement ps = prepareStatement("select count(*) from submission where pid=?" + condition + ";");
         ps.setLong(1, id);
         ResultSet rs = ps.executeQuery();
         rs.next();
-        return rs.getInt(1);
+        return rs.getLong(1);
     }
 
     public static ResultSet getAllSubmissions(String condition) throws SQLException {
@@ -173,7 +173,7 @@ public class SQL extends Config {
         return st.executeQuery("select * from submission where true " + condition + ";");
     }
 
-    public static ResultSet searchContest(String condition, String order, int page) throws SQLException {
+    public static ResultSet searchContest(String condition, String order, long page) throws SQLException {
         Statement st = createStatement();
         return st.executeQuery(
                 "select * from contest where true " + condition + " " + order + " limit " + (page - 1) * 20 + ",20;");

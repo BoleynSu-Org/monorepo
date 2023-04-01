@@ -354,6 +354,12 @@ maven_deps:
   version: 1.6.0.Final
   version_regex: (.*)\.Final
   updated_at: '2022-05-22'
+- name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
+  version: '20220608.1'
+  updated_at: '2022-04-01'
+- name: org.apache.commons:commons-text
+  version: 1.10.0
+  updated_at: '2022-04-01'
 - name: com.google.android:annotations
   version: 4.1.1.4
   included_from: io_grpc_grpc_java
@@ -1094,6 +1100,16 @@ _DEPS_JSON = r"""
       "updated_at": "2022-05-22"
     },
     {
+      "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
+      "version": "20220608.1",
+      "updated_at": "2022-04-01"
+    },
+    {
+      "name": "org.apache.commons:commons-text",
+      "version": "1.10.0",
+      "updated_at": "2022-04-01"
+    },
+    {
       "name": "com.google.android:annotations",
       "version": "4.1.1.4",
       "included_from": "io_grpc_grpc_java"
@@ -1617,6 +1633,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -36197849 or hash(_DEPS_JSON) != -867655615 else None]
+""") if hash(_DEPS_YAML) != -1852835717 or hash(_DEPS_JSON) != 914262611 else None]
 
 DEPS = json.decode(_DEPS_JSON)

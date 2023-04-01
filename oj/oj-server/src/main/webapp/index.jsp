@@ -1,5 +1,5 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User"%>
 <%
     User user = new User(request, response);
     String announcement = user.getAnnouncement();
@@ -67,7 +67,7 @@ html, body {
                             <h1 class="panel-title">Announcement</h1>
                         </header>
                         <div class="panel-body">
-                            <%=announcement%>
+                            <%=HtmlUtils.sanitize(announcement)%>
                         </div>
                     </article>
                 </div>

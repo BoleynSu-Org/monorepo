@@ -1,8 +1,19 @@
 <%@page pageEncoding="utf-8" language="java"
-    import="su.boleyn.oj.server.User"%>
+    import="su.boleyn.oj.core.HtmlUtils,su.boleyn.oj.server.User"%>
 <%
     User user = new User(request, response);
+    String cid = user.get("cid");
+    try {
+        Long.parseLong(cid);
+    } catch (NumberFormatException e) {
+        cid = "";
+    }
     String pid = user.get("pid");
+    try {
+        Long.parseLong(pid);
+    } catch (NumberFormatException e) {
+        pid = "";
+    }
     if (user.isSubmit()) {
         if (!user.hasLogin()) {
             user.go("Please login first.", "/login");
@@ -89,15 +100,15 @@ html, body {
                     %>
                     <article class="panel panel-default">
                         <header class="panel-heading">
-                            <h1 class="panel-title"><%=user.getContestTitle()%></h1>
+                            <h1 class="panel-title"><%=HtmlUtils.sanitizeTextContent(user.getContestTitle())%></h1>
                         </header>
                         <div class="panel-body">
                             <ul class="nav nav-tabs">
-                                <li><a href="/problemset?cid=<%=user.get("cid")%>">Problems</a></li>
+                                <li><a href="/problemset?cid=<%=cid%>">Problems</a></li>
                                 <li class="active"><a
-                                    href="/submit?cid=<%=user.get("cid")%>">Submit</a></li>
-                                <li><a href="/status?cid=<%=user.get("cid")%>">Status</a></li>
-                                <li><a href="/standings?cid=<%=user.get("cid")%>">Standings</a></li>
+                                    href="/submit?cid=<%=cid%>">Submit</a></li>
+                                <li><a href="/status?cid=<%=cid%>">Status</a></li>
+                                <li><a href="/standings?cid=<%=cid%>">Standings</a></li>
                             </ul>
                             <%
                                 }
