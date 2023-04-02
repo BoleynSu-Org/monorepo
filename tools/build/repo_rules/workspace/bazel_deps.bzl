@@ -1,4 +1,3 @@
-load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
@@ -80,7 +79,7 @@ def bazel_deps(
     install_bazel_deps_load_deps = []
     for dep in deps.values():
         rule, _rule = type_to_rule_mapping[dep["type"]]
-        maybe(rule, **_rule(**dep))
+        rule(**_rule(**dep))
         if "load_deps" in dep:
             install_bazel_deps_name.append(dep["name"])
             install_bazel_deps_load_deps.append(dep["load_deps"])
