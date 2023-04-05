@@ -104,6 +104,11 @@ public class User extends Config {
 
     public boolean submit() {
         try {
+            long pid = Long.parseLong(get("problem"));
+            ResultSet rs = SQL.getProblemById(pid);
+            rs.next();
+            if (!isAdmin() && !rs.getBoolean("published"))
+                return false;
             SQL.submit(username, get("problem"), get("source"));
             return true;
         } catch (SQLException | NumberFormatException e) {

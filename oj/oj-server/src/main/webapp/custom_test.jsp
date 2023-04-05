@@ -66,7 +66,7 @@ html, body {
                 type: "post",
                 data: { source: source, input: input },
             }).fail(function () {
-                $("#output").val("An error has occurred!");
+                $("#output").val("An error occurred!");
             }).done(function (data) {
                 $("#output").val(data);
             }).always(function () {
