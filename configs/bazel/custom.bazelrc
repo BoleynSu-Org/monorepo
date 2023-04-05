@@ -3,7 +3,7 @@
 build:remote --remote_executor=grpcs://build.boleyn.su
 build:remote --remote_instance_name=monorepo
 build:remote --remote_timeout=3600
-build:remote --remote_download_toplevel
+build:remote --remote_download_minimal
 ## Platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
 build:remote --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora_container
