@@ -217,12 +217,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm-raw
   type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.tar.gz
-  sha256: cba969a0782a3a398658d439f047b5e548ea04724f4fbfdbe17cfc946f4cd3ed
-  strip_prefix: llvm-project-llvmorg-16.0.0
-  version: llvmorg-16.0.0
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.1.tar.gz
+  sha256: b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
+  strip_prefix: llvm-project-llvmorg-16.0.1
+  version: llvmorg-16.0.1
   version_regex: llvmorg-(.*)
-  updated_at: '2023-03-25'
+  updated_at: '2023-04-08'
 - name: llvm_linux_x86_64
   type: http_archive
   url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
@@ -230,6 +230,8 @@ bazel_deps:
   strip_prefix: clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04
   version: llvmorg-16.0.0
   version_regex: llvmorg-(.*)
+  version_skip:
+  - llvmorg-16.0.1
   updated_at: '2023-03-25'
   override_updater:
   - type: deps_updater
@@ -922,12 +924,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm-raw",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.tar.gz",
-      "sha256": "cba969a0782a3a398658d439f047b5e548ea04724f4fbfdbe17cfc946f4cd3ed",
-      "strip_prefix": "llvm-project-llvmorg-16.0.0",
-      "version": "llvmorg-16.0.0",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.1.tar.gz",
+      "sha256": "b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271",
+      "strip_prefix": "llvm-project-llvmorg-16.0.1",
+      "version": "llvmorg-16.0.1",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-03-25"
+      "updated_at": "2023-04-08"
     },
     {
       "name": "llvm_linux_x86_64",
@@ -937,6 +939,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "clang+llvm-16.0.0-x86_64-linux-gnu-ubuntu-18.04",
       "version": "llvmorg-16.0.0",
       "version_regex": "llvmorg-(.*)",
+      "version_skip": [
+        "llvmorg-16.0.1"
+      ],
       "updated_at": "2023-03-25",
       "override_updater": [
         {
@@ -1633,6 +1638,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -2032805093 or hash(_DEPS_JSON) != -980503727 else None]
+""") if hash(_DEPS_YAML) != -2057136733 or hash(_DEPS_JSON) != 307612274 else None]
 
 DEPS = json.decode(_DEPS_JSON)
