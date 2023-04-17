@@ -34,13 +34,12 @@ bazel_deps:
   updated_at: '2023-03-25'
   version: 5.5.0
   load_deps: |
-    load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "remote_jdk11_repos", "remote_jdk17_repos", "remote_jdk19_repos", "rules_java_toolchains")
+    load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "remote_jdk11_repos", "remote_jdk17_repos", "remote_jdk19_repos")
     def deps():
       rules_java_dependencies()
       remote_jdk11_repos()
-      remote_jdk17_repos()
-      remote_jdk19_repos()
-      rules_java_toolchains()
+  patch_cmds:
+  - sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl
 - name: rules_python
   type: http_archive
   sha256: a644da969b6824cc87f8fe7b18101a8a6c57da5db39caa6566ec6109f37d2141
@@ -55,6 +54,7 @@ bazel_deps:
       python_register_toolchains(
         name = "python_sdk",
         python_version = PYTHON_VERSION,
+        register_toolchains = False,
       )
 - name: rules_proto
   type: http_archive
@@ -67,10 +67,9 @@ bazel_deps:
   version_skip:
   - 5.3.0
   load_deps: |
-    load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+    load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
     def deps():
       rules_proto_dependencies()
-      rules_proto_toolchains()
 - name: io_bazel_rules_go
   type: http_archive
   sha256: 5d4ab833716dac59f7785e1f40346a84fb5a55dd428d0d66c02b8856a38c1d93
@@ -87,7 +86,8 @@ bazel_deps:
           name = "go_linux_amd64",
           goos = "linux",
           goarch = "amd64",
-          version = GOLANG_VERSION
+          version = GOLANG_VERSION,
+          register_toolchains = False,
       )
 - name: io_bazel_rules_docker
   type: http_archive
@@ -133,9 +133,6 @@ bazel_deps:
   strip_prefix: rules_k8s-0.7
   updated_at: '2022-06-18'
   version: v0.7
-  load_deps: |
-    def deps():
-      native.register_toolchains("@boleynsu_org//configs/build/toolchains:kubectl_toolchain")
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz
@@ -154,13 +151,6 @@ bazel_deps:
   url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.2.tar.gz
   updated_at: '2023-04-16'
   version: '5.2'
-- name: bazel_toolchains
-  type: http_archive
-  url: https://github.com/bazelbuild/bazel-toolchains/archive/refs/tags/v5.1.2.tar.gz
-  sha256: 02e4f3744f1ce3f6e711e261fd322916ddd18cccd38026352f7a4c0351dbda19
-  strip_prefix: bazel-toolchains-5.1.2
-  updated_at: '2022-09-16'
-  version: v5.1.2
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.9.0.tar.gz
@@ -277,7 +267,6 @@ bazel_deps:
               "linux_x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
           },
       )
-      native.register_toolchains("@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux")
 - name: io_bazel
   type: http_archive
   version: 6.1.1
@@ -778,7 +767,10 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_java-5.5.0",
       "updated_at": "2023-03-25",
       "version": "5.5.0",
-      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"rules_java_dependencies\", \"remote_jdk11_repos\", \"remote_jdk17_repos\", \"remote_jdk19_repos\", \"rules_java_toolchains\")\ndef deps():\n  rules_java_dependencies()\n  remote_jdk11_repos()\n  remote_jdk17_repos()\n  remote_jdk19_repos()\n  rules_java_toolchains()\n"
+      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"rules_java_dependencies\", \"remote_jdk11_repos\", \"remote_jdk17_repos\", \"remote_jdk19_repos\")\ndef deps():\n  rules_java_dependencies()\n  remote_jdk11_repos()\n",
+      "patch_cmds": [
+        "sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl"
+      ]
     },
     {
       "name": "rules_python",
@@ -788,7 +780,7 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.20.0.tar.gz",
       "updated_at": "2023-03-25",
       "version": "0.20.0",
-      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n  )\n"
+      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
     },
     {
       "name": "rules_proto",
@@ -802,7 +794,7 @@ _DEPS_JSON = r"""
       "version_skip": [
         "5.3.0"
       ],
-      "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\", \"rules_proto_toolchains\")\ndef deps():\n  rules_proto_dependencies()\n  rules_proto_toolchains()\n"
+      "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\")\ndef deps():\n  rules_proto_dependencies()\n"
     },
     {
       "name": "io_bazel_rules_go",
@@ -812,7 +804,7 @@ _DEPS_JSON = r"""
       "updated_at": "2023-03-31",
       "version": "v0.39.0",
       "strip_prefix": "rules_go-0.39.0",
-      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION\n  )\n"
+      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
       "name": "io_bazel_rules_docker",
@@ -841,8 +833,7 @@ _DEPS_JSON = r"""
       "sha256": "ce5b9bc0926681e2e7f2147b49096f143e6cbc783e71bc1d4f36ca76b00e6f4a",
       "strip_prefix": "rules_k8s-0.7",
       "updated_at": "2022-06-18",
-      "version": "v0.7",
-      "load_deps": "def deps():\n  native.register_toolchains(\"@boleynsu_org//configs/build/toolchains:kubectl_toolchain\")\n"
+      "version": "v0.7"
     },
     {
       "name": "bazel_skylib",
@@ -862,15 +853,6 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.2.tar.gz",
       "updated_at": "2023-04-16",
       "version": "5.2"
-    },
-    {
-      "name": "bazel_toolchains",
-      "type": "http_archive",
-      "url": "https://github.com/bazelbuild/bazel-toolchains/archive/refs/tags/v5.1.2.tar.gz",
-      "sha256": "02e4f3744f1ce3f6e711e261fd322916ddd18cccd38026352f7a4c0351dbda19",
-      "strip_prefix": "bazel-toolchains-5.1.2",
-      "updated_at": "2022-09-16",
-      "version": "v5.1.2"
     },
     {
       "name": "rules_pkg",
@@ -990,7 +972,7 @@ _DEPS_JSON = r"""
       "patches": [
         "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
       ],
-      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux_x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n  native.register_toolchains(\"@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux\")\n"
+      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux_x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n"
     },
     {
       "name": "io_bazel",
@@ -1648,6 +1630,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 945824740 or hash(_DEPS_JSON) != 1730342829 else None]
+""") if hash(_DEPS_YAML) != -1219821262 or hash(_DEPS_JSON) != -787729375 else None]
 
 DEPS = json.decode(_DEPS_JSON)
