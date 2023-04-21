@@ -12,7 +12,7 @@ presubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:350b6879782c23e4b5cab19419bf8a9a2a9307876cbb6ead6f5697eb797e6dba
+      - image: quay.io/boleynsu/ci-runner@sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f
         command:
         - "bash"
         - "-c"
@@ -40,7 +40,7 @@ presubmits:
       use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:350b6879782c23e4b5cab19419bf8a9a2a9307876cbb6ead6f5697eb797e6dba
+      - image: quay.io/boleynsu/ci-runner@sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f
         command:
         - "bash"
         - "-c"
@@ -72,7 +72,7 @@ postsubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-      - image: quay.io/boleynsu/ci-runner@sha256:350b6879782c23e4b5cab19419bf8a9a2a9307876cbb6ead6f5697eb797e6dba
+      - image: quay.io/boleynsu/ci-runner@sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f
         command:
         - "bash"
         - "-c"
