@@ -9,14 +9,20 @@ build --extra_toolchains=@boleynsu_org//configs/build/toolchains:kubectl_toolcha
 
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
-build:remote --remote_executor=grpcs://build.boleyn.su
+build:remote --remote_executor=grpcs://remote.buildbuddy.io
 build:remote --remote_instance_name=monorepo
 build:remote --remote_timeout=3600
 build:remote --remote_download_minimal
+## Build Event Service
+build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
+build:remote --bes_backend=grpcs://remote.buildbuddy.io
 ## Platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
+build:remote --host_platform=@boleynsu_org//configs/build/platforms:rbe-fedora_container
 build:remote --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora_container
 ## Misc
-build:remote --jobs=24
+build:remote --jobs=80
+build:remote --noremote_upload_local_results
+build:remote --experimental_remote_cache_compression
 
 try-import %workspace%/.user.bazelrc

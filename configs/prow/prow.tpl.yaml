@@ -12,13 +12,10 @@ presubmits:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bash"
-        - "-c"
-        - |
-          cat >$HOME/.bazelrc <<EOF
-          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
-          EOF
-          bazel test --config=remote //...
+        - bazel
+        - test
+        - --config=remote
+        - //...
       affinity:
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
@@ -40,13 +37,15 @@ presubmits:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bash"
+        - bazel
+        - run
+        - --config=remote
         - "-c"
-        - |
-          cat >$HOME/.bazelrc <<EOF
-          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
-          EOF
-          bazel run --config=remote -c opt //deploy/oj:staging.apply -- --server-side --cluster=
+        - opt
+        - //deploy/oj:staging.apply
+        - --
+        - --server-side
+        - --cluster=
       serviceAccountName: oj-staging-deployer
       automountServiceAccountToken: true
       affinity:
@@ -72,13 +71,10 @@ postsubmits:
       containers:
       - image: quay.io/boleynsu/ci-runner
         command:
-        - "bash"
-        - "-c"
-        - |
-          cat >$HOME/.bazelrc <<EOF
-          build --remote_header=Authorization="Bearer $(cat /rbeconfig/token)"
-          EOF
-          bazel test --config=remote //...
+        - bazel
+        - test
+        - --config=remote
+        - //...
       affinity:
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
