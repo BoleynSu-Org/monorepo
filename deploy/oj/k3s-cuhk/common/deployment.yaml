@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: oj-server
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: oj-server
@@ -91,7 +91,7 @@ kind: Deployment
 metadata:
   name: oj-judge
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: oj-judge
@@ -148,7 +148,7 @@ kind: Deployment
 metadata:
   name: oj-c99runner
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: oj-c99runner
