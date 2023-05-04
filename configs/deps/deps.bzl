@@ -22,10 +22,6 @@ bazel_deps:
   version: 0.0.6
   strip_prefix: rules_cc-0.0.6
   updated_at: '2023-02-18'
-  load_deps: |
-    load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies")
-    def deps():
-      rules_cc_dependencies()
 - name: rules_java
   type: http_archive
   sha256: 7436356107f1cf24b45f95909753e521efe2d06622de184ea25e13cb7a0d72f9
@@ -34,9 +30,9 @@ bazel_deps:
   updated_at: '2023-03-25'
   version: 5.5.0
   load_deps: |
-    load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "remote_jdk11_repos", "remote_jdk17_repos", "remote_jdk19_repos")
+    load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk11_repos")
     def deps():
-      rules_java_dependencies()
+      java_tools_repos()
       remote_jdk11_repos()
   patch_cmds:
   - sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl
@@ -142,10 +138,6 @@ bazel_deps:
   updated_at: '2023-02-11'
   version: 1.4.1
   strip_prefix: bazel-skylib-1.4.1
-  load_deps: |
-    load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
-    def deps():
-      bazel_skylib_workspace()
 - name: rules_jvm_external
   type: http_archive
   sha256: c9ae901381ae7f7eca08aed96caeb542f96c5449052db9c9d27274a8dc154cdf
@@ -160,10 +152,6 @@ bazel_deps:
   updated_at: '2023-05-04'
   version: 0.9.1
   strip_prefix: rules_pkg-0.9.1
-  load_deps: |
-    load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
-    def deps():
-      rules_pkg_dependencies()
 - name: io_grpc_grpc_java
   type: http_archive
   sha256: 98c32df8a878cbca5a6799922d28e9df93a4d5607316e0e3f8269a5886d9e429
@@ -756,8 +744,7 @@ _DEPS_JSON = r"""
       "sha256": "3d9e271e2876ba42e114c9b9bc51454e379cbf0ec9ef9d40e2ae4cec61a31b40",
       "version": "0.0.6",
       "strip_prefix": "rules_cc-0.0.6",
-      "updated_at": "2023-02-18",
-      "load_deps": "load(\"@rules_cc//cc:repositories.bzl\", \"rules_cc_dependencies\")\ndef deps():\n  rules_cc_dependencies()\n"
+      "updated_at": "2023-02-18"
     },
     {
       "name": "rules_java",
@@ -767,7 +754,7 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_java-5.5.0",
       "updated_at": "2023-03-25",
       "version": "5.5.0",
-      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"rules_java_dependencies\", \"remote_jdk11_repos\", \"remote_jdk17_repos\", \"remote_jdk19_repos\")\ndef deps():\n  rules_java_dependencies()\n  remote_jdk11_repos()\n",
+      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk11_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk11_repos()\n",
       "patch_cmds": [
         "sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl"
       ]
@@ -845,8 +832,7 @@ _DEPS_JSON = r"""
       "sha256": "060426b186670beede4104095324a72bd7494d8b4e785bf0d84a612978285908",
       "updated_at": "2023-02-11",
       "version": "1.4.1",
-      "strip_prefix": "bazel-skylib-1.4.1",
-      "load_deps": "load(\"@bazel_skylib//:workspace.bzl\", \"bazel_skylib_workspace\")\ndef deps():\n  bazel_skylib_workspace()\n"
+      "strip_prefix": "bazel-skylib-1.4.1"
     },
     {
       "name": "rules_jvm_external",
@@ -864,8 +850,7 @@ _DEPS_JSON = r"""
       "sha256": "360c23a88ceaf7f051abc99e2e6048cf7fe5d9af792690576554a88b2013612d",
       "updated_at": "2023-05-04",
       "version": "0.9.1",
-      "strip_prefix": "rules_pkg-0.9.1",
-      "load_deps": "load(\"@rules_pkg//:deps.bzl\", \"rules_pkg_dependencies\")\ndef deps():\n  rules_pkg_dependencies()\n"
+      "strip_prefix": "rules_pkg-0.9.1"
     },
     {
       "name": "io_grpc_grpc_java",
@@ -1630,6 +1615,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1832373485 or hash(_DEPS_JSON) != -1094907978 else None]
+""") if hash(_DEPS_YAML) != 363687252 or hash(_DEPS_JSON) != -1113350883 else None]
 
 DEPS = json.decode(_DEPS_JSON)
