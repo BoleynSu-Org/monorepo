@@ -5,6 +5,7 @@ build --extra_toolchains=@rules_java//toolchains:toolchain_java11_definition
 build --extra_toolchains=@remotejdk11_linux_toolchain_config_repo//:toolchain
 build --extra_toolchains=@python_sdk_toolchains//:x86_64-unknown-linux-gnu_toolchain
 build --extra_toolchains=@go_linux_amd64_toolchains//:all
+build --extra_toolchains=@boleynsu_org//configs/build/toolchains:docker_toolchain
 build --extra_toolchains=@boleynsu_org//configs/build/toolchains:kubectl_toolchain
 
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc

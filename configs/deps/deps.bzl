@@ -96,6 +96,8 @@ bazel_deps:
   strip_prefix: rules_docker-0.25.0
   updated_at: '2022-07-01'
   version: v0.25.0
+  patch_cmds:
+  - sed -i '/native.register_toolchains/Q' repositories/repositories.bzl
   load_deps: |
     load("@io_bazel_rules_docker//repositories:repositories.bzl", "repositories")
     load("@boleynsu_org//tools/build/repo_rules:exports_files.bzl", "exports_files")
@@ -812,6 +814,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_docker-0.25.0",
       "updated_at": "2022-07-01",
       "version": "v0.25.0",
+      "patch_cmds": [
+        "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
+      ],
       "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\nload(\"@boleynsu_org//tools/build/repo_rules:exports_files.bzl\", \"exports_files\")\ndef deps():\n  exports_files(\n    name = \"io_bazel_rules_docker_deps_bzl_files\",\n    files= {\n      \"repositories/go_repositories.bzl\": \"@io_bazel_rules_docker//repositories:go_repositories.bzl\"\n    },\n  )\n  repositories()\n"
     },
     {
@@ -1625,6 +1630,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -2111182889 or hash(_DEPS_JSON) != 1635124333 else None]
+""") if hash(_DEPS_YAML) != -1832373485 or hash(_DEPS_JSON) != -1094907978 else None]
 
 DEPS = json.decode(_DEPS_JSON)
