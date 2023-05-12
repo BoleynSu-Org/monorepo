@@ -545,18 +545,18 @@ container_deps:
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
-  repository: distroless/java11
+  repository: distroless/java17
   tag: debug
-  digest: sha256:bf6374383cea5885a467b8435852804a7c33f4f611e90c4b5052b07d6c315442
-  updated_at: '2023-05-04'
+  digest: sha256:c0642967e777a2765864f99f16fb6ef8dc7a499132c992958c1731c311d2ee50
+  updated_at: '2023-05-13'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
-  repository: distroless/java11
+  repository: distroless/java17
   tag: latest
-  digest: sha256:8d8122be7bf0c5fa4939cbee78cd0306cefd69dcc00d4a72a8879bc982063206
-  updated_at: '2023-05-04'
+  digest: sha256:78d2c280d0914978844d2a2dd2b5315acd437e33c6905b6c562dca97ae34d9b3
+  updated_at: '2023-05-13'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
@@ -1411,20 +1411,20 @@ _DEPS_JSON = r"""
       "version": "debug",
       "version_regex": "^(debug)$",
       "registry": "gcr.io",
-      "repository": "distroless/java11",
+      "repository": "distroless/java17",
       "tag": "debug",
-      "digest": "sha256:bf6374383cea5885a467b8435852804a7c33f4f611e90c4b5052b07d6c315442",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:c0642967e777a2765864f99f16fb6ef8dc7a499132c992958c1731c311d2ee50",
+      "updated_at": "2023-05-13"
     },
     {
       "name": "java_image_base",
       "version": "latest",
       "version_regex": "^(latest)$",
       "registry": "gcr.io",
-      "repository": "distroless/java11",
+      "repository": "distroless/java17",
       "tag": "latest",
-      "digest": "sha256:8d8122be7bf0c5fa4939cbee78cd0306cefd69dcc00d4a72a8879bc982063206",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:78d2c280d0914978844d2a2dd2b5315acd437e33c6905b6c562dca97ae34d9b3",
+      "updated_at": "2023-05-13"
     },
     {
       "name": "py3_debug_image_base",
@@ -1623,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -296330577 or hash(_DEPS_JSON) != -1507971000 else None]
+""") if hash(_DEPS_YAML) != -1253434396 or hash(_DEPS_JSON) != -1594352077 else None]
 
 DEPS = json.decode(_DEPS_JSON)
