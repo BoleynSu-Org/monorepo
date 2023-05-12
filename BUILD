@@ -7,13 +7,6 @@ genfile(
 )
 
 genfile(
-    name = "bazelversion",
-    src = "//configs/bazel:bazelversion",
-    out = ".bazelversion",
-    headers = [],
-)
-
-genfile(
     name = "prow.yaml",
     src = "//configs/prow:prow.yaml",
     out = ".prow.yaml",

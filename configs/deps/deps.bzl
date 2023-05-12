@@ -30,12 +30,10 @@ bazel_deps:
   updated_at: '2023-03-25'
   version: 5.5.0
   load_deps: |
-    load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk11_repos")
+    load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
       java_tools_repos()
-      remote_jdk11_repos()
-  patch_cmds:
-  - sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl
+      remote_jdk17_repos()
 - name: rules_python
   type: http_archive
   sha256: 94750828b18044533e98a129003b6a68001204038dc4749f40b195b24c38f49f
@@ -131,6 +129,10 @@ bazel_deps:
   strip_prefix: rules_k8s-0.7
   updated_at: '2022-06-18'
   version: v0.7
+  patch_cmds:
+  - sed -i 's/kubectl create --dry-run/%{kubectl_tool} create --dry-run=client --kubeconfig="%{kubeconfig}" --cluster="%{cluster}" --context="%{context}" --user="%{user}"/g' k8s/describe.sh.tpl
+  - sed -i "s/| cut -d'\"' -f 2//g" k8s/describe.sh.tpl
+  - sed -i 's/"${RESOURCE_NAME}"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz
@@ -154,11 +156,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 98c32df8a878cbca5a6799922d28e9df93a4d5607316e0e3f8269a5886d9e429
-  strip_prefix: grpc-java-1.54.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.54.1.tar.gz
-  updated_at: '2023-04-21'
-  version: v1.54.1
+  sha256: be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8
+  strip_prefix: grpc-java-1.55.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.55.1.tar.gz
+  updated_at: '2023-05-12'
+  version: v1.55.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -290,12 +292,13 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.22
-  updated_at: '2023-05-04'
+  version: 0.17.26
+  updated_at: '2023-05-12'
   expires_at: '2024-04-09'
 - name: PyYAML
   version: '6.0'
   updated_at: '2022-05-11'
+  expires_at: '2024-05-11'
 
 maven_deps:
 - name: commons-io:commons-io
@@ -603,12 +606,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230421'
+  version: '20230511'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230421'
+  tag: '20230511'
   digest: sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f
-  updated_at: '2023-04-21'
+  updated_at: '2023-05-12'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -617,8 +620,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:7781ab82c8701e38b7a039ca155beca4574bd36ac19e5f54b99cee9666ac2249
-  updated_at: '2023-03-25'
+  digest: sha256:f77c69a548d1a948f59d6b5eacf25903410cc156f84f33102cc4c662435dea72
+  updated_at: '2023-05-12'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -634,19 +637,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230421'
+  version: '20230511'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230421'
+  tag: '20230511'
   digest: sha256:c70e9b93ea1456851b17b738459f37709a660750b9e3b824cafb2d32fb85793b
-  updated_at: '2023-04-21'
+  updated_at: '2023-05-12'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230421'
+  version: '20230511'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230421'
+  tag: '20230511'
   digest: sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351
-  updated_at: '2023-04-21'
+  updated_at: '2023-05-12'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -708,15 +711,16 @@ toolchain_deps:
 - name: c
   version: '17'
   updated_at: '2022-05-07'
+  expires_at: '2024-05-07'
 - name: cpp
-  version: '17'
-  updated_at: '2022-05-05'
+  version: '20'
+  updated_at: '2023-05-12'
 - name: java
-  version: '11'
-  updated_at: '2022-05-05'
+  version: '17'
+  updated_at: '2023-05-12'
 - name: python
-  version: '3.10'
-  updated_at: '2022-05-05'
+  version: '3.11'
+  updated_at: '2023-05-12'
 - name: golang
   version: '1.19'
   updated_at: '2022-12-09'
@@ -754,10 +758,7 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_java-5.5.0",
       "updated_at": "2023-03-25",
       "version": "5.5.0",
-      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk11_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk11_repos()\n",
-      "patch_cmds": [
-        "sed -i s@remotejdk_17@remote_jdk11@g toolchains/default_java_toolchain.bzl"
-      ]
+      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
       "name": "rules_python",
@@ -823,7 +824,12 @@ _DEPS_JSON = r"""
       "sha256": "ce5b9bc0926681e2e7f2147b49096f143e6cbc783e71bc1d4f36ca76b00e6f4a",
       "strip_prefix": "rules_k8s-0.7",
       "updated_at": "2022-06-18",
-      "version": "v0.7"
+      "version": "v0.7",
+      "patch_cmds": [
+        "sed -i 's/kubectl create --dry-run/%{kubectl_tool} create --dry-run=client --kubeconfig=\"%{kubeconfig}\" --cluster=\"%{cluster}\" --context=\"%{context}\" --user=\"%{user}\"/g' k8s/describe.sh.tpl",
+        "sed -i \"s/| cut -d'\\\"' -f 2//g\" k8s/describe.sh.tpl",
+        "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl"
+      ]
     },
     {
       "name": "bazel_skylib",
@@ -855,11 +861,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "98c32df8a878cbca5a6799922d28e9df93a4d5607316e0e3f8269a5886d9e429",
-      "strip_prefix": "grpc-java-1.54.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.54.1.tar.gz",
-      "updated_at": "2023-04-21",
-      "version": "v1.54.1",
+      "sha256": "be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8",
+      "strip_prefix": "grpc-java-1.55.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.55.1.tar.gz",
+      "updated_at": "2023-05-12",
+      "version": "v1.55.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -1012,14 +1018,15 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.22",
-      "updated_at": "2023-05-04",
+      "version": "0.17.26",
+      "updated_at": "2023-05-12",
       "expires_at": "2024-04-09"
     },
     {
       "name": "PyYAML",
       "version": "6.0",
-      "updated_at": "2022-05-11"
+      "updated_at": "2022-05-11",
+      "expires_at": "2024-05-11"
     }
   ],
   "maven_deps": [
@@ -1481,12 +1488,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230421",
+      "version": "20230511",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230421",
+      "tag": "20230511",
       "digest": "sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f",
-      "updated_at": "2023-04-21"
+      "updated_at": "2023-05-12"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1495,8 +1502,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:7781ab82c8701e38b7a039ca155beca4574bd36ac19e5f54b99cee9666ac2249",
-      "updated_at": "2023-03-25"
+      "digest": "sha256:f77c69a548d1a948f59d6b5eacf25903410cc156f84f33102cc4c662435dea72",
+      "updated_at": "2023-05-12"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1518,21 +1525,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230421",
+      "version": "20230511",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230421",
+      "tag": "20230511",
       "digest": "sha256:c70e9b93ea1456851b17b738459f37709a660750b9e3b824cafb2d32fb85793b",
-      "updated_at": "2023-04-21"
+      "updated_at": "2023-05-12"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230421",
+      "version": "20230511",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230421",
+      "tag": "20230511",
       "digest": "sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351",
-      "updated_at": "2023-04-21"
+      "updated_at": "2023-05-12"
     }
   ],
   "go_deps": [
@@ -1584,22 +1591,23 @@ _DEPS_JSON = r"""
     {
       "name": "c",
       "version": "17",
-      "updated_at": "2022-05-07"
+      "updated_at": "2022-05-07",
+      "expires_at": "2024-05-07"
     },
     {
       "name": "cpp",
-      "version": "17",
-      "updated_at": "2022-05-05"
+      "version": "20",
+      "updated_at": "2023-05-12"
     },
     {
       "name": "java",
-      "version": "11",
-      "updated_at": "2022-05-05"
+      "version": "17",
+      "updated_at": "2023-05-12"
     },
     {
       "name": "python",
-      "version": "3.10",
-      "updated_at": "2022-05-05"
+      "version": "3.11",
+      "updated_at": "2023-05-12"
     },
     {
       "name": "golang",
@@ -1615,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 363687252 or hash(_DEPS_JSON) != -1113350883 else None]
+""") if hash(_DEPS_YAML) != -296330577 or hash(_DEPS_JSON) != -1507971000 else None]
 
 DEPS = json.decode(_DEPS_JSON)
