@@ -259,22 +259,22 @@ bazel_deps:
       )
 - name: io_bazel
   type: http_archive
-  version: 6.1.2
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.1.2.tar.gz
-  sha256: 7067251d3029b12fe8d501266279f8b5a7c4c4f8d75ef3a0e0653f20bc7a1322
-  updated_at: '2023-04-21'
+  version: 6.2.0
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.0.tar.gz
+  sha256: 437d6f704f6ba1ccb9fb335f95138fab72a28d052df2c4a10891442b462d9226
+  updated_at: '2023-05-13'
   load_deps: |
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
     def deps():
       if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
         print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.1.2
+  strip_prefix: bazel-6.2.0
 - name: bazel_linux_x86_64
   type: http_file
-  version: 6.1.2
-  url: https://github.com/bazelbuild/bazel/releases/download/6.1.2/bazel-6.1.2-linux-x86_64
-  sha256: e89747d63443e225b140d7d37ded952dacea73aaed896bca01ccd745827c6289
-  updated_at: '2023-04-21'
+  version: 6.2.0
+  url: https://github.com/bazelbuild/bazel/releases/download/6.2.0/bazel-6.2.0-linux-x86_64
+  sha256: 3d11c26fb9ba12c833844450bb90165b176e8a19cb5cf5923f3cec855837f17c
+  updated_at: '2023-05-13'
   executable: true
   override_updater:
   - type: deps_updater
@@ -606,12 +606,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230511'
+  version: '20230513'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230511'
-  digest: sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f
-  updated_at: '2023-05-12'
+  tag: '20230513'
+  digest: sha256:6ca6eb69962945c2f5931a676043d0cfd4c573dc89ae04c3ade8ef018131b5ea
+  updated_at: '2023-05-13'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -637,19 +637,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230511'
+  version: '20230513'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230511'
-  digest: sha256:c70e9b93ea1456851b17b738459f37709a660750b9e3b824cafb2d32fb85793b
-  updated_at: '2023-05-12'
+  tag: '20230513'
+  digest: sha256:0c44d85b2c90700229eccb88461665adbff6604dfdb2a0626c6cf15d605ebe73
+  updated_at: '2023-05-13'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230511'
+  version: '20230513'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230511'
+  tag: '20230513'
   digest: sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351
-  updated_at: '2023-05-12'
+  updated_at: '2023-05-13'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -968,20 +968,20 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel",
       "type": "http_archive",
-      "version": "6.1.2",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.1.2.tar.gz",
-      "sha256": "7067251d3029b12fe8d501266279f8b5a7c4c4f8d75ef3a0e0653f20bc7a1322",
-      "updated_at": "2023-04-21",
+      "version": "6.2.0",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.0.tar.gz",
+      "sha256": "437d6f704f6ba1ccb9fb335f95138fab72a28d052df2c4a10891442b462d9226",
+      "updated_at": "2023-05-13",
       "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.1.2"
+      "strip_prefix": "bazel-6.2.0"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_file",
-      "version": "6.1.2",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.1.2/bazel-6.1.2-linux-x86_64",
-      "sha256": "e89747d63443e225b140d7d37ded952dacea73aaed896bca01ccd745827c6289",
-      "updated_at": "2023-04-21",
+      "version": "6.2.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.2.0/bazel-6.2.0-linux-x86_64",
+      "sha256": "3d11c26fb9ba12c833844450bb90165b176e8a19cb5cf5923f3cec855837f17c",
+      "updated_at": "2023-05-13",
       "executable": true,
       "override_updater": [
         {
@@ -1488,12 +1488,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230511",
+      "version": "20230513",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230511",
-      "digest": "sha256:e60e499c6fd5dd96e516963a0150797eef694aceff3f7eedab4fcd7d7401803f",
-      "updated_at": "2023-05-12"
+      "tag": "20230513",
+      "digest": "sha256:6ca6eb69962945c2f5931a676043d0cfd4c573dc89ae04c3ade8ef018131b5ea",
+      "updated_at": "2023-05-13"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1525,21 +1525,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230511",
+      "version": "20230513",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230511",
-      "digest": "sha256:c70e9b93ea1456851b17b738459f37709a660750b9e3b824cafb2d32fb85793b",
-      "updated_at": "2023-05-12"
+      "tag": "20230513",
+      "digest": "sha256:0c44d85b2c90700229eccb88461665adbff6604dfdb2a0626c6cf15d605ebe73",
+      "updated_at": "2023-05-13"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230511",
+      "version": "20230513",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230511",
+      "tag": "20230513",
       "digest": "sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351",
-      "updated_at": "2023-05-12"
+      "updated_at": "2023-05-13"
     }
   ],
   "go_deps": [
@@ -1623,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1253434396 or hash(_DEPS_JSON) != -1594352077 else None]
+""") if hash(_DEPS_YAML) != 1860508815 or hash(_DEPS_JSON) != -749897144 else None]
 
 DEPS = json.decode(_DEPS_JSON)
