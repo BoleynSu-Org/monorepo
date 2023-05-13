@@ -18,6 +18,10 @@ java_library(
 java_image(
     name = "oj-c99runner",
     base = "@io_quay_boleynsu_oj_c99runner//image",
+    jvm_flags = [
+        "--add-opens",
+        "java.base/java.lang=ALL-UNNAMED",
+    ],
     main_class = "su.boleyn.oj.c99runner.Main",
     visibility = ["//visibility:public"],
     runtime_deps = [":lib"],

@@ -6,7 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import io.grpc.Server;
@@ -39,6 +41,30 @@ public class Main extends RunnerGrpc.RunnerImplBase {
         }
     }
 
+    public static void reapChildProcess() {
+        final long start = System.currentTimeMillis();
+        while (ProcessHandle.current().children().count() != 0) {
+            ProcessHandle.current().children().forEach(p -> {
+                try {
+                    if (System.currentTimeMillis() - start > 60000) {
+                        System.exit(1);
+                    }
+                    p.destroyForcibly();
+                    Method m = Class.forName("java.lang.ProcessHandleImpl").getDeclaredMethod("completion",
+                            Long.TYPE,
+                            Boolean.TYPE);
+                    m.setAccessible(true);
+                    @SuppressWarnings("unchecked")
+                    CompletableFuture<ProcessHandle> c = (CompletableFuture<ProcessHandle>) m.invoke(null, p.pid(),
+                            true);
+                    m.setAccessible(false);
+                    c.get();
+                } catch (Exception e) {
+                }
+            });
+        }
+    }
+
     public static synchronized Result run(Task task) {
         Result.Builder builder = Result.newBuilder();
         try {
@@ -48,7 +74,8 @@ public class Main extends RunnerGrpc.RunnerImplBase {
             try (PrintWriter out = new PrintWriter(INPUT_FILE)) {
                 out.write(task.getInput());
             }
-            ProcessBuilder compileBuilder = new ProcessBuilder("/usr/bin/gcc","-lm","-std=c99", SOURCE_FILE, "-o", BINARY_FILE);
+            ProcessBuilder compileBuilder = new ProcessBuilder("/usr/bin/gcc", "-lm", "-std=c99", SOURCE_FILE, "-o",
+                    BINARY_FILE);
             compileBuilder.redirectOutput(new File(OUTPUT_FILE));
             compileBuilder.redirectError(new File(OUTPUT_FILE));
             Process compile = compileBuilder.start();
@@ -75,13 +102,15 @@ public class Main extends RunnerGrpc.RunnerImplBase {
                     builder.setResult("accepted").setOutput(read(OUTPUT_FILE)).setTime(time).setMemory(0);
                 }
             }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            builder.setResult("judge error").setOutput("").setTime(0).setMemory(0);
+        } finally {
             new File(SOURCE_FILE).delete();
             new File(INPUT_FILE).delete();
             new File(BINARY_FILE).delete();
             new File(OUTPUT_FILE).delete();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            builder.setResult("judge error").setOutput("").setTime(0).setMemory(0);
+            reapChildProcess();
         }
         return builder.build();
     }
@@ -94,7 +123,10 @@ public class Main extends RunnerGrpc.RunnerImplBase {
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("WARNING:");
         System.out.println(
-                "The runner should be in a very restricted enviroment since we are running untrusted code in it.");
+                "The runner should be in a very restricted environment since we are running untrusted code in it.");
+        if (ProcessHandle.current().pid() != 1) {
+            System.err.println("The runner is not running as pid 1. Some security features will not be available.");
+        }
         Server server = NettyServerBuilder.forAddress(new InetSocketAddress(RUNNER_ADDRESS, RUNNER_PORT))
                 .maxInboundMessageSize(100 * 1024 * 1024).addService(new Main()).build();
         server.start();
