@@ -21,6 +21,8 @@ build --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
 build --incompatible_strict_action_env=true
 # See https://github.com/bazelbuild/bazel/issues/7260
 build --incompatible_enable_cc_toolchain_resolution=true
+# See https://github.com/bazelbuild/bazel/issues/8830
+build --experimental_allow_tags_propagation
 
 test --test_output=errors
 
