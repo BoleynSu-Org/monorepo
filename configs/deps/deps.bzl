@@ -183,11 +183,11 @@ bazel_deps:
       gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.1.tar.gz
-  sha256: 3a3f7c6b8cf1d9f03aa67ba2f04669772b1205b89826859f1636062d5f8bec3f
-  strip_prefix: kubernetes-1.27.1
-  updated_at: '2023-04-16'
-  version: v1.27.1
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.2.tar.gz
+  sha256: c6fcfddd38f877ce49c49318973496f9a16672e83a29874a921242950cd1c5d2
+  strip_prefix: kubernetes-1.27.2
+  updated_at: '2023-05-20'
+  version: v1.27.2
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -199,20 +199,20 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm-raw
   type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.3.tar.gz
-  sha256: 0bd71bc687a4e5a250c40afb0decefc50c85178fcce726137b682039de63919b
-  strip_prefix: llvm-project-llvmorg-16.0.3
-  version: llvmorg-16.0.3
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.4.tar.gz
+  sha256: 10c3fe1757d2e4f1cd7745dc548ecf687680a71824ec81701c38524c2a0753e2
+  strip_prefix: llvm-project-llvmorg-16.0.4
+  version: llvmorg-16.0.4
   version_regex: llvmorg-(.*)
-  updated_at: '2023-05-04'
+  updated_at: '2023-05-20'
 - name: llvm_linux_x86_64
   type: http_archive
-  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.3/clang+llvm-16.0.3-x86_64-linux-gnu-ubuntu-22.04.tar.xz
-  sha256: 638d32fd0032f99bafaab3bae63a406adb771825a02b6b7da119ee7e71af26c6
-  strip_prefix: clang+llvm-16.0.3-x86_64-linux-gnu-ubuntu-22.04
-  version: llvmorg-16.0.3
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+  sha256: fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf
+  strip_prefix: clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04
+  version: llvmorg-16.0.4
   version_regex: llvmorg-(.*)
-  updated_at: '2023-05-04'
+  updated_at: '2023-05-20'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -302,18 +302,18 @@ pip_deps:
 
 maven_deps:
 - name: commons-io:commons-io
-  version: 2.11.0
-  updated_at: '2022-04-09'
+  version: 2.12.0
+  updated_at: '2023-05-20'
   expires_at: '2024-04-09'
 - name: com.mysql:mysql-connector-j
   version: 8.0.33
   updated_at: '2023-04-21'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.8
-  updated_at: '2023-04-21'
+  version: 10.1.9
+  updated_at: '2023-05-20'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.8
-  updated_at: '2023-04-21'
+  version: 10.1.9
+  updated_at: '2023-05-20'
 - name: org.webjars:jquery
   version: 3.6.4
   updated_at: '2023-01-07'
@@ -326,9 +326,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   expires_at: '2024-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.5.Final
+  version: 2.3.6.Final
   version_regex: (.*)\.Final
-  updated_at: '2023-03-31'
+  updated_at: '2023-05-20'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -653,7 +653,7 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.27.1
+  version: v0.27.2
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
   patch_cmds:
   - |
@@ -684,13 +684,13 @@ go_deps:
         ],
     )
     EOF
-  updated_at: '2023-04-16'
+  updated_at: '2023-05-20'
 - name: k8s.io/client-go
-  version: v0.27.1
-  updated_at: '2023-04-16'
+  version: v0.27.2
+  updated_at: '2023-05-20'
 - name: k8s.io/component-base
-  version: v0.27.1
-  updated_at: '2023-04-16'
+  version: v0.27.2
+  updated_at: '2023-05-20'
 - name: github.com/google/go-containerregistry
   version: v0.5.1
   included_from: io_bazel_rules_docker
@@ -885,11 +885,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.1.tar.gz",
-      "sha256": "3a3f7c6b8cf1d9f03aa67ba2f04669772b1205b89826859f1636062d5f8bec3f",
-      "strip_prefix": "kubernetes-1.27.1",
-      "updated_at": "2023-04-16",
-      "version": "v1.27.1",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.2.tar.gz",
+      "sha256": "c6fcfddd38f877ce49c49318973496f9a16672e83a29874a921242950cd1c5d2",
+      "strip_prefix": "kubernetes-1.27.2",
+      "updated_at": "2023-05-20",
+      "version": "v1.27.2",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -905,22 +905,22 @@ _DEPS_JSON = r"""
     {
       "name": "llvm-raw",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.3.tar.gz",
-      "sha256": "0bd71bc687a4e5a250c40afb0decefc50c85178fcce726137b682039de63919b",
-      "strip_prefix": "llvm-project-llvmorg-16.0.3",
-      "version": "llvmorg-16.0.3",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.4.tar.gz",
+      "sha256": "10c3fe1757d2e4f1cd7745dc548ecf687680a71824ec81701c38524c2a0753e2",
+      "strip_prefix": "llvm-project-llvmorg-16.0.4",
+      "version": "llvmorg-16.0.4",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-05-04"
+      "updated_at": "2023-05-20"
     },
     {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.3/clang+llvm-16.0.3-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-      "sha256": "638d32fd0032f99bafaab3bae63a406adb771825a02b6b7da119ee7e71af26c6",
-      "strip_prefix": "clang+llvm-16.0.3-x86_64-linux-gnu-ubuntu-22.04",
-      "version": "llvmorg-16.0.3",
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+      "sha256": "fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf",
+      "strip_prefix": "clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04",
+      "version": "llvmorg-16.0.4",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-05-04",
+      "updated_at": "2023-05-20",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1032,8 +1032,8 @@ _DEPS_JSON = r"""
   "maven_deps": [
     {
       "name": "commons-io:commons-io",
-      "version": "2.11.0",
-      "updated_at": "2022-04-09",
+      "version": "2.12.0",
+      "updated_at": "2023-05-20",
       "expires_at": "2024-04-09"
     },
     {
@@ -1043,13 +1043,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.8",
-      "updated_at": "2023-04-21"
+      "version": "10.1.9",
+      "updated_at": "2023-05-20"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.8",
-      "updated_at": "2023-04-21"
+      "version": "10.1.9",
+      "updated_at": "2023-05-20"
     },
     {
       "name": "org.webjars:jquery",
@@ -1066,9 +1066,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.5.Final",
+      "version": "2.3.6.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2023-03-31"
+      "updated_at": "2023-05-20"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1545,21 +1545,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.27.1",
+      "version": "v0.27.2",
       "patch_cmds": [
         "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
       ],
-      "updated_at": "2023-04-16"
+      "updated_at": "2023-05-20"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.27.1",
-      "updated_at": "2023-04-16"
+      "version": "v0.27.2",
+      "updated_at": "2023-05-20"
     },
     {
       "name": "k8s.io/component-base",
-      "version": "v0.27.1",
-      "updated_at": "2023-04-16"
+      "version": "v0.27.2",
+      "updated_at": "2023-05-20"
     },
     {
       "name": "github.com/google/go-containerregistry",
@@ -1623,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1860508815 or hash(_DEPS_JSON) != -749897144 else None]
+""") if hash(_DEPS_YAML) != -623280172 or hash(_DEPS_JSON) != -1163715329 else None]
 
 DEPS = json.decode(_DEPS_JSON)
