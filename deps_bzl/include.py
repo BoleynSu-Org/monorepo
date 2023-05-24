@@ -3,7 +3,7 @@ The deps.bzl updater that updates using metadata.include.
 """
 import copy
 
-import boleynsu_org.tools.deps_bzl.parser
+import deps_bzl.parser
 
 
 def include(deps, included_deps):
@@ -20,7 +20,7 @@ def include(deps, included_deps):
             included_deps[kind] = []
         deps_mapping = {dep["name"]: i for i, dep in enumerate(deps[kind])}
         for included_dep in included_deps[kind]:
-            included_dep = boleynsu_org.tools.deps_bzl.parser.normalize(included_dep)
+            included_dep = deps_bzl.parser.normalize(included_dep)
             included_dep["included_from"] = included_deps_name
             if included_dep["name"] not in deps_mapping:
                 deps[kind].append(included_dep)
@@ -33,9 +33,9 @@ def include(deps, included_deps):
         included_deps_mapping = {
             dep["name"]: i for i, dep in enumerate(included_deps[kind])
         }
-        deps[kind] = boleynsu_org.tools.deps_bzl.parser.normalize(
+        deps[kind] = deps_bzl.parser.normalize(
             [
-                boleynsu_org.tools.deps_bzl.parser.normalize(dep)
+                deps_bzl.parser.normalize(dep)
                 for dep in deps[kind]
                 if (
                     dep.get("included_from") != included_deps_name
