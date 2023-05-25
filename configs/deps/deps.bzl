@@ -24,11 +24,11 @@ bazel_deps:
   updated_at: '2023-02-18'
 - name: rules_java
   type: http_archive
-  sha256: 7436356107f1cf24b45f95909753e521efe2d06622de184ea25e13cb7a0d72f9
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/5.5.0.tar.gz
-  strip_prefix: rules_java-5.5.0
-  updated_at: '2023-03-25'
-  version: 5.5.0
+  sha256: 3c772f8a301f9f96121c5c546cbcb0520efbf204515bc3e99adee367b9f382da
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.0.0.tar.gz
+  strip_prefix: rules_java-6.0.0
+  updated_at: '2023-05-25'
+  version: 6.0.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -292,9 +292,8 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.26
-  updated_at: '2023-05-12'
-  expires_at: '2024-04-09'
+  version: 0.17.27
+  updated_at: '2023-05-26'
 - name: PyYAML
   version: '6.0'
   updated_at: '2022-05-11'
@@ -341,6 +340,7 @@ maven_deps:
   version: 1.6.0.Final
   version_regex: (.*)\.Final
   updated_at: '2022-05-22'
+  expires_at: '2024-05-22'
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
   version: '20220608.1'
   updated_at: '2023-04-01'
@@ -606,12 +606,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230513'
+  version: 20230525.144442.917617056
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230513'
-  digest: sha256:6ca6eb69962945c2f5931a676043d0cfd4c573dc89ae04c3ade8ef018131b5ea
-  updated_at: '2023-05-13'
+  tag: 20230525.144442.917617056
+  digest: sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246
+  updated_at: '2023-05-25'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -627,8 +627,8 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:d91de255f3d3597661309ce8d4c1227022011c1a52125940bb05a2477f6d8db0
-  updated_at: '2023-05-04'
+  digest: sha256:c10c5bc6358c2dfe5f9d31d46642697641d670b89927898857962515f9e934e6
+  updated_at: '2023-05-25'
 - name: io_docker_filebrowser_filebrowser
   version: v2.23.0
   registry: docker.io
@@ -637,19 +637,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230513'
+  version: 20230524.125737.108785155
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230513'
-  digest: sha256:0c44d85b2c90700229eccb88461665adbff6604dfdb2a0626c6cf15d605ebe73
-  updated_at: '2023-05-13'
+  tag: 20230524.125737.108785155
+  digest: sha256:93b7f9f4d65d841dda26f65178a60182e0a11fcecbe0ac940274d652a0625eec
+  updated_at: '2023-05-25'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230513'
+  version: 20230524.125737.108785155
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230513'
-  digest: sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351
-  updated_at: '2023-05-13'
+  tag: 20230524.125737.108785155
+  digest: sha256:c6a6e0697845ec49217cda956f3abba4b034c5b65593cfb098b48314b0f9d59d
+  updated_at: '2023-05-25'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -753,11 +753,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "7436356107f1cf24b45f95909753e521efe2d06622de184ea25e13cb7a0d72f9",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/5.5.0.tar.gz",
-      "strip_prefix": "rules_java-5.5.0",
-      "updated_at": "2023-03-25",
-      "version": "5.5.0",
+      "sha256": "3c772f8a301f9f96121c5c546cbcb0520efbf204515bc3e99adee367b9f382da",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.0.0.tar.gz",
+      "strip_prefix": "rules_java-6.0.0",
+      "updated_at": "2023-05-25",
+      "version": "6.0.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -1018,9 +1018,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.26",
-      "updated_at": "2023-05-12",
-      "expires_at": "2024-04-09"
+      "version": "0.17.27",
+      "updated_at": "2023-05-26"
     },
     {
       "name": "PyYAML",
@@ -1086,7 +1085,8 @@ _DEPS_JSON = r"""
       "name": "org.wildfly.common:wildfly-common",
       "version": "1.6.0.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2022-05-22"
+      "updated_at": "2022-05-22",
+      "expires_at": "2024-05-22"
     },
     {
       "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
@@ -1488,12 +1488,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230513",
+      "version": "20230525.144442.917617056",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230513",
-      "digest": "sha256:6ca6eb69962945c2f5931a676043d0cfd4c573dc89ae04c3ade8ef018131b5ea",
-      "updated_at": "2023-05-13"
+      "tag": "20230525.144442.917617056",
+      "digest": "sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246",
+      "updated_at": "2023-05-25"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1511,8 +1511,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:d91de255f3d3597661309ce8d4c1227022011c1a52125940bb05a2477f6d8db0",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:c10c5bc6358c2dfe5f9d31d46642697641d670b89927898857962515f9e934e6",
+      "updated_at": "2023-05-25"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1525,21 +1525,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230513",
+      "version": "20230524.125737.108785155",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230513",
-      "digest": "sha256:0c44d85b2c90700229eccb88461665adbff6604dfdb2a0626c6cf15d605ebe73",
-      "updated_at": "2023-05-13"
+      "tag": "20230524.125737.108785155",
+      "digest": "sha256:93b7f9f4d65d841dda26f65178a60182e0a11fcecbe0ac940274d652a0625eec",
+      "updated_at": "2023-05-25"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230513",
+      "version": "20230524.125737.108785155",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230513",
-      "digest": "sha256:458527857150fb3e59fcaee54d96fa5ba1dd4587575ea6cdcfe51df95b2cc351",
-      "updated_at": "2023-05-13"
+      "tag": "20230524.125737.108785155",
+      "digest": "sha256:c6a6e0697845ec49217cda956f3abba4b034c5b65593cfb098b48314b0f9d59d",
+      "updated_at": "2023-05-25"
     }
   ],
   "go_deps": [
@@ -1623,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -623280172 or hash(_DEPS_JSON) != -1163715329 else None]
+""") if hash(_DEPS_YAML) != 1813859352 or hash(_DEPS_JSON) != 1767626795 else None]
 
 DEPS = json.decode(_DEPS_JSON)
