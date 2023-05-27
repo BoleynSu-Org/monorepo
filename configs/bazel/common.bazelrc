@@ -17,12 +17,16 @@ build --tool_java_runtime_version=remotejdk_{java_version}
 
 build --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
 
+# Don't depend on a JAVA_HOME pointing at a system JDK
+# See https://github.com/bazelbuild/rules_jvm_external/issues/445
+build --repo_env=JAVA_HOME=../bazel_tools/jdk
+
 # See https://github.com/bazelbuild/bazel/issues/6648#issuecomment-1133656002
 build --incompatible_strict_action_env=true
 # See https://github.com/bazelbuild/bazel/issues/7260
 build --incompatible_enable_cc_toolchain_resolution=true
 # See https://github.com/bazelbuild/bazel/issues/8830
-build --experimental_allow_tags_propagation
+build --experimental_allow_tags_propagation=true
 
 test --test_output=errors
 
