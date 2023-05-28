@@ -5,6 +5,8 @@ GO_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["go_deps"]}
 
 GO_PACKAGE_PATCH_CMDS = {dep["name"]: dep["patch_cmds"] for dep in DEPS["go_deps"] if "patch_cmds" in dep}
 
+GO_PACKAGE_PATCHES = {dep["name"]: dep["patches"] for dep in DEPS["go_deps"] if "patches" in dep}
+
 def _header_with_hash(repository_ctx, go_sum):
     data = {
         "module": repository_ctx.attr.module,
@@ -55,7 +57,8 @@ def _gazelle_go_deps_impl(repository_ctx):
         build_external = "external",
         build_file_proto_mode = "disable",
         build_config = Label("//:build_config"),
-        patch_cmds = {patch_cmds}
+        patches = {patches},
+        patch_cmds = {patch_cmds},
     )
 """
     dependencies = ""
@@ -71,6 +74,7 @@ def _gazelle_go_deps_impl(repository_ctx):
                     importpath = repr(importpath),
                     sum = repr(sum),
                     version = repr(version),
+                    patches = repr(repository_ctx.attr.package_patches.get(importpath)),
                     patch_cmds = repr(repository_ctx.attr.package_patch_cmds.get(importpath)),
                 )
                 build_config += "# gazelle:repository go_repository name={name} importpath={importpath}\n".format(
@@ -167,6 +171,7 @@ _gazelle_go_deps = repository_rule(
         "go_version": attr.string(),
         "packages": attr.string_dict(default = {}),
         "package_patch_cmds": attr.string_list_dict(default = {}),
+        "package_patches": attr.string_list_dict(default = {}),
         "go_mod": attr.label(allow_single_file = True, mandatory = True),
         "go_sum": attr.label(allow_single_file = True, mandatory = True),
     },
@@ -190,6 +195,7 @@ def go_deps(
         module = "golang.boleyn.su",
         go_version = GOLANG_VERSION,
         packages = GO_PACKAGES,
+        package_patches = GO_PACKAGE_PATCHES,
         package_patch_cmds = GO_PACKAGE_PATCH_CMDS,
         go_mod = Label("@//:go.mod"),
         go_sum = Label("@//:go.sum"),
@@ -200,6 +206,7 @@ def go_deps(
         module = module,
         go_version = go_version,
         packages = packages,
+        package_patches = package_patches,
         package_patch_cmds = package_patch_cmds,
         go_mod = go_mod,
         go_sum = go_sum,
