@@ -36,11 +36,11 @@ bazel_deps:
       remote_jdk17_repos()
 - name: rules_python
   type: http_archive
-  sha256: 94750828b18044533e98a129003b6a68001204038dc4749f40b195b24c38f49f
-  strip_prefix: rules_python-0.21.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.21.0.tar.gz
-  updated_at: '2023-04-21'
-  version: 0.21.0
+  sha256: 863ba0fa944319f7e3d695711427d9ad80ba92c6edd0b7c7443b84e904689539
+  strip_prefix: rules_python-0.22.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.22.0.tar.gz
+  updated_at: '2023-05-29'
+  version: 0.22.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -167,11 +167,11 @@ bazel_deps:
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: c012845ad21bb8053b5f0e92868a095caf9afa1eea9372c5bb46df068d7051f2
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.30.0.tar.gz
-  updated_at: '2023-03-31'
-  version: v0.30.0
-  strip_prefix: bazel-gazelle-0.30.0
+  sha256: bc9a8c259ad2eb54dd89404979c097451df8f2dc64852c9f38d2b7a248f84f32
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.0.tar.gz
+  updated_at: '2023-05-29'
+  version: v0.31.0
+  strip_prefix: bazel-gazelle-0.31.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -292,8 +292,8 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.27
-  updated_at: '2023-05-26'
+  version: 0.17.28
+  updated_at: '2023-05-29'
 - name: PyYAML
   version: '6.0'
   updated_at: '2022-05-11'
@@ -606,12 +606,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: 20230525.144442.917617056
+  version: '20230528.093110'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 20230525.144442.917617056
+  tag: '20230528.093110'
   digest: sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246
-  updated_at: '2023-05-25'
+  updated_at: '2023-05-29'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -637,19 +637,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: 20230524.125737.108785155
+  version: '20230528.093110'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 20230524.125737.108785155
+  tag: '20230528.093110'
   digest: sha256:93b7f9f4d65d841dda26f65178a60182e0a11fcecbe0ac940274d652a0625eec
-  updated_at: '2023-05-25'
+  updated_at: '2023-05-29'
 - name: io_quay_boleynsu_rbe_fedora
-  version: 20230524.125737.108785155
+  version: '20230528.093110'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 20230524.125737.108785155
-  digest: sha256:c6a6e0697845ec49217cda956f3abba4b034c5b65593cfb098b48314b0f9d59d
-  updated_at: '2023-05-25'
+  tag: '20230528.093110'
+  digest: sha256:2fc4289b7bdeec67c248d0dd67448cdbd8450fc9138a3ea99060de0156931f13
+  updated_at: '2023-05-29'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -763,11 +763,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "94750828b18044533e98a129003b6a68001204038dc4749f40b195b24c38f49f",
-      "strip_prefix": "rules_python-0.21.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.21.0.tar.gz",
-      "updated_at": "2023-04-21",
-      "version": "0.21.0",
+      "sha256": "863ba0fa944319f7e3d695711427d9ad80ba92c6edd0b7c7443b84e904689539",
+      "strip_prefix": "rules_python-0.22.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.22.0.tar.gz",
+      "updated_at": "2023-05-29",
+      "version": "0.22.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
     },
     {
@@ -871,11 +871,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "c012845ad21bb8053b5f0e92868a095caf9afa1eea9372c5bb46df068d7051f2",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.30.0.tar.gz",
-      "updated_at": "2023-03-31",
-      "version": "v0.30.0",
-      "strip_prefix": "bazel-gazelle-0.30.0",
+      "sha256": "bc9a8c259ad2eb54dd89404979c097451df8f2dc64852c9f38d2b7a248f84f32",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.0.tar.gz",
+      "updated_at": "2023-05-29",
+      "version": "v0.31.0",
+      "strip_prefix": "bazel-gazelle-0.31.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -1018,8 +1018,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.27",
-      "updated_at": "2023-05-26"
+      "version": "0.17.28",
+      "updated_at": "2023-05-29"
     },
     {
       "name": "PyYAML",
@@ -1488,12 +1488,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230525.144442.917617056",
+      "version": "20230528.093110",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230525.144442.917617056",
+      "tag": "20230528.093110",
       "digest": "sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246",
-      "updated_at": "2023-05-25"
+      "updated_at": "2023-05-29"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1525,21 +1525,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230524.125737.108785155",
+      "version": "20230528.093110",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230524.125737.108785155",
+      "tag": "20230528.093110",
       "digest": "sha256:93b7f9f4d65d841dda26f65178a60182e0a11fcecbe0ac940274d652a0625eec",
-      "updated_at": "2023-05-25"
+      "updated_at": "2023-05-29"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230524.125737.108785155",
+      "version": "20230528.093110",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230524.125737.108785155",
-      "digest": "sha256:c6a6e0697845ec49217cda956f3abba4b034c5b65593cfb098b48314b0f9d59d",
-      "updated_at": "2023-05-25"
+      "tag": "20230528.093110",
+      "digest": "sha256:2fc4289b7bdeec67c248d0dd67448cdbd8450fc9138a3ea99060de0156931f13",
+      "updated_at": "2023-05-29"
     }
   ],
   "go_deps": [
@@ -1623,6 +1623,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1813859352 or hash(_DEPS_JSON) != 1767626795 else None]
+""") if hash(_DEPS_YAML) != 743420828 or hash(_DEPS_JSON) != -1498919619 else None]
 
 DEPS = json.decode(_DEPS_JSON)
