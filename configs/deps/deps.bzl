@@ -135,11 +135,11 @@ bazel_deps:
   - sed -i 's/"${RESOURCE_NAME}"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl
 - name: bazel_skylib
   type: http_archive
-  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz
-  sha256: 060426b186670beede4104095324a72bd7494d8b4e785bf0d84a612978285908
-  updated_at: '2023-02-11'
-  version: 1.4.1
-  strip_prefix: bazel-skylib-1.4.1
+  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.2.tar.gz
+  sha256: de9d2cedea7103d20c93a5cc7763099728206bd5088342d0009315913a592cc0
+  updated_at: '2023-06-04'
+  version: 1.4.2
+  strip_prefix: bazel-skylib-1.4.2
 - name: rules_jvm_external
   type: http_archive
   sha256: c9ae901381ae7f7eca08aed96caeb542f96c5449052db9c9d27274a8dc154cdf
@@ -199,18 +199,20 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm-raw
   type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.4.tar.gz
-  sha256: 10c3fe1757d2e4f1cd7745dc548ecf687680a71824ec81701c38524c2a0753e2
-  strip_prefix: llvm-project-llvmorg-16.0.4
-  version: llvmorg-16.0.4
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.5.tar.gz
+  sha256: e0fbca476693fcafa125bc71c8535587b6d9950293122b66b262bb4333a03942
+  strip_prefix: llvm-project-llvmorg-16.0.5
+  version: llvmorg-16.0.5
   version_regex: llvmorg-(.*)
-  updated_at: '2023-05-20'
+  updated_at: '2023-06-04'
 - name: llvm_linux_x86_64
   type: http_archive
   url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
   sha256: fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf
   strip_prefix: clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04
   version: llvmorg-16.0.4
+  version_skip:
+  - llvmorg-16.0.5
   version_regex: llvmorg-(.*)
   updated_at: '2023-05-20'
   override_updater:
@@ -259,22 +261,22 @@ bazel_deps:
       )
 - name: io_bazel
   type: http_archive
-  version: 6.2.0
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.0.tar.gz
-  sha256: 437d6f704f6ba1ccb9fb335f95138fab72a28d052df2c4a10891442b462d9226
-  updated_at: '2023-05-13'
+  version: 6.2.1
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.1.tar.gz
+  sha256: 140b793456f9401275c5bcb3cb64fc0403e6637874f78a75e03cef324dfd9ff6
+  updated_at: '2023-06-04'
   load_deps: |
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
     def deps():
       if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
         print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.2.0
+  strip_prefix: bazel-6.2.1
 - name: bazel_linux_x86_64
   type: http_file
-  version: 6.2.0
-  url: https://github.com/bazelbuild/bazel/releases/download/6.2.0/bazel-6.2.0-linux-x86_64
-  sha256: 3d11c26fb9ba12c833844450bb90165b176e8a19cb5cf5923f3cec855837f17c
-  updated_at: '2023-05-13'
+  version: 6.2.1
+  url: https://github.com/bazelbuild/bazel/releases/download/6.2.1/bazel-6.2.1-linux-x86_64
+  sha256: cdf349dc938b1f11db5a7172269d66e91ce18c0ca134b38bb3997a3e3be782b8
+  updated_at: '2023-06-04'
   executable: true
   override_updater:
   - type: deps_updater
@@ -292,8 +294,8 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.28
-  updated_at: '2023-05-29'
+  version: 0.17.31
+  updated_at: '2023-06-04'
 - name: PyYAML
   version: '6.0'
   updated_at: '2022-05-11'
@@ -547,48 +549,48 @@ container_deps:
   registry: gcr.io
   repository: distroless/java17
   tag: debug
-  digest: sha256:c0642967e777a2765864f99f16fb6ef8dc7a499132c992958c1731c311d2ee50
-  updated_at: '2023-05-13'
+  digest: sha256:0570b1592646913181215a3807a7317a3cc9d40a339644b3560f99c627449067
+  updated_at: '2023-06-04'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java17
   tag: latest
-  digest: sha256:78d2c280d0914978844d2a2dd2b5315acd437e33c6905b6c562dca97ae34d9b3
-  updated_at: '2023-05-13'
+  digest: sha256:1e4181aaff242e2b305bb4abbe811eb122d68ffd7fd87c25c19468a1bc387ce6
+  updated_at: '2023-06-04'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:cecc31532651aed7047cecfea9bc2433822b6956baa3a1ae03da817e9abb0799
-  updated_at: '2023-05-04'
+  digest: sha256:a17f96f6bff4fe66ab278ffd18e984e2b369f42fed3f04ba09e636ab63e58ab2
+  updated_at: '2023-06-04'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:bff9b131c3eab0f75399e6ccce14650f1aa463bf1e8eb0907989dc1980f0a3f5
-  updated_at: '2023-05-04'
+  digest: sha256:ae5236e5320dd11c4edc23b4d8c7d57536fdf2f9f98ffc2a34c89d5a259f0beb
+  updated_at: '2023-06-04'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:cd6490f180b9ae53122aec81d9da12ab2b32860357939353bea11b1829962b65
-  updated_at: '2023-05-04'
+  digest: sha256:c01265a6c0bae3633123f29e5aa3c9142061f2efe4476bb0fb54eeb43b202f12
+  updated_at: '2023-06-04'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:a713d945f4a1a71828d34313456268ffc4f35db85fbbeea45dda99b5547cb0f1
-  updated_at: '2023-05-04'
+  digest: sha256:559bc54043fc1429f1b9c4e16f52670c7861b7c7fd4125129c29c924b293c2b2
+  updated_at: '2023-06-04'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
@@ -620,8 +622,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:f77c69a548d1a948f59d6b5eacf25903410cc156f84f33102cc4c662435dea72
-  updated_at: '2023-05-12'
+  digest: sha256:c1d484109ed30e02125d1ae0519ce3aae5d6717dd30356fe3725a8a13f09fe67
+  updated_at: '2023-06-04'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -834,11 +836,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_skylib",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.1.tar.gz",
-      "sha256": "060426b186670beede4104095324a72bd7494d8b4e785bf0d84a612978285908",
-      "updated_at": "2023-02-11",
-      "version": "1.4.1",
-      "strip_prefix": "bazel-skylib-1.4.1"
+      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.2.tar.gz",
+      "sha256": "de9d2cedea7103d20c93a5cc7763099728206bd5088342d0009315913a592cc0",
+      "updated_at": "2023-06-04",
+      "version": "1.4.2",
+      "strip_prefix": "bazel-skylib-1.4.2"
     },
     {
       "name": "rules_jvm_external",
@@ -905,12 +907,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm-raw",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.4.tar.gz",
-      "sha256": "10c3fe1757d2e4f1cd7745dc548ecf687680a71824ec81701c38524c2a0753e2",
-      "strip_prefix": "llvm-project-llvmorg-16.0.4",
-      "version": "llvmorg-16.0.4",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.5.tar.gz",
+      "sha256": "e0fbca476693fcafa125bc71c8535587b6d9950293122b66b262bb4333a03942",
+      "strip_prefix": "llvm-project-llvmorg-16.0.5",
+      "version": "llvmorg-16.0.5",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-05-20"
+      "updated_at": "2023-06-04"
     },
     {
       "name": "llvm_linux_x86_64",
@@ -919,6 +921,9 @@ _DEPS_JSON = r"""
       "sha256": "fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf",
       "strip_prefix": "clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04",
       "version": "llvmorg-16.0.4",
+      "version_skip": [
+        "llvmorg-16.0.5"
+      ],
       "version_regex": "llvmorg-(.*)",
       "updated_at": "2023-05-20",
       "override_updater": [
@@ -968,20 +973,20 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel",
       "type": "http_archive",
-      "version": "6.2.0",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.0.tar.gz",
-      "sha256": "437d6f704f6ba1ccb9fb335f95138fab72a28d052df2c4a10891442b462d9226",
-      "updated_at": "2023-05-13",
+      "version": "6.2.1",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.1.tar.gz",
+      "sha256": "140b793456f9401275c5bcb3cb64fc0403e6637874f78a75e03cef324dfd9ff6",
+      "updated_at": "2023-06-04",
       "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.2.0"
+      "strip_prefix": "bazel-6.2.1"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_file",
-      "version": "6.2.0",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.2.0/bazel-6.2.0-linux-x86_64",
-      "sha256": "3d11c26fb9ba12c833844450bb90165b176e8a19cb5cf5923f3cec855837f17c",
-      "updated_at": "2023-05-13",
+      "version": "6.2.1",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.2.1/bazel-6.2.1-linux-x86_64",
+      "sha256": "cdf349dc938b1f11db5a7172269d66e91ce18c0ca134b38bb3997a3e3be782b8",
+      "updated_at": "2023-06-04",
       "executable": true,
       "override_updater": [
         {
@@ -1018,8 +1023,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.28",
-      "updated_at": "2023-05-29"
+      "version": "0.17.31",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "PyYAML",
@@ -1413,8 +1418,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "debug",
-      "digest": "sha256:c0642967e777a2765864f99f16fb6ef8dc7a499132c992958c1731c311d2ee50",
-      "updated_at": "2023-05-13"
+      "digest": "sha256:0570b1592646913181215a3807a7317a3cc9d40a339644b3560f99c627449067",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "java_image_base",
@@ -1423,8 +1428,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "latest",
-      "digest": "sha256:78d2c280d0914978844d2a2dd2b5315acd437e33c6905b6c562dca97ae34d9b3",
-      "updated_at": "2023-05-13"
+      "digest": "sha256:1e4181aaff242e2b305bb4abbe811eb122d68ffd7fd87c25c19468a1bc387ce6",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "py3_debug_image_base",
@@ -1433,8 +1438,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:cecc31532651aed7047cecfea9bc2433822b6956baa3a1ae03da817e9abb0799",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:a17f96f6bff4fe66ab278ffd18e984e2b369f42fed3f04ba09e636ab63e58ab2",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "py3_image_base",
@@ -1443,8 +1448,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:bff9b131c3eab0f75399e6ccce14650f1aa463bf1e8eb0907989dc1980f0a3f5",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:ae5236e5320dd11c4edc23b4d8c7d57536fdf2f9f98ffc2a34c89d5a259f0beb",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "go_debug_image_base",
@@ -1453,8 +1458,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:cd6490f180b9ae53122aec81d9da12ab2b32860357939353bea11b1829962b65",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:c01265a6c0bae3633123f29e5aa3c9142061f2efe4476bb0fb54eeb43b202f12",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "go_image_base",
@@ -1463,8 +1468,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:a713d945f4a1a71828d34313456268ffc4f35db85fbbeea45dda99b5547cb0f1",
-      "updated_at": "2023-05-04"
+      "digest": "sha256:559bc54043fc1429f1b9c4e16f52670c7861b7c7fd4125129c29c924b293c2b2",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "go_debug_image_static",
@@ -1502,8 +1507,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:f77c69a548d1a948f59d6b5eacf25903410cc156f84f33102cc4c662435dea72",
-      "updated_at": "2023-05-12"
+      "digest": "sha256:c1d484109ed30e02125d1ae0519ce3aae5d6717dd30356fe3725a8a13f09fe67",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1623,6 +1628,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 743420828 or hash(_DEPS_JSON) != -1498919619 else None]
+""") if hash(_DEPS_YAML) != -508460802 or hash(_DEPS_JSON) != -666990492 else None]
 
 DEPS = json.decode(_DEPS_JSON)
