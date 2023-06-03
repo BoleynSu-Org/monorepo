@@ -608,12 +608,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230528.093110'
+  version: '20230603.161006'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230528.093110'
-  digest: sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246
-  updated_at: '2023-05-29'
+  tag: '20230603.161006'
+  digest: sha256:cc4e12a62961cd37a056bfacbdf1c037f6fc4a727ec3c4959dad8f7b32ef5393
+  updated_at: '2023-06-04'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -1493,12 +1493,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230528.093110",
+      "version": "20230603.161006",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230528.093110",
-      "digest": "sha256:02d38ff4160843d787ae64dfe521e96749d0b6d913c09bcea2aec80bcf0ea246",
-      "updated_at": "2023-05-29"
+      "tag": "20230603.161006",
+      "digest": "sha256:cc4e12a62961cd37a056bfacbdf1c037f6fc4a727ec3c4959dad8f7b32ef5393",
+      "updated_at": "2023-06-04"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1628,6 +1628,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -508460802 or hash(_DEPS_JSON) != -666990492 else None]
+""") if hash(_DEPS_YAML) != -1742198335 or hash(_DEPS_JSON) != -1289736269 else None]
 
 DEPS = json.decode(_DEPS_JSON)
