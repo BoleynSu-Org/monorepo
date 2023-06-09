@@ -24,11 +24,11 @@ bazel_deps:
   updated_at: '2023-02-18'
 - name: rules_java
   type: http_archive
-  sha256: 3c772f8a301f9f96121c5c546cbcb0520efbf204515bc3e99adee367b9f382da
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.0.0.tar.gz
-  strip_prefix: rules_java-6.0.0
-  updated_at: '2023-05-25'
-  version: 6.0.0
+  sha256: 9d0c6698526de960e7ac39e3360ae9c5217922b266bbc6aed396a4990b98f906
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.1.0.tar.gz
+  strip_prefix: rules_java-6.1.0
+  updated_at: '2023-06-09'
+  version: 6.1.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -303,9 +303,8 @@ pip_deps:
 
 maven_deps:
 - name: commons-io:commons-io
-  version: 2.12.0
-  updated_at: '2023-05-20'
-  expires_at: '2024-04-09'
+  version: 2.13.0
+  updated_at: '2023-06-09'
 - name: com.mysql:mysql-connector-j
   version: 8.0.33
   updated_at: '2023-04-21'
@@ -327,9 +326,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   expires_at: '2024-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.6.Final
+  version: 2.3.7.Final
   version_regex: (.*)\.Final
-  updated_at: '2023-05-20'
+  updated_at: '2023-06-09'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -755,11 +754,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "3c772f8a301f9f96121c5c546cbcb0520efbf204515bc3e99adee367b9f382da",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.0.0.tar.gz",
-      "strip_prefix": "rules_java-6.0.0",
-      "updated_at": "2023-05-25",
-      "version": "6.0.0",
+      "sha256": "9d0c6698526de960e7ac39e3360ae9c5217922b266bbc6aed396a4990b98f906",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.1.0.tar.gz",
+      "strip_prefix": "rules_java-6.1.0",
+      "updated_at": "2023-06-09",
+      "version": "6.1.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -1036,9 +1035,8 @@ _DEPS_JSON = r"""
   "maven_deps": [
     {
       "name": "commons-io:commons-io",
-      "version": "2.12.0",
-      "updated_at": "2023-05-20",
-      "expires_at": "2024-04-09"
+      "version": "2.13.0",
+      "updated_at": "2023-06-09"
     },
     {
       "name": "com.mysql:mysql-connector-j",
@@ -1070,9 +1068,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.6.Final",
+      "version": "2.3.7.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2023-05-20"
+      "updated_at": "2023-06-09"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1628,6 +1626,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1742198335 or hash(_DEPS_JSON) != -1289736269 else None]
+""") if hash(_DEPS_YAML) != 623996192 or hash(_DEPS_JSON) != -1738020854 else None]
 
 DEPS = json.decode(_DEPS_JSON)
