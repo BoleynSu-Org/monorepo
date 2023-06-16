@@ -36,11 +36,11 @@ bazel_deps:
       remote_jdk17_repos()
 - name: rules_python
   type: http_archive
-  sha256: 863ba0fa944319f7e3d695711427d9ad80ba92c6edd0b7c7443b84e904689539
-  strip_prefix: rules_python-0.22.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.22.0.tar.gz
-  updated_at: '2023-05-29'
-  version: 0.22.0
+  sha256: 84aec9e21cc56fbc7f1335035a71c850d1b9b5cc6ff497306f84cced9a769841
+  strip_prefix: rules_python-0.23.1
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.23.1.tar.gz
+  updated_at: '2023-06-17'
+  version: 0.23.1
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -156,22 +156,22 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8
-  strip_prefix: grpc-java-1.55.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.55.1.tar.gz
-  updated_at: '2023-05-12'
-  version: v1.55.1
+  sha256: 4af5ecbaed16455fcda9fdab36e131696f5092858dd130f026069fcf11817a21
+  strip_prefix: grpc-java-1.56.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.0.tar.gz
+  updated_at: '2023-06-17'
+  version: v1.56.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: bc9a8c259ad2eb54dd89404979c097451df8f2dc64852c9f38d2b7a248f84f32
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.0.tar.gz
-  updated_at: '2023-05-29'
-  version: v0.31.0
-  strip_prefix: bazel-gazelle-0.31.0
+  sha256: 198e3fd6303e8157b1d7c0a4a975046a2c96c14afdeeb4987a12fea241bdad19
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.1.tar.gz
+  updated_at: '2023-06-17'
+  version: v0.31.1
+  strip_prefix: bazel-gazelle-0.31.1
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -183,11 +183,11 @@ bazel_deps:
       gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.2.tar.gz
-  sha256: c6fcfddd38f877ce49c49318973496f9a16672e83a29874a921242950cd1c5d2
-  strip_prefix: kubernetes-1.27.2
-  updated_at: '2023-05-20'
-  version: v1.27.2
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.3.tar.gz
+  sha256: 8ef07217229e1c0dab21cc014ee05f79dffd31d3bf13a8ff3c730e031973f3e8
+  strip_prefix: kubernetes-1.27.3
+  updated_at: '2023-06-17'
+  version: v1.27.3
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -199,12 +199,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm-raw
   type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.5.tar.gz
-  sha256: e0fbca476693fcafa125bc71c8535587b6d9950293122b66b262bb4333a03942
-  strip_prefix: llvm-project-llvmorg-16.0.5
-  version: llvmorg-16.0.5
+  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.6.tar.gz
+  sha256: 56b2f75fdaa95ad5e477a246d3f0d164964ab066b4619a01836ef08e475ec9d5
+  strip_prefix: llvm-project-llvmorg-16.0.6
+  version: llvmorg-16.0.6
   version_regex: llvmorg-(.*)
-  updated_at: '2023-06-04'
+  updated_at: '2023-06-17'
 - name: llvm_linux_x86_64
   type: http_archive
   url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
@@ -213,6 +213,7 @@ bazel_deps:
   version: llvmorg-16.0.4
   version_skip:
   - llvmorg-16.0.5
+  - llvmorg-16.0.6
   version_regex: llvmorg-(.*)
   updated_at: '2023-05-20'
   override_updater:
@@ -309,11 +310,11 @@ maven_deps:
   version: 8.0.33
   updated_at: '2023-04-21'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.9
-  updated_at: '2023-05-20'
+  version: 10.1.10
+  updated_at: '2023-06-17'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.9
-  updated_at: '2023-05-20'
+  version: 10.1.10
+  updated_at: '2023-06-17'
 - name: org.webjars:jquery
   version: 3.6.4
   updated_at: '2023-01-07'
@@ -621,15 +622,15 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:c1d484109ed30e02125d1ae0519ce3aae5d6717dd30356fe3725a8a13f09fe67
-  updated_at: '2023-06-04'
+  digest: sha256:401c0aa614ae923656f3d84bfb87821d2c4c01f38e394a3651a865cb8706d93e
+  updated_at: '2023-06-17'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:c10c5bc6358c2dfe5f9d31d46642697641d670b89927898857962515f9e934e6
-  updated_at: '2023-05-25'
+  digest: sha256:203c8ee52640268c28f5ce5f57b192d967da40a91d6443b57ae1da4064e2ed8b
+  updated_at: '2023-06-17'
 - name: io_docker_filebrowser_filebrowser
   version: v2.23.0
   registry: docker.io
@@ -654,7 +655,7 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.27.2
+  version: v0.27.3
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
   patch_cmds:
   - |
@@ -685,13 +686,13 @@ go_deps:
         ],
     )
     EOF
-  updated_at: '2023-05-20'
+  updated_at: '2023-06-17'
 - name: k8s.io/client-go
-  version: v0.27.2
-  updated_at: '2023-05-20'
+  version: v0.27.3
+  updated_at: '2023-06-17'
 - name: k8s.io/component-base
-  version: v0.27.2
-  updated_at: '2023-05-20'
+  version: v0.27.3
+  updated_at: '2023-06-17'
 - name: github.com/google/go-containerregistry
   version: v0.5.1
   included_from: io_bazel_rules_docker
@@ -764,11 +765,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "863ba0fa944319f7e3d695711427d9ad80ba92c6edd0b7c7443b84e904689539",
-      "strip_prefix": "rules_python-0.22.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.22.0.tar.gz",
-      "updated_at": "2023-05-29",
-      "version": "0.22.0",
+      "sha256": "84aec9e21cc56fbc7f1335035a71c850d1b9b5cc6ff497306f84cced9a769841",
+      "strip_prefix": "rules_python-0.23.1",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.23.1.tar.gz",
+      "updated_at": "2023-06-17",
+      "version": "0.23.1",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
     },
     {
@@ -862,21 +863,21 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "be779db38a72a0c693706c433133189538b04979eba1b728eaa21f4fd0f967d8",
-      "strip_prefix": "grpc-java-1.55.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.55.1.tar.gz",
-      "updated_at": "2023-05-12",
-      "version": "v1.55.1",
+      "sha256": "4af5ecbaed16455fcda9fdab36e131696f5092858dd130f026069fcf11817a21",
+      "strip_prefix": "grpc-java-1.56.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.0.tar.gz",
+      "updated_at": "2023-06-17",
+      "version": "v1.56.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "bc9a8c259ad2eb54dd89404979c097451df8f2dc64852c9f38d2b7a248f84f32",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.0.tar.gz",
-      "updated_at": "2023-05-29",
-      "version": "v0.31.0",
-      "strip_prefix": "bazel-gazelle-0.31.0",
+      "sha256": "198e3fd6303e8157b1d7c0a4a975046a2c96c14afdeeb4987a12fea241bdad19",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.1.tar.gz",
+      "updated_at": "2023-06-17",
+      "version": "v0.31.1",
+      "strip_prefix": "bazel-gazelle-0.31.1",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -886,11 +887,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.2.tar.gz",
-      "sha256": "c6fcfddd38f877ce49c49318973496f9a16672e83a29874a921242950cd1c5d2",
-      "strip_prefix": "kubernetes-1.27.2",
-      "updated_at": "2023-05-20",
-      "version": "v1.27.2",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.27.3.tar.gz",
+      "sha256": "8ef07217229e1c0dab21cc014ee05f79dffd31d3bf13a8ff3c730e031973f3e8",
+      "strip_prefix": "kubernetes-1.27.3",
+      "updated_at": "2023-06-17",
+      "version": "v1.27.3",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -906,12 +907,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm-raw",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.5.tar.gz",
-      "sha256": "e0fbca476693fcafa125bc71c8535587b6d9950293122b66b262bb4333a03942",
-      "strip_prefix": "llvm-project-llvmorg-16.0.5",
-      "version": "llvmorg-16.0.5",
+      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.6.tar.gz",
+      "sha256": "56b2f75fdaa95ad5e477a246d3f0d164964ab066b4619a01836ef08e475ec9d5",
+      "strip_prefix": "llvm-project-llvmorg-16.0.6",
+      "version": "llvmorg-16.0.6",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-06-04"
+      "updated_at": "2023-06-17"
     },
     {
       "name": "llvm_linux_x86_64",
@@ -921,7 +922,8 @@ _DEPS_JSON = r"""
       "strip_prefix": "clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04",
       "version": "llvmorg-16.0.4",
       "version_skip": [
-        "llvmorg-16.0.5"
+        "llvmorg-16.0.5",
+        "llvmorg-16.0.6"
       ],
       "version_regex": "llvmorg-(.*)",
       "updated_at": "2023-05-20",
@@ -1045,13 +1047,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.9",
-      "updated_at": "2023-05-20"
+      "version": "10.1.10",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.9",
-      "updated_at": "2023-05-20"
+      "version": "10.1.10",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "org.webjars:jquery",
@@ -1505,8 +1507,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:c1d484109ed30e02125d1ae0519ce3aae5d6717dd30356fe3725a8a13f09fe67",
-      "updated_at": "2023-06-04"
+      "digest": "sha256:401c0aa614ae923656f3d84bfb87821d2c4c01f38e394a3651a865cb8706d93e",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1514,8 +1516,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:c10c5bc6358c2dfe5f9d31d46642697641d670b89927898857962515f9e934e6",
-      "updated_at": "2023-05-25"
+      "digest": "sha256:203c8ee52640268c28f5ce5f57b192d967da40a91d6443b57ae1da4064e2ed8b",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1548,21 +1550,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.27.2",
+      "version": "v0.27.3",
       "patch_cmds": [
         "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
       ],
-      "updated_at": "2023-05-20"
+      "updated_at": "2023-06-17"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.27.2",
-      "updated_at": "2023-05-20"
+      "version": "v0.27.3",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "k8s.io/component-base",
-      "version": "v0.27.2",
-      "updated_at": "2023-05-20"
+      "version": "v0.27.3",
+      "updated_at": "2023-06-17"
     },
     {
       "name": "github.com/google/go-containerregistry",
@@ -1626,6 +1628,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 2045794041 or hash(_DEPS_JSON) != 1592457761 else None]
+""") if hash(_DEPS_YAML) != -2117405241 or hash(_DEPS_JSON) != 531299984 else None]
 
 DEPS = json.decode(_DEPS_JSON)
