@@ -9,9 +9,11 @@ java_library(
         "src/main/java/su/boleyn/oj/core/SQL.java",
     ],
     visibility = ["//visibility:public"],
+    runtime_deps = [
+        "@maven//:org_mariadb_jdbc_mariadb_java_client",
+    ],
     deps = [
         "@maven//:com_googlecode_owasp_java_html_sanitizer_owasp_java_html_sanitizer",
-        "@maven//:com_mysql_mysql_connector_j",
         "@maven//:org_apache_commons_commons_text",
     ],
 )

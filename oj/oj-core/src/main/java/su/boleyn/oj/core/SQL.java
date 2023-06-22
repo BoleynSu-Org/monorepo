@@ -18,11 +18,11 @@ public class SQL extends Config {
     private static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed() || !connection.isValid(0)) {
             try {
-                connection = DriverManager.getConnection("jdbc:mysql://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
+                connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
                 connection.createStatement().execute("show tables;");
             } catch (SQLException e) {
                 init();
-                connection = DriverManager.getConnection("jdbc:mysql://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
+                connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
             }
         }
         return connection;
@@ -200,7 +200,7 @@ public class SQL extends Config {
     }
 
     private static void init() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://" + DB_HOST, DB_USER, DB_PASSWD);
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST, DB_USER, DB_PASSWD);
         Statement statement = connection.createStatement();
         statement.execute("create database " + DB_NAME + ";");
         statement.execute("use " + DB_NAME + ";");

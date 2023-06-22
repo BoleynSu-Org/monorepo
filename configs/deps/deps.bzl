@@ -307,9 +307,9 @@ maven_deps:
 - name: commons-io:commons-io
   version: 2.13.0
   updated_at: '2023-06-09'
-- name: com.mysql:mysql-connector-j
-  version: 8.0.33
-  updated_at: '2023-04-21'
+- name: org.mariadb.jdbc:mariadb-java-client
+  version: 3.1.4
+  updated_at: '2023-06-22'
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 10.1.10
   updated_at: '2023-06-17'
@@ -336,9 +336,8 @@ maven_deps:
   updated_at: '2022-04-15'
   expires_at: '2024-04-15'
 - name: commons-codec:commons-codec
-  version: '1.15'
-  updated_at: '2022-04-15'
-  expires_at: '2024-04-15'
+  version: 1.16.0
+  updated_at: '2023-06-22'
 - name: org.wildfly.common:wildfly-common
   version: 1.6.0.Final
   version_regex: (.*)\.Final
@@ -609,12 +608,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230616.221347'
+  version: '20230621.131705'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230616.221347'
-  digest: sha256:8a8b470d769d1ee08f05345af3b1a5626ee980033143f6d1c066d1e87bf855eb
-  updated_at: '2023-06-21'
+  tag: '20230621.131705'
+  digest: sha256:631fda8d70da8f06e28d5a04298ad65aa7982177fa0442c46565a4f71728fb2c
+  updated_at: '2023-06-22'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -640,19 +639,19 @@ container_deps:
   digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
   updated_at: '2022-11-25'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230616.221347'
+  version: '20230621.131705'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230616.221347'
-  digest: sha256:faac08b947c94cac4c8728794e151b5d3a838798d8969de313104c25252b8cb1
-  updated_at: '2023-06-21'
+  tag: '20230621.131705'
+  digest: sha256:aead583d470bb2790f256b67c296bca7a9f4989e85cbfedd60a7897925dd7666
+  updated_at: '2023-06-22'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230616.221347'
+  version: '20230621.131705'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230616.221347'
-  digest: sha256:4e36926c1dafd30cbc0fb9f9591d4d669bb05cd39bd37a146cfa6ec54737d807
-  updated_at: '2023-06-21'
+  tag: '20230621.131705'
+  digest: sha256:255a1b8fc4fde5a244cc6d1350a58eb12c605808d2caf741408b8e784a64da83
+  updated_at: '2023-06-22'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -1043,9 +1042,9 @@ _DEPS_JSON = r"""
       "updated_at": "2023-06-09"
     },
     {
-      "name": "com.mysql:mysql-connector-j",
-      "version": "8.0.33",
-      "updated_at": "2023-04-21"
+      "name": "org.mariadb.jdbc:mariadb-java-client",
+      "version": "3.1.4",
+      "updated_at": "2023-06-22"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
@@ -1084,9 +1083,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "commons-codec:commons-codec",
-      "version": "1.15",
-      "updated_at": "2022-04-15",
-      "expires_at": "2024-04-15"
+      "version": "1.16.0",
+      "updated_at": "2023-06-22"
     },
     {
       "name": "org.wildfly.common:wildfly-common",
@@ -1495,12 +1493,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230616.221347",
+      "version": "20230621.131705",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230616.221347",
-      "digest": "sha256:8a8b470d769d1ee08f05345af3b1a5626ee980033143f6d1c066d1e87bf855eb",
-      "updated_at": "2023-06-21"
+      "tag": "20230621.131705",
+      "digest": "sha256:631fda8d70da8f06e28d5a04298ad65aa7982177fa0442c46565a4f71728fb2c",
+      "updated_at": "2023-06-22"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1532,21 +1530,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230616.221347",
+      "version": "20230621.131705",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230616.221347",
-      "digest": "sha256:faac08b947c94cac4c8728794e151b5d3a838798d8969de313104c25252b8cb1",
-      "updated_at": "2023-06-21"
+      "tag": "20230621.131705",
+      "digest": "sha256:aead583d470bb2790f256b67c296bca7a9f4989e85cbfedd60a7897925dd7666",
+      "updated_at": "2023-06-22"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230616.221347",
+      "version": "20230621.131705",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230616.221347",
-      "digest": "sha256:4e36926c1dafd30cbc0fb9f9591d4d669bb05cd39bd37a146cfa6ec54737d807",
-      "updated_at": "2023-06-21"
+      "tag": "20230621.131705",
+      "digest": "sha256:255a1b8fc4fde5a244cc6d1350a58eb12c605808d2caf741408b8e784a64da83",
+      "updated_at": "2023-06-22"
     }
   ],
   "go_deps": [
@@ -1630,6 +1628,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 907738438 or hash(_DEPS_JSON) != -1090495591 else None]
+""") if hash(_DEPS_YAML) != -650144629 or hash(_DEPS_JSON) != 1468671362 else None]
 
 DEPS = json.decode(_DEPS_JSON)
