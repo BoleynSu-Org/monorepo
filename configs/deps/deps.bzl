@@ -66,11 +66,11 @@ bazel_deps:
       rules_proto_dependencies()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: 473a064d502e89d11c497a59f9717d1846e01515a3210bd169f22323161c076e
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.39.1.tar.gz
-  updated_at: '2023-04-21'
-  version: v0.39.1
-  strip_prefix: rules_go-0.39.1
+  sha256: 81c29dcb494202dd04787ae83fbc29a783d383e4fbae837de85978e352b1562e
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.0.tar.gz
+  updated_at: '2023-06-24'
+  version: v0.40.0
+  strip_prefix: rules_go-0.40.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -143,11 +143,11 @@ bazel_deps:
   strip_prefix: bazel-skylib-1.4.2
 - name: rules_jvm_external
   type: http_archive
-  sha256: c9ae901381ae7f7eca08aed96caeb542f96c5449052db9c9d27274a8dc154cdf
-  strip_prefix: rules_jvm_external-5.2
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.2.tar.gz
-  updated_at: '2023-04-16'
-  version: '5.2'
+  sha256: 8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e
+  strip_prefix: rules_jvm_external-5.3
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.3.tar.gz
+  updated_at: '2023-06-24'
+  version: '5.3'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.9.1.tar.gz
@@ -789,11 +789,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "473a064d502e89d11c497a59f9717d1846e01515a3210bd169f22323161c076e",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.39.1.tar.gz",
-      "updated_at": "2023-04-21",
-      "version": "v0.39.1",
-      "strip_prefix": "rules_go-0.39.1",
+      "sha256": "81c29dcb494202dd04787ae83fbc29a783d383e4fbae837de85978e352b1562e",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.0.tar.gz",
+      "updated_at": "2023-06-24",
+      "version": "v0.40.0",
+      "strip_prefix": "rules_go-0.40.0",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
@@ -846,11 +846,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_jvm_external",
       "type": "http_archive",
-      "sha256": "c9ae901381ae7f7eca08aed96caeb542f96c5449052db9c9d27274a8dc154cdf",
-      "strip_prefix": "rules_jvm_external-5.2",
-      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.2.tar.gz",
-      "updated_at": "2023-04-16",
-      "version": "5.2"
+      "sha256": "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
+      "strip_prefix": "rules_jvm_external-5.3",
+      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.3.tar.gz",
+      "updated_at": "2023-06-24",
+      "version": "5.3"
     },
     {
       "name": "rules_pkg",
@@ -1628,6 +1628,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -650144629 or hash(_DEPS_JSON) != 1468671362 else None]
+""") if hash(_DEPS_YAML) != -636224200 or hash(_DEPS_JSON) != -486315749 else None]
 
 DEPS = json.decode(_DEPS_JSON)
