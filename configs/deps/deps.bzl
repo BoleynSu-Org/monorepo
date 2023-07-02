@@ -66,11 +66,11 @@ bazel_deps:
       rules_proto_dependencies()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: 81c29dcb494202dd04787ae83fbc29a783d383e4fbae837de85978e352b1562e
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.0.tar.gz
-  updated_at: '2023-06-24'
-  version: v0.40.0
-  strip_prefix: rules_go-0.40.0
+  sha256: 1e68c6d39b94a4f639dce32140ecf42e6e768ceb6119ffd9afeb327a981adab9
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.1.tar.gz
+  updated_at: '2023-06-30'
+  version: v0.40.1
+  strip_prefix: rules_go-0.40.1
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -89,7 +89,10 @@ bazel_deps:
   sha256: 07ee8ca536080f5ebab6377fc6e8920e9a761d2ee4e64f0f6d919612f6ab56aa
   strip_prefix: rules_docker-0.25.0
   updated_at: '2022-07-01'
+  expires_at: '2024-07-01'
   version: v0.25.0
+  patches:
+  - '@boleynsu_org//third_party:io_bazel_rules_docker.patch'
   patch_cmds:
   - sed -i '/native.register_toolchains/Q' repositories/repositories.bzl
   load_deps: |
@@ -157,11 +160,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 4af5ecbaed16455fcda9fdab36e131696f5092858dd130f026069fcf11817a21
-  strip_prefix: grpc-java-1.56.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.0.tar.gz
-  updated_at: '2023-06-17'
-  version: v1.56.0
+  sha256: 17dd91014032a147c978ae99582fddd950f5444388eae700cf51eda0326ad2f9
+  strip_prefix: grpc-java-1.56.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.1.tar.gz
+  updated_at: '2023-07-01'
+  version: v1.56.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -622,8 +625,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:401c0aa614ae923656f3d84bfb87821d2c4c01f38e394a3651a865cb8706d93e
-  updated_at: '2023-06-17'
+  digest: sha256:eea4c0d79e50c6aaaee94e0ffde79e9377d80bc342a3de3f531c9f41ec3e8265
+  updated_at: '2023-06-30'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -789,11 +792,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "81c29dcb494202dd04787ae83fbc29a783d383e4fbae837de85978e352b1562e",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.0.tar.gz",
-      "updated_at": "2023-06-24",
-      "version": "v0.40.0",
-      "strip_prefix": "rules_go-0.40.0",
+      "sha256": "1e68c6d39b94a4f639dce32140ecf42e6e768ceb6119ffd9afeb327a981adab9",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.1.tar.gz",
+      "updated_at": "2023-06-30",
+      "version": "v0.40.1",
+      "strip_prefix": "rules_go-0.40.1",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
@@ -803,7 +806,11 @@ _DEPS_JSON = r"""
       "sha256": "07ee8ca536080f5ebab6377fc6e8920e9a761d2ee4e64f0f6d919612f6ab56aa",
       "strip_prefix": "rules_docker-0.25.0",
       "updated_at": "2022-07-01",
+      "expires_at": "2024-07-01",
       "version": "v0.25.0",
+      "patches": [
+        "@boleynsu_org//third_party:io_bazel_rules_docker.patch"
+      ],
       "patch_cmds": [
         "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
       ],
@@ -864,11 +871,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "4af5ecbaed16455fcda9fdab36e131696f5092858dd130f026069fcf11817a21",
-      "strip_prefix": "grpc-java-1.56.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.0.tar.gz",
-      "updated_at": "2023-06-17",
-      "version": "v1.56.0",
+      "sha256": "17dd91014032a147c978ae99582fddd950f5444388eae700cf51eda0326ad2f9",
+      "strip_prefix": "grpc-java-1.56.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.1.tar.gz",
+      "updated_at": "2023-07-01",
+      "version": "v1.56.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -1507,8 +1514,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:401c0aa614ae923656f3d84bfb87821d2c4c01f38e394a3651a865cb8706d93e",
-      "updated_at": "2023-06-17"
+      "digest": "sha256:eea4c0d79e50c6aaaee94e0ffde79e9377d80bc342a3de3f531c9f41ec3e8265",
+      "updated_at": "2023-06-30"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1628,6 +1635,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -636224200 or hash(_DEPS_JSON) != -486315749 else None]
+""") if hash(_DEPS_YAML) != -914916408 or hash(_DEPS_JSON) != -1011395934 else None]
 
 DEPS = json.decode(_DEPS_JSON)
