@@ -24,11 +24,11 @@ bazel_deps:
   updated_at: '2023-02-18'
 - name: rules_java
   type: http_archive
-  sha256: 54dbcb60d658d56a50646ee83fd27e1aa75529d0dcc148802289e47808b63756
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.1.1.tar.gz
-  strip_prefix: rules_java-6.1.1
-  updated_at: '2023-06-21'
-  version: 6.1.1
+  sha256: c1b830ba7671557990b3d4de32fbb814d5bf652ddce83c0161710f7c1d8150f4
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.2.2.tar.gz
+  strip_prefix: rules_java-6.2.2
+  updated_at: '2023-07-15'
+  version: 6.2.2
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -36,11 +36,11 @@ bazel_deps:
       remote_jdk17_repos()
 - name: rules_python
   type: http_archive
-  sha256: 84aec9e21cc56fbc7f1335035a71c850d1b9b5cc6ff497306f84cced9a769841
-  strip_prefix: rules_python-0.23.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.23.1.tar.gz
-  updated_at: '2023-06-17'
-  version: 0.23.1
+  sha256: 0a8003b044294d7840ac7d9d73eef05d6ceb682d7516781a4ec62eeb34702578
+  strip_prefix: rules_python-0.24.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.24.0.tar.gz
+  updated_at: '2023-07-15'
+  version: 0.24.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -66,11 +66,11 @@ bazel_deps:
       rules_proto_dependencies()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: 1e68c6d39b94a4f639dce32140ecf42e6e768ceb6119ffd9afeb327a981adab9
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.1.tar.gz
-  updated_at: '2023-06-30'
-  version: v0.40.1
-  strip_prefix: rules_go-0.40.1
+  sha256: 12c67b212c865b884a180bd02e573c7a58c60bc2a7fb095475e24dccd9ee28f8
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.41.0.tar.gz
+  updated_at: '2023-07-15'
+  version: v0.41.0
+  strip_prefix: rules_go-0.41.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -171,11 +171,11 @@ bazel_deps:
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: 198e3fd6303e8157b1d7c0a4a975046a2c96c14afdeeb4987a12fea241bdad19
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.1.tar.gz
-  updated_at: '2023-06-17'
-  version: v0.31.1
-  strip_prefix: bazel-gazelle-0.31.1
+  sha256: a79620c4173792b7575d360c4679009e40dc6042d4897279433ff8ba42a6cfe6
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.32.0.tar.gz
+  updated_at: '2023-07-15'
+  version: v0.32.0
+  strip_prefix: bazel-gazelle-0.32.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -314,11 +314,11 @@ maven_deps:
   version: 3.1.4
   updated_at: '2023-06-22'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.10
-  updated_at: '2023-06-17'
+  version: 10.1.11
+  updated_at: '2023-07-15'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.10
-  updated_at: '2023-06-17'
+  version: 10.1.11
+  updated_at: '2023-07-15'
 - name: org.webjars:jquery
   version: 3.6.4
   updated_at: '2023-01-07'
@@ -758,21 +758,21 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "54dbcb60d658d56a50646ee83fd27e1aa75529d0dcc148802289e47808b63756",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.1.1.tar.gz",
-      "strip_prefix": "rules_java-6.1.1",
-      "updated_at": "2023-06-21",
-      "version": "6.1.1",
+      "sha256": "c1b830ba7671557990b3d4de32fbb814d5bf652ddce83c0161710f7c1d8150f4",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.2.2.tar.gz",
+      "strip_prefix": "rules_java-6.2.2",
+      "updated_at": "2023-07-15",
+      "version": "6.2.2",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "84aec9e21cc56fbc7f1335035a71c850d1b9b5cc6ff497306f84cced9a769841",
-      "strip_prefix": "rules_python-0.23.1",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.23.1.tar.gz",
-      "updated_at": "2023-06-17",
-      "version": "0.23.1",
+      "sha256": "0a8003b044294d7840ac7d9d73eef05d6ceb682d7516781a4ec62eeb34702578",
+      "strip_prefix": "rules_python-0.24.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.24.0.tar.gz",
+      "updated_at": "2023-07-15",
+      "version": "0.24.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
     },
     {
@@ -792,11 +792,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "1e68c6d39b94a4f639dce32140ecf42e6e768ceb6119ffd9afeb327a981adab9",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.40.1.tar.gz",
-      "updated_at": "2023-06-30",
-      "version": "v0.40.1",
-      "strip_prefix": "rules_go-0.40.1",
+      "sha256": "12c67b212c865b884a180bd02e573c7a58c60bc2a7fb095475e24dccd9ee28f8",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.41.0.tar.gz",
+      "updated_at": "2023-07-15",
+      "version": "v0.41.0",
+      "strip_prefix": "rules_go-0.41.0",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
@@ -881,11 +881,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "198e3fd6303e8157b1d7c0a4a975046a2c96c14afdeeb4987a12fea241bdad19",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.31.1.tar.gz",
-      "updated_at": "2023-06-17",
-      "version": "v0.31.1",
-      "strip_prefix": "bazel-gazelle-0.31.1",
+      "sha256": "a79620c4173792b7575d360c4679009e40dc6042d4897279433ff8ba42a6cfe6",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.32.0.tar.gz",
+      "updated_at": "2023-07-15",
+      "version": "v0.32.0",
+      "strip_prefix": "bazel-gazelle-0.32.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -1055,13 +1055,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.10",
-      "updated_at": "2023-06-17"
+      "version": "10.1.11",
+      "updated_at": "2023-07-15"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.10",
-      "updated_at": "2023-06-17"
+      "version": "10.1.11",
+      "updated_at": "2023-07-15"
     },
     {
       "name": "org.webjars:jquery",
@@ -1635,6 +1635,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 988754763 or hash(_DEPS_JSON) != 603950613 else None]
+""") if hash(_DEPS_YAML) != 1602246604 or hash(_DEPS_JSON) != -1193019950 else None]
 
 DEPS = json.decode(_DEPS_JSON)
