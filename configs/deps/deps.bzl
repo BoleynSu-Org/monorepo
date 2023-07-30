@@ -24,11 +24,11 @@ bazel_deps:
   updated_at: '2023-07-22'
 - name: rules_java
   type: http_archive
-  sha256: c1b830ba7671557990b3d4de32fbb814d5bf652ddce83c0161710f7c1d8150f4
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.2.2.tar.gz
-  strip_prefix: rules_java-6.2.2
-  updated_at: '2023-07-15'
-  version: 6.2.2
+  sha256: 123ea8ff4137ddd950ba321a087153bc777221b7161e1efbdce90ea5b55636d0
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.3.0.tar.gz
+  strip_prefix: rules_java-6.3.0
+  updated_at: '2023-07-30'
+  version: 6.3.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -160,11 +160,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 17dd91014032a147c978ae99582fddd950f5444388eae700cf51eda0326ad2f9
-  strip_prefix: grpc-java-1.56.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.1.tar.gz
-  updated_at: '2023-07-01'
-  version: v1.56.1
+  sha256: bfe7112b53973f45adbcfe8b34e0b5458e030cb40178f617c465547a158335bd
+  strip_prefix: grpc-java-1.57.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.57.0.tar.gz
+  updated_at: '2023-07-30'
+  version: v1.57.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -199,6 +199,7 @@ bazel_deps:
   sha256: 47b58cf925b76252156da52187329d2cfede4f0f6f83416dcd9f0753592cb1f0
   strip_prefix: EditArea-0.8.2
   updated_at: '2022-07-24'
+  expires_at: '2024-07-24'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm-raw
@@ -266,22 +267,22 @@ bazel_deps:
       )
 - name: io_bazel
   type: http_archive
-  version: 6.2.1
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.1.tar.gz
-  sha256: 140b793456f9401275c5bcb3cb64fc0403e6637874f78a75e03cef324dfd9ff6
-  updated_at: '2023-06-04'
+  version: 6.3.0
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.0.tar.gz
+  sha256: 27da02a18e50b6f7418638e85db87dfd32fc1b33b8c176ffc90f10b95cdeb441
+  updated_at: '2023-07-30'
   load_deps: |
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
     def deps():
       if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
         print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.2.1
+  strip_prefix: bazel-6.3.0
 - name: bazel_linux_x86_64
   type: http_file
-  version: 6.2.1
-  url: https://github.com/bazelbuild/bazel/releases/download/6.2.1/bazel-6.2.1-linux-x86_64
-  sha256: cdf349dc938b1f11db5a7172269d66e91ce18c0ca134b38bb3997a3e3be782b8
-  updated_at: '2023-06-04'
+  version: 6.3.0
+  url: https://github.com/bazelbuild/bazel/releases/download/6.3.0/bazel-6.3.0-linux-x86_64
+  sha256: d64606c17e6b6a7fc119150420b4c109315982319ff3229587e200c47bf36946
+  updated_at: '2023-07-30'
   executable: true
   override_updater:
   - type: deps_updater
@@ -319,7 +320,7 @@ maven_deps:
   version: 10.1.11
   updated_at: '2023-07-15'
 - name: org.webjars:jquery
-  version: 3.6.4
+  version: 3.7.0
   updated_at: '2023-01-07'
   manual: true
 - name: org.webjars:bootstrap
@@ -631,15 +632,15 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:0174c52770125d4206b808412926458b544758845f8f552151f97cb33881ca32
-  updated_at: '2023-07-08'
+  digest: sha256:30568818ab56dece2d843fd6c0066f2fa1a81aa77311fd79e66f237847e64310
+  updated_at: '2023-07-30'
 - name: io_docker_filebrowser_filebrowser
-  version: v2.23.0
+  version: v2.24.0
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.23.0
-  digest: sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2
-  updated_at: '2022-11-25'
+  tag: v2.24.0
+  digest: sha256:8ccab812a63cef16138e9ae4b366e8af994143442282fd70ec93e7ec1bfffb9c
+  updated_at: '2023-07-30'
 - name: io_quay_boleynsu_oj_c99runner
   version: '20230722.035805'
   registry: quay.io
@@ -757,11 +758,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "c1b830ba7671557990b3d4de32fbb814d5bf652ddce83c0161710f7c1d8150f4",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.2.2.tar.gz",
-      "strip_prefix": "rules_java-6.2.2",
-      "updated_at": "2023-07-15",
-      "version": "6.2.2",
+      "sha256": "123ea8ff4137ddd950ba321a087153bc777221b7161e1efbdce90ea5b55636d0",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.3.0.tar.gz",
+      "strip_prefix": "rules_java-6.3.0",
+      "updated_at": "2023-07-30",
+      "version": "6.3.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -870,11 +871,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "17dd91014032a147c978ae99582fddd950f5444388eae700cf51eda0326ad2f9",
-      "strip_prefix": "grpc-java-1.56.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.56.1.tar.gz",
-      "updated_at": "2023-07-01",
-      "version": "v1.56.1",
+      "sha256": "bfe7112b53973f45adbcfe8b34e0b5458e030cb40178f617c465547a158335bd",
+      "strip_prefix": "grpc-java-1.57.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.57.0.tar.gz",
+      "updated_at": "2023-07-30",
+      "version": "v1.57.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -908,6 +909,7 @@ _DEPS_JSON = r"""
       "sha256": "47b58cf925b76252156da52187329d2cfede4f0f6f83416dcd9f0753592cb1f0",
       "strip_prefix": "EditArea-0.8.2",
       "updated_at": "2022-07-24",
+      "expires_at": "2024-07-24",
       "version": "v0.8.2",
       "build_file": "@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD"
     },
@@ -981,20 +983,20 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel",
       "type": "http_archive",
-      "version": "6.2.1",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.2.1.tar.gz",
-      "sha256": "140b793456f9401275c5bcb3cb64fc0403e6637874f78a75e03cef324dfd9ff6",
-      "updated_at": "2023-06-04",
+      "version": "6.3.0",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.0.tar.gz",
+      "sha256": "27da02a18e50b6f7418638e85db87dfd32fc1b33b8c176ffc90f10b95cdeb441",
+      "updated_at": "2023-07-30",
       "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.2.1"
+      "strip_prefix": "bazel-6.3.0"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_file",
-      "version": "6.2.1",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.2.1/bazel-6.2.1-linux-x86_64",
-      "sha256": "cdf349dc938b1f11db5a7172269d66e91ce18c0ca134b38bb3997a3e3be782b8",
-      "updated_at": "2023-06-04",
+      "version": "6.3.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.0/bazel-6.3.0-linux-x86_64",
+      "sha256": "d64606c17e6b6a7fc119150420b4c109315982319ff3229587e200c47bf36946",
+      "updated_at": "2023-07-30",
       "executable": true,
       "override_updater": [
         {
@@ -1063,7 +1065,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.webjars:jquery",
-      "version": "3.6.4",
+      "version": "3.7.0",
       "updated_at": "2023-01-07",
       "manual": true
     },
@@ -1521,17 +1523,17 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:0174c52770125d4206b808412926458b544758845f8f552151f97cb33881ca32",
-      "updated_at": "2023-07-08"
+      "digest": "sha256:30568818ab56dece2d843fd6c0066f2fa1a81aa77311fd79e66f237847e64310",
+      "updated_at": "2023-07-30"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
-      "version": "v2.23.0",
+      "version": "v2.24.0",
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
-      "tag": "v2.23.0",
-      "digest": "sha256:dd9f222c59acea83633f4101597f32620e24aa868ee7a72c40305fbd010887f2",
-      "updated_at": "2022-11-25"
+      "tag": "v2.24.0",
+      "digest": "sha256:8ccab812a63cef16138e9ae4b366e8af994143442282fd70ec93e7ec1bfffb9c",
+      "updated_at": "2023-07-30"
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1633,6 +1635,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1700531314 or hash(_DEPS_JSON) != 132576178 else None]
+""") if hash(_DEPS_YAML) != 862074105 or hash(_DEPS_JSON) != -1333489919 else None]
 
 DEPS = json.decode(_DEPS_JSON)
