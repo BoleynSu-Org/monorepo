@@ -267,22 +267,22 @@ bazel_deps:
       )
 - name: io_bazel
   type: http_archive
-  version: 6.3.1
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.1.tar.gz
-  sha256: 3898d2af83fe3538e40fa279911990458066f8fd170620a7a010e7537fa2c0e6
-  updated_at: '2023-08-05'
+  version: 6.3.2
+  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.2.tar.gz
+  sha256: 8b9de325bef017ee7a8d9a346e61a76d199e1eb5dc6924753eed4f8152066bab
+  updated_at: '2023-08-11'
   load_deps: |
     load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
     def deps():
       if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
         print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.3.1
+  strip_prefix: bazel-6.3.2
 - name: bazel_linux_x86_64
   type: http_file
-  version: 6.3.1
-  url: https://github.com/bazelbuild/bazel/releases/download/6.3.1/bazel-6.3.1-linux-x86_64
-  sha256: 81130d324e145dcf3192338b875669fe5f410fef26344985dd4cdcdb1c7cab5b
-  updated_at: '2023-08-05'
+  version: 6.3.2
+  url: https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-linux-x86_64
+  sha256: e78fc3394deae5408d6f49a15c7b1e615901969ecf6e50d55ef899996b0b8458
+  updated_at: '2023-08-11'
   executable: true
   override_updater:
   - type: deps_updater
@@ -635,12 +635,12 @@ container_deps:
   digest: sha256:30568818ab56dece2d843fd6c0066f2fa1a81aa77311fd79e66f237847e64310
   updated_at: '2023-07-30'
 - name: io_docker_filebrowser_filebrowser
-  version: v2.24.1
+  version: v2.24.2
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.24.1
-  digest: sha256:17bca6878b0aa6e6f6101115ad0d4917966f7a5cd7d4c047c0dce883d9c0679c
-  updated_at: '2023-08-05'
+  tag: v2.24.2
+  digest: sha256:cad5de57ffb2d079598e8bc3fec51968920b79b3253e415a6d2f39c70d030bac
+  updated_at: '2023-08-11'
 - name: io_quay_boleynsu_oj_c99runner
   version: '20230805.054443'
   registry: quay.io
@@ -983,20 +983,20 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel",
       "type": "http_archive",
-      "version": "6.3.1",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.1.tar.gz",
-      "sha256": "3898d2af83fe3538e40fa279911990458066f8fd170620a7a010e7537fa2c0e6",
-      "updated_at": "2023-08-05",
+      "version": "6.3.2",
+      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.2.tar.gz",
+      "sha256": "8b9de325bef017ee7a8d9a346e61a76d199e1eb5dc6924753eed4f8152066bab",
+      "updated_at": "2023-08-11",
       "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.3.1"
+      "strip_prefix": "bazel-6.3.2"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_file",
-      "version": "6.3.1",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.1/bazel-6.3.1-linux-x86_64",
-      "sha256": "81130d324e145dcf3192338b875669fe5f410fef26344985dd4cdcdb1c7cab5b",
-      "updated_at": "2023-08-05",
+      "version": "6.3.2",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-linux-x86_64",
+      "sha256": "e78fc3394deae5408d6f49a15c7b1e615901969ecf6e50d55ef899996b0b8458",
+      "updated_at": "2023-08-11",
       "executable": true,
       "override_updater": [
         {
@@ -1528,12 +1528,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
-      "version": "v2.24.1",
+      "version": "v2.24.2",
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
-      "tag": "v2.24.1",
-      "digest": "sha256:17bca6878b0aa6e6f6101115ad0d4917966f7a5cd7d4c047c0dce883d9c0679c",
-      "updated_at": "2023-08-05"
+      "tag": "v2.24.2",
+      "digest": "sha256:cad5de57ffb2d079598e8bc3fec51968920b79b3253e415a6d2f39c70d030bac",
+      "updated_at": "2023-08-11"
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1635,6 +1635,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 687046071 or hash(_DEPS_JSON) != -1050430553 else None]
+""") if hash(_DEPS_YAML) != -710820537 or hash(_DEPS_JSON) != 2069075961 else None]
 
 DEPS = json.decode(_DEPS_JSON)
