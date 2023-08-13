@@ -71,7 +71,7 @@ diff_test(
     if result.return_code:
         fail("failed to run pip: " + result.stderr)
 
-    repository_ctx.file("pin.sh", content = """
+    repository_ctx.file("pin.sh", content = """\
 #!/bin/bash
 set -euo pipefail
 

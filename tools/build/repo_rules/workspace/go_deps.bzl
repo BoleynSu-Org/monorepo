@@ -133,7 +133,7 @@ test_suite(
         content = _generate_go_mod(repository_ctx),
     )
 
-    repository_ctx.file("pin.sh", content = """
+    repository_ctx.file("pin.sh", content = """\
 #!/bin/bash
 set -euo pipefail
 
