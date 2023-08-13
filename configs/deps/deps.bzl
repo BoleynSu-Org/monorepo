@@ -29,6 +29,9 @@ bazel_deps:
   strip_prefix: rules_java-6.4.0
   updated_at: '2023-08-05'
   version: 6.4.0
+  version_skip:
+  # @bazel_tools//tools/jdk:bootstrap_runtime_toolchain_type is not in Bazel<=6.3.2.
+  - 6.5.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -611,12 +614,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230805.054443'
+  version: '20230811.142942'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230805.054443'
-  digest: sha256:754be42c129424d62471340279343db9356435f6c2e44e338cb66fd330b8fcbd
-  updated_at: '2023-08-05'
+  tag: '20230811.142942'
+  digest: sha256:61d53113abc98b1e17b0a721538899d92ed5d05f0db8d7b640fea968a1984b6b
+  updated_at: '2023-08-13'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -763,6 +766,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_java-6.4.0",
       "updated_at": "2023-08-05",
       "version": "6.4.0",
+      "version_skip": [
+        "6.5.0"
+      ],
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -1500,12 +1506,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230805.054443",
+      "version": "20230811.142942",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230805.054443",
-      "digest": "sha256:754be42c129424d62471340279343db9356435f6c2e44e338cb66fd330b8fcbd",
-      "updated_at": "2023-08-05"
+      "tag": "20230811.142942",
+      "digest": "sha256:61d53113abc98b1e17b0a721538899d92ed5d05f0db8d7b640fea968a1984b6b",
+      "updated_at": "2023-08-13"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1635,6 +1641,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -710820537 or hash(_DEPS_JSON) != 2069075961 else None]
+""") if hash(_DEPS_YAML) != -949680444 or hash(_DEPS_JSON) != -1405799199 else None]
 
 DEPS = json.decode(_DEPS_JSON)
