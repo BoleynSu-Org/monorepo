@@ -24,14 +24,11 @@ bazel_deps:
   updated_at: '2023-07-22'
 - name: rules_java
   type: http_archive
-  sha256: 241822bf5fad614e3e1c42431002abd9af757136fa590a6a7870c6e0640a82e3
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.4.0.tar.gz
-  strip_prefix: rules_java-6.4.0
-  updated_at: '2023-08-05'
-  version: 6.4.0
-  version_skip:
-  # @bazel_tools//tools/jdk:bootstrap_runtime_toolchain_type is not in Bazel<=6.3.2.
-  - 6.5.0
+  sha256: 2c3b915360e44292ba88a1b0a6eb43b3fc21706ed3d9a02da89bfe391f6a45d6
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.5.1.tar.gz
+  strip_prefix: rules_java-6.5.1
+  updated_at: '2023-08-25'
+  version: 6.5.1
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -39,11 +36,11 @@ bazel_deps:
       remote_jdk17_repos()
 - name: rules_python
   type: http_archive
-  sha256: 0a8003b044294d7840ac7d9d73eef05d6ceb682d7516781a4ec62eeb34702578
-  strip_prefix: rules_python-0.24.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.24.0.tar.gz
-  updated_at: '2023-07-15'
-  version: 0.24.0
+  sha256: 5868e73107a8e85d8f323806e60cad7283f34b32163ea6ff1020cf27abef6036
+  strip_prefix: rules_python-0.25.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz
+  updated_at: '2023-08-25'
+  version: 0.25.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
@@ -190,11 +187,11 @@ bazel_deps:
       gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.0.tar.gz
-  sha256: f5429e71700f15215cbc052a4b0abd7abaf29067096f633e63c553347a536c74
-  strip_prefix: kubernetes-1.28.0
-  updated_at: '2023-08-20'
-  version: v1.28.0
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.1.tar.gz
+  sha256: 92773257f0c0863831b14a6bd91b0ce15ed172e6b83c1a9f5abf10c2eb2f2ce2
+  strip_prefix: kubernetes-1.28.1
+  updated_at: '2023-08-25'
+  version: v1.28.1
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -661,7 +658,7 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.28.0
+  version: v0.28.1
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
   patch_cmds:
   - |
@@ -692,13 +689,13 @@ go_deps:
         ],
     )
     EOF
-  updated_at: '2023-08-20'
+  updated_at: '2023-08-25'
 - name: k8s.io/client-go
-  version: v0.28.0
-  updated_at: '2023-08-20'
+  version: v0.28.1
+  updated_at: '2023-08-25'
 - name: k8s.io/component-base
-  version: v0.28.0
-  updated_at: '2023-08-20'
+  version: v0.28.1
+  updated_at: '2023-08-25'
 - name: github.com/google/go-containerregistry
   version: v0.5.1
   included_from: io_bazel_rules_docker
@@ -761,24 +758,21 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "241822bf5fad614e3e1c42431002abd9af757136fa590a6a7870c6e0640a82e3",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.4.0.tar.gz",
-      "strip_prefix": "rules_java-6.4.0",
-      "updated_at": "2023-08-05",
-      "version": "6.4.0",
-      "version_skip": [
-        "6.5.0"
-      ],
+      "sha256": "2c3b915360e44292ba88a1b0a6eb43b3fc21706ed3d9a02da89bfe391f6a45d6",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.5.1.tar.gz",
+      "strip_prefix": "rules_java-6.5.1",
+      "updated_at": "2023-08-25",
+      "version": "6.5.1",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "0a8003b044294d7840ac7d9d73eef05d6ceb682d7516781a4ec62eeb34702578",
-      "strip_prefix": "rules_python-0.24.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.24.0.tar.gz",
-      "updated_at": "2023-07-15",
-      "version": "0.24.0",
+      "sha256": "5868e73107a8e85d8f323806e60cad7283f34b32163ea6ff1020cf27abef6036",
+      "strip_prefix": "rules_python-0.25.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz",
+      "updated_at": "2023-08-25",
+      "version": "0.25.0",
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
     },
     {
@@ -901,11 +895,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.0.tar.gz",
-      "sha256": "f5429e71700f15215cbc052a4b0abd7abaf29067096f633e63c553347a536c74",
-      "strip_prefix": "kubernetes-1.28.0",
-      "updated_at": "2023-08-20",
-      "version": "v1.28.0",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.1.tar.gz",
+      "sha256": "92773257f0c0863831b14a6bd91b0ce15ed172e6b83c1a9f5abf10c2eb2f2ce2",
+      "strip_prefix": "kubernetes-1.28.1",
+      "updated_at": "2023-08-25",
+      "version": "v1.28.1",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -1563,21 +1557,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.28.0",
+      "version": "v0.28.1",
       "patch_cmds": [
         "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
       ],
-      "updated_at": "2023-08-20"
+      "updated_at": "2023-08-25"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.28.0",
-      "updated_at": "2023-08-20"
+      "version": "v0.28.1",
+      "updated_at": "2023-08-25"
     },
     {
       "name": "k8s.io/component-base",
-      "version": "v0.28.0",
-      "updated_at": "2023-08-20"
+      "version": "v0.28.1",
+      "updated_at": "2023-08-25"
     },
     {
       "name": "github.com/google/go-containerregistry",
@@ -1641,6 +1635,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1830406012 or hash(_DEPS_JSON) != 1396961985 else None]
+""") if hash(_DEPS_YAML) != 1397641887 or hash(_DEPS_JSON) != -381875739 else None]
 
 DEPS = json.decode(_DEPS_JSON)
