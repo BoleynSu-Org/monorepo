@@ -13,3 +13,4 @@ REPIN=1 bazel run @unpinned_maven//:pin
 REPIN=1 bazel run @unpinned_pip//:pin
 REPIN=1 bazel run @unpinned_gazelle_go_deps//:pin
 REPIN=1 bazel run //:prow.yaml.genfile
+REPIN=1 bazel run //oj/oj-server:versions.genfile

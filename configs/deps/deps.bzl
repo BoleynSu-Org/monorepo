@@ -320,9 +320,8 @@ maven_deps:
   version: 10.1.13
   updated_at: '2023-08-26'
 - name: org.webjars:jquery
-  version: 3.7.0
-  updated_at: '2023-01-07'
-  manual: true
+  version: 3.7.1
+  updated_at: '2023-09-02'
 - name: org.webjars:bootstrap
   version: 3.4.1
   version_regex: 3\..*
@@ -625,8 +624,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:7108b0cf6c4f23426d501606507e3417f44e3e31326b1cd5c8fe8ebea88a77a0
-  updated_at: '2023-08-20'
+  digest: sha256:d4533d297b360c009880cc29d0aa92bffe00c94b3b3c8a07ef9737d0d3126d14
+  updated_at: '2023-09-02'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -1065,9 +1064,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.webjars:jquery",
-      "version": "3.7.0",
-      "updated_at": "2023-01-07",
-      "manual": true
+      "version": "3.7.1",
+      "updated_at": "2023-09-02"
     },
     {
       "name": "org.webjars:bootstrap",
@@ -1514,8 +1512,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:7108b0cf6c4f23426d501606507e3417f44e3e31326b1cd5c8fe8ebea88a77a0",
-      "updated_at": "2023-08-20"
+      "digest": "sha256:d4533d297b360c009880cc29d0aa92bffe00c94b3b3c8a07ef9737d0d3126d14",
+      "updated_at": "2023-09-02"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1635,6 +1633,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -446311296 or hash(_DEPS_JSON) != -1946906210 else None]
+""") if hash(_DEPS_YAML) != 479253140 or hash(_DEPS_JSON) != -1507840976 else None]
 
 DEPS = json.decode(_DEPS_JSON)

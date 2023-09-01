@@ -1,8 +1,10 @@
-load("//tools/build/rules:genfile.bzl", "genfile")
 load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
 load("@rules_pkg//:pkg.bzl", "pkg_zip")
 load("@rules_java//java:defs.bzl", "java_import")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@bazel_deps//:maven_deps.bzl", "MAVEN_ARTIFACTS")
+load("//tools/build/rules:genfile.bzl", "genfile")
 
 pkg_files(
     name = "editarea_srcs",
@@ -29,11 +31,36 @@ genfile(
     headers = [],
 )
 
+write_file(
+    name = "versions_java",
+    out = "versions.java",
+    content = ["""
+package su.boleyn.oj.server;
+
+public class Versions {{
+    public static String JQUERY_VERSION = "{JQUERY_VERSION}";
+    public static String BOOTSTRAP_VERSION = "{BOOTSTRAP_VERSION}";
+}}
+""".format(
+        BOOTSTRAP_VERSION = MAVEN_ARTIFACTS["org.webjars:bootstrap"],
+        JQUERY_VERSION = MAVEN_ARTIFACTS["org.webjars:jquery"],
+    )],
+    visibility = ["//visibility:public"],
+)
+
+genfile(
+    name = "versions",
+    src = "versions_java",
+    out = "src/main/java/su/boleyn/oj/server/Versions.java",
+    comment = "// ",
+)
+
 java_image(
     name = "oj-server",
     srcs = [
         "src/main/java/su/boleyn/oj/server/Main.java",
         "src/main/java/su/boleyn/oj/server/User.java",
+        "src/main/java/su/boleyn/oj/server/Versions.java",
     ],
     main_class = "su.boleyn.oj.server.Main",
     resources = [
