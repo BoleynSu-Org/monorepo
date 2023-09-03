@@ -278,11 +278,12 @@ bazel_deps:
         print("You are using an unsupported version of Bazel")
   strip_prefix: bazel-6.3.2
 - name: bazel_linux_x86_64
-  type: http_file
+  type: http_archive
   version: 6.3.2
-  url: https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-linux-x86_64
-  sha256: e78fc3394deae5408d6f49a15c7b1e615901969ecf6e50d55ef899996b0b8458
-  updated_at: '2023-08-11'
+  url: https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-installer-linux-x86_64.sh
+  http_archive_type: zip
+  sha256: f117506267ed148d5f4f9844bcf187c4f111dad7ff4f1a9eb1f4e45331f3f9f0
+  updated_at: '2023-09-03'
   executable: true
   override_updater:
   - type: deps_updater
@@ -291,12 +292,13 @@ bazel_deps:
     - name: fields
       value: [version]
   - type: shell
-    cmd: echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-linux-x86_64
+    cmd: echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-installer-linux-x86_64.sh
   - type: deps_updater
     name: bazel_deps
     extra_args:
     - name: fields
       value: [sha256]
+  build_file_content: exports_files(glob(["**"]))
 
 pip_deps:
 - name: ruamel.yaml
@@ -991,11 +993,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "bazel_linux_x86_64",
-      "type": "http_file",
+      "type": "http_archive",
       "version": "6.3.2",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-linux-x86_64",
-      "sha256": "e78fc3394deae5408d6f49a15c7b1e615901969ecf6e50d55ef899996b0b8458",
-      "updated_at": "2023-08-11",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-installer-linux-x86_64.sh",
+      "http_archive_type": "zip",
+      "sha256": "f117506267ed148d5f4f9844bcf187c4f111dad7ff4f1a9eb1f4e45331f3f9f0",
+      "updated_at": "2023-09-03",
       "executable": true,
       "override_updater": [
         {
@@ -1012,7 +1015,7 @@ _DEPS_JSON = r"""
         },
         {
           "type": "shell",
-          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-linux-x86_64"
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/bazel/releases/download/${DEPS_UPDATER_version}/bazel-${DEPS_UPDATER_version}-installer-linux-x86_64.sh"
         },
         {
           "type": "deps_updater",
@@ -1026,7 +1029,8 @@ _DEPS_JSON = r"""
             }
           ]
         }
-      ]
+      ],
+      "build_file_content": "exports_files(glob([\"**\"]))"
     }
   ],
   "pip_deps": [
@@ -1633,6 +1637,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 479253140 or hash(_DEPS_JSON) != -1507840976 else None]
+""") if hash(_DEPS_YAML) != -124535829 or hash(_DEPS_JSON) != 1295684959 else None]
 
 DEPS = json.decode(_DEPS_JSON)

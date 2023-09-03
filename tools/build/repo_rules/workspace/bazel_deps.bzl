@@ -1,7 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
-def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, patch_cmds = None, build_file = None, build_file_content = None, workspace_file_content = None, **kwargs):
+def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, patch_cmds = None, build_file = None, build_file_content = None, workspace_file_content = None, http_archive_type = None, **kwargs):
     if patches != None:
         for patch in patches:
             if not patch.startswith("@"):
@@ -19,6 +19,7 @@ def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = Non
         "build_file": build_file,
         "build_file_content": build_file_content,
         "workspace_file_content": workspace_file_content,
+        "type": http_archive_type,
     }
 
 def to_http_file(*, name, sha256, url = None, urls = None, executable = None, downloaded_file_path = None, **kwargs):
