@@ -160,22 +160,22 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 6a3052dc29684f057641b97cd80521df1c5b43ed2c0038e22ccb23717cb2c72e
-  strip_prefix: grpc-java-1.57.2
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.57.2.tar.gz
-  updated_at: '2023-08-20'
-  version: v1.57.2
+  sha256: 234440dd7ceb7f6460fc859b0b1fe13d653824adc81e650ae84b0a52185ca342
+  strip_prefix: grpc-java-1.58.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.58.0.tar.gz
+  updated_at: '2023-09-08'
+  version: v1.58.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: a79620c4173792b7575d360c4679009e40dc6042d4897279433ff8ba42a6cfe6
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.32.0.tar.gz
-  updated_at: '2023-07-15'
-  version: v0.32.0
-  strip_prefix: bazel-gazelle-0.32.0
+  sha256: 984cae72075c83d689fc4f6f5405f713d4ecaee69510717394e1b775ffa269ad
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.33.0.tar.gz
+  updated_at: '2023-09-08'
+  version: v0.33.0
+  strip_prefix: bazel-gazelle-0.33.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -612,12 +612,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230825.145407'
+  version: '20230901.162928'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230825.145407'
+  tag: '20230901.162928'
   digest: sha256:952b3dbc74769470f734b30e6e34fb1a69c423b74dbd67aba5cbf6541ea134ff
-  updated_at: '2023-08-26'
+  updated_at: '2023-09-08'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -626,15 +626,15 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:d4533d297b360c009880cc29d0aa92bffe00c94b3b3c8a07ef9737d0d3126d14
-  updated_at: '2023-09-02'
+  digest: sha256:b6440c4f4e1471bdcee202e4c4e21c1f93af87421f6d33028363dd224e54f481
+  updated_at: '2023-09-08'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:9425248036f84c766be7ad564108fb92efe3d5744965dcfccf4b3a620461c2c1
-  updated_at: '2023-08-20'
+  digest: sha256:5463cc7e5a3e4ad51aa0e98c419d04646fd9b3e14a1d960ab8b420b9ce9ecc80
+  updated_at: '2023-09-08'
 - name: io_docker_filebrowser_filebrowser
   version: v2.24.2
   registry: docker.io
@@ -643,19 +643,19 @@ container_deps:
   digest: sha256:cad5de57ffb2d079598e8bc3fec51968920b79b3253e415a6d2f39c70d030bac
   updated_at: '2023-08-11'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230825.145407'
+  version: '20230901.162928'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230825.145407'
+  tag: '20230901.162928'
   digest: sha256:c18c1c86c73fc201cd65b2ac1a015788d57fc6765d507643d038866f6176b505
-  updated_at: '2023-08-26'
+  updated_at: '2023-09-08'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230825.145407'
+  version: '20230901.162928'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230825.145407'
+  tag: '20230901.162928'
   digest: sha256:bf579eb44f1042e3048e268e4f0c528b61645104744d151e3280667966575d59
-  updated_at: '2023-08-26'
+  updated_at: '2023-09-08'
 
 go_deps:
 - name: k8s.io/kubectl
@@ -872,21 +872,21 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "6a3052dc29684f057641b97cd80521df1c5b43ed2c0038e22ccb23717cb2c72e",
-      "strip_prefix": "grpc-java-1.57.2",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.57.2.tar.gz",
-      "updated_at": "2023-08-20",
-      "version": "v1.57.2",
+      "sha256": "234440dd7ceb7f6460fc859b0b1fe13d653824adc81e650ae84b0a52185ca342",
+      "strip_prefix": "grpc-java-1.58.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.58.0.tar.gz",
+      "updated_at": "2023-09-08",
+      "version": "v1.58.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "a79620c4173792b7575d360c4679009e40dc6042d4897279433ff8ba42a6cfe6",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.32.0.tar.gz",
-      "updated_at": "2023-07-15",
-      "version": "v0.32.0",
-      "strip_prefix": "bazel-gazelle-0.32.0",
+      "sha256": "984cae72075c83d689fc4f6f5405f713d4ecaee69510717394e1b775ffa269ad",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.33.0.tar.gz",
+      "updated_at": "2023-09-08",
+      "version": "v0.33.0",
+      "strip_prefix": "bazel-gazelle-0.33.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -1502,12 +1502,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230825.145407",
+      "version": "20230901.162928",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230825.145407",
+      "tag": "20230901.162928",
       "digest": "sha256:952b3dbc74769470f734b30e6e34fb1a69c423b74dbd67aba5cbf6541ea134ff",
-      "updated_at": "2023-08-26"
+      "updated_at": "2023-09-08"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1516,8 +1516,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:d4533d297b360c009880cc29d0aa92bffe00c94b3b3c8a07ef9737d0d3126d14",
-      "updated_at": "2023-09-02"
+      "digest": "sha256:b6440c4f4e1471bdcee202e4c4e21c1f93af87421f6d33028363dd224e54f481",
+      "updated_at": "2023-09-08"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1525,8 +1525,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:9425248036f84c766be7ad564108fb92efe3d5744965dcfccf4b3a620461c2c1",
-      "updated_at": "2023-08-20"
+      "digest": "sha256:5463cc7e5a3e4ad51aa0e98c419d04646fd9b3e14a1d960ab8b420b9ce9ecc80",
+      "updated_at": "2023-09-08"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1539,21 +1539,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230825.145407",
+      "version": "20230901.162928",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230825.145407",
+      "tag": "20230901.162928",
       "digest": "sha256:c18c1c86c73fc201cd65b2ac1a015788d57fc6765d507643d038866f6176b505",
-      "updated_at": "2023-08-26"
+      "updated_at": "2023-09-08"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230825.145407",
+      "version": "20230901.162928",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230825.145407",
+      "tag": "20230901.162928",
       "digest": "sha256:bf579eb44f1042e3048e268e4f0c528b61645104744d151e3280667966575d59",
-      "updated_at": "2023-08-26"
+      "updated_at": "2023-09-08"
     }
   ],
   "go_deps": [
@@ -1637,6 +1637,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -124535829 or hash(_DEPS_JSON) != 1295684959 else None]
+""") if hash(_DEPS_YAML) != 556766508 or hash(_DEPS_JSON) != -1751552390 else None]
 
 DEPS = json.decode(_DEPS_JSON)
