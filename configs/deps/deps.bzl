@@ -187,11 +187,11 @@ bazel_deps:
       gazelle_dependencies()
 - name: io_k8s_kubernetes
   type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.1.tar.gz
-  sha256: 92773257f0c0863831b14a6bd91b0ce15ed172e6b83c1a9f5abf10c2eb2f2ce2
-  strip_prefix: kubernetes-1.28.1
-  updated_at: '2023-08-25'
-  version: v1.28.1
+  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.2.tar.gz
+  sha256: badaac786ce6439ce238e2c31b748e90cb6c73ab421e1b58e809fdcbf31808f3
+  strip_prefix: kubernetes-1.28.2
+  updated_at: '2023-09-15'
+  version: v1.28.2
   build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
@@ -239,11 +239,11 @@ bazel_deps:
       value: [sha256]
 - name: com_grail_bazel_toolchain
   type: http_archive
-  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.tar.gz
-  sha256: d3d218287e76c0ad28bc579db711d1fa019fb0463634dfd944a1c2679ef9565b
-  strip_prefix: bazel-toolchain-0.8
-  updated_at: '2022-12-23'
-  version: '0.8'
+  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.2.tar.gz
+  sha256: 254af865fcbbb0b898d24ceb5563b71a864ef61509c42c60d8e5268e992ca858
+  strip_prefix: bazel-toolchain-0.10.2
+  updated_at: '2023-09-15'
+  version: 0.10.2
   patches:
   - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
   load_deps: |
@@ -553,16 +553,16 @@ container_deps:
   registry: gcr.io
   repository: distroless/java17
   tag: debug
-  digest: sha256:d5f1a71ddb989a270ddc6c9ea08244098786fbb9a43e41fd84e3f2747a8a3e2c
-  updated_at: '2023-06-21'
+  digest: sha256:0691c2c3c6301f12e5f098012fe1bce6157b69769425c07b26b692e946acf960
+  updated_at: '2023-09-15'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java17
   tag: latest
-  digest: sha256:052076466984fd56979c15a9c3b7433262b0ad9aae55bc0c53d1da8ffdd829c3
-  updated_at: '2023-06-21'
+  digest: sha256:5cc4322dea54a6732cd2d3feebb18138f62af280a167afcbe94d3be7a607f1e5
+  updated_at: '2023-09-15'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
@@ -636,12 +636,12 @@ container_deps:
   digest: sha256:5463cc7e5a3e4ad51aa0e98c419d04646fd9b3e14a1d960ab8b420b9ce9ecc80
   updated_at: '2023-09-08'
 - name: io_docker_filebrowser_filebrowser
-  version: v2.24.2
+  version: v2.25.0
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.24.2
-  digest: sha256:cad5de57ffb2d079598e8bc3fec51968920b79b3253e415a6d2f39c70d030bac
-  updated_at: '2023-08-11'
+  tag: v2.25.0
+  digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
+  updated_at: '2023-09-15'
 - name: io_quay_boleynsu_oj_c99runner
   version: '20230901.162928'
   registry: quay.io
@@ -659,7 +659,7 @@ container_deps:
 
 go_deps:
 - name: k8s.io/kubectl
-  version: v0.28.1
+  version: v0.28.2
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
   patch_cmds:
   - |
@@ -690,13 +690,13 @@ go_deps:
         ],
     )
     EOF
-  updated_at: '2023-08-25'
+  updated_at: '2023-09-15'
 - name: k8s.io/client-go
-  version: v0.28.1
-  updated_at: '2023-08-25'
+  version: v0.28.2
+  updated_at: '2023-09-15'
 - name: k8s.io/component-base
-  version: v0.28.1
-  updated_at: '2023-08-25'
+  version: v0.28.2
+  updated_at: '2023-09-15'
 - name: github.com/google/go-containerregistry
   version: v0.5.1
   included_from: io_bazel_rules_docker
@@ -896,11 +896,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_k8s_kubernetes",
       "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.1.tar.gz",
-      "sha256": "92773257f0c0863831b14a6bd91b0ce15ed172e6b83c1a9f5abf10c2eb2f2ce2",
-      "strip_prefix": "kubernetes-1.28.1",
-      "updated_at": "2023-08-25",
-      "version": "v1.28.1",
+      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.2.tar.gz",
+      "sha256": "badaac786ce6439ce238e2c31b748e90cb6c73ab421e1b58e809fdcbf31808f3",
+      "strip_prefix": "kubernetes-1.28.2",
+      "updated_at": "2023-09-15",
+      "version": "v1.28.2",
       "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
     },
     {
@@ -971,11 +971,11 @@ _DEPS_JSON = r"""
     {
       "name": "com_grail_bazel_toolchain",
       "type": "http_archive",
-      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.8.tar.gz",
-      "sha256": "d3d218287e76c0ad28bc579db711d1fa019fb0463634dfd944a1c2679ef9565b",
-      "strip_prefix": "bazel-toolchain-0.8",
-      "updated_at": "2022-12-23",
-      "version": "0.8",
+      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.2.tar.gz",
+      "sha256": "254af865fcbbb0b898d24ceb5563b71a864ef61509c42c60d8e5268e992ca858",
+      "strip_prefix": "bazel-toolchain-0.10.2",
+      "updated_at": "2023-09-15",
+      "version": "0.10.2",
       "patches": [
         "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
       ],
@@ -1427,8 +1427,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "debug",
-      "digest": "sha256:d5f1a71ddb989a270ddc6c9ea08244098786fbb9a43e41fd84e3f2747a8a3e2c",
-      "updated_at": "2023-06-21"
+      "digest": "sha256:0691c2c3c6301f12e5f098012fe1bce6157b69769425c07b26b692e946acf960",
+      "updated_at": "2023-09-15"
     },
     {
       "name": "java_image_base",
@@ -1437,8 +1437,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "latest",
-      "digest": "sha256:052076466984fd56979c15a9c3b7433262b0ad9aae55bc0c53d1da8ffdd829c3",
-      "updated_at": "2023-06-21"
+      "digest": "sha256:5cc4322dea54a6732cd2d3feebb18138f62af280a167afcbe94d3be7a607f1e5",
+      "updated_at": "2023-09-15"
     },
     {
       "name": "py3_debug_image_base",
@@ -1530,12 +1530,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
-      "version": "v2.24.2",
+      "version": "v2.25.0",
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
-      "tag": "v2.24.2",
-      "digest": "sha256:cad5de57ffb2d079598e8bc3fec51968920b79b3253e415a6d2f39c70d030bac",
-      "updated_at": "2023-08-11"
+      "tag": "v2.25.0",
+      "digest": "sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848",
+      "updated_at": "2023-09-15"
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1559,21 +1559,21 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "k8s.io/kubectl",
-      "version": "v0.28.1",
+      "version": "v0.28.2",
       "patch_cmds": [
         "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
       ],
-      "updated_at": "2023-08-25"
+      "updated_at": "2023-09-15"
     },
     {
       "name": "k8s.io/client-go",
-      "version": "v0.28.1",
-      "updated_at": "2023-08-25"
+      "version": "v0.28.2",
+      "updated_at": "2023-09-15"
     },
     {
       "name": "k8s.io/component-base",
-      "version": "v0.28.1",
-      "updated_at": "2023-08-25"
+      "version": "v0.28.2",
+      "updated_at": "2023-09-15"
     },
     {
       "name": "github.com/google/go-containerregistry",
@@ -1637,6 +1637,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1177528610 or hash(_DEPS_JSON) != 1120702662 else None]
+""") if hash(_DEPS_YAML) != -730390999 or hash(_DEPS_JSON) != -1349202609 else None]
 
 DEPS = json.decode(_DEPS_JSON)

@@ -2,47 +2,31 @@ diff --git toolchain/internal/common.bzl toolchain/internal/common.bzl
 index bb2fcfa..eacd236 100644
 --- toolchain/internal/common.bzl
 +++ toolchain/internal/common.bzl
-@@ -47,6 +47,8 @@ def python(rctx):
-         fail("python not found")
+@@ -72,6 +72,8 @@ def os_version_arch(rctx):
+     return _os, "", _arch
  
  def os(rctx):
 +    if rctx.attr.exec_os:
 +        return rctx.attr.exec_os
+     # Less granular host OS name, e.g. linux.
+ 
      name = rctx.os.name
-     if name == "linux":
-         return "linux"
-@@ -61,6 +63,8 @@ def os_bzl(os):
+@@ -88,6 +90,8 @@ def os_bzl(os):
      return {"darwin": "osx", "linux": "linux"}[os]
  
  def arch(rctx):
 +    if rctx.attr.exec_cpu:
 +        return rctx.attr.exec_cpu
-     exec_result = rctx.execute([
-         python(rctx),
-         "-c",
-diff --git toolchain/internal/llvm_distributions.bzl toolchain/internal/llvm_distributions.bzl
-index aa22de0..ca05c7d 100644
---- toolchain/internal/llvm_distributions.bzl
-+++ toolchain/internal/llvm_distributions.bzl
-@@ -276,7 +276,10 @@ def download_llvm(rctx):
-     return updated_attrs
- 
- def _urls(rctx):
--    key = _host_os_key(rctx)
-+    if len(rctx.attr.urls) == 1:
-+        (key,) = rctx.attr.urls.keys()
-+    else:
-+        key = _host_os_key(rctx)
- 
-     key_orig = key
-     if key not in rctx.attr.urls:
-diff --git toolchain/rules.bzl toolchain/rules.bzl
-index 832d636..0be81e4 100644
---- toolchain/rules.bzl
-+++ toolchain/rules.bzl
-@@ -30,6 +30,13 @@ _common_attrs = {
-         mandatory = True,
-         doc = "One of the supported versions of LLVM, e.g. 12.0.0",
+     arch = rctx.os.arch
+     if arch == "arm64":
+         return "aarch64"
+diff --git toolchain/internal/repo.bzl toolchain/internal/repo.bzl
+index 67b3ed82d..02bdfc812 100644
+--- toolchain/internal/repo.bzl
++++ toolchain/internal/repo.bzl
+@@ -35,6 +35,13 @@ common_attrs = {
+                "in the list of known llvm_distributions using the provided version. " +
+                "If unset, a default value is set from the `llvm_version` attribute."),
      ),
 +    "exec_os": attr.string(
 +        doc = "exec os for the toolchain, default to host os",
@@ -53,4 +37,4 @@ index 832d636..0be81e4 100644
 +    ),
  }
  
- _llvm_repo_attrs = dict(_common_attrs)
+ llvm_repo_attrs = dict(common_attrs)
