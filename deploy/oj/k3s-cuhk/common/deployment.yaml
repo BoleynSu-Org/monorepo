@@ -36,9 +36,9 @@ spec:
           mountPath: /data
           subPath: "data"
           readOnly: true
-        - mountPath: /app/boleynsu
+        - mountPath: /workdir
           name: workdir
-        workingDir: /app/boleynsu
+        workingDir: /workdir
         image: images_boleynsu_org_oj_oj-server
         env:
         - name: DATA
