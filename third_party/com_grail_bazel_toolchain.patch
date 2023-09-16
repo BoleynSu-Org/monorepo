@@ -2,6 +2,15 @@ diff --git toolchain/internal/common.bzl toolchain/internal/common.bzl
 index bb2fcfa..eacd236 100644
 --- toolchain/internal/common.bzl
 +++ toolchain/internal/common.bzl
+@@ -60,7 +60,8 @@ def _linux_dist(rctx):
+     return distname, version
+ 
+ def os_version_arch(rctx):
+     _os = os(rctx)
+     _arch = arch(rctx)
++    return _os, "", _arch
+ 
+     if _os == "linux":
 @@ -72,6 +72,8 @@ def os_version_arch(rctx):
      return _os, "", _arch
  

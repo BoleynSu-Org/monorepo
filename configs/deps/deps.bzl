@@ -43,12 +43,19 @@ bazel_deps:
   version: 0.25.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+    load("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
     def deps():
       python_register_toolchains(
         name = "python_sdk",
         python_version = PYTHON_VERSION,
         register_toolchains = False,
+      )
+      toolchains_repo(
+          name = "python_sdk_toolchains",
+          python_version = PYTHON_VERSION,
+          set_python_version_constraint = False,
+          user_repository_name = "python_sdk",
       )
 - name: rules_proto
   type: http_archive
@@ -256,13 +263,13 @@ bazel_deps:
           exec_os = "linux",
           exec_cpu = "x86_64",
           urls = {
-              "linux_x86_64": [BAZEL_DEPS["llvm_linux_x86_64"]["url"]],
+              "linux-x86_64": [BAZEL_DEPS["llvm_linux_x86_64"]["url"]],
           },
           strip_prefix = {
-              "linux_x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["strip_prefix"],
+              "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["strip_prefix"],
           },
           sha256 = {
-              "linux_x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
+              "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
           },
       )
 - name: io_bazel
@@ -299,6 +306,20 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
+- name: rules_license
+  type: http_archive
+  sha256: 7626bea5473d3b11d44269c5b510a210f11a78bca1ed639b0f846af955b0fe31
+  strip_prefix: rules_license-0.0.7
+  url: https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.7.tar.gz
+  updated_at: '2023-09-16'
+  version: 0.0.7
+- name: platforms
+  type: http_archive
+  sha256: dd1e88b70f645533ea59f418b501120af71ef107edeaa4d12e2a4ec75b59924c
+  strip_prefix: platforms-0.0.7
+  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz
+  updated_at: '2023-09-16'
+  version: 0.0.7
 
 pip_deps:
 - name: ruamel.yaml
@@ -774,7 +795,7 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz",
       "updated_at": "2023-08-25",
       "version": "0.25.0",
-      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n"
+      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
       "name": "rules_proto",
@@ -979,7 +1000,7 @@ _DEPS_JSON = r"""
       "patches": [
         "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
       ],
-      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux_x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux_x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n"
+      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n"
     },
     {
       "name": "io_bazel",
@@ -1031,6 +1052,24 @@ _DEPS_JSON = r"""
         }
       ],
       "build_file_content": "exports_files(glob([\"**\"]))"
+    },
+    {
+      "name": "rules_license",
+      "type": "http_archive",
+      "sha256": "7626bea5473d3b11d44269c5b510a210f11a78bca1ed639b0f846af955b0fe31",
+      "strip_prefix": "rules_license-0.0.7",
+      "url": "https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.7.tar.gz",
+      "updated_at": "2023-09-16",
+      "version": "0.0.7"
+    },
+    {
+      "name": "platforms",
+      "type": "http_archive",
+      "sha256": "dd1e88b70f645533ea59f418b501120af71ef107edeaa4d12e2a4ec75b59924c",
+      "strip_prefix": "platforms-0.0.7",
+      "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz",
+      "updated_at": "2023-09-16",
+      "version": "0.0.7"
     }
   ],
   "pip_deps": [
@@ -1637,6 +1676,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -730390999 or hash(_DEPS_JSON) != -1349202609 else None]
+""") if hash(_DEPS_YAML) != -707435439 or hash(_DEPS_JSON) != 1501960203 else None]
 
 DEPS = json.decode(_DEPS_JSON)
