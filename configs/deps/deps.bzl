@@ -113,25 +113,6 @@ bazel_deps:
         },
       )
       repositories()
-- name: com_github_yaml_pyyaml
-  type: http_archive
-  url: https://github.com/yaml/pyyaml/archive/refs/tags/6.0.1.tar.gz
-  sha256: 57314c984aaa84318eed00cf5a8365afc49f87954969e295efe2ba99f3b21f7a
-  strip_prefix: pyyaml-6.0.1
-  version: 6.0.1
-  updated_at: '2023-07-22'
-  build_file_content: |
-    alias(
-        name = "yaml",
-        actual = "@pip_pyyaml//:pkg",
-        visibility = ["//visibility:public"],
-    )
-
-    alias(
-        name = "yaml3",
-        actual = "@pip_pyyaml//:pkg",
-        visibility = ["//visibility:public"],
-    )
 - name: io_bazel_rules_k8s
   type: http_archive
   url: https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz
@@ -144,6 +125,7 @@ bazel_deps:
   - sed -i 's/kubectl create --dry-run/%{kubectl_tool} create --dry-run=client --kubeconfig="%{kubeconfig}" --cluster="%{cluster}" --context="%{context}" --user="%{user}"/g' k8s/describe.sh.tpl
   - sed -i "s/| cut -d'\"' -f 2//g" k8s/describe.sh.tpl
   - sed -i 's/"${RESOURCE_NAME}"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl
+  - sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.2.tar.gz
@@ -320,6 +302,24 @@ bazel_deps:
   url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz
   updated_at: '2023-09-16'
   version: 0.0.7
+- name: kubectl_linux_amd64
+  type: http_file
+  url: https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl
+  sha256: c922440b043e5de1afa3c1382f8c663a25f055978cbc6e8423493ec157579ec5
+  version: v1.28.2
+  updated_at: '2023-09-15'
+  executable: true
+  override_updater:
+  - type: shell
+    cmd: |
+      version=$(curl -sL https://dl.k8s.io/release/stable.txt)
+      echo DEPS_UPDATER_version=${version}
+      echo DEPS_UPDATER_url=https://dl.k8s.io/release/${version}/bin/linux/amd64/kubectl
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 
 pip_deps:
 - name: ruamel.yaml
@@ -633,12 +633,12 @@ container_deps:
   digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
   updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230908.110516'
+  version: '20230916.171608'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230908.110516'
-  digest: sha256:952b3dbc74769470f734b30e6e34fb1a69c423b74dbd67aba5cbf6541ea134ff
-  updated_at: '2023-09-08'
+  tag: '20230916.171608'
+  digest: sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a
+  updated_at: '2023-09-17'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -664,75 +664,36 @@ container_deps:
   digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
   updated_at: '2023-09-15'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230901.162928'
+  version: '20230916.171608'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230901.162928'
-  digest: sha256:c18c1c86c73fc201cd65b2ac1a015788d57fc6765d507643d038866f6176b505
-  updated_at: '2023-09-08'
+  tag: '20230916.171608'
+  digest: sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda
+  updated_at: '2023-09-17'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230908.105614'
+  version: '20230916.171608'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230908.105614'
+  tag: '20230916.171608'
   digest: sha256:d6c53bb9216b704f9ad8f638372dea7f02b77f89d45daa933b124f9e9ac4cb6a
-  updated_at: '2023-09-08'
+  updated_at: '2023-09-17'
 
 go_deps:
-- name: k8s.io/kubectl
-  version: v0.28.2
-  # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1392): bazel-gazelle bug
-  patch_cmds:
-  - |
-    rm pkg/explain/v2/templates/BUILD.bazel
-    cat <<EOF >pkg/explain/v2/BUILD.bazel
-    load("@io_bazel_rules_go//go:def.bzl", "go_library")
-
-    go_library(
-        name = "explain",
-        srcs = [
-            "explain.go",
-            "funcs.go",
-            "generator.go",
-            "template.go",
-        ],
-        embedsrcs = glob([
-            "templates/*.tmpl"
-        ]),
-        importpath = "k8s.io/kubectl/pkg/explain/v2",
-        importpath_aliases = ["k8s.io/kubectl/pkg/explain"],
-        visibility = ["//visibility:public"],
-        deps = [
-            "//pkg/util/term",
-            "@com_github_go_openapi_jsonreference//:jsonreference",
-            "@io_k8s_apimachinery//pkg/runtime",
-            "@io_k8s_apimachinery//pkg/runtime/schema",
-            "@io_k8s_client_go//openapi",
-        ],
-    )
-    EOF
-  updated_at: '2023-09-15'
-- name: k8s.io/client-go
-  version: v0.28.2
-  updated_at: '2023-09-15'
-- name: k8s.io/component-base
-  version: v0.28.2
-  updated_at: '2023-09-15'
 - name: github.com/google/go-containerregistry
-  version: v0.5.1
-  included_from: io_bazel_rules_docker
+  version: v0.16.1
+  updated_at: '2023-09-17'
 - name: github.com/pkg/errors
   version: v0.9.1
-  included_from: io_bazel_rules_docker
+  updated_at: '2023-09-17'
 - name: gopkg.in/yaml.v2
-  version: v2.2.8
-  included_from: io_bazel_rules_docker
+  version: v2.4.0
+  updated_at: '2023-09-17'
 - name: github.com/kylelemons/godebug
   version: v1.1.0
-  included_from: io_bazel_rules_docker
+  updated_at: '2023-09-17'
 - name: github.com/ghodss/yaml
   version: v1.0.0
-  included_from: io_bazel_rules_docker
+  updated_at: '2023-09-17'
 
 toolchain_deps:
 - name: c
@@ -839,16 +800,6 @@ _DEPS_JSON = r"""
       "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\nload(\"@boleynsu_org//tools/build/repo_rules:exports_files.bzl\", \"exports_files\")\ndef deps():\n  exports_files(\n    name = \"io_bazel_rules_docker_deps_bzl_files\",\n    files= {\n      \"repositories/go_repositories.bzl\": \"@io_bazel_rules_docker//repositories:go_repositories.bzl\"\n    },\n  )\n  repositories()\n"
     },
     {
-      "name": "com_github_yaml_pyyaml",
-      "type": "http_archive",
-      "url": "https://github.com/yaml/pyyaml/archive/refs/tags/6.0.1.tar.gz",
-      "sha256": "57314c984aaa84318eed00cf5a8365afc49f87954969e295efe2ba99f3b21f7a",
-      "strip_prefix": "pyyaml-6.0.1",
-      "version": "6.0.1",
-      "updated_at": "2023-07-22",
-      "build_file_content": "alias(\n    name = \"yaml\",\n    actual = \"@pip_pyyaml//:pkg\",\n    visibility = [\"//visibility:public\"],\n)\n\nalias(\n    name = \"yaml3\",\n    actual = \"@pip_pyyaml//:pkg\",\n    visibility = [\"//visibility:public\"],\n)\n"
-    },
-    {
       "name": "io_bazel_rules_k8s",
       "type": "http_archive",
       "url": "https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz",
@@ -860,7 +811,8 @@ _DEPS_JSON = r"""
       "patch_cmds": [
         "sed -i 's/kubectl create --dry-run/%{kubectl_tool} create --dry-run=client --kubeconfig=\"%{kubeconfig}\" --cluster=\"%{cluster}\" --context=\"%{context}\" --user=\"%{user}\"/g' k8s/describe.sh.tpl",
         "sed -i \"s/| cut -d'\\\"' -f 2//g\" k8s/describe.sh.tpl",
-        "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl"
+        "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl",
+        "sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD"
       ]
     },
     {
@@ -1070,6 +1022,33 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz",
       "updated_at": "2023-09-16",
       "version": "0.0.7"
+    },
+    {
+      "name": "kubectl_linux_amd64",
+      "type": "http_file",
+      "url": "https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl",
+      "sha256": "c922440b043e5de1afa3c1382f8c663a25f055978cbc6e8423493ec157579ec5",
+      "version": "v1.28.2",
+      "updated_at": "2023-09-15",
+      "executable": true,
+      "override_updater": [
+        {
+          "type": "shell",
+          "cmd": "version=$(curl -sL https://dl.k8s.io/release/stable.txt)\necho DEPS_UPDATER_version=${version}\necho DEPS_UPDATER_url=https://dl.k8s.io/release/${version}/bin/linux/amd64/kubectl\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "pip_deps": [
@@ -1541,12 +1520,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230908.110516",
+      "version": "20230916.171608",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230908.110516",
-      "digest": "sha256:952b3dbc74769470f734b30e6e34fb1a69c423b74dbd67aba5cbf6541ea134ff",
-      "updated_at": "2023-09-08"
+      "tag": "20230916.171608",
+      "digest": "sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a",
+      "updated_at": "2023-09-17"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1578,66 +1557,48 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230901.162928",
+      "version": "20230916.171608",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230901.162928",
-      "digest": "sha256:c18c1c86c73fc201cd65b2ac1a015788d57fc6765d507643d038866f6176b505",
-      "updated_at": "2023-09-08"
+      "tag": "20230916.171608",
+      "digest": "sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda",
+      "updated_at": "2023-09-17"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230908.105614",
+      "version": "20230916.171608",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230908.105614",
+      "tag": "20230916.171608",
       "digest": "sha256:d6c53bb9216b704f9ad8f638372dea7f02b77f89d45daa933b124f9e9ac4cb6a",
-      "updated_at": "2023-09-08"
+      "updated_at": "2023-09-17"
     }
   ],
   "go_deps": [
     {
-      "name": "k8s.io/kubectl",
-      "version": "v0.28.2",
-      "patch_cmds": [
-        "rm pkg/explain/v2/templates/BUILD.bazel\ncat <<EOF >pkg/explain/v2/BUILD.bazel\nload(\"@io_bazel_rules_go//go:def.bzl\", \"go_library\")\n\ngo_library(\n    name = \"explain\",\n    srcs = [\n        \"explain.go\",\n        \"funcs.go\",\n        \"generator.go\",\n        \"template.go\",\n    ],\n    embedsrcs = glob([\n        \"templates/*.tmpl\"\n    ]),\n    importpath = \"k8s.io/kubectl/pkg/explain/v2\",\n    importpath_aliases = [\"k8s.io/kubectl/pkg/explain\"],\n    visibility = [\"//visibility:public\"],\n    deps = [\n        \"//pkg/util/term\",\n        \"@com_github_go_openapi_jsonreference//:jsonreference\",\n        \"@io_k8s_apimachinery//pkg/runtime\",\n        \"@io_k8s_apimachinery//pkg/runtime/schema\",\n        \"@io_k8s_client_go//openapi\",\n    ],\n)\nEOF\n"
-      ],
-      "updated_at": "2023-09-15"
-    },
-    {
-      "name": "k8s.io/client-go",
-      "version": "v0.28.2",
-      "updated_at": "2023-09-15"
-    },
-    {
-      "name": "k8s.io/component-base",
-      "version": "v0.28.2",
-      "updated_at": "2023-09-15"
-    },
-    {
       "name": "github.com/google/go-containerregistry",
-      "version": "v0.5.1",
-      "included_from": "io_bazel_rules_docker"
+      "version": "v0.16.1",
+      "updated_at": "2023-09-17"
     },
     {
       "name": "github.com/pkg/errors",
       "version": "v0.9.1",
-      "included_from": "io_bazel_rules_docker"
+      "updated_at": "2023-09-17"
     },
     {
       "name": "gopkg.in/yaml.v2",
-      "version": "v2.2.8",
-      "included_from": "io_bazel_rules_docker"
+      "version": "v2.4.0",
+      "updated_at": "2023-09-17"
     },
     {
       "name": "github.com/kylelemons/godebug",
       "version": "v1.1.0",
-      "included_from": "io_bazel_rules_docker"
+      "updated_at": "2023-09-17"
     },
     {
       "name": "github.com/ghodss/yaml",
       "version": "v1.0.0",
-      "included_from": "io_bazel_rules_docker"
+      "updated_at": "2023-09-17"
     }
   ],
   "toolchain_deps": [
@@ -1676,6 +1637,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -707435439 or hash(_DEPS_JSON) != 1501960203 else None]
+""") if hash(_DEPS_YAML) != -570215305 or hash(_DEPS_JSON) != 334383344 else None]
 
 DEPS = json.decode(_DEPS_JSON)

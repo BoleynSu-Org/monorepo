@@ -4,8 +4,8 @@ build --extra_toolchains=@rules_java//toolchains:toolchain_jdk_17_definition
 build --extra_toolchains=@remotejdk17_linux_toolchain_config_repo//:toolchain
 build --extra_toolchains=@python_sdk_toolchains//:x86_64-unknown-linux-gnu_toolchain
 build --extra_toolchains=@go_linux_amd64_toolchains//:all
-build --extra_toolchains=@boleynsu_org//configs/build/toolchains:docker_toolchain
-build --extra_toolchains=@boleynsu_org//configs/build/toolchains:kubectl_toolchain
+build --extra_toolchains=//configs/build/toolchains:docker_toolchain
+build --extra_toolchains=//configs/build/toolchains:kubectl_toolchain
 
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
@@ -18,8 +18,8 @@ build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote --bes_backend=grpcs://remote.buildbuddy.io
 ## Platform
 ### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:remote --host_platform=@boleynsu_org//configs/build/platforms:rbe-fedora_container
-build:remote --extra_execution_platforms=@boleynsu_org//configs/build/platforms:rbe-fedora_container
+build:remote --host_platform=//configs/build/platforms:rbe-fedora_container
+build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora_container
 ## Misc
 build:remote --jobs=80
 build:remote --noremote_upload_local_results

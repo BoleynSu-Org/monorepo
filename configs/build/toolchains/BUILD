@@ -3,7 +3,7 @@ load("@io_bazel_rules_k8s//toolchains/kubectl:kubectl_toolchain.bzl", "kubectl_t
 
 kubectl_toolchain(
     name = "kubectl",
-    tool_target = "@io_k8s_kubernetes//:kubectl",
+    tool_target = "@kubectl_linux_amd64//file",
 )
 
 toolchain(
