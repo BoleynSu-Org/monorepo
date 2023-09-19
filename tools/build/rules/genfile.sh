@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
-readonly src=$1
-readonly out=$2
 
-cp "$src" "$BUILD_WORKSPACE_DIRECTORY/$out"
+(
+  printf "%s\n" "${@:3}"
+  cat "$1"
+) > "$2"

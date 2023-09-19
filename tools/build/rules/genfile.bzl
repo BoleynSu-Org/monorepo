@@ -1,6 +1,9 @@
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load(":run.bzl", "run")
+load(":expand_template.bzl", "expand_template")
 
-def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, visibility = None, **kwargs):
+def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, **kwargs):
     if headers == None:
         headers = ["DO NOT EDIT! This file is auto-generated.", "Run `bazel run //{}:{}.genfile` to regenerate.".format(native.package_name(), name)]
     if failure_message == None:
@@ -16,21 +19,40 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
     if out.startswith("@"):
         fail("out should points to a file in the current repo.")
 
-    native.genrule(
-        name = name,
-        srcs = [src],
-        outs = ["{}.genfile.out".format(name)],
-        cmd = " && ".join(["printf '%s\n' '{}' >>'$@'".format(hdr) for hdr in headers] + ['cat "$(execpath {})" >>"$@"'.format(src)]),
-        visibility = visibility,
+    if headers:
+        run(
+            name = name,
+            executable = Label("//tools/build/rules:genfile"),
+            tools = [Label("//tools/build/rules:genfile")],
+            inputs = [src],
+            outputs = ["{}.genfile.out".format(name)],
+            arguments = ["$(execpath {})".format(src), "$(execpath {})".format("{}.genfile.out".format(name))] + headers,
+            **kwargs
+        )
+    else:
+        copy_file(
+            name = name,
+            src = src,
+            out = "{}.genfile.out".format(name),
+            allow_symlink = True,
+        )
+
+    expand_template(
+        name = "{}.genfile.sh".format(name),
+        template = Label("//tools/build/rules:genfile_tpl_sh"),
+        substitutions = {
+            "{src}": "$(rlocationpath {})".format(name),
+            "{out}": "$(rootpath {})".format(out),
+        },
+        expand_location_for = [name, out],
         **kwargs
     )
 
     native.sh_binary(
         name = "{}.genfile".format(name),
-        srcs = [Label("//tools/build/rules:genfile_sh")],
-        args = ["$(rootpath {})".format(name), "$(rootpath {})".format(out)],
-        data = [name, out],
-        visibility = ["//visibility:private"],
+        srcs = [":{}.genfile.sh".format(name)],
+        data = [name],
+        deps = ["@bazel_tools//tools/bash/runfiles"],
         **kwargs
     )
 
@@ -40,6 +62,5 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
             name,
             out,
             failure_message = failure_message,
-            visibility = ["//visibility:private"],
             **kwargs
         )

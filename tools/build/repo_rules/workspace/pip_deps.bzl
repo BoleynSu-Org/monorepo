@@ -43,8 +43,8 @@ load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 sh_binary(
     name = "pin",
     srcs = ["pin.sh"],
-    args = ["$(rootpath requirements.txt)"],
     data = ["requirements.txt"],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
 )
 
 diff_test(
@@ -75,12 +75,23 @@ diff_test(
 #!/bin/bash
 set -euo pipefail
 
-requirements_txt="$1"
+# --- begin runfiles.bash initialization v3 ---
+# Copy-pasted from the Bazel Bash runfiles library v3.
+set -uo pipefail; set +e; f=bazel_tools/tools/bash/runfiles/runfiles.bash
+source "${RUNFILES_DIR:-/dev/null}/$f" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "${RUNFILES_MANIFEST_FILE:-/dev/null}" | cut -f2- -d' ')" 2>/dev/null || \
+source "$0.runfiles/$f" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "$0.runfiles_manifest" | cut -f2- -d' ')" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "$0.exe.runfiles_manifest" | cut -f2- -d' ')" 2>/dev/null || \
+{ echo>&2 "ERROR: cannot find $f"; exit 1; }; f=; set -e
+# --- end runfiles.bash initialization v3 ---
 
-cat "$requirements_txt" >"$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
-""".format(
-        requirements_txt = _get_path(repository_ctx.attr.requirements_txt),
-    ))
+requirements_txt=$(rlocation "{repo_name}/requirements.txt")
+
+cp "$requirements_txt" "$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
+"""
+        .replace("{repo_name}", repository_ctx.name)
+        .replace("{requirements_txt}", _get_path(repository_ctx.attr.requirements_txt)))
 
     repository_ctx.file("requirements.txt")
     result = repository_ctx.execute(

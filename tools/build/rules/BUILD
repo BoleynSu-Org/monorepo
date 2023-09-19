@@ -1,5 +1,11 @@
 filegroup(
-    name = "genfile_sh",
+    name = "genfile_tpl_sh",
+    srcs = ["genfile.tpl.sh"],
+    visibility = ["//visibility:public"],
+)
+
+sh_binary(
+    name = "genfile",
     srcs = ["genfile.sh"],
     visibility = ["//visibility:public"],
 )

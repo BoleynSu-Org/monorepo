@@ -99,8 +99,8 @@ load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 sh_binary(
     name = "pin",
     srcs = ["pin.sh"],
-    args = ["$(rootpath go.mod)", "$(rootpath go.sum)"],
     data = ["go.mod", "go.sum"],
+    deps = ["@bazel_tools//tools/bash/runfiles"],
 )
 
 diff_test(
@@ -137,14 +137,31 @@ test_suite(
 #!/bin/bash
 set -euo pipefail
 
-go_mod="$1"
-go_sum="$2"
+# --- begin runfiles.bash initialization v3 ---
+# Copy-pasted from the Bazel Bash runfiles library v3.
+set -uo pipefail; set +e; f=bazel_tools/tools/bash/runfiles/runfiles.bash
+source "${RUNFILES_DIR:-/dev/null}/$f" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "${RUNFILES_MANIFEST_FILE:-/dev/null}" | cut -f2- -d' ')" 2>/dev/null || \
+source "$0.runfiles/$f" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "$0.runfiles_manifest" | cut -f2- -d' ')" 2>/dev/null || \
+source "$(grep -sm1 "^$f " "$0.exe.runfiles_manifest" | cut -f2- -d' ')" 2>/dev/null || \
+{ echo>&2 "ERROR: cannot find $f"; exit 1; }; f=; set -e
+# --- end runfiles.bash initialization v3 ---
 
-cat "$go_mod" >"$BUILD_WORKSPACE_DIRECTORY/{go_mod}"
-cat "$go_sum" >"$BUILD_WORKSPACE_DIRECTORY/{go_sum}"
-""".format(
-        go_mod = _get_path(repository_ctx.attr.go_mod),
-        go_sum = _get_path(repository_ctx.attr.go_sum),
+go_mod=$(rlocation "{repo_name}/go.mod")
+go_sum=$(rlocation "{repo_name}/go.sum")
+
+cp "$go_mod" "$BUILD_WORKSPACE_DIRECTORY/{go_mod}"
+cp "$go_sum" "$BUILD_WORKSPACE_DIRECTORY/{go_sum}"
+""".replace(
+        "{repo_name}",
+        repository_ctx.name,
+    ).replace(
+        "{go_mod}",
+        _get_path(repository_ctx.attr.go_mod),
+    ).replace(
+        "{go_sum}",
+        _get_path(repository_ctx.attr.go_sum),
     ))
 
     repository_ctx.file("go.sum")
