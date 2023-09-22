@@ -17,11 +17,11 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.8.tar.gz
-  sha256: ae46b722a8b8e9b62170f83bfb040cbf12adb732144e689985a66b26410a7d6f
-  version: 0.0.8
-  strip_prefix: rules_cc-0.0.8
-  updated_at: '2023-07-22'
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.9.tar.gz
+  sha256: 2037875b9a4456dce4a79d112a8ae885bbc4aad968e6587dca6e64f3a0900cdf
+  version: 0.0.9
+  strip_prefix: rules_cc-0.0.9
+  updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
   sha256: 2c3b915360e44292ba88a1b0a6eb43b3fc21706ed3d9a02da89bfe391f6a45d6
@@ -174,14 +174,6 @@ bazel_deps:
     load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
     def deps():
       gazelle_dependencies()
-- name: io_k8s_kubernetes
-  type: http_archive
-  url: https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.2.tar.gz
-  sha256: badaac786ce6439ce238e2c31b748e90cb6c73ab421e1b58e809fdcbf31808f3
-  strip_prefix: kubernetes-1.28.2
-  updated_at: '2023-09-15'
-  version: v1.28.2
-  build_file: '@boleynsu_org//third_party:io_k8s_kubernetes.BUILD'
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -191,14 +183,6 @@ bazel_deps:
   expires_at: '2024-07-24'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
-- name: llvm-raw
-  type: http_archive
-  url: https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.6.tar.gz
-  sha256: 56b2f75fdaa95ad5e477a246d3f0d164964ab066b4619a01836ef08e475ec9d5
-  strip_prefix: llvm-project-llvmorg-16.0.6
-  version: llvmorg-16.0.6
-  version_regex: llvmorg-(.*)
-  updated_at: '2023-06-17'
 - name: llvm_linux_x86_64
   type: http_archive
   url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
@@ -208,6 +192,7 @@ bazel_deps:
   version_skip:
   - llvmorg-16.0.5
   - llvmorg-16.0.6
+  - llvmorg-17.0.1
   version_regex: llvmorg-(.*)
   updated_at: '2023-05-20'
   override_updater:
@@ -228,11 +213,11 @@ bazel_deps:
       value: [sha256]
 - name: com_grail_bazel_toolchain
   type: http_archive
-  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.2.tar.gz
-  sha256: 254af865fcbbb0b898d24ceb5563b71a864ef61509c42c60d8e5268e992ca858
-  strip_prefix: bazel-toolchain-0.10.2
-  updated_at: '2023-09-15'
-  version: 0.10.2
+  url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz
+  sha256: c2a58fdd8420cca3645843b1be7b18a2d5df388d192d50c238ae3edd9b693011
+  strip_prefix: bazel-toolchain-0.10.3
+  updated_at: '2023-09-22'
+  version: 0.10.3
   patches:
   - '@boleynsu_org//third_party:com_grail_bazel_toolchain.patch'
   load_deps: |
@@ -254,18 +239,6 @@ bazel_deps:
               "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
           },
       )
-- name: io_bazel
-  type: http_archive
-  version: 6.3.2
-  url: https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.2.tar.gz
-  sha256: 8b9de325bef017ee7a8d9a346e61a76d199e1eb5dc6924753eed4f8152066bab
-  updated_at: '2023-08-11'
-  load_deps: |
-    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
-    def deps():
-      if BAZEL_DEPS["io_bazel"]["version"] != native.bazel_version:
-        print("You are using an unsupported version of Bazel")
-  strip_prefix: bazel-6.3.2
 - name: bazel_linux_x86_64
   type: http_archive
   version: 6.3.2
@@ -288,6 +261,11 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
+  load_deps: |
+    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
+    def deps():
+      if BAZEL_DEPS["bazel_linux_x86_64"]["version"] != native.bazel_version:
+        print("You are using an unsupported version of Bazel")
 - name: rules_license
   type: http_archive
   sha256: 7626bea5473d3b11d44269c5b510a210f11a78bca1ed639b0f846af955b0fe31
@@ -590,16 +568,16 @@ container_deps:
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:a17f96f6bff4fe66ab278ffd18e984e2b369f42fed3f04ba09e636ab63e58ab2
-  updated_at: '2023-06-04'
+  digest: sha256:97a9d7dd1051c2f89257e2230295fc81765072fae6e7c76075864df408e7d1fb
+  updated_at: '2023-09-22'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:ae5236e5320dd11c4edc23b4d8c7d57536fdf2f9f98ffc2a34c89d5a259f0beb
-  updated_at: '2023-06-04'
+  digest: sha256:294f543d6109aeada162f6561671ab3963873d28a88111eeaabcd28bb979e733
+  updated_at: '2023-09-22'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
@@ -654,8 +632,8 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:5463cc7e5a3e4ad51aa0e98c419d04646fd9b3e14a1d960ab8b420b9ce9ecc80
-  updated_at: '2023-09-08'
+  digest: sha256:7fb4cb76b1a979671c18bba6ad81fc80d50cb56069b7fb542f75efb921b5e714
+  updated_at: '2023-09-22'
 - name: io_docker_filebrowser_filebrowser
   version: v2.25.0
   registry: docker.io
@@ -664,19 +642,19 @@ container_deps:
   digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
   updated_at: '2023-09-15'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230916.171608'
+  version: '20230918.150757'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230916.171608'
+  tag: '20230918.150757'
   digest: sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda
-  updated_at: '2023-09-17'
+  updated_at: '2023-09-22'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230916.171608'
+  version: '20230918.150757'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230916.171608'
+  tag: '20230918.150757'
   digest: sha256:d6c53bb9216b704f9ad8f638372dea7f02b77f89d45daa933b124f9e9ac4cb6a
-  updated_at: '2023-09-17'
+  updated_at: '2023-09-22'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -732,11 +710,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_cc",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.8.tar.gz",
-      "sha256": "ae46b722a8b8e9b62170f83bfb040cbf12adb732144e689985a66b26410a7d6f",
-      "version": "0.0.8",
-      "strip_prefix": "rules_cc-0.0.8",
-      "updated_at": "2023-07-22"
+      "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.9.tar.gz",
+      "sha256": "2037875b9a4456dce4a79d112a8ae885bbc4aad968e6587dca6e64f3a0900cdf",
+      "version": "0.0.9",
+      "strip_prefix": "rules_cc-0.0.9",
+      "updated_at": "2023-09-22"
     },
     {
       "name": "rules_java",
@@ -867,16 +845,6 @@ _DEPS_JSON = r"""
       "load_deps": "load(\"@bazel_gazelle//:deps.bzl\", \"gazelle_dependencies\")\ndef deps():\n  gazelle_dependencies()\n"
     },
     {
-      "name": "io_k8s_kubernetes",
-      "type": "http_archive",
-      "url": "https://github.com/kubernetes/kubernetes/archive/refs/tags/v1.28.2.tar.gz",
-      "sha256": "badaac786ce6439ce238e2c31b748e90cb6c73ab421e1b58e809fdcbf31808f3",
-      "strip_prefix": "kubernetes-1.28.2",
-      "updated_at": "2023-09-15",
-      "version": "v1.28.2",
-      "build_file": "@boleynsu_org//third_party:io_k8s_kubernetes.BUILD"
-    },
-    {
       "name": "com_github_cdolivet_editarea",
       "type": "http_archive",
       "url": "https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz",
@@ -888,16 +856,6 @@ _DEPS_JSON = r"""
       "build_file": "@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD"
     },
     {
-      "name": "llvm-raw",
-      "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.6.tar.gz",
-      "sha256": "56b2f75fdaa95ad5e477a246d3f0d164964ab066b4619a01836ef08e475ec9d5",
-      "strip_prefix": "llvm-project-llvmorg-16.0.6",
-      "version": "llvmorg-16.0.6",
-      "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-06-17"
-    },
-    {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
       "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
@@ -906,7 +864,8 @@ _DEPS_JSON = r"""
       "version": "llvmorg-16.0.4",
       "version_skip": [
         "llvmorg-16.0.5",
-        "llvmorg-16.0.6"
+        "llvmorg-16.0.6",
+        "llvmorg-17.0.1"
       ],
       "version_regex": "llvmorg-(.*)",
       "updated_at": "2023-05-20",
@@ -944,25 +903,15 @@ _DEPS_JSON = r"""
     {
       "name": "com_grail_bazel_toolchain",
       "type": "http_archive",
-      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.2.tar.gz",
-      "sha256": "254af865fcbbb0b898d24ceb5563b71a864ef61509c42c60d8e5268e992ca858",
-      "strip_prefix": "bazel-toolchain-0.10.2",
-      "updated_at": "2023-09-15",
-      "version": "0.10.2",
+      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz",
+      "sha256": "c2a58fdd8420cca3645843b1be7b18a2d5df388d192d50c238ae3edd9b693011",
+      "strip_prefix": "bazel-toolchain-0.10.3",
+      "updated_at": "2023-09-22",
+      "version": "0.10.3",
       "patches": [
         "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
       ],
       "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n"
-    },
-    {
-      "name": "io_bazel",
-      "type": "http_archive",
-      "version": "6.3.2",
-      "url": "https://github.com/bazelbuild/bazel/archive/refs/tags/6.3.2.tar.gz",
-      "sha256": "8b9de325bef017ee7a8d9a346e61a76d199e1eb5dc6924753eed4f8152066bab",
-      "updated_at": "2023-08-11",
-      "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"io_bazel\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n",
-      "strip_prefix": "bazel-6.3.2"
     },
     {
       "name": "bazel_linux_x86_64",
@@ -1003,7 +952,8 @@ _DEPS_JSON = r"""
           ]
         }
       ],
-      "build_file_content": "exports_files(glob([\"**\"]))"
+      "build_file_content": "exports_files(glob([\"**\"]))",
+      "load_deps": "load(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  if BAZEL_DEPS[\"bazel_linux_x86_64\"][\"version\"] != native.bazel_version:\n    print(\"You are using an unsupported version of Bazel\")\n"
     },
     {
       "name": "rules_license",
@@ -1465,8 +1415,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:a17f96f6bff4fe66ab278ffd18e984e2b369f42fed3f04ba09e636ab63e58ab2",
-      "updated_at": "2023-06-04"
+      "digest": "sha256:97a9d7dd1051c2f89257e2230295fc81765072fae6e7c76075864df408e7d1fb",
+      "updated_at": "2023-09-22"
     },
     {
       "name": "py3_image_base",
@@ -1475,8 +1425,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:ae5236e5320dd11c4edc23b4d8c7d57536fdf2f9f98ffc2a34c89d5a259f0beb",
-      "updated_at": "2023-06-04"
+      "digest": "sha256:294f543d6109aeada162f6561671ab3963873d28a88111eeaabcd28bb979e733",
+      "updated_at": "2023-09-22"
     },
     {
       "name": "go_debug_image_base",
@@ -1543,8 +1493,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:5463cc7e5a3e4ad51aa0e98c419d04646fd9b3e14a1d960ab8b420b9ce9ecc80",
-      "updated_at": "2023-09-08"
+      "digest": "sha256:7fb4cb76b1a979671c18bba6ad81fc80d50cb56069b7fb542f75efb921b5e714",
+      "updated_at": "2023-09-22"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1557,21 +1507,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230916.171608",
+      "version": "20230918.150757",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230916.171608",
+      "tag": "20230918.150757",
       "digest": "sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda",
-      "updated_at": "2023-09-17"
+      "updated_at": "2023-09-22"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230916.171608",
+      "version": "20230918.150757",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230916.171608",
+      "tag": "20230918.150757",
       "digest": "sha256:d6c53bb9216b704f9ad8f638372dea7f02b77f89d45daa933b124f9e9ac4cb6a",
-      "updated_at": "2023-09-17"
+      "updated_at": "2023-09-22"
     }
   ],
   "go_deps": [
@@ -1637,6 +1587,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -570215305 or hash(_DEPS_JSON) != 334383344 else None]
+""") if hash(_DEPS_YAML) != -929702150 or hash(_DEPS_JSON) != -404271923 else None]
 
 DEPS = json.decode(_DEPS_JSON)
