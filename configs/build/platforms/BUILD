@@ -15,15 +15,6 @@ platform(
 )
 
 platform(
-    name = "rbe-fedora_container",
-    constraint_values = [
-        "@io_bazel_rules_docker//platforms:run_in_container",  # See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-    ],
-    parents = [":rbe-fedora"],
-    visibility = ["//visibility:public"],
-)
-
-platform(
     name = "linux_x86_64",
     constraint_values = [
         "@platforms//os:linux",

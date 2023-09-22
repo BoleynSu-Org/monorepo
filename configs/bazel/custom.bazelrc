@@ -17,9 +17,7 @@ build:remote --remote_download_minimal
 build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote --bes_backend=grpcs://remote.buildbuddy.io
 ## Platform
-### See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:remote --host_platform=//configs/build/platforms:rbe-fedora_container
-build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora_container
+build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora
 ## Misc
 build:remote --jobs=80
 build:remote --noremote_upload_local_results
