@@ -34,7 +34,4 @@ build --experimental_allow_tags_propagation=true
 
 test --test_output=errors
 
-# See https://github.com/bazelbuild/rules_docker/blob/v0.24.0/platforms/BUILD
-build:local_container --extra_execution_platforms=@io_bazel_rules_docker//platforms:local_container_platform
-
 try-import %workspace%/configs/bazel/custom.bazelrc
