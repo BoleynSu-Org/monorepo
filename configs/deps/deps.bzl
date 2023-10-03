@@ -185,16 +185,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm_linux_x86_64
   type: http_archive
-  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
-  sha256: fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf
-  strip_prefix: clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04
-  version: llvmorg-16.0.4
-  version_skip:
-  - llvmorg-16.0.5
-  - llvmorg-16.0.6
-  - llvmorg-17.0.1
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.2/clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+  sha256: df297df804766f8fb18f10a188af78e55d82bb8881751408c2fa694ca19163a8
+  strip_prefix: clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04
+  version: llvmorg-17.0.2
   version_regex: llvmorg-(.*)
-  updated_at: '2023-05-20'
+  updated_at: '2023-10-03'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -625,8 +621,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:b6440c4f4e1471bdcee202e4c4e21c1f93af87421f6d33028363dd224e54f481
-  updated_at: '2023-09-08'
+  digest: sha256:3b08a2704852ef8bb82de8feacfc0f40482c32a7c466b954f36264847e18ac9e
+  updated_at: '2023-10-03'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -858,17 +854,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-      "sha256": "fd464333bd55b482eb7385f2f4e18248eb43129a3cda4c0920ad9ac3c12bdacf",
-      "strip_prefix": "clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04",
-      "version": "llvmorg-16.0.4",
-      "version_skip": [
-        "llvmorg-16.0.5",
-        "llvmorg-16.0.6",
-        "llvmorg-17.0.1"
-      ],
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.2/clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+      "sha256": "df297df804766f8fb18f10a188af78e55d82bb8881751408c2fa694ca19163a8",
+      "strip_prefix": "clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04",
+      "version": "llvmorg-17.0.2",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-05-20",
+      "updated_at": "2023-10-03",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1484,8 +1475,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:b6440c4f4e1471bdcee202e4c4e21c1f93af87421f6d33028363dd224e54f481",
-      "updated_at": "2023-09-08"
+      "digest": "sha256:3b08a2704852ef8bb82de8feacfc0f40482c32a7c466b954f36264847e18ac9e",
+      "updated_at": "2023-10-03"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1587,6 +1578,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1199154772 or hash(_DEPS_JSON) != 196124507 else None]
+""") if hash(_DEPS_YAML) != -595627272 or hash(_DEPS_JSON) != -105872352 else None]
 
 DEPS = json.decode(_DEPS_JSON)
