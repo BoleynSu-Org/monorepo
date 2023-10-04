@@ -558,54 +558,6 @@ container_deps:
   tag: latest
   digest: sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e
   updated_at: '2023-10-04'
-- name: py3_debug_image_base
-  version: debug
-  version_regex: ^(debug)$
-  registry: gcr.io
-  repository: distroless/python3
-  tag: debug
-  digest: sha256:f921259fff5706fbbacc7eaf8c167db9ae5ba808f947fc374d3c7fc6f51653c7
-  updated_at: '2023-10-04'
-- name: py3_image_base
-  version: latest
-  version_regex: ^(latest)$
-  registry: gcr.io
-  repository: distroless/python3
-  tag: latest
-  digest: sha256:98b749a07be477ed82852b1284d3e301449b4cb1858642b56bbcec5896a375fd
-  updated_at: '2023-10-04'
-- name: go_debug_image_base
-  version: debug
-  version_regex: ^(debug)$
-  registry: gcr.io
-  repository: distroless/base
-  tag: debug
-  digest: sha256:5ba80acbab3c6a6adfc6ef6e5be6f94f0de6665e2e9ee9f0d0d014b29e2e618d
-  updated_at: '2023-10-04'
-- name: go_image_base
-  version: latest
-  version_regex: ^(latest)$
-  registry: gcr.io
-  repository: distroless/base
-  tag: latest
-  digest: sha256:a17ac8990b4395aab186b9538ca04715d2a7408dfd2b6473ff7b16d098d0cb09
-  updated_at: '2023-10-04'
-- name: go_debug_image_static
-  version: debug
-  version_regex: ^(debug)$
-  registry: gcr.io
-  repository: distroless/static
-  tag: debug
-  digest: sha256:8911d7dbccb093beed81af1f38667f3d1a15f23c9ce86d828c42657b18287676
-  updated_at: '2023-05-04'
-- name: go_image_static
-  version: latest
-  version_regex: ^(latest)$
-  registry: gcr.io
-  repository: distroless/static
-  tag: latest
-  digest: sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966
-  updated_at: '2023-05-04'
 - name: io_quay_boleynsu_ci_runner
   version: '20230928.165156'
   registry: quay.io
@@ -1400,66 +1352,6 @@ _DEPS_JSON = r"""
       "updated_at": "2023-10-04"
     },
     {
-      "name": "py3_debug_image_base",
-      "version": "debug",
-      "version_regex": "^(debug)$",
-      "registry": "gcr.io",
-      "repository": "distroless/python3",
-      "tag": "debug",
-      "digest": "sha256:f921259fff5706fbbacc7eaf8c167db9ae5ba808f947fc374d3c7fc6f51653c7",
-      "updated_at": "2023-10-04"
-    },
-    {
-      "name": "py3_image_base",
-      "version": "latest",
-      "version_regex": "^(latest)$",
-      "registry": "gcr.io",
-      "repository": "distroless/python3",
-      "tag": "latest",
-      "digest": "sha256:98b749a07be477ed82852b1284d3e301449b4cb1858642b56bbcec5896a375fd",
-      "updated_at": "2023-10-04"
-    },
-    {
-      "name": "go_debug_image_base",
-      "version": "debug",
-      "version_regex": "^(debug)$",
-      "registry": "gcr.io",
-      "repository": "distroless/base",
-      "tag": "debug",
-      "digest": "sha256:5ba80acbab3c6a6adfc6ef6e5be6f94f0de6665e2e9ee9f0d0d014b29e2e618d",
-      "updated_at": "2023-10-04"
-    },
-    {
-      "name": "go_image_base",
-      "version": "latest",
-      "version_regex": "^(latest)$",
-      "registry": "gcr.io",
-      "repository": "distroless/base",
-      "tag": "latest",
-      "digest": "sha256:a17ac8990b4395aab186b9538ca04715d2a7408dfd2b6473ff7b16d098d0cb09",
-      "updated_at": "2023-10-04"
-    },
-    {
-      "name": "go_debug_image_static",
-      "version": "debug",
-      "version_regex": "^(debug)$",
-      "registry": "gcr.io",
-      "repository": "distroless/static",
-      "tag": "debug",
-      "digest": "sha256:8911d7dbccb093beed81af1f38667f3d1a15f23c9ce86d828c42657b18287676",
-      "updated_at": "2023-05-04"
-    },
-    {
-      "name": "go_image_static",
-      "version": "latest",
-      "version_regex": "^(latest)$",
-      "registry": "gcr.io",
-      "repository": "distroless/static",
-      "tag": "latest",
-      "digest": "sha256:bc535c40cfde8f8f1601f6cc9b51d3387db0722a7c4756896c68e3de4f074966",
-      "updated_at": "2023-05-04"
-    },
-    {
       "name": "io_quay_boleynsu_ci_runner",
       "version": "20230928.165156",
       "registry": "quay.io",
@@ -1578,6 +1470,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 348815084 or hash(_DEPS_JSON) != -247807440 else None]
+""") if hash(_DEPS_YAML) != -2025088887 or hash(_DEPS_JSON) != 179530233 else None]
 
 DEPS = json.decode(_DEPS_JSON)
