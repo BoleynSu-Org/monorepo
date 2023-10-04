@@ -13,9 +13,6 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
         for i, hdr_i in enumerate(headers):
             headers[i] = comment + hdr_i
 
-    for hdr in headers:
-        if "'" in hdr:
-            fail("' is not allowed in headers!")
     if out.startswith("@"):
         fail("out should points to a file in the current repo.")
 
