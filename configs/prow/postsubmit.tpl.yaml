@@ -1,0 +1,25 @@
+postsubmits:
+  - name: "bazel-test-all"
+    branches:
+      - main
+      - ^v\d+
+    decorate: true
+    always_run: true
+    skip_report: false
+    labels:
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
+    spec:
+      containers:
+        - image: quay.io/boleynsu/ci-runner
+          command:
+            - bazel
+            - test
+            - --config=remote
+            - //...
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname

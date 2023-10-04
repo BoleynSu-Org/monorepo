@@ -5,9 +5,3 @@ genfile(
     src = "//configs/bazel:bazelrc",
     out = ".bazelrc",
 )
-
-genfile(
-    name = "prow.yaml",
-    src = "//configs/prow:prow.yaml",
-    out = ".prow.yaml",
-)

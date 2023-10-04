@@ -1,0 +1,57 @@
+# DO NOT EDIT! This file is auto-generated.
+# Run `bazel run //.prow:presubmit.genfile` to regenerate.
+presubmits:
+  - name: "bazel-test-all"
+    branches:
+      - main
+    decorate: true
+    always_run: true
+    skip_report: false
+    labels:
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
+    spec:
+      containers:
+        - image: quay.io/boleynsu/ci-runner@sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a
+          command:
+            - bazel
+            - test
+            - --config=remote
+            - //...
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname
+  - name: "deploy-oj-to-staging"
+    branches:
+      - main
+    decorate: true
+    always_run: true
+    skip_report: false
+    labels:
+      use-cache.k3s.cuhk.servers.boleyn.su: "true"
+      use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
+    spec:
+      containers:
+        - image: quay.io/boleynsu/ci-runner@sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a
+          command:
+            - bazel
+            - run
+            - --config=remote
+            - "-c"
+            - opt
+            - //deploy/oj:staging.apply
+            - --
+            - --server-side
+            - --cluster=
+      serviceAccountName: oj-staging-deployer
+      automountServiceAccountToken: true
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  use-cache.k3s.cuhk.servers.boleyn.su: "true"
+              topologyKey: kubernetes.io/hostname
