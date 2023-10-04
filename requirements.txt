@@ -1,5 +1,5 @@
 # DO NOT EDIT! This file is auto-generated.
-# hash = 2024588539
+# hash = -918770184
 pyyaml==6.0.1 \
     --hash=sha256:04ac92ad1925b2cff1db0cfebffb6ffc43457495c9b3c39d3fcae417d7125dc5 \
     --hash=sha256:062582fca9fabdd2c8b54a3ef1c978d786e0f6b3a1510e0ac93ef59e0ddae2bc \
@@ -52,9 +52,9 @@ pyyaml==6.0.1 \
     --hash=sha256:fd1592b3fdf65fff2ad0004b5e363300ef59ced41c2e6b3a99d4089fa8c5435d \
     --hash=sha256:fd66fc5d0da6d9815ba2cebeb4205f95818ff4b79c3ebe268e75d961704af52f
     # via -r requirements.in
-ruamel-yaml==0.17.34 \
-    --hash=sha256:6ffd0a1906ddeac4a46b7b53d288a5a26bfab8f1986ddab3d8e406beda7e6e72 \
-    --hash=sha256:cde36dc1683b4f60f18c27ca94fc60c03e47003bac7910a78e00a639a4f282bd
+ruamel-yaml==0.17.35 \
+    --hash=sha256:801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b \
+    --hash=sha256:b105e3e6fc15b41fdb201ba1b95162ae566a4ef792b9f884c46b4ccc5513a87a
     # via -r requirements.in
 ruamel-yaml-clib==0.2.8 \
     --hash=sha256:03d1162b6d1df1caa3a4bd27aa51ce17c9afc2046c31b0ad60a0a96ec22f8001 \

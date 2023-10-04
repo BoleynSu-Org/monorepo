@@ -297,7 +297,7 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.34
+  version: 0.17.35
   updated_at: '2023-10-04'
 - name: PyYAML
   version: 6.0.1
@@ -548,48 +548,48 @@ container_deps:
   registry: gcr.io
   repository: distroless/java17
   tag: debug
-  digest: sha256:0691c2c3c6301f12e5f098012fe1bce6157b69769425c07b26b692e946acf960
-  updated_at: '2023-09-15'
+  digest: sha256:c16e139686bf3016aa4c84eb10afffb387b7458c162004f8e55b45d718d9e89a
+  updated_at: '2023-10-04'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java17
   tag: latest
-  digest: sha256:5cc4322dea54a6732cd2d3feebb18138f62af280a167afcbe94d3be7a607f1e5
-  updated_at: '2023-09-15'
+  digest: sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e
+  updated_at: '2023-10-04'
 - name: py3_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/python3
   tag: debug
-  digest: sha256:97a9d7dd1051c2f89257e2230295fc81765072fae6e7c76075864df408e7d1fb
-  updated_at: '2023-09-22'
+  digest: sha256:f921259fff5706fbbacc7eaf8c167db9ae5ba808f947fc374d3c7fc6f51653c7
+  updated_at: '2023-10-04'
 - name: py3_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/python3
   tag: latest
-  digest: sha256:294f543d6109aeada162f6561671ab3963873d28a88111eeaabcd28bb979e733
-  updated_at: '2023-09-22'
+  digest: sha256:98b749a07be477ed82852b1284d3e301449b4cb1858642b56bbcec5896a375fd
+  updated_at: '2023-10-04'
 - name: go_debug_image_base
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
   repository: distroless/base
   tag: debug
-  digest: sha256:c01265a6c0bae3633123f29e5aa3c9142061f2efe4476bb0fb54eeb43b202f12
-  updated_at: '2023-06-04'
+  digest: sha256:5ba80acbab3c6a6adfc6ef6e5be6f94f0de6665e2e9ee9f0d0d014b29e2e618d
+  updated_at: '2023-10-04'
 - name: go_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/base
   tag: latest
-  digest: sha256:559bc54043fc1429f1b9c4e16f52670c7861b7c7fd4125129c29c924b293c2b2
-  updated_at: '2023-06-04'
+  digest: sha256:a17ac8990b4395aab186b9538ca04715d2a7408dfd2b6473ff7b16d098d0cb09
+  updated_at: '2023-10-04'
 - name: go_debug_image_static
   version: debug
   version_regex: ^(debug)$
@@ -995,7 +995,7 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.34",
+      "version": "0.17.35",
       "updated_at": "2023-10-04"
     },
     {
@@ -1386,8 +1386,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "debug",
-      "digest": "sha256:0691c2c3c6301f12e5f098012fe1bce6157b69769425c07b26b692e946acf960",
-      "updated_at": "2023-09-15"
+      "digest": "sha256:c16e139686bf3016aa4c84eb10afffb387b7458c162004f8e55b45d718d9e89a",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "java_image_base",
@@ -1396,8 +1396,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "latest",
-      "digest": "sha256:5cc4322dea54a6732cd2d3feebb18138f62af280a167afcbe94d3be7a607f1e5",
-      "updated_at": "2023-09-15"
+      "digest": "sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "py3_debug_image_base",
@@ -1406,8 +1406,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "debug",
-      "digest": "sha256:97a9d7dd1051c2f89257e2230295fc81765072fae6e7c76075864df408e7d1fb",
-      "updated_at": "2023-09-22"
+      "digest": "sha256:f921259fff5706fbbacc7eaf8c167db9ae5ba808f947fc374d3c7fc6f51653c7",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "py3_image_base",
@@ -1416,8 +1416,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/python3",
       "tag": "latest",
-      "digest": "sha256:294f543d6109aeada162f6561671ab3963873d28a88111eeaabcd28bb979e733",
-      "updated_at": "2023-09-22"
+      "digest": "sha256:98b749a07be477ed82852b1284d3e301449b4cb1858642b56bbcec5896a375fd",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "go_debug_image_base",
@@ -1426,8 +1426,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "debug",
-      "digest": "sha256:c01265a6c0bae3633123f29e5aa3c9142061f2efe4476bb0fb54eeb43b202f12",
-      "updated_at": "2023-06-04"
+      "digest": "sha256:5ba80acbab3c6a6adfc6ef6e5be6f94f0de6665e2e9ee9f0d0d014b29e2e618d",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "go_image_base",
@@ -1436,8 +1436,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/base",
       "tag": "latest",
-      "digest": "sha256:559bc54043fc1429f1b9c4e16f52670c7861b7c7fd4125129c29c924b293c2b2",
-      "updated_at": "2023-06-04"
+      "digest": "sha256:a17ac8990b4395aab186b9538ca04715d2a7408dfd2b6473ff7b16d098d0cb09",
+      "updated_at": "2023-10-04"
     },
     {
       "name": "go_debug_image_static",
@@ -1578,6 +1578,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 410581231 or hash(_DEPS_JSON) != 1233726793 else None]
+""") if hash(_DEPS_YAML) != -2049763189 or hash(_DEPS_JSON) != -692084947 else None]
 
 DEPS = json.decode(_DEPS_JSON)
