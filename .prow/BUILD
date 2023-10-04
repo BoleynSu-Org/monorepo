@@ -8,6 +8,6 @@ genfile(
 
 genfile(
     name = "postsubmit",
-    src = "//configs/prow:presubmit.yaml",
+    src = "//configs/prow:postsubmit.yaml",
     out = "postsubmit.yaml",
 )
