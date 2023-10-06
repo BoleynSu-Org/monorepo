@@ -41,6 +41,8 @@ bazel_deps:
   url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz
   updated_at: '2023-08-25'
   version: 0.25.0
+  version_skip:
+  - 0.26.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")
@@ -682,6 +684,9 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz",
       "updated_at": "2023-08-25",
       "version": "0.25.0",
+      "version_skip": [
+        "0.26.0"
+      ],
       "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
@@ -1470,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -2025088887 or hash(_DEPS_JSON) != 179530233 else None]
+""") if hash(_DEPS_YAML) != 476673264 or hash(_DEPS_JSON) != -1042555051 else None]
 
 DEPS = json.decode(_DEPS_JSON)
