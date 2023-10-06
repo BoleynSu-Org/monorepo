@@ -561,12 +561,12 @@ container_deps:
   digest: sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e
   updated_at: '2023-10-04'
 - name: io_quay_boleynsu_ci_runner
-  version: '20230928.165156'
+  version: '20231006.152231'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20230928.165156'
-  digest: sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a
-  updated_at: '2023-09-28'
+  tag: '20231006.152231'
+  digest: sha256:ad323b56cdcbd711ba8988741a5d3a43f2f23f8d7f8bd7468537714b1c487123
+  updated_at: '2023-10-06'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -592,19 +592,19 @@ container_deps:
   digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
   updated_at: '2023-09-15'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20230928.165156'
+  version: '20231006.152231'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20230928.165156'
-  digest: sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda
-  updated_at: '2023-09-28'
+  tag: '20231006.152231'
+  digest: sha256:73eac4b6858214e070d49bd74de5802a6c2d5533523ce99827d01cdda95f9b8d
+  updated_at: '2023-10-06'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20230928.165156'
+  version: '20231006.152231'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20230928.165156'
-  digest: sha256:a546d09b80d7d8a7a320f0f1aa602608d39181e1b4512445644bb649143b84a1
-  updated_at: '2023-09-28'
+  tag: '20231006.152231'
+  digest: sha256:02ae93ab66f35b044605e47fdf1f9af84bb53950853e248629e71050732d12c4
+  updated_at: '2023-10-06'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -1358,12 +1358,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20230928.165156",
+      "version": "20231006.152231",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20230928.165156",
-      "digest": "sha256:bc9eab35e9d6f738213b88d970bf52d277bab2d207c76e6e71ec8df4de93976a",
-      "updated_at": "2023-09-28"
+      "tag": "20231006.152231",
+      "digest": "sha256:ad323b56cdcbd711ba8988741a5d3a43f2f23f8d7f8bd7468537714b1c487123",
+      "updated_at": "2023-10-06"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1395,21 +1395,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20230928.165156",
+      "version": "20231006.152231",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20230928.165156",
-      "digest": "sha256:55c2051fcb83188e061d3638e0e391e4808e7ff9963a283f7d9e05f1966a4dda",
-      "updated_at": "2023-09-28"
+      "tag": "20231006.152231",
+      "digest": "sha256:73eac4b6858214e070d49bd74de5802a6c2d5533523ce99827d01cdda95f9b8d",
+      "updated_at": "2023-10-06"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20230928.165156",
+      "version": "20231006.152231",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20230928.165156",
-      "digest": "sha256:a546d09b80d7d8a7a320f0f1aa602608d39181e1b4512445644bb649143b84a1",
-      "updated_at": "2023-09-28"
+      "tag": "20231006.152231",
+      "digest": "sha256:02ae93ab66f35b044605e47fdf1f9af84bb53950853e248629e71050732d12c4",
+      "updated_at": "2023-10-06"
     }
   ],
   "go_deps": [
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 476673264 or hash(_DEPS_JSON) != -1042555051 else None]
+""") if hash(_DEPS_YAML) != 1559326801 or hash(_DEPS_JSON) != 710978056 else None]
 
 DEPS = json.decode(_DEPS_JSON)
