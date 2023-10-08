@@ -12,6 +12,7 @@ def _run_impl(ctx):
     return DefaultInfo(
         files = depset(ctx.outputs.outputs),
         runfiles = ctx.runfiles(files = ctx.outputs.outputs),
+        executable = ctx.outputs.outputs[0],
     )
 
 _run = rule(
@@ -33,10 +34,11 @@ _run = rule(
         "outputs": attr.output_list(mandatory = True),
         "arguments": attr.string_list(mandatory = True),
         "use_default_shell_env": attr.bool(mandatory = True),
+        "is_executable": attr.bool(mandatory = True),
     },
 )
 
-def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = [], use_default_shell_env = True, **kwargs):
+def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = [], use_default_shell_env = True, is_executable = False, **kwargs):
     _run(
         name = name,
         executable = executable,
@@ -46,5 +48,6 @@ def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = 
         outputs = outputs,
         arguments = arguments,
         use_default_shell_env = use_default_shell_env,
+        is_executable = is_executable,
         **kwargs
     )
