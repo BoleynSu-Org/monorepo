@@ -8,7 +8,7 @@ import deps_bzl.parser
 import deps_bzl.include
 
 parser = argparse.ArgumentParser(description="The deps.bzl regenerator.")
-parser.add_argument("--include", nargs="*", help="include another deps.bzl")
+parser.add_argument("--include", action="append", help="include another deps.bzl")
 parser.add_argument("deps_bzl_path", help="input")
 parser.add_argument("deps_bzl_out_path", help="output")
 

@@ -1,13 +1,18 @@
+load("//tools/build/rules:run.bzl", "run")
 load("//tools/build/rules:genfile.bzl", "genfile")
 load(":deps.bzl", "DEPS")
 
 INCLUDES = DEPS["metadata"]["include"]
 
-genrule(
+run(
     name = "updated_deps_bzl",
-    srcs = ["deps.bzl"] + INCLUDES,
-    outs = ["updated/deps.bzl"],
-    cmd = """"$(execpath //deps_bzl:regenerate)" "$(execpath //configs/deps:deps.bzl)" "$@" {}""".format(" ".join(['--include="$(execpath {})"'.format(include) for include in INCLUDES])),
+    arguments = [
+        "$(execpath //configs/deps:deps.bzl)",
+        "$(execpath updated/deps.bzl)",
+    ] + ["--include=$(execpath {})".format(include) for include in INCLUDES],
+    executable = "//deps_bzl:regenerate",
+    inputs = ["deps.bzl"] + INCLUDES,
+    outputs = ["updated/deps.bzl"],
     tools = ["//deps_bzl:regenerate"],
 )
 
@@ -18,5 +23,3 @@ genfile(
     headers = [],
     visibility = ["//visibility:public"],
 )
-
-exports_files(["deps.bzl"])

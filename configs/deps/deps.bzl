@@ -12,7 +12,6 @@ metadata:
   pin_cmd: bazel run //cmd/infra/deps:update
   include:
   - '@boleynsu_org//third_party/io_grpc_grpc_java_deps_bzl:deps_bzl'
-  - '@boleynsu_org//third_party/io_bazel_rules_docker_deps_bzl:deps_bzl'
 
 bazel_deps:
 - name: rules_cc
@@ -106,14 +105,7 @@ bazel_deps:
   - sed -i '/native.register_toolchains/Q' repositories/repositories.bzl
   load_deps: |
     load("@io_bazel_rules_docker//repositories:repositories.bzl", "repositories")
-    load("@boleynsu_org//tools/build/repo_rules:exports_files.bzl", "exports_files")
     def deps():
-      exports_files(
-        name = "io_bazel_rules_docker_deps_bzl_files",
-        files= {
-          "repositories/go_repositories.bzl": "@io_bazel_rules_docker//repositories:go_repositories.bzl"
-        },
-      )
       repositories()
 - name: io_bazel_rules_k8s
   type: http_archive
@@ -354,97 +346,94 @@ maven_deps:
   version: 4.1.1.4
   included_from: io_grpc_grpc_java
 - name: com.google.api.grpc:proto-google-common-protos
-  version: 2.9.0
+  version: 2.22.0
   included_from: io_grpc_grpc_java
 - name: com.google.auth:google-auth-library-credentials
-  version: 0.22.0
+  version: 1.4.0
   included_from: io_grpc_grpc_java
 - name: com.google.auth:google-auth-library-oauth2-http
-  version: 0.22.0
+  version: 1.4.0
   included_from: io_grpc_grpc_java
 - name: com.google.code.findbugs:jsr305
   version: 3.0.2
   included_from: io_grpc_grpc_java
 - name: com.google.auto.value:auto-value
-  version: '1.9'
+  version: 1.10.2
   included_from: io_grpc_grpc_java
 - name: com.google.auto.value:auto-value-annotations
-  version: '1.9'
+  version: 1.10.2
   included_from: io_grpc_grpc_java
 - name: com.google.errorprone:error_prone_annotations
-  version: 2.9.0
+  version: 2.20.0
   included_from: io_grpc_grpc_java
 - name: com.google.guava:failureaccess
   version: 1.0.1
   included_from: io_grpc_grpc_java
 - name: com.google.guava:guava
-  version: 31.0.1-android
-  included_from: io_grpc_grpc_java
-- name: com.google.j2objc:j2objc-annotations
-  version: '1.3'
+  version: 32.0.1-android
   included_from: io_grpc_grpc_java
 - name: com.google.truth:truth
-  version: 1.0.1
+  version: 1.1.5
   included_from: io_grpc_grpc_java
 - name: com.squareup.okhttp:okhttp
   version: 2.7.5
   included_from: io_grpc_grpc_java
 - name: com.squareup.okio:okio
-  version: 1.17.5
+  version: 2.10.0
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-buffer
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http2
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-socks
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-common
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler-proxy
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-resolver
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-boringssl-static
-  version: 2.0.56.Final
+  version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-epoll:jar:linux-x86_64
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport
-  version: 4.1.87.Final
+  version: 4.1.93.Final
   included_from: io_grpc_grpc_java
 - name: io.opencensus:opencensus-api
-  version: 0.24.0
+  version: 0.31.0
   included_from: io_grpc_grpc_java
 - name: io.opencensus:opencensus-contrib-grpc-metrics
-  version: 0.24.0
+  version: 0.31.0
   included_from: io_grpc_grpc_java
 - name: io.perfmark:perfmark-api
-  version: 0.25.0
+  version: 0.26.0
   included_from: io_grpc_grpc_java
 - name: junit:junit
-  version: '4.12'
+  version: 4.13.2
   included_from: io_grpc_grpc_java
 - name: org.apache.tomcat:annotations-api
   version: 6.0.53
   included_from: io_grpc_grpc_java
 - name: org.codehaus.mojo:animal-sniffer-annotations
-  version: '1.21'
+  version: '1.23'
   included_from: io_grpc_grpc_java
 - name: com.google.protobuf:protobuf-java
   version: override
@@ -515,10 +504,10 @@ maven_deps:
   override_target: '@io_grpc_grpc_java//testing'
   included_from: io_grpc_grpc_java
 - name: com.google.code.gson:gson
-  version: 2.9.0
+  version: 2.10.1
   included_from: io_grpc_grpc_java
 - name: com.google.re2j:re2j
-  version: '1.6'
+  version: '1.7'
   included_from: io_grpc_grpc_java
 - name: io.grpc:grpc-googleapis
   version: override
@@ -537,10 +526,18 @@ maven_deps:
   override_target: '@io_grpc_grpc_java//xds:xds_maven'
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-classes
-  version: 2.0.56.Final
+  version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-unix-common
-  version: 4.1.87.Final
+  version: 4.1.93.Final
+  included_from: io_grpc_grpc_java
+- name: io.grpc:grpc-inprocess
+  version: override
+  override_target: '@io_grpc_grpc_java//inprocess'
+  included_from: io_grpc_grpc_java
+- name: io.grpc:grpc-util
+  version: override
+  override_target: '@io_grpc_grpc_java//util'
   included_from: io_grpc_grpc_java
 
 container_deps:
@@ -652,8 +649,7 @@ _DEPS_JSON = r"""
     "name": "boleynsu_org",
     "pin_cmd": "bazel run //cmd/infra/deps:update",
     "include": [
-      "@boleynsu_org//third_party/io_grpc_grpc_java_deps_bzl:deps_bzl",
-      "@boleynsu_org//third_party/io_bazel_rules_docker_deps_bzl:deps_bzl"
+      "@boleynsu_org//third_party/io_grpc_grpc_java_deps_bzl:deps_bzl"
     ]
   },
   "bazel_deps": [
@@ -728,7 +724,7 @@ _DEPS_JSON = r"""
       "patch_cmds": [
         "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
       ],
-      "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\nload(\"@boleynsu_org//tools/build/repo_rules:exports_files.bzl\", \"exports_files\")\ndef deps():\n  exports_files(\n    name = \"io_bazel_rules_docker_deps_bzl_files\",\n    files= {\n      \"repositories/go_repositories.bzl\": \"@io_bazel_rules_docker//repositories:go_repositories.bzl\"\n    },\n  )\n  repositories()\n"
+      "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\ndef deps():\n  repositories()\n"
     },
     {
       "name": "io_bazel_rules_k8s",
@@ -1035,17 +1031,17 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.api.grpc:proto-google-common-protos",
-      "version": "2.9.0",
+      "version": "2.22.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.auth:google-auth-library-credentials",
-      "version": "0.22.0",
+      "version": "1.4.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.auth:google-auth-library-oauth2-http",
-      "version": "0.22.0",
+      "version": "1.4.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1055,17 +1051,17 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.auto.value:auto-value",
-      "version": "1.9",
+      "version": "1.10.2",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.auto.value:auto-value-annotations",
-      "version": "1.9",
+      "version": "1.10.2",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.errorprone:error_prone_annotations",
-      "version": "2.9.0",
+      "version": "2.20.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1075,17 +1071,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.guava:guava",
-      "version": "31.0.1-android",
-      "included_from": "io_grpc_grpc_java"
-    },
-    {
-      "name": "com.google.j2objc:j2objc-annotations",
-      "version": "1.3",
+      "version": "32.0.1-android",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.truth:truth",
-      "version": "1.0.1",
+      "version": "1.1.5",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1095,87 +1086,87 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.squareup.okio:okio",
-      "version": "1.17.5",
+      "version": "2.10.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-buffer",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http2",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-socks",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-common",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler-proxy",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-resolver",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-tcnative-boringssl-static",
-      "version": "2.0.56.Final",
+      "version": "2.0.61.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-transport-native-epoll:jar:linux-x86_64",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-transport",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.opencensus:opencensus-api",
-      "version": "0.24.0",
+      "version": "0.31.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.opencensus:opencensus-contrib-grpc-metrics",
-      "version": "0.24.0",
+      "version": "0.31.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.perfmark:perfmark-api",
-      "version": "0.25.0",
+      "version": "0.26.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "junit:junit",
-      "version": "4.12",
+      "version": "4.13.2",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1185,7 +1176,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.codehaus.mojo:animal-sniffer-annotations",
-      "version": "1.21",
+      "version": "1.23",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1292,12 +1283,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.code.gson:gson",
-      "version": "2.9.0",
+      "version": "2.10.1",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.re2j:re2j",
-      "version": "1.6",
+      "version": "1.7",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1326,12 +1317,24 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-tcnative-classes",
-      "version": "2.0.56.Final",
+      "version": "2.0.61.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-transport-native-unix-common",
-      "version": "4.1.87.Final",
+      "version": "4.1.93.Final",
+      "included_from": "io_grpc_grpc_java"
+    },
+    {
+      "name": "io.grpc:grpc-inprocess",
+      "version": "override",
+      "override_target": "@io_grpc_grpc_java//inprocess",
+      "included_from": "io_grpc_grpc_java"
+    },
+    {
+      "name": "io.grpc:grpc-util",
+      "version": "override",
+      "override_target": "@io_grpc_grpc_java//util",
       "included_from": "io_grpc_grpc_java"
     }
   ],
@@ -1475,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1559326801 or hash(_DEPS_JSON) != 710978056 else None]
+""") if hash(_DEPS_YAML) != 1912974709 or hash(_DEPS_JSON) != -195163834 else None]
 
 DEPS = json.decode(_DEPS_JSON)

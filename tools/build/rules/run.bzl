@@ -7,13 +7,20 @@ def _run_impl(ctx):
         outputs = ctx.outputs.outputs,
         arguments = [ctx.expand_location(arg, ctx.attr.inputs + ctx.attr.tools) for arg in ctx.attr.arguments],
         use_default_shell_env = ctx.attr.use_default_shell_env,
-        mnemonic = "Run",
+        mnemonic = ctx.attr.mnemonic,
     )
-    return DefaultInfo(
-        files = depset(ctx.outputs.outputs),
-        runfiles = ctx.runfiles(files = ctx.outputs.outputs),
-        executable = ctx.outputs.outputs[0],
-    )
+    if ctx.attr.is_executable:
+        if len(ctx.outputs.outputs) != 1:
+            fail("If is_executable is set to true, there should be only one output.")
+        return DefaultInfo(
+            files = depset(ctx.outputs.outputs),
+            runfiles = ctx.runfiles(files = ctx.outputs.outputs),
+            executable = ctx.outputs.outputs[0],
+        )
+    else:
+        return DefaultInfo(
+            files = depset(ctx.outputs.outputs),
+        )
 
 _run = rule(
     implementation = _run_impl,
@@ -34,11 +41,12 @@ _run = rule(
         "outputs": attr.output_list(mandatory = True),
         "arguments": attr.string_list(mandatory = True),
         "use_default_shell_env": attr.bool(mandatory = True),
+        "mnemonic": attr.string(mandatory = True),
         "is_executable": attr.bool(mandatory = True),
     },
 )
 
-def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = [], use_default_shell_env = True, is_executable = False, **kwargs):
+def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = [], use_default_shell_env = True, mnemonic = "Run", is_executable = False, **kwargs):
     _run(
         name = name,
         executable = executable,
@@ -48,6 +56,7 @@ def run(*, name, executable, tools, outputs, env = {}, inputs = [], arguments = 
         outputs = outputs,
         arguments = arguments,
         use_default_shell_env = use_default_shell_env,
+        mnemonic = mnemonic,
         is_executable = is_executable,
         **kwargs
     )

@@ -32,6 +32,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
             src = src,
             out = "{}.genfile.out".format(name),
             allow_symlink = True,
+            **kwargs
         )
 
     expand_template(
