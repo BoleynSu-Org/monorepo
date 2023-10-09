@@ -547,16 +547,16 @@ container_deps:
   registry: gcr.io
   repository: distroless/java17
   tag: debug
-  digest: sha256:c16e139686bf3016aa4c84eb10afffb387b7458c162004f8e55b45d718d9e89a
-  updated_at: '2023-10-04'
+  digest: sha256:1a13bacd07c7273521fc614a5e77496a16d0f632ef81a0a054d6b5ddd132d05d
+  updated_at: '2023-10-09'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java17
   tag: latest
-  digest: sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e
-  updated_at: '2023-10-04'
+  digest: sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d
+  updated_at: '2023-10-09'
 - name: io_quay_boleynsu_ci_runner
   version: '20231006.152231'
   registry: quay.io
@@ -1346,8 +1346,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "debug",
-      "digest": "sha256:c16e139686bf3016aa4c84eb10afffb387b7458c162004f8e55b45d718d9e89a",
-      "updated_at": "2023-10-04"
+      "digest": "sha256:1a13bacd07c7273521fc614a5e77496a16d0f632ef81a0a054d6b5ddd132d05d",
+      "updated_at": "2023-10-09"
     },
     {
       "name": "java_image_base",
@@ -1356,8 +1356,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java17",
       "tag": "latest",
-      "digest": "sha256:17459919f2ccb3439155da0b4f42ddf08cb022b2a3e1a4b9491d425dfcc31e7e",
-      "updated_at": "2023-10-04"
+      "digest": "sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d",
+      "updated_at": "2023-10-09"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1912974709 or hash(_DEPS_JSON) != -195163834 else None]
+""") if hash(_DEPS_YAML) != 1703794050 or hash(_DEPS_JSON) != -1411779943 else None]
 
 DEPS = json.decode(_DEPS_JSON)
