@@ -305,11 +305,11 @@ maven_deps:
   version: 3.2.0
   updated_at: '2023-08-26'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.13
-  updated_at: '2023-08-26'
+  version: 10.1.14
+  updated_at: '2023-10-10'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.13
-  updated_at: '2023-08-26'
+  version: 10.1.14
+  updated_at: '2023-10-10'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -970,13 +970,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.13",
-      "updated_at": "2023-08-26"
+      "version": "10.1.14",
+      "updated_at": "2023-10-10"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.13",
-      "updated_at": "2023-08-26"
+      "version": "10.1.14",
+      "updated_at": "2023-10-10"
     },
     {
       "name": "org.webjars:jquery",
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1703794050 or hash(_DEPS_JSON) != -1411779943 else None]
+""") if hash(_DEPS_YAML) != 1375580812 or hash(_DEPS_JSON) != 2078275321 else None]
 
 DEPS = json.decode(_DEPS_JSON)
