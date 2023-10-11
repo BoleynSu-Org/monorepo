@@ -321,9 +321,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   expires_at: '2024-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.8.Final
+  version: 2.3.9.Final
   version_regex: (.*)\.Final
-  updated_at: '2023-08-20'
+  updated_at: '2023-10-11'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -992,9 +992,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.8.Final",
+      "version": "2.3.9.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2023-08-20"
+      "updated_at": "2023-10-11"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1375580812 or hash(_DEPS_JSON) != 2078275321 else None]
+""") if hash(_DEPS_YAML) != 569320086 or hash(_DEPS_JSON) != -1091571901 else None]
 
 DEPS = json.decode(_DEPS_JSON)
