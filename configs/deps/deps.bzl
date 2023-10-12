@@ -579,8 +579,8 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:7fb4cb76b1a979671c18bba6ad81fc80d50cb56069b7fb542f75efb921b5e714
-  updated_at: '2023-09-22'
+  digest: sha256:eea72a21cf1f4a95a5369ea76cbcfcd253974d1f2bc6fff6129ecc07a8cb996c
+  updated_at: '2023-10-12'
 - name: io_docker_filebrowser_filebrowser
   version: v2.25.0
   registry: docker.io
@@ -1384,8 +1384,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:7fb4cb76b1a979671c18bba6ad81fc80d50cb56069b7fb542f75efb921b5e714",
-      "updated_at": "2023-09-22"
+      "digest": "sha256:eea72a21cf1f4a95a5369ea76cbcfcd253974d1f2bc6fff6129ecc07a8cb996c",
+      "updated_at": "2023-10-12"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 569320086 or hash(_DEPS_JSON) != -1091571901 else None]
+""") if hash(_DEPS_YAML) != -101359226 or hash(_DEPS_JSON) != -1729823405 else None]
 
 DEPS = json.decode(_DEPS_JSON)
