@@ -596,11 +596,11 @@ container_deps:
   digest: sha256:73eac4b6858214e070d49bd74de5802a6c2d5533523ce99827d01cdda95f9b8d
   updated_at: '2023-10-06'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231012.153019'
+  version: '20231012.171808'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231012.153019'
-  digest: sha256:2dfde85b21b7a9d120d09ba575369df701d176ee94398cc7af6d04dd46b8704c
+  tag: '20231012.171808'
+  digest: sha256:646ca56216aa28e6992fb16797bd22e2a79a2e5ca7601b854c7cb27fa75bd4df
   updated_at: '2023-10-12'
 
 go_deps:
@@ -1407,11 +1407,11 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231012.153019",
+      "version": "20231012.171808",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231012.153019",
-      "digest": "sha256:2dfde85b21b7a9d120d09ba575369df701d176ee94398cc7af6d04dd46b8704c",
+      "tag": "20231012.171808",
+      "digest": "sha256:646ca56216aa28e6992fb16797bd22e2a79a2e5ca7601b854c7cb27fa75bd4df",
       "updated_at": "2023-10-12"
     }
   ],
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 121474905 or hash(_DEPS_JSON) != 603633102 else None]
+""") if hash(_DEPS_YAML) != -1698319364 or hash(_DEPS_JSON) != 1022351897 else None]
 
 DEPS = json.decode(_DEPS_JSON)
