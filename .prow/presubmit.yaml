@@ -11,7 +11,7 @@ presubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:ad323b56cdcbd711ba8988741a5d3a43f2f23f8d7f8bd7468537714b1c487123
+        - image: quay.io/boleynsu/ci-runner@sha256:12de1e2cac3144f63800bac1622a9f1c8764bc88d0e610ff7bb3535bffe57b79
           command:
             - bazel
             - test
@@ -35,7 +35,7 @@ presubmits:
       use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:ad323b56cdcbd711ba8988741a5d3a43f2f23f8d7f8bd7468537714b1c487123
+        - image: quay.io/boleynsu/ci-runner@sha256:12de1e2cac3144f63800bac1622a9f1c8764bc88d0e610ff7bb3535bffe57b79
           command:
             - bazel
             - run
