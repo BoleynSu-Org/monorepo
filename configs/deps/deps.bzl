@@ -305,11 +305,11 @@ maven_deps:
   version: 3.2.0
   updated_at: '2023-08-26'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.14
-  updated_at: '2023-10-10'
+  version: 10.1.15
+  updated_at: '2023-10-16'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.14
-  updated_at: '2023-10-10'
+  version: 10.1.15
+  updated_at: '2023-10-16'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -558,12 +558,12 @@ container_deps:
   digest: sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d
   updated_at: '2023-10-09'
 - name: io_quay_boleynsu_ci_runner
-  version: '20231015.150715'
+  version: '20231016.122104'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20231015.150715'
-  digest: sha256:40a0a82985217a198f78ea61596c7d9d9a1f87185c968939cc88ed6d5b93d3da
-  updated_at: '2023-10-15'
+  tag: '20231016.122104'
+  digest: sha256:5d5e5eeed6850f519fab67ef746a288b18086c8aff78a2fee649c76452c2aedb
+  updated_at: '2023-10-16'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -589,19 +589,19 @@ container_deps:
   digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
   updated_at: '2023-09-15'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20231015.150715'
+  version: '20231016.122104'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20231015.150715'
-  digest: sha256:b7981369f6a415c41d6abd4b9cd65fc415d58c9746c47811e1e13700ee7777e0
-  updated_at: '2023-10-15'
+  tag: '20231016.122104'
+  digest: sha256:8e15a0a9e8dbdb27c44c25039b98d8042f840816095422524d2acd1bdf431821
+  updated_at: '2023-10-16'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231015.150715'
+  version: '20231016.122104'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231015.150715'
-  digest: sha256:ff5cb58216f847f781c3257dd5a79400f67739aad9925a894a22ba367739188e
-  updated_at: '2023-10-15'
+  tag: '20231016.122104'
+  digest: sha256:84b75bf6ffe370d6e521431e39166c2d14ed56cb7da0831aeeded96603102c1d
+  updated_at: '2023-10-16'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -970,13 +970,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.14",
-      "updated_at": "2023-10-10"
+      "version": "10.1.15",
+      "updated_at": "2023-10-16"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.14",
-      "updated_at": "2023-10-10"
+      "version": "10.1.15",
+      "updated_at": "2023-10-16"
     },
     {
       "name": "org.webjars:jquery",
@@ -1361,12 +1361,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20231015.150715",
+      "version": "20231016.122104",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20231015.150715",
-      "digest": "sha256:40a0a82985217a198f78ea61596c7d9d9a1f87185c968939cc88ed6d5b93d3da",
-      "updated_at": "2023-10-15"
+      "tag": "20231016.122104",
+      "digest": "sha256:5d5e5eeed6850f519fab67ef746a288b18086c8aff78a2fee649c76452c2aedb",
+      "updated_at": "2023-10-16"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1398,21 +1398,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20231015.150715",
+      "version": "20231016.122104",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20231015.150715",
-      "digest": "sha256:b7981369f6a415c41d6abd4b9cd65fc415d58c9746c47811e1e13700ee7777e0",
-      "updated_at": "2023-10-15"
+      "tag": "20231016.122104",
+      "digest": "sha256:8e15a0a9e8dbdb27c44c25039b98d8042f840816095422524d2acd1bdf431821",
+      "updated_at": "2023-10-16"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231015.150715",
+      "version": "20231016.122104",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231015.150715",
-      "digest": "sha256:ff5cb58216f847f781c3257dd5a79400f67739aad9925a894a22ba367739188e",
-      "updated_at": "2023-10-15"
+      "tag": "20231016.122104",
+      "digest": "sha256:84b75bf6ffe370d6e521431e39166c2d14ed56cb7da0831aeeded96603102c1d",
+      "updated_at": "2023-10-16"
     }
   ],
   "go_deps": [
@@ -1478,6 +1478,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1391155847 or hash(_DEPS_JSON) != -634589082 else None]
+""") if hash(_DEPS_YAML) != 1650200090 or hash(_DEPS_JSON) != 1972736865 else None]
 
 DEPS = json.decode(_DEPS_JSON)
