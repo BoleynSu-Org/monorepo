@@ -60,14 +60,12 @@ bazel_deps:
       )
 - name: rules_proto
   type: http_archive
-  sha256: 66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1
-  strip_prefix: rules_proto-4.0.0
-  url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz
-  updated_at: '2022-11-26'
-  version: 4.0.0
+  sha256: dc3fb206a2cb3441b485eb1e423165b231235a1ea9b031b4433cf7bc1fa460dd
+  strip_prefix: rules_proto-5.3.0-21.7
+  url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz
+  updated_at: '2023-10-18'
+  version: 5.3.0-21.7
   version_regex: ([^-]*).*
-  version_skip:
-  - 5.3.0
   load_deps: |
     load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
     def deps():
@@ -185,6 +183,7 @@ bazel_deps:
   version: llvmorg-17.0.2
   version_regex: llvmorg-(.*)
   updated_at: '2023-10-03'
+  pinned_until: '2023-11-01'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -321,9 +320,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   expires_at: '2024-04-09'
 - name: io.undertow:undertow-core
-  version: 2.3.9.Final
+  version: 2.3.10.Final
   version_regex: (.*)\.Final
-  updated_at: '2023-10-11'
+  updated_at: '2023-10-18'
 - name: commons-validator:commons-validator
   version: '1.7'
   updated_at: '2022-04-15'
@@ -688,15 +687,12 @@ _DEPS_JSON = r"""
     {
       "name": "rules_proto",
       "type": "http_archive",
-      "sha256": "66bfdf8782796239d3875d37e7de19b1d94301e8972b3cbd2446b332429b4df1",
-      "strip_prefix": "rules_proto-4.0.0",
-      "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/4.0.0.tar.gz",
-      "updated_at": "2022-11-26",
-      "version": "4.0.0",
+      "sha256": "dc3fb206a2cb3441b485eb1e423165b231235a1ea9b031b4433cf7bc1fa460dd",
+      "strip_prefix": "rules_proto-5.3.0-21.7",
+      "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz",
+      "updated_at": "2023-10-18",
+      "version": "5.3.0-21.7",
       "version_regex": "([^-]*).*",
-      "version_skip": [
-        "5.3.0"
-      ],
       "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\")\ndef deps():\n  rules_proto_dependencies()\n"
     },
     {
@@ -813,6 +809,7 @@ _DEPS_JSON = r"""
       "version": "llvmorg-17.0.2",
       "version_regex": "llvmorg-(.*)",
       "updated_at": "2023-10-03",
+      "pinned_until": "2023-11-01",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -992,9 +989,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.9.Final",
+      "version": "2.3.10.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2023-10-11"
+      "updated_at": "2023-10-18"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1478,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1650200090 or hash(_DEPS_JSON) != 1972736865 else None]
+""") if hash(_DEPS_YAML) != 944546838 or hash(_DEPS_JSON) != -1101372534 else None]
 
 DEPS = json.decode(_DEPS_JSON)
