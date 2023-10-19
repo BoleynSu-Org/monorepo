@@ -23,11 +23,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: 2c3b915360e44292ba88a1b0a6eb43b3fc21706ed3d9a02da89bfe391f6a45d6
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/6.5.1.tar.gz
-  strip_prefix: rules_java-6.5.1
-  updated_at: '2023-08-25'
-  version: 6.5.1
+  sha256: fe343b48d4edc4cd9809a8ee50043cb82f6aadea05f9de0ae9f443c597f9bd31
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.0.tar.gz
+  strip_prefix: rules_java-7.0.0
+  updated_at: '2023-10-19'
+  version: 7.0.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -264,17 +264,17 @@ bazel_deps:
   version: 0.0.7
 - name: platforms
   type: http_archive
-  sha256: dd1e88b70f645533ea59f418b501120af71ef107edeaa4d12e2a4ec75b59924c
-  strip_prefix: platforms-0.0.7
-  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz
-  updated_at: '2023-09-16'
-  version: 0.0.7
+  sha256: 58ca5559d562def65cf1aeae9cd994d2776f7273eab9f48779ad043c3ffb3ce3
+  strip_prefix: platforms-0.0.8
+  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.8.tar.gz
+  updated_at: '2023-10-19'
+  version: 0.0.8
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl
-  sha256: c922440b043e5de1afa3c1382f8c663a25f055978cbc6e8423493ec157579ec5
-  version: v1.28.2
-  updated_at: '2023-09-15'
+  url: https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl
+  sha256: 0c680c90892c43e5ce708e918821f92445d1d244f9b3d7513023bcae9a6246d1
+  version: v1.28.3
+  updated_at: '2023-10-19'
   executable: true
   override_updater:
   - type: shell
@@ -664,11 +664,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "2c3b915360e44292ba88a1b0a6eb43b3fc21706ed3d9a02da89bfe391f6a45d6",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/6.5.1.tar.gz",
-      "strip_prefix": "rules_java-6.5.1",
-      "updated_at": "2023-08-25",
-      "version": "6.5.1",
+      "sha256": "fe343b48d4edc4cd9809a8ee50043cb82f6aadea05f9de0ae9f443c597f9bd31",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.0.tar.gz",
+      "strip_prefix": "rules_java-7.0.0",
+      "updated_at": "2023-10-19",
+      "version": "7.0.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -908,19 +908,19 @@ _DEPS_JSON = r"""
     {
       "name": "platforms",
       "type": "http_archive",
-      "sha256": "dd1e88b70f645533ea59f418b501120af71ef107edeaa4d12e2a4ec75b59924c",
-      "strip_prefix": "platforms-0.0.7",
-      "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.7.tar.gz",
-      "updated_at": "2023-09-16",
-      "version": "0.0.7"
+      "sha256": "58ca5559d562def65cf1aeae9cd994d2776f7273eab9f48779ad043c3ffb3ce3",
+      "strip_prefix": "platforms-0.0.8",
+      "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.8.tar.gz",
+      "updated_at": "2023-10-19",
+      "version": "0.0.8"
     },
     {
       "name": "kubectl_linux_amd64",
       "type": "http_file",
-      "url": "https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl",
-      "sha256": "c922440b043e5de1afa3c1382f8c663a25f055978cbc6e8423493ec157579ec5",
-      "version": "v1.28.2",
-      "updated_at": "2023-09-15",
+      "url": "https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl",
+      "sha256": "0c680c90892c43e5ce708e918821f92445d1d244f9b3d7513023bcae9a6246d1",
+      "version": "v1.28.3",
+      "updated_at": "2023-10-19",
       "executable": true,
       "override_updater": [
         {
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 944546838 or hash(_DEPS_JSON) != -1101372534 else None]
+""") if hash(_DEPS_YAML) != 546182999 or hash(_DEPS_JSON) != -2031867735 else None]
 
 DEPS = json.decode(_DEPS_JSON)
