@@ -1,5 +1,5 @@
 load(":toolchain_deps.bzl", "GOLANG_VERSION")
-load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
+load("//:deps.bzl", "DEPS")
 
 GO_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["go_deps"]}
 
@@ -22,8 +22,8 @@ def _header_with_hash(repository_ctx, go_sum):
 def _generate_go_mod(repository_ctx):
     return "".join(
         ["module {}\n".format(repository_ctx.attr.module)] +
-        (["go {}\n".format(repository_ctx.attr.go_version)] if repository_ctx.attr.go_version else []) +
-        ["require (\n"] +
+        (["\ngo {}\n".format(".".join(repository_ctx.attr.go_version.split(".")[:2]))] if repository_ctx.attr.go_version else []) +
+        ["\nrequire (\n"] +
         ["\t{name} {version}\n".format(name = name, version = version) for (name, version) in repository_ctx.attr.packages.items()] +
         [")\n"],
     )

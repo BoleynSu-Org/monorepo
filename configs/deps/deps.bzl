@@ -35,18 +35,18 @@ bazel_deps:
       remote_jdk17_repos()
 - name: rules_python
   type: http_archive
-  sha256: 5868e73107a8e85d8f323806e60cad7283f34b32163ea6ff1020cf27abef6036
-  strip_prefix: rules_python-0.25.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz
-  updated_at: '2023-08-25'
-  version: 0.25.0
-  version_skip:
-  - 0.26.0
+  sha256: 9d04041ac92a0985e344235f5d946f71ac543f1b1565f2cdbc9a2aaee8adf55b
+  strip_prefix: rules_python-0.26.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.26.0.tar.gz
+  updated_at: '2023-10-19'
+  version: 0.26.0
   load_deps: |
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")
+    load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
     def deps():
+      internal_config_repo(name = "rules_python_internal")
       python_register_toolchains(
         name = "python_sdk",
         python_version = PYTHON_VERSION,
@@ -631,10 +631,10 @@ toolchain_deps:
   version: '17'
   updated_at: '2023-05-12'
 - name: python
-  version: '3.11'
+  version: 3.11.6
   updated_at: '2023-05-12'
 - name: golang
-  version: '1.19'
+  version: 1.20.10
   updated_at: '2022-12-09'
 
 """
@@ -674,15 +674,12 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "5868e73107a8e85d8f323806e60cad7283f34b32163ea6ff1020cf27abef6036",
-      "strip_prefix": "rules_python-0.25.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.25.0.tar.gz",
-      "updated_at": "2023-08-25",
-      "version": "0.25.0",
-      "version_skip": [
-        "0.26.0"
-      ],
-      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
+      "sha256": "9d04041ac92a0985e344235f5d946f71ac543f1b1565f2cdbc9a2aaee8adf55b",
+      "strip_prefix": "rules_python-0.26.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.26.0.tar.gz",
+      "updated_at": "2023-10-19",
+      "version": "0.26.0",
+      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
       "name": "rules_proto",
@@ -1458,12 +1455,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "python",
-      "version": "3.11",
+      "version": "3.11.6",
       "updated_at": "2023-05-12"
     },
     {
       "name": "golang",
-      "version": "1.19",
+      "version": "1.20.10",
       "updated_at": "2022-12-09"
     }
   ]
@@ -1475,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1462218853 or hash(_DEPS_JSON) != -1540771537 else None]
+""") if hash(_DEPS_YAML) != -1266153356 or hash(_DEPS_JSON) != 1825678311 else None]
 
 DEPS = json.decode(_DEPS_JSON)

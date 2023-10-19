@@ -1,5 +1,4 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
-load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
 
 def to_http_archive(*, name, sha256, url = None, urls = None, strip_prefix = None, patches = None, patch_cmds = None, build_file = None, build_file_content = None, workspace_file_content = None, http_archive_type = None, **kwargs):
     if patches != None:
@@ -36,12 +35,17 @@ TYPE_TO_RULE_MAPPING = {
     "http_file": (http_file, to_http_file),
 }
 
-BAZEL_DEPS = {dep["name"]: dep for dep in DEPS["bazel_deps"]}
-
 def _bazel_deps_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "workspace(name=\"{}\")".format(repository_ctx.name))
 
     repository_ctx.file("BUILD", content = "")
+    repository_ctx.file("deps.bzl", content = "DEPS = {}".format(json.decode(repository_ctx.attr.deps_json)))
+
+    bazel_deps = repository_ctx.read(repository_ctx.attr.bazel_deps)
+    repository_ctx.file("bazel_deps.bzl", content = """load("//:deps.bzl", "DEPS")
+{}
+BAZEL_DEPS = {{dep["name"]: dep for dep in DEPS["bazel_deps"]}}
+""".format(bazel_deps))
 
     load_content = ""
     install_bazel_deps_content = "def install_bazel_deps():\n"
@@ -64,6 +68,8 @@ _bazel_deps = repository_rule(
     attrs = {
         "deps_name": attr.string_list(default = []),
         "deps_load_deps": attr.string_list(default = []),
+        "deps_json": attr.string(),
+        "bazel_deps": attr.label(),
         "paths": attr.string_list(default = []),
         "labels": attr.label_list(default = []),
     },
@@ -71,10 +77,13 @@ _bazel_deps = repository_rule(
 
 def bazel_deps(
         *,
-        name = "bazel_deps",
-        type_to_rule_mapping = TYPE_TO_RULE_MAPPING,
-        deps = BAZEL_DEPS):
+        name,
+        deps,
+        type_to_rule_mapping = TYPE_TO_RULE_MAPPING):
     native.local_config_platform(name = "boleynsu_bzl_deps_local_config_platform")
+
+    deps_json = json.encode(deps)
+    deps = {dep["name"]: dep for dep in deps["bazel_deps"]}
 
     install_bazel_deps_name = []
     install_bazel_deps_load_deps = []
@@ -86,7 +95,6 @@ def bazel_deps(
             install_bazel_deps_load_deps.append(dep["load_deps"])
 
     files = [
-        "bazel_deps.bzl",
         "container_deps.bzl",
         "go_deps.bzl",
         "install_nonbazel_deps.bzl",
@@ -99,6 +107,8 @@ def bazel_deps(
         name = name,
         deps_name = install_bazel_deps_name,
         deps_load_deps = install_bazel_deps_load_deps,
+        deps_json = deps_json,
+        bazel_deps = Label("//tools/build/repo_rules/workspace:bazel_deps.bzl"),
         paths = files,
         labels = [Label("//tools/build/repo_rules/workspace:{}".format(file)) for file in files],
     )

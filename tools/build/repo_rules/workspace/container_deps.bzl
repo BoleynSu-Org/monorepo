@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
+load("//:deps.bzl", "DEPS")
 
 def to_container_image(*, name, repository, digest, registry, **kwargs):
     return {

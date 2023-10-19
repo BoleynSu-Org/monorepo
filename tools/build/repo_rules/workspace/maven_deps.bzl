@@ -1,5 +1,5 @@
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@boleynsu_deps_bzl//:deps.bzl", "DEPS")
+load("//:deps.bzl", "DEPS")
 
 def parse_artifacts(artifacts):
     return {

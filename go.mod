@@ -1,7 +1,9 @@
 // DO NOT EDIT! This file is auto-generated.
-// hash = -517873108
+// hash = 341912346
 module golang.boleyn.su
-go 1.19
+
+go 1.20
+
 require (
 	github.com/google/go-containerregistry v0.16.1
 	github.com/pkg/errors v0.9.1

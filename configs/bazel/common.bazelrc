@@ -6,8 +6,8 @@ query --loading_phase_threads=1
 fetch --loading_phase_threads=1
 sync --loading_phase_threads=1
 
-build --conlyopt=-std=c{c_version}
-build --host_conlyopt=-std=c{c_version}
+build --conlyopt=-std=gnu{c_version}
+build --host_conlyopt=-std=gnu{c_version}
 
 build --cxxopt=-std=c++{cpp_version}
 build --host_cxxopt=-std=c++{cpp_version}
