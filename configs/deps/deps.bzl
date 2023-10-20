@@ -230,11 +230,11 @@ bazel_deps:
       )
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 6.3.2
-  url: https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-installer-linux-x86_64.sh
+  version: 6.4.0
+  url: https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-linux-x86_64.sh
   http_archive_type: zip
-  sha256: f117506267ed148d5f4f9844bcf187c4f111dad7ff4f1a9eb1f4e45331f3f9f0
-  updated_at: '2023-09-03'
+  sha256: 4a52769e0bcc783d8dd038ca71a50153a425555993918291a8ce576d121b3671
+  updated_at: '2023-10-20'
   executable: true
   override_updater:
   - type: deps_updater
@@ -290,8 +290,8 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.17.36
-  updated_at: '2023-10-19'
+  version: 0.17.39
+  updated_at: '2023-10-20'
 - name: PyYAML
   version: 6.0.1
   updated_at: '2023-07-22'
@@ -595,12 +595,12 @@ container_deps:
   digest: sha256:8e15a0a9e8dbdb27c44c25039b98d8042f840816095422524d2acd1bdf431821
   updated_at: '2023-10-19'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231019.051955'
+  version: '20231019.143916'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231019.051955'
-  digest: sha256:84b75bf6ffe370d6e521431e39166c2d14ed56cb7da0831aeeded96603102c1d
-  updated_at: '2023-10-19'
+  tag: '20231019.143916'
+  digest: sha256:3bce6497da3f656699ec3faff50dc5127fbdd885c2313d6ac0b7c09c7bc56622
+  updated_at: '2023-10-20'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -854,11 +854,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_linux_x86_64",
       "type": "http_archive",
-      "version": "6.3.2",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.3.2/bazel-6.3.2-installer-linux-x86_64.sh",
+      "version": "6.4.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-linux-x86_64.sh",
       "http_archive_type": "zip",
-      "sha256": "f117506267ed148d5f4f9844bcf187c4f111dad7ff4f1a9eb1f4e45331f3f9f0",
-      "updated_at": "2023-09-03",
+      "sha256": "4a52769e0bcc783d8dd038ca71a50153a425555993918291a8ce576d121b3671",
+      "updated_at": "2023-10-20",
       "executable": true,
       "override_updater": [
         {
@@ -942,8 +942,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.17.36",
-      "updated_at": "2023-10-19"
+      "version": "0.17.39",
+      "updated_at": "2023-10-20"
     },
     {
       "name": "PyYAML",
@@ -1401,12 +1401,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231019.051955",
+      "version": "20231019.143916",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231019.051955",
-      "digest": "sha256:84b75bf6ffe370d6e521431e39166c2d14ed56cb7da0831aeeded96603102c1d",
-      "updated_at": "2023-10-19"
+      "tag": "20231019.143916",
+      "digest": "sha256:3bce6497da3f656699ec3faff50dc5127fbdd885c2313d6ac0b7c09c7bc56622",
+      "updated_at": "2023-10-20"
     }
   ],
   "go_deps": [
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1266153356 or hash(_DEPS_JSON) != 1825678311 else None]
+""") if hash(_DEPS_YAML) != -1625220229 or hash(_DEPS_JSON) != -1569793116 else None]
 
 DEPS = json.decode(_DEPS_JSON)
