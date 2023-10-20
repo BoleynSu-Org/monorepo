@@ -23,11 +23,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: fe343b48d4edc4cd9809a8ee50043cb82f6aadea05f9de0ae9f443c597f9bd31
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.0.tar.gz
-  strip_prefix: rules_java-7.0.0
-  updated_at: '2023-10-19'
-  version: 7.0.0
+  sha256: f3a17cf7db503f97b84400bab2f8717199ba80c43058f5544eaef29c902a2b97
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.6.tar.gz
+  strip_prefix: rules_java-7.0.6
+  updated_at: '2023-10-20'
+  version: 7.0.6
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
     def deps():
@@ -557,12 +557,12 @@ container_deps:
   digest: sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d
   updated_at: '2023-10-09'
 - name: io_quay_boleynsu_ci_runner
-  version: '20231019.051955'
+  version: '20231020.115006'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20231019.051955'
-  digest: sha256:5d5e5eeed6850f519fab67ef746a288b18086c8aff78a2fee649c76452c2aedb
-  updated_at: '2023-10-19'
+  tag: '20231020.115006'
+  digest: sha256:2c8a6b46c5f31bfb8ff558073a7145b08ee56f8b0e6b0ea5b2b4acde1a95a616
+  updated_at: '2023-10-20'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -664,11 +664,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "fe343b48d4edc4cd9809a8ee50043cb82f6aadea05f9de0ae9f443c597f9bd31",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.0.tar.gz",
-      "strip_prefix": "rules_java-7.0.0",
-      "updated_at": "2023-10-19",
-      "version": "7.0.0",
+      "sha256": "f3a17cf7db503f97b84400bab2f8717199ba80c43058f5544eaef29c902a2b97",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.6.tar.gz",
+      "strip_prefix": "rules_java-7.0.6",
+      "updated_at": "2023-10-20",
+      "version": "7.0.6",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
     },
     {
@@ -1355,12 +1355,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20231019.051955",
+      "version": "20231020.115006",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20231019.051955",
-      "digest": "sha256:5d5e5eeed6850f519fab67ef746a288b18086c8aff78a2fee649c76452c2aedb",
-      "updated_at": "2023-10-19"
+      "tag": "20231020.115006",
+      "digest": "sha256:2c8a6b46c5f31bfb8ff558073a7145b08ee56f8b0e6b0ea5b2b4acde1a95a616",
+      "updated_at": "2023-10-20"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1625220229 or hash(_DEPS_JSON) != -1569793116 else None]
+""") if hash(_DEPS_YAML) != 638009719 or hash(_DEPS_JSON) != 631558096 else None]
 
 DEPS = json.decode(_DEPS_JSON)

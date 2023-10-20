@@ -12,11 +12,11 @@ postsubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:5d5e5eeed6850f519fab67ef746a288b18086c8aff78a2fee649c76452c2aedb
+        - image: quay.io/boleynsu/ci-runner@sha256:2c8a6b46c5f31bfb8ff558073a7145b08ee56f8b0e6b0ea5b2b4acde1a95a616
           command:
             - bazel
             - test
-            - --config=remote
+            - --config=ci-build-and-test
             - //...
       affinity:
         podAntiAffinity:

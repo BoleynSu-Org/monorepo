@@ -1,9 +1,10 @@
 # Toolchains
 build --extra_toolchains=@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux
 build --extra_toolchains=@rules_java//toolchains:toolchain_jdk_17_definition
+build --extra_toolchains=@remotejdk17_linux_toolchain_config_repo//:bootstrap_runtime_toolchain
 build --extra_toolchains=@remotejdk17_linux_toolchain_config_repo//:toolchain
 build --extra_toolchains=@python_sdk_toolchains//:x86_64-unknown-linux-gnu_toolchain
-build --extra_toolchains=@go_linux_amd64_toolchains//:all
+build --extra_toolchains=@go_linux_amd64_toolchains//:go_linux_amd64
 build --extra_toolchains=//configs/build/toolchains:docker_toolchain
 build --extra_toolchains=//configs/build/toolchains:kubectl_toolchain
 
@@ -22,5 +23,14 @@ build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora
 build:remote --jobs=80
 build:remote --noremote_upload_local_results
 build:remote --experimental_remote_cache_compression
+
+# CI/CD
+## build and test
+build:ci-test-and-build --config=remote
+build:ci-test-and-build --platforms=//configs/build/platforms:linux_x86_64
+## deploy
+build:ci-deploy --config=remote
+build:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
+build:ci-deploy --compilation_mode=opt
 
 try-import %workspace%/.user.bazelrc

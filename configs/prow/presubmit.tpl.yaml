@@ -13,7 +13,7 @@ presubmits:
           command:
             - bazel
             - test
-            - --config=remote
+            - --config=ci-build-and-test
             - //...
       affinity:
         podAntiAffinity:
@@ -37,9 +37,7 @@ presubmits:
           command:
             - bazel
             - run
-            - --config=remote
-            - "-c"
-            - opt
+            - --config=ci-deploy
             - //deploy/oj:staging.apply
             - --
             - --server-side

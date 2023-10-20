@@ -17,8 +17,8 @@ platform(
 platform(
     name = "linux_x86_64",
     constraint_values = [
-        "@platforms//os:linux",
         "@platforms//cpu:x86_64",
+        "@platforms//os:linux",
     ],
     visibility = ["//visibility:public"],
 )
@@ -26,9 +26,8 @@ platform(
 platform(
     name = "windows_x86_64",
     constraint_values = [
-        "@platforms//os:windows",
         "@platforms//cpu:x86_64",
-        "@io_bazel_rules_go//go/toolchain:cgo_off",
+        "@platforms//os:windows",
     ],
     visibility = ["//visibility:public"],
 )
