@@ -141,11 +141,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 234440dd7ceb7f6460fc859b0b1fe13d653824adc81e650ae84b0a52185ca342
-  strip_prefix: grpc-java-1.58.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.58.0.tar.gz
-  updated_at: '2023-09-08'
-  version: v1.58.0
+  sha256: 3bcf6be49fc7ab8187577a5211421258cb8e6d179f46023cc82e42e3a6188e51
+  strip_prefix: grpc-java-1.59.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.0.tar.gz
+  updated_at: '2023-10-21'
+  version: v1.59.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -381,40 +381,40 @@ maven_deps:
   version: 2.10.0
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-buffer
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http2
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-socks
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-common
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler-proxy
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-resolver
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-boringssl-static
   version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-epoll:jar:linux-x86_64
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.opencensus:opencensus-api
   version: 0.31.0
@@ -444,7 +444,7 @@ maven_deps:
   included_from: io_grpc_grpc_java
 - name: com.google.protobuf:protobuf-javalite
   version: override
-  override_target: '@com_google_protobuf_javalite//:protobuf_java_lite'
+  override_target: '@com_google_protobuf_javalite//:protobuf_javalite'
   included_from: io_grpc_grpc_java
 - name: io.grpc:grpc-alts
   version: override
@@ -528,7 +528,7 @@ maven_deps:
   version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-unix-common
-  version: 4.1.93.Final
+  version: 4.1.97.Final
   included_from: io_grpc_grpc_java
 - name: io.grpc:grpc-inprocess
   version: override
@@ -765,11 +765,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "234440dd7ceb7f6460fc859b0b1fe13d653824adc81e650ae84b0a52185ca342",
-      "strip_prefix": "grpc-java-1.58.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.58.0.tar.gz",
-      "updated_at": "2023-09-08",
-      "version": "v1.58.0",
+      "sha256": "3bcf6be49fc7ab8187577a5211421258cb8e6d179f46023cc82e42e3a6188e51",
+      "strip_prefix": "grpc-java-1.59.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.0.tar.gz",
+      "updated_at": "2023-10-21",
+      "version": "v1.59.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -1085,47 +1085,47 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-buffer",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http2",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-socks",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-common",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler-proxy",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-resolver",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1135,12 +1135,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-transport-native-epoll:jar:linux-x86_64",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-transport",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1188,7 +1188,7 @@ _DEPS_JSON = r"""
     {
       "name": "com.google.protobuf:protobuf-javalite",
       "version": "override",
-      "override_target": "@com_google_protobuf_javalite//:protobuf_java_lite",
+      "override_target": "@com_google_protobuf_javalite//:protobuf_javalite",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1316,7 +1316,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-transport-native-unix-common",
-      "version": "4.1.93.Final",
+      "version": "4.1.97.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1175349065 or hash(_DEPS_JSON) != -1426958434 else None]
+""") if hash(_DEPS_YAML) != 1078888830 or hash(_DEPS_JSON) != 169531795 else None]
 
 DEPS = json.decode(_DEPS_JSON)
