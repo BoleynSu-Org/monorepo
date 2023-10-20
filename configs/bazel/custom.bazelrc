@@ -26,8 +26,8 @@ build:remote --experimental_remote_cache_compression
 
 # CI/CD
 ## build and test
-build:ci-test-and-build --config=remote
-build:ci-test-and-build --platforms=//configs/build/platforms:linux_x86_64
+build:ci-build-and-test --config=remote
+build:ci-build-and-test --platforms=//configs/build/platforms:linux_x86_64
 ## deploy
 build:ci-deploy --config=remote
 build:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
