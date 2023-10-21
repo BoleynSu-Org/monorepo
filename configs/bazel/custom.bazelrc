@@ -8,6 +8,12 @@ build --extra_toolchains=@go_linux_amd64_toolchains//:go_linux_amd64
 build --extra_toolchains=//configs/build/toolchains:docker_toolchain
 build --extra_toolchains=//configs/build/toolchains:kubectl_toolchain
 
+# @io_bazel_rules_go
+# See https://github.com/bazelbuild/rules_go/blob/7309aba88014f97d6a3c2916a5ed4e2ca2017d83/go/modes.rst
+build --@io_bazel_rules_go//go/config:pure
+build --@io_bazel_rules_go//go/config:static
+build --@io_bazel_rules_go//go/config:linkmode=pie
+
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
 build:remote --remote_executor=grpcs://remote.buildbuddy.io
