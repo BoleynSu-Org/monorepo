@@ -10,16 +10,15 @@ build --extra_toolchains=//configs/build/toolchains:kubectl_toolchain
 
 # @io_bazel_rules_go
 # See https://github.com/bazelbuild/rules_go/blob/7309aba88014f97d6a3c2916a5ed4e2ca2017d83/go/modes.rst
-build --@io_bazel_rules_go//go/config:pure
-build --@io_bazel_rules_go//go/config:static
-build --@io_bazel_rules_go//go/config:linkmode=pie
+build --@io_bazel_rules_go//go/config:pure=true
+build --@io_bazel_rules_go//go/config:static=true
 
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
 build:remote --remote_executor=grpcs://remote.buildbuddy.io
 build:remote --remote_instance_name=monorepo
 build:remote --remote_timeout=3600
-build:remote --remote_download_minimal
+build:remote --remote_download_outputs=minimal
 ## Build Event Service
 build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote --bes_backend=grpcs://remote.buildbuddy.io
@@ -27,8 +26,8 @@ build:remote --bes_backend=grpcs://remote.buildbuddy.io
 build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora
 ## Misc
 build:remote --jobs=80
-build:remote --noremote_upload_local_results
-build:remote --experimental_remote_cache_compression
+build:remote --remote_upload_local_results=false
+build:remote --experimental_remote_cache_compression=true
 
 # CI/CD
 ## build and test
