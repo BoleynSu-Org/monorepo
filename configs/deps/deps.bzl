@@ -595,12 +595,12 @@ container_deps:
   digest: sha256:8e15a0a9e8dbdb27c44c25039b98d8042f840816095422524d2acd1bdf431821
   updated_at: '2023-10-20'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231021.081545'
+  version: '20231022.145612'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231021.081545'
-  digest: sha256:74567806f202ce9e4a772e6b789a4b2e7e807e7455023d2806544f8264f199b9
-  updated_at: '2023-10-21'
+  tag: '20231022.145612'
+  digest: sha256:82e035610741d7b236e99f4b028a81ddf906cd2f793edca6426626d22a50d1c0
+  updated_at: '2023-10-22'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -1401,12 +1401,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231021.081545",
+      "version": "20231022.145612",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231021.081545",
-      "digest": "sha256:74567806f202ce9e4a772e6b789a4b2e7e807e7455023d2806544f8264f199b9",
-      "updated_at": "2023-10-21"
+      "tag": "20231022.145612",
+      "digest": "sha256:82e035610741d7b236e99f4b028a81ddf906cd2f793edca6426626d22a50d1c0",
+      "updated_at": "2023-10-22"
     }
   ],
   "go_deps": [
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -159361516 or hash(_DEPS_JSON) != 336714323 else None]
+""") if hash(_DEPS_YAML) != -1770518788 or hash(_DEPS_JSON) != 168352969 else None]
 
 DEPS = json.decode(_DEPS_JSON)
