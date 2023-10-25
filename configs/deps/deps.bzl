@@ -298,8 +298,8 @@ pip_deps:
 
 maven_deps:
 - name: commons-io:commons-io
-  version: 2.14.0
-  updated_at: '2023-09-29'
+  version: 2.15.0
+  updated_at: '2023-10-25'
 - name: org.mariadb.jdbc:mariadb-java-client
   version: 3.2.0
   updated_at: '2023-08-26'
@@ -954,8 +954,8 @@ _DEPS_JSON = r"""
   "maven_deps": [
     {
       "name": "commons-io:commons-io",
-      "version": "2.14.0",
-      "updated_at": "2023-09-29"
+      "version": "2.15.0",
+      "updated_at": "2023-10-25"
     },
     {
       "name": "org.mariadb.jdbc:mariadb-java-client",
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -2078329135 or hash(_DEPS_JSON) != -511099208 else None]
+""") if hash(_DEPS_YAML) != 1582416120 or hash(_DEPS_JSON) != 740980081 else None]
 
 DEPS = json.decode(_DEPS_JSON)
