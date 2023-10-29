@@ -290,8 +290,8 @@ bazel_deps:
 
 pip_deps:
 - name: ruamel.yaml
-  version: 0.18.2
-  updated_at: '2023-10-24'
+  version: 0.18.3
+  updated_at: '2023-10-29'
 - name: PyYAML
   version: 6.0.1
   updated_at: '2023-07-22'
@@ -942,8 +942,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.18.2",
-      "updated_at": "2023-10-24"
+      "version": "0.18.3",
+      "updated_at": "2023-10-29"
     },
     {
       "name": "PyYAML",
@@ -1472,6 +1472,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 464717228 or hash(_DEPS_JSON) != 1348182333 else None]
+""") if hash(_DEPS_YAML) != -1871074266 or hash(_DEPS_JSON) != 666342839 else None]
 
 DEPS = json.decode(_DEPS_JSON)
