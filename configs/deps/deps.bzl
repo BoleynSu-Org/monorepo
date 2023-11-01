@@ -177,13 +177,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm_linux_x86_64
   type: http_archive
-  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.2/clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04.tar.xz
-  sha256: df297df804766f8fb18f10a188af78e55d82bb8881751408c2fa694ca19163a8
-  strip_prefix: clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04
-  version: llvmorg-17.0.2
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.4/clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+  sha256: 6b45be6c0483b7ee3f63981678093b731fd9f4ea6987b4ceb6efde21890ffca7
+  strip_prefix: clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04
+  version: llvmorg-17.0.4
   version_regex: llvmorg-(.*)
-  updated_at: '2023-10-03'
-  pinned_until: '2023-11-01'
+  updated_at: '2023-11-01'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -578,8 +577,8 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:eea72a21cf1f4a95a5369ea76cbcfcd253974d1f2bc6fff6129ecc07a8cb996c
-  updated_at: '2023-10-12'
+  digest: sha256:b96876e1c6d4eda21b2653d54bb8c9d4674fc177749254c5a44d097f92e2362e
+  updated_at: '2023-11-01'
 - name: io_docker_filebrowser_filebrowser
   version: v2.25.0
   registry: docker.io
@@ -800,13 +799,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.2/clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-      "sha256": "df297df804766f8fb18f10a188af78e55d82bb8881751408c2fa694ca19163a8",
-      "strip_prefix": "clang+llvm-17.0.2-x86_64-linux-gnu-ubuntu-22.04",
-      "version": "llvmorg-17.0.2",
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.4/clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+      "sha256": "6b45be6c0483b7ee3f63981678093b731fd9f4ea6987b4ceb6efde21890ffca7",
+      "strip_prefix": "clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04",
+      "version": "llvmorg-17.0.4",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-10-03",
-      "pinned_until": "2023-11-01",
+      "updated_at": "2023-11-01",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1378,8 +1376,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:eea72a21cf1f4a95a5369ea76cbcfcd253974d1f2bc6fff6129ecc07a8cb996c",
-      "updated_at": "2023-10-12"
+      "digest": "sha256:b96876e1c6d4eda21b2653d54bb8c9d4674fc177749254c5a44d097f92e2362e",
+      "updated_at": "2023-11-01"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1472,6 +1470,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1871074266 or hash(_DEPS_JSON) != 666342839 else None]
+""") if hash(_DEPS_YAML) != -1610253964 or hash(_DEPS_JSON) != -1493697169 else None]
 
 DEPS = json.decode(_DEPS_JSON)
