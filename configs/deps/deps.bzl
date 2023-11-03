@@ -330,10 +330,9 @@ maven_deps:
   version: 1.16.0
   updated_at: '2023-06-22'
 - name: org.wildfly.common:wildfly-common
-  version: 1.6.0.Final
+  version: 1.7.0.Final
   version_regex: (.*)\.Final
-  updated_at: '2022-05-22'
-  expires_at: '2024-05-22'
+  updated_at: '2023-11-03'
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
   version: '20220608.1'
   updated_at: '2023-04-01'
@@ -580,12 +579,12 @@ container_deps:
   digest: sha256:b96876e1c6d4eda21b2653d54bb8c9d4674fc177749254c5a44d097f92e2362e
   updated_at: '2023-11-01'
 - name: io_docker_filebrowser_filebrowser
-  version: v2.25.0
+  version: v2.26.0
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.25.0
-  digest: sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848
-  updated_at: '2023-09-15'
+  tag: v2.26.0
+  digest: sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee
+  updated_at: '2023-11-03'
 - name: io_quay_boleynsu_oj_c99runner
   version: '20231020.135626'
   registry: quay.io
@@ -1001,10 +1000,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.wildfly.common:wildfly-common",
-      "version": "1.6.0.Final",
+      "version": "1.7.0.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2022-05-22",
-      "expires_at": "2024-05-22"
+      "updated_at": "2023-11-03"
     },
     {
       "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
@@ -1381,12 +1379,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
-      "version": "v2.25.0",
+      "version": "v2.26.0",
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
-      "tag": "v2.25.0",
-      "digest": "sha256:dfbedfc74452e3685eec6d1a08d45b9072d974719c33a6349e3c11d207867848",
-      "updated_at": "2023-09-15"
+      "tag": "v2.26.0",
+      "digest": "sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee",
+      "updated_at": "2023-11-03"
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1470,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -2086893222 or hash(_DEPS_JSON) != -1234644651 else None]
+""") if hash(_DEPS_YAML) != -756517389 or hash(_DEPS_JSON) != -840335068 else None]
 
 DEPS = json.decode(_DEPS_JSON)
