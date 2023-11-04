@@ -65,7 +65,7 @@ bazel_deps:
   url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz
   updated_at: '2023-10-18'
   version: 5.3.0-21.7
-  version_regex: ([^-]*).*
+  version_regex: ([^-]*)[0-9.-]*$
   load_deps: |
     load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
     def deps():
@@ -687,7 +687,7 @@ _DEPS_JSON = r"""
       "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/5.3.0-21.7.tar.gz",
       "updated_at": "2023-10-18",
       "version": "5.3.0-21.7",
-      "version_regex": "([^-]*).*",
+      "version_regex": "([^-]*)[0-9.-]*$",
       "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\")\ndef deps():\n  rules_proto_dependencies()\n"
     },
     {
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 866993462 or hash(_DEPS_JSON) != -520890687 else None]
+""") if hash(_DEPS_YAML) != 1745527839 or hash(_DEPS_JSON) != 468696830 else None]
 
 DEPS = json.decode(_DEPS_JSON)
