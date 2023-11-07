@@ -120,11 +120,11 @@ bazel_deps:
   - sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD
 - name: bazel_skylib
   type: http_archive
-  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.2.tar.gz
-  sha256: de9d2cedea7103d20c93a5cc7763099728206bd5088342d0009315913a592cc0
-  updated_at: '2023-06-04'
-  version: 1.4.2
-  strip_prefix: bazel-skylib-1.4.2
+  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.5.0.tar.gz
+  sha256: 118e313990135890ee4cc8504e32929844f9578804a1b2f571d69b1dd080cfb8
+  updated_at: '2023-11-06'
+  version: 1.5.0
+  strip_prefix: bazel-skylib-1.5.0
 - name: rules_jvm_external
   type: http_archive
   sha256: 8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e
@@ -736,11 +736,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_skylib",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.4.2.tar.gz",
-      "sha256": "de9d2cedea7103d20c93a5cc7763099728206bd5088342d0009315913a592cc0",
-      "updated_at": "2023-06-04",
-      "version": "1.4.2",
-      "strip_prefix": "bazel-skylib-1.4.2"
+      "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.5.0.tar.gz",
+      "sha256": "118e313990135890ee4cc8504e32929844f9578804a1b2f571d69b1dd080cfb8",
+      "updated_at": "2023-11-06",
+      "version": "1.5.0",
+      "strip_prefix": "bazel-skylib-1.5.0"
     },
     {
       "name": "rules_jvm_external",
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1745527839 or hash(_DEPS_JSON) != 468696830 else None]
+""") if hash(_DEPS_YAML) != 946833980 or hash(_DEPS_JSON) != 423222619 else None]
 
 DEPS = json.decode(_DEPS_JSON)
