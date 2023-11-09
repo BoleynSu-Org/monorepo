@@ -13,9 +13,9 @@ build --cxxopt=-std=c++{cpp_version}
 build --host_cxxopt=-std=c++{cpp_version}
 
 build --java_language_version={java_version}
-build --java_runtime_version=remotejdk_{java_version}
+build --java_runtime_version={java_version}
 build --tool_java_language_version={java_version}
-build --tool_java_runtime_version=remotejdk_{java_version}
+build --tool_java_runtime_version={java_version}
 
 build --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
 

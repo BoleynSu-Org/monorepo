@@ -23,16 +23,16 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: f3a17cf7db503f97b84400bab2f8717199ba80c43058f5544eaef29c902a2b97
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.6.tar.gz
-  strip_prefix: rules_java-7.0.6
-  updated_at: '2023-10-20'
-  version: 7.0.6
+  sha256: f6068480cee4454755e2f422702722f31ef37b3628aa0ba9811fffc407b1b315
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.1.0.tar.gz
+  strip_prefix: rules_java-7.1.0
+  updated_at: '2023-11-09'
+  version: 7.1.0
   load_deps: |
-    load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk17_repos")
+    load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
       java_tools_repos()
-      remote_jdk17_repos()
+      remote_jdk21_repos()
 - name: rules_python
   type: http_archive
   sha256: 9d04041ac92a0985e344235f5d946f71ac543f1b1565f2cdbc9a2aaee8adf55b
@@ -152,11 +152,11 @@ bazel_deps:
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: 984cae72075c83d689fc4f6f5405f713d4ecaee69510717394e1b775ffa269ad
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.33.0.tar.gz
-  updated_at: '2023-09-08'
-  version: v0.33.0
-  strip_prefix: bazel-gazelle-0.33.0
+  sha256: 775202071b874bbdefeea0c775856b5fb0409ceb193d25b11c4c543cff5674a3
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.34.0.tar.gz
+  updated_at: '2023-11-09'
+  version: v0.34.0
+  strip_prefix: bazel-gazelle-0.34.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -300,8 +300,8 @@ maven_deps:
   version: 2.15.0
   updated_at: '2023-10-25'
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.2.0
-  updated_at: '2023-08-26'
+  version: 3.3.0
+  updated_at: '2023-11-09'
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 10.1.15
   updated_at: '2023-10-16'
@@ -542,18 +542,18 @@ container_deps:
   version: debug
   version_regex: ^(debug)$
   registry: gcr.io
-  repository: distroless/java17
+  repository: distroless/java21
   tag: debug
-  digest: sha256:1a13bacd07c7273521fc614a5e77496a16d0f632ef81a0a054d6b5ddd132d05d
-  updated_at: '2023-10-09'
+  digest: sha256:be996059a109aea555da275ed0907a4be5773018aea1bc7c024f30f76488a517
+  updated_at: '2023-11-11'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
-  repository: distroless/java17
+  repository: distroless/java21
   tag: latest
-  digest: sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d
-  updated_at: '2023-10-09'
+  digest: sha256:037731c972d13ef186de5c6fd09bf9e70544a323c4a0bf36797ad7d7e0b6e0cd
+  updated_at: '2023-11-11'
 - name: io_quay_boleynsu_ci_runner
   version: '20231020.135626'
   registry: quay.io
@@ -626,7 +626,7 @@ toolchain_deps:
   version: '20'
   updated_at: '2023-05-12'
 - name: java
-  version: '17'
+  version: '21'
   updated_at: '2023-05-12'
 - name: python
   version: 3.11.6
@@ -662,12 +662,12 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "f3a17cf7db503f97b84400bab2f8717199ba80c43058f5544eaef29c902a2b97",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.0.6.tar.gz",
-      "strip_prefix": "rules_java-7.0.6",
-      "updated_at": "2023-10-20",
-      "version": "7.0.6",
-      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk17_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk17_repos()\n"
+      "sha256": "f6068480cee4454755e2f422702722f31ef37b3628aa0ba9811fffc407b1b315",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.1.0.tar.gz",
+      "strip_prefix": "rules_java-7.1.0",
+      "updated_at": "2023-11-09",
+      "version": "7.1.0",
+      "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk21_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n"
     },
     {
       "name": "rules_python",
@@ -773,11 +773,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "984cae72075c83d689fc4f6f5405f713d4ecaee69510717394e1b775ffa269ad",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.33.0.tar.gz",
-      "updated_at": "2023-09-08",
-      "version": "v0.33.0",
-      "strip_prefix": "bazel-gazelle-0.33.0",
+      "sha256": "775202071b874bbdefeea0c775856b5fb0409ceb193d25b11c4c543cff5674a3",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.34.0.tar.gz",
+      "updated_at": "2023-11-09",
+      "version": "v0.34.0",
+      "strip_prefix": "bazel-gazelle-0.34.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -956,8 +956,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.mariadb.jdbc:mariadb-java-client",
-      "version": "3.2.0",
-      "updated_at": "2023-08-26"
+      "version": "3.3.0",
+      "updated_at": "2023-11-09"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
@@ -1334,20 +1334,20 @@ _DEPS_JSON = r"""
       "version": "debug",
       "version_regex": "^(debug)$",
       "registry": "gcr.io",
-      "repository": "distroless/java17",
+      "repository": "distroless/java21",
       "tag": "debug",
-      "digest": "sha256:1a13bacd07c7273521fc614a5e77496a16d0f632ef81a0a054d6b5ddd132d05d",
-      "updated_at": "2023-10-09"
+      "digest": "sha256:be996059a109aea555da275ed0907a4be5773018aea1bc7c024f30f76488a517",
+      "updated_at": "2023-11-11"
     },
     {
       "name": "java_image_base",
       "version": "latest",
       "version_regex": "^(latest)$",
       "registry": "gcr.io",
-      "repository": "distroless/java17",
+      "repository": "distroless/java21",
       "tag": "latest",
-      "digest": "sha256:2f01c2ff0c0db866ed73085cf1bb5437dd162b48526f89c1baa21dd77ebb5e6d",
-      "updated_at": "2023-10-09"
+      "digest": "sha256:037731c972d13ef186de5c6fd09bf9e70544a323c4a0bf36797ad7d7e0b6e0cd",
+      "updated_at": "2023-11-11"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
@@ -1446,7 +1446,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "java",
-      "version": "17",
+      "version": "21",
       "updated_at": "2023-05-12"
     },
     {
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 946833980 or hash(_DEPS_JSON) != 423222619 else None]
+""") if hash(_DEPS_YAML) != -2019495201 or hash(_DEPS_JSON) != -2022146958 else None]
 
 DEPS = json.decode(_DEPS_JSON)
