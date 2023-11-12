@@ -81,10 +81,19 @@ spec:
           periodSeconds: 10
           failureThreshold: 3
         securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
           runAsUser: 1993
           runAsGroup: 1993
       imagePullSecrets:
         - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -138,10 +147,26 @@ spec:
         - name: RUNNER_HOST
           value: oj-c99runner-service
         securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
           runAsUser: 1993
           runAsGroup: 1993
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
       imagePullSecrets:
         - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -182,10 +207,19 @@ spec:
         - name: oj-runner
           containerPort: 1993
         securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
           runAsUser: 1993
           runAsGroup: 1993
       imagePullSecrets:
         - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -225,6 +259,25 @@ spec:
               key: DB_PASSWORD
         - name: TZ
           value: Hongkong
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 999
+          runAsGroup: 999
+      enableServiceLinks: false
+      automountServiceAccountToken: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -252,8 +305,24 @@ spec:
         - name: http
           containerPort: 8080
         securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
           runAsUser: 1993
           runAsGroup: 1993
+        resources:
+          requests:
+            cpu: 100m
+            memory: 32Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      enableServiceLinks: false
+      automountServiceAccountToken: false
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -310,6 +379,13 @@ spec:
         - name: http
           containerPort: 8080
         securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
           runAsUser: 1993
           runAsGroup: 1993
         readinessProbe:
@@ -324,3 +400,12 @@ spec:
             port: http
           periodSeconds: 10
           failureThreshold: 3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 32Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      enableServiceLinks: false
+      automountServiceAccountToken: false
