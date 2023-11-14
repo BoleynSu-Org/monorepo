@@ -177,12 +177,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm_linux_x86_64
   type: http_archive
-  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.4/clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz
-  sha256: 6b45be6c0483b7ee3f63981678093b731fd9f4ea6987b4ceb6efde21890ffca7
-  strip_prefix: clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04
-  version: llvmorg-17.0.4
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+  sha256: 5a3cedecd8e2e8663e84bec2f8e5522b8ea097f4a8b32637386f27ac1ca01818
+  strip_prefix: clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04
+  version: llvmorg-17.0.5
   version_regex: llvmorg-(.*)
-  updated_at: '2023-11-01'
+  updated_at: '2023-11-14'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -798,12 +798,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.4/clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-      "sha256": "6b45be6c0483b7ee3f63981678093b731fd9f4ea6987b4ceb6efde21890ffca7",
-      "strip_prefix": "clang+llvm-17.0.4-x86_64-linux-gnu-ubuntu-22.04",
-      "version": "llvmorg-17.0.4",
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+      "sha256": "5a3cedecd8e2e8663e84bec2f8e5522b8ea097f4a8b32637386f27ac1ca01818",
+      "strip_prefix": "clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04",
+      "version": "llvmorg-17.0.5",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-11-01",
+      "updated_at": "2023-11-14",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 2132639069 or hash(_DEPS_JSON) != 1759996572 else None]
+""") if hash(_DEPS_YAML) != -2024568709 or hash(_DEPS_JSON) != -16170332 else None]
 
 DEPS = json.decode(_DEPS_JSON)
