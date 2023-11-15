@@ -270,10 +270,10 @@ bazel_deps:
   version: 0.0.8
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl
-  sha256: 0c680c90892c43e5ce708e918821f92445d1d244f9b3d7513023bcae9a6246d1
-  version: v1.28.3
-  updated_at: '2023-10-19'
+  url: https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl
+  sha256: 893c92053adea6edbbd4e959c871f5c21edce416988f968bec565d115383f7b8
+  version: v1.28.4
+  updated_at: '2023-11-15'
   executable: true
   override_updater:
   - type: shell
@@ -911,10 +911,10 @@ _DEPS_JSON = r"""
     {
       "name": "kubectl_linux_amd64",
       "type": "http_file",
-      "url": "https://dl.k8s.io/release/v1.28.3/bin/linux/amd64/kubectl",
-      "sha256": "0c680c90892c43e5ce708e918821f92445d1d244f9b3d7513023bcae9a6246d1",
-      "version": "v1.28.3",
-      "updated_at": "2023-10-19",
+      "url": "https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl",
+      "sha256": "893c92053adea6edbbd4e959c871f5c21edce416988f968bec565d115383f7b8",
+      "version": "v1.28.4",
+      "updated_at": "2023-11-15",
       "executable": true,
       "override_updater": [
         {
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1317414395 or hash(_DEPS_JSON) != 623939990 else None]
+""") if hash(_DEPS_YAML) != -1922985525 or hash(_DEPS_JSON) != -642717334 else None]
 
 DEPS = json.decode(_DEPS_JSON)
