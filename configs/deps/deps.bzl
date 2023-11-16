@@ -569,8 +569,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:e51c275914b2da5e8e8e0ed9eaecf1e4d5142b5e570f231224320001cf5c86cf
-  updated_at: '2023-10-13'
+  digest: sha256:fa9b06cc07c0b009914fb8108e93dd9584e1254b7489c38d65891e5c657881f8
+  updated_at: '2023-11-16'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -1365,8 +1365,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:e51c275914b2da5e8e8e0ed9eaecf1e4d5142b5e570f231224320001cf5c86cf",
-      "updated_at": "2023-10-13"
+      "digest": "sha256:fa9b06cc07c0b009914fb8108e93dd9584e1254b7489c38d65891e5c657881f8",
+      "updated_at": "2023-11-16"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -793155033 or hash(_DEPS_JSON) != 797278616 else None]
+""") if hash(_DEPS_YAML) != -654415437 or hash(_DEPS_JSON) != 290033956 else None]
 
 DEPS = json.decode(_DEPS_JSON)
