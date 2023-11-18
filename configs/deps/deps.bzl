@@ -23,11 +23,13 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: f6068480cee4454755e2f422702722f31ef37b3628aa0ba9811fffc407b1b315
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.1.0.tar.gz
-  strip_prefix: rules_java-7.1.0
-  updated_at: '2023-11-09'
-  version: 7.1.0
+  sha256: 438f8cb8b216c525cda9dd60520bcbc35b1ae5a69dccaafdb2f5e5f8d5d64198
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.2.0.tar.gz
+  strip_prefix: rules_java-7.2.0
+  updated_at: '2023-11-19'
+  version: 7.2.0
+  version_skip:
+  - 7.3.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -35,18 +37,20 @@ bazel_deps:
       remote_jdk21_repos()
 - name: rules_python
   type: http_archive
-  sha256: 9d04041ac92a0985e344235f5d946f71ac543f1b1565f2cdbc9a2aaee8adf55b
-  strip_prefix: rules_python-0.26.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.26.0.tar.gz
-  updated_at: '2023-10-19'
-  version: 0.26.0
+  sha256: 9acc0944c94adb23fba1c9988b48768b1bacc6583b52a2586895c5b7491e2e31
+  strip_prefix: rules_python-0.27.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.0.tar.gz
+  updated_at: '2023-11-19'
+  version: 0.27.0
   load_deps: |
+    load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
+    load("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")
     load("@rules_python//python:repositories.bzl", "python_register_toolchains")
     load("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")
-    load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")
     def deps():
       internal_config_repo(name = "rules_python_internal")
+      pip_install_dependencies()
       python_register_toolchains(
         name = "python_sdk",
         python_version = PYTHON_VERSION,
@@ -662,22 +666,25 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "f6068480cee4454755e2f422702722f31ef37b3628aa0ba9811fffc407b1b315",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.1.0.tar.gz",
-      "strip_prefix": "rules_java-7.1.0",
-      "updated_at": "2023-11-09",
-      "version": "7.1.0",
+      "sha256": "438f8cb8b216c525cda9dd60520bcbc35b1ae5a69dccaafdb2f5e5f8d5d64198",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.2.0.tar.gz",
+      "strip_prefix": "rules_java-7.2.0",
+      "updated_at": "2023-11-19",
+      "version": "7.2.0",
+      "version_skip": [
+        "7.3.0"
+      ],
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk21_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n"
     },
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "9d04041ac92a0985e344235f5d946f71ac543f1b1565f2cdbc9a2aaee8adf55b",
-      "strip_prefix": "rules_python-0.26.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.26.0.tar.gz",
-      "updated_at": "2023-10-19",
-      "version": "0.26.0",
-      "load_deps": "load(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
+      "sha256": "9acc0944c94adb23fba1c9988b48768b1bacc6583b52a2586895c5b7491e2e31",
+      "strip_prefix": "rules_python-0.27.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.0.tar.gz",
+      "updated_at": "2023-11-19",
+      "version": "0.27.0",
+      "load_deps": "load(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@rules_python//python/pip_install:repositories.bzl\", \"pip_install_dependencies\")\nload(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
       "name": "rules_proto",
@@ -1468,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -654415437 or hash(_DEPS_JSON) != 290033956 else None]
+""") if hash(_DEPS_YAML) != 252679556 or hash(_DEPS_JSON) != 274601368 else None]
 
 DEPS = json.decode(_DEPS_JSON)
