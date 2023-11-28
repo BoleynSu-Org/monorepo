@@ -145,11 +145,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 3bcf6be49fc7ab8187577a5211421258cb8e6d179f46023cc82e42e3a6188e51
-  strip_prefix: grpc-java-1.59.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.0.tar.gz
-  updated_at: '2023-10-21'
-  version: v1.59.0
+  sha256: 5b934dedf42e3fe080fa8143619fddc7cfdc1ec0101a731d0b55c3f6e30aaaad
+  strip_prefix: grpc-java-1.59.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.1.tar.gz
+  updated_at: '2023-11-28'
+  version: v1.59.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -181,12 +181,12 @@ bazel_deps:
   build_file: '@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD'
 - name: llvm_linux_x86_64
   type: http_archive
-  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04.tar.xz
-  sha256: 5a3cedecd8e2e8663e84bec2f8e5522b8ea097f4a8b32637386f27ac1ca01818
-  strip_prefix: clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04
-  version: llvmorg-17.0.5
+  url: https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz
+  sha256: 884ee67d647d77e58740c1e645649e29ae9e8a6fe87c1376be0f3a30f3cc9ab3
+  strip_prefix: clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04
+  version: llvmorg-17.0.6
   version_regex: llvmorg-(.*)
-  updated_at: '2023-11-14'
+  updated_at: '2023-11-28'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -770,11 +770,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "3bcf6be49fc7ab8187577a5211421258cb8e6d179f46023cc82e42e3a6188e51",
-      "strip_prefix": "grpc-java-1.59.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.0.tar.gz",
-      "updated_at": "2023-10-21",
-      "version": "v1.59.0",
+      "sha256": "5b934dedf42e3fe080fa8143619fddc7cfdc1ec0101a731d0b55c3f6e30aaaad",
+      "strip_prefix": "grpc-java-1.59.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.1.tar.gz",
+      "updated_at": "2023-11-28",
+      "version": "v1.59.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -805,12 +805,12 @@ _DEPS_JSON = r"""
     {
       "name": "llvm_linux_x86_64",
       "type": "http_archive",
-      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.5/clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-      "sha256": "5a3cedecd8e2e8663e84bec2f8e5522b8ea097f4a8b32637386f27ac1ca01818",
-      "strip_prefix": "clang+llvm-17.0.5-x86_64-linux-gnu-ubuntu-22.04",
-      "version": "llvmorg-17.0.5",
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+      "sha256": "884ee67d647d77e58740c1e645649e29ae9e8a6fe87c1376be0f3a30f3cc9ab3",
+      "strip_prefix": "clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04",
+      "version": "llvmorg-17.0.6",
       "version_regex": "llvmorg-(.*)",
-      "updated_at": "2023-11-14",
+      "updated_at": "2023-11-28",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1964546495 or hash(_DEPS_JSON) != 1103643935 else None]
+""") if hash(_DEPS_YAML) != -79081456 or hash(_DEPS_JSON) != 1967708314 else None]
 
 DEPS = json.decode(_DEPS_JSON)
