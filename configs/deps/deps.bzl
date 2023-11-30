@@ -301,8 +301,8 @@ pip_deps:
 
 maven_deps:
 - name: commons-io:commons-io
-  version: 2.15.0
-  updated_at: '2023-10-25'
+  version: 2.15.1
+  updated_at: '2023-11-30'
 - name: org.mariadb.jdbc:mariadb-java-client
   version: 3.3.1
   updated_at: '2023-11-29'
@@ -606,8 +606,8 @@ container_deps:
 
 go_deps:
 - name: github.com/google/go-containerregistry
-  version: v0.16.1
-  updated_at: '2023-09-17'
+  version: v0.17.0
+  updated_at: '2023-11-30'
 - name: github.com/pkg/errors
   version: v0.9.1
   updated_at: '2023-09-17'
@@ -958,8 +958,8 @@ _DEPS_JSON = r"""
   "maven_deps": [
     {
       "name": "commons-io:commons-io",
-      "version": "2.15.0",
-      "updated_at": "2023-10-25"
+      "version": "2.15.1",
+      "updated_at": "2023-11-30"
     },
     {
       "name": "org.mariadb.jdbc:mariadb-java-client",
@@ -1415,8 +1415,8 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "github.com/google/go-containerregistry",
-      "version": "v0.16.1",
-      "updated_at": "2023-09-17"
+      "version": "v0.17.0",
+      "updated_at": "2023-11-30"
     },
     {
       "name": "github.com/pkg/errors",
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 937402364 or hash(_DEPS_JSON) != 359747590 else None]
+""") if hash(_DEPS_YAML) != -1048893822 or hash(_DEPS_JSON) != 1827026444 else None]
 
 DEPS = json.decode(_DEPS_JSON)
