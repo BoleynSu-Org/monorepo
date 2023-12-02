@@ -30,6 +30,7 @@ bazel_deps:
   version: 7.2.0
   version_skip:
   - 7.3.0
+  - 7.3.1
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -573,8 +574,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:7c58576f7e85def1dab9bf216d2de666c72e724aa4a7cf8c8cd5f1f0935827aa
-  updated_at: '2023-11-23'
+  digest: sha256:15bd5a1891a297e2b1ad33c5fdc40846033e064a152d4cf06841bb19bf8ca46c
+  updated_at: '2023-12-02'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -672,7 +673,8 @@ _DEPS_JSON = r"""
       "updated_at": "2023-11-19",
       "version": "7.2.0",
       "version_skip": [
-        "7.3.0"
+        "7.3.0",
+        "7.3.1"
       ],
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk21_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n"
     },
@@ -1372,8 +1374,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:7c58576f7e85def1dab9bf216d2de666c72e724aa4a7cf8c8cd5f1f0935827aa",
-      "updated_at": "2023-11-23"
+      "digest": "sha256:15bd5a1891a297e2b1ad33c5fdc40846033e064a152d4cf06841bb19bf8ca46c",
+      "updated_at": "2023-12-02"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1475,6 +1477,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -977877364 or hash(_DEPS_JSON) != 1134302158 else None]
+""") if hash(_DEPS_YAML) != 1883980172 or hash(_DEPS_JSON) != -1620168655 else None]
 
 DEPS = json.decode(_DEPS_JSON)
