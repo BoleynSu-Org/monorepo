@@ -38,11 +38,11 @@ bazel_deps:
       remote_jdk21_repos()
 - name: rules_python
   type: http_archive
-  sha256: 9acc0944c94adb23fba1c9988b48768b1bacc6583b52a2586895c5b7491e2e31
-  strip_prefix: rules_python-0.27.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.0.tar.gz
-  updated_at: '2023-11-19'
-  version: 0.27.0
+  sha256: e85ae30de33625a63eca7fc40a94fea845e641888e52f32b6beea91e8b1b2793
+  strip_prefix: rules_python-0.27.1
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.1.tar.gz
+  updated_at: '2023-12-14'
+  version: 0.27.1
   load_deps: |
     load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")
@@ -146,11 +146,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 5b934dedf42e3fe080fa8143619fddc7cfdc1ec0101a731d0b55c3f6e30aaaad
-  strip_prefix: grpc-java-1.59.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.1.tar.gz
-  updated_at: '2023-11-28'
-  version: v1.59.1
+  sha256: 02c9a7f9400d4e29c7e55667851083a9f695935081787079a834da312129bf97
+  strip_prefix: grpc-java-1.60.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.0.tar.gz
+  updated_at: '2023-12-14'
+  version: v1.60.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -275,10 +275,10 @@ bazel_deps:
   version: 0.0.8
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl
-  sha256: 893c92053adea6edbbd4e959c871f5c21edce416988f968bec565d115383f7b8
-  version: v1.28.4
-  updated_at: '2023-11-15'
+  url: https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl
+  sha256: 0e03ab096163f61ab610b33f37f55709d3af8e16e4dcc1eb682882ef80f96fd5
+  version: v1.29.0
+  updated_at: '2023-12-14'
   executable: true
   override_updater:
   - type: shell
@@ -308,11 +308,11 @@ maven_deps:
   version: 3.3.1
   updated_at: '2023-11-29'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.16
-  updated_at: '2023-11-14'
+  version: 10.1.17
+  updated_at: '2023-12-14'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.16
-  updated_at: '2023-11-14'
+  version: 10.1.17
+  updated_at: '2023-12-14'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -328,9 +328,8 @@ maven_deps:
   version_regex: (.*)\.Final
   updated_at: '2023-10-18'
 - name: commons-validator:commons-validator
-  version: '1.7'
-  updated_at: '2022-04-15'
-  expires_at: '2024-04-15'
+  version: 1.8.0
+  updated_at: '2023-12-14'
 - name: commons-codec:commons-codec
   version: 1.16.0
   updated_at: '2023-06-22'
@@ -384,40 +383,40 @@ maven_deps:
   version: 2.10.0
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-buffer
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http2
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-http
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec-socks
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-codec
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-common
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler-proxy
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-handler
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-resolver
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-boringssl-static
   version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-epoll:jar:linux-x86_64
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.opencensus:opencensus-api
   version: 0.31.0
@@ -531,7 +530,7 @@ maven_deps:
   version: 2.0.61.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-unix-common
-  version: 4.1.97.Final
+  version: 4.1.100.Final
   included_from: io_grpc_grpc_java
 - name: io.grpc:grpc-inprocess
   version: override
@@ -549,23 +548,23 @@ container_deps:
   registry: gcr.io
   repository: distroless/java21
   tag: debug
-  digest: sha256:a2400aaf8c6447a4ebb171900a8a92dad752475492b7af0e311520d1c45b3a96
-  updated_at: '2023-11-15'
+  digest: sha256:871be51d902662aafb9327e41d095fb1f5a377cb6e1a34465c5cb781ad5f878b
+  updated_at: '2023-12-14'
 - name: java_image_base
   version: latest
   version_regex: ^(latest)$
   registry: gcr.io
   repository: distroless/java21
   tag: latest
-  digest: sha256:f0c6d6a656ec9516fe75f6aa7a69015d00b593ce2c3d75142175ac2b7391f160
-  updated_at: '2023-11-15'
+  digest: sha256:e2468bd3cdb846253c4f31d3270658a00a5ce10ede3482ab0b6ba1677eb411d5
+  updated_at: '2023-12-14'
 - name: io_quay_boleynsu_ci_runner
-  version: '20231130.003713'
+  version: '20231214.004025'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20231130.003713'
-  digest: sha256:ba7c6e420a2a6145a659524d5a9581173d22e23bf2ae6aa1c0080ff86e1f086d
-  updated_at: '2023-11-30'
+  tag: '20231214.004025'
+  digest: sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f
+  updated_at: '2023-12-14'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -635,10 +634,10 @@ toolchain_deps:
   updated_at: '2023-05-12'
 - name: python
   version: 3.11.6
-  updated_at: '2023-05-12'
+  updated_at: '2023-12-14'
 - name: golang
-  version: 1.20.10
-  updated_at: '2022-12-09'
+  version: 1.20.12
+  updated_at: '2023-12-14'
 
 """
 # END deps.yaml
@@ -681,11 +680,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "9acc0944c94adb23fba1c9988b48768b1bacc6583b52a2586895c5b7491e2e31",
-      "strip_prefix": "rules_python-0.27.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.0.tar.gz",
-      "updated_at": "2023-11-19",
-      "version": "0.27.0",
+      "sha256": "e85ae30de33625a63eca7fc40a94fea845e641888e52f32b6beea91e8b1b2793",
+      "strip_prefix": "rules_python-0.27.1",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.1.tar.gz",
+      "updated_at": "2023-12-14",
+      "version": "0.27.1",
       "load_deps": "load(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@rules_python//python/pip_install:repositories.bzl\", \"pip_install_dependencies\")\nload(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
@@ -772,11 +771,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "5b934dedf42e3fe080fa8143619fddc7cfdc1ec0101a731d0b55c3f6e30aaaad",
-      "strip_prefix": "grpc-java-1.59.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.59.1.tar.gz",
-      "updated_at": "2023-11-28",
-      "version": "v1.59.1",
+      "sha256": "02c9a7f9400d4e29c7e55667851083a9f695935081787079a834da312129bf97",
+      "strip_prefix": "grpc-java-1.60.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.0.tar.gz",
+      "updated_at": "2023-12-14",
+      "version": "v1.60.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -920,10 +919,10 @@ _DEPS_JSON = r"""
     {
       "name": "kubectl_linux_amd64",
       "type": "http_file",
-      "url": "https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl",
-      "sha256": "893c92053adea6edbbd4e959c871f5c21edce416988f968bec565d115383f7b8",
-      "version": "v1.28.4",
-      "updated_at": "2023-11-15",
+      "url": "https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl",
+      "sha256": "0e03ab096163f61ab610b33f37f55709d3af8e16e4dcc1eb682882ef80f96fd5",
+      "version": "v1.29.0",
+      "updated_at": "2023-12-14",
       "executable": true,
       "override_updater": [
         {
@@ -970,13 +969,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.16",
-      "updated_at": "2023-11-14"
+      "version": "10.1.17",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.16",
-      "updated_at": "2023-11-14"
+      "version": "10.1.17",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "org.webjars:jquery",
@@ -998,9 +997,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "commons-validator:commons-validator",
-      "version": "1.7",
-      "updated_at": "2022-04-15",
-      "expires_at": "2024-04-15"
+      "version": "1.8.0",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "commons-codec:commons-codec",
@@ -1090,47 +1088,47 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-buffer",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http2",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-http",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec-socks",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-codec",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-common",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler-proxy",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-handler",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-resolver",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1140,12 +1138,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-transport-native-epoll:jar:linux-x86_64",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "io.netty:netty-transport",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1321,7 +1319,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.netty:netty-transport-native-unix-common",
-      "version": "4.1.97.Final",
+      "version": "4.1.100.Final",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -1345,8 +1343,8 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java21",
       "tag": "debug",
-      "digest": "sha256:a2400aaf8c6447a4ebb171900a8a92dad752475492b7af0e311520d1c45b3a96",
-      "updated_at": "2023-11-15"
+      "digest": "sha256:871be51d902662aafb9327e41d095fb1f5a377cb6e1a34465c5cb781ad5f878b",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "java_image_base",
@@ -1355,17 +1353,17 @@ _DEPS_JSON = r"""
       "registry": "gcr.io",
       "repository": "distroless/java21",
       "tag": "latest",
-      "digest": "sha256:f0c6d6a656ec9516fe75f6aa7a69015d00b593ce2c3d75142175ac2b7391f160",
-      "updated_at": "2023-11-15"
+      "digest": "sha256:e2468bd3cdb846253c4f31d3270658a00a5ce10ede3482ab0b6ba1677eb411d5",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20231130.003713",
+      "version": "20231214.004025",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20231130.003713",
-      "digest": "sha256:ba7c6e420a2a6145a659524d5a9581173d22e23bf2ae6aa1c0080ff86e1f086d",
-      "updated_at": "2023-11-30"
+      "tag": "20231214.004025",
+      "digest": "sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f",
+      "updated_at": "2023-12-14"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1461,12 +1459,12 @@ _DEPS_JSON = r"""
     {
       "name": "python",
       "version": "3.11.6",
-      "updated_at": "2023-05-12"
+      "updated_at": "2023-12-14"
     },
     {
       "name": "golang",
-      "version": "1.20.10",
-      "updated_at": "2022-12-09"
+      "version": "1.20.12",
+      "updated_at": "2023-12-14"
     }
   ]
 }
@@ -1477,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1669010206 or hash(_DEPS_JSON) != -713199331 else None]
+""") if hash(_DEPS_YAML) != -856897770 or hash(_DEPS_JSON) != 1808792763 else None]
 
 DEPS = json.decode(_DEPS_JSON)

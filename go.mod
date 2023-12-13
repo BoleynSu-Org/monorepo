@@ -1,5 +1,5 @@
 // DO NOT EDIT! This file is auto-generated.
-// hash = 1175549612
+// hash = 1207186734
 module golang.boleyn.su
 
 go 1.20
