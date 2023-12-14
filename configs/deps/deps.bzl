@@ -234,11 +234,11 @@ bazel_deps:
       )
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 6.4.0
-  url: https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-linux-x86_64.sh
+  version: 7.0.0
+  url: https://github.com/bazelbuild/bazel/releases/download/7.0.0/bazel-7.0.0-installer-linux-x86_64.sh
   http_archive_type: zip
-  sha256: 4a52769e0bcc783d8dd038ca71a50153a425555993918291a8ce576d121b3671
-  updated_at: '2023-10-20'
+  sha256: b32c278fd1e72a676ea560d7b4e71ce97536405f6a3f8c1752acb4e88c031184
+  updated_at: '2023-12-14'
   executable: true
   override_updater:
   - type: deps_updater
@@ -860,11 +860,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_linux_x86_64",
       "type": "http_archive",
-      "version": "6.4.0",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/6.4.0/bazel-6.4.0-installer-linux-x86_64.sh",
+      "version": "7.0.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.0/bazel-7.0.0-installer-linux-x86_64.sh",
       "http_archive_type": "zip",
-      "sha256": "4a52769e0bcc783d8dd038ca71a50153a425555993918291a8ce576d121b3671",
-      "updated_at": "2023-10-20",
+      "sha256": "b32c278fd1e72a676ea560d7b4e71ce97536405f6a3f8c1752acb4e88c031184",
+      "updated_at": "2023-12-14",
       "executable": true,
       "override_updater": [
         {
@@ -1477,6 +1477,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1883980172 or hash(_DEPS_JSON) != -1620168655 else None]
+""") if hash(_DEPS_YAML) != 1669010206 or hash(_DEPS_JSON) != -713199331 else None]
 
 DEPS = json.decode(_DEPS_JSON)
