@@ -559,12 +559,12 @@ container_deps:
   digest: sha256:c96049420a4d0017b414cae9662a079593668212ed379ea6e6baeba96db5e745
   updated_at: '2023-12-15'
 - name: io_quay_boleynsu_ci_runner
-  version: '20231214.052909'
+  version: '20231215.150607'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20231214.052909'
+  tag: '20231215.150607'
   digest: sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f
-  updated_at: '2023-12-14'
+  updated_at: '2023-12-15'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -590,19 +590,19 @@ container_deps:
   digest: sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee
   updated_at: '2023-11-03'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20231214.052909'
+  version: '20231215.150607'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20231214.052909'
+  tag: '20231215.150607'
   digest: sha256:c22a1798b77dff0598c50c08cc9b984613405b9e56dec4ed9461dddfb43c0398
-  updated_at: '2023-12-14'
+  updated_at: '2023-12-15'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231214.052909'
+  version: '20231215.150607'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231214.052909'
+  tag: '20231215.150607'
   digest: sha256:2e8022c6c6036d0bccb77142dc7ab5f65f232adf6911b1a6d2a0f3ee06ab9f46
-  updated_at: '2023-12-14'
+  updated_at: '2023-12-15'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -1358,12 +1358,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20231214.052909",
+      "version": "20231215.150607",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20231214.052909",
+      "tag": "20231215.150607",
       "digest": "sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f",
-      "updated_at": "2023-12-14"
+      "updated_at": "2023-12-15"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1395,21 +1395,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20231214.052909",
+      "version": "20231215.150607",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20231214.052909",
+      "tag": "20231215.150607",
       "digest": "sha256:c22a1798b77dff0598c50c08cc9b984613405b9e56dec4ed9461dddfb43c0398",
-      "updated_at": "2023-12-14"
+      "updated_at": "2023-12-15"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231214.052909",
+      "version": "20231215.150607",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231214.052909",
+      "tag": "20231215.150607",
       "digest": "sha256:2e8022c6c6036d0bccb77142dc7ab5f65f232adf6911b1a6d2a0f3ee06ab9f46",
-      "updated_at": "2023-12-14"
+      "updated_at": "2023-12-15"
     }
   ],
   "go_deps": [
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1238233983 or hash(_DEPS_JSON) != 2139872344 else None]
+""") if hash(_DEPS_YAML) != -1984606358 or hash(_DEPS_JSON) != 98236131 else None]
 
 DEPS = json.decode(_DEPS_JSON)
