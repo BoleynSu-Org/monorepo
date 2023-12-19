@@ -305,8 +305,8 @@ maven_deps:
   version: 2.15.1
   updated_at: '2023-11-30'
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.3.1
-  updated_at: '2023-11-29'
+  version: 3.3.2
+  updated_at: '2023-12-19'
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 10.1.17
   updated_at: '2023-12-14'
@@ -964,8 +964,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.mariadb.jdbc:mariadb-java-client",
-      "version": "3.3.1",
-      "updated_at": "2023-11-29"
+      "version": "3.3.2",
+      "updated_at": "2023-12-19"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -956818054 or hash(_DEPS_JSON) != -17408807 else None]
+""") if hash(_DEPS_YAML) != -113688167 or hash(_DEPS_JSON) != -1692628744 else None]
 
 DEPS = json.decode(_DEPS_JSON)
