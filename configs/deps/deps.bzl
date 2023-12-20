@@ -77,11 +77,11 @@ bazel_deps:
       rules_proto_dependencies()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: c66097f9f77d9a5a49659c8120a77a6869547effae806d519e4136177bfd2205
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.43.0.tar.gz
-  updated_at: '2023-11-20'
-  version: v0.43.0
-  strip_prefix: rules_go-0.43.0
+  sha256: af626e40ad1f51cf76b7cd9e370bae722c7ef64d3d19a7b7585fb09ca7d1816e
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.0.tar.gz
+  updated_at: '2023-12-20'
+  version: v0.44.0
+  strip_prefix: rules_go-0.44.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -701,11 +701,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "c66097f9f77d9a5a49659c8120a77a6869547effae806d519e4136177bfd2205",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.43.0.tar.gz",
-      "updated_at": "2023-11-20",
-      "version": "v0.43.0",
-      "strip_prefix": "rules_go-0.43.0",
+      "sha256": "af626e40ad1f51cf76b7cd9e370bae722c7ef64d3d19a7b7585fb09ca7d1816e",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.0.tar.gz",
+      "updated_at": "2023-12-20",
+      "version": "v0.44.0",
+      "strip_prefix": "rules_go-0.44.0",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
@@ -1475,6 +1475,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -113688167 or hash(_DEPS_JSON) != -1692628744 else None]
+""") if hash(_DEPS_YAML) != -1911757581 or hash(_DEPS_JSON) != -1747739204 else None]
 
 DEPS = json.decode(_DEPS_JSON)
