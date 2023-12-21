@@ -23,14 +23,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: 438f8cb8b216c525cda9dd60520bcbc35b1ae5a69dccaafdb2f5e5f8d5d64198
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.2.0.tar.gz
-  strip_prefix: rules_java-7.2.0
-  updated_at: '2023-11-19'
-  version: 7.2.0
-  version_skip:
-  - 7.3.0
-  - 7.3.1
+  sha256: fe2f474418237c0617548d329db6cd2f34e28b611f4b0d984490e3614e45a5ee
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.3.2.tar.gz
+  strip_prefix: rules_java-7.3.2
+  updated_at: '2023-12-21'
+  version: 7.3.2
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -157,11 +154,11 @@ bazel_deps:
       grpc_java_repositories()
 - name: bazel_gazelle
   type: http_archive
-  sha256: 775202071b874bbdefeea0c775856b5fb0409ceb193d25b11c4c543cff5674a3
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.34.0.tar.gz
-  updated_at: '2023-11-09'
-  version: v0.34.0
-  strip_prefix: bazel-gazelle-0.34.0
+  sha256: a0ee1d304f7caa46680ba06bdef0e5d9ec8815f6e01ec29398efd13256598c3f
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.35.0.tar.gz
+  updated_at: '2023-12-21'
+  version: v0.35.0
+  strip_prefix: bazel-gazelle-0.35.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -666,15 +663,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "438f8cb8b216c525cda9dd60520bcbc35b1ae5a69dccaafdb2f5e5f8d5d64198",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.2.0.tar.gz",
-      "strip_prefix": "rules_java-7.2.0",
-      "updated_at": "2023-11-19",
-      "version": "7.2.0",
-      "version_skip": [
-        "7.3.0",
-        "7.3.1"
-      ],
+      "sha256": "fe2f474418237c0617548d329db6cd2f34e28b611f4b0d984490e3614e45a5ee",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.3.2.tar.gz",
+      "strip_prefix": "rules_java-7.3.2",
+      "updated_at": "2023-12-21",
+      "version": "7.3.2",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk21_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n"
     },
     {
@@ -781,11 +774,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_gazelle",
       "type": "http_archive",
-      "sha256": "775202071b874bbdefeea0c775856b5fb0409ceb193d25b11c4c543cff5674a3",
-      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.34.0.tar.gz",
-      "updated_at": "2023-11-09",
-      "version": "v0.34.0",
-      "strip_prefix": "bazel-gazelle-0.34.0",
+      "sha256": "a0ee1d304f7caa46680ba06bdef0e5d9ec8815f6e01ec29398efd13256598c3f",
+      "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.35.0.tar.gz",
+      "updated_at": "2023-12-21",
+      "version": "v0.35.0",
+      "strip_prefix": "bazel-gazelle-0.35.0",
       "patch_cmds": [
         "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
         "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl"
@@ -1475,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 871551819 or hash(_DEPS_JSON) != -373243002 else None]
+""") if hash(_DEPS_YAML) != 332086607 or hash(_DEPS_JSON) != -236565328 else None]
 
 DEPS = json.decode(_DEPS_JSON)
