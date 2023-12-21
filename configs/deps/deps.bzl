@@ -143,11 +143,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.9.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 02c9a7f9400d4e29c7e55667851083a9f695935081787079a834da312129bf97
-  strip_prefix: grpc-java-1.60.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.0.tar.gz
-  updated_at: '2023-12-14'
-  version: v1.60.0
+  sha256: fedf186a6a66f7aff0d9be8d194adcb02426130b9942de4ea314400b6b44d528
+  strip_prefix: grpc-java-1.60.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.1.tar.gz
+  updated_at: '2023-12-21'
+  version: v1.60.1
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -764,11 +764,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "02c9a7f9400d4e29c7e55667851083a9f695935081787079a834da312129bf97",
-      "strip_prefix": "grpc-java-1.60.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.0.tar.gz",
-      "updated_at": "2023-12-14",
-      "version": "v1.60.0",
+      "sha256": "fedf186a6a66f7aff0d9be8d194adcb02426130b9942de4ea314400b6b44d528",
+      "strip_prefix": "grpc-java-1.60.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.1.tar.gz",
+      "updated_at": "2023-12-21",
+      "version": "v1.60.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
     },
     {
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 332086607 or hash(_DEPS_JSON) != -236565328 else None]
+""") if hash(_DEPS_YAML) != -1093640329 or hash(_DEPS_JSON) != -793888538 else None]
 
 DEPS = json.decode(_DEPS_JSON)
