@@ -587,12 +587,12 @@ container_deps:
   digest: sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee
   updated_at: '2023-11-03'
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20231220.020813'
+  version: '20231222.173909'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20231220.020813'
-  digest: sha256:c22a1798b77dff0598c50c08cc9b984613405b9e56dec4ed9461dddfb43c0398
-  updated_at: '2023-12-20'
+  tag: '20231222.173909'
+  digest: sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5
+  updated_at: '2023-12-22'
 - name: io_quay_boleynsu_rbe_fedora
   version: '20231220.020813'
   registry: quay.io
@@ -1388,12 +1388,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20231220.020813",
+      "version": "20231222.173909",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20231220.020813",
-      "digest": "sha256:c22a1798b77dff0598c50c08cc9b984613405b9e56dec4ed9461dddfb43c0398",
-      "updated_at": "2023-12-20"
+      "tag": "20231222.173909",
+      "digest": "sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5",
+      "updated_at": "2023-12-22"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
@@ -1468,6 +1468,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1093640329 or hash(_DEPS_JSON) != -793888538 else None]
+""") if hash(_DEPS_YAML) != 1875619448 or hash(_DEPS_JSON) != 441827763 else None]
 
 DEPS = json.decode(_DEPS_JSON)
