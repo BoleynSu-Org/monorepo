@@ -27,7 +27,7 @@ build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora
 ## Misc
 build:remote --jobs=80
 build:remote --remote_upload_local_results=false
-build:remote --experimental_remote_cache_compression=true
+build:remote --remote_cache_compression=true
 
 # CI/CD
 ## build and test
@@ -37,5 +37,9 @@ build:ci-build-and-test --platforms=//configs/build/platforms:linux_x86_64
 build:ci-deploy --config=remote
 build:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
 build:ci-deploy --compilation_mode=opt
+
+# Misc
+## See https://github.com/bazelbuild/bazel/issues/6648#issuecomment-1133656002
+build --incompatible_strict_action_env=true
 
 try-import %workspace%/.user.bazelrc
