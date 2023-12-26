@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - oj.sujiao.de
+        - oj.staging.sujiao.de
       secretName: oj-sujiao-de-tls
   rules:
-    - host: oj.sujiao.de
+    - host: oj.staging.sujiao.de
       http:
         paths:
           - pathType: Prefix
