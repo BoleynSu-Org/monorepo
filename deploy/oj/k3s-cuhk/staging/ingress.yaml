@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - oj.staging.sujiao.de
-      secretName: oj-sujiao-de-tls
+      secretName: oj-staging-sujiao-de-tls
   rules:
     - host: oj.staging.sujiao.de
       http:
