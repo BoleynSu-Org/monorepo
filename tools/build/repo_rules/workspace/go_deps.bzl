@@ -192,6 +192,7 @@ _gazelle_go_deps = repository_rule(
         "go_mod": attr.label(allow_single_file = True, mandatory = True),
         "go_sum": attr.label(allow_single_file = True, mandatory = True),
     },
+    environ = ["REPIN"],
 )
 
 _unpinned_gazelle_go_deps = repository_rule(
