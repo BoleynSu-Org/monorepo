@@ -2,7 +2,7 @@
 deps.bzl
 
 To manually update some deps,
-    please edit _DPES_YAML and then run `bazel run //cmd/infra/deps:update`.
+    please edit _DEPS_YAML and then run `bazel run //cmd/infra/deps:update`.
 """
 
 # BEGIN deps.yaml

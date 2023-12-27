@@ -57,7 +57,7 @@ To update all deps to latest versions,
     if "pin_cmd" in metadata:
         pin_msg = f"""
 To manually update some deps,
-    please edit _DPES_YAML and then run `{metadata["pin_cmd"]}`.
+    please edit _DEPS_YAML and then run `{metadata["pin_cmd"]}`.
 """
 
     yaml = ruamel.yaml.YAML()
