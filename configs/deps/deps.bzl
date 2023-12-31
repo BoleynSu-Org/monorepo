@@ -228,6 +228,9 @@ bazel_deps:
           sha256 = {
               "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
           },
+          sysroot = {
+              "linux-x86_64": "@sysroot_linux_x86_64//:sysroot",
+          },
       )
 - name: bazel_linux_x86_64
   type: http_archive
@@ -288,6 +291,21 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
+- name: sysroot_linux_x86_64
+  type: http_archive
+  version: 20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a
+  version_regex: ([0-9.]+)-.*
+  sha256: 280c0c91f48824eb1ef8aee853e62cdf14e38abf9aa1c9a17e65e5d21ace8bec
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot_linux_x86_64/20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a/sysroot.tar
+  updated_at: '2024-01-01'
+  build_file_content: |
+    filegroup(
+        name = "sysroot",
+        srcs = glob(["**"]),
+        visibility = ["//visibility:public"],
+    )
+  patch_cmds:
+  - chmod -R 755 .
 
 pip_deps:
 - name: ruamel.yaml
@@ -594,12 +612,12 @@ container_deps:
   digest: sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5
   updated_at: '2023-12-22'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20231220.020813'
+  version: '20231231.195732'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20231220.020813'
-  digest: sha256:2e8022c6c6036d0bccb77142dc7ab5f65f232adf6911b1a6d2a0f3ee06ab9f46
-  updated_at: '2023-12-20'
+  tag: '20231231.195732'
+  digest: sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a
+  updated_at: '2024-01-01'
 
 go_deps:
 - name: github.com/google/go-containerregistry
@@ -847,7 +865,7 @@ _DEPS_JSON = r"""
       "patches": [
         "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
       ],
-      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n  )\n"
+      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n      sysroot = {\n          \"linux-x86_64\": \"@sysroot_linux_x86_64//:sysroot\",\n      },\n  )\n"
     },
     {
       "name": "bazel_linux_x86_64",
@@ -934,6 +952,19 @@ _DEPS_JSON = r"""
             }
           ]
         }
+      ]
+    },
+    {
+      "name": "sysroot_linux_x86_64",
+      "type": "http_archive",
+      "version": "20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a",
+      "version_regex": "([0-9.]+)-.*",
+      "sha256": "280c0c91f48824eb1ef8aee853e62cdf14e38abf9aa1c9a17e65e5d21ace8bec",
+      "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot_linux_x86_64/20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a/sysroot.tar",
+      "updated_at": "2024-01-01",
+      "build_file_content": "filegroup(\n    name = \"sysroot\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n",
+      "patch_cmds": [
+        "chmod -R 755 ."
       ]
     }
   ],
@@ -1397,12 +1428,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231220.020813",
+      "version": "20231231.195732",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231220.020813",
-      "digest": "sha256:2e8022c6c6036d0bccb77142dc7ab5f65f232adf6911b1a6d2a0f3ee06ab9f46",
-      "updated_at": "2023-12-20"
+      "tag": "20231231.195732",
+      "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
+      "updated_at": "2024-01-01"
     }
   ],
   "go_deps": [
@@ -1468,6 +1499,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1576076517 or hash(_DEPS_JSON) != -1954199676 else None]
+""") if hash(_DEPS_YAML) != 2120456354 or hash(_DEPS_JSON) != -559973787 else None]
 
 DEPS = json.decode(_DEPS_JSON)
