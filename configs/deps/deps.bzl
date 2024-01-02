@@ -598,12 +598,12 @@ container_deps:
   digest: sha256:1e11a196781b6e587eebff87d17c27831956cce283d98e48a667d7282144fdd8
   updated_at: '2023-12-19'
 - name: io_docker_filebrowser_filebrowser
-  version: v2.26.0
+  version: v2.27.0
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.26.0
-  digest: sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee
-  updated_at: '2023-11-03'
+  tag: v2.27.0
+  digest: sha256:36330c6d361f4d17f30ff0ed747b3b99f6c50eaae7b9ba6d33b162b50bf2826a
+  updated_at: '2024-01-02'
 - name: io_quay_boleynsu_oj_c99runner
   version: '20231222.173909'
   registry: quay.io
@@ -1410,12 +1410,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
-      "version": "v2.26.0",
+      "version": "v2.27.0",
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
-      "tag": "v2.26.0",
-      "digest": "sha256:0e0a4b700302457772b07c4efc47bc90143d7538d36731baabcf7d375360bcee",
-      "updated_at": "2023-11-03"
+      "tag": "v2.27.0",
+      "digest": "sha256:36330c6d361f4d17f30ff0ed747b3b99f6c50eaae7b9ba6d33b162b50bf2826a",
+      "updated_at": "2024-01-02"
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1499,6 +1499,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 2120456354 or hash(_DEPS_JSON) != -559973787 else None]
+""") if hash(_DEPS_YAML) != 1208593891 or hash(_DEPS_JSON) != 2069174920 else None]
 
 DEPS = json.decode(_DEPS_JSON)
