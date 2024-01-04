@@ -74,11 +74,11 @@ bazel_deps:
       rules_proto_dependencies()
 - name: io_bazel_rules_go
   type: http_archive
-  sha256: 9bce3748e7ee751915d68a92021c48a03645f0028b7fbe33eb3560f456233934
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.1.tar.gz
-  updated_at: '2023-12-30'
-  version: v0.44.1
-  strip_prefix: rules_go-0.44.1
+  sha256: 292811518be8385b79b8c8a396b0fbfd03f54f947ffd439e01fcb94097305ee3
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.2.tar.gz
+  updated_at: '2024-01-04'
+  version: v0.44.2
+  strip_prefix: rules_go-0.44.2
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk", "go_rules_dependencies")
     load("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")
@@ -306,6 +306,34 @@ bazel_deps:
     )
   patch_cmds:
   - chmod -R 755 .
+- name: bazel_features
+  type: http_archive
+  version: v1.2.0
+  commit: 8e490647a04dae5ec92342d6f29d893d7b177584
+  sha256: b8789c83c893d7ef3041d3f2795774936b27ff61701a705df52fd41d6ddbf692
+  strip_prefix: bazel_features-1.2.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.2.0/bazel_features-v1.2.0.tar.gz
+  github_repo: bazel-contrib/bazel_features
+  updated_at: '2024-01-04'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/bazel-contrib/bazel_features/releases/download/${DEPS_UPDATER_version}/bazel_features-${DEPS_UPDATER_version}.tar.gz
+      echo DEPS_UPDATER_strip_prefix=bazel_features-${DEPS_UPDATER_version#v}
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
+  load_deps: |
+    load("@bazel_features//:deps.bzl", "bazel_features_deps")
+    def deps():
+      bazel_features_deps()
 
 pip_deps:
 - name: ruamel.yaml
@@ -712,11 +740,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_bazel_rules_go",
       "type": "http_archive",
-      "sha256": "9bce3748e7ee751915d68a92021c48a03645f0028b7fbe33eb3560f456233934",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.1.tar.gz",
-      "updated_at": "2023-12-30",
-      "version": "v0.44.1",
-      "strip_prefix": "rules_go-0.44.1",
+      "sha256": "292811518be8385b79b8c8a396b0fbfd03f54f947ffd439e01fcb94097305ee3",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.2.tar.gz",
+      "updated_at": "2024-01-04",
+      "version": "v0.44.2",
+      "strip_prefix": "rules_go-0.44.2",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
     },
     {
@@ -966,6 +994,48 @@ _DEPS_JSON = r"""
       "patch_cmds": [
         "chmod -R 755 ."
       ]
+    },
+    {
+      "name": "bazel_features",
+      "type": "http_archive",
+      "version": "v1.2.0",
+      "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
+      "sha256": "b8789c83c893d7ef3041d3f2795774936b27ff61701a705df52fd41d6ddbf692",
+      "strip_prefix": "bazel_features-1.2.0",
+      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.2.0/bazel_features-v1.2.0.tar.gz",
+      "github_repo": "bazel-contrib/bazel_features",
+      "updated_at": "2024-01-04",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazel-contrib/bazel_features/releases/download/${DEPS_UPDATER_version}/bazel_features-${DEPS_UPDATER_version}.tar.gz\necho DEPS_UPDATER_strip_prefix=bazel_features-${DEPS_UPDATER_version#v}\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ],
+      "load_deps": "load(\"@bazel_features//:deps.bzl\", \"bazel_features_deps\")\ndef deps():\n  bazel_features_deps()\n"
     }
   ],
   "pip_deps": [
@@ -1499,6 +1569,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != 1208593891 or hash(_DEPS_JSON) != 2069174920 else None]
+""") if hash(_DEPS_YAML) != -1727222028 or hash(_DEPS_JSON) != -628330991 else None]
 
 DEPS = json.decode(_DEPS_JSON)
