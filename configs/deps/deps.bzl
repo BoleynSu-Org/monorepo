@@ -72,7 +72,10 @@ bazel_deps:
     load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
     def deps():
       rules_proto_dependencies()
+  patch_cmds:
+  - sed -i 's/protobuf_workspace(name = "com_google_protobuf")//g' proto/repositories.bzl
 - name: io_bazel_rules_go
+  module_name: rules_go
   type: http_archive
   sha256: 292811518be8385b79b8c8a396b0fbfd03f54f947ffd439e01fcb94097305ee3
   url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.2.tar.gz
@@ -153,6 +156,7 @@ bazel_deps:
     def deps():
       grpc_java_repositories()
 - name: bazel_gazelle
+  module_name: gazelle
   type: http_archive
   sha256: a0ee1d304f7caa46680ba06bdef0e5d9ec8815f6e01ec29398efd13256598c3f
   url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.35.0.tar.gz
@@ -185,6 +189,12 @@ bazel_deps:
   version: llvmorg-17.0.6
   version_regex: llvmorg-(.*)
   updated_at: '2023-11-28'
+  module_file_content: |
+    module(
+        name = "llvm_linux_x86_64",
+        version = "0.0.0",
+        compatibility_level = 1,
+    )
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -202,6 +212,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
 - name: com_grail_bazel_toolchain
+  module_name: toolchains_llvm
   type: http_archive
   url: https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz
   sha256: c2a58fdd8420cca3645843b1be7b18a2d5df388d192d50c238ae3edd9b693011
@@ -334,6 +345,101 @@ bazel_deps:
     load("@bazel_features//:deps.bzl", "bazel_features_deps")
     def deps():
       bazel_features_deps()
+- name: com_google_protobuf
+  module_name: protobuf
+  type: http_archive
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.6.tar.gz
+  sha256: 9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056
+  strip_prefix: protobuf-3.19.6
+  version: v3.19.6
+  version_regex: ^v(3)\.([0-9.]*)$
+  updated_at: '2024-01-06'
+  module_file_content: |
+    module(
+        name = "protobuf",
+        version = "3.19.6",
+        compatibility_level = 1,
+        repo_name = "com_google_protobuf",
+    )
+    bazel_dep(name = "bazel_skylib", version = "1.0.3")
+    bazel_dep(name = "zlib", version = "1.2.12")
+    bazel_dep(name = "rules_python", version = "0.4.0")
+    bazel_dep(name = "rules_cc", version = "0.0.1")
+    bazel_dep(name = "rules_proto", version = "4.0.0")
+    bazel_dep(name = "rules_java", version = "4.0.0")
+    bazel_dep(name = "rules_jvm_external", version = "0.0.0")
+- name: zlib
+  type: http_archive
+  url: https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz
+  sha256: ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e
+  strip_prefix: zlib-1.3
+  version: v1.3
+  updated_at: '2024-01-06'
+  module_file_content: |
+    module(
+        name = "zlib",
+        version = "1.3",
+        compatibility_level = 1,
+    )
+
+    bazel_dep(name = "platforms", version = "0.0.7")
+    bazel_dep(name = "rules_cc", version = "0.0.8")
+  build_file: '@com_google_protobuf//third_party:zlib.BUILD'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/madler/zlib/releases/download/${DEPS_UPDATER_version}/zlib-${DEPS_UPDATER_version#v}.tar.gz
+      echo DEPS_UPDATER_strip_prefix=zlib-${DEPS_UPDATER_version#v}
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
+- name: apple_support
+  type: http_archive
+  url: https://github.com/bazelbuild/apple_support/releases/download/1.11.1/apple_support.1.11.1.tar.gz
+  sha256: cf4d63f39c7ba9059f70e995bf5fe1019267d3f77379c2028561a5d7645ef67c
+  version: 1.11.1
+  updated_at: '2024-01-06'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/bazelbuild/apple_support/releases/download/${DEPS_UPDATER_version}/apple_support.${DEPS_UPDATER_version}.tar.gz
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
+- name: stardoc
+  type: http_archive
+  url: https://github.com/bazelbuild/stardoc/releases/download/0.6.2/stardoc-0.6.2.tar.gz
+  sha256: 62bd2e60216b7a6fec3ac79341aa201e0956477e7c8f6ccc286f279ad1d96432
+  version: 0.6.2
+  updated_at: '2024-01-06'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/bazelbuild/stardoc/releases/download/${DEPS_UPDATER_version}/stardoc-${DEPS_UPDATER_version}.tar.gz
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 
 pip_deps:
 - name: ruamel.yaml
@@ -735,10 +841,14 @@ _DEPS_JSON = r"""
       "updated_at": "2023-10-18",
       "version": "5.3.0-21.7",
       "version_regex": "([^-]*)[0-9.-]*$",
-      "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\")\ndef deps():\n  rules_proto_dependencies()\n"
+      "load_deps": "load(\"@rules_proto//proto:repositories.bzl\", \"rules_proto_dependencies\")\ndef deps():\n  rules_proto_dependencies()\n",
+      "patch_cmds": [
+        "sed -i 's/protobuf_workspace(name = \"com_google_protobuf\")//g' proto/repositories.bzl"
+      ]
     },
     {
       "name": "io_bazel_rules_go",
+      "module_name": "rules_go",
       "type": "http_archive",
       "sha256": "292811518be8385b79b8c8a396b0fbfd03f54f947ffd439e01fcb94097305ee3",
       "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.2.tar.gz",
@@ -819,6 +929,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "bazel_gazelle",
+      "module_name": "gazelle",
       "type": "http_archive",
       "sha256": "a0ee1d304f7caa46680ba06bdef0e5d9ec8815f6e01ec29398efd13256598c3f",
       "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.35.0.tar.gz",
@@ -851,6 +962,7 @@ _DEPS_JSON = r"""
       "version": "llvmorg-17.0.6",
       "version_regex": "llvmorg-(.*)",
       "updated_at": "2023-11-28",
+      "module_file_content": "module(\n    name = \"llvm_linux_x86_64\",\n    version = \"0.0.0\",\n    compatibility_level = 1,\n)\n",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -884,6 +996,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com_grail_bazel_toolchain",
+      "module_name": "toolchains_llvm",
       "type": "http_archive",
       "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz",
       "sha256": "c2a58fdd8420cca3645843b1be7b18a2d5df388d192d50c238ae3edd9b693011",
@@ -1036,6 +1149,135 @@ _DEPS_JSON = r"""
         }
       ],
       "load_deps": "load(\"@bazel_features//:deps.bzl\", \"bazel_features_deps\")\ndef deps():\n  bazel_features_deps()\n"
+    },
+    {
+      "name": "com_google_protobuf",
+      "module_name": "protobuf",
+      "type": "http_archive",
+      "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.19.6.tar.gz",
+      "sha256": "9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056",
+      "strip_prefix": "protobuf-3.19.6",
+      "version": "v3.19.6",
+      "version_regex": "^v(3)\\.([0-9.]*)$",
+      "updated_at": "2024-01-06",
+      "module_file_content": "module(\n    name = \"protobuf\",\n    version = \"3.19.6\",\n    compatibility_level = 1,\n    repo_name = \"com_google_protobuf\",\n)\nbazel_dep(name = \"bazel_skylib\", version = \"1.0.3\")\nbazel_dep(name = \"zlib\", version = \"1.2.12\")\nbazel_dep(name = \"rules_python\", version = \"0.4.0\")\nbazel_dep(name = \"rules_cc\", version = \"0.0.1\")\nbazel_dep(name = \"rules_proto\", version = \"4.0.0\")\nbazel_dep(name = \"rules_java\", version = \"4.0.0\")\nbazel_dep(name = \"rules_jvm_external\", version = \"0.0.0\")\n"
+    },
+    {
+      "name": "zlib",
+      "type": "http_archive",
+      "url": "https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz",
+      "sha256": "ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e",
+      "strip_prefix": "zlib-1.3",
+      "version": "v1.3",
+      "updated_at": "2024-01-06",
+      "module_file_content": "module(\n    name = \"zlib\",\n    version = \"1.3\",\n    compatibility_level = 1,\n)\n\nbazel_dep(name = \"platforms\", version = \"0.0.7\")\nbazel_dep(name = \"rules_cc\", version = \"0.0.8\")\n",
+      "build_file": "@com_google_protobuf//third_party:zlib.BUILD",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/madler/zlib/releases/download/${DEPS_UPDATER_version}/zlib-${DEPS_UPDATER_version#v}.tar.gz\necho DEPS_UPDATER_strip_prefix=zlib-${DEPS_UPDATER_version#v}\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apple_support",
+      "type": "http_archive",
+      "url": "https://github.com/bazelbuild/apple_support/releases/download/1.11.1/apple_support.1.11.1.tar.gz",
+      "sha256": "cf4d63f39c7ba9059f70e995bf5fe1019267d3f77379c2028561a5d7645ef67c",
+      "version": "1.11.1",
+      "updated_at": "2024-01-06",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/apple_support/releases/download/${DEPS_UPDATER_version}/apple_support.${DEPS_UPDATER_version}.tar.gz\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stardoc",
+      "type": "http_archive",
+      "url": "https://github.com/bazelbuild/stardoc/releases/download/0.6.2/stardoc-0.6.2.tar.gz",
+      "sha256": "62bd2e60216b7a6fec3ac79341aa201e0956477e7c8f6ccc286f279ad1d96432",
+      "version": "0.6.2",
+      "updated_at": "2024-01-06",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/stardoc/releases/download/${DEPS_UPDATER_version}/stardoc-${DEPS_UPDATER_version}.tar.gz\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "pip_deps": [
@@ -1569,6 +1811,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1727222028 or hash(_DEPS_JSON) != -628330991 else None]
+""") if hash(_DEPS_YAML) != -501203399 or hash(_DEPS_JSON) != 29406600 else None]
 
 DEPS = json.decode(_DEPS_JSON)
