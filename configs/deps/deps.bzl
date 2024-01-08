@@ -110,6 +110,7 @@ bazel_deps:
     load("@io_bazel_rules_docker//repositories:repositories.bzl", "repositories")
     def deps():
       repositories()
+  module_file: '@boleynsu_org//third_party/io_bazel_rules_docker:MODULE.bazel'
 - name: io_bazel_rules_k8s
   type: http_archive
   url: https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz
@@ -123,6 +124,7 @@ bazel_deps:
   - sed -i "s/| cut -d'\"' -f 2//g" k8s/describe.sh.tpl
   - sed -i 's/"${RESOURCE_NAME}"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl
   - sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD
+  module_file: '@boleynsu_org//third_party/io_bazel_rules_k8s:MODULE.bazel'
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.5.0.tar.gz
@@ -155,6 +157,7 @@ bazel_deps:
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
       grpc_java_repositories()
+  module_file: '@boleynsu_org//third_party/io_grpc_grpc_java:MODULE.bazel'
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -312,7 +315,7 @@ bazel_deps:
   build_file_content: |
     filegroup(
         name = "sysroot",
-        srcs = glob(["**"]),
+        srcs = glob(["**"], exclude=["etc/shadow", "etc/gshadow", "no_such_file"]),
         visibility = ["//visibility:public"],
     )
   patch_cmds:
@@ -381,7 +384,6 @@ bazel_deps:
         version = "1.3",
         compatibility_level = 1,
     )
-
     bazel_dep(name = "platforms", version = "0.0.7")
     bazel_dep(name = "rules_cc", version = "0.0.8")
   build_file: '@com_google_protobuf//third_party:zlib.BUILD'
@@ -872,7 +874,8 @@ _DEPS_JSON = r"""
       "patch_cmds": [
         "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
       ],
-      "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\ndef deps():\n  repositories()\n"
+      "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\ndef deps():\n  repositories()\n",
+      "module_file": "@boleynsu_org//third_party/io_bazel_rules_docker:MODULE.bazel"
     },
     {
       "name": "io_bazel_rules_k8s",
@@ -888,7 +891,8 @@ _DEPS_JSON = r"""
         "sed -i \"s/| cut -d'\\\"' -f 2//g\" k8s/describe.sh.tpl",
         "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl",
         "sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD"
-      ]
+      ],
+      "module_file": "@boleynsu_org//third_party/io_bazel_rules_k8s:MODULE.bazel"
     },
     {
       "name": "bazel_skylib",
@@ -925,7 +929,8 @@ _DEPS_JSON = r"""
       "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.1.tar.gz",
       "updated_at": "2023-12-21",
       "version": "v1.60.1",
-      "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n"
+      "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n",
+      "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:MODULE.bazel"
     },
     {
       "name": "bazel_gazelle",
@@ -1103,7 +1108,7 @@ _DEPS_JSON = r"""
       "sha256": "280c0c91f48824eb1ef8aee853e62cdf14e38abf9aa1c9a17e65e5d21ace8bec",
       "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot_linux_x86_64/20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a/sysroot.tar",
       "updated_at": "2024-01-01",
-      "build_file_content": "filegroup(\n    name = \"sysroot\",\n    srcs = glob([\"**\"]),\n    visibility = [\"//visibility:public\"],\n)\n",
+      "build_file_content": "filegroup(\n    name = \"sysroot\",\n    srcs = glob([\"**\"], exclude=[\"etc/shadow\", \"etc/gshadow\", \"no_such_file\"]),\n    visibility = [\"//visibility:public\"],\n)\n",
       "patch_cmds": [
         "chmod -R 755 ."
       ]
@@ -1170,7 +1175,7 @@ _DEPS_JSON = r"""
       "strip_prefix": "zlib-1.3",
       "version": "v1.3",
       "updated_at": "2024-01-06",
-      "module_file_content": "module(\n    name = \"zlib\",\n    version = \"1.3\",\n    compatibility_level = 1,\n)\n\nbazel_dep(name = \"platforms\", version = \"0.0.7\")\nbazel_dep(name = \"rules_cc\", version = \"0.0.8\")\n",
+      "module_file_content": "module(\n    name = \"zlib\",\n    version = \"1.3\",\n    compatibility_level = 1,\n)\nbazel_dep(name = \"platforms\", version = \"0.0.7\")\nbazel_dep(name = \"rules_cc\", version = \"0.0.8\")\n",
       "build_file": "@com_google_protobuf//third_party:zlib.BUILD",
       "override_updater": [
         {
@@ -1811,6 +1816,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -501203399 or hash(_DEPS_JSON) != 29406600 else None]
+""") if hash(_DEPS_YAML) != -1641230744 or hash(_DEPS_JSON) != 511175863 else None]
 
 DEPS = json.decode(_DEPS_JSON)
