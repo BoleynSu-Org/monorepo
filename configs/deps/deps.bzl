@@ -35,11 +35,11 @@ bazel_deps:
       remote_jdk21_repos()
 - name: rules_python
   type: http_archive
-  sha256: e85ae30de33625a63eca7fc40a94fea845e641888e52f32b6beea91e8b1b2793
-  strip_prefix: rules_python-0.27.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.1.tar.gz
-  updated_at: '2023-12-14'
-  version: 0.27.1
+  sha256: d70cd72a7a4880f0000a6346253414825c19cdd40a28289bdf67b8e6480edff8
+  strip_prefix: rules_python-0.28.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.28.0.tar.gz
+  updated_at: '2024-01-09'
+  version: 0.28.0
   load_deps: |
     load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")
@@ -724,8 +724,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:f746d9ff0212256f9fbc3ee12a51ef89cc41c03cb9428ba8f76f1457e33fade5
-  updated_at: '2023-12-16'
+  digest: sha256:8080a89bc3312a4a66fb31808c01147993505e2220fba080e93dc205ec00db1e
+  updated_at: '2024-01-09'
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
@@ -827,11 +827,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "e85ae30de33625a63eca7fc40a94fea845e641888e52f32b6beea91e8b1b2793",
-      "strip_prefix": "rules_python-0.27.1",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.27.1.tar.gz",
-      "updated_at": "2023-12-14",
-      "version": "0.27.1",
+      "sha256": "d70cd72a7a4880f0000a6346253414825c19cdd40a28289bdf67b8e6480edff8",
+      "strip_prefix": "rules_python-0.28.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.28.0.tar.gz",
+      "updated_at": "2024-01-09",
+      "version": "0.28.0",
       "load_deps": "load(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@rules_python//python/pip_install:repositories.bzl\", \"pip_install_dependencies\")\nload(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
@@ -1713,8 +1713,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:f746d9ff0212256f9fbc3ee12a51ef89cc41c03cb9428ba8f76f1457e33fade5",
-      "updated_at": "2023-12-16"
+      "digest": "sha256:8080a89bc3312a4a66fb31808c01147993505e2220fba080e93dc205ec00db1e",
+      "updated_at": "2024-01-09"
     },
     {
       "name": "io_docker_library_adminer",
@@ -1816,6 +1816,6 @@ deps.bzl is outdated!
 deps.bzl is outdated!
 deps.bzl is outdated!
 The important things should be emphasized three times!
-""") if hash(_DEPS_YAML) != -1641230744 or hash(_DEPS_JSON) != 511175863 else None]
+""") if hash(_DEPS_YAML) != -2102809752 or hash(_DEPS_JSON) != 776865783 else None]
 
 DEPS = json.decode(_DEPS_JSON)
