@@ -47,7 +47,7 @@ _DEPS_JSON = r"""
 """
 
 DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == {deps_json_hash} else fail("deps.bzl is corrupted")
-'''
+'''  # pylint: disable=line-too-long
         )
 
 
