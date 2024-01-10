@@ -8,8 +8,9 @@ if [[ -v BUILD_WORKSPACE_DIRECTORY ]]; then
   unset BUILD_WORKING_DIRECTORY
 fi
 
-REPIN=1 bazel run --lockfile_mode=update //configs/deps:deps_bzl.genfile
-REPIN=1 bazel run --lockfile_mode=update //configs/deps:deps_bzl.genfile
+REPIN=1 bazel run --lockfile_mode=update //configs/bazel:deps_bzl.genfile
+REPIN=1 bazel run --lockfile_mode=update //configs/deps:deps_yaml.genfile
+REPIN=1 bazel run --lockfile_mode=update //configs/bazel:deps_bzl.genfile
 REPIN=1 bazel run --lockfile_mode=update @unpinned_maven//:pin
 REPIN=1 bazel run --lockfile_mode=update @unpinned_pip//:pin
 REPIN=1 bazel run --lockfile_mode=update @unpinned_gazelle_go_deps//:pin

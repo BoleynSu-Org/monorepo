@@ -5,7 +5,7 @@ local_repository(
     path = "../..",
 )
 
-load("//configs/deps:deps.bzl", "DEPS")
+load("//configs/bazel:deps.bzl", "DEPS")
 load("//tools/build/repo_rules/workspace:bazel_deps.bzl", "bazel_deps")
 
 bazel_deps(
