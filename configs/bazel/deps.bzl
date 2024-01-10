@@ -1017,13 +1017,4 @@ _DEPS_JSON = r"""
 }
 """
 
-[
-    print("""
-deps.bzl is outdated!
-deps.bzl is outdated!
-deps.bzl is outdated!
-The important things should be emphasized three times!
-""") if hash(_DEPS_JSON) != 1865461300 else None
-]
-
-DEPS = json.decode(_DEPS_JSON)
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1865461300 else fail("deps.bzl is corrupted")
