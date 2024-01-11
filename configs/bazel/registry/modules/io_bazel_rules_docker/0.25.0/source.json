@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/bazelbuild/rules_docker/archive/refs/tags/v0.25.0.tar.gz",
+  "integrity": "sha256-B+6MpTYID166tjd/xuiSDpp2HS7k5k8PbZGWEvarVqo=",
+  "patches": {
+    "patch-100000.patch": "sha256-XJU17SbrzNi0CQRod2vnKQHdBGxs1EIFJGzEP//F37I="
+  },
+  "strip_prefix": "rules_docker-0.25.0"
+}

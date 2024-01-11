@@ -1,0 +1,8 @@
+--- /dev/null
++++ BUILD.bazel
+@@ -0,0 +1,5 @@
++filegroup(
++    name = "editarea",
++    srcs = glob(["edit_area/**"]),
++    visibility = ["//visibility:public"],
++)

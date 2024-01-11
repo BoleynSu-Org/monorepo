@@ -19,3 +19,11 @@ use_repo(
     "com_github_kylelemons_godebug",
     "com_github_ghodss_yaml",
 )
+
+http_file = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+http_file(
+    name = "go_puller_linux_amd64",
+    executable = True,
+    sha256 = "08b8963cce9234f57055bafc7cadd1624cdce3c5990048cea1df453d7d288bc6",
+    urls = ["https://storage.googleapis.com/rules_docker/aad94363e63d31d574cf701df484b3e8b868a96a/puller-linux-amd64"],
+)

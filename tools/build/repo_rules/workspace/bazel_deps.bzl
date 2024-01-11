@@ -39,7 +39,7 @@ def _bazel_deps_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "workspace(name=\"{}\")".format(repository_ctx.name))
 
     repository_ctx.file("BUILD", content = "")
-    repository_ctx.file("deps.bzl", content = "DEPS = {}".format(json.decode(repository_ctx.attr.deps_json)))
+    repository_ctx.file("deps.bzl", content = "DEPS = {}".format(json.decode(repository_ctx.attr.deps_json) if repository_ctx.attr.deps_json else repository_ctx.attr.deps))
 
     bazel_deps = repository_ctx.read(repository_ctx.attr.bazel_deps)
     repository_ctx.file("bazel_deps.bzl", content = """load("//:deps.bzl", "DEPS")
@@ -69,6 +69,7 @@ _bazel_deps = repository_rule(
         "deps_name": attr.string_list(default = []),
         "deps_load_deps": attr.string_list(default = []),
         "deps_json": attr.string(),
+        "deps": attr.string(),
         "bazel_deps": attr.label(),
         "paths": attr.string_list(default = []),
         "labels": attr.label_list(default = []),
@@ -79,7 +80,29 @@ def bazel_deps(
         *,
         name,
         deps,
-        type_to_rule_mapping = TYPE_TO_RULE_MAPPING):
+        type_to_rule_mapping = TYPE_TO_RULE_MAPPING,
+        is_bzlmod = False):
+    if is_bzlmod:
+        files = [
+            "container_deps.bzl",
+            "go_deps.bzl",
+            "install_nonbazel_deps.bzl",
+            "maven_deps.bzl",
+            "nonbazel_deps.bzl",
+            "pip_deps.bzl",
+            "toolchain_deps.bzl",
+        ]
+        _bazel_deps(
+            name = name,
+            deps_name = [],
+            deps_load_deps = [],
+            deps = deps,
+            bazel_deps = Label("//tools/build/repo_rules/workspace:bazel_deps.bzl"),
+            paths = files,
+            labels = [Label("//tools/build/repo_rules/workspace:{}".format(file)) for file in files],
+        )
+        return
+
     native.local_config_platform(name = "boleynsu_bzl_deps_local_config_platform")
 
     deps_json = json.encode(deps)

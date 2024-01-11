@@ -1,0 +1,6 @@
+module(
+    name = "sysroot_linux_x86_64",
+    version = "20231231.200535",
+    repo_name = "sysroot_linux_x86_64",
+    compatibility_level = 1,
+)

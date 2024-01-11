@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
+  "integrity": "sha256-iE7mfWR9d+WHQMHmRWSeKa6eim/ofBN2vg86MPPMmrM=",
+  "strip_prefix": "clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04"
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz",
+  "integrity": "sha256-R7WM+SW3YlIVbaUhhzKdLP7eTw9vg0FtzZ8HU1kssfA=",
+  "patches": {
+    "patch-100000.patch": "sha256-2hHJcafScfmYVm/pct6IYGGkwkRQ7pfQqCj2oxEHQj8="
+  },
+  "strip_prefix": "EditArea-0.8.2"
+}

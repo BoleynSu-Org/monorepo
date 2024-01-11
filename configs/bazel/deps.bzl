@@ -75,13 +75,13 @@ _DEPS_JSON = r"""
       "expires_at": "2024-07-01",
       "version": "v0.25.0",
       "patches": [
-        "@boleynsu_org//third_party:io_bazel_rules_docker.patch"
+        "@boleynsu_org//third_party/io_bazel_rules_docker:skylib_path.patch"
       ],
       "patch_cmds": [
         "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
       ],
       "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\ndef deps():\n  repositories()\n",
-      "module_file": "@boleynsu_org//third_party/io_bazel_rules_docker:MODULE.bazel"
+      "module_file": "@boleynsu_org//third_party/io_bazel_rules_docker:repo.MODULE.bazel"
     },
     {
       "name": "io_bazel_rules_k8s",
@@ -98,7 +98,7 @@ _DEPS_JSON = r"""
         "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl",
         "sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD"
       ],
-      "module_file": "@boleynsu_org//third_party/io_bazel_rules_k8s:MODULE.bazel"
+      "module_file": "@boleynsu_org//third_party/io_bazel_rules_k8s:repo.MODULE.bazel"
     },
     {
       "name": "bazel_skylib",
@@ -136,7 +136,7 @@ _DEPS_JSON = r"""
       "updated_at": "2023-12-21",
       "version": "v1.60.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n",
-      "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:MODULE.bazel"
+      "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel"
     },
     {
       "name": "bazel_gazelle",
@@ -162,7 +162,7 @@ _DEPS_JSON = r"""
       "updated_at": "2022-07-24",
       "expires_at": "2024-07-24",
       "version": "v0.8.2",
-      "build_file": "@boleynsu_org//third_party:com_github_cdolivet_editarea.BUILD"
+      "build_file": "@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD"
     },
     {
       "name": "llvm_linux_x86_64",
@@ -214,8 +214,9 @@ _DEPS_JSON = r"""
       "strip_prefix": "bazel-toolchain-0.10.3",
       "updated_at": "2023-09-22",
       "version": "0.10.3",
+      "module_file": "@boleynsu_org//third_party/com_grail_bazel_toolchain:repo.MODULE.bazel",
       "patches": [
-        "@boleynsu_org//third_party:com_grail_bazel_toolchain.patch"
+        "@boleynsu_org//third_party/com_grail_bazel_toolchain:bzl.patch"
       ],
       "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n      sysroot = {\n          \"linux-x86_64\": \"@sysroot_linux_x86_64//:sysroot\",\n      },\n  )\n"
     },
@@ -1017,4 +1018,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 739909950 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1274412157 else fail("deps.bzl is corrupted")

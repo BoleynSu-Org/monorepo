@@ -33,11 +33,12 @@ diff --git toolchain/internal/repo.bzl toolchain/internal/repo.bzl
 index 67b3ed82d..02bdfc812 100644
 --- toolchain/internal/repo.bzl
 +++ toolchain/internal/repo.bzl
-@@ -35,6 +35,13 @@ common_attrs = {
+@@ -35,6 +35,14 @@ common_attrs = {
                 "in the list of known llvm_distributions using the provided version. " +
                 "If unset, a default value is set from the `llvm_version` attribute."),
      ),
 +    "exec_os": attr.string(
++        mandatory = True,
 +        doc = "exec os for the toolchain, default to host os",
 +    ),
 +    "exec_cpu": attr.string(

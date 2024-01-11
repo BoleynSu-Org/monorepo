@@ -1,0 +1,27 @@
+diff --git skylib/path.bzl skylib/path.bzl
+index 0e33e6a52..2357bcbd3 100644
+--- skylib/path.bzl
++++ skylib/path.bzl
+@@ -87,6 +87,10 @@ def strip_prefix(path, prefix):
+ 
+ def runfile(ctx, f):
+     """Return the runfiles relative path of f."""
++    if f.short_path[:3] == "../":
++        return f.short_path[3:]
++    if f.owner and f.owner.workspace_root:
++        return f.owner.workspace_root + "/" + f.short_path
+     if ctx.workspace_name:
+         return ctx.workspace_name + "/" + f.short_path
+     else:
+diff --git java/image.bzl java/image.bzl
+index 6034b9bd8..1fcac7d07 100644
+--- java/image.bzl
++++ java/image.bzl
+@@ -219,6 +219,7 @@ def _jar_app_layer_impl(ctx):
+         }, ctx.attr.env),
+         file_map = file_map,
+         entrypoint = entrypoint,
++        empty_dirs = ["/".join([ctx.attr.directory, ctx.workspace_name])],
+     )
+ 
+ jar_app_layer = rule(

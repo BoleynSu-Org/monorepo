@@ -42,4 +42,10 @@ build:ci-deploy --compilation_mode=opt
 ## See https://github.com/bazelbuild/bazel/issues/6648#issuecomment-1133656002
 build --incompatible_strict_action_env=true
 
+common --enable_bzlmod=false
+
+build:bzlmod --enable_bzlmod=true
+build:bzlmod --lockfile_mode=off
+build:bzlmod --registry=file://%workspace%/configs/bazel/registry
+
 try-import %workspace%/.user.bazelrc

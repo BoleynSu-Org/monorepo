@@ -1,3 +1,5 @@
+# DO NOT EDIT! This file is auto-generated.
+# Run `bazel run //third_party/io_grpc_grpc_java:module_bazel.genfile` to regenerate.
 module(
     name = "io_grpc_grpc_java",
     version = "1.60.1",
@@ -45,50 +47,54 @@ ARTIFACTS = [
     "junit:junit:4.13.2",
     "org.apache.tomcat:annotations-api:6.0.53",
     "org.codehaus.mojo:animal-sniffer-annotations:1.23",
+] + [
     # missing
     "com.google.j2objc:j2objc-annotations:2.8",
 ]
+
+OVERRIDE_TARGETS = {
+    "com.google.protobuf:protobuf-java": "@com_google_protobuf//:protobuf_java",
+    "com.google.protobuf:protobuf-java-util": "@com_google_protobuf//:protobuf_java_util",
+    "com.google.protobuf:protobuf-javalite": "@com_google_protobuf_javalite//:protobuf_javalite",
+    "io.grpc:grpc-alts": "@io_grpc_grpc_java//alts",
+    "io.grpc:grpc-api": "@io_grpc_grpc_java//api",
+    "io.grpc:grpc-auth": "@io_grpc_grpc_java//auth",
+    "io.grpc:grpc-census": "@io_grpc_grpc_java//census",
+    "io.grpc:grpc-context": "@io_grpc_grpc_java//context",
+    "io.grpc:grpc-core": "@io_grpc_grpc_java//core:core_maven",
+    "io.grpc:grpc-googleapis": "@io_grpc_grpc_java//googleapis",
+    "io.grpc:grpc-grpclb": "@io_grpc_grpc_java//grpclb",
+    "io.grpc:grpc-inprocess": "@io_grpc_grpc_java//inprocess",
+    "io.grpc:grpc-netty": "@io_grpc_grpc_java//netty",
+    "io.grpc:grpc-netty-shaded": "@io_grpc_grpc_java//netty:shaded_maven",
+    "io.grpc:grpc-okhttp": "@io_grpc_grpc_java//okhttp",
+    "io.grpc:grpc-protobuf": "@io_grpc_grpc_java//protobuf",
+    "io.grpc:grpc-protobuf-lite": "@io_grpc_grpc_java//protobuf-lite",
+    "io.grpc:grpc-rls": "@io_grpc_grpc_java//rls",
+    "io.grpc:grpc-services": "@io_grpc_grpc_java//services:services_maven",
+    "io.grpc:grpc-stub": "@io_grpc_grpc_java//stub",
+    "io.grpc:grpc-testing": "@io_grpc_grpc_java//testing",
+    "io.grpc:grpc-xds": "@io_grpc_grpc_java//xds:xds_maven",
+    "io.grpc:grpc-util": "@io_grpc_grpc_java//util",
+}
+
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     name = "maven",
     artifacts = ARTIFACTS,
-    lock_file = "@boleynsu_org//:maven_install.json",
     generate_compat_repositories = True,
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
 )
+
 [
     maven.override(
         name = "maven",
         coordinates = coordinates,
         target = target,
     )
-    for coordinates, target in {
-        "com.google.protobuf:protobuf-java": "@com_google_protobuf//:protobuf_java",
-        "com.google.protobuf:protobuf-java-util": "@com_google_protobuf//:protobuf_java_util",
-        "com.google.protobuf:protobuf-javalite": "@com_google_protobuf_javalite//:protobuf_javalite",
-        "io.grpc:grpc-alts": "@io_grpc_grpc_java//alts",
-        "io.grpc:grpc-api": "@io_grpc_grpc_java//api",
-        "io.grpc:grpc-auth": "@io_grpc_grpc_java//auth",
-        "io.grpc:grpc-census": "@io_grpc_grpc_java//census",
-        "io.grpc:grpc-context": "@io_grpc_grpc_java//context",
-        "io.grpc:grpc-core": "@io_grpc_grpc_java//core:core_maven",
-        "io.grpc:grpc-googleapis": "@io_grpc_grpc_java//googleapis",
-        "io.grpc:grpc-grpclb": "@io_grpc_grpc_java//grpclb",
-        "io.grpc:grpc-inprocess": "@io_grpc_grpc_java//inprocess",
-        "io.grpc:grpc-netty": "@io_grpc_grpc_java//netty",
-        "io.grpc:grpc-netty-shaded": "@io_grpc_grpc_java//netty:shaded_maven",
-        "io.grpc:grpc-okhttp": "@io_grpc_grpc_java//okhttp",
-        "io.grpc:grpc-protobuf": "@io_grpc_grpc_java//protobuf",
-        "io.grpc:grpc-protobuf-lite": "@io_grpc_grpc_java//protobuf-lite",
-        "io.grpc:grpc-rls": "@io_grpc_grpc_java//rls",
-        "io.grpc:grpc-services": "@io_grpc_grpc_java//services:services_maven",
-        "io.grpc:grpc-stub": "@io_grpc_grpc_java//stub",
-        "io.grpc:grpc-testing": "@io_grpc_grpc_java//testing",
-        "io.grpc:grpc-xds": "@io_grpc_grpc_java//xds:xds_maven",
-        "io.grpc:grpc-util": "@io_grpc_grpc_java//util",
-    }.items()
+    for coordinates, target in OVERRIDE_TARGETS.items()
 ]
 
 [

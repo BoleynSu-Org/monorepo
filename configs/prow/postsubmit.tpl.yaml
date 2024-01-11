@@ -14,6 +14,7 @@ postsubmits:
           command:
             - bazel
             - test
+            - --config=bzlmod
             - --config=ci-build-and-test
             - //...
       affinity:
