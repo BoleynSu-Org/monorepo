@@ -121,11 +121,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_pkg",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.9.1.tar.gz",
-      "sha256": "360c23a88ceaf7f051abc99e2e6048cf7fe5d9af792690576554a88b2013612d",
-      "updated_at": "2023-05-04",
-      "version": "0.9.1",
-      "strip_prefix": "rules_pkg-0.9.1"
+      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.10.0.tar.gz",
+      "sha256": "39d9b69b19cc5435d2650d23ce732f1c220ab0627dfd99782ddd6b3d82fe4cd4",
+      "updated_at": "2024-01-11",
+      "version": "0.10.0",
+      "strip_prefix": "rules_pkg-0.10.0"
     },
     {
       "name": "io_grpc_grpc_java",
@@ -1017,4 +1017,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1797957434 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 739909950 else fail("deps.bzl is corrupted")

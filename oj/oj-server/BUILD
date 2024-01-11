@@ -1,5 +1,5 @@
 load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
-load("@rules_pkg//:pkg.bzl", "pkg_zip")
+load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
 load("@rules_java//java:defs.bzl", "java_import")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
