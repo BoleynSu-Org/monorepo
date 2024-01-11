@@ -928,8 +928,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:1e11a196781b6e587eebff87d17c27831956cce283d98e48a667d7282144fdd8",
-      "updated_at": "2023-12-19"
+      "digest": "sha256:6c2a4bac611e933e9ac318592d6caa7c4d4895a2ef1acec9383288844c6b7c6d",
+      "updated_at": "2024-01-11"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1017,4 +1017,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1865461300 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1797957434 else fail("deps.bzl is corrupted")
