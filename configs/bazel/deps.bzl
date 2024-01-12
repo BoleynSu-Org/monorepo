@@ -58,12 +58,15 @@ _DEPS_JSON = r"""
       "name": "io_bazel_rules_go",
       "module_name": "rules_go",
       "type": "http_archive",
-      "sha256": "292811518be8385b79b8c8a396b0fbfd03f54f947ffd439e01fcb94097305ee3",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.44.2.tar.gz",
-      "updated_at": "2024-01-04",
-      "version": "v0.44.2",
-      "strip_prefix": "rules_go-0.44.2",
-      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\", \"go_rules_dependencies\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_rules_dependencies()\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n"
+      "sha256": "15f6dc36419890bdd9b9a592d2d49dbe31cb7011679f17c3a5bd29242b6c4df9",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.45.0.tar.gz",
+      "updated_at": "2024-01-12",
+      "version": "v0.45.0",
+      "strip_prefix": "rules_go-0.45.0",
+      "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\")\nload(\"@io_bazel_rules_go//go/private:nogo.bzl\", \"go_register_nogo\", \"DEFAULT_NOGO\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_register_nogo(\n      name = \"io_bazel_rules_nogo\",\n      nogo = DEFAULT_NOGO,\n  )\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n",
+      "patch_cmds": [
+        "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' $(find . -type f)"
+      ]
     },
     {
       "name": "io_bazel_rules_docker",
@@ -130,11 +133,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "fedf186a6a66f7aff0d9be8d194adcb02426130b9942de4ea314400b6b44d528",
-      "strip_prefix": "grpc-java-1.60.1",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.60.1.tar.gz",
-      "updated_at": "2023-12-21",
-      "version": "v1.60.1",
+      "sha256": "f11c9280788264e09456d81f29ab4493f7e0ae5793320c73112b2dfc632f86b0",
+      "strip_prefix": "grpc-java-1.61.0",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.61.0.tar.gz",
+      "updated_at": "2024-01-12",
+      "version": "v1.61.0",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n",
       "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel"
     },
@@ -576,7 +579,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.api.grpc:proto-google-common-protos",
-      "version": "2.22.0",
+      "version": "2.29.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -596,17 +599,17 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.auto.value:auto-value",
-      "version": "1.10.2",
+      "version": "1.10.4",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.auto.value:auto-value-annotations",
-      "version": "1.10.2",
+      "version": "1.10.4",
       "included_from": "io_grpc_grpc_java"
     },
     {
       "name": "com.google.errorprone:error_prone_annotations",
-      "version": "2.20.0",
+      "version": "2.23.0",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -616,7 +619,7 @@ _DEPS_JSON = r"""
     },
     {
       "name": "com.google.guava:guava",
-      "version": "32.0.1-android",
+      "version": "32.1.3-android",
       "included_from": "io_grpc_grpc_java"
     },
     {
@@ -906,12 +909,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20231220.020813",
+      "version": "20240111.112304",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20231220.020813",
+      "tag": "20240111.112304",
       "digest": "sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f",
-      "updated_at": "2023-12-20"
+      "updated_at": "2024-01-12"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -943,21 +946,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20231222.173909",
+      "version": "20240111.112304",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20231222.173909",
+      "tag": "20240111.112304",
       "digest": "sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5",
-      "updated_at": "2023-12-22"
+      "updated_at": "2024-01-12"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20231231.195732",
+      "version": "20240111.112304",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20231231.195732",
+      "tag": "20240111.112304",
       "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
-      "updated_at": "2024-01-01"
+      "updated_at": "2024-01-12"
     }
   ],
   "go_deps": [
@@ -1018,4 +1021,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1274412157 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -2485690 else fail("deps.bzl is corrupted")
