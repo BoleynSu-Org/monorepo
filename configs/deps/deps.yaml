@@ -90,7 +90,7 @@ bazel_deps:
           register_toolchains = False,
       )
   patch_cmds:
-  - sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' $(find . -type f)
+  - sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl
 - name: io_bazel_rules_docker
   type: http_archive
   url: https://github.com/bazelbuild/rules_docker/archive/refs/tags/v0.25.0.tar.gz

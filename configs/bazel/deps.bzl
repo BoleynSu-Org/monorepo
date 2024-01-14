@@ -65,7 +65,7 @@ _DEPS_JSON = r"""
       "strip_prefix": "rules_go-0.45.0",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\")\nload(\"@io_bazel_rules_go//go/private:nogo.bzl\", \"go_register_nogo\", \"DEFAULT_NOGO\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_register_nogo(\n      name = \"io_bazel_rules_nogo\",\n      nogo = DEFAULT_NOGO,\n  )\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n",
       "patch_cmds": [
-        "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' $(find . -type f)"
+        "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl"
       ]
     },
     {
@@ -1021,4 +1021,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -2485690 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 2141265138 else fail("deps.bzl is corrupted")
