@@ -286,10 +286,10 @@ _DEPS_JSON = r"""
     {
       "name": "kubectl_linux_amd64",
       "type": "http_file",
-      "url": "https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl",
-      "sha256": "0e03ab096163f61ab610b33f37f55709d3af8e16e4dcc1eb682882ef80f96fd5",
-      "version": "v1.29.0",
-      "updated_at": "2023-12-14",
+      "url": "https://dl.k8s.io/release/v1.29.1/bin/linux/amd64/kubectl",
+      "sha256": "69ab3a931e826bf7ac14d38ba7ca637d66a6fcb1ca0e3333a2cafdf15482af9f",
+      "version": "v1.29.1",
+      "updated_at": "2024-01-18",
       "executable": true,
       "override_updater": [
         {
@@ -923,8 +923,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:8080a89bc3312a4a66fb31808c01147993505e2220fba080e93dc205ec00db1e",
-      "updated_at": "2024-01-09"
+      "digest": "sha256:e4a9a6f3644538084d84aa6ad99a0466d34457b095d06099a99e61f3a73e886c",
+      "updated_at": "2024-01-18"
     },
     {
       "name": "io_docker_library_adminer",
@@ -966,8 +966,8 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "github.com/google/go-containerregistry",
-      "version": "v0.17.0",
-      "updated_at": "2023-11-30"
+      "version": "v0.18.0",
+      "updated_at": "2024-01-18"
     },
     {
       "name": "github.com/pkg/errors",
@@ -1021,4 +1021,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 2141265138 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -533428792 else fail("deps.bzl is corrupted")
