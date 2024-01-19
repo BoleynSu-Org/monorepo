@@ -7,7 +7,7 @@ module(
 )
 
 bazel_dep(name = "rules_cc", version = "0.0.9")
-bazel_dep(name = "rules_jvm_external", version = "5.3")
+bazel_dep(name = "rules_jvm_external", version = "6.0")
 bazel_dep(name = "protobuf", version = "3.19.6", repo_name = "com_google_protobuf")
 bazel_dep(name = "boleynsu_org", version = "0.0.0")
 
@@ -100,7 +100,7 @@ maven.install(
 [
     use_repo(
         maven,
-        "_".join(artifact.split(":")[:2]).replace(".", "_").replace("-", "_"),
+        "_".join(artifact.split(":")[:2] + artifact.split(":")[3:4]).replace(".", "_").replace("-", "_"),
     )
     for artifact in ARTIFACTS
 ]

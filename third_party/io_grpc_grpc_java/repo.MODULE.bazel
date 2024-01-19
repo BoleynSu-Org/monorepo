@@ -100,7 +100,7 @@ maven.install(
 [
     use_repo(
         maven,
-        "_".join(artifact.split(":")[:2]).replace(".", "_").replace("-", "_"),
+        "_".join(artifact.split(":")[:2] + artifact.split(":")[3:4]).replace(".", "_").replace("-", "_"),
     )
     for artifact in ARTIFACTS
 ]

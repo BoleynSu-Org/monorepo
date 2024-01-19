@@ -115,11 +115,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_jvm_external",
       "type": "http_archive",
-      "sha256": "8ac1c5c2a8681c398883bb2cabc18f913337f165059f24e8c55714e05757761e",
-      "strip_prefix": "rules_jvm_external-5.3",
-      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/5.3.tar.gz",
-      "updated_at": "2023-06-24",
-      "version": "5.3"
+      "sha256": "a566f1c84dbc09c19b3086bdfe9ffc2e02058675067a8286fb11a604508a4a09",
+      "strip_prefix": "rules_jvm_external-6.0",
+      "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.0.tar.gz",
+      "updated_at": "2024-01-19",
+      "version": "6.0"
     },
     {
       "name": "rules_pkg",
@@ -226,11 +226,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_linux_x86_64",
       "type": "http_archive",
-      "version": "7.0.0",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.0/bazel-7.0.0-installer-linux-x86_64.sh",
+      "version": "7.0.1",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.1/bazel-7.0.1-installer-linux-x86_64.sh",
       "http_archive_type": "zip",
-      "sha256": "b32c278fd1e72a676ea560d7b4e71ce97536405f6a3f8c1752acb4e88c031184",
-      "updated_at": "2023-12-14",
+      "sha256": "7abc509b7dfad887abb0edc9f9d529426d26768c7cce56d09252e2b0482b4135",
+      "updated_at": "2024-01-19",
       "executable": true,
       "override_updater": [
         {
@@ -326,13 +326,13 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_features",
       "type": "http_archive",
-      "version": "v1.2.0",
+      "version": "v1.3.0",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "b8789c83c893d7ef3041d3f2795774936b27ff61701a705df52fd41d6ddbf692",
-      "strip_prefix": "bazel_features-1.2.0",
-      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.2.0/bazel_features-v1.2.0.tar.gz",
+      "sha256": "53182a68f172a2af4ad37051f82201e222bc19f7a40825b877da3ff4c922b9e0",
+      "strip_prefix": "bazel_features-1.3.0",
+      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.3.0/bazel_features-v1.3.0.tar.gz",
       "github_repo": "bazel-contrib/bazel_features",
-      "updated_at": "2024-01-04",
+      "updated_at": "2024-01-19",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -479,6 +479,44 @@ _DEPS_JSON = r"""
         {
           "type": "shell",
           "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/stardoc/releases/download/${DEPS_UPDATER_version}/stardoc-${DEPS_UPDATER_version}.tar.gz\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rules_kotlin",
+      "type": "http_archive",
+      "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
+      "sha256": "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
+      "version": "v1.9.0",
+      "updated_at": "2024-01-19",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/rules_kotlin/releases/download/${DEPS_UPDATER_version}/rules_kotlin-${DEPS_UPDATER_version}.tar.gz\n"
         },
         {
           "type": "deps_updater",
@@ -909,12 +947,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240111.112304",
+      "version": "20240118.114528",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240111.112304",
+      "tag": "20240118.114528",
       "digest": "sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f",
-      "updated_at": "2024-01-12"
+      "updated_at": "2024-01-19"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -946,21 +984,21 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20240111.112304",
+      "version": "20240118.114528",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20240111.112304",
+      "tag": "20240118.114528",
       "digest": "sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5",
-      "updated_at": "2024-01-12"
+      "updated_at": "2024-01-19"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20240111.112304",
+      "version": "20240118.114528",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20240111.112304",
+      "tag": "20240118.114528",
       "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
-      "updated_at": "2024-01-12"
+      "updated_at": "2024-01-19"
     }
   ],
   "go_deps": [
@@ -1021,4 +1059,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -533428792 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1295692043 else fail("deps.bzl is corrupted")

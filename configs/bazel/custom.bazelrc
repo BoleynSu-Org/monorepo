@@ -44,8 +44,8 @@ build --incompatible_strict_action_env=true
 
 common --enable_bzlmod=false
 
-build:bzlmod --enable_bzlmod=true
-build:bzlmod --lockfile_mode=off
-build:bzlmod --registry=file://%workspace%/third_party/bazel_registry
+common:bzlmod --enable_bzlmod=true
+common:bzlmod --lockfile_mode=off
+common:bzlmod --registry=file://%workspace%/third_party/bazel_registry
 
 try-import %workspace%/.user.bazelrc
