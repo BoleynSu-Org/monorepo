@@ -947,11 +947,11 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240118.114528",
+      "version": "20240119.130030",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240118.114528",
-      "digest": "sha256:8f46175ecce4fe41bbe24490d647327281e24689fadb96520be7c8f584dc163f",
+      "tag": "20240119.130030",
+      "digest": "sha256:a2286446ef44d5f58d37c0c21922a8a4d5a555dd1c851edf93d5c2dd5197e15c",
       "updated_at": "2024-01-19"
     },
     {
@@ -1059,4 +1059,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1295692043 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1665424382 else fail("deps.bzl is corrupted")
