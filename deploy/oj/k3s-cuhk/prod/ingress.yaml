@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - oj.boleyn.su
-      secretName: oj-boleyn-su-tls
+        - cuhk.oj.boleyn.su
+      secretName: cuhk-oj-boleyn-su-tls
   rules:
-    - host: oj.boleyn.su
+    - host: cuhk.oj.boleyn.su
       http:
         paths:
           - pathType: Prefix
