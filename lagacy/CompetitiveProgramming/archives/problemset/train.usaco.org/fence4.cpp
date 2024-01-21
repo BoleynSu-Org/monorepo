@@ -8,7 +8,7 @@ PROGRAM: fence4
 AUTHOR: Su Jiao
 DATE: 2009-12-24
 DESCRIPTION:
-ÂÔ 
+ç•¥ 
 */
 #include <fstream>
 using std::ifstream;

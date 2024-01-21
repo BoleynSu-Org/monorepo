@@ -1,7 +1,7 @@
 /*
  * Package: StandardCodeLibrary.Core
  * */
-//Òı½ø³£ÓÃµÄÍ·ÎÄ¼ş²¢Ê¹ÓÃstdÃû×Ö¿Õ¼ä;
+//å¼•è¿›å¸¸ç”¨çš„å¤´æ–‡ä»¶å¹¶ä½¿ç”¨stdåå­—ç©ºé—´;
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -28,7 +28,7 @@
 #include <climits>
 using namespace std;
 
-//ÓÃÓÚ¼õÉÙ´úÂëÁ¿µÄºê;
+//ç”¨äºå‡å°‘ä»£ç é‡çš„å®;
 #define lp for(;;)
 #define repf(i,a,b) for (int i=(a);i<(b);++i)
 #define rrepf(i,a,b) for (int i=(a)-1;i>=(b);--i)
@@ -68,7 +68,7 @@ using namespace std;
 #define shf(x) random_shuffle(all(x))
 #define nxtp(x) next_permutation(all(x))
 
-//µ÷ÊÔÏà¹ØµÄºê;
+//è°ƒè¯•ç›¸å…³çš„å®;
 #ifndef DEBUG
 #define prt(x) (cerr)
 #define asrtWA(s) do if(!(s))exit(0);whl(0)
@@ -80,7 +80,7 @@ using namespace std;
 #define input(in) freopen(in,"r",stdin)
 #define output(out) freopen(out,"w",stdout)
 #else
-#define prt(x) cerr<<"µÚ"<<__LINE__<<"ĞĞ\t: "<<#x"\t="<<(x)<<endl
+#define prt(x) cerr<<"ç¬¬"<<__LINE__<<"è¡Œ\t: "<<#x"\t="<<(x)<<endl
 #define asrtWA(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
 #define asrtTLE(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
 #define asrtMLE(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
@@ -91,7 +91,7 @@ using namespace std;
 #define output(out)
 #endif
 
-//³£ÓÃÊı¾İÀàĞÍ;
+//å¸¸ç”¨æ•°æ®ç±»å‹;
 typedef long long int lli;
 typedef double db;
 typedef const char* cstr;
@@ -113,7 +113,7 @@ typedef que<int> qi;
 typedef vec<pii> vpii;
 typedef vec<pdd> vpdd;
 
-//³£ÓÃ³£Á¿:intµÄ×î´óÖµ;lliµÄ×î´óÖµ;dbµÄÎó²îÏà¹Ø³£Êı;Å·À­³£Êı;Ô²ÖÜÂÊ;ÒÆ¶¯ÏòÁ¿;È¡Ä£Ê¹ÓÃµÄ³ıÊı;
+//å¸¸ç”¨å¸¸é‡:intçš„æœ€å¤§å€¼;lliçš„æœ€å¤§å€¼;dbçš„è¯¯å·®ç›¸å…³å¸¸æ•°;æ¬§æ‹‰å¸¸æ•°;åœ†å‘¨ç‡;ç§»åŠ¨å‘é‡;å–æ¨¡ä½¿ç”¨çš„é™¤æ•°;
 int oo=(~0u)>>1;
 lli ooll=(~0ull)>>1;
 db inf=1e+10;
@@ -124,7 +124,7 @@ int dx[]={1,0,-1,0,1,-1,-1,1,0};
 int dy[]={0,1,0,-1,1,1,-1,-1,0};
 int MOD=1000000007;
 
-//³£ÓÃº¯Êı:×î´ó×îĞ¡Öµ¸üĞÂ;ÊıÑ§Ïà¹Øº¯Êı;ÊäÈëºÍÊä³ö;Ê÷×´Êı×é;²¢²é¼¯;¿ÉºÏ²¢¶Ñ;
+//å¸¸ç”¨å‡½æ•°:æœ€å¤§æœ€å°å€¼æ›´æ–°;æ•°å­¦ç›¸å…³å‡½æ•°;è¾“å…¥å’Œè¾“å‡º;æ ‘çŠ¶æ•°ç»„;å¹¶æŸ¥é›†;å¯åˆå¹¶å †;
 template<typename type>inline bool cmax(type& a,const type& b){rtn a<b?a=b,true:false;}
 template<typename type>inline bool cmin(type& a,const type& b){rtn b<a?a=b,true:false;}
 template<typename type>inline type sqr(const type& x){rtn x*x;}
@@ -160,7 +160,7 @@ inline int find_set(vpii& st,int x){int y=x,z;whl(y!=st[y].x)y=st[y].x;whl(x!=st
 inline bool union_set(vpii& st,int a,int b){a=find_set(st,a),b=find_set(st,b);rtn a!=b?(st[a].y>st[b].y?st[a].x=b,st[a].y+=st[b].y:st[b].x=a,st[b].y+=st[a].y),true:false;}
 template<typename type>inline void merge(type& a,type& b){if(sz(a)<sz(b))swap(a,b);whl(sz(b))a.ins(*b.begin()),b.ers(b.begin());}
 
-//³õÊ¼»¯;
+//åˆå§‹åŒ–;
 struct Initializer{
 #ifndef DEBUG
 Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
@@ -169,7 +169,7 @@ Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
 #endif
 }initializer;
 
-////·Ç±ê×¼;
+////éæ ‡å‡†;
 //#define for_each(e,s) for (__typeof__((s).begin()) e=(s).begin();e!=(s).end();++e)
 //#include <ext/rope>
 //#include <ext/pb_ds/assoc_container.hpp>
@@ -183,15 +183,15 @@ Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
 /*
  * Package: StandardCodeLibrary.NumberTheory
  * Description:
- * O(n)µÄÉ¸·¨ÇóËØÊı±í;
- * ´ømodµÄ³Ë·¨;
- * ´ømodµÄÖ¸Êıº¯Êı;
- * Rabin-MillerËØÊı²âÊÔ;
- * Pollard's rho´óÊı·Ö½â;
- * ¼ÆËãphi;
- * À©Õ¹gcd;
- * ÖĞ¹úÊ£Óà¶¨Àí;
- * Ö¸ÊıÑ­»·½Ú;
+ * O(n)çš„ç­›æ³•æ±‚ç´ æ•°è¡¨;
+ * å¸¦modçš„ä¹˜æ³•;
+ * å¸¦modçš„æŒ‡æ•°å‡½æ•°;
+ * Rabin-Millerç´ æ•°æµ‹è¯•;
+ * Pollard's rhoå¤§æ•°åˆ†è§£;
+ * è®¡ç®—phi;
+ * æ‰©å±•gcd;
+ * ä¸­å›½å‰©ä½™å®šç†;
+ * æŒ‡æ•°å¾ªç¯èŠ‚;
  * */
 
 namespace StandardCodeLibrary
@@ -203,15 +203,15 @@ namespace NumberTheory
 
 typedef unsigned long long big;
 
-//O(n)µÄÉ¸·¨ÇóËØÊı±í
-//MAXPS=[1,MAXP]ÖĞËØÊıµÄ¸öÊı
+//O(n)çš„ç­›æ³•æ±‚ç´ æ•°è¡¨
+//MAXPS=[1,MAXP]ä¸­ç´ æ•°çš„ä¸ªæ•°
 const int MAXP=10000000;
 const int MAXPS=664579;
-bool isp[MAXP+1];//isp[x]=xÊÇ·ñÎªËØÊı
-int pp[MAXP+1];//pp[x]=xÔÚËØÊı±íÖĞµÄÎ»ÖÃ(´Ó0¿ªÊ¼)
-int fac[MAXP+1];//fac[x]=x×îĞ¡µÄÖÊÒò×Ó(x<=1Ê±ÎŞÒâÒå)
-int ps;//ËØÊı±íµÄ´óĞ¡
-int p[MAXPS];//ËØÊı±í
+bool isp[MAXP+1];//isp[x]=xæ˜¯å¦ä¸ºç´ æ•°
+int pp[MAXP+1];//pp[x]=xåœ¨ç´ æ•°è¡¨ä¸­çš„ä½ç½®(ä»0å¼€å§‹)
+int fac[MAXP+1];//fac[x]=xæœ€å°çš„è´¨å› å­(x<=1æ—¶æ— æ„ä¹‰)
+int ps;//ç´ æ•°è¡¨çš„å¤§å°
+int p[MAXPS];//ç´ æ•°è¡¨
 void make_prime_table()
 {
     fl(isp,true);
@@ -227,9 +227,9 @@ void make_prime_table()
     }
 }
 
-//´ømodµÄ¼Ó·¨ 0<=a,b<mod
+//å¸¦modçš„åŠ æ³• 0<=a,b<mod
 #define add(a,b,mod) ((a)>=(mod)-(b)?(b)-((mod)-(a)):(a)+(b))
-//´ømodµÄ³Ë·¨ 0<=a,b<mod
+//å¸¦modçš„ä¹˜æ³• 0<=a,b<mod
 big mul(big a,big b,big mod)
 {
     big c=0;
@@ -241,7 +241,7 @@ big mul(big a,big b,big mod)
     }
     rtn c;
 }
-//´ømodµÄÖ¸Êıº¯Êı 0<=a,b<mod
+//å¸¦modçš„æŒ‡æ•°å‡½æ•° 0<=a,b<mod
 big pow(big a,big b,big mod)
 {
     big c=1;
@@ -253,7 +253,7 @@ big pow(big a,big b,big mod)
     }
     rtn c;
 }
-//Rabin-MillerËØÊı²âÊÔ n>1ÇÒnÎªÆæÊı
+//Rabin-Millerç´ æ•°æµ‹è¯• n>1ä¸”nä¸ºå¥‡æ•°
 bool witness(big n)
 {
     big nm1=n-1;
@@ -270,7 +270,7 @@ bool witness(big n)
         x=mul(x,x,n);
     }
 }
-//Rabin-MillerËØÊı²âÊÔ n>=2
+//Rabin-Millerç´ æ•°æµ‹è¯• n>=2
 bool isprime(big n,int k=20)
 {
     if (n%2==0) rtn n==2;
@@ -280,7 +280,7 @@ bool isprime(big n,int k=20)
         rtn true;
     }
 }
-//Pollard's rho´óÊı·Ö½â n>1ÇÒnÎªºÏÊı
+//Pollard's rhoå¤§æ•°åˆ†è§£ n>1ä¸”nä¸ºåˆæ•°
 big rho(big n)
 {
     if (n%2==0) rtn big(2);
@@ -302,7 +302,7 @@ big rho(big n)
         rtn d;
     }
 }
-//Pollard's rho´óÊı·Ö½â n>1
+//Pollard's rhoå¤§æ•°åˆ†è§£ n>1
 big factor(big n,int k=20)
 {
     if (isprime(n,k)) rtn n;
@@ -316,13 +316,13 @@ big factor(big n,int k=20)
 }
 #undef add
 
-//¼ÆËãphi
+//è®¡ç®—phi
 lli phi(lli x,int k=20)
 {
     lli ret=x;
     whl(x!=1)
     {
-        lli d=factor(x,k);//Èç¹ûÊÇĞ¡·¶Î§µÄ ´Ë´¦¿ÉÓÃfac[x]´úÌæ
+        lli d=factor(x,k);//å¦‚æœæ˜¯å°èŒƒå›´çš„ æ­¤å¤„å¯ç”¨fac[x]ä»£æ›¿
         ret/=d;
         ret*=d-1;
         whl(x%d==0) x/=d;
@@ -330,7 +330,7 @@ lli phi(lli x,int k=20)
     rtn ret;
 }
 
-//À©Õ¹gcd
+//æ‰©å±•gcd
 lli gcd(lli a,lli b,lli& x,lli& y)
 {
     if (b)
@@ -341,8 +341,8 @@ lli gcd(lli a,lli b,lli& x,lli& y)
     else rtn x=1,y=0,a;
 }
 
-//ÖĞ¹úÊ£Óà¶¨Àí
-//Ò»°ãµØ,ÖĞ¹úÊ£Óà¶¨ÀíÊÇÖ¸ÈôÓĞÒ»Ğ©Á½Á½»¥ÖÊµÄÕûÊım[i],Ôò¶ÔÈÎÒâµÄÕûÊıa[i],ÒÔÏÂÁªÁ¢Í¬Óà·½³Ì×é¶ÔÄ£m[i]ÓĞ¹«½â
+//ä¸­å›½å‰©ä½™å®šç†
+//ä¸€èˆ¬åœ°,ä¸­å›½å‰©ä½™å®šç†æ˜¯æŒ‡è‹¥æœ‰ä¸€äº›ä¸¤ä¸¤äº’è´¨çš„æ•´æ•°m[i],åˆ™å¯¹ä»»æ„çš„æ•´æ•°a[i],ä»¥ä¸‹è”ç«‹åŒä½™æ–¹ç¨‹ç»„å¯¹æ¨¡m[i]æœ‰å…¬è§£
 //x mod m[i]=a[i]
 lli chinese_remainder(lli n,lli m[],lli a[])
 {
@@ -360,9 +360,9 @@ lli chinese_remainder(lli n,lli m[],lli a[])
     rtn ans;
 }
 
-//Ö¸ÊıÑ­»·½Ú
-//Èç¹û(a,p)=1        a^x%p=a^(x%phi(p))%p
-//·ñÔòÈôx>=phi(p)    a^x%p=a^(x%phi(p)+phi(p))%p
+//æŒ‡æ•°å¾ªç¯èŠ‚
+//å¦‚æœ(a,p)=1        a^x%p=a^(x%phi(p))%p
+//å¦åˆ™è‹¥x>=phi(p)    a^x%p=a^(x%phi(p)+phi(p))%p
 lli mod(lli x,lli phip)
 {
     rtn x>=phip?x%phip+phip:x;

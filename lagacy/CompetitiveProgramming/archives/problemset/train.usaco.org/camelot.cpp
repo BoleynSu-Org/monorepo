@@ -8,7 +8,7 @@ PROGRAM: camelot
 AUTHOR: Su Jiao
 DATE: 2009-12-22
 DESCRIPTION:
-ÑÇÉªÍõµÄ¹¬µî 
+äºšç‘ŸçŽ‹çš„å®«æ®¿ 
 */
 #include <fstream>
 using std::ifstream;

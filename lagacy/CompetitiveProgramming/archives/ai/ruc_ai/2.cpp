@@ -1,7 +1,7 @@
 /*
  * Package: StandardCodeLibrary.Core
  * */
-//Òı½ø³£ÓÃµÄÍ·ÎÄ¼ş²¢Ê¹ÓÃstdÃû×Ö¿Õ¼ä
+//å¼•è¿›å¸¸ç”¨çš„å¤´æ–‡ä»¶å¹¶ä½¿ç”¨stdåå­—ç©ºé—´
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -28,7 +28,7 @@
 #include <climits>
 using namespace std;
 
-//ÓÃÓÚ¼õÉÙ´úÂëÁ¿µÄºê
+//ç”¨äºå‡å°‘ä»£ç é‡çš„å®
 #define lp for(;;)
 #define repf(i,a,b) for (int i=(a);i<(b);++i)
 #define rep(i,n) repf(i,0,n)
@@ -64,7 +64,7 @@ using namespace std;
 #define uniq(x) srt(x),(x).erase(unique(all(x)),(x).end())
 #define rev(x) reverse(all(x))
 
-//µ÷ÊÔÏà¹ØµÄºê
+//è°ƒè¯•ç›¸å…³çš„å®
 #ifdef DEBUG
 #define prt(x) cerr<<#x"="<<(x)<<endl
 #define asrtWA(s) do if(!(s))do{cerr<<"assert("#s")"<<endl;}whl(0);whl(0)
@@ -87,7 +87,7 @@ using namespace std;
 #define output(out) freopen(out,"w",stdout)
 #endif
 
-//³£ÓÃÊı¾İÀàĞÍ
+//å¸¸ç”¨æ•°æ®ç±»å‹
 typedef long long int lli;
 typedef double db;
 typedef const char* cstr;
@@ -109,7 +109,7 @@ typedef que<int> qi;
 typedef vec<pii> vpii;
 typedef vec<pdd> vpdd;
 
-//³£ÓÃ³£Á¿:intµÄ×î´óÖµ;lliµÄ×î´óÖµ;dbµÄÎó²îÏà¹Ø³£Êı;Å·À­³£Êı;Ô²ÖÜÂÊ;ÒÆ¶¯ÏòÁ¿;È¡Ä£Ê¹ÓÃµÄ³ıÊı
+//å¸¸ç”¨å¸¸é‡:intçš„æœ€å¤§å€¼;lliçš„æœ€å¤§å€¼;dbçš„è¯¯å·®ç›¸å…³å¸¸æ•°;æ¬§æ‹‰å¸¸æ•°;åœ†å‘¨ç‡;ç§»åŠ¨å‘é‡;å–æ¨¡ä½¿ç”¨çš„é™¤æ•°
 int oo=(~0u)>>1;
 lli ooll=(~0ull)>>1;
 db inf=1e+10;
@@ -120,7 +120,7 @@ int dx[]={1,0,-1,0,1,-1,-1,1,0};
 int dy[]={0,1,0,-1,1,1,-1,-1,0};
 int MOD=1000000007;
 
-//³£ÓÃº¯Êı:×î´ó×îĞ¡Öµ¸üĞÂ;ÊıÑ§Ïà¹Øº¯Êı;ÊäÈëºÍÊä³ö;Ê÷×´Êı×é;²¢²é¼¯;¿ÉºÏ²¢¶Ñ;
+//å¸¸ç”¨å‡½æ•°:æœ€å¤§æœ€å°å€¼æ›´æ–°;æ•°å­¦ç›¸å…³å‡½æ•°;è¾“å…¥å’Œè¾“å‡º;æ ‘çŠ¶æ•°ç»„;å¹¶æŸ¥é›†;å¯åˆå¹¶å †;
 template<typename type>inline bool cmax(type& a,const type& b){rtn a<b?a=b,true:false;}
 template<typename type>inline bool cmin(type& a,const type& b){rtn b<a?a=b,true:false;}
 template<typename type>inline type sqr(const type& x){rtn x*x;}
@@ -153,10 +153,10 @@ inline int find_set(vi& st,int x){int y=x,z;whl(y!=st[y])y=st[y];whl(x!=st[x])z=
 inline bool union_set(vi& st,int a,int b){a=find_set(st,a),b=find_set(st,b);rtn a!=b?st[a]=b,true:false;}
 template<typename type>inline void merge(type& a,type& b){if(sz(a)<sz(b))swap(a,b);whl(sz(b))a.ins(*b.begin()),b.ers(b.begin());}
 
-//³õÊ¼»¯
+//åˆå§‹åŒ–
 struct Initializer{Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}~Initializer(){runtime();}}initializer;
 
-//·Ç±ê×¼
+//éæ ‡å‡†
 #define feach(e,s) for (__typeof__((s).begin()) e=(s).begin();e!=(s).end();++e)
 #include <ext/rope>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -170,26 +170,26 @@ template<typename key,typename value>class ext_map:public __gnu_pbds::tree<key,v
 #include <stdlib.h>
 
 struct Area {
-    int terrain; //0ÎªÍÁµØ£¬1ÎªÉ½µØ
-    int bonus; //ÍÁµØbonusÖµ
-    int belong; //0ÎªÎŞ¹éÊô£¬1ÎªÍæ¼ÒÒ»£¬2ÎªÍæ¼Ò2
-    int soldier_num; //¸ÃÍÁµØÉÏÄ¿Ç°µÄÊ¿±øÊıÄ¿
+    int terrain; //0ä¸ºåœŸåœ°ï¼Œ1ä¸ºå±±åœ°
+    int bonus; //åœŸåœ°bonuså€¼
+    int belong; //0ä¸ºæ— å½’å±ï¼Œ1ä¸ºç©å®¶ä¸€ï¼Œ2ä¸ºç©å®¶2
+    int soldier_num; //è¯¥åœŸåœ°ä¸Šç›®å‰çš„å£«å…µæ•°ç›®
     double value;
     int need;
 };
 
-int height, width; //µØÍ¼¸ßºÍ¿í
-int my_player_id; //ÎÒµÄÍæ¼Ò±àºÅ
-int attack_factor; //¹¥»÷ËğÊ§ÏµÊı
-int currentRound; //µ±Ç°»ØºÏÊı
-Area area[6][8]; //µØÍ¼
+int height, width; //åœ°å›¾é«˜å’Œå®½
+int my_player_id; //æˆ‘çš„ç©å®¶ç¼–å·
+int attack_factor; //æ”»å‡»æŸå¤±ç³»æ•°
+int currentRound; //å½“å‰å›åˆæ•°
+Area area[6][8]; //åœ°å›¾
 
-int soldier_num; //Ã¿»ØºÏĞÂ³öÏÖµÄÊ¿±ø
+int soldier_num; //æ¯å›åˆæ–°å‡ºç°çš„å£«å…µ
 
-//³õÊ¼»¯µØÍ¼ĞÅÏ¢ºÍ¾ÖÃæĞÅÏ¢
+//åˆå§‹åŒ–åœ°å›¾ä¿¡æ¯å’Œå±€é¢ä¿¡æ¯
 void init() {
 
-    //¶ÁÈ¡µØĞÎÊı¾İ,×ø±ê´Ó(0,0)¿ªÊ¼
+    //è¯»å–åœ°å½¢æ•°æ®,åæ ‡ä»(0,0)å¼€å§‹
     scanf("%d%d", &height, &width);
     for (int i=0; i<height; i++) {
         for (int j=0; j<width; j++) {
@@ -207,7 +207,7 @@ void init() {
         }
     }
 
-    //³õÊ¼»¯¸´ÖÆ
+    //åˆå§‹åŒ–å¤åˆ¶
     for (int i=0; i<height; i++) {
         for (int j=0; j<width; j++) {
             area[i][j].soldier_num = 0;
@@ -218,7 +218,7 @@ void init() {
     scanf("%d%d", &my_player_id, &attack_factor);
 }
 
-//¼ÆËãbonus×ÜºÍ
+//è®¡ç®—bonusæ€»å’Œ
 int get_bonus(int player_id) {
     int bonus = 0;
     for (int i=0; i<height; i++) {
@@ -231,12 +231,12 @@ int get_bonus(int player_id) {
     return bonus;
 }
 
-//¼ì²éÒ»ÇøÓòÊÇ·ñ¿ÉÓÃ
+//æ£€æŸ¥ä¸€åŒºåŸŸæ˜¯å¦å¯ç”¨
 bool check_area(int x, int y) {
     return (x<height && y<width && x>=0 && y>=0 && area[x][y].terrain==0);
 }
 
-//¼ì²éÁ½ÇøÓòÊÇ·ñÏàÁÚ£¨²ÎÊıÎªÁ½ÇøÓò×ø±ê£©
+//æ£€æŸ¥ä¸¤åŒºåŸŸæ˜¯å¦ç›¸é‚»ï¼ˆå‚æ•°ä¸ºä¸¤åŒºåŸŸåæ ‡ï¼‰
 bool check_near(int x1, int y1, int x2, int y2) {
     int dx[]={0, 1, 0, -1};
     int dy[]={1, 0, -1, 0};
@@ -246,11 +246,11 @@ bool check_near(int x1, int y1, int x2, int y2) {
     return false;
 }
 
-//¼ì²éÓÎÏ·ÊÇ·ñ½áÊø
+//æ£€æŸ¥æ¸¸æˆæ˜¯å¦ç»“æŸ
 bool check_end() {
     if (currentRound > 300) return true;
 
-    //¼ì²éÊÇ·ñËùÓĞ¿ÉÓÃÍÁµØÊôÓÚÍ¬Ò»¸öÍæ¼Ò
+    //æ£€æŸ¥æ˜¯å¦æ‰€æœ‰å¯ç”¨åœŸåœ°å±äºåŒä¸€ä¸ªç©å®¶
     int player_id = -1;
     for (int i=0; i<height; i++) {
         for (int j=0; j<width; j++) {
@@ -264,53 +264,53 @@ bool check_end() {
     return true;
 }
 
-//·ÅÖÃÊ¿±ø
+//æ”¾ç½®å£«å…µ
 void set_soldier(int player_id, int x, int y, int number) {
     area[x][y].soldier_num += number;
 
-    //×Ô¼ºµÄ¾ö²ßĞèÒª´òÓ¡³öÀ´
+    //è‡ªå·±çš„å†³ç­–éœ€è¦æ‰“å°å‡ºæ¥
     if (player_id == my_player_id) {
         soldier_num -= number;
         printf("1 %d %d %d\n", x, y, number);
     }
 }
 
-//½øĞĞ¹¥»÷
+//è¿›è¡Œæ”»å‡»
 void attack(int player_id, int x1, int y1, int x2, int y2, int number) {
     int A = number;
     int B = area[x2][y2].soldier_num;
     int S = area[x2][y2].bonus;
     int K = attack_factor;
     int C = (int)(K*B/10+S);
-    if (A > C) { //¹¥»÷³É¹¦
+    if (A > C) { //æ”»å‡»æˆåŠŸ
         area[x2][y2].belong = player_id;
         area[x2][y2].soldier_num = A - C;
         area[x1][y1].soldier_num -= A;
-    } else { //¹¥»÷Ê§°Ü
+    } else { //æ”»å‡»å¤±è´¥
         int D = (int)((A-1)*10/K);
         if (D > B) D = B;
         area[x2][y2].soldier_num -= D;
         area[x1][y1].soldier_num -= A;
     }
 
-    //×Ô¼ºµÄ¾ö²ßĞèÒª´òÓ¡³öÀ´
+    //è‡ªå·±çš„å†³ç­–éœ€è¦æ‰“å°å‡ºæ¥
     if (player_id == my_player_id) {
         printf("2 %d %d %d %d %d\n", x1, y1, x2, y2, number);
     }
 }
 
-//¶ÁÈ¡¶ÔÊÖµÄ²Ù×÷£¬Î¬»¤µØÍ¼×´Ì¬
+//è¯»å–å¯¹æ‰‹çš„æ“ä½œï¼Œç»´æŠ¤åœ°å›¾çŠ¶æ€
 void read_operator(int player_id) {
     while(true) {
         int type,x,y,x1,y1,x2,y2,number;
-        scanf("%d", &type); //¶ÁÀàĞÍ
+        scanf("%d", &type); //è¯»ç±»å‹
         if (type == -1) break;
         if (type == 1) {
             scanf("%d%d%d", &x, &y, &number);
-            set_soldier(player_id, x, y, number); //·ÅÖÃÊ¿±ø²Ù×÷
+            set_soldier(player_id, x, y, number); //æ”¾ç½®å£«å…µæ“ä½œ
         } else if (type == 2) {
             scanf("%d%d%d%d%d", &x1, &y1, &x2, &y2, &number);
-            attack(player_id, x1, y1, x2, y2, number); //¹¥»÷²Ù×÷
+            attack(player_id, x1, y1, x2, y2, number); //æ”»å‡»æ“ä½œ
         }
     }
 }
@@ -637,23 +637,23 @@ void go()
 }
 
 int main() {
-    init(); //³õÊ¼»¯
+    init(); //åˆå§‹åŒ–
     int cur_player_id = 1;
-    while (!check_end()) { //Èç¹ûÓÎÏ·Ã»ÓĞ½áÊø
+    while (!check_end()) { //å¦‚æœæ¸¸æˆæ²¡æœ‰ç»“æŸ
         currentRound++;
         if (cur_player_id == my_player_id) {
-            //×Ô¼ºĞĞ¶¯
-            //set_all_soldier(); //½øĞĞ·ÅÖÃÊ¿±ø¾ö²ß
-            //do_all_attack(); //½øĞĞ¹¥»÷¾ö²ß
+            //è‡ªå·±è¡ŒåŠ¨
+            //set_all_soldier(); //è¿›è¡Œæ”¾ç½®å£«å…µå†³ç­–
+            //do_all_attack(); //è¿›è¡Œæ”»å‡»å†³ç­–
         	go();
             printf("-1\n");
-            fflush(stdout); //×¢Òâ£¡´Ë¾äÔÚÃ¿»ØºÏÊä³öºó±ØĞë¼Ó£¬ÒÔË¢ĞÂ»º³åÇø¡£
+            fflush(stdout); //æ³¨æ„ï¼æ­¤å¥åœ¨æ¯å›åˆè¾“å‡ºåå¿…é¡»åŠ ï¼Œä»¥åˆ·æ–°ç¼“å†²åŒºã€‚
         } else {
-            //¶ÁÈ¡¶ÔÊÖĞĞ¶¯
+            //è¯»å–å¯¹æ‰‹è¡ŒåŠ¨
             read_operator(cur_player_id);
         }
         if (cur_player_id == 1) cur_player_id = 2;
-        else cur_player_id = 1; //½»»»ĞĞ¶¯Õß
+        else cur_player_id = 1; //äº¤æ¢è¡ŒåŠ¨è€…
     }
 	return 0;
 }

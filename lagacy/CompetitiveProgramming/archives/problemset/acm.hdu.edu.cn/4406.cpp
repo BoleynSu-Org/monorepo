@@ -99,7 +99,7 @@ namespace min_cost_flow
 AUTHOR: Su Jiao
 DATE: 2010-7-26
 DESCRIPTION:
-É½¶«2009ÄêÊ¡Ñ¡ ³¿ÅÜ
+å±±ä¸œ2009å¹´çœé€‰ æ™¨è·‘
 */
 #include <stdio.h>
 #include <string.h>

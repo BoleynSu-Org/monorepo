@@ -99,33 +99,33 @@ inline void make_set(vi& set,int size){set.resize(size);rep(i,size)set[i]=i;}
 inline int find_set(vi& set,int x){int y=x,z;whl(y!=set[y])y=set[y];whl(x!=set[x])z=set[x],set[x]=y,x=z;rtn y;}
 inline bool union_set(vi& set,int a,int b){a=find_set(set,a),b=find_set(set,b);rtn a!=b?set[a]=b,true:false;}
 
-//ÈıÎ¬Í¹°üÄ£°å,¿ÉÒÔÇóÈıÎ¬Í¹°ü±íÃæ»ı,Ìå»ı,±íÃæ¶à±ßĞÎÊıºÍ±íÃæÈı½ÇĞÎÊı
-#define MAXV 310//ÈıÎ¬µã
+//ä¸‰ç»´å‡¸åŒ…æ¨¡æ¿,å¯ä»¥æ±‚ä¸‰ç»´å‡¸åŒ…è¡¨é¢ç§¯,ä½“ç§¯,è¡¨é¢å¤šè¾¹å½¢æ•°å’Œè¡¨é¢ä¸‰è§’å½¢æ•°
+#define MAXV 310//ä¸‰ç»´ç‚¹
 struct pt{
     double x, y, z;
     pt(){}
     pt(double _x, double _y, double _z): x(_x), y(_y), z(_z){}
     pt operator - (const pt p1){return pt(x - p1.x, y - p1.y, z - p1.z);}
-    pt operator * (pt p){return pt(y*p.z-z*p.y, z*p.x-x*p.z, x*p.y-y*p.x);} //²æ³Ë
-    double operator ^ (pt p){return x*p.x+y*p.y+z*p.z;} //µã³Ë
+    pt operator * (pt p){return pt(y*p.z-z*p.y, z*p.x-x*p.z, x*p.y-y*p.x);} //å‰ä¹˜
+    double operator ^ (pt p){return x*p.x+y*p.y+z*p.z;} //ç‚¹ä¹˜
     pt operator *(db s){rtn pt(x*s,y*s,z*s);}
     pt operator /(db s){rtn pt(x/s,y/s,z/s);}
     pt operator +(pt t){rtn pt(x+t.x,y+t.y,z+t.z);}
 };
 struct _3DCH{
     struct fac{
-    int a, b, c; //±íÊ¾Í¹°üÒ»¸öÃæÉÏÈı¸öµãµÄ±àºÅ
-    bool ok; //±íÊ¾¸ÃÃæÊÇ·ñÊôÓÚ×îÖÕÍ¹°üÖĞµÄÃæ
+    int a, b, c; //è¡¨ç¤ºå‡¸åŒ…ä¸€ä¸ªé¢ä¸Šä¸‰ä¸ªç‚¹çš„ç¼–å·
+    bool ok; //è¡¨ç¤ºè¯¥é¢æ˜¯å¦å±äºæœ€ç»ˆå‡¸åŒ…ä¸­çš„é¢
     };
-    int n; //³õÊ¼µãÊı
-    pt P[MAXV]; //³õÊ¼µã
-    int cnt; //Í¹°ü±íÃæµÄÈı½ÇĞÎÊı
-    fac F[MAXV*8]; //Í¹°ü±íÃæµÄÈı½ÇĞÎ
+    int n; //åˆå§‹ç‚¹æ•°
+    pt P[MAXV]; //åˆå§‹ç‚¹
+    int cnt; //å‡¸åŒ…è¡¨é¢çš„ä¸‰è§’å½¢æ•°
+    fac F[MAXV*8]; //å‡¸åŒ…è¡¨é¢çš„ä¸‰è§’å½¢
     int to[MAXV][MAXV];
-    double vlen(pt a){return sqrt(a.x*a.x+a.y*a.y+a.z*a.z);} //ÏòÁ¿³¤¶È
-    double area(pt a, pt b, pt c){return vlen((b-a)*(c-a));} //Èı½ÇĞÎÃæ»ı*2
-    double volume(pt a, pt b, pt c, pt d){return (b-a)*(c-a)^(d-a);}//ËÄÃæÌåÓĞÏòÌå»ı*6
-    //Õı£ºµãÔÚÃæÍ¬Ïò
+    double vlen(pt a){return sqrt(a.x*a.x+a.y*a.y+a.z*a.z);} //å‘é‡é•¿åº¦
+    double area(pt a, pt b, pt c){return vlen((b-a)*(c-a));} //ä¸‰è§’å½¢é¢ç§¯*2
+    double volume(pt a, pt b, pt c, pt d){return (b-a)*(c-a)^(d-a);}//å››é¢ä½“æœ‰å‘ä½“ç§¯*6
+    //æ­£ï¼šç‚¹åœ¨é¢åŒå‘
     double ptof(pt &p, fac &f){
         pt m = P[f.b]-P[f.a], n = P[f.c]-P[f.a], t = p-P[f.a];
         return (m * n) ^ t;
@@ -151,11 +151,11 @@ struct _3DCH{
         pt &a = P[F[s].a], &b = P[F[s].b], &c = P[F[s].c];
         return fabs(volume(a, b, c, P[F[t].a])) < eps && fabs(volume(a, b, c, P[F[t].b])) < eps && fabs(volume(a, b, c, P[F[t].c])) < eps;
     }
-    //¹¹½¨ÈıÎ¬Í¹°ü
+    //æ„å»ºä¸‰ç»´å‡¸åŒ…
     void construct(){
         cnt = 0;
-        if (n < 4) return; /*********´Ë¶ÎÊÇÎªÁË±£Ö¤Ç°ËÄ¸öµã²»¹«Ãæ£¬ÈôÒÑ±£Ö¤£¬¿ÉÈ¥µô********/
-        bool sb = 1; //Ê¹Ç°Á½µã²»¹«µã
+        if (n < 4) return; /*********æ­¤æ®µæ˜¯ä¸ºäº†ä¿è¯å‰å››ä¸ªç‚¹ä¸å…¬é¢ï¼Œè‹¥å·²ä¿è¯ï¼Œå¯å»æ‰********/
+        bool sb = 1; //ä½¿å‰ä¸¤ç‚¹ä¸å…¬ç‚¹
         for (int i = 1; i < n; i++){
             if (vlen(P[0] - P[i]) > eps){
                 swap(P[1], P[i]);
@@ -164,7 +164,7 @@ struct _3DCH{
             }
         }
         if (sb)return;
-        sb = 1; //Ê¹Ç°Èıµã²»¹«Ïß
+        sb = 1; //ä½¿å‰ä¸‰ç‚¹ä¸å…¬çº¿
         for (int i = 2; i < n; i++){
             if (vlen((P[0] - P[1]) * (P[1] - P[i])) > eps){
                 swap(P[2], P[i]);
@@ -173,7 +173,7 @@ struct _3DCH{
             }
         }
         if (sb)return;
-        sb = 1; //Ê¹Ç°ËÄµã²»¹²Ãæ
+        sb = 1; //ä½¿å‰å››ç‚¹ä¸å…±é¢
         for (int i = 3; i < n; i++){
             if (fabs((P[0] - P[1]) * (P[1] - P[2]) ^ (P[0] - P[i])) > eps){
                 swap(P[3], P[i]);
@@ -181,7 +181,7 @@ struct _3DCH{
                 break;
             }
         }
-        if (sb)return; /*********´Ë¶ÎÊÇÎªÁË±£Ö¤Ç°ËÄ¸öµã²»¹«Ãæ********/
+        if (sb)return; /*********æ­¤æ®µæ˜¯ä¸ºäº†ä¿è¯å‰å››ä¸ªç‚¹ä¸å…¬é¢********/
         fac add;
         for (int i = 0; i < 4; i++){
             add.a = (i+1)%4, add.b = (i+2)%4, add.c = (i+3)%4, add.ok = 1;
@@ -205,7 +205,7 @@ struct _3DCH{
             }
         }
     }
-    //±íÃæ»ı
+    //è¡¨é¢ç§¯
     double area(){
         double ret = 0.0;
         for (int i = 0; i < cnt; i++){
@@ -213,7 +213,7 @@ struct _3DCH{
         }
         return ret / 2.0;
     }
-    //Ìå»ı
+    //ä½“ç§¯
     double volume(){
             pt O(0, 0, 0);
             double ret = 0.0;
@@ -229,11 +229,11 @@ struct _3DCH{
                 ret =ret+ (O+P[F[i].a]+ P[F[i].b]+ P[F[i].c])*volume(O, P[F[i].a], P[F[i].b], P[F[i].c])/24.0;
             }
             return ret/volume();
-        } //±íÃæÈı½ÇĞÎÊı
+        } //è¡¨é¢ä¸‰è§’å½¢æ•°
     int facetCnt_tri(){
         return cnt;
     }
-    //±íÃæ¶à±ßĞÎÊı
+    //è¡¨é¢å¤šè¾¹å½¢æ•°
     int facetCnt(){
         int ans = 0;
         for (int i = 0; i < cnt; i++){
@@ -247,7 +247,7 @@ struct _3DCH{
         } return ans;
     }
 };
-_3DCH hull; //ÄÚÓĞ´óÊı×é£¬²»Ò×·ÅÔÚº¯ÊıÄÚ
+_3DCH hull; //å†…æœ‰å¤§æ•°ç»„ï¼Œä¸æ˜“æ”¾åœ¨å‡½æ•°å†…
 int main()
 {
     pt p;

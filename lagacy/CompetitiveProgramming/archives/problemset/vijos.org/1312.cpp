@@ -8,9 +8,9 @@ int A[MAXN+2];
 int f[MAXN+2][MAXN+2];
 int output; 
 /*
-k ºÏ²¢´ÎÊı
-sk  ´ÓskºÏ²¢µ½sk+k 
-xk skÊÇÓÉÄÄÒ»µãºÏ²¢À´µÄ {sk<xk<sk+k}
+k åˆå¹¶æ¬¡æ•°
+sk  ä»skåˆå¹¶åˆ°sk+k 
+xk skæ˜¯ç”±å“ªä¸€ç‚¹åˆå¹¶æ¥çš„ {sk<xk<sk+k}
 vk=A[sk]*A[xk]*A[sk+k] 
 fk(sk)=max{f(xk-sk)(sk)+f(sk+k-xk)(xk)+vk} 
 f1(all)=0 

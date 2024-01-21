@@ -120,7 +120,7 @@ void build_2sat()
      A[x] XOR A[y]         =add_edge(F(x),T(y)),add_edge(F(y),T(x)),add_edge(T(x),F(y)),add_edge(T(y),F(x));
      NOT (A[x] XOR A[y])   =add_edge(F(x),F(y)),add_edge(F(y),F(x)),add_edge(T(x),T(y)),add_edge(T(y),T(x));
      A[x] XOR NOT A[y]     =add_edge(F(x),F(y)),add_edge(F(y),F(x)),add_edge(T(x),T(y)),add_edge(T(y),T(x));
-     u到v有边表示选u必选v,如果要输出一个可行解,
+     u鍒皏鏈夎竟琛ㄧず閫塽蹇呴�塿,濡傛灉瑕佽緭鍑轰竴涓彲琛岃В,
      */
 }
 void function_2sat(int block,int node)

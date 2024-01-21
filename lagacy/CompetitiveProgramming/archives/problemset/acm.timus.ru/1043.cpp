@@ -150,7 +150,7 @@ class Application
                  Oy=-D/2,
                  R=sqrt((C*C+D*D)/4-E);
           /*
-          圆心O; 起点S; 终点E; 中间过M 
+          鍦嗗績O; 璧风偣S; 缁堢偣E; 涓棿杩嘙 
                           O-----------S
                          / \
                         /   \

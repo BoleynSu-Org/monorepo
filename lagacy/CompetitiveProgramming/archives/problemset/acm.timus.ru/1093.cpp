@@ -42,7 +42,7 @@ int main()
     M=S+V*t+(0,0,-(g*t^2)/2)
     (M-C)*N=0
     distance(M,C)<R
-    ÓÐ½â?HIT:MISSED
+    æœ‰è§£?HIT:MISSED
     
     (M-C)*N=0
     => (Mx-Cx)*(Nx)+(My-Cy)*(Ny)+(Mz-Cz)*(Nz)=0

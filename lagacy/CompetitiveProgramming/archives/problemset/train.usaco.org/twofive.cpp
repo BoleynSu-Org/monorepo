@@ -9,26 +9,26 @@ AUTHOR: Su Jiao
 DATE: 2010-1-22
 DESCRIPTION:
 Two Five
-¶þÎåÓïÑÔ 
+äºŒäº”è¯­è¨€ 
 IOI 2001
-ÓÐÒ»ÖÖÆæ¹ÖµÄÓïÑÔ½Ð×ö¡°¶þÎåÓïÑÔ¡±¡£ËüµÄÃ¿¸öµ¥´Ê¶¼ÓÉA¡«YÕâ25¸ö×ÖÄ¸¸÷Ò»¸ö×é³É¡£µ«
-ÊÇ£¬²¢²»ÊÇÈÎºÎÒ»ÖÖÅÅÁÐ¶¼ÊÇÒ»¸öºÏ·¨µÄ¶þÎåÓïÑÔµ¥´Ê¡£¶þÎåÓïÑÔµÄµ¥´Ê±ØÐëÂú×ãÕâÑùÒ»¸ö
-Ìõ¼þ£º°ÑËüµÄ25¸ö×ÖÄ¸ÅÅ³ÉÒ»¸ö5*5µÄ¾ØÕó£¬ËüµÄÃ¿Ò»ÐÐºÍÃ¿Ò»ÁÐ¶¼±ØÐëÊÇµÝÔöµÄ¡£±ÈÈçµ¥
-´ÊACEPTBDHQUFJMRWGKNSXILOVY£¬ËüÅÅ³ÉµÄ¾ØÕóÈçÏÂËùÊ¾£º 
+æœ‰ä¸€ç§å¥‡æ€ªçš„è¯­è¨€å«åšâ€œäºŒäº”è¯­è¨€â€ã€‚å®ƒçš„æ¯ä¸ªå•è¯éƒ½ç”±Aï½žYè¿™25ä¸ªå­—æ¯å„ä¸€ä¸ªç»„æˆã€‚ä½†
+æ˜¯ï¼Œå¹¶ä¸æ˜¯ä»»ä½•ä¸€ç§æŽ’åˆ—éƒ½æ˜¯ä¸€ä¸ªåˆæ³•çš„äºŒäº”è¯­è¨€å•è¯ã€‚äºŒäº”è¯­è¨€çš„å•è¯å¿…é¡»æ»¡è¶³è¿™æ ·ä¸€ä¸ª
+æ¡ä»¶ï¼šæŠŠå®ƒçš„25ä¸ªå­—æ¯æŽ’æˆä¸€ä¸ª5*5çš„çŸ©é˜µï¼Œå®ƒçš„æ¯ä¸€è¡Œå’Œæ¯ä¸€åˆ—éƒ½å¿…é¡»æ˜¯é€’å¢žçš„ã€‚æ¯”å¦‚å•
+è¯ACEPTBDHQUFJMRWGKNSXILOVYï¼Œå®ƒæŽ’æˆçš„çŸ©é˜µå¦‚ä¸‹æ‰€ç¤ºï¼š 
 A C E P T
 B D H Q U
 F J M R W
 G K N S X
 I L O V Y
-ÒòÎªËüµÄÃ¿ÐÐÃ¿ÁÐ¶¼ÊÇµÝÔöµÄ£¬ËùÒÔËüÊÇÒ»¸öºÏ·¨µÄµ¥´Ê¡£¶øµ¥´ÊYXWVUTSRQPONMLKJIHGFE
-DCBAÔòÏÔÈ»²»ºÏ·¨¡£ 
-ÓÉÓÚµ¥´ÊÌ«³¤´æ´¢²»±ã£¬ÐèÒª¸øÃ¿Ò»¸öµ¥´Ê±àÒ»¸öÂë¡£±àÂë·½·¨ÈçÏÂ£ºÐ´³öµ¥´ÊÖÐ×ÖÄ¸AÔÚ
-¾ØÕóÖÐµÄÐÐºÅºÍÁÐºÅ£¬ÔÙÐ´³öBµÄÐÐºÅºÍÁÐºÅ¡­¡­ÒÀ´ËÀàÍÆ¡£µÃµ½µÄÐòÁÐ½Ð×öÐÐÁÐÐòÁÐ¡£Èç
-ÉÏÃæµÄºÏ·¨µ¥´ÊµÄÐÐÁÐÐòÁÐÊÇ£º11 21 12 22 13 31 41 23 51 32 42 52 33 43 53 14 24 
-34 44 15 25 54 35 45 55¡£È»ºó°ÑËùÓÐºÏ·¨µ¥´ÊµÄÐÐÁÐÐòÁÐÅÅÐò¡£Ò»¸öµ¥´ÊµÄÐÐÁÐÐòÁÐÅÅ
-ÐòºóµÄÎ»ÖÃ£¬¾ÍÊÇÕâ¸öµ¥´ÊµÄ±àÂë¡£±ÈÈç£¬µ¥´ÊABCDEFGHIJKLMNOPQRSTUVWXYµÄ±àÂëÎª1£¬¶ø
-µ¥´ÊABCDEFGHIJKLMNOPQRSUTVWXYµÄ±àÂëÎª2¡£ 
-ÏÖÔÚ£¬ÄãÐèÒª±àÒ»¸ö³ÌÐò£¬Íê³Éµ¥´ÊÓë±àÂë¼äµÄ×ª»»¡£
+å› ä¸ºå®ƒçš„æ¯è¡Œæ¯åˆ—éƒ½æ˜¯é€’å¢žçš„ï¼Œæ‰€ä»¥å®ƒæ˜¯ä¸€ä¸ªåˆæ³•çš„å•è¯ã€‚è€Œå•è¯YXWVUTSRQPONMLKJIHGFE
+DCBAåˆ™æ˜¾ç„¶ä¸åˆæ³•ã€‚ 
+ç”±äºŽå•è¯å¤ªé•¿å­˜å‚¨ä¸ä¾¿ï¼Œéœ€è¦ç»™æ¯ä¸€ä¸ªå•è¯ç¼–ä¸€ä¸ªç ã€‚ç¼–ç æ–¹æ³•å¦‚ä¸‹ï¼šå†™å‡ºå•è¯ä¸­å­—æ¯Aåœ¨
+çŸ©é˜µä¸­çš„è¡Œå·å’Œåˆ—å·ï¼Œå†å†™å‡ºBçš„è¡Œå·å’Œåˆ—å·â€¦â€¦ä¾æ­¤ç±»æŽ¨ã€‚å¾—åˆ°çš„åºåˆ—å«åšè¡Œåˆ—åºåˆ—ã€‚å¦‚
+ä¸Šé¢çš„åˆæ³•å•è¯çš„è¡Œåˆ—åºåˆ—æ˜¯ï¼š11 21 12 22 13 31 41 23 51 32 42 52 33 43 53 14 24 
+34 44 15 25 54 35 45 55ã€‚ç„¶åŽæŠŠæ‰€æœ‰åˆæ³•å•è¯çš„è¡Œåˆ—åºåˆ—æŽ’åºã€‚ä¸€ä¸ªå•è¯çš„è¡Œåˆ—åºåˆ—æŽ’
+åºåŽçš„ä½ç½®ï¼Œå°±æ˜¯è¿™ä¸ªå•è¯çš„ç¼–ç ã€‚æ¯”å¦‚ï¼Œå•è¯ABCDEFGHIJKLMNOPQRSTUVWXYçš„ç¼–ç ä¸º1ï¼Œè€Œ
+å•è¯ABCDEFGHIJKLMNOPQRSUTVWXYçš„ç¼–ç ä¸º2ã€‚ 
+çŽ°åœ¨ï¼Œä½ éœ€è¦ç¼–ä¸€ä¸ªç¨‹åºï¼Œå®Œæˆå•è¯ä¸Žç¼–ç é—´çš„è½¬æ¢ã€‚
 */
 #include <fstream>
 using std::ifstream;
@@ -51,8 +51,8 @@ class Application
       bool used[N*N+2];
       int maxx[N+2];
       int maxy[N+2];
-      //x ¶ÔÓ¦ÐÐ
-      //y ¶ÔÓ¦ÁÐ 
+      //x å¯¹åº”è¡Œ
+      //y å¯¹åº”åˆ— 
       public:
       Application(char* input,char* output)
                         :cin(input),cout(output)
@@ -118,7 +118,7 @@ class Application
            memset(used,false,sizeof(used));
            
            cin>>n;
-           //°Ú·ÅË³Ðò: 
+           //æ‘†æ”¾é¡ºåº: 
            //  1  2  3  4  5
            //  6  7  8  9 10
            // 11 12 13 14 15
@@ -154,7 +154,7 @@ class Application
            n=0;
            
            cin>>s;
-           //°Ú·ÅË³Ðò: 
+           //æ‘†æ”¾é¡ºåº: 
            //  1  2  3  4  5
            //  6  7  8  9 10
            // 11 12 13 14 15

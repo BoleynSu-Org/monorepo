@@ -94,15 +94,15 @@ inline void make_set(vi& set,int size){set.resize(size);rep(i,size)set[i]=i;}
 inline int find_set(vi& set,int x){if(set[x]!=x)set[x]=find_set(set,set[x]);rtn set[x];}
 inline bool union_set(vi& set,int a,int b){a=find_set(set,a),b=find_set(set,b);rtn a==b?false:set[a]=b,true;}
 
-typedef lli type;//×ø±êÀàĞÍ
+typedef lli type;//åæ ‡ç±»å‹
 enum{MAX_REC=10000+1};
 struct Rec
 {
     type x1,y1,x2,y2;
 };
-type minx=-oo,maxx=+oo,miny=-oo,maxy=+oo;//±ß½ç
-int recs;//¾ØĞÎ¸öÊı
-Rec rec[MAX_REC];//¾ØĞÎµÄĞÅÏ¢
+type minx=-oo,maxx=+oo,miny=-oo,maxy=+oo;//è¾¹ç•Œ
+int recs;//çŸ©å½¢ä¸ªæ•°
+Rec rec[MAX_REC];//çŸ©å½¢çš„ä¿¡æ¯
 typedef map<type,int> ftype;
 map<type,int> f;
 int gs;
@@ -166,7 +166,7 @@ void query(type& s,type& s2,type& n,int rt=1)
     s2=st[rt].s2;
     n=st[rt].n;
 }
-//S·µ»Ø²¢Ãæ»ı C·µ»Ø²¢ÖÜ³¤ S2·µ»Ø½»Ãæ»ı
+//Sè¿”å›å¹¶é¢ç§¯ Cè¿”å›å¹¶å‘¨é•¿ S2è¿”å›äº¤é¢ç§¯
 void solve(type& S,type& C,type& S2)
 {
     f.clear();

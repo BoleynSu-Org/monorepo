@@ -169,14 +169,14 @@ struct MonstersValley
 		rtn ans;
 	}
 };
-//O(n)µÄÉ¸·¨ÇóËØÊı±í
-//MAXPS=[1,MAXP]ÖĞËØÊıµÄ¸öÊı
+//O(n)çš„ç­›æ³•æ±‚ç´ æ•°è¡¨
+//MAXPS=[1,MAXP]ä¸­ç´ æ•°çš„ä¸ªæ•°
 enum{MAXP=40000,MAXPS=40000};
-bool isp[MAXP+1];//isp[x]=xÊÇ·ñÎªËØÊı
-int pp[MAXP+1];//pp[x]=xÔÚËØÊı±íÖĞµÄÎ»ÖÃ(´Ó0¿ªÊ¼)
-int fac[MAXP+1];//fax[x]=x×îĞ¡µÄÖÊÒò×Ó(x<=1Ê±ÎŞÒâÒå)
-int ps;//ËØÊı±íµÄ´óĞ¡
-int p[MAXPS];//ËØÊı±í
+bool isp[MAXP+1];//isp[x]=xæ˜¯å¦ä¸ºç´ æ•°
+int pp[MAXP+1];//pp[x]=xåœ¨ç´ æ•°è¡¨ä¸­çš„ä½ç½®(ä»0å¼€å§‹)
+int fac[MAXP+1];//fax[x]=xæœ€å°çš„è´¨å› å­(x<=1æ—¶æ— æ„ä¹‰)
+int ps;//ç´ æ•°è¡¨çš„å¤§å°
+int p[MAXPS];//ç´ æ•°è¡¨
 void make_prime_table()
 {
 	fl(isp,true);

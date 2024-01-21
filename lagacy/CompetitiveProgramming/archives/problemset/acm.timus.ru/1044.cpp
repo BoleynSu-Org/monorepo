@@ -47,9 +47,9 @@ class Application
           int backward=N-forward;
           const int MAX=N*9+1;
           vector<vector<int> > f(N+1,vector<int>(MAX,0));
-          //f[i][j]表示不超过i位和为j一共有几种可能
+          //f[i][j]琛ㄧず涓嶈秴杩噄浣嶅拰涓簀涓�鍏辨湁鍑犵鍙兘
           //f[i][j]=sum{f[i-1][k],0<=j-k<=9}
-          //边界f[0][0]=1
+          //杈圭晫f[0][0]=1
           //answer=sum{f[forward][i]*f[backward][i]}
           f[0][0]=1;
           for (int i=1;i<=N;i++)

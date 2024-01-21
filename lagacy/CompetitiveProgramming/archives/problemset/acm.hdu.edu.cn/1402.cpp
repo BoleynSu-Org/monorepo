@@ -1,12 +1,12 @@
 #include <iostream>
 /*
 Description:
-ÀûÓÃFFTºÍÄæFFTÊµÏÖµÄO(nlogn)µÄ¶àÏîÊ½³Ë·¨
-multiplyº¯ÊıËµÃ÷:
-                 ÊäÈëvector<int> p1,p2
-                 Êä³öreturn vector<int>
+åˆ©ç”¨FFTå’Œé€†FFTå®ç°çš„O(nlogn)çš„å¤šé¡¹å¼ä¹˜æ³•
+multiplyå‡½æ•°è¯´æ˜:
+                 è¾“å…¥vector<int> p1,p2
+                 è¾“å‡ºreturn vector<int>
                  return=p1*p2
-                 p1,p2,return·Ö±ğ±íÊ¾¶àÏîÊ½ sum{x^k*p1[k]},sum{x^k*p2[k]},sum{x^k*return[k]}
+                 p1,p2,returnåˆ†åˆ«è¡¨ç¤ºå¤šé¡¹å¼ sum{x^k*p1[k]},sum{x^k*p2[k]},sum{x^k*return[k]}
 Test:
 POJ2389 Accept
 JOJ1013 Accept

@@ -89,33 +89,33 @@ inline int find_set(vi& set,int x){if(set[x]!=x)set[x]=find_set(set,set[x]);rtn 
 inline bool union_set(vi& set,int a,int b){a=find_set(set,a),b=find_set(set,b);rtn a==b?false:set[a]=b,true;}
 /*
 Package:
-Í¼ÂÛ.ÍøÂçÁ÷.×î´óÁ÷
+å›¾è®º.ç½‘ç»œæµ.æœ€å¤§æµ
 
 Description:
-ISAPÊµÏÖµÄ×î´óÁ÷
+ISAPå®ç°çš„æœ€å¤§æµ
 
 Interface:
 MAXV:{
-ĞèÒªÎªµã·ÖÅä¶àÉÙ¿Õ¼ä
+éœ€è¦ä¸ºç‚¹åˆ†é…å¤šå°‘ç©ºé—´
 Warning:
-µã²»Ò»¶¨Òª´Ó0µ½V-1£¬¼´MAXVÓ¦¸ÃµÈÓÚÊµ¼Ê×î´óµÄ±êºÅ+1
+ç‚¹ä¸ä¸€å®šè¦ä»0åˆ°V-1ï¼Œå³MAXVåº”è¯¥ç­‰äºå®é™…æœ€å¤§çš„æ ‡å·+1
 }
 MAXE:{
-ĞèÒªÎª±ß·ÖÅä¶àÉÙ¿Õ¼ä
+éœ€è¦ä¸ºè¾¹åˆ†é…å¤šå°‘ç©ºé—´
 Warning:
-Ò»Ìõ±ß¶ÔÓ¦Ò»ÌõÕıÏò±ßºÍÒ»Ìõ·´Ïò±ß£¬¼´×¢ÒâMAXEÒªµÈÓÚÊµ¼Ê×î´ó±ßÊı*2
+ä¸€æ¡è¾¹å¯¹åº”ä¸€æ¡æ­£å‘è¾¹å’Œä¸€æ¡åå‘è¾¹ï¼Œå³æ³¨æ„MAXEè¦ç­‰äºå®é™…æœ€å¤§è¾¹æ•°*2
 }
 add_edge:{
-ÊäÈëint u,v,c
-add_edge(u,v,c) ¼ÓÒ»Ìõuµ½vµÄÈİÁ¿ÎªcµÄÓĞÏò±ß
+è¾“å…¥int u,v,c
+add_edge(u,v,c) åŠ ä¸€æ¡uåˆ°vçš„å®¹é‡ä¸ºcçš„æœ‰å‘è¾¹
 }
 build_network:{
-¹¹Í¼
-ÏêÏ¸¼ûº¯ÊıÄÚµÄ×¢ÊÍ
+æ„å›¾
+è¯¦ç»†è§å‡½æ•°å†…çš„æ³¨é‡Š
 }
 sap:{
-Êä³öint
-sap()=×î´óÁ÷
+è¾“å‡ºint
+sap()=æœ€å¤§æµ
 }
 
 Include:
@@ -123,7 +123,7 @@ Include:
 using std::memset;
 
 Test:
-ÒÑ¾­²â¹ıĞí¶àÊı¾İ£¬¿ÉĞÅÈÎ
+å·²ç»æµ‹è¿‡è®¸å¤šæ•°æ®ï¼Œå¯ä¿¡ä»»
 
 References:
 ZKW's Lab(http://www.artofproblemsolving.com/blog/54266)
@@ -147,9 +147,9 @@ void add_edge(int u,int v,int c)
 void build_network()
 {
      fl(adj,0),top=pool;
-     //S,T,V;//Ô´£¬»ã£¬µãÊı
+     //S,T,V;//æºï¼Œæ±‡ï¼Œç‚¹æ•°
      //Warning:
-     //V±ØĞëÑÏ¸ñµÈÓÚÍ¼ÖĞµÄµãµÄÊıÄ¿
+     //Vå¿…é¡»ä¸¥æ ¼ç­‰äºå›¾ä¸­çš„ç‚¹çš„æ•°ç›®
      //add_edge(u,v,c);
 }
 edge cur[MAXV];

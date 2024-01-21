@@ -3,7 +3,7 @@ ID: sujiao1
 TASK: job
 LANG: PASCAL
 }
-//ÎÒÓÃPASCAL¹ýµÄµÚÒ»Ìâ!
+//æˆ‘ç”¨PASCALè¿‡çš„ç¬¬ä¸€é¢˜!
 program job;
 var N,M1,M2:integer;
     T1,T2:array[1..30] of integer;

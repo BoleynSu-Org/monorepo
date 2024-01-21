@@ -36,11 +36,11 @@ class Application
       string in[MAXIN];
       int getId[CHARSET];
       int id_len;
-      int dif[MAXIN][ID_LEN][MAXLINE];//dif[i][j][k]=µÚiĞĞÊäÈë Óë µÚj¸ö×Ö·ûµÄµÚkĞĞµÄ²î¾à  
+      int dif[MAXIN][ID_LEN][MAXLINE];//dif[i][j][k]=ç¬¬iè¡Œè¾“å…¥ ä¸ ç¬¬jä¸ªå­—ç¬¦çš„ç¬¬kè¡Œçš„å·®è·  
       struct Dif
       {
-             int d,n,m;//·Ö±ğ¶ÔÓ¦¼õ¡¢²»±ä¡¢Ôö 
-             int dis,nis,mis;//·Ö±ğ¶ÔÓ¦¼õ¡¢²»±ä¡¢Ôö Ê±×îÏñµÄ×Ö·ûµÄid 
+             int d,n,m;//åˆ†åˆ«å¯¹åº”å‡ã€ä¸å˜ã€å¢ 
+             int dis,nis,mis;//åˆ†åˆ«å¯¹åº”å‡ã€ä¸å˜ã€å¢ æ—¶æœ€åƒçš„å­—ç¬¦çš„id 
              Dif()
                   :d(oo),n(oo),m(oo)
              {

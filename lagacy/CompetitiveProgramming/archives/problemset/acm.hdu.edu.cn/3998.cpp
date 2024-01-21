@@ -50,7 +50,7 @@ DATE: 2010-7-19
 
 DESCRIPTION:
 
-ÍøÂçÁ÷ ÂÒ×ö
+ç½‘ç»œæµ ä¹±åš
 
 http://acm.pku.edu.cn/JudgeOnline/problem?id=3155
 

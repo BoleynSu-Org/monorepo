@@ -1,7 +1,7 @@
 /*
  * Package: StandardCodeLibrary.Core
  * */
-//Òı½ø³£ÓÃµÄÍ·ÎÄ¼ş²¢Ê¹ÓÃstdÃû×Ö¿Õ¼ä;
+//å¼•è¿›å¸¸ç”¨çš„å¤´æ–‡ä»¶å¹¶ä½¿ç”¨stdåå­—ç©ºé—´;
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -28,7 +28,7 @@
 #include <climits>
 using namespace std;
 
-//ÓÃÓÚ¼õÉÙ´úÂëÁ¿µÄºê;
+//ç”¨äºå‡å°‘ä»£ç é‡çš„å®;
 #define lp for(;;)
 #define repf(i,a,b) for (int i=(a);i<(b);++i)
 #define rrepf(i,a,b) for (int i=(a)-1;i>=(b);--i)
@@ -68,7 +68,7 @@ using namespace std;
 #define shf(x) random_shuffle(all(x))
 #define nxtp(x) next_permutation(all(x))
 
-//µ÷ÊÔÏà¹ØµÄºê;
+//è°ƒè¯•ç›¸å…³çš„å®;
 #ifndef DEBUG
 #define prt(x) (cerr)
 #define asrtWA(s) do if(!(s))exit(0);whl(0)
@@ -80,7 +80,7 @@ using namespace std;
 #define input(in) freopen(in,"r",stdin)
 #define output(out) freopen(out,"w",stdout)
 #else
-#define prt(x) cerr<<"µÚ"<<__LINE__<<"ĞĞ\t: "<<#x"\t="<<(x)<<endl
+#define prt(x) cerr<<"ç¬¬"<<__LINE__<<"è¡Œ\t: "<<#x"\t="<<(x)<<endl
 #define asrtWA(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
 #define asrtTLE(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
 #define asrtMLE(s) do if(!(s))cerr<<"assert("#s")"<<endl;whl(0)
@@ -91,7 +91,7 @@ using namespace std;
 #define output(out)
 #endif
 
-//³£ÓÃÊı¾İÀàĞÍ;
+//å¸¸ç”¨æ•°æ®ç±»å‹;
 typedef long long int lli;
 typedef double db;
 typedef const char* cstr;
@@ -113,7 +113,7 @@ typedef que<int> qi;
 typedef vec<pii> vpii;
 typedef vec<pdd> vpdd;
 
-//³£ÓÃ³£Á¿:intµÄ×î´óÖµ;lliµÄ×î´óÖµ;dbµÄÎó²îÏà¹Ø³£Êı;Å·À­³£Êı;Ô²ÖÜÂÊ;ÒÆ¶¯ÏòÁ¿;È¡Ä£Ê¹ÓÃµÄ³ıÊı;
+//å¸¸ç”¨å¸¸é‡:intçš„æœ€å¤§å€¼;lliçš„æœ€å¤§å€¼;dbçš„è¯¯å·®ç›¸å…³å¸¸æ•°;æ¬§æ‹‰å¸¸æ•°;åœ†å‘¨ç‡;ç§»åŠ¨å‘é‡;å–æ¨¡ä½¿ç”¨çš„é™¤æ•°;
 int oo=(~0u)>>1;
 lli ooll=(~0ull)>>1;
 db inf=1e+10;
@@ -124,7 +124,7 @@ int dx[]={1,0,-1,0,1,-1,-1,1,0};
 int dy[]={0,1,0,-1,1,1,-1,-1,0};
 int MOD=1000000007;
 
-//³£ÓÃº¯Êı:×î´ó×îĞ¡Öµ¸üĞÂ;ÊıÑ§Ïà¹Øº¯Êı;ÊäÈëºÍÊä³ö;Ê÷×´Êı×é;²¢²é¼¯;¿ÉºÏ²¢¶Ñ;
+//å¸¸ç”¨å‡½æ•°:æœ€å¤§æœ€å°å€¼æ›´æ–°;æ•°å­¦ç›¸å…³å‡½æ•°;è¾“å…¥å’Œè¾“å‡º;æ ‘çŠ¶æ•°ç»„;å¹¶æŸ¥é›†;å¯åˆå¹¶å †;
 template<typename type>inline bool cmax(type& a,const type& b){rtn a<b?a=b,true:false;}
 template<typename type>inline bool cmin(type& a,const type& b){rtn b<a?a=b,true:false;}
 template<typename type>inline type sqr(const type& x){rtn x*x;}
@@ -160,7 +160,7 @@ inline int find_set(vpii& st,int x){int y=x,z;whl(y!=st[y].x)y=st[y].x;whl(x!=st
 inline bool union_set(vpii& st,int a,int b){a=find_set(st,a),b=find_set(st,b);rtn a!=b?(st[a].y>st[b].y?st[a].x=b,st[a].y+=st[b].y:st[b].x=a,st[b].y+=st[a].y),true:false;}
 template<typename type>inline void merge(type& a,type& b){if(sz(a)<sz(b))swap(a,b);whl(sz(b))a.ins(*b.begin()),b.ers(b.begin());}
 
-//³õÊ¼»¯;
+//åˆå§‹åŒ–;
 struct Initializer{
 #ifndef DEBUG
 Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
@@ -169,7 +169,7 @@ Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
 #endif
 }initializer;
 
-////·Ç±ê×¼;
+////éæ ‡å‡†;
 //#define for_each(e,s) for (__typeof__((s).begin()) e=(s).begin();e!=(s).end();++e)
 //#include <ext/rope>
 //#include <ext/pb_ds/assoc_container.hpp>
@@ -184,7 +184,7 @@ Initializer(){ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);}
 /*
  * Package: StandardCodeLibrary.Math
  * Description:
- * Simpson's ruleÊµÏÖÊıÖµ»ı·Ö¼ÆËã
+ * Simpson's ruleå®ç°æ•°å€¼ç§¯åˆ†è®¡ç®—
  * */
 
 namespace StandardCodeLibrary
@@ -192,8 +192,8 @@ namespace StandardCodeLibrary
 namespace Math
 {
 
-//Simpson's ruleÊµÏÖÊıÖµ»ı·Ö¼ÆËã
-//integrate(a,b)=f(x)ÔÚ[a,b]ÉÏµÄ¶¨»ı·Ö
+//Simpson's ruleå®ç°æ•°å€¼ç§¯åˆ†è®¡ç®—
+//integrate(a,b)=f(x)åœ¨[a,b]ä¸Šçš„å®šç§¯åˆ†
 template<typename func>
 db simpson(db a,db b,func f)
 {

@@ -38,8 +38,8 @@ class Application
       }
       int run()
       {
-          //��N�ֶѣ�ÿ�Ѳ�ͬ��һ���ж��ٷַ���
-          //f[n][i]=N�ֶѺ�����Ϊiһ���м��ַַ�
+          //把N分堆，每堆不同，一共有多少分法？
+          //f[n][i]=N分堆后最大的为i一共有几种分法
           //f[n][n]=1
           //f[n][i]=sum{f[n-i][j],1<=j<i<n}
           //answer=sum{f[n][i],1<=i<=n}-1

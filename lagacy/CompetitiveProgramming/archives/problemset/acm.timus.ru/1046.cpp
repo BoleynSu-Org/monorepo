@@ -128,26 +128,26 @@ class Application
       int run()
       {
           /*
-          OÎªÔ­µã Ğı×ª¾ùÎªË³Ê±Õë 
-          O->Ai+1= Mi->Ai ×ªai¶Èºó + O->Mi
-          Ai+1=(Ai-Mi)×ªai¶È + Mi
+          Oä¸ºåŸç‚¹ æ—‹è½¬å‡ä¸ºé¡ºæ—¶é’ˆ 
+          O->Ai+1= Mi->Ai è½¬aiåº¦å + O->Mi
+          Ai+1=(Ai-Mi)è½¬aiåº¦ + Mi
           
-          È»ºó£¬¹ØÓÚĞı×ª£º
-          Èô(x,y)Ğı×ªa¶È³ÉÎªÁË(x',y')
-          ¿ÉÒÔÓÃ¼«×ø±ê
-          Áîx'=R*cos(A),y'=R*sin(A)
+          ç„¶åï¼Œå…³äºæ—‹è½¬ï¼š
+          è‹¥(x,y)æ—‹è½¬aåº¦æˆä¸ºäº†(x',y')
+          å¯ä»¥ç”¨æåæ ‡
+          ä»¤x'=R*cos(A),y'=R*sin(A)
             x=R*cos(B),y=R*cos(B)
-          ÔòA-B=a
-          ËùÒÔcos(A)=cos(B+a)
+          åˆ™A-B=a
+          æ‰€ä»¥cos(A)=cos(B+a)
               sin(A)=sin(B+a)
-          ÄÇÃ´cos(A)=cos(B)cos(a)-sin(B)sin(a)
+          é‚£ä¹ˆcos(A)=cos(B)cos(a)-sin(B)sin(a)
               sin(A)=sin(B)cos(a)+cos(B)sin(a) 
-          ËùÒÔx'=x*cos(a)-y*sin(a)
+          æ‰€ä»¥x'=x*cos(a)-y*sin(a)
               y'=y*cos(a)+x*sin(a)
           
-          ËùÒÔx(Ai+1)=(x(Ai)-x(Mi))*cos(a)-(y(Ai)-y(Mi))*sin(a)+x(Mi)
+          æ‰€ä»¥x(Ai+1)=(x(Ai)-x(Mi))*cos(a)-(y(Ai)-y(Mi))*sin(a)+x(Mi)
               y(Ai+1)=(y(Ai)-y(Mi))*cos(a)+(x(Ai)-x(Mi))*sin(a)+y(Mi)
-          ËùÒÔx(Ai+1)=x(Ai)*cos(a)-y(Ai)*sin(a)-x(Mi)*cos(a)+y(Mi)*sin(a)+x(Mi)
+          æ‰€ä»¥x(Ai+1)=x(Ai)*cos(a)-y(Ai)*sin(a)-x(Mi)*cos(a)+y(Mi)*sin(a)+x(Mi)
               y(Ai+1)=y(Ai)*cos(a)+x(Ai)*sin(a)-y(Mi)*cos(a)-x(Mi)*sin(a)+y(Mi)
           */
           vector<pair<Data,Data> > A(N+1);

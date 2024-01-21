@@ -36,7 +36,7 @@ int zero(double x){
 
 }
 
-//ÅĞÁ½Èı½ÇĞÎÈ«µÈ ,Èı±ßÏàµÈ 
+//åˆ¤ä¸¤ä¸‰è§’å½¢å…¨ç­‰ ,ä¸‰è¾¹ç›¸ç­‰ 
 
 bool eq(double a1,double b1,double c1,double a2,double b2,double c2){
 
@@ -146,7 +146,7 @@ void tubao(int &n){
 
      int cnt=0;
 
-     for(int i=1;i<n;i++){    //È¥µôÏàÍ¬µÄµã 
+     for(int i=1;i<n;i++){    //å»æ‰ç›¸åŒçš„ç‚¹ 
 
         if(p[i]==p[cnt]) continue;     
 
@@ -158,13 +158,13 @@ void tubao(int &n){
 
      sort(p + 1, p + n, cmp2); 
 
-     if(n<=2) return; // Ö»ÓĞ1¸ö»ò2¸öµã 
+     if(n<=2) return; // åªæœ‰1ä¸ªæˆ–2ä¸ªç‚¹ 
 
      int j=2;
 
      while(j<n && sign(xmult(p[j],p[j-1],p[j-2]))==0) j++;
 
-     if(j>=n) {p[1]=p[n-1];n=2;return;}   //ËùÓĞµã¹²Ïß 
+     if(j>=n) {p[1]=p[n-1];n=2;return;}   //æ‰€æœ‰ç‚¹å…±çº¿ 
 
      p[n]=p[0];
 
@@ -340,7 +340,7 @@ int main(){
 
             }
 
-            if(index==-1){  //Ã»ÓĞÍË»¯, ÊÇ°¼µÄ 
+            if(index==-1){  //æ²¡æœ‰é€€åŒ–, æ˜¯å‡¹çš„ 
 
                double s=area(4,q);
 
@@ -350,7 +350,7 @@ int main(){
 
                int now=-1;
 
-               //ÕÒµ½°¼µÄÄÇ¸öµã ÈÃËü×öµÚ¶ş¸öµã 
+               //æ‰¾åˆ°å‡¹çš„é‚£ä¸ªç‚¹ è®©å®ƒåšç¬¬äºŒä¸ªç‚¹ 
 
                for(int i=0;i<=3;i++){
 
@@ -448,7 +448,7 @@ int main(){
 
             }
 
-            else{//ÍË»¯³ÉÈı½ÇĞÎ 
+            else{//é€€åŒ–æˆä¸‰è§’å½¢ 
 
                 int f=0;
 
