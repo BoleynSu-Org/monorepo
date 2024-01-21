@@ -1,0 +1,411 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oj-server
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: oj-server
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: oj-server
+              topologyKey: "kubernetes.io/hostname"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: oj-pv-claim
+      - name: workdir
+        emptyDir: {}
+      containers:
+      - name: oj-server
+        volumeMounts:
+        - name: data
+          mountPath: /data
+          subPath: "data"
+          readOnly: true
+        - mountPath: /workdir
+          name: workdir
+        workingDir: /workdir
+        image: images_boleynsu_org_oj_oj-server
+        env:
+        - name: DATA
+          value: /data
+        - name: DB_HOST
+          value: oj-db-service
+        - name: DB_USER
+          value: root
+        - name: DB_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: oj-secret
+              key: DB_PASSWORD
+        - name: PORT
+          value: "8080"
+        - name: TZ
+          value: Hongkong
+        - name: RUNNER_HOST
+          value: oj-c99runner-service
+        resources:
+          requests:
+            memory: "300Mi"
+            cpu: "100m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /chat
+            port: http
+          periodSeconds: 3
+          failureThreshold: 100
+        livenessProbe:
+          httpGet:
+            path: /chat
+            port: http
+          periodSeconds: 10
+          failureThreshold: 3
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 1993
+          runAsGroup: 1993
+      imagePullSecrets:
+        - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-judge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oj-judge
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: oj-judge
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: oj-judge
+              topologyKey: "kubernetes.io/hostname"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: oj-pv-claim
+      containers:
+      - name: oj-judge
+        volumeMounts:
+        - name: data
+          mountPath: /data
+          subPath: "data"
+          readOnly: true
+        image: images_boleynsu_org_oj_oj-judge
+        env:
+        - name: DATA
+          value: /data
+        - name: DB_HOST
+          value: oj-db-service
+        - name: DB_USER
+          value: root
+        - name: DB_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: oj-secret
+              key: DB_PASSWORD
+        - name: RUNNER_HOST
+          value: oj-c99runner-service
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 1993
+          runAsGroup: 1993
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      imagePullSecrets:
+        - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-c99runner
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oj-c99runner
+  template:
+    metadata:
+      labels:
+        app: oj-c99runner
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: oj-c99runner
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+      - name: oj-c99runner
+        image: images_boleynsu_org_oj_oj-c99runner
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "1m"
+            ephemeral-storage: "2Gi"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+            ephemeral-storage: "4Gi"
+        ports:
+        - name: oj-runner
+          containerPort: 1993
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 1993
+          runAsGroup: 1993
+      imagePullSecrets:
+        - name: registry-access-token-secret
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oj-db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: oj-db
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: oj-pv-claim
+      containers:
+      - name: oj-db
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/mysql
+          subPath: "db"
+        image: docker.io/library/mariadb
+        ports:
+        - name: mariadb
+          containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: oj-secret
+              key: DB_PASSWORD
+        - name: TZ
+          value: Hongkong
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 999
+          runAsGroup: 999
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-adminer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oj-adminer
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: oj-adminer
+    spec:
+      containers:
+      - name: oj-adminer
+        image: docker.io/library/adminer
+        env:
+        - name: ADMINER_DEFAULT_SERVER
+          value: oj-db-service
+        ports:
+        - name: http
+          containerPort: 8080
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 1993
+          runAsGroup: 1993
+        resources:
+          requests:
+            cpu: 100m
+            memory: 32Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oj-filebrowser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oj-filebrowser
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: oj-filebrowser
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: oj-filebrowser
+              topologyKey: "kubernetes.io/hostname"
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: oj-pv-claim
+      containers:
+      - name: oj-filebrowser
+        volumeMounts:
+        - name: data
+          mountPath: /srv
+          subPath: "data"
+        - name: data
+          mountPath: /conf
+          subPath: "filebrowser-conf"
+        image: docker.io/filebrowser/filebrowser
+        env:
+        - name: FB_PORT
+          value: "8080"
+        - name: FB_BASEURL
+          value: /file
+        - name: FB_DATABASE
+          value: /conf/filebrowser.db
+        - name: FB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: oj-secret
+              key: FB_PASSWORD
+        ports:
+        - name: http
+          containerPort: 8080
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          runAsNonRoot: true
+          runAsUser: 1993
+          runAsGroup: 1993
+        readinessProbe:
+          httpGet:
+            path: /file
+            port: http
+          periodSeconds: 3
+          failureThreshold: 100
+        livenessProbe:
+          httpGet:
+            path: /file
+            port: http
+          periodSeconds: 10
+          failureThreshold: 3
+        resources:
+          requests:
+            cpu: 100m
+            memory: 32Mi
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+      enableServiceLinks: false
+      automountServiceAccountToken: false
