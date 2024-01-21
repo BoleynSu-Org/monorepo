@@ -1,7 +1,7 @@
 # DO NOT EDIT! This file is auto-generated.
 # Run `bazel run //.prow:postsubmit.genfile` to regenerate.
 postsubmits:
-  - name: "bazel-test-all"
+  - name: "postsubmit-bazel-test-all"
     branches:
       - main
       - ^v\d+
@@ -19,6 +19,13 @@ postsubmits:
             - --config=bzlmod
             - --config=ci-build-and-test
             - //...
+          resources:
+            limits:
+              memory: 1.5Gi
+              cpu: 1000m
+            requests:
+              memory: 512Mi
+              cpu: 500m
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

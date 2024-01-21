@@ -1,5 +1,5 @@
 presubmits:
-  - name: "bazel-test-all"
+  - name: "presubmit-bazel-test-all"
     branches:
       - main
     decorate: true
@@ -16,6 +16,13 @@ presubmits:
             - --config=bzlmod
             - --config=ci-build-and-test
             - //...
+          resources:
+            limits:
+              memory: 1.5Gi
+              cpu: 1000m
+            requests:
+              memory: 512Mi
+              cpu: 500m
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -23,7 +30,7 @@ presubmits:
                 matchLabels:
                   use-cache.k3s.cuhk.servers.boleyn.su: "true"
               topologyKey: kubernetes.io/hostname
-  - name: "deploy-oj-to-staging"
+  - name: "presubmit-deploy-oj-to-staging"
     branches:
       - main
     decorate: true
@@ -44,6 +51,13 @@ presubmits:
             - --
             - --server-side
             - --cluster=
+          resources:
+            limits:
+              memory: 1.5Gi
+              cpu: 1000m
+            requests:
+              memory: 512Mi
+              cpu: 500m
       serviceAccountName: oj-staging-deployer
       automountServiceAccountToken: true
       affinity:
