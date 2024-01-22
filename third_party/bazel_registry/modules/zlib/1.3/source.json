@@ -1,8 +1,1 @@
-{
-  "url": "https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz",
-  "integrity": "sha256-/wukwpIBPbwnUws6geH5qBPNOd4Byl4Pi/NVcC76WT4=",
-  "patches": {
-    "patch-100000.patch": "sha256-PWpyypRb1pKsjbNdnwE3yycq3SSAwO2OiEpoYUwwUiE="
-  },
-  "strip_prefix": "zlib-1.3"
-}
+{"url": "https://do-not-use.invalid", "integrity": ""}

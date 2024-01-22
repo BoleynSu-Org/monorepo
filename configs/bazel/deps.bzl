@@ -380,11 +380,11 @@ _DEPS_JSON = r"""
     {
       "name": "zlib",
       "type": "http_archive",
-      "url": "https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz",
-      "sha256": "ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e",
-      "strip_prefix": "zlib-1.3",
-      "version": "v1.3",
-      "updated_at": "2024-01-06",
+      "url": "https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz",
+      "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+      "strip_prefix": "zlib-1.3.1",
+      "version": "v1.3.1",
+      "updated_at": "2024-01-22",
       "module_file_content": "module(\n    name = \"zlib\",\n    version = \"1.3\",\n    compatibility_level = 1,\n)\nbazel_dep(name = \"platforms\", version = \"0.0.7\")\nbazel_dep(name = \"rules_cc\", version = \"0.0.8\")\n",
       "build_file": "@com_google_protobuf//third_party:zlib.BUILD",
       "override_updater": [
@@ -1059,4 +1059,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1665424382 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1574831631 else fail("deps.bzl is corrupted")
