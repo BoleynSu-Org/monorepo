@@ -13,9 +13,9 @@ k8s_object(
     cluster = "k3s-cuhk",
     image_chroot = "ghcr.io/boleynsu-org",
     images = {
-        "images_boleynsu_org_oj_oj-server": "//oj/oj-server",
-        "images_boleynsu_org_oj_oj-judge": "//oj/oj-judge",
-        "images_boleynsu_org_oj_oj-c99runner": "//oj/oj-c99runner",
+        "images_boleynsu_org_oj_oj-server": "//oj/oj-server:image",
+        "images_boleynsu_org_oj_oj-judge": "//oj/oj-judge:image",
+        "images_boleynsu_org_oj_oj-c99runner": "//oj/oj-c99runner:image",
     },
     namespace = "staging",
     substitutions = {

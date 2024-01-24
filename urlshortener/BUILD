@@ -1,6 +1,8 @@
-load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+load("@rules_java//java:defs.bzl", "java_binary")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@io_bazel_rules_docker//container:image.bzl", "container_image")
 
-java_image(
+java_binary(
     name = "urlshortener",
     srcs = [
         "src/main/java/su/boleyn/urlshortener/BasicAuthHandler.java",
@@ -18,4 +20,21 @@ java_image(
         "@maven//:commons_validator_commons_validator",
         "@maven//:io_undertow_undertow_core",
     ],
+)
+
+pkg_tar(
+    name = "urlshortener.tar",
+    srcs = [":urlshortener"],
+    include_runfiles = True,
+    package_dir = "/usr/local/bin",
+    symlinks = {"_main": "urlshortener.runfiles"},
+)
+
+container_image(
+    name = "image",
+    base = "@org_fedoraproject_registry_fedora_minimal//image",
+    entrypoint = ["/usr/local/bin/urlshortener"],
+    env = {"JAVA_RUNFILES": "/usr/local/bin"},
+    tars = [":urlshortener.tar"],
+    visibility = ["//visibility:public"],
 )

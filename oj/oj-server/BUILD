@@ -1,7 +1,8 @@
 load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
-load("@rules_java//java:defs.bzl", "java_import")
-load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+load("@rules_java//java:defs.bzl", "java_binary", "java_import")
+load("@io_bazel_rules_docker//container:image.bzl", "container_image")
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@bazel_deps//:maven_deps.bzl", "MAVEN_ARTIFACTS")
 load("//tools/build/rules:genfile.bzl", "genfile")
@@ -55,7 +56,7 @@ genfile(
     comment = "// ",
 )
 
-java_image(
+java_binary(
     name = "oj-server",
     srcs = [
         "src/main/java/su/boleyn/oj/server/Main.java",
@@ -103,4 +104,21 @@ java_image(
         "@maven//:org_apache_tomcat_embed_tomcat_embed_core",
         "@maven//:org_apache_tomcat_embed_tomcat_embed_jasper",
     ],
+)
+
+pkg_tar(
+    name = "oj-server.tar",
+    srcs = [":oj-server"],
+    include_runfiles = True,
+    package_dir = "/usr/local/bin",
+    symlinks = {"_main": "oj-server.runfiles"},
+)
+
+container_image(
+    name = "image",
+    base = "@org_fedoraproject_registry_fedora_minimal//image",
+    entrypoint = ["/usr/local/bin/oj-server"],
+    env = {"JAVA_RUNFILES": "/usr/local/bin"},
+    tars = [":oj-server.tar"],
+    visibility = ["//visibility:public"],
 )

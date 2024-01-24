@@ -926,26 +926,6 @@ _DEPS_JSON = r"""
   ],
   "container_deps": [
     {
-      "name": "java_debug_image_base",
-      "version": "debug",
-      "version_regex": "^(debug)$",
-      "registry": "gcr.io",
-      "repository": "distroless/java21",
-      "tag": "debug",
-      "digest": "sha256:e68407ba6393b8fc9258c303e4cde4f8421cfdb038d6c9fe0c31beba02bfea42",
-      "updated_at": "2023-12-15"
-    },
-    {
-      "name": "java_image_base",
-      "version": "latest",
-      "version_regex": "^(latest)$",
-      "registry": "gcr.io",
-      "repository": "distroless/java21",
-      "tag": "latest",
-      "digest": "sha256:c96049420a4d0017b414cae9662a079593668212ed379ea6e6baeba96db5e745",
-      "updated_at": "2023-12-15"
-    },
-    {
       "name": "io_quay_boleynsu_ci_runner",
       "version": "20240119.130030",
       "registry": "quay.io",
@@ -999,6 +979,16 @@ _DEPS_JSON = r"""
       "tag": "20240118.114528",
       "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
       "updated_at": "2024-01-19"
+    },
+    {
+      "name": "org_fedoraproject_registry_fedora_minimal",
+      "registry": "registry.fedoraproject.org",
+      "repository": "fedora-minimal",
+      "digest": "sha256:ffb0313d3d79fd639a7a0dc51e1651e918a6ad372693b8a9b5b1096da7183bee",
+      "version": "latest",
+      "version_regex": "^(latest)$",
+      "tag": "latest",
+      "updated_at": "2023-11-28"
     }
   ],
   "go_deps": [
@@ -1059,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1055903251 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1050039012 else fail("deps.bzl is corrupted")
