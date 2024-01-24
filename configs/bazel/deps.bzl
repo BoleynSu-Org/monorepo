@@ -964,12 +964,12 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20240118.114528",
+      "version": "20240124.181033",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20240118.114528",
-      "digest": "sha256:0dc34a6676fb28fb780f2b31f4b16d4d319dce9b288cde68866a5e2f23222ad5",
-      "updated_at": "2024-01-19"
+      "tag": "20240124.181033",
+      "digest": "sha256:af32de4187c20b7e1a1376cd2e6acca96ad56556dbe36b501eb2a025c143d7d3",
+      "updated_at": "2024-01-24"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
@@ -1049,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1050039012 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1967799094 else fail("deps.bzl is corrupted")
