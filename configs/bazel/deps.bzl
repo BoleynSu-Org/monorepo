@@ -268,11 +268,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_license",
       "type": "http_archive",
-      "sha256": "7626bea5473d3b11d44269c5b510a210f11a78bca1ed639b0f846af955b0fe31",
-      "strip_prefix": "rules_license-0.0.7",
-      "url": "https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.7.tar.gz",
-      "updated_at": "2023-09-16",
-      "version": "0.0.7"
+      "sha256": "8c1155797cb5f5697ea8c6eac6c154cf51aa020e368813d9d9b949558c84f2da",
+      "strip_prefix": "rules_license-0.0.8",
+      "url": "https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.8.tar.gz",
+      "updated_at": "2024-01-24",
+      "version": "0.0.8"
     },
     {
       "name": "platforms",
@@ -1059,4 +1059,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 55515270 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1055903251 else fail("deps.bzl is corrupted")
