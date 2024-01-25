@@ -1,7 +1,0 @@
-{
-  "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.1/bazel-7.0.1-installer-linux-x86_64.sh",
-  "integrity": "sha256-erxQm3362IersO3J+dUpQm0mdox8zlbQklLisEgrQTU=",
-  "patches": {
-    "patch-100000.patch": "sha256-QkU+ebn2tVTOkV4BidacbHgj57epjoHEEKGUTg05gwI="
-  }
-}

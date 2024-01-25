@@ -246,11 +246,11 @@ bazel_deps:
       )
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 7.0.1
-  url: https://github.com/bazelbuild/bazel/releases/download/7.0.1/bazel-7.0.1-installer-linux-x86_64.sh
+  version: 7.0.2
+  url: https://github.com/bazelbuild/bazel/releases/download/7.0.2/bazel-7.0.2-installer-linux-x86_64.sh
   http_archive_type: zip
-  sha256: 7abc509b7dfad887abb0edc9f9d529426d26768c7cce56d09252e2b0482b4135
-  updated_at: '2024-01-19'
+  sha256: 6c5d28f643add94ddeeb4ceacaa7fbb24f4a70743893ef1d32637b712992c989
+  updated_at: '2024-01-25'
   executable: true
   override_updater:
   - type: deps_updater
