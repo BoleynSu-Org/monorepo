@@ -927,12 +927,12 @@ _DEPS_JSON = r"""
   "container_deps": [
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240119.130030",
+      "version": "20240125.221019",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240119.130030",
-      "digest": "sha256:a2286446ef44d5f58d37c0c21922a8a4d5a555dd1c851edf93d5c2dd5197e15c",
-      "updated_at": "2024-01-19"
+      "tag": "20240125.221019",
+      "digest": "sha256:d0633f1597b5f86d92f2813fb24ed3265b380663122e8f273d194cd9dc7eea60",
+      "updated_at": "2024-01-25"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1049,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -195679516 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 549627077 else fail("deps.bzl is corrupted")
