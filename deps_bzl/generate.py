@@ -1,6 +1,7 @@
 """
 The deps.bzl generator.
 """
+
 import argparse
 import json
 import pathlib

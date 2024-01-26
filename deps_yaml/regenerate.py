@@ -1,6 +1,7 @@
 """
 The deps.yaml regenerator.
 """
+
 import argparse
 import math
 import pathlib
