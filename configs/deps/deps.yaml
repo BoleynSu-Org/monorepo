@@ -767,8 +767,8 @@ container_deps:
 
 go_deps:
 - name: github.com/google/go-containerregistry
-  version: v0.18.0
-  updated_at: '2024-01-18'
+  version: v0.19.0
+  updated_at: '2024-01-29'
 - name: github.com/pkg/errors
   version: v0.9.1
   updated_at: '2023-09-17'

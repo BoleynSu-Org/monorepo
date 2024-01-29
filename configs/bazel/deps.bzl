@@ -994,8 +994,8 @@ _DEPS_JSON = r"""
   "go_deps": [
     {
       "name": "github.com/google/go-containerregistry",
-      "version": "v0.18.0",
-      "updated_at": "2024-01-18"
+      "version": "v0.19.0",
+      "updated_at": "2024-01-29"
     },
     {
       "name": "github.com/pkg/errors",
@@ -1049,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1441194049 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1537709022 else fail("deps.bzl is corrupted")
