@@ -326,13 +326,13 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_features",
       "type": "http_archive",
-      "version": "v1.4.0",
+      "version": "v1.4.1",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "4912fc2f5d17199a043e65c108d3f0a2896061296d4c335aee5e6a3a71cc4f0d",
-      "strip_prefix": "bazel_features-1.4.0",
-      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.4.0/bazel_features-v1.4.0.tar.gz",
+      "sha256": "0f23d75c7623d6dba1fd30513a94860447de87c8824570521fcc966eda3151c2",
+      "strip_prefix": "bazel_features-1.4.1",
+      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.4.1/bazel_features-v1.4.1.tar.gz",
       "github_repo": "bazel-contrib/bazel_features",
-      "updated_at": "2024-01-27",
+      "updated_at": "2024-02-01",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -950,8 +950,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:6c2a4bac611e933e9ac318592d6caa7c4d4895a2ef1acec9383288844c6b7c6d",
-      "updated_at": "2024-01-11"
+      "digest": "sha256:0d84fb86f1a1d7b20b6d94a23c379e71b77a36920321d662077516c514d582c3",
+      "updated_at": "2024-02-01"
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -1049,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1537709022 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 2144753328 else fail("deps.bzl is corrupted")
