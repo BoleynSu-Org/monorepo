@@ -133,11 +133,11 @@ _DEPS_JSON = r"""
     {
       "name": "io_grpc_grpc_java",
       "type": "http_archive",
-      "sha256": "f11c9280788264e09456d81f29ab4493f7e0ae5793320c73112b2dfc632f86b0",
-      "strip_prefix": "grpc-java-1.61.0",
-      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.61.0.tar.gz",
-      "updated_at": "2024-01-12",
-      "version": "v1.61.0",
+      "sha256": "4264560a4d0ed6053c88e202ba161e87edd4eb7ac4ea88d070b9b822041a3f2d",
+      "strip_prefix": "grpc-java-1.61.1",
+      "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.61.1.tar.gz",
+      "updated_at": "2024-02-02",
+      "version": "v1.61.1",
       "load_deps": "load(\"@io_grpc_grpc_java//:repositories.bzl\", \"grpc_java_repositories\")\ndef deps():\n  grpc_java_repositories()\n",
       "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel"
     },
@@ -1049,4 +1049,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 82284016 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1798879072 else fail("deps.bzl is corrupted")
