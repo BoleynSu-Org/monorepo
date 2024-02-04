@@ -87,6 +87,16 @@ _DEPS_JSON = r"""
       "module_file": "@boleynsu_org//third_party/io_bazel_rules_docker:repo.MODULE.bazel"
     },
     {
+      "name": "rules_oci",
+      "type": "http_archive",
+      "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.0.tar.gz",
+      "sha256": "6ae66ccc6261d3d297fef1d830a9bb852ddedd3920bbd131021193ea5cb5af77",
+      "strip_prefix": "rules_oci-1.7.0",
+      "updated_at": "2024-02-04",
+      "version": "v1.7.0",
+      "load_deps": "load(\"@rules_oci//oci:repositories.bzl\", \"LATEST_CRANE_VERSION\", \"oci_register_toolchains\")\ndef deps():\n  oci_register_toolchains(\n      name = \"oci\",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n"
+    },
+    {
       "name": "io_bazel_rules_k8s",
       "type": "http_archive",
       "url": "https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz",
@@ -517,6 +527,48 @@ _DEPS_JSON = r"""
         {
           "type": "shell",
           "cmd": "echo DEPS_UPDATER_url=https://github.com/bazelbuild/rules_kotlin/releases/download/${DEPS_UPDATER_version}/rules_kotlin-${DEPS_UPDATER_version}.tar.gz\n"
+        },
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "sha256"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "aspect_bazel_lib",
+      "type": "http_archive",
+      "version": "v2.3.0",
+      "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
+      "sha256": "bda4a69fa50411b5feef473b423719d88992514d259dadba7d8218a1d02c7883",
+      "strip_prefix": "bazel-lib-2.3.0",
+      "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.3.0/bazel-lib-v2.3.0.tar.gz",
+      "github_repo": "aspect-build/bazel-lib",
+      "updated_at": "2024-01-11",
+      "module_file": "@boleynsu_org//third_party/aspect_bazel_lib:repo.MODULE.bazel",
+      "override_updater": [
+        {
+          "type": "deps_updater",
+          "name": "bazel_deps",
+          "extra_args": [
+            {
+              "name": "fields",
+              "value": [
+                "version"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "shell",
+          "cmd": "echo DEPS_UPDATER_url=https://github.com/aspect-build/bazel-lib/releases/download/${DEPS_UPDATER_version}/bazel-lib-${DEPS_UPDATER_version}.tar.gz\necho DEPS_UPDATER_strip_prefix=bazel-lib-${DEPS_UPDATER_version#v}\n"
         },
         {
           "type": "deps_updater",
@@ -1049,4 +1101,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1798879072 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1082365653 else fail("deps.bzl is corrupted")

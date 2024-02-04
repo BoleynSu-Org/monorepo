@@ -2,7 +2,7 @@ load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
 load("@rules_java//java:defs.bzl", "java_binary", "java_import")
-load("@io_bazel_rules_docker//container:image.bzl", "container_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_tarball")
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@bazel_deps//:maven_deps.bzl", "MAVEN_ARTIFACTS")
 load("//tools/build/rules:genfile.bzl", "genfile")
@@ -109,17 +109,24 @@ java_binary(
 pkg_tar(
     name = "oj-server.tar",
     srcs = [":oj-server"],
+    empty_dirs = ["/usr/local/bin/oj-server.runfiles"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
     symlinks = {"_main": "oj-server.runfiles"},
 )
 
-container_image(
+oci_image(
     name = "image",
-    base = "@org_fedoraproject_registry_fedora_minimal//image",
-    empty_dirs = ["/usr/local/bin/oj-server.runfiles"],
+    base = "@org_fedoraproject_registry_fedora_minimal",
     entrypoint = ["/usr/local/bin/oj-server"],
     env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-server.tar"],
+    visibility = ["//visibility:public"],
+)
+
+oci_tarball(
+    name = "image.image.tar",
+    image = "image",
+    repo_tags = [],
     visibility = ["//visibility:public"],
 )

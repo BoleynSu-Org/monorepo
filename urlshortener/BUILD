@@ -1,6 +1,6 @@
 load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
-load("@io_bazel_rules_docker//container:image.bzl", "container_image")
+load("@rules_oci//oci:defs.bzl", "oci_image", "oci_tarball")
 
 java_binary(
     name = "urlshortener",
@@ -25,16 +25,24 @@ java_binary(
 pkg_tar(
     name = "urlshortener.tar",
     srcs = [":urlshortener"],
+    empty_dirs = ["/usr/local/bin/urlshortener.runfiles"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
     symlinks = {"_main": "urlshortener.runfiles"},
 )
 
-container_image(
+oci_image(
     name = "image",
-    base = "@org_fedoraproject_registry_fedora_minimal//image",
+    base = "@org_fedoraproject_registry_fedora_minimal",
     entrypoint = ["/usr/local/bin/urlshortener"],
     env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":urlshortener.tar"],
+    visibility = ["//visibility:public"],
+)
+
+oci_tarball(
+    name = "image.image.tar",
+    image = "image",
+    repo_tags = [],
     visibility = ["//visibility:public"],
 )

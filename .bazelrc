@@ -3,11 +3,6 @@
 common --enable_bzlmod=true
 common --lockfile_mode=error
 
-# See https://github.com/bazelbuild/rules_docker/blob/6ea707babdcd54514e0884278ac624fb8bda19c1/docs/container.md
-common --loading_phase_threads=1
-# See https://github.com/bazelbuild/rules_docker/issues/2275#issue-1907658747
-build --@io_bazel_rules_docker//transitions:enable=false
-
 build --conlyopt=-std=gnu17
 build --host_conlyopt=-std=gnu17
 
