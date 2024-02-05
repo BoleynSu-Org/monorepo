@@ -58,11 +58,11 @@ _DEPS_JSON = r"""
       "name": "io_bazel_rules_go",
       "module_name": "rules_go",
       "type": "http_archive",
-      "sha256": "15f6dc36419890bdd9b9a592d2d49dbe31cb7011679f17c3a5bd29242b6c4df9",
-      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.45.0.tar.gz",
-      "updated_at": "2024-01-12",
-      "version": "v0.45.0",
-      "strip_prefix": "rules_go-0.45.0",
+      "sha256": "aac6e182a9fffa2944fdf8abdca513823e21030bbb854ce74d8abfbccd636459",
+      "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.45.1.tar.gz",
+      "updated_at": "2024-02-05",
+      "version": "v0.45.1",
+      "strip_prefix": "rules_go-0.45.1",
       "load_deps": "load(\"@io_bazel_rules_go//go:deps.bzl\", \"go_download_sdk\")\nload(\"@io_bazel_rules_go//go/private:nogo.bzl\", \"go_register_nogo\", \"DEFAULT_NOGO\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"GOLANG_VERSION\")\ndef deps():\n  go_register_nogo(\n      name = \"io_bazel_rules_nogo\",\n      nogo = DEFAULT_NOGO,\n  )\n  go_download_sdk(\n      name = \"go_linux_amd64\",\n      goos = \"linux\",\n      goarch = \"amd64\",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n",
       "patch_cmds": [
         "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl"
@@ -1066,4 +1066,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 234527056 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1547953118 else fail("deps.bzl is corrupted")
