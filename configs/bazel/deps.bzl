@@ -69,24 +69,6 @@ _DEPS_JSON = r"""
       ]
     },
     {
-      "name": "io_bazel_rules_docker",
-      "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_docker/archive/refs/tags/v0.25.0.tar.gz",
-      "sha256": "07ee8ca536080f5ebab6377fc6e8920e9a761d2ee4e64f0f6d919612f6ab56aa",
-      "strip_prefix": "rules_docker-0.25.0",
-      "updated_at": "2022-07-01",
-      "expires_at": "2024-07-01",
-      "version": "v0.25.0",
-      "patches": [
-        "@boleynsu_org//third_party/io_bazel_rules_docker:skylib_path.patch"
-      ],
-      "patch_cmds": [
-        "sed -i '/native.register_toolchains/Q' repositories/repositories.bzl"
-      ],
-      "load_deps": "load(\"@io_bazel_rules_docker//repositories:repositories.bzl\", \"repositories\")\ndef deps():\n  repositories()\n",
-      "module_file": "@boleynsu_org//third_party/io_bazel_rules_docker:repo.MODULE.bazel"
-    },
-    {
       "name": "rules_oci",
       "type": "http_archive",
       "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.0.tar.gz",
@@ -95,23 +77,6 @@ _DEPS_JSON = r"""
       "updated_at": "2024-02-04",
       "version": "v1.7.0",
       "load_deps": "load(\"@rules_oci//oci:repositories.bzl\", \"LATEST_CRANE_VERSION\", \"oci_register_toolchains\")\ndef deps():\n  oci_register_toolchains(\n      name = \"oci\",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n"
-    },
-    {
-      "name": "io_bazel_rules_k8s",
-      "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_k8s/archive/refs/tags/v0.7.tar.gz",
-      "sha256": "ce5b9bc0926681e2e7f2147b49096f143e6cbc783e71bc1d4f36ca76b00e6f4a",
-      "strip_prefix": "rules_k8s-0.7",
-      "updated_at": "2022-06-18",
-      "expires_at": "2024-06-18",
-      "version": "v0.7",
-      "patch_cmds": [
-        "sed -i 's/kubectl create --dry-run/%{kubectl_tool} create --dry-run=client --kubeconfig=\"%{kubeconfig}\" --cluster=\"%{cluster}\" --context=\"%{context}\" --user=\"%{user}\"/g' k8s/describe.sh.tpl",
-        "sed -i \"s/| cut -d'\\\"' -f 2//g\" k8s/describe.sh.tpl",
-        "sed -i 's/\"${RESOURCE_NAME}\"/${RESOURCE_NAME}/g' k8s/describe.sh.tpl",
-        "sed -i 's#@com_github_yaml_pyyaml//:yaml3#@pip_pyyaml//:pkg#g' k8s/BUILD"
-      ],
-      "module_file": "@boleynsu_org//third_party/io_bazel_rules_k8s:repo.MODULE.bazel"
     },
     {
       "name": "bazel_skylib",
@@ -1101,4 +1066,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1082365653 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 234527056 else fail("deps.bzl is corrupted")

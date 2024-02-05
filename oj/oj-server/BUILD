@@ -2,7 +2,7 @@ load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
 load("@rules_java//java:defs.bzl", "java_binary", "java_import")
-load("@rules_oci//oci:defs.bzl", "oci_image", "oci_tarball")
+load("@rules_oci//oci:defs.bzl", "oci_image")
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
 load("@bazel_deps//:maven_deps.bzl", "MAVEN_ARTIFACTS")
 load("//tools/build/rules:genfile.bzl", "genfile")
@@ -121,12 +121,5 @@ oci_image(
     entrypoint = ["/usr/local/bin/oj-server"],
     env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-server.tar"],
-    visibility = ["//visibility:public"],
-)
-
-oci_tarball(
-    name = "image.image.tar",
-    image = "image",
-    repo_tags = [],
     visibility = ["//visibility:public"],
 )

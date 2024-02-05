@@ -1,6 +1,6 @@
-load("@io_bazel_rules_k8s//k8s:object.bzl", "k8s_object")
-load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load("@rules_oci//oci:defs.bzl", "oci_push")
 load("@bazel_deps//:container_deps.bzl", "CONTAINER_IMAGES")
+load("//tools/build/rules:expand_template.bzl", "expand_template")
 
 exports_files(glob(["**"]))
 
@@ -9,45 +9,78 @@ filegroup(
     srcs = glob(["**"]),
 )
 
-copy_file(
-    name = "oj-server",
-    src = "//oj/oj-server:image.image.tar",
-    out = "oj-server.tar",
-    allow_symlink = True,
-)
+COMPONENTS = [
+    "oj-server",
+    "oj-judge",
+    "oj-c99runner",
+]
 
-copy_file(
-    name = "oj-judge",
-    src = "//oj/oj-judge:image.image.tar",
-    out = "oj-judge.tar",
-    allow_symlink = True,
-)
+DATA = [
+    tpl.format(name)
+    for tpl in [
+        ":{}",
+        "//oj/{}:image",
+    ]
+    for name in COMPONENTS
+] + [
+    "@kubectl_linux_amd64//file",
+    "@jq_toolchains//:resolved_toolchain",
+]
 
-copy_file(
-    name = "oj-c99runner",
-    src = "//oj/oj-c99runner:image.image.tar",
-    out = "oj-c99runner.tar",
-    allow_symlink = True,
-)
+[
+    oci_push(
+        name = name,
+        image = "//oj/{}:image".format(name),
+        remote_tags = ["latest"],
+        repository = "ghcr.io/boleynsu-org/images_boleynsu_org_oj_{}".format(name),
+    )
+    for name in COMPONENTS
+]
 
-k8s_object(
-    name = "staging",
-    cluster = "k3s-cuhk",
-    image_chroot = "ghcr.io/boleynsu-org",
-    images = {
-        "images_boleynsu_org_oj_oj-server": ":oj-server",
-        "images_boleynsu_org_oj_oj-judge": ":oj-judge",
-        "images_boleynsu_org_oj_oj-c99runner": ":oj-c99runner",
-    },
-    namespace = "staging",
+expand_template(
+    name = "deploy",
+    expand_location_for = DATA,
+    is_executable = True,
     substitutions = {
-        image["registry"] + "/" + image["repository"]: image["registry"] + "/" + image["repository"] + "@" + image["digest"]
-        for image in CONTAINER_IMAGES.values()
-        if image["registry"] + "/" + image["repository"] in [
-            "docker.io/library/mariadb",
-            "docker.io/library/adminer",
-            "docker.io/filebrowser/filebrowser",
-        ]
+        "$PUSH_ALL_IMAGES": "\n".join([
+            '"$(rlocation "$(rlocationpath :{})")"'.format(name)
+            for name in [
+                "oj-server",
+                "oj-judge",
+                "oj-c99runner",
+            ]
+        ]),
+        "$SED_COMMANDS": " ".join([
+            "-e 's#{registry}/{repository}#{registry}/{repository}@{digest}#'".format(
+                digest = image["digest"],
+                registry = image["registry"],
+                repository = image["repository"],
+            )
+            for image in CONTAINER_IMAGES.values()
+            if image["registry"] + "/" + image["repository"] in [
+                "docker.io/library/mariadb",
+                "docker.io/library/adminer",
+                "docker.io/filebrowser/filebrowser",
+            ]
+        ] + [
+            '-e "s#images_boleynsu_org_oj_{name}#ghcr.io/boleynsu-org/images_boleynsu_org_oj_{name}@$("$(rlocation "$(rlocationpath @jq_toolchains//:resolved_toolchain)")" -r ".manifests[0].digest" "$(rlocation "$(rlocationpath //oj/{name}:image)/index.json")")#g" '.format(name = name)
+            for name in COMPONENTS
+        ]),
+        "$KUBECTL": '"$(rlocation "$(rlocationpath @kubectl_linux_amd64//file)")"',
     },
-    template = "k3s-cuhk/common/deployment.yaml",
+    template = "deploy.tpl.sh",
+)
+
+sh_binary(
+    name = "staging",
+    srcs = [":deploy"],
+    args = [
+        "$(rootpath k3s-cuhk/common/deployment.yaml)",
+        "--namespace",
+        "staging",
+    ],
+    data = DATA + [
+        "k3s-cuhk/common/deployment.yaml",
+        "@bazel_tools//tools/bash/runfiles",
+    ],
 )
