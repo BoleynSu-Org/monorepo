@@ -510,13 +510,13 @@ _DEPS_JSON = r"""
     {
       "name": "aspect_bazel_lib",
       "type": "http_archive",
-      "version": "v2.3.0",
+      "version": "v2.4.1",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "bda4a69fa50411b5feef473b423719d88992514d259dadba7d8218a1d02c7883",
-      "strip_prefix": "bazel-lib-2.3.0",
-      "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.3.0/bazel-lib-v2.3.0.tar.gz",
+      "sha256": "979667bb7276ee8fcf2c114c9be9932b9a3052a64a647e0dcaacfb9c0016f0a3",
+      "strip_prefix": "bazel-lib-2.4.1",
+      "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.4.1/bazel-lib-v2.4.1.tar.gz",
       "github_repo": "aspect-build/bazel-lib",
-      "updated_at": "2024-01-11",
+      "updated_at": "2024-02-06",
       "module_file": "@boleynsu_org//third_party/aspect_bazel_lib:repo.MODULE.bazel",
       "override_updater": [
         {
@@ -1066,4 +1066,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1547953118 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -2018228823 else fail("deps.bzl is corrupted")
