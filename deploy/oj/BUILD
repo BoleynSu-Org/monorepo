@@ -72,10 +72,12 @@ expand_template(
 )
 
 sh_binary(
-    name = "staging",
+    name = "staging.apply",
     srcs = [":deploy"],
     args = [
         "$(rootpath k3s-cuhk/common/deployment.yaml)",
+        "--cluster",
+        "k3s-cuhk",
         "--namespace",
         "staging",
     ],
