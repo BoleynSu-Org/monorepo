@@ -31,7 +31,6 @@ DATA = [
     oci_push(
         name = name,
         image = "//oj/{}:image".format(name),
-        remote_tags = ["latest"],
         repository = "ghcr.io/boleynsu-org/images_boleynsu_org_oj_{}".format(name),
     )
     for name in COMPONENTS
@@ -43,7 +42,7 @@ expand_template(
     is_executable = True,
     substitutions = {
         "$PUSH_ALL_IMAGES": "\n".join([
-            '"$(rlocation "$(rlocationpath :{})")"'.format(name)
+            '"$(rlocation "$(rlocationpath :{})")" --tag=latest'.format(name)
             for name in [
                 "oj-server",
                 "oj-judge",
