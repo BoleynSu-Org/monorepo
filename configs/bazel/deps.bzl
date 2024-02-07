@@ -553,8 +553,8 @@ _DEPS_JSON = r"""
   "pip_deps": [
     {
       "name": "ruamel.yaml",
-      "version": "0.18.5",
-      "updated_at": "2023-11-03"
+      "version": "0.18.6",
+      "updated_at": "2024-02-07"
     },
     {
       "name": "PyYAML",
@@ -1066,4 +1066,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -2018228823 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1686873413 else fail("deps.bzl is corrupted")
