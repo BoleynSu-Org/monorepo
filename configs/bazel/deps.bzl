@@ -23,11 +23,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_java",
       "type": "http_archive",
-      "sha256": "fe2f474418237c0617548d329db6cd2f34e28b611f4b0d984490e3614e45a5ee",
-      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.3.2.tar.gz",
-      "strip_prefix": "rules_java-7.3.2",
-      "updated_at": "2023-12-21",
-      "version": "7.3.2",
+      "sha256": "c8f8f5ff4813d8248df38e5b1c5a31e0314578a8c53938141e8e1ea4af6cdee9",
+      "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.4.0.tar.gz",
+      "strip_prefix": "rules_java-7.4.0",
+      "updated_at": "2024-02-09",
+      "version": "7.4.0",
       "load_deps": "load(\"@rules_java//java:repositories.bzl\", \"java_tools_repos\", \"remote_jdk21_repos\")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n"
     },
     {
@@ -71,11 +71,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_oci",
       "type": "http_archive",
-      "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.0.tar.gz",
-      "sha256": "6ae66ccc6261d3d297fef1d830a9bb852ddedd3920bbd131021193ea5cb5af77",
-      "strip_prefix": "rules_oci-1.7.0",
-      "updated_at": "2024-02-04",
-      "version": "v1.7.0",
+      "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.2.tar.gz",
+      "sha256": "cf6b8be82cde30daef18a09519d75269650317e40d917c8633cf8e3ab5645ea5",
+      "strip_prefix": "rules_oci-1.7.2",
+      "updated_at": "2024-02-09",
+      "version": "v1.7.2",
       "load_deps": "load(\"@rules_oci//oci:repositories.bzl\", \"LATEST_CRANE_VERSION\", \"oci_register_toolchains\")\ndef deps():\n  oci_register_toolchains(\n      name = \"oci\",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n"
     },
     {
@@ -396,10 +396,10 @@ _DEPS_JSON = r"""
     {
       "name": "apple_support",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/apple_support/releases/download/1.11.1/apple_support.1.11.1.tar.gz",
-      "sha256": "cf4d63f39c7ba9059f70e995bf5fe1019267d3f77379c2028561a5d7645ef67c",
-      "version": "1.11.1",
-      "updated_at": "2024-01-06",
+      "url": "https://github.com/bazelbuild/apple_support/releases/download/1.12.0/apple_support.1.12.0.tar.gz",
+      "sha256": "100d12617a84ebc7ee7a10ecf3b3e2fdadaebc167ad93a21f820a6cb60158ead",
+      "version": "1.12.0",
+      "updated_at": "2024-02-09",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -608,8 +608,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "commons-codec:commons-codec",
-      "version": "1.16.0",
-      "updated_at": "2023-06-22"
+      "version": "1.16.1",
+      "updated_at": "2024-02-09"
     },
     {
       "name": "org.wildfly.common:wildfly-common",
@@ -1066,4 +1066,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1686873413 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 828350576 else fail("deps.bzl is corrupted")
