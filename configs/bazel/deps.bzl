@@ -958,8 +958,14 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:ac933f87a5fc8b743a3c522179116ee63aec31105795dc28dea8b80bb74cdd36",
-      "updated_at": "2024-02-02"
+      "digest": "sha256:c5077bb44d13a3f34dadb5a15861149e29b3251d1e24036d2dad9611dc9d940b",
+      "updated_at": "2024-02-10",
+      "platforms": [
+        "linux/amd64",
+        "linux/arm64",
+        "linux/ppc64le",
+        "linux/s390x"
+      ]
     },
     {
       "name": "io_docker_library_adminer",
@@ -967,8 +973,18 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:0d84fb86f1a1d7b20b6d94a23c379e71b77a36920321d662077516c514d582c3",
-      "updated_at": "2024-02-01"
+      "digest": "sha256:e6016420357dd7889ad127265cdbde2c535ae28517958e93ac31a097c5953101",
+      "updated_at": "2024-02-10",
+      "platforms": [
+        "linux/amd64",
+        "linux/arm",
+        "linux/arm",
+        "linux/arm64",
+        "linux/386",
+        "linux/mips64le",
+        "linux/ppc64le",
+        "linux/s390x"
+      ]
     },
     {
       "name": "io_docker_filebrowser_filebrowser",
@@ -976,8 +992,13 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "filebrowser/filebrowser",
       "tag": "v2.27.0",
-      "digest": "sha256:36330c6d361f4d17f30ff0ed747b3b99f6c50eaae7b9ba6d33b162b50bf2826a",
-      "updated_at": "2024-01-02"
+      "digest": "sha256:00b75afd52a92e4525e3bcaf61caa2a31b8d878a5b371380686b1145cb0424fd",
+      "updated_at": "2024-02-10",
+      "platforms": [
+        "linux/amd64",
+        "linux/arm64",
+        "linux/arm"
+      ]
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
@@ -1001,11 +1022,17 @@ _DEPS_JSON = r"""
       "name": "org_fedoraproject_registry_fedora_minimal",
       "registry": "registry.fedoraproject.org",
       "repository": "fedora-minimal",
-      "digest": "sha256:ffb0313d3d79fd639a7a0dc51e1651e918a6ad372693b8a9b5b1096da7183bee",
+      "digest": "sha256:f34c3b3aa56c88b153c747f32592ff37ece4606951291a7ddc507778d207f21c",
       "version": "latest",
       "version_regex": "^(latest)$",
       "tag": "latest",
-      "updated_at": "2023-11-28"
+      "updated_at": "2024-02-10",
+      "platforms": [
+        "linux/arm64",
+        "linux/ppc64le",
+        "linux/s390x",
+        "linux/amd64"
+      ]
     }
   ],
   "go_deps": [
@@ -1066,4 +1093,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -948086068 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 257066854 else fail("deps.bzl is corrupted")
