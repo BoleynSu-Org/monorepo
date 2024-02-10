@@ -738,7 +738,7 @@ container_deps:
   updated_at: '2024-02-10'
   platforms:
   - linux/amd64
-  - linux/arm64
+  - linux/arm64/v8
   - linux/ppc64le
   - linux/s390x
 - name: io_docker_library_adminer
@@ -750,9 +750,9 @@ container_deps:
   updated_at: '2024-02-10'
   platforms:
   - linux/amd64
-  - linux/arm
-  - linux/arm
-  - linux/arm64
+  - linux/arm/v5
+  - linux/arm/v7
+  - linux/arm64/v8
   - linux/386
   - linux/mips64le
   - linux/ppc64le
@@ -767,7 +767,7 @@ container_deps:
   platforms:
   - linux/amd64
   - linux/arm64
-  - linux/arm
+  - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
   version: '20240124.181033'
   registry: quay.io
@@ -790,7 +790,6 @@ container_deps:
   version_regex: ^(latest)$
   tag: latest
   updated_at: '2024-02-10'
-
   platforms:
   - linux/arm64
   - linux/ppc64le

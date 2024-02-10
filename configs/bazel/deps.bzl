@@ -962,7 +962,7 @@ _DEPS_JSON = r"""
       "updated_at": "2024-02-10",
       "platforms": [
         "linux/amd64",
-        "linux/arm64",
+        "linux/arm64/v8",
         "linux/ppc64le",
         "linux/s390x"
       ]
@@ -977,9 +977,9 @@ _DEPS_JSON = r"""
       "updated_at": "2024-02-10",
       "platforms": [
         "linux/amd64",
-        "linux/arm",
-        "linux/arm",
-        "linux/arm64",
+        "linux/arm/v5",
+        "linux/arm/v7",
+        "linux/arm64/v8",
         "linux/386",
         "linux/mips64le",
         "linux/ppc64le",
@@ -997,7 +997,7 @@ _DEPS_JSON = r"""
       "platforms": [
         "linux/amd64",
         "linux/arm64",
-        "linux/arm"
+        "linux/arm/v7"
       ]
     },
     {
@@ -1093,4 +1093,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 257066854 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1658446342 else fail("deps.bzl is corrupted")
