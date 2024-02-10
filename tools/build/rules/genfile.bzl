@@ -50,7 +50,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
         name = "{}.genfile".format(name),
         srcs = [":{}.genfile.sh".format(name)],
         data = [name],
-        deps = ["@bazel_tools//tools/bash/runfiles"],
+        deps = [Label("@bazel_tools//tools/bash/runfiles")],
         **kwargs
     )
 
