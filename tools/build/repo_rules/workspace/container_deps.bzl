@@ -7,6 +7,7 @@ def to_container_image(*, name, repository, digest, registry, **kwargs):
         "registry": registry,
         "repository": repository,
         "digest": digest,
+        "platforms": kwargs.get("platforms", None),
     }
 
 CONTAINER_IMAGES = {
