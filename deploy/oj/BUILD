@@ -24,7 +24,7 @@ DATA = [
     for name in COMPONENTS
 ] + [
     "@kubectl_linux_amd64//file",
-    "@jq_toolchains//:resolved_toolchain",
+    "@jq_linux_amd64//:jq",
 ]
 
 [
@@ -62,7 +62,7 @@ expand_template(
                 "docker.io/filebrowser/filebrowser",
             ]
         ] + [
-            '-e "s#images_boleynsu_org_oj_{name}#ghcr.io/boleynsu-org/images_boleynsu_org_oj_{name}@$("$(rlocation "$(rlocationpath @jq_toolchains//:resolved_toolchain)")" -r ".manifests[0].digest" "$(rlocation "$(rlocationpath //oj/{name}:image)/index.json")")#g" '.format(name = name)
+            '-e "s#images_boleynsu_org_oj_{name}#ghcr.io/boleynsu-org/images_boleynsu_org_oj_{name}@$("$(rlocation "$(rlocationpath @jq_linux_amd64//:jq)")" -r ".manifests[0].digest" "$(rlocation "$(rlocationpath //oj/{name}:image)/index.json")")#g" '.format(name = name)
             for name in COMPONENTS
         ]),
         "$KUBECTL": '"$(rlocation "$(rlocationpath @kubectl_linux_amd64//file)")"',
