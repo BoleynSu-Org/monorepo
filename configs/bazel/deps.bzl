@@ -944,12 +944,12 @@ _DEPS_JSON = r"""
   "container_deps": [
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240210.175708",
+      "version": "20240212.062258",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240210.175708",
+      "tag": "20240212.062258",
       "digest": "sha256:d0633f1597b5f86d92f2813fb24ed3265b380663122e8f273d194cd9dc7eea60",
-      "updated_at": "2024-02-10"
+      "updated_at": "2024-02-12"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -1002,29 +1002,29 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20240210.175708",
+      "version": "20240212.062258",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20240210.175708",
+      "tag": "20240212.062258",
       "digest": "sha256:af32de4187c20b7e1a1376cd2e6acca96ad56556dbe36b501eb2a025c143d7d3",
-      "updated_at": "2024-02-10"
+      "updated_at": "2024-02-12"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20240210.175708",
+      "version": "20240212.062258",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20240210.175708",
+      "tag": "20240212.062258",
       "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
-      "updated_at": "2024-02-10"
+      "updated_at": "2024-02-12"
     },
     {
       "name": "io_quay_boleynsu_base",
       "registry": "quay.io",
       "repository": "boleynsu/base",
       "digest": "sha256:f967d6e03c51f6d3403e09fde544c2014cfcc2595b2f7ac9672307cac1e12216",
-      "version": "20240212.043427",
-      "tag": "20240212.043427",
+      "version": "20240212.062258",
+      "tag": "20240212.062258",
       "updated_at": "2024-02-12"
     }
   ],
@@ -1086,4 +1086,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1444949383 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1120355893 else fail("deps.bzl is corrupted")
