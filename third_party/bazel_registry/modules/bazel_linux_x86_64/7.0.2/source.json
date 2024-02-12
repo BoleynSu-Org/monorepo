@@ -3,5 +3,6 @@
   "integrity": "sha256-bF0o9kOt2U3e60zqyqf7sk9KcHQ4k+8dMmN7cSmSyYk=",
   "patches": {
     "patch-100000.patch": "sha256-QkU+ebn2tVTOkV4BidacbHgj57epjoHEEKGUTg05gwI="
-  }
+  },
+  "archive_type": "zip"
 }
