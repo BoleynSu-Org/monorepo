@@ -33,11 +33,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "d71d2c67e0bce986e1c5a7731b4693226867c45bfe0b7c5e0067228a536fc580",
-      "strip_prefix": "rules_python-0.29.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.29.0.tar.gz",
-      "updated_at": "2024-01-23",
-      "version": "0.29.0",
+      "sha256": "1fc52b50b267917e107afcfbbbd78261550a6f3319bfc5bd8976a0e11a295ea4",
+      "strip_prefix": "rules_python-0.30.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.30.0.tar.gz",
+      "updated_at": "2024-02-12",
+      "version": "0.30.0",
       "load_deps": "load(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@rules_python//python/pip_install:repositories.bzl\", \"pip_install_dependencies\")\nload(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
@@ -1086,4 +1086,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1120355893 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1564275016 else fail("deps.bzl is corrupted")

@@ -26,11 +26,11 @@ bazel_deps:
       remote_jdk21_repos()
 - name: rules_python
   type: http_archive
-  sha256: d71d2c67e0bce986e1c5a7731b4693226867c45bfe0b7c5e0067228a536fc580
-  strip_prefix: rules_python-0.29.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.29.0.tar.gz
-  updated_at: '2024-01-23'
-  version: 0.29.0
+  sha256: 1fc52b50b267917e107afcfbbbd78261550a6f3319bfc5bd8976a0e11a295ea4
+  strip_prefix: rules_python-0.30.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.30.0.tar.gz
+  updated_at: '2024-02-12'
+  version: 0.30.0
   load_deps: |
     load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")

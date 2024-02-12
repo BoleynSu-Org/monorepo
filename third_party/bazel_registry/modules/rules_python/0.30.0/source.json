@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.30.0.tar.gz",
+  "integrity": "sha256-H8UrULJnkX4Qevz7u9eCYVUKbzMZv8W9iXag4RopXqQ=",
+  "strip_prefix": "rules_python-0.30.0"
+}
