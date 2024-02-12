@@ -117,7 +117,7 @@ pkg_tar(
 
 oci_image(
     name = "image",
-    base = "@org_fedoraproject_registry_fedora_minimal",
+    base = "//base_images:base",
     entrypoint = ["/usr/local/bin/oj-server"],
     env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-server.tar"],

@@ -38,7 +38,7 @@ pkg_tar(
 
 oci_image(
     name = "image",
-    base = "@io_quay_boleynsu_oj_c99runner",
+    base = "//base_images:oj-c99runner",
     entrypoint = ["/usr/local/bin/oj-c99runner"],
     env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-c99runner.tar"],

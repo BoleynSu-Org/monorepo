@@ -1019,20 +1019,13 @@ _DEPS_JSON = r"""
       "updated_at": "2024-02-10"
     },
     {
-      "name": "org_fedoraproject_registry_fedora_minimal",
-      "registry": "registry.fedoraproject.org",
-      "repository": "fedora-minimal",
-      "digest": "sha256:f34c3b3aa56c88b153c747f32592ff37ece4606951291a7ddc507778d207f21c",
-      "version": "latest",
-      "version_regex": "^(latest)$",
-      "tag": "latest",
-      "updated_at": "2024-02-10",
-      "platforms": [
-        "linux/arm64",
-        "linux/ppc64le",
-        "linux/s390x",
-        "linux/amd64"
-      ]
+      "name": "io_quay_boleynsu_base",
+      "registry": "quay.io",
+      "repository": "boleynsu/base",
+      "digest": "sha256:f967d6e03c51f6d3403e09fde544c2014cfcc2595b2f7ac9672307cac1e12216",
+      "version": "20240212.043427",
+      "tag": "20240212.043427",
+      "updated_at": "2024-02-12"
     }
   ],
   "go_deps": [
@@ -1093,4 +1086,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1636878439 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1444949383 else fail("deps.bzl is corrupted")
