@@ -33,11 +33,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_python",
       "type": "http_archive",
-      "sha256": "1fc52b50b267917e107afcfbbbd78261550a6f3319bfc5bd8976a0e11a295ea4",
-      "strip_prefix": "rules_python-0.30.0",
-      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.30.0.tar.gz",
-      "updated_at": "2024-02-12",
-      "version": "0.30.0",
+      "sha256": "c68bdc4fbec25de5b5493b8819cfc877c4ea299c0dcb15c244c5a00208cde311",
+      "strip_prefix": "rules_python-0.31.0",
+      "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.31.0.tar.gz",
+      "updated_at": "2024-02-16",
+      "version": "0.31.0",
       "load_deps": "load(\"@rules_python//python/private:internal_config_repo.bzl\", \"internal_config_repo\")\nload(\"@rules_python//python/pip_install:repositories.bzl\", \"pip_install_dependencies\")\nload(\"@rules_python//python:repositories.bzl\", \"python_register_toolchains\")\nload(\"@rules_python//python/private:toolchains_repo.bzl\", \"toolchains_repo\")\nload(\"@bazel_deps//:toolchain_deps.bzl\", \"PYTHON_VERSION\")\ndef deps():\n  internal_config_repo(name = \"rules_python_internal\")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = \"python_sdk\",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = \"python_sdk_toolchains\",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = \"python_sdk\",\n  )\n"
     },
     {
@@ -99,11 +99,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_pkg",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.10.0.tar.gz",
-      "sha256": "39d9b69b19cc5435d2650d23ce732f1c220ab0627dfd99782ddd6b3d82fe4cd4",
-      "updated_at": "2024-01-11",
-      "version": "0.10.0",
-      "strip_prefix": "rules_pkg-0.10.0"
+      "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/0.10.1.tar.gz",
+      "sha256": "d330dbe3e3004241ddb9b377416ffc5c823e3e2c08c0d56a7e1935499e7f8577",
+      "updated_at": "2024-02-16",
+      "version": "0.10.1",
+      "strip_prefix": "rules_pkg-0.10.1"
     },
     {
       "name": "io_grpc_grpc_java",
@@ -261,10 +261,10 @@ _DEPS_JSON = r"""
     {
       "name": "kubectl_linux_amd64",
       "type": "http_file",
-      "url": "https://dl.k8s.io/release/v1.29.1/bin/linux/amd64/kubectl",
-      "sha256": "69ab3a931e826bf7ac14d38ba7ca637d66a6fcb1ca0e3333a2cafdf15482af9f",
-      "version": "v1.29.1",
-      "updated_at": "2024-01-18",
+      "url": "https://dl.k8s.io/release/v1.29.2/bin/linux/amd64/kubectl",
+      "sha256": "7816d067740f47f949be826ac76943167b7b3a38c4f0c18b902fffa8779a5afa",
+      "version": "v1.29.2",
+      "updated_at": "2024-02-16",
       "executable": true,
       "override_updater": [
         {
@@ -597,9 +597,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.10.Final",
+      "version": "2.3.11.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2023-10-18"
+      "updated_at": "2024-02-16"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -958,8 +958,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:c5077bb44d13a3f34dadb5a15861149e29b3251d1e24036d2dad9611dc9d940b",
-      "updated_at": "2024-02-10",
+      "digest": "sha256:4d17158efa6f92bb9894c048c87d784758e20b9a3c1956ad3a1f1f2292d2b7c3",
+      "updated_at": "2024-02-16",
       "platforms": [
         "linux/amd64",
         "linux/arm64/v8",
@@ -973,8 +973,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:e6016420357dd7889ad127265cdbde2c535ae28517958e93ac31a097c5953101",
-      "updated_at": "2024-02-10",
+      "digest": "sha256:c9592a99120164a7a4cc75ec76b3632fa3520a4de2d801bbb93c3753fe34e048",
+      "updated_at": "2024-02-16",
       "platforms": [
         "linux/amd64",
         "linux/arm/v5",
@@ -1086,4 +1086,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1564275016 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1383991229 else fail("deps.bzl is corrupted")

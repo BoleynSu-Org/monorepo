@@ -1,6 +1,6 @@
 module(
     name = "rules_python",
-    version = "0.30.0",
+    version = "0.31.0",
     compatibility_level = 1,
 )
 
