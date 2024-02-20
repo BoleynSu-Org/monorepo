@@ -1,8 +1,8 @@
 {
-  "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz",
-  "integrity": "sha256-wqWP3YQgzKNkWEOxvnsYotXfOI0ZLVDCOK4+3ZtpMBE=",
+  "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/0.10.3.tar.gz",
+  "integrity": "sha256-IsEA2VQGaUBdFPE/9M8RAfKnaJFyEfn2fzw3p9Mgfqc=",
   "patches": {
     "patch-100000.patch": "sha256-KhChf2XcAiFaBz9u+OOulteU/yRIvGxJ+YP/pn69/EQ="
   },
-  "strip_prefix": "bazel-toolchain-0.10.3"
+  "strip_prefix": "toolchains_llvm-0.10.3"
 }

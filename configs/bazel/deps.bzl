@@ -184,26 +184,25 @@ _DEPS_JSON = r"""
       ]
     },
     {
-      "name": "com_grail_bazel_toolchain",
-      "module_name": "toolchains_llvm",
+      "name": "toolchains_llvm",
       "type": "http_archive",
-      "url": "https://github.com/grailbio/bazel-toolchain/archive/refs/tags/0.10.3.tar.gz",
-      "sha256": "c2a58fdd8420cca3645843b1be7b18a2d5df388d192d50c238ae3edd9b693011",
-      "strip_prefix": "bazel-toolchain-0.10.3",
-      "updated_at": "2023-09-22",
+      "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/0.10.3.tar.gz",
+      "sha256": "22c100d9540669405d14f13ff4cf1101f2a768917211f9f67f3c37a7d3207ea7",
+      "strip_prefix": "toolchains_llvm-0.10.3",
+      "updated_at": "2024-02-20",
       "version": "0.10.3",
-      "module_file": "@boleynsu_org//third_party/com_grail_bazel_toolchain:repo.MODULE.bazel",
+      "module_file": "@boleynsu_org//third_party/toolchains_llvm:repo.MODULE.bazel",
       "patches": [
-        "@boleynsu_org//third_party/com_grail_bazel_toolchain:bzl.patch"
+        "@boleynsu_org//third_party/toolchains_llvm:bzl.patch"
       ],
-      "load_deps": "load(\"@com_grail_bazel_toolchain//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n      sysroot = {\n          \"linux-x86_64\": \"@sysroot_linux_x86_64//:sysroot\",\n      },\n  )\n"
+      "load_deps": "load(\"@toolchains_llvm//toolchain:rules.bzl\", \"llvm_toolchain\")\nload(\"@bazel_deps//:bazel_deps.bzl\", \"BAZEL_DEPS\")\ndef deps():\n  llvm_toolchain(\n      name = \"llvm_toolchain_linux_x86_64\",\n      llvm_version = BAZEL_DEPS[\"llvm_linux_x86_64\"][\"version\"][len(\"llvmorg-\"):],\n      exec_os = \"linux\",\n      exec_cpu = \"x86_64\",\n      urls = {\n          \"linux-x86_64\": [BAZEL_DEPS[\"llvm_linux_x86_64\"][\"url\"]],\n      },\n      strip_prefix = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"strip_prefix\"],\n      },\n      sha256 = {\n          \"linux-x86_64\": BAZEL_DEPS[\"llvm_linux_x86_64\"][\"sha256\"],\n      },\n      sysroot = {\n          \"linux-x86_64\": \"@sysroot_linux_x86_64//:sysroot\",\n      },\n  )\n"
     },
     {
       "name": "bazel_linux_x86_64",
       "type": "http_archive",
       "version": "7.0.2",
       "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.2/bazel-7.0.2-installer-linux-x86_64.sh",
-      "http_archive_type": "zip",
+      "archive_type": "zip",
       "sha256": "6c5d28f643add94ddeeb4ceacaa7fbb24f4a70743893ef1d32637b712992c989",
       "updated_at": "2024-01-25",
       "executable": true,
@@ -575,13 +574,13 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.18",
-      "updated_at": "2024-01-09"
+      "version": "10.1.19",
+      "updated_at": "2024-02-20"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-      "version": "10.1.18",
-      "updated_at": "2024-01-09"
+      "version": "10.1.19",
+      "updated_at": "2024-02-20"
     },
     {
       "name": "org.webjars:jquery",
@@ -944,12 +943,12 @@ _DEPS_JSON = r"""
   "container_deps": [
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240212.062258",
+      "version": "20240216.145411",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240212.062258",
+      "tag": "20240216.145411",
       "digest": "sha256:d0633f1597b5f86d92f2813fb24ed3265b380663122e8f273d194cd9dc7eea60",
-      "updated_at": "2024-02-12"
+      "updated_at": "2024-02-20"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -958,8 +957,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:4d17158efa6f92bb9894c048c87d784758e20b9a3c1956ad3a1f1f2292d2b7c3",
-      "updated_at": "2024-02-16",
+      "digest": "sha256:55d9608d84658cbc691f52cd6389386a15e6c671cb5708b9f3af5782af3b4dbb",
+      "updated_at": "2024-02-20",
       "platforms": [
         "linux/amd64",
         "linux/arm64/v8",
@@ -1002,30 +1001,30 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20240212.062258",
+      "version": "20240216.145411",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20240212.062258",
+      "tag": "20240216.145411",
       "digest": "sha256:af32de4187c20b7e1a1376cd2e6acca96ad56556dbe36b501eb2a025c143d7d3",
-      "updated_at": "2024-02-12"
+      "updated_at": "2024-02-20"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20240212.062258",
+      "version": "20240216.145411",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20240212.062258",
+      "tag": "20240216.145411",
       "digest": "sha256:50b01391ed5226b27cfd0b14ead695e44617f730118de5e7a183b3f96153195a",
-      "updated_at": "2024-02-12"
+      "updated_at": "2024-02-20"
     },
     {
       "name": "io_quay_boleynsu_base",
       "registry": "quay.io",
       "repository": "boleynsu/base",
       "digest": "sha256:f967d6e03c51f6d3403e09fde544c2014cfcc2595b2f7ac9672307cac1e12216",
-      "version": "20240212.062258",
-      "tag": "20240212.062258",
-      "updated_at": "2024-02-12"
+      "version": "20240216.145411",
+      "tag": "20240216.145411",
+      "updated_at": "2024-02-20"
     }
   ],
   "go_deps": [
@@ -1086,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1383991229 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1989159619 else fail("deps.bzl is corrupted")
