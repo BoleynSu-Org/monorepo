@@ -395,10 +395,10 @@ _DEPS_JSON = r"""
     {
       "name": "apple_support",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/apple_support/releases/download/1.12.0/apple_support.1.12.0.tar.gz",
-      "sha256": "100d12617a84ebc7ee7a10ecf3b3e2fdadaebc167ad93a21f820a6cb60158ead",
-      "version": "1.12.0",
-      "updated_at": "2024-02-09",
+      "url": "https://github.com/bazelbuild/apple_support/releases/download/1.13.0/apple_support.1.13.0.tar.gz",
+      "sha256": "1c4031e72b456a048d8177f59a5581808c07585fa9e255c6f5fefb8752af7e40",
+      "version": "1.13.0",
+      "updated_at": "2024-02-20",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1989159619 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1917274486 else fail("deps.bzl is corrupted")
