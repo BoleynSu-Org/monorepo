@@ -596,9 +596,9 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io.undertow:undertow-core",
-      "version": "2.3.11.Final",
+      "version": "2.3.12.Final",
       "version_regex": "(.*)\\.Final",
-      "updated_at": "2024-02-16"
+      "updated_at": "2024-02-21"
     },
     {
       "name": "commons-validator:commons-validator",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -531996235 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1716709348 else fail("deps.bzl is corrupted")
