@@ -569,8 +569,8 @@ _DEPS_JSON = r"""
     },
     {
       "name": "org.mariadb.jdbc:mariadb-java-client",
-      "version": "3.3.2",
-      "updated_at": "2023-12-19"
+      "version": "3.3.3",
+      "updated_at": "2024-02-21"
     },
     {
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1917274486 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 53148430 else fail("deps.bzl is corrupted")

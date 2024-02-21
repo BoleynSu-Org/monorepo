@@ -481,8 +481,8 @@ maven_deps:
   version: 2.15.1
   updated_at: '2023-11-30'
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.3.2
-  updated_at: '2023-12-19'
+  version: 3.3.3
+  updated_at: '2024-02-21'
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 10.1.19
   updated_at: '2024-02-20'
