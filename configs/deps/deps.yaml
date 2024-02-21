@@ -733,8 +733,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:55d9608d84658cbc691f52cd6389386a15e6c671cb5708b9f3af5782af3b4dbb
-  updated_at: '2024-02-20'
+  digest: sha256:c33b9fe0c4c10e2a94b62ba952e006c185dfece517c7e3303eff8473f2f523f3
+  updated_at: '2024-02-21'
   platforms:
   - linux/amd64
   - linux/arm64/v8
