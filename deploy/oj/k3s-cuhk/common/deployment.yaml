@@ -248,6 +248,11 @@ spec:
           mountPath: /var/lib/mysql
           subPath: "db"
         image: docker.io/library/mariadb
+        # utf8mb4_uca1400_ai_ci is not yet supported by PHP.
+        args:
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_520_ci
+        - --init-connect=SET NAMES utf8mb4
         ports:
         - name: mariadb
           containerPort: 3306
