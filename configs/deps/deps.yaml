@@ -302,13 +302,13 @@ bazel_deps:
   - chmod -R 755 .
 - name: bazel_features
   type: http_archive
-  version: v1.4.1
+  version: v1.5.0
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: 0f23d75c7623d6dba1fd30513a94860447de87c8824570521fcc966eda3151c2
-  strip_prefix: bazel_features-1.4.1
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.4.1/bazel_features-v1.4.1.tar.gz
+  sha256: e9158e3b6e2cb2b75739078bf4f4d30f6931b931af5f374206c973d766c676ad
+  strip_prefix: bazel_features-1.5.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.5.0/bazel_features-v1.5.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-02-01'
+  updated_at: '2024-02-22'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -444,13 +444,13 @@ bazel_deps:
       value: [sha256]
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.4.1
+  version: v2.4.2
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: 979667bb7276ee8fcf2c114c9be9932b9a3052a64a647e0dcaacfb9c0016f0a3
-  strip_prefix: bazel-lib-2.4.1
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.4.1/bazel-lib-v2.4.1.tar.gz
+  sha256: f75d03783588e054899eb0729a97fb5b8973c1a26f30373fafd485c90bf207d1
+  strip_prefix: bazel-lib-2.4.2
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.4.2/bazel-lib-v2.4.2.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2024-02-06'
+  updated_at: '2024-02-22'
   module_file: '@boleynsu_org//third_party/aspect_bazel_lib:repo.MODULE.bazel'
   override_updater:
   - type: deps_updater
