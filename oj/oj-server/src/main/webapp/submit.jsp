@@ -123,7 +123,7 @@ html, body {
                                 <div class="form-group">
                                     <label>Source</label>
                                     <textarea class="form-control" id="source" rows="18"
-                                        name="source" /></textarea>
+                                        name="source"></textarea>
                                 </div>
                                 <button class="btn btn-primary" type="submit">Submit</button>
                             </form>
