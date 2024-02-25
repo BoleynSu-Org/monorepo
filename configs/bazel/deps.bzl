@@ -300,13 +300,13 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_features",
       "type": "http_archive",
-      "version": "v1.5.0",
+      "version": "v1.6.0",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "e9158e3b6e2cb2b75739078bf4f4d30f6931b931af5f374206c973d766c676ad",
-      "strip_prefix": "bazel_features-1.5.0",
-      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.5.0/bazel_features-v1.5.0.tar.gz",
+      "sha256": "04cbbe3b36bc791c4de5e0057ec0021bfdbbb2c4bf386756f41db5aec9a6397f",
+      "strip_prefix": "bazel_features-1.6.0",
+      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.6.0/bazel_features-v1.6.0.tar.gz",
       "github_repo": "bazel-contrib/bazel_features",
-      "updated_at": "2024-02-22",
+      "updated_at": "2024-02-25",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 174965958 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -669413233 else fail("deps.bzl is corrupted")
