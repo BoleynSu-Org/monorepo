@@ -2,7 +2,7 @@
 
 module(
     name = "aspect_bazel_lib",
-    version = "2.4.2",
+    version = "2.5.0",
     bazel_compatibility = [">=6.0.0"],
     compatibility_level = 1,
 )
