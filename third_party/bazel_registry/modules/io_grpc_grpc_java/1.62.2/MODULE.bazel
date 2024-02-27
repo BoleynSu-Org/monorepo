@@ -2,7 +2,7 @@
 # Run `bazel run //third_party/io_grpc_grpc_java:module_bazel.genfile` to regenerate.
 module(
     name = "io_grpc_grpc_java",
-    version = "1.61.1",
+    version = "1.62.2",
     compatibility_level = 1,
 )
 
