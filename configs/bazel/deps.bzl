@@ -71,11 +71,11 @@ _DEPS_JSON = r"""
     {
       "name": "rules_oci",
       "type": "http_archive",
-      "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.2.tar.gz",
-      "sha256": "cf6b8be82cde30daef18a09519d75269650317e40d917c8633cf8e3ab5645ea5",
-      "strip_prefix": "rules_oci-1.7.2",
-      "updated_at": "2024-02-09",
-      "version": "v1.7.2",
+      "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.4.tar.gz",
+      "sha256": "4a276e9566c03491649eef63f27c2816cc222f41ccdebd97d2c5159e84917c3b",
+      "strip_prefix": "rules_oci-1.7.4",
+      "updated_at": "2024-02-28",
+      "version": "v1.7.4",
       "load_deps": "load(\"@rules_oci//oci:repositories.bzl\", \"LATEST_CRANE_VERSION\", \"oci_register_toolchains\")\ndef deps():\n  oci_register_toolchains(\n      name = \"oci\",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n"
     },
     {
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 2146823324 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 875855830 else fail("deps.bzl is corrupted")

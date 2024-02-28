@@ -2,7 +2,7 @@
 
 module(
     name = "rules_oci",
-    version = "1.7.2",
+    version = "1.7.4",
     compatibility_level = 1,
 )
 
