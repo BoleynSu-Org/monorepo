@@ -957,8 +957,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:4762bcec7c5396fa672d1035498bda3506f29f253190ff4cb642bb7e99785977",
-      "updated_at": "2024-02-22",
+      "digest": "sha256:851f05fe1e4cb290442c1b12b7108436a33fd8f6a733d4989950322d06d45c65",
+      "updated_at": "2024-02-28",
       "platforms": [
         "linux/amd64",
         "linux/arm64/v8",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 137774824 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 2146823324 else fail("deps.bzl is corrupted")
