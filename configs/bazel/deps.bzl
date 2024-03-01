@@ -471,10 +471,10 @@ _DEPS_JSON = r"""
     {
       "name": "rules_kotlin",
       "type": "http_archive",
-      "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.0/rules_kotlin-v1.9.0.tar.gz",
-      "sha256": "5766f1e599acf551aa56f49dab9ab9108269b03c557496c54acaf41f98e2b8d6",
-      "version": "v1.9.0",
-      "updated_at": "2024-01-19",
+      "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.1/rules_kotlin-v1.9.1.tar.gz",
+      "sha256": "d9898c3250e0442436eeabde4e194c30d6c76a4a97f517b18cefdfd4e345725a",
+      "version": "v1.9.1",
+      "updated_at": "2024-03-01",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -1085,4 +1085,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 124099624 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1319366952 else fail("deps.bzl is corrupted")
