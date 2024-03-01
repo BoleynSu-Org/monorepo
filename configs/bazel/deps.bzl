@@ -287,11 +287,10 @@ _DEPS_JSON = r"""
     {
       "name": "sysroot_linux_x86_64",
       "type": "http_archive",
-      "version": "20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a",
-      "version_regex": "([0-9.]+)-.*",
-      "sha256": "280c0c91f48824eb1ef8aee853e62cdf14e38abf9aa1c9a17e65e5d21ace8bec",
-      "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot_linux_x86_64/20231231.200535-2f24239220443d6b1074f96d9ca59a01cb045d3a/sysroot.tar",
-      "updated_at": "2024-01-01",
+      "version": "20240301.082747",
+      "sha256": "14de5b35fc8dd6954f708226e1008da3819f0b94e7ac5119fdee66067343048d",
+      "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240301.082747/sysroot_linux_x86_64.tar.gz",
+      "updated_at": "2024-03-01",
       "build_file_content": "filegroup(\n    name = \"sysroot\",\n    srcs = glob([\"**\"], exclude = [\"etc/shadow\", \"etc/gshadow\"]),\n    visibility = [\"//visibility:public\"],\n)\n",
       "patch_cmds": [
         "chmod -R 755 ."
@@ -1085,4 +1084,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1319366952 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 953512102 else fail("deps.bzl is corrupted")
