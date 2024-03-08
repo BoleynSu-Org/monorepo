@@ -299,13 +299,13 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_features",
       "type": "http_archive",
-      "version": "v1.8.0",
+      "version": "v1.9.0",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "70d355d5e34c3fe453f5556d6c0f02ffed0eb2c7ce4c8ee016d94d654bc6a014",
-      "strip_prefix": "bazel_features-1.8.0",
-      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.8.0/bazel_features-v1.8.0.tar.gz",
+      "sha256": "06f02b97b6badb3227df2141a4b4622272cdcd2951526f40a888ab5f43897f14",
+      "strip_prefix": "bazel_features-1.9.0",
+      "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.9.0/bazel_features-v1.9.0.tar.gz",
       "github_repo": "bazel-contrib/bazel_features",
-      "updated_at": "2024-03-04",
+      "updated_at": "2024-03-08",
       "override_updater": [
         {
           "type": "deps_updater",
@@ -508,13 +508,13 @@ _DEPS_JSON = r"""
     {
       "name": "aspect_bazel_lib",
       "type": "http_archive",
-      "version": "v2.5.1",
+      "version": "v2.5.2",
       "commit": "8e490647a04dae5ec92342d6f29d893d7b177584",
-      "sha256": "a59096e01b43d86c6667a869f0e90e0c4b1d4cb03c3d3a972a32ff687c750ac2",
-      "strip_prefix": "bazel-lib-2.5.1",
-      "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.5.1/bazel-lib-v2.5.1.tar.gz",
+      "sha256": "9bb90581f11926192ccc84f9a798d90153ea04b833f6b46e8dbbe5ebf3c51d01",
+      "strip_prefix": "bazel-lib-2.5.2",
+      "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.5.2/bazel-lib-v2.5.2.tar.gz",
       "github_repo": "aspect-build/bazel-lib",
-      "updated_at": "2024-03-03",
+      "updated_at": "2024-03-08",
       "module_file": "@boleynsu_org//third_party/aspect_bazel_lib:repo.MODULE.bazel",
       "override_updater": [
         {
@@ -956,8 +956,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:851f05fe1e4cb290442c1b12b7108436a33fd8f6a733d4989950322d06d45c65",
-      "updated_at": "2024-02-28",
+      "digest": "sha256:666531e0a0ba96d9c8a68e2f9b17aff44e4138a887420f3a79fd6b652bb9ad1c",
+      "updated_at": "2024-03-08",
       "platforms": [
         "linux/amd64",
         "linux/arm64/v8",
@@ -1084,4 +1084,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 866593494 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 601206152 else fail("deps.bzl is corrupted")
