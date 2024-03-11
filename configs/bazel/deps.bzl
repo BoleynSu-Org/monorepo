@@ -200,11 +200,11 @@ _DEPS_JSON = r"""
     {
       "name": "bazel_linux_x86_64",
       "type": "http_archive",
-      "version": "7.0.2",
-      "url": "https://github.com/bazelbuild/bazel/releases/download/7.0.2/bazel-7.0.2-installer-linux-x86_64.sh",
+      "version": "7.1.0",
+      "url": "https://github.com/bazelbuild/bazel/releases/download/7.1.0/bazel-7.1.0-installer-linux-x86_64.sh",
       "archive_type": "zip",
-      "sha256": "6c5d28f643add94ddeeb4ceacaa7fbb24f4a70743893ef1d32637b712992c989",
-      "updated_at": "2024-01-25",
+      "sha256": "5891b435ab1a906be90523a807d9851a2ba5941395396a9c742fe25012d52da1",
+      "updated_at": "2024-03-11",
       "executable": true,
       "override_updater": [
         {
@@ -1084,4 +1084,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -1597665194 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1142155508 else fail("deps.bzl is corrupted")
