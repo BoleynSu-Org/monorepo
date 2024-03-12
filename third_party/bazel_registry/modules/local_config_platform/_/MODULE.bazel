@@ -1,0 +1,5 @@
+module(
+    name = "local_config_platform",
+    version = "_",
+    compatibility_level = 1,
+)

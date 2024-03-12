@@ -942,12 +942,12 @@ _DEPS_JSON = r"""
   "container_deps": [
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240308.160131",
+      "version": "20240311.220429",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240308.160131",
-      "digest": "sha256:1fc378a348b35a991fd5c61246ca6f58da77c5c3fffd3834724cb6f3b46c073e",
-      "updated_at": "2024-03-08"
+      "tag": "20240311.220429",
+      "digest": "sha256:c6419347d9080138c70185a0d93269da593d819487aaf46cf17449b15ba4eccb",
+      "updated_at": "2024-03-12"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -956,8 +956,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/mariadb",
       "tag": "latest",
-      "digest": "sha256:666531e0a0ba96d9c8a68e2f9b17aff44e4138a887420f3a79fd6b652bb9ad1c",
-      "updated_at": "2024-03-08",
+      "digest": "sha256:a009cebdcd294d08590817a3ebdf3da822a1509187ba946ab7b384c8a333ac94",
+      "updated_at": "2024-03-12",
       "platforms": [
         "linux/amd64",
         "linux/arm64/v8",
@@ -971,8 +971,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:c9592a99120164a7a4cc75ec76b3632fa3520a4de2d801bbb93c3753fe34e048",
-      "updated_at": "2024-02-16",
+      "digest": "sha256:8b2866201eabaac2f6d965f8033748bf0bf25d021a5450c179e6b6f8bd139ecc",
+      "updated_at": "2024-03-12",
       "platforms": [
         "linux/amd64",
         "linux/arm/v5",
@@ -1084,4 +1084,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1142155508 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -668462797 else fail("deps.bzl is corrupted")

@@ -43,7 +43,6 @@ build --incompatible_strict_action_env=true
 common --enable_bzlmod=false
 
 common:bzlmod --enable_bzlmod=true
-common:bzlmod --lockfile_mode=off
 common:bzlmod --registry=file://%workspace%/third_party/bazel_registry
 
 try-import %workspace%/.user.bazelrc

@@ -80,7 +80,7 @@ OVERRIDE_TARGETS = {
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
-    name = "maven",
+    name = "io_grpc_grpc_java_maven",
     artifacts = ARTIFACTS,
     generate_compat_repositories = True,
     repositories = [
@@ -90,7 +90,7 @@ maven.install(
 
 [
     maven.override(
-        name = "maven",
+        name = "io_grpc_grpc_java_maven",
         coordinates = coordinates,
         target = target,
     )

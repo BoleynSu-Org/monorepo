@@ -1,0 +1,5 @@
+module(
+    name = "buildozer",
+    version = "6.4.0.2",
+    compatibility_level = 1,
+)
