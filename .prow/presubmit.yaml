@@ -15,7 +15,6 @@ presubmits:
           command:
             - bazel
             - test
-            - --config=bzlmod
             - --config=ci-build-and-test
             - //...
           resources:
@@ -47,7 +46,6 @@ presubmits:
           command:
             - bazel
             - run
-            - --config=bzlmod
             - --config=ci-deploy
             - //deploy/oj:staging.apply
             - --

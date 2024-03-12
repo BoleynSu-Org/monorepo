@@ -51,6 +51,7 @@ maven.install(
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
+    fail_if_repin_required = True,
 )
 use_repo(maven, unpinned_maven = "unpinned_boleynsu_org_maven", maven = "boleynsu_org_maven")
 
