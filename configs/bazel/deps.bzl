@@ -942,12 +942,12 @@ _DEPS_JSON = r"""
   "container_deps": [
     {
       "name": "io_quay_boleynsu_ci_runner",
-      "version": "20240311.220429",
+      "version": "20240312.145956",
       "registry": "quay.io",
       "repository": "boleynsu/ci-runner",
-      "tag": "20240311.220429",
+      "tag": "20240312.145956",
       "digest": "sha256:c6419347d9080138c70185a0d93269da593d819487aaf46cf17449b15ba4eccb",
-      "updated_at": "2024-03-12"
+      "updated_at": "2024-03-13"
     },
     {
       "name": "io_docker_library_mariadb",
@@ -971,8 +971,8 @@ _DEPS_JSON = r"""
       "registry": "docker.io",
       "repository": "library/adminer",
       "tag": "4.8.1",
-      "digest": "sha256:8b2866201eabaac2f6d965f8033748bf0bf25d021a5450c179e6b6f8bd139ecc",
-      "updated_at": "2024-03-12",
+      "digest": "sha256:b75eae89431e8469613b844e76382a26efc8601c17f446bcd81665bc87ca9a1f",
+      "updated_at": "2024-03-13",
       "platforms": [
         "linux/amd64",
         "linux/arm/v5",
@@ -1000,30 +1000,30 @@ _DEPS_JSON = r"""
     },
     {
       "name": "io_quay_boleynsu_oj_c99runner",
-      "version": "20240308.160131",
+      "version": "20240312.145956",
       "registry": "quay.io",
       "repository": "boleynsu/oj-c99runner",
-      "tag": "20240308.160131",
+      "tag": "20240312.145956",
       "digest": "sha256:5cf7630d66757c87ba3ff93850c57fdf989a652878055b1306ba6e09e8c17cfc",
-      "updated_at": "2024-03-08"
+      "updated_at": "2024-03-13"
     },
     {
       "name": "io_quay_boleynsu_rbe_fedora",
-      "version": "20240308.160131",
+      "version": "20240312.145956",
       "registry": "quay.io",
       "repository": "boleynsu/rbe-fedora",
-      "tag": "20240308.160131",
+      "tag": "20240312.145956",
       "digest": "sha256:3436de91b8d15e12fb77c5e43ad2dbb15d5eb13c8e0e566d341b188479773910",
-      "updated_at": "2024-03-08"
+      "updated_at": "2024-03-13"
     },
     {
       "name": "io_quay_boleynsu_base",
       "registry": "quay.io",
       "repository": "boleynsu/base",
       "digest": "sha256:f940f55dc1b9dfb5f64496671634f4987472bec636a7b17db416b14124395da1",
-      "version": "20240308.160131",
-      "tag": "20240308.160131",
-      "updated_at": "2024-03-08"
+      "version": "20240312.145956",
+      "tag": "20240312.145956",
+      "updated_at": "2024-03-13"
     }
   ],
   "go_deps": [
@@ -1084,4 +1084,4 @@ _DEPS_JSON = r"""
 }
 """
 
-DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == -668462797 else fail("deps.bzl is corrupted")
+DEPS = json.decode(_DEPS_JSON) if hash(_DEPS_JSON) == 1314768844 else fail("deps.bzl is corrupted")
