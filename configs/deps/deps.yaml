@@ -196,36 +196,11 @@ bazel_deps:
       value: [sha256]
 - name: toolchains_llvm
   type: http_archive
-  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/0.10.3.tar.gz
-  sha256: 22c100d9540669405d14f13ff4cf1101f2a768917211f9f67f3c37a7d3207ea7
-  strip_prefix: toolchains_llvm-0.10.3
-  updated_at: '2024-02-20'
-  version: 0.10.3
-  module_file: '@boleynsu_org//third_party/toolchains_llvm:repo.MODULE.bazel'
-  patches:
-  - '@boleynsu_org//third_party/toolchains_llvm:bzl.patch'
-  load_deps: |
-    load("@toolchains_llvm//toolchain:rules.bzl", "llvm_toolchain")
-    load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")
-    def deps():
-      llvm_toolchain(
-          name = "llvm_toolchain_linux_x86_64",
-          llvm_version = BAZEL_DEPS["llvm_linux_x86_64"]["version"][len("llvmorg-"):],
-          exec_os = "linux",
-          exec_cpu = "x86_64",
-          urls = {
-              "linux-x86_64": [BAZEL_DEPS["llvm_linux_x86_64"]["url"]],
-          },
-          strip_prefix = {
-              "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["strip_prefix"],
-          },
-          sha256 = {
-              "linux-x86_64": BAZEL_DEPS["llvm_linux_x86_64"]["sha256"],
-          },
-          sysroot = {
-              "linux-x86_64": "@sysroot_linux_x86_64//:sysroot",
-          },
-      )
+  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/1.0.0.tar.gz
+  sha256: 6a23ed55e5b802e3e0790173c3acfffa0938f3ac2f01cddd82b8e51f8e42d71f
+  strip_prefix: toolchains_llvm-1.0.0
+  updated_at: '2024-03-16'
+  version: 1.0.0
 - name: bazel_linux_x86_64
   type: http_archive
   version: 7.1.0
@@ -269,10 +244,10 @@ bazel_deps:
   version: 0.0.8
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.29.2/bin/linux/amd64/kubectl
-  sha256: 7816d067740f47f949be826ac76943167b7b3a38c4f0c18b902fffa8779a5afa
-  version: v1.29.2
-  updated_at: '2024-02-16'
+  url: https://dl.k8s.io/release/v1.29.3/bin/linux/amd64/kubectl
+  sha256: 89c0435cec75278f84b62b848b8c0d3e15897d6947b6c59a49ddccd93d7312bf
+  version: v1.29.3
+  updated_at: '2024-03-16'
   executable: true
   override_updater:
   - type: shell
@@ -732,8 +707,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:a009cebdcd294d08590817a3ebdf3da822a1509187ba946ab7b384c8a333ac94
-  updated_at: '2024-03-12'
+  digest: sha256:b5e508abc5d889425e90212541e30d29279b7ed34dd74bab5bb715b2f2aeeb7b
+  updated_at: '2024-03-16'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -787,23 +762,6 @@ container_deps:
   version: '20240312.145956'
   tag: '20240312.145956'
   updated_at: '2024-03-13'
-
-go_deps:
-- name: github.com/google/go-containerregistry
-  version: v0.19.0
-  updated_at: '2024-01-29'
-- name: github.com/pkg/errors
-  version: v0.9.1
-  updated_at: '2023-09-17'
-- name: gopkg.in/yaml.v2
-  version: v2.4.0
-  updated_at: '2023-09-17'
-- name: github.com/kylelemons/godebug
-  version: v1.1.0
-  updated_at: '2023-09-17'
-- name: github.com/ghodss/yaml
-  version: v1.0.0
-  updated_at: '2023-09-17'
 
 toolchain_deps:
 - name: c
