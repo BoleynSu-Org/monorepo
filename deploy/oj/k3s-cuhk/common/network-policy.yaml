@@ -54,7 +54,6 @@ spec:
   policyTypes:
   - Ingress
   - Egress
-  ingress: []
   egress:
   - to:
     - podSelector:
@@ -102,7 +101,6 @@ spec:
           - oj-adminer
     ports:
     - port: mariadb
-  egress: []
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -164,7 +162,6 @@ spec:
           app.kubernetes.io/name: ingress-nginx
     ports:
     - port: http
-  egress: []
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -188,4 +185,3 @@ spec:
           - oj-server
     ports:
     - port: ci-runner
-  egress: []
