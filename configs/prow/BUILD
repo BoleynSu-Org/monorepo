@@ -1,7 +1,7 @@
-load("@bazel_deps//:container_deps.bzl", "CONTAINER_IMAGES")
+load("@bazel_deps//:deps.bzl", "DEPS")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
 
-CI_RUNNER_IMAGE = CONTAINER_IMAGES["io_quay_boleynsu_ci_runner"]
+(CI_RUNNER_IMAGE,) = [dep for dep in DEPS["container_deps"] if dep["name"] == "io_quay_boleynsu_ci_runner"]
 
 [
     expand_template(

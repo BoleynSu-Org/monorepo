@@ -1,4 +1,4 @@
-load("//tools/build/repo_rules/workspace:bazel_deps.bzl", "bazel_deps")
+load("//tools/build/repo_rules:bazel_deps.bzl", "bazel_deps")
 
 def _bazel_deps_extension(ctx):
     for module in ctx.modules:
@@ -10,7 +10,6 @@ def _bazel_deps_extension(ctx):
             bazel_deps(
                 name = "bazel_deps",
                 deps = deps,
-                is_bzlmod = True,
             )
 
 bazel_deps_extension = module_extension(

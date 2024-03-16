@@ -1,10 +1,3 @@
-load("@rules_python//python:versions.bzl", "PLATFORMS")
-load("@rules_python//python:pip.bzl", "pip_parse")
-load("@boleynsu_bzl_deps_local_config_platform//:constraints.bzl", "HOST_CONSTRAINTS")
-load("//:deps.bzl", "DEPS")
-
-PIP_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["pip_deps"]}
-
 def _updater_header(repository_ctx, requirements_txt):
     header = """# DO NOT EDIT! This file is auto-generated.
 # hash = """
@@ -28,8 +21,8 @@ def _pinned_pip_impl(repository_ctx):
     requirements_txt = repository_ctx.read(repository_ctx.attr.requirements_txt)
     if "REPIN" not in repository_ctx.os.environ and requirements_txt != _updater_header(repository_ctx, requirements_txt):
         fail("""requirements.txt contains an invalid input signature and must be regenerated.
-    Please run `REPIN=1 bazel run @{}//:pin` to regenerate them.
-""".format("un" + repository_ctx.name))
+    Please run `{}` to regenerate them.
+""".format(repository_ctx.attr.pin_cmd))
 
     repository_ctx.file("WORKSPACE", content = "")
     repository_ctx.file("BUILD", content = "")
@@ -38,19 +31,11 @@ def _pinned_pip_impl(repository_ctx):
 def _unpinned_pip_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "")
     repository_ctx.file("BUILD", content = """
-load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
-
 sh_binary(
     name = "pin",
     srcs = ["pin.sh"],
     data = ["requirements.txt"],
     deps = ["@bazel_tools//tools/bash/runfiles"],
-)
-
-diff_test(
-    "pin_test",
-    "imported_requirements.txt",
-    "requirements.txt",
 )
 """)
 
@@ -104,16 +89,16 @@ cp "$requirements_txt" "$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
     requirements_txt = repository_ctx.read("requirements.txt")
     repository_ctx.file("requirements.txt", content = _updater_header(repository_ctx, requirements_txt))
 
-_pinned_pip = repository_rule(
+pinned_pip = repository_rule(
     implementation = _pinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
         "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
+        "pin_cmd": attr.string(),
     },
-    environ = ["REPIN"],
 )
 
-_unpinned_pip = repository_rule(
+unpinned_pip = repository_rule(
     implementation = _unpinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
@@ -122,38 +107,3 @@ _unpinned_pip = repository_rule(
         "extra_args": attr.string_list(),
     },
 )
-
-def pip_deps(
-        *,
-        name = "pip",
-        packages = PIP_PACKAGES,
-        requirements_lock_file = Label("@//:requirements.txt"),
-        python_sdk = "python_sdk",
-        python_interpreter_target = None,
-        extra_args = ["--allow-unsafe"],
-        **kwargs):
-    _pinned_pip(
-        name = "pinned_" + name,
-        packages = packages,
-        requirements_txt = requirements_lock_file,
-        **kwargs
-    )
-    if not python_interpreter_target:
-        for platform, info in PLATFORMS.items():
-            if sorted(info.compatible_with) == sorted(HOST_CONSTRAINTS):
-                path = "python.exe" if "@platforms//os:windows" in info.compatible_with else "bin/python3"
-                python_interpreter_target = "@{}_{}//:{}".format(python_sdk, platform, path)
-    _unpinned_pip(
-        name = "unpinned_" + name,
-        packages = packages,
-        requirements_txt = requirements_lock_file,
-        python_interpreter_target = python_interpreter_target,
-        extra_args = extra_args,
-        **kwargs
-    )
-    pip_parse(
-        name = name,
-        requirements_lock = "@pinned_{}//:requirements.txt".format(name),
-        python_interpreter_target = python_interpreter_target,
-        **kwargs
-    )

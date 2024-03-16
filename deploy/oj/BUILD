@@ -1,6 +1,11 @@
+load("@bazel_deps//:deps.bzl", "DEPS")
 load("@rules_oci//oci:defs.bzl", "oci_push")
-load("@bazel_deps//:container_deps.bzl", "CONTAINER_IMAGES")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
+
+CONTAINER_IMAGES = {
+    dep["name"]: dep
+    for dep in DEPS["container_deps"]
+}
 
 exports_files(glob(["**"]))
 

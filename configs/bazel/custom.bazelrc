@@ -1,7 +1,5 @@
 common --registry=file://%workspace%/third_party/bazel_registry
 
-common:disable_bzlmod --enable_bzlmod=false
-
 # Toolchains
 build --extra_toolchains=@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux
 build --extra_toolchains=@rules_java//toolchains:toolchain_jdk_21_definition

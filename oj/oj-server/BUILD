@@ -1,11 +1,17 @@
+load("@bazel_deps//:deps.bzl", "DEPS")
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@rules_java//java:defs.bzl", "java_binary", "java_import")
+load("@rules_oci//oci:defs.bzl", "oci_image")
 load("@rules_pkg//pkg:mappings.bzl", "pkg_files", "strip_prefix")
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
-load("@rules_java//java:defs.bzl", "java_binary", "java_import")
-load("@rules_oci//oci:defs.bzl", "oci_image")
-load("@bazel_skylib//rules:write_file.bzl", "write_file")
-load("@bazel_deps//:maven_deps.bzl", "MAVEN_ARTIFACTS")
 load("//tools/build/rules:genfile.bzl", "genfile")
+
+MAVEN_ARTIFACTS = {
+    dep["name"]: dep["version"]
+    for dep in DEPS["maven_deps"]
+    if "override_target" not in dep
+}
 
 pkg_files(
     name = "editarea_srcs",

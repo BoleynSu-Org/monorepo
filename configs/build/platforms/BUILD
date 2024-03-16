@@ -1,6 +1,6 @@
-load("@bazel_deps//:container_deps.bzl", "CONTAINER_IMAGES")
+load("@bazel_deps//:deps.bzl", "DEPS")
 
-RBE_FEDORA_IMAGE = CONTAINER_IMAGES["io_quay_boleynsu_rbe_fedora"]
+(RBE_FEDORA_IMAGE,) = [dep for dep in DEPS["container_deps"] if dep["name"] == "io_quay_boleynsu_rbe_fedora"]
 
 platform(
     name = "rbe-fedora",
