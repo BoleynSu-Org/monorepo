@@ -14,11 +14,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: c8f8f5ff4813d8248df38e5b1c5a31e0314578a8c53938141e8e1ea4af6cdee9
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.4.0.tar.gz
-  strip_prefix: rules_java-7.4.0
-  updated_at: '2024-02-09'
-  version: 7.4.0
+  sha256: 4dc0a0283fddd2023ec1bd32f337d56b0f7572772e6c1360ad266e94c04c17d3
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.5.0.tar.gz
+  strip_prefix: rules_java-7.5.0
+  updated_at: '2024-03-20'
+  version: 7.5.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
