@@ -441,6 +441,29 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
+- name: buildozer
+  type: http_archive
+  version: v6.4.0.2
+  commit: 8e490647a04dae5ec92342d6f29d893d7b177584
+  sha256: 93bb45290311d80ca0c699997c7d3210f9d0985dde7c5803f6b04f923f98cfff
+  strip_prefix: buildozer-6.4.0.2
+  url: https://github.com/fmeum/buildozer/releases/download/v6.4.0.2/buildozer-v6.4.0.2.tar.gz
+  updated_at: '2024-03-22'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/fmeum/buildozer/releases/download/${DEPS_UPDATER_version}/buildozer-${DEPS_UPDATER_version}.tar.gz
+      echo DEPS_UPDATER_strip_prefix=buildozer-${DEPS_UPDATER_version#v}
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 
 pip_deps:
 - name: ruamel.yaml
