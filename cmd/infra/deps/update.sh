@@ -17,4 +17,4 @@ bazel run --lockfile_mode=update //third_party/io_grpc_grpc_java:module_bazel.ge
 bazel run --lockfile_mode=update //.prow:presubmit.genfile
 bazel run --lockfile_mode=update //.prow:postsubmit.genfile
 bazel run --lockfile_mode=update //oj/oj-server:versions.genfile
-bazel build --lockfile_mode=update --nobuild //...
+bazel mod graph --lockfile_mode=update
