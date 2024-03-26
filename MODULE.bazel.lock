@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "360a0cc59d99470cfebf50773a1a40e58d20f60ca79e1d3579ed4f14d298c28a",
+  "moduleFileHash": "1310056190295ae138809240f02d8913d7aedfef771a73cb5dd8b24be9d5d097",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
