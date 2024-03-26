@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "5b185bc6329dcc24b0e026ae0d5bf9fb7c384953a727b0c636db524ae0048f38",
+  "moduleFileHash": "360a0cc59d99470cfebf50773a1a40e58d20f60ca79e1d3579ed4f14d298c28a",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -201,15 +201,15 @@
                 "artifacts": [
                   "commons-io:commons-io:2.15.1",
                   "org.mariadb.jdbc:mariadb-java-client:3.3.3",
-                  "org.apache.tomcat.embed:tomcat-embed-core:10.1.19",
-                  "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.19",
+                  "org.apache.tomcat.embed:tomcat-embed-core:10.1.20",
+                  "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.20",
                   "org.webjars:jquery:3.7.1",
                   "org.webjars:bootstrap:3.4.1",
                   "io.undertow:undertow-core:2.3.12.Final",
                   "commons-validator:commons-validator:1.8.0",
                   "commons-codec:commons-codec:1.16.1",
                   "org.wildfly.common:wildfly-common:1.7.0.Final",
-                  "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20220608.1",
+                  "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20240325.1",
                   "org.apache.commons:commons-text:1.11.0",
                   "com.google.android:annotations:4.1.1.4",
                   "com.google.api.grpc:proto-google-common-protos:2.29.0",
@@ -4803,7 +4803,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "3e38284af22cb469d7d10294cc1bc5dc50b61c1bf7886612ad01761d8bd028b1"
+          "@@//maven_install.json": "ca40020a0c59c38ec6b4804f7154c47af3c25d4f1fa5090e52710cc4f89b6d3b"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4860,6 +4860,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/netty-nio-client/2.20.128/netty-nio-client-2.20.128.jar"
             }
           },
+          "org_apache_tomcat_embed_tomcat_embed_core_10_1_20": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d4b04888ede3a3232dc1798f3ae2ed7265f9b0dcf631b4bf16f50b7ed90ba361",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-core/10.1.20/tomcat-embed-core-10.1.20.jar"
+            }
+          },
           "software_amazon_awssdk_sdk_core_2_20_128": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4910,6 +4921,17 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
+            }
+          },
+          "org_apache_tomcat_embed_tomcat_embed_jasper_10_1_20": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "2b36c99d7a8e98ed63a4b67b134c82decb98e0a780a477284dd2feb04d21d4b8",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.20/tomcat-embed-jasper-10.1.20.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.20/tomcat-embed-jasper-10.1.20.jar"
             }
           },
           "com_google_truth_truth": {
@@ -5098,17 +5120,6 @@
               "downloaded_file_path": "v1/io/netty/netty-codec-http/4.1.94.Final/netty-codec-http-4.1.94.Final.jar"
             }
           },
-          "org_apache_tomcat_tomcat_annotations_api_10_1_19": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "447c0064fd7b2d3c24e0fdfaf2aa482df5d5d67e68a70d8c7e09be58c5df8030",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/10.1.19/tomcat-annotations-api-10.1.19.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/tomcat-annotations-api/10.1.19/tomcat-annotations-api-10.1.19.jar"
-            }
-          },
           "io_netty_netty_tcnative_classes_2_0_61_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5118,17 +5129,6 @@
                 "https://repo1.maven.org/maven2/io/netty/netty-tcnative-classes/2.0.61.Final/netty-tcnative-classes-2.0.61.Final.jar"
               ],
               "downloaded_file_path": "v1/io/netty/netty-tcnative-classes/2.0.61.Final/netty-tcnative-classes-2.0.61.Final.jar"
-            }
-          },
-          "org_apache_tomcat_embed_tomcat_embed_core_10_1_19": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "ca35025eda35fbef0798ed4ae79d0fbfa11d0a7a4d82fffd3e1a2bfa34abddbe",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.19/tomcat-embed-core-10.1.19.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-core/10.1.19/tomcat-embed-core-10.1.19.jar"
             }
           },
           "com_google_guava_guava_31_1_jre": {
@@ -5200,6 +5200,17 @@
                 "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-gson/1.43.3/google-http-client-gson-1.43.3.jar"
               ],
               "downloaded_file_path": "v1/com/google/http-client/google-http-client-gson/1.43.3/google-http-client-gson-1.43.3.jar"
+            }
+          },
+          "org_apache_tomcat_tomcat_annotations_api_10_1_20": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "1c14aa4082f54d2a0216c31049dd1f7707051efc105df308ee9c7fec3ae146a8",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/10.1.20/tomcat-annotations-api-10.1.20.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/tomcat-annotations-api/10.1.20/tomcat-annotations-api-10.1.20.jar"
             }
           },
           "io_netty_netty_handler_4_1_100_Final": {
@@ -5343,15 +5354,15 @@
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.15.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.19\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.19\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.20\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.12.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
-                "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20220608.1\" }",
+                "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20240325.1\" }",
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.11.0\" }",
                 "{ \"group\": \"com.google.android\", \"artifact\": \"annotations\", \"version\": \"4.1.1.4\" }",
                 "{ \"group\": \"com.google.api.grpc\", \"artifact\": \"proto-google-common-protos\", \"version\": \"2.29.0\" }",
@@ -5546,6 +5557,17 @@
               "ignore_empty_files": false
             }
           },
+          "com_googlecode_owasp_java_html_sanitizer_java10_shim_20240325_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "e4637fb9d825c23677d4526ab1ff58117702e54c30d260a047cea10a93be1a92",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/googlecode/owasp-java-html-sanitizer/java10-shim/20240325.1/java10-shim-20240325.1.jar"
+              ],
+              "downloaded_file_path": "v1/com/googlecode/owasp-java-html-sanitizer/java10-shim/20240325.1/java10-shim-20240325.1.jar"
+            }
+          },
           "unpinned_boleynsu_org_maven": {
             "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
             "ruleClassName": "coursier_fetch",
@@ -5557,15 +5579,15 @@
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.15.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.19\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.19\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.20\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.12.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
-                "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20220608.1\" }",
+                "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20240325.1\" }",
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.11.0\" }",
                 "{ \"group\": \"com.google.android\", \"artifact\": \"annotations\", \"version\": \"4.1.1.4\" }",
                 "{ \"group\": \"com.google.api.grpc\", \"artifact\": \"proto-google-common-protos\", \"version\": \"2.29.0\" }",
@@ -5796,6 +5818,14 @@
               "downloaded_file_path": "v1/com/google/cloud/google-cloud-core-grpc/2.22.0/google-cloud-core-grpc-2.22.0.jar"
             }
           },
+          "com_googlecode_owasp_java_html_sanitizer_java10_shim": {
+            "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
+            "ruleClassName": "compat_repository",
+            "attributes": {
+              "generating_repository": "boleynsu_org_maven",
+              "target_name": "com_googlecode_owasp_java_html_sanitizer_java10_shim"
+            }
+          },
           "io_netty_netty_tcnative_boringssl_static_jar_linux_x86_64_2_0_61_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5949,6 +5979,17 @@
               "downloaded_file_path": "v1/com/google/re2j/re2j/1.7/re2j-1.7.jar"
             }
           },
+          "com_googlecode_owasp_java_html_sanitizer_java8_shim_20240325_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "11f5a6c345d5c48a9d47703b6552fce150c2af266a9915eb20c20ac6d87507fa",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/googlecode/owasp-java-html-sanitizer/java8-shim/20240325.1/java8-shim-20240325.1.jar"
+              ],
+              "downloaded_file_path": "v1/com/googlecode/owasp-java-html-sanitizer/java8-shim/20240325.1/java8-shim-20240325.1.jar"
+            }
+          },
           "unpinned_stardoc_maven": {
             "bzlFile": "@@rules_jvm_external~//:coursier.bzl",
             "ruleClassName": "coursier_fetch",
@@ -6043,6 +6084,17 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "org_apache_tomcat_embed_tomcat_embed_jasper"
+            }
+          },
+          "com_googlecode_owasp_java_html_sanitizer_owasp_java_html_sanitizer_20240325_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f67d865cbd32d0ec7e2ee0ffa97f8b5c71e3f0f8e0a7e822254737c108f13579",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20240325.1/owasp-java-html-sanitizer-20240325.1.jar"
+              ],
+              "downloaded_file_path": "v1/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20240325.1/owasp-java-html-sanitizer-20240325.1.jar"
             }
           },
           "org_ow2_asm_asm": {
@@ -6769,17 +6821,6 @@
               "target_name": "com_github_waffle_waffle_jna"
             }
           },
-          "org_apache_tomcat_embed_tomcat_embed_jasper_10_1_19": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "47f5d03f45c59ea0a0f61e47ce273c7e8c21e971baf10781acc17c86a481c6aa",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.19/tomcat-embed-jasper-10.1.19.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.19/tomcat-embed-jasper-10.1.19.jar"
-            }
-          },
           "com_google_http_client_google_http_client_1_41_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7349,17 +7390,6 @@
               "target_name": "org_webjars_jquery"
             }
           },
-          "org_apache_tomcat_embed_tomcat_embed_el_10_1_19": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "acd1b9ad8c60c72c99b5ed01d3ef6747f85be6c51b5b045a365686de889bfae4",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.19/tomcat-embed-el-10.1.19.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-el/10.1.19/tomcat-embed-el-10.1.19.jar"
-            }
-          },
           "org_apache_commons_commons_text_1_11_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7369,6 +7399,14 @@
                 "https://repo1.maven.org/maven2/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar"
               ],
               "downloaded_file_path": "v1/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar"
+            }
+          },
+          "com_googlecode_owasp_java_html_sanitizer_java8_shim": {
+            "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
+            "ruleClassName": "compat_repository",
+            "attributes": {
+              "generating_repository": "boleynsu_org_maven",
+              "target_name": "com_googlecode_owasp_java_html_sanitizer_java8_shim"
             }
           },
           "io_netty_netty_codec_http_4_1_100_Final": {
@@ -7402,6 +7440,17 @@
                 "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"
               ],
               "downloaded_file_path": "v1/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"
+            }
+          },
+          "org_apache_tomcat_embed_tomcat_embed_el_10_1_20": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "cac3dd6fa016dd85f5751438274c2f35955ce3024fec59d6d2fb0fe7c847c2d2",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.20/tomcat-embed-el-10.1.20.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-el/10.1.20/tomcat-embed-el-10.1.20.jar"
             }
           },
           "org_apache_httpcomponents_httpclient_4_5_14": {
@@ -8016,17 +8065,6 @@
                 "https://repo1.maven.org/maven2/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
               ],
               "downloaded_file_path": "v1/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
-            }
-          },
-          "com_googlecode_owasp_java_html_sanitizer_owasp_java_html_sanitizer_20220608_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "8b90845e05f7d6bbed8cfaa0cc2a239a053a7375e62b1052f4e9060ad42bc168",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20220608.1/owasp-java-html-sanitizer-20220608.1.jar"
-              ],
-              "downloaded_file_path": "v1/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20220608.1/owasp-java-html-sanitizer-20220608.1.jar"
             }
           },
           "commons_collections_commons_collections": {

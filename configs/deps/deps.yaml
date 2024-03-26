@@ -481,11 +481,11 @@ maven_deps:
   version: 3.3.3
   updated_at: '2024-02-21'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.19
-  updated_at: '2024-02-20'
+  version: 10.1.20
+  updated_at: '2024-03-26'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.19
-  updated_at: '2024-02-20'
+  version: 10.1.20
+  updated_at: '2024-03-26'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -511,8 +511,8 @@ maven_deps:
   version_regex: (.*)\.Final
   updated_at: '2023-11-03'
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
-  version: '20220608.1'
-  updated_at: '2023-04-01'
+  version: '20240325.1'
+  updated_at: '2024-03-26'
 - name: org.apache.commons:commons-text
   version: 1.11.0
   updated_at: '2023-10-29'
