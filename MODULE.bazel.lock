@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "90b024511673d4ca095ddacb05e040c1c7bfb4ecb5cb9202ab7d1f8e39ca0764",
+  "moduleFileHash": "11de8502fa2d7a780d7b32e57fb5264b54676e175536722d3d511c8ca846b757",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -561,7 +561,7 @@
         "rules_python": "rules_python@0.31.0",
         "rules_proto": "rules_proto@5.3.0",
         "io_bazel_rules_go": "rules_go@0.46.0",
-        "rules_oci": "rules_oci@1.7.4",
+        "rules_oci": "rules_oci@1.7.5",
         "bazel_skylib": "bazel_skylib@1.5.0",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_pkg": "rules_pkg@0.10.1",
@@ -981,10 +981,10 @@
         }
       }
     },
-    "rules_oci@1.7.4": {
+    "rules_oci@1.7.5": {
       "name": "rules_oci",
-      "version": "1.7.4",
-      "key": "rules_oci@1.7.4",
+      "version": "1.7.5",
+      "key": "rules_oci@1.7.5",
       "repoName": "rules_oci",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -995,9 +995,9 @@
         {
           "extensionBzlFile": "@rules_oci//oci:extensions.bzl",
           "extensionName": "oci",
-          "usingModule": "rules_oci@1.7.4",
+          "usingModule": "rules_oci@1.7.5",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.4/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.5/MODULE.bazel",
             "line": 14,
             "column": 20
           },
@@ -1014,7 +1014,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.4/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.5/MODULE.bazel",
                 "line": 15,
                 "column": 15
               }
@@ -1036,10 +1036,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.4.tar.gz"
+            "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.5.tar.gz"
           ],
-          "integrity": "sha256-SidulWbANJFknu9j8nwoFswiL0HM3r2X0sUVnoSRfDs=",
-          "strip_prefix": "rules_oci-1.7.4",
+          "integrity": "sha256-VtVJkCXWemuGsubrrlIyxyEErmgrWiEod3C9O/BmGr8=",
+          "strip_prefix": "rules_oci-1.7.5",
           "remote_patches": {},
           "remote_patch_strip": 0
         }

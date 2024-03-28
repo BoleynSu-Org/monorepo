@@ -71,11 +71,11 @@ DEPS = {
         {
             "name": "rules_oci",
             "type": "http_archive",
-            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.4.tar.gz",
-            "sha256": "4a276e9566c03491649eef63f27c2816cc222f41ccdebd97d2c5159e84917c3b",
-            "strip_prefix": "rules_oci-1.7.4",
-            "updated_at": "2024-02-28",
-            "version": "v1.7.4",
+            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.5.tar.gz",
+            "sha256": "56d5499025d67a6b86b2e6ebae5232c72104ae682b5a21287770bd3bf0661abf",
+            "strip_prefix": "rules_oci-1.7.5",
+            "updated_at": "2024-03-28",
+            "version": "v1.7.5",
             "load_deps": 'load("@rules_oci//oci:repositories.bzl", "LATEST_CRANE_VERSION", "oci_register_toolchains")\ndef deps():\n  oci_register_toolchains(\n      name = "oci",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n',
         },
         {
