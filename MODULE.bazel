@@ -455,8 +455,8 @@ DEPS = {
     "maven_deps": [
         {
             "name": "commons-io:commons-io",
-            "version": "2.15.1",
-            "updated_at": "2023-11-30",
+            "version": "2.16.0",
+            "updated_at": "2024-03-28",
         },
         {
             "name": "org.mariadb.jdbc:mariadb-java-client",
