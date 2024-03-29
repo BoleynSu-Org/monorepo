@@ -18,7 +18,7 @@ bazel_dep(
 )
 bazel_dep(
     name = "rules_kotlin",
-    version = "1.9.1",
+    version = "1.9.4",
 )
 bazel_dep(
     name = "stardoc",
