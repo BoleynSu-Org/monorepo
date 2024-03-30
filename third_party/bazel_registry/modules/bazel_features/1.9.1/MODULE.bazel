@@ -1,10 +1,20 @@
 module(
-    name = "bazel_features",
-    version = "1.9.1",
+    name = 'bazel_features',
+    version = '1.9.1',
 )
 
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.5.0',
+)
 
+version_extension = use_extension(
+    '//private:extensions.bzl',
+    'version_extension',
+)
 
-version = use_extension("//private:extensions.bzl", "version_extension")
-use_repo(version, "bazel_features_globals", "bazel_features_version")
+use_repo(
+    version_extension,
+    'bazel_features_globals',
+    'bazel_features_version',
+)

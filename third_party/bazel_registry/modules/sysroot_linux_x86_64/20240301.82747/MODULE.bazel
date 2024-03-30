@@ -1,6 +1,6 @@
 module(
-    name = "sysroot_linux_x86_64",
-    version = "20240301.82747",
-    repo_name = "sysroot_linux_x86_64",
+    name = 'sysroot_linux_x86_64',
+    version = '20240301.82747',
+    repo_name = 'sysroot_linux_x86_64',
     compatibility_level = 1,
 )

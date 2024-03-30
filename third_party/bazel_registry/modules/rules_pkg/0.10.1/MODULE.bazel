@@ -1,22 +1,21 @@
 module(
-    name = "rules_pkg",
-    version = "0.10.1",  # Must sync with version.bzl.
+    name = 'rules_pkg',
+    version = '0.10.1',
     compatibility_level = 1,
-    repo_name = "rules_pkg",
+    repo_name = 'rules_pkg',
 )
 
-# Do not update to newer versions until you need a specific new feature.
-bazel_dep(name = "rules_license", version = "0.0.8")
-bazel_dep(name = "rules_python", version = "0.31.0")
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
+bazel_dep(
+    name = 'rules_license',
+    version = '0.0.8',
+)
 
-# Only for development
+bazel_dep(
+    name = 'rules_python',
+    version = '0.31.0',
+)
 
-# Find the system rpmbuild if one is available.
-find_rpm = use_extension("//toolchains/rpm:rpmbuild_configure.bzl", "find_system_rpmbuild_bzlmod", dev_dependency = True)
-use_repo(find_rpm, "rules_pkg_rpmbuild")
-
-register_toolchains(
-    "@rules_pkg_rpmbuild//:all",
-    dev_dependency = True,
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.5.0',
 )

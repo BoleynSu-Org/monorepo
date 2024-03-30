@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "c49c243803750fc2e1b355137b6ea47d5c8915b8b487a755300ea5f25a574b7e",
+  "moduleFileHash": "080c0228b670ee139d71abd82a288773ce9849cf16b6f05493fe88d3b6b0ec6e",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -30,7 +30,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 940,
+            "line": 939,
             "column": 27
           },
           "imports": {
@@ -47,7 +47,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 945,
+            "line": 944,
             "column": 23
           },
           "imports": {
@@ -65,7 +65,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 946,
+                "line": 945,
                 "column": 17
               }
             }
@@ -103,7 +103,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 954,
+                "line": 953,
                 "column": 11
               }
             },
@@ -124,7 +124,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 961,
+                "line": 960,
                 "column": 13
               }
             },
@@ -139,7 +139,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1035,
+                "line": 1034,
                 "column": 14
               }
             }
@@ -153,7 +153,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 968,
+            "line": 967,
             "column": 20
           },
           "imports": {
@@ -171,7 +171,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 969,
+                "line": 968,
                 "column": 10
               }
             }
@@ -185,7 +185,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 976,
+            "line": 975,
             "column": 22
           },
           "imports": {
@@ -257,7 +257,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 977,
+                "line": 976,
                 "column": 14
               }
             }
@@ -271,7 +271,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 994,
+            "line": 993,
             "column": 21
           },
           "imports": {
@@ -303,7 +303,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 995,
+                "line": 994,
                 "column": 15
               }
             },
@@ -319,7 +319,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1012,
+                "line": 1011,
                 "column": 13
               }
             }
@@ -333,7 +333,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1020,
+            "line": 1019,
             "column": 23
           },
           "imports": {
@@ -352,7 +352,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1021,
+                "line": 1020,
                 "column": 16
               }
             }
@@ -366,7 +366,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1029,
+            "line": 1028,
             "column": 27
           },
           "imports": {
@@ -382,7 +382,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1030,
+                "line": 1029,
                 "column": 21
               }
             }
@@ -396,7 +396,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1046,
+            "line": 1045,
             "column": 20
           },
           "imports": {
@@ -421,7 +421,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -441,7 +441,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -465,7 +465,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -484,7 +484,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -499,7 +499,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -514,7 +514,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             },
@@ -529,7 +529,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1049,
+                "line": 1048,
                 "column": 17
               }
             }
@@ -543,7 +543,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1063,
+            "line": 1062,
             "column": 37
           },
           "imports": {
@@ -580,7 +580,7 @@
         "apple_support": "apple_support@1.14.0",
         "stardoc": "stardoc@0.6.2",
         "rules_kotlin": "rules_kotlin@1.9.4",
-        "aspect_bazel_lib": "aspect_bazel_lib@2.6.0",
+        "aspect_bazel_lib": "aspect_bazel_lib@2.6.1",
         "buildozer": "buildozer@6.4.0.2",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -602,8 +602,8 @@
           "usingModule": "rules_cc@0.0.9",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_cc/0.0.9/MODULE.bazel",
-            "line": 9,
-            "column": 29
+            "line": 12,
+            "column": 39
           },
           "imports": {
             "local_config_cc_toolchains": "local_config_cc_toolchains"
@@ -675,7 +675,7 @@
           "usingModule": "rules_java@7.5.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_java/7.5.0/MODULE.bazel",
-            "line": 19,
+            "line": 37,
             "column": 27
           },
           "imports": {
@@ -755,7 +755,7 @@
           "usingModule": "rules_python@0.31.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.31.0/MODULE.bazel",
-            "line": 15,
+            "line": 33,
             "column": 30
           },
           "imports": {
@@ -784,7 +784,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.31.0/MODULE.bazel",
-                "line": 16,
+                "line": 38,
                 "column": 22
               }
             }
@@ -798,7 +798,7 @@
           "usingModule": "rules_python@0.31.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.31.0/MODULE.bazel",
-            "line": 41,
+            "line": 61,
             "column": 23
           },
           "imports": {
@@ -815,7 +815,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.31.0/MODULE.bazel",
-                "line": 47,
+                "line": 66,
                 "column": 17
               }
             }
@@ -892,7 +892,7 @@
           "usingModule": "rules_go@0.46.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.46.0/MODULE.bazel",
-            "line": 16,
+            "line": 35,
             "column": 23
           },
           "imports": {
@@ -910,7 +910,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.46.0/MODULE.bazel",
-                "line": 17,
+                "line": 40,
                 "column": 16
               }
             }
@@ -924,7 +924,7 @@
           "usingModule": "rules_go@0.46.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.46.0/MODULE.bazel",
-            "line": 32,
+            "line": 60,
             "column": 24
           },
           "imports": {
@@ -948,7 +948,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.46.0/MODULE.bazel",
-                "line": 33,
+                "line": 65,
                 "column": 18
               }
             }
@@ -998,7 +998,7 @@
           "usingModule": "rules_oci@1.7.5",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.5/MODULE.bazel",
-            "line": 14,
+            "line": 22,
             "column": 20
           },
           "imports": {
@@ -1015,7 +1015,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_oci/1.7.5/MODULE.bazel",
-                "line": 15,
+                "line": 27,
                 "column": 15
               }
             }
@@ -1025,7 +1025,7 @@
         }
       ],
       "deps": {
-        "aspect_bazel_lib": "aspect_bazel_lib@2.6.0",
+        "aspect_bazel_lib": "aspect_bazel_lib@2.6.1",
         "bazel_skylib": "bazel_skylib@1.5.0",
         "platforms": "platforms@0.0.9",
         "bazel_tools": "bazel_tools@_",
@@ -1089,8 +1089,8 @@
           "usingModule": "rules_jvm_external@6.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-            "line": 30,
-            "column": 42
+            "line": 33,
+            "column": 48
           },
           "imports": {
             "android_gmaven_r8": "android_gmaven_r8",
@@ -1107,7 +1107,7 @@
           "usingModule": "rules_jvm_external@6.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-            "line": 34,
+            "line": 44,
             "column": 22
           },
           "imports": {
@@ -1137,7 +1137,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 36,
+                "line": 49,
                 "column": 14
               }
             },
@@ -1152,7 +1152,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 52,
+                "line": 55,
                 "column": 14
               }
             }
@@ -1169,206 +1169,11 @@
             "line": 0,
             "column": 0
           },
-          "imports": {
-            "coursier_cli": "coursier_cli",
-            "buildifier-linux-arm64": "buildifier-linux-arm64",
-            "buildifier-linux-x86_64": "buildifier-linux-x86_64",
-            "buildifier-macos-arm64": "buildifier-macos-arm64",
-            "buildifier-macos-x86_64": "buildifier-macos-x86_64",
-            "com.google.ar.sceneform_rendering": "com.google.ar.sceneform_rendering",
-            "hamcrest_core_for_test": "hamcrest_core_for_test",
-            "hamcrest_core_srcs_for_test": "hamcrest_core_srcs_for_test",
-            "gson_for_test": "gson_for_test",
-            "junit_platform_commons_for_test": "junit_platform_commons_for_test",
-            "google_api_services_compute_javadoc_for_test": "google_api_services_compute_javadoc_for_test"
-          },
+          "imports": {},
           "devImports": [],
-          "tags": [
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "sha256": "2b78bfdd3ef13fd1f42f158de0f029d7cbb1f4f652d51773445cf2b6f7918a87",
-                "urls": [
-                  "https://github.com/coursier/coursier/releases/download/v2.1.8/coursier.jar"
-                ],
-                "name": "coursier_cli"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 79,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "sha256": "917d599dbb040e63ae7a7e1adb710d2057811902fdc9e35cce925ebfd966eeb8",
-                "urls": [
-                  "https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-linux-arm64"
-                ],
-                "name": "buildifier-linux-arm64"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 85,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "sha256": "52bf6b102cb4f88464e197caac06d69793fa2b05f5ad50a7e7bf6fbd656648a3",
-                "urls": [
-                  "https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-linux-amd64"
-                ],
-                "name": "buildifier-linux-x86_64"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 91,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "sha256": "745feb5ea96cb6ff39a76b2821c57591fd70b528325562486d47b5d08900e2e4",
-                "urls": [
-                  "https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-darwin-arm64"
-                ],
-                "name": "buildifier-macos-arm64"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 97,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "sha256": "c9378d9f4293fc38ec54a08fbc74e7a9d28914dae6891334401e59f38f6e65dc",
-                "urls": [
-                  "https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-darwin-amd64"
-                ],
-                "name": "buildifier-macos-x86_64"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 103,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "rendering-1.10.0.aar",
-                "sha256": "d2f6cd1d54eee0d5557518d1edcf77a3ba37494ae94f9bb862e570ee426a3431",
-                "urls": [
-                  "https://dl.google.com/android/maven2/com/google/ar/sceneform/rendering/1.10.0/rendering-1.10.0.aar"
-                ],
-                "name": "com.google.ar.sceneform_rendering"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 670,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "hamcrest-core-1.3.jar",
-                "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
-                "urls": [
-                  "https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
-                ],
-                "name": "hamcrest_core_for_test"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 679,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "hamcrest-core-1.3-sources.jar",
-                "sha256": "e223d2d8fbafd66057a8848cc94222d63c3cedd652cc48eddc0ab5c39c0f84df",
-                "urls": [
-                  "https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"
-                ],
-                "name": "hamcrest_core_srcs_for_test"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 688,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "gson-2.9.0.jar",
-                "sha256": "c96d60551331a196dac54b745aa642cd078ef89b6f267146b705f2c2cbef052d",
-                "urls": [
-                  "https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar"
-                ],
-                "name": "gson_for_test"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 697,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "junit-platform-commons-1.8.2.jar",
-                "sha256": "d2e015fca7130e79af2f4608dc54415e4b10b592d77333decb4b1a274c185050",
-                "urls": [
-                  "https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar"
-                ],
-                "name": "junit_platform_commons_for_test"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 706,
-                "column": 10
-              }
-            },
-            {
-              "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
-              "attributeValues": {
-                "downloaded_file_path": "google-api-services-compute-v1-rev235-1.25.0-javadoc.jar",
-                "sha256": "b03be5ee8effba3bfbaae53891a9c01d70e2e3bd82ad8889d78e641b22bd76c2",
-                "urls": [
-                  "https://repo1.maven.org/maven2/com/google/apis/google-api-services-compute/v1-rev235-1.25.0/google-api-services-compute-v1-rev235-1.25.0-javadoc.jar"
-                ],
-                "name": "google_api_services_compute_javadoc_for_test"
-              },
-              "devDependency": false,
-              "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_jvm_external/6.0/MODULE.bazel",
-                "line": 716,
-                "column": 10
-              }
-            }
-          ],
+          "tags": [],
           "hasDevUseExtension": false,
-          "hasNonDevUseExtension": true
+          "hasNonDevUseExtension": false
         }
       ],
       "deps": {
@@ -1437,7 +1242,7 @@
           "usingModule": "io_grpc_grpc_java@1.62.2",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-            "line": 81,
+            "line": 28,
             "column": 22
           },
           "imports": {
@@ -1530,7 +1335,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 82,
+                "line": 33,
                 "column": 14
               }
             },
@@ -1544,8 +1349,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 40,
+                "column": 15
               }
             },
             {
@@ -1558,8 +1363,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 46,
+                "column": 15
               }
             },
             {
@@ -1572,8 +1377,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 52,
+                "column": 15
               }
             },
             {
@@ -1586,8 +1391,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 58,
+                "column": 15
               }
             },
             {
@@ -1600,8 +1405,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 64,
+                "column": 15
               }
             },
             {
@@ -1614,8 +1419,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 70,
+                "column": 15
               }
             },
             {
@@ -1628,8 +1433,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 76,
+                "column": 15
               }
             },
             {
@@ -1642,8 +1447,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 82,
+                "column": 15
               }
             },
             {
@@ -1656,8 +1461,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 88,
+                "column": 15
               }
             },
             {
@@ -1670,8 +1475,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 94,
+                "column": 15
               }
             },
             {
@@ -1684,8 +1489,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 100,
+                "column": 15
               }
             },
             {
@@ -1698,8 +1503,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 106,
+                "column": 15
               }
             },
             {
@@ -1712,8 +1517,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 112,
+                "column": 15
               }
             },
             {
@@ -1726,8 +1531,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 118,
+                "column": 15
               }
             },
             {
@@ -1740,8 +1545,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 124,
+                "column": 15
               }
             },
             {
@@ -1754,8 +1559,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 130,
+                "column": 15
               }
             },
             {
@@ -1768,8 +1573,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 136,
+                "column": 15
               }
             },
             {
@@ -1782,8 +1587,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 142,
+                "column": 15
               }
             },
             {
@@ -1796,8 +1601,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 148,
+                "column": 15
               }
             },
             {
@@ -1810,8 +1615,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 154,
+                "column": 15
               }
             },
             {
@@ -1824,8 +1629,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 160,
+                "column": 15
               }
             },
             {
@@ -1838,8 +1643,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 166,
+                "column": 15
               }
             },
             {
@@ -1852,8 +1657,8 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
-                "line": 92,
-                "column": 19
+                "line": 172,
+                "column": 15
               }
             }
           ],
@@ -1897,7 +1702,7 @@
           "usingModule": "gazelle@0.35.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.35.0/MODULE.bazel",
-            "line": 12,
+            "line": 29,
             "column": 23
           },
           "imports": {
@@ -1914,7 +1719,7 @@
           "usingModule": "gazelle@0.35.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.35.0/MODULE.bazel",
-            "line": 20,
+            "line": 39,
             "column": 32
           },
           "imports": {
@@ -1933,7 +1738,7 @@
           "usingModule": "gazelle@0.35.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.35.0/MODULE.bazel",
-            "line": 28,
+            "line": 51,
             "column": 24
           },
           "imports": {
@@ -1960,7 +1765,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.35.0/MODULE.bazel",
-                "line": 29,
+                "line": 56,
                 "column": 18
               }
             },
@@ -1974,7 +1779,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.35.0/MODULE.bazel",
-                "line": 33,
+                "line": 60,
                 "column": 15
               }
             }
@@ -2157,7 +1962,7 @@
           "usingModule": "platforms@0.0.9",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/platforms/0.0.9/MODULE.bazel",
-            "line": 9,
+            "line": 12,
             "column": 30
           },
           "imports": {
@@ -2230,8 +2035,8 @@
           "usingModule": "bazel_features@1.9.1",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/bazel_features/1.9.1/MODULE.bazel",
-            "line": 9,
-            "column": 24
+            "line": 11,
+            "column": 34
           },
           "imports": {
             "bazel_features_globals": "bazel_features_globals",
@@ -2341,8 +2146,8 @@
           "usingModule": "apple_support@1.14.0",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/apple_support/1.14.0/MODULE.bazel",
-            "line": 13,
-            "column": 35
+            "line": 19,
+            "column": 45
           },
           "imports": {
             "local_config_apple_cc": "local_config_apple_cc",
@@ -2388,7 +2193,7 @@
           "usingModule": "stardoc@0.6.2",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/stardoc/0.6.2/MODULE.bazel",
-            "line": 22,
+            "line": 33,
             "column": 22
           },
           "imports": {
@@ -2417,7 +2222,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/stardoc/0.6.2/MODULE.bazel",
-                "line": 23,
+                "line": 38,
                 "column": 14
               }
             }
@@ -2465,7 +2270,7 @@
           "usingModule": "rules_kotlin@1.9.4",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_kotlin/1.9.4/MODULE.bazel",
-            "line": 13,
+            "line": 32,
             "column": 40
           },
           "imports": {
@@ -2485,8 +2290,8 @@
           "usingModule": "rules_kotlin@1.9.4",
           "location": {
             "file": "file://%workspace%/third_party/bazel_registry/modules/rules_kotlin/1.9.4/MODULE.bazel",
-            "line": 28,
-            "column": 42
+            "line": 49,
+            "column": 48
           },
           "imports": {
             "android_gmaven_r8": "android_gmaven_r8",
@@ -2522,10 +2327,10 @@
         }
       }
     },
-    "aspect_bazel_lib@2.6.0": {
+    "aspect_bazel_lib@2.6.1": {
       "name": "aspect_bazel_lib",
-      "version": "2.6.0",
-      "key": "aspect_bazel_lib@2.6.0",
+      "version": "2.6.1",
+      "key": "aspect_bazel_lib@2.6.1",
       "repoName": "aspect_bazel_lib",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -2536,20 +2341,17 @@
         "@coreutils_toolchains//:all",
         "@expand_template_toolchains//:all",
         "@bats_toolchains//:all",
-        "@bsd_tar_toolchains//:linux_amd64_toolchain",
-        "@bsd_tar_toolchains//:linux_arm64_toolchain",
-        "@bsd_tar_toolchains//:windows_amd64_toolchain",
-        "@bsd_tar_toolchains//:host_toolchain"
+        "@bsd_tar_toolchains//:all"
       ],
       "extensionUsages": [
         {
           "extensionBzlFile": "@aspect_bazel_lib//lib:extensions.bzl",
           "extensionName": "toolchains",
-          "usingModule": "aspect_bazel_lib@2.6.0",
+          "usingModule": "aspect_bazel_lib@2.6.1",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-            "line": 17,
-            "column": 37
+            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+            "line": 24,
+            "column": 27
           },
           "imports": {
             "bats_toolchains": "bats_toolchains",
@@ -2568,9 +2370,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 18,
-                "column": 36
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 29,
+                "column": 26
               }
             },
             {
@@ -2578,9 +2380,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 19,
-                "column": 39
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 32,
+                "column": 29
               }
             },
             {
@@ -2588,9 +2390,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 20,
-                "column": 24
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 35,
+                "column": 14
               }
             },
             {
@@ -2598,9 +2400,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 21,
-                "column": 24
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 38,
+                "column": 14
               }
             },
             {
@@ -2608,9 +2410,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 22,
-                "column": 31
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 41,
+                "column": 21
               }
             },
             {
@@ -2618,9 +2420,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 23,
-                "column": 25
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 44,
+                "column": 15
               }
             },
             {
@@ -2628,9 +2430,9 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 24,
-                "column": 37
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 47,
+                "column": 27
               }
             },
             {
@@ -2638,9 +2440,40 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.0/MODULE.bazel",
-                "line": 25,
-                "column": 26
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 50,
+                "column": 16
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        },
+        {
+          "extensionBzlFile": "@gazelle//:extensions.bzl",
+          "extensionName": "go_deps",
+          "usingModule": "aspect_bazel_lib@2.6.1",
+          "location": {
+            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+            "line": 87,
+            "column": 24
+          },
+          "imports": {
+            "com_github_bmatcuk_doublestar_v4": "com_github_bmatcuk_doublestar_v4",
+            "org_golang_x_exp": "org_golang_x_exp"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "from_file",
+              "attributeValues": {
+                "go_mod": "//:go.mod"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.6.1/MODULE.bazel",
+                "line": 92,
+                "column": 18
               }
             }
           ],
@@ -2652,6 +2485,8 @@
         "bazel_skylib": "bazel_skylib@1.5.0",
         "platforms": "platforms@0.0.9",
         "io_bazel_stardoc": "stardoc@0.6.2",
+        "gazelle": "gazelle@0.35.0",
+        "io_bazel_rules_go": "rules_go@0.46.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -2660,10 +2495,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/aspect-build/bazel-lib/releases/download/v2.6.0/bazel-lib-v2.6.0.tar.gz"
+            "https://github.com/aspect-build/bazel-lib/releases/download/v2.6.1/bazel-lib-v2.6.1.tar.gz"
           ],
-          "integrity": "sha256-PgpDCtqbjw+EV2eiZ89YS8lLjsZC1gk/Mdyjk4sY9qE=",
-          "strip_prefix": "bazel-lib-2.6.0",
+          "integrity": "sha256-rGOSy+XhzHcBu9gcr5QBa65vJIeA4Sr0SF1KcSe0yys=",
+          "strip_prefix": "bazel-lib-2.6.1",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -2706,7 +2541,7 @@
               "devDependency": false,
               "location": {
                 "file": "file://%workspace%/third_party/bazel_registry/modules/buildozer/6.4.0.2/MODULE.bazel",
-                "line": 8,
+                "line": 12,
                 "column": 27
               }
             }
@@ -2947,7 +2782,7 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "3DMe+xbwSbNxqwKAlnUgn08hF/9FBfMa6nhVI3l+6sE=",
+        "bzlTransitiveDigest": "uCG8PHIElz7xiuj89e451fXYsz/boGVlB9Cg8kO8kNk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -2964,13 +2799,6 @@
             "ruleClassName": "copy_to_directory_platform_repo",
             "attributes": {
               "platform": "windows_amd64"
-            }
-          },
-          "bsd_tar_host": {
-            "bzlFile": "@@aspect_bazel_lib~//lib/private:tar_toolchain.bzl",
-            "ruleClassName": "bsdtar_binary_repo",
-            "attributes": {
-              "platform": "host"
             }
           },
           "jq_darwin_amd64": {
@@ -3169,6 +2997,13 @@
               "platform": "darwin_arm64"
             }
           },
+          "bsd_tar_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "platform": "darwin_arm64"
+            }
+          },
           "copy_to_directory_linux_amd64": {
             "bzlFile": "@@aspect_bazel_lib~//lib/private:copy_to_directory_toolchain.bzl",
             "ruleClassName": "copy_to_directory_platform_repo",
@@ -3245,6 +3080,13 @@
             "attributes": {
               "platform": "linux_amd64",
               "version": "1.7"
+            }
+          },
+          "bsd_tar_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:tar_toolchain.bzl",
+            "ruleClassName": "bsdtar_binary_repo",
+            "attributes": {
+              "platform": "darwin_amd64"
             }
           },
           "bsd_tar_toolchains": {
@@ -3542,8 +3384,10 @@
         "bzlTransitiveDigest": "D1+rhhbwX4ufoTmeUVxDpPg+Sknv3QzVXZnyK2zOjj4=",
         "recordedFileInputs": {
           "@@rules_go~//go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e",
+          "@@aspect_bazel_lib~//go.mod": "6c057dc4b546aa7502101c05372148f086d448e9c16ea8dc6e4a871cc44d6e21",
           "@@gazelle~//go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d",
           "@@rules_go~//go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
+          "@@aspect_bazel_lib~//go.sum": "f7821171fd76b180280ab5b66aea991f7ccd92b3fcfc63c26ade1daf6f0e5622",
           "@@gazelle~//go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473"
         },
         "recordedDirentsInputs": {},
@@ -3714,6 +3558,21 @@
               "version": "v0.0.0-20231115204819-d4c9dccdfbb1"
             }
           },
+          "org_golang_x_exp": {
+            "bzlFile": "@@gazelle~//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "importpath": "golang.org/x/exp",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:Q8/wZp0KX97QFTc2ywcOE0YRjZPVIx+MXInMzdvQqcA=",
+              "replace": "",
+              "version": "v0.0.0-20240119083558-1b970713d09a"
+            }
+          },
           "org_golang_google_genproto": {
             "bzlFile": "@@gazelle~//internal:go_repository.bzl",
             "ruleClassName": "go_repository",
@@ -3815,12 +3674,15 @@
                 "com_github_pmezard_go_difflib": "github.com/pmezard/go-difflib",
                 "org_golang_x_sync": "golang.org/x/sync",
                 "org_golang_x_tools_go_vcs": "golang.org/x/tools/go/vcs",
+                "org_golang_x_exp": "golang.org/x/exp",
                 "@rules_go~": "github.com/bazelbuild/rules_go",
-                "@gazelle~": "github.com/bazelbuild/bazel-gazelle"
+                "@gazelle~": "github.com/bazelbuild/bazel-gazelle",
+                "@aspect_bazel_lib~": "github.com/aspect-build/bazel-lib"
               },
               "module_names": {
                 "@rules_go~": "rules_go",
-                "@gazelle~": "gazelle"
+                "@gazelle~": "gazelle",
+                "@aspect_bazel_lib~": "aspect_bazel_lib"
               },
               "build_naming_conventions": {}
             }
@@ -8185,7 +8047,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "1MV1EXDHvkWoPaleYJcnSh235R7bOfrWTZd4gCGMiZQ=",
+        "bzlTransitiveDigest": "Hrvu7Vm5pRsYGTtTwpPjhOLVJporHQ8u8FCYhHtjO2I=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

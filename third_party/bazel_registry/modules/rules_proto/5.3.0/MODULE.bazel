@@ -1,13 +1,21 @@
 module(
-    name = "rules_proto",
+    name = 'rules_proto',
     compatibility_level = 1,
-    version = "5.3.0",
+    version = '5.3.0',
 )
 
-bazel_dep(name = "bazel_skylib", version = "1.5.0")
-bazel_dep(name = "protobuf", repo_name = "com_google_protobuf", version = "3.19.6")
-bazel_dep(name = "rules_cc", version = "0.0.9")
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.5.0',
+)
 
-# TODO(bazel-team): add support for protobuf_workspace
+bazel_dep(
+    name = 'protobuf',
+    repo_name = 'com_google_protobuf',
+    version = '3.19.6',
+)
 
-# Dependencies needed in tests
+bazel_dep(
+    name = 'rules_cc',
+    version = '0.0.9',
+)
