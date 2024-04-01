@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "b7ff0940fc95a13faf290a411b4db77cb482e5b3d5e2da39ebb5324fa2c62c13",
+  "moduleFileHash": "591e4c55452c4f6a26251dd071798423a3c152341a3a9a8a7fc040c59e514d0d",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -577,7 +577,7 @@
         "bazel_features": "bazel_features@1.9.1",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
-        "apple_support": "apple_support@1.14.0",
+        "apple_support": "apple_support@1.15.1",
         "stardoc": "stardoc@0.6.2",
         "rules_kotlin": "rules_kotlin@1.9.4",
         "aspect_bazel_lib": "aspect_bazel_lib@2.6.1",
@@ -2130,10 +2130,10 @@
         }
       }
     },
-    "apple_support@1.14.0": {
+    "apple_support@1.15.1": {
       "name": "apple_support",
-      "version": "1.14.0",
-      "key": "apple_support@1.14.0",
+      "version": "1.15.1",
+      "key": "apple_support@1.15.1",
       "repoName": "build_bazel_apple_support",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -2143,9 +2143,9 @@
         {
           "extensionBzlFile": "@build_bazel_apple_support//crosstool:setup.bzl",
           "extensionName": "apple_cc_configure_extension",
-          "usingModule": "apple_support@1.14.0",
+          "usingModule": "apple_support@1.15.1",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/apple_support/1.14.0/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/apple_support/1.15.1/MODULE.bazel",
             "line": 19,
             "column": 45
           },
@@ -2170,9 +2170,9 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/apple_support/releases/download/1.14.0/apple_support.1.14.0.tar.gz"
+            "https://github.com/bazelbuild/apple_support/releases/download/1.15.1/apple_support.1.15.1.tar.gz"
           ],
-          "integrity": "sha256-qLpv0J0P/rqbXzmPOkYmJHD+Ct3dtO9a+n6rGNABp7A=",
+          "integrity": "sha256-xLsrc2fEhDgjAK7nW+WYuS+EeJb7MbvSLzojRq32aoA=",
           "strip_prefix": "",
           "remote_patches": {},
           "remote_patch_strip": 0
@@ -2716,7 +2716,7 @@
         "platforms": "platforms@0.0.9",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
-        "build_bazel_apple_support": "apple_support@1.14.0",
+        "build_bazel_apple_support": "apple_support@1.15.1",
         "local_config_platform": "local_config_platform@_"
       }
     },
@@ -2755,7 +2755,7 @@
     },
     "@@apple_support~//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
-        "bzlTransitiveDigest": "TMkUP4/N3ZORvZrcDg9FxSoW9r/7+uDVH/SI2biRyJg=",
+        "bzlTransitiveDigest": "RyR+EbN4fAzxxZSQKwXXrxEtMVrezn79MOR/2mmcmYk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
