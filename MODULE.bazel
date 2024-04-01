@@ -873,12 +873,12 @@ DEPS = {
         },
         {
             "name": "io_docker_filebrowser_filebrowser",
-            "version": "v2.27.0",
+            "version": "v2.28.0",
             "registry": "docker.io",
             "repository": "filebrowser/filebrowser",
-            "tag": "v2.27.0",
-            "digest": "sha256:00b75afd52a92e4525e3bcaf61caa2a31b8d878a5b371380686b1145cb0424fd",
-            "updated_at": "2024-02-10",
+            "tag": "v2.28.0",
+            "digest": "sha256:d312dbaa9ecab09fb31857178c978d587167f1de14da8e025be175cda4c201a0",
+            "updated_at": "2024-04-01",
             "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7"],
         },
         {
