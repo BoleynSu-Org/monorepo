@@ -715,12 +715,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240401.101012'
+  version: '20240402.085419'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240401.101012'
-  digest: sha256:a00847e0ecedd88b8a5809d0a4e53c21628fdbe9ab710ba760b050c5f034ff37
-  updated_at: '2024-04-01'
+  tag: '20240402.085419'
+  digest: sha256:e9d4fe41d91ce37f2035b65e2c58fa1abfc15e93258d3da5bf99a7dd80e54554
+  updated_at: '2024-04-02'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -764,26 +764,26 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240401.101012'
+  version: '20240402.085419'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240401.101012'
-  digest: sha256:ddf7dfde06aa03ab0e63af8e31db0617545047fa4ad516b9969a341b9dba7dc3
-  updated_at: '2024-04-01'
+  tag: '20240402.085419'
+  digest: sha256:bfb42a69ef1a269039ad4ef70734333cb60dd5471de0c225a5a97222bcc6efa8
+  updated_at: '2024-04-02'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240401.101012'
+  version: '20240402.085419'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240401.101012'
-  digest: sha256:a3345e31baeda0cd3cd516d62a8f3fa6dc30bbe976aa14ae90b931817408b961
-  updated_at: '2024-04-01'
+  tag: '20240402.085419'
+  digest: sha256:f3fbd758412a25dec34d8a2573b2dd46cc0771dc0a55e098cf7b9ffc28285378
+  updated_at: '2024-04-02'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:7b810cb958f5c8dec4cdc5a725dea8b8ab2b67dcd9d593b8a69cd0342caaa772
-  version: '20240401.101012'
-  tag: '20240401.101012'
-  updated_at: '2024-04-01'
+  digest: sha256:2313a13ca2f20286c3911b88f3b1653b70071338753c11b2cdce79ef0d9c970c
+  version: '20240402.085419'
+  tag: '20240402.085419'
+  updated_at: '2024-04-02'
 
 toolchain_deps:
 - name: c
