@@ -141,11 +141,11 @@ bazel_deps:
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: a0ee1d304f7caa46680ba06bdef0e5d9ec8815f6e01ec29398efd13256598c3f
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.35.0.tar.gz
-  updated_at: '2023-12-21'
-  version: v0.35.0
-  strip_prefix: bazel-gazelle-0.35.0
+  sha256: 1065828c7eaf73d99221bd5d61d78d07ad6f604218fb18d443540da18683e488
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.36.0.tar.gz
+  updated_at: '2024-04-03'
+  version: v0.36.0
+  strip_prefix: bazel-gazelle-0.36.0
   # FIXME(https://github.com/bazelbuild/bazel-gazelle/issues/1305):
   # The current implementation forces users to declare go_repository before gazelle_dependencies to avoid being overridden.
   patch_cmds:
@@ -418,13 +418,13 @@ bazel_deps:
       value: [sha256]
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.6.1
+  version: v2.7.0
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: ac6392cbe5e1cc7701bbd81caf94016bae6f248780e12af4485d4a7127b4cb2b
-  strip_prefix: bazel-lib-2.6.1
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.6.1/bazel-lib-v2.6.1.tar.gz
+  sha256: 357dad9d212327c35d9244190ef010aad315e73ffa1bed1a29e20c372f9ca346
+  strip_prefix: bazel-lib-2.7.0
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.7.0/bazel-lib-v2.7.0.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2024-03-30'
+  updated_at: '2024-04-03'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -715,12 +715,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240402.085419'
+  version: '20240403.120104'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240402.085419'
-  digest: sha256:e9d4fe41d91ce37f2035b65e2c58fa1abfc15e93258d3da5bf99a7dd80e54554
-  updated_at: '2024-04-02'
+  tag: '20240403.120104'
+  digest: sha256:b5803e56902aab068470a888755366ecce12ce520ae6d020916f4a0b89b1e722
+  updated_at: '2024-04-03'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -764,26 +764,26 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240402.085419'
+  version: '20240403.120104'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240402.085419'
-  digest: sha256:bfb42a69ef1a269039ad4ef70734333cb60dd5471de0c225a5a97222bcc6efa8
-  updated_at: '2024-04-02'
+  tag: '20240403.120104'
+  digest: sha256:ddfe42b26f427c1642bc98c0b30fa4675fcb44d363bcf47ff8d516886d54e957
+  updated_at: '2024-04-03'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240402.085419'
+  version: '20240403.120104'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240402.085419'
-  digest: sha256:f3fbd758412a25dec34d8a2573b2dd46cc0771dc0a55e098cf7b9ffc28285378
-  updated_at: '2024-04-02'
+  tag: '20240403.120104'
+  digest: sha256:0eb1deb41551553e750c35360cd44082c0da1fb5b5c124e12d4255b999ea40c3
+  updated_at: '2024-04-03'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:2313a13ca2f20286c3911b88f3b1653b70071338753c11b2cdce79ef0d9c970c
-  version: '20240402.085419'
-  tag: '20240402.085419'
-  updated_at: '2024-04-02'
+  digest: sha256:26662f5d9132979c8487d0037388d40f8e7c5f6de273eacfed073094423552a4
+  version: '20240403.120104'
+  tag: '20240403.120104'
+  updated_at: '2024-04-03'
 
 toolchain_deps:
 - name: c

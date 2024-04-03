@@ -1,7 +1,12 @@
 module(
     name = 'gazelle',
-    version = '0.35.0',
+    version = '0.36.0',
     repo_name = 'bazel_gazelle',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.9.1',
 )
 
 bazel_dep(
@@ -59,8 +64,8 @@ go_deps.from_file(
 
 go_deps.module(
     path = 'golang.org/x/tools',
-    sum = 'h1:zdAyfUGbYmuVokhzVmghFl2ZJh5QhcfebBgmVPFYA+8=',
-    version = 'v0.15.0',
+    sum = 'h1:k8NLag8AGHnn+PHbl7g43CtqZAwG60vZkLqgyZgIHgQ=',
+    version = 'v0.18.0',
 )
 
 use_repo(
