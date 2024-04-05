@@ -128,11 +128,11 @@ bazel_deps:
   strip_prefix: rules_pkg-0.10.1
 - name: io_grpc_grpc_java
   type: http_archive
-  sha256: 30cfc954c2174493822601a74b876837986c444d9b9e917082994b5e34348f34
-  strip_prefix: grpc-java-1.62.2
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.62.2.tar.gz
-  updated_at: '2024-02-27'
-  version: v1.62.2
+  sha256: 2c8bba5c3d77d78b5ad5ea2d68a4c6faf5233e527e780f2190d5e9c8961cfb77
+  strip_prefix: grpc-java-1.63.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.63.0.tar.gz
+  updated_at: '2024-04-05'
+  version: v1.63.0
   load_deps: |
     load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")
     def deps():
@@ -522,10 +522,10 @@ maven_deps:
   version: 2.29.0
   included_from: io_grpc_grpc_java
 - name: com.google.auth:google-auth-library-credentials
-  version: 1.4.0
+  version: 1.22.0
   included_from: io_grpc_grpc_java
 - name: com.google.auth:google-auth-library-oauth2-http
-  version: 1.4.0
+  version: 1.22.0
   included_from: io_grpc_grpc_java
 - name: com.google.code.findbugs:jsr305
   version: 3.0.2

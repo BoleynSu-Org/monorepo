@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "882516ad758470d1f8d974c56ac500fa45de5fa965b36640ca1010cdf91a6869",
+  "moduleFileHash": "c968830baf74c79791a450a6271dbc36ce13c59b7121715be0774d468407a835",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -565,7 +565,7 @@
         "bazel_skylib": "bazel_skylib@1.5.0",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_pkg": "rules_pkg@0.10.1",
-        "io_grpc_grpc_java": "io_grpc_grpc_java@1.62.2",
+        "io_grpc_grpc_java": "io_grpc_grpc_java@1.63.0",
         "bazel_gazelle": "gazelle@0.36.0",
         "com_github_cdolivet_editarea": "com_github_cdolivet_editarea@0.8.2",
         "llvm_linux_x86_64": "llvm_linux_x86_64@17.0.6",
@@ -1228,10 +1228,10 @@
         }
       }
     },
-    "io_grpc_grpc_java@1.62.2": {
+    "io_grpc_grpc_java@1.63.0": {
       "name": "io_grpc_grpc_java",
-      "version": "1.62.2",
-      "key": "io_grpc_grpc_java@1.62.2",
+      "version": "1.63.0",
+      "key": "io_grpc_grpc_java@1.63.0",
       "repoName": "io_grpc_grpc_java",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -1239,9 +1239,9 @@
         {
           "extensionBzlFile": "@rules_jvm_external//:extensions.bzl",
           "extensionName": "maven",
-          "usingModule": "io_grpc_grpc_java@1.62.2",
+          "usingModule": "io_grpc_grpc_java@1.63.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
             "line": 28,
             "column": 22
           },
@@ -1334,7 +1334,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 33,
                 "column": 14
               }
@@ -1348,7 +1348,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 40,
                 "column": 15
               }
@@ -1362,7 +1362,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 46,
                 "column": 15
               }
@@ -1376,7 +1376,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 52,
                 "column": 15
               }
@@ -1390,7 +1390,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 58,
                 "column": 15
               }
@@ -1404,7 +1404,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 64,
                 "column": 15
               }
@@ -1418,7 +1418,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 70,
                 "column": 15
               }
@@ -1432,7 +1432,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 76,
                 "column": 15
               }
@@ -1446,7 +1446,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 82,
                 "column": 15
               }
@@ -1460,7 +1460,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 88,
                 "column": 15
               }
@@ -1474,7 +1474,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 94,
                 "column": 15
               }
@@ -1488,7 +1488,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 100,
                 "column": 15
               }
@@ -1502,7 +1502,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 106,
                 "column": 15
               }
@@ -1516,7 +1516,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 112,
                 "column": 15
               }
@@ -1530,7 +1530,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 118,
                 "column": 15
               }
@@ -1544,7 +1544,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 124,
                 "column": 15
               }
@@ -1558,7 +1558,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 130,
                 "column": 15
               }
@@ -1572,7 +1572,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 136,
                 "column": 15
               }
@@ -1586,7 +1586,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 142,
                 "column": 15
               }
@@ -1600,7 +1600,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 148,
                 "column": 15
               }
@@ -1614,7 +1614,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 154,
                 "column": 15
               }
@@ -1628,7 +1628,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 160,
                 "column": 15
               }
@@ -1642,7 +1642,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 166,
                 "column": 15
               }
@@ -1656,7 +1656,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.62.2/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/io_grpc_grpc_java/1.63.0/MODULE.bazel",
                 "line": 172,
                 "column": 15
               }
@@ -1679,10 +1679,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/grpc/grpc-java/archive/refs/tags/v1.62.2.tar.gz"
+            "https://github.com/grpc/grpc-java/archive/refs/tags/v1.63.0.tar.gz"
           ],
-          "integrity": "sha256-MM/JVMIXRJOCJgGnS4doN5hsRE2bnpFwgplLXjQ0jzQ=",
-          "strip_prefix": "grpc-java-1.62.2",
+          "integrity": "sha256-LIu6XD1314ta1eotaKTG+vUjPlJ+eA8hkNXpyJYc+3c=",
+          "strip_prefix": "grpc-java-1.63.0",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
