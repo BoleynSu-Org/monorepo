@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "a7daacc7a15944e8cf6a248acc044abbe44f0fcece0480b6659ea5ef6cc47cd5",
+  "moduleFileHash": "882516ad758470d1f8d974c56ac500fa45de5fa965b36640ca1010cdf91a6869",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -415,7 +415,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_ci_runner",
                 "image": "quay.io/boleynsu/ci-runner",
-                "digest": "sha256:d8fd14ef5955f029ca88b6de26cbd1d46255d2a4618bcaaca19845c15f88d026",
+                "digest": "sha256:a45e843df17305eda1d6a19fa2084bf7da2dbe9cdb797c99ea4a97d9d23f970d",
                 "platforms": []
               },
               "devDependency": false,
@@ -493,7 +493,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_oj_c99runner",
                 "image": "quay.io/boleynsu/oj-c99runner",
-                "digest": "sha256:6d8b85bed754fc35b41757266c9f75117a35137d026aebdcf4c9579dc4b15e37",
+                "digest": "sha256:fd2083636186fd9e06eab84ee87ff7e125d614d2c80711a241defdfbdf62b980",
                 "platforms": []
               },
               "devDependency": false,
@@ -508,7 +508,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_rbe_fedora",
                 "image": "quay.io/boleynsu/rbe-fedora",
-                "digest": "sha256:99f7f7ae11dbe5298dea944627a54959e881c1338aadc781c76314d46123ba07",
+                "digest": "sha256:b45e2f64946d1b91e47a7fdd8de47d0022249d68eac9ef9bdd59eeecbaeb236a",
                 "platforms": []
               },
               "devDependency": false,
@@ -523,7 +523,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_base",
                 "image": "quay.io/boleynsu/base",
-                "digest": "sha256:d6ae6c38502812db5dfbfecf6f00161b7a87c1e36784c0a99d7266de3ab7703d",
+                "digest": "sha256:127414c9a5e7f4d58bb1394ad7abc8104d99e1707c610d08f81d0349ba6cf363",
                 "platforms": []
               },
               "devDependency": false,
@@ -7661,7 +7661,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:d6ae6c38502812db5dfbfecf6f00161b7a87c1e36784c0a99d7266de3ab7703d",
+              "identifier": "sha256:127414c9a5e7f4d58bb1394ad7abc8104d99e1707c610d08f81d0349ba6cf363",
               "platforms": {},
               "platform": "@@rules_oci~//oci:io_quay_boleynsu_base_single",
               "bzlmod_repository": "io_quay_boleynsu_base",
@@ -7959,7 +7959,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:99f7f7ae11dbe5298dea944627a54959e881c1338aadc781c76314d46123ba07",
+              "identifier": "sha256:b45e2f64946d1b91e47a7fdd8de47d0022249d68eac9ef9bdd59eeecbaeb236a",
               "platforms": {},
               "platform": "@@rules_oci~//oci:io_quay_boleynsu_rbe_fedora_single",
               "bzlmod_repository": "io_quay_boleynsu_rbe_fedora",
@@ -7973,7 +7973,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:99f7f7ae11dbe5298dea944627a54959e881c1338aadc781c76314d46123ba07",
+              "identifier": "sha256:b45e2f64946d1b91e47a7fdd8de47d0022249d68eac9ef9bdd59eeecbaeb236a",
               "target_name": "io_quay_boleynsu_rbe_fedora_single"
             }
           },
@@ -7997,7 +7997,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:d8fd14ef5955f029ca88b6de26cbd1d46255d2a4618bcaaca19845c15f88d026",
+              "identifier": "sha256:a45e843df17305eda1d6a19fa2084bf7da2dbe9cdb797c99ea4a97d9d23f970d",
               "platforms": {},
               "platform": "@@rules_oci~//oci:io_quay_boleynsu_ci_runner_single",
               "bzlmod_repository": "io_quay_boleynsu_ci_runner",
@@ -8055,7 +8055,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:6d8b85bed754fc35b41757266c9f75117a35137d026aebdcf4c9579dc4b15e37",
+              "identifier": "sha256:fd2083636186fd9e06eab84ee87ff7e125d614d2c80711a241defdfbdf62b980",
               "target_name": "io_quay_boleynsu_oj_c99runner_single"
             }
           },
@@ -8092,7 +8092,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:d6ae6c38502812db5dfbfecf6f00161b7a87c1e36784c0a99d7266de3ab7703d",
+              "identifier": "sha256:127414c9a5e7f4d58bb1394ad7abc8104d99e1707c610d08f81d0349ba6cf363",
               "target_name": "io_quay_boleynsu_base_single"
             }
           },
@@ -8111,7 +8111,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:d8fd14ef5955f029ca88b6de26cbd1d46255d2a4618bcaaca19845c15f88d026",
+              "identifier": "sha256:a45e843df17305eda1d6a19fa2084bf7da2dbe9cdb797c99ea4a97d9d23f970d",
               "target_name": "io_quay_boleynsu_ci_runner_single"
             }
           },
@@ -8195,7 +8195,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:6d8b85bed754fc35b41757266c9f75117a35137d026aebdcf4c9579dc4b15e37",
+              "identifier": "sha256:fd2083636186fd9e06eab84ee87ff7e125d614d2c80711a241defdfbdf62b980",
               "platforms": {},
               "platform": "@@rules_oci~//oci:io_quay_boleynsu_oj_c99runner_single",
               "bzlmod_repository": "io_quay_boleynsu_oj_c99runner",
