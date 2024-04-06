@@ -524,12 +524,12 @@ DEPS = {
         },
         {
             "name": "com.google.auth:google-auth-library-credentials",
-            "version": "1.4.0",
+            "version": "1.22.0",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "com.google.auth:google-auth-library-oauth2-http",
-            "version": "1.4.0",
+            "version": "1.22.0",
             "included_from": "io_grpc_grpc_java",
         },
         {

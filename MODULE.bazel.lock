@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "c968830baf74c79791a450a6271dbc36ce13c59b7121715be0774d468407a835",
+  "moduleFileHash": "2c6300650ace0b38cfeda9ab3975b0eada9a1384d2a2550dad7bcace6f90c865",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -213,8 +213,8 @@
                   "org.apache.commons:commons-text:1.11.0",
                   "com.google.android:annotations:4.1.1.4",
                   "com.google.api.grpc:proto-google-common-protos:2.29.0",
-                  "com.google.auth:google-auth-library-credentials:1.4.0",
-                  "com.google.auth:google-auth-library-oauth2-http:1.4.0",
+                  "com.google.auth:google-auth-library-credentials:1.22.0",
+                  "com.google.auth:google-auth-library-oauth2-http:1.22.0",
                   "com.google.code.findbugs:jsr305:3.0.2",
                   "com.google.auto.value:auto-value:1.10.4",
                   "com.google.auto.value:auto-value-annotations:1.10.4",
@@ -1292,8 +1292,8 @@
                 "artifacts": [
                   "com.google.android:annotations:4.1.1.4",
                   "com.google.api.grpc:proto-google-common-protos:2.29.0",
-                  "com.google.auth:google-auth-library-credentials:1.4.0",
-                  "com.google.auth:google-auth-library-oauth2-http:1.4.0",
+                  "com.google.auth:google-auth-library-credentials:1.22.0",
+                  "com.google.auth:google-auth-library-oauth2-http:1.22.0",
                   "com.google.auto.value:auto-value-annotations:1.10.4",
                   "com.google.auto.value:auto-value:1.10.4",
                   "com.google.code.findbugs:jsr305:3.0.2",
@@ -4181,7 +4181,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "8618d5f1d51a31959be3014ca5270f075b1236cbe06cf6badde0e7e66be60810"
+          "@@//maven_install.json": "e2639fb113847b2378e8947afacc1d6ca8a2a9493a31fd9ae9c76a8486c5c273"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4388,8 +4388,8 @@
               "artifacts": [
                 "{ \"group\": \"com.google.android\", \"artifact\": \"annotations\", \"version\": \"4.1.1.4\" }",
                 "{ \"group\": \"com.google.api.grpc\", \"artifact\": \"proto-google-common-protos\", \"version\": \"2.29.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.4.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.4.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.22.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.22.0\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value-annotations\", \"version\": \"1.10.4\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value\", \"version\": \"1.10.4\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
@@ -4602,15 +4602,15 @@
               "downloaded_file_path": "v1/io/netty/netty-handler/4.1.100.Final/netty-handler-4.1.100.Final.jar"
             }
           },
-          "org_apache_httpcomponents_httpcore_4_4_15": {
+          "org_apache_httpcomponents_httpcore_4_4_16": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "3cbaed088c499a10f96dde58f39dc0e7985171abd88138ca1655a872011bb142",
+              "sha256": "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f",
               "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar"
+                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
               ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar"
+              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
             }
           },
           "io_grpc_grpc_protobuf_lite_1_56_1": {
@@ -4622,17 +4622,6 @@
                 "https://repo1.maven.org/maven2/io/grpc/grpc-protobuf-lite/1.56.1/grpc-protobuf-lite-1.56.1.jar"
               ],
               "downloaded_file_path": "v1/io/grpc/grpc-protobuf-lite/1.56.1/grpc-protobuf-lite-1.56.1.jar"
-            }
-          },
-          "org_apache_httpcomponents_httpcore_4_4_16": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
             }
           },
           "com_google_api_grpc_gapic_google_cloud_storage_v2_2_26_1_alpha": {
@@ -4744,8 +4733,8 @@
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.11.0\" }",
                 "{ \"group\": \"com.google.android\", \"artifact\": \"annotations\", \"version\": \"4.1.1.4\" }",
                 "{ \"group\": \"com.google.api.grpc\", \"artifact\": \"proto-google-common-protos\", \"version\": \"2.29.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.4.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.4.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.22.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.22.0\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value\", \"version\": \"1.10.4\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value-annotations\", \"version\": \"1.10.4\" }",
@@ -4892,8 +4881,8 @@
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.11.0\" }",
                 "{ \"group\": \"com.google.android\", \"artifact\": \"annotations\", \"version\": \"4.1.1.4\" }",
                 "{ \"group\": \"com.google.api.grpc\", \"artifact\": \"proto-google-common-protos\", \"version\": \"2.29.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.4.0\" }",
-                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.4.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-credentials\", \"version\": \"1.22.0\" }",
+                "{ \"group\": \"com.google.auth\", \"artifact\": \"google-auth-library-oauth2-http\", \"version\": \"1.22.0\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value\", \"version\": \"1.10.4\" }",
                 "{ \"group\": \"com.google.auto.value\", \"artifact\": \"auto-value-annotations\", \"version\": \"1.10.4\" }",
@@ -5387,6 +5376,17 @@
               "target_name": "org_apache_tomcat_embed_tomcat_embed_jasper"
             }
           },
+          "com_google_auth_google_auth_library_credentials_1_22_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "38440583cb93dda48f9359a32204208c5c207ef23d892ddd43c171db9c77b6ab",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-credentials/1.22.0/google-auth-library-credentials-1.22.0.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/auth/google-auth-library-credentials/1.22.0/google-auth-library-credentials-1.22.0.jar"
+            }
+          },
           "com_googlecode_owasp_java_html_sanitizer_owasp_java_html_sanitizer_20240325_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5688,17 +5688,6 @@
               "downloaded_file_path": "v1/io/grpc/grpc-context/1.27.2/grpc-context-1.27.2.jar"
             }
           },
-          "com_google_http_client_google_http_client_gson_1_41_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "18766d1bbeb6d363763ef725bc82ed3c8c45f88eadbf149965e6e8c8d9b70d9f",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/http-client/google-http-client-gson/1.41.0/google-http-client-gson-1.41.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/http-client/google-http-client-gson/1.41.0/google-http-client-gson-1.41.0.jar"
-            }
-          },
           "com_google_api_grpc_proto_google_cloud_storage_v2_2_26_1_alpha": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5854,17 +5843,6 @@
               "downloaded_file_path": "v1/com/google/auto/value/auto-value/1.10.4/auto-value-1.10.4.jar"
             }
           },
-          "io_grpc_grpc_alts_1_56_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "04317f8835b3a8736ba12a7a25e474430c7f2d8c0b7afc433c2abc4cb2f0d4e8",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/grpc/grpc-alts/1.56.1/grpc-alts-1.56.1.jar"
-              ],
-              "downloaded_file_path": "v1/io/grpc/grpc-alts/1.56.1/grpc-alts-1.56.1.jar"
-            }
-          },
           "io_opencensus_opencensus_contrib_http_util_0_31_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5874,6 +5852,17 @@
                 "https://repo1.maven.org/maven2/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar"
               ],
               "downloaded_file_path": "v1/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar"
+            }
+          },
+          "io_grpc_grpc_alts_1_56_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "04317f8835b3a8736ba12a7a25e474430c7f2d8c0b7afc433c2abc4cb2f0d4e8",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/grpc/grpc-alts/1.56.1/grpc-alts-1.56.1.jar"
+              ],
+              "downloaded_file_path": "v1/io/grpc/grpc-alts/1.56.1/grpc-alts-1.56.1.jar"
             }
           },
           "org_jboss_logging_jboss_logging_3_4_3_Final": {
@@ -6122,15 +6111,15 @@
               "target_name": "com_github_waffle_waffle_jna"
             }
           },
-          "com_google_http_client_google_http_client_1_41_0": {
+          "com_google_auth_google_auth_library_oauth2_http_1_22_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "4a42d2c383373bf61c798f1882745989b9836bb032a8a4019890ecb6cd903ef3",
+              "sha256": "579371e6d64cdc486127fb0d4c6e342221f96f47e2129db5839859ab2df92875",
               "urls": [
-                "https://repo1.maven.org/maven2/com/google/http-client/google-http-client/1.41.0/google-http-client-1.41.0.jar"
+                "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.22.0/google-auth-library-oauth2-http-1.22.0.jar"
               ],
-              "downloaded_file_path": "v1/com/google/http-client/google-http-client/1.41.0/google-http-client-1.41.0.jar"
+              "downloaded_file_path": "v1/com/google/auth/google-auth-library-oauth2-http/1.22.0/google-auth-library-oauth2-http-1.22.0.jar"
             }
           },
           "io_netty_netty_buffer_4_1_100_Final": {
@@ -6169,17 +6158,6 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "commons_beanutils_commons_beanutils"
-            }
-          },
-          "io_opencensus_opencensus_api_0_31_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "702ba55d78f39d55195dcf041fdfaab7a7490a9ac45013542487ed9e4d3a4d23",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/opencensus/opencensus-api/0.31.0/opencensus-api-0.31.0.jar"
-              ],
-              "downloaded_file_path": "v1/io/opencensus/opencensus-api/0.31.0/opencensus-api-0.31.0.jar"
             }
           },
           "commons_digester_commons_digester": {
@@ -6304,17 +6282,6 @@
               "downloaded_file_path": "v1/io/netty/netty-tcnative-boringssl-static/2.0.61.Final/netty-tcnative-boringssl-static-2.0.61.Final.jar"
             }
           },
-          "com_google_auth_google_auth_library_oauth2_http_1_4_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "bbf99bba3394c699c48b2e67257dfa96b84c6ee54c348bd426c94207b84254ba",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-oauth2-http/1.4.0/google-auth-library-oauth2-http-1.4.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/auth/google-auth-library-oauth2-http/1.4.0/google-auth-library-oauth2-http-1.4.0.jar"
-            }
-          },
           "io_netty_netty_tcnative_boringssl_static_jar_windows_x86_64_2_0_61_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6417,17 +6384,6 @@
                 "https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/errorprone/error_prone_annotations/2.23.0/error_prone_annotations-2.23.0.jar"
-            }
-          },
-          "io_opencensus_opencensus_contrib_http_util_0_28_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "49c3db2a29f1fdb2f73928cbea969bd1d40fab7cc5bb6273022babd96f7a789b",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/opencensus/opencensus-contrib-http-util/0.28.0/opencensus-contrib-http-util-0.28.0.jar"
-              ],
-              "downloaded_file_path": "v1/io/opencensus/opencensus-contrib-http-util/0.28.0/opencensus-contrib-http-util-0.28.0.jar"
             }
           },
           "org_jboss_xnio_xnio_api": {
@@ -6564,17 +6520,6 @@
                 "https://repo1.maven.org/maven2/commons-io/commons-io/2.16.0/commons-io-2.16.0.jar"
               ],
               "downloaded_file_path": "v1/commons-io/commons-io/2.16.0/commons-io-2.16.0.jar"
-            }
-          },
-          "com_google_auth_google_auth_library_credentials_1_4_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "6ad4416d9360a1df3a660c43493e9605416ddd4de953ffbb14dd582a591b09a1",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/auth/google-auth-library-credentials/1.4.0/google-auth-library-credentials-1.4.0.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/auth/google-auth-library-credentials/1.4.0/google-auth-library-credentials-1.4.0.jar"
             }
           },
           "org_apache_httpcomponents_httpcore": {
@@ -6741,17 +6686,6 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/third-party-jackson-core/2.20.128/third-party-jackson-core-2.20.128.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/third-party-jackson-core/2.20.128/third-party-jackson-core-2.20.128.jar"
-            }
-          },
-          "org_apache_httpcomponents_httpclient_4_5_13": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "6fe9026a566c6a5001608cf3fc32196641f6c1e5e1986d1037ccdbd5f31ef743",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"
             }
           },
           "org_apache_tomcat_embed_tomcat_embed_el_10_1_20": {
@@ -6942,6 +6876,17 @@
               "downloaded_file_path": "v1/io/netty/netty-handler/4.1.94.Final/netty-handler-4.1.94.Final.jar"
             }
           },
+          "com_google_http_client_google_http_client_1_43_3": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "60aca7428c5a1ff3655b70541a98ff3d70dded48ac1324dae1af39f1b61914af",
+              "urls": [
+                "https://repo1.maven.org/maven2/com/google/http-client/google-http-client/1.43.3/google-http-client-1.43.3.jar"
+              ],
+              "downloaded_file_path": "v1/com/google/http-client/google-http-client/1.43.3/google-http-client-1.43.3.jar"
+            }
+          },
           "net_java_dev_jna_jna_5_13_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6959,17 +6904,6 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "io_netty_netty_tcnative_classes"
-            }
-          },
-          "com_google_http_client_google_http_client_1_43_3": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "60aca7428c5a1ff3655b70541a98ff3d70dded48ac1324dae1af39f1b61914af",
-              "urls": [
-                "https://repo1.maven.org/maven2/com/google/http-client/google-http-client/1.43.3/google-http-client-1.43.3.jar"
-              ],
-              "downloaded_file_path": "v1/com/google/http-client/google-http-client/1.43.3/google-http-client-1.43.3.jar"
             }
           },
           "com_google_code_findbugs_jsr305": {
