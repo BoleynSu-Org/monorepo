@@ -23,7 +23,7 @@ build:remote --remote_download_outputs=minimal
 build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote --bes_backend=grpcs://remote.buildbuddy.io
 ## Platform
-build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora
+build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
 ## Misc
 build:remote --jobs=80
 build:remote --remote_upload_local_results=false
