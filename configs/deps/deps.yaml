@@ -262,9 +262,9 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240406.171722'
+  version: '20240407.110254'
   sha256: c69c56bdc05dfc00660909e6521d77705dbd3c0f4e740a6304f7b5e4109611f9
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240406.171722/sysroot_linux_x86_64.tar.gz
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240407.110254/sysroot_linux_x86_64.tar.gz
   updated_at: '2024-04-07'
   build_file_content: |
     filegroup(
@@ -715,11 +715,11 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240407.052858'
+  version: '20240407.094909'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240407.052858'
-  digest: sha256:32427d3badb222ba5349adf3d14aae69eeab146a854423154116a593c6a9c470
+  tag: '20240407.094909'
+  digest: sha256:0b63f301d285750e9c38c1bc1d61764061aa08fefb34e6780e3c2a6331b26031
   updated_at: '2024-04-07'
   platforms:
   - linux/amd64
@@ -766,21 +766,21 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240407.062905'
+  version: '20240407.094909'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240407.062905'
-  digest: sha256:a4f530e3bec91c05130a0107c8c7e233e1c7b907db21f78d143f67a02451e68a
+  tag: '20240407.094909'
+  digest: sha256:80f3905c61ba1320802f354f3af8576be6e38d4e35ac48d10506f0e9c40930f8
   updated_at: '2024-04-07'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240407.052858'
+  version: '20240407.094909'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240407.052858'
-  digest: sha256:f6af46fa005c8e59f096e5a1785a0860ab1a874fa6779e6966c58b43404893a5
+  tag: '20240407.094909'
+  digest: sha256:e026b410329861b525dd9c978afb7884cd945a2f14c211388f65df4324f508d1
   updated_at: '2024-04-07'
   platforms:
   - linux/amd64
@@ -788,8 +788,8 @@ container_deps:
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:41e0529e2bf82ebd69f18a3e0f8f2aa152c05fc7213492c254c47e869001d86c
-  version: '20240407.071536'
-  tag: '20240407.071536'
+  version: '20240407.094909'
+  tag: '20240407.094909'
   updated_at: '2024-04-07'
   platforms:
   - linux/amd64
