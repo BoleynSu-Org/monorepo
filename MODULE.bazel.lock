@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "44e1105296d396719cdf538fcd0da8b8f51e2100af010069612c696a21cb9cad",
+  "moduleFileHash": "9828cf1a4a6559e995eaf6a5cc056976bb03ea8567bd3ade8385069a88499c5f",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -199,7 +199,7 @@
               "attributeValues": {
                 "name": "boleynsu_org_maven",
                 "artifacts": [
-                  "commons-io:commons-io:2.16.0",
+                  "commons-io:commons-io:2.16.1",
                   "org.mariadb.jdbc:mariadb-java-client:3.3.3",
                   "org.apache.tomcat.embed:tomcat-embed-core:10.1.20",
                   "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.20",
@@ -4386,7 +4386,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "e2639fb113847b2378e8947afacc1d6ca8a2a9493a31fd9ae9c76a8486c5c273"
+          "@@//maven_install.json": "8097dda9bfdf4efdea8aac0e31f743d860ed789bd3c93ed546fb111ffe3adebd"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4924,7 +4924,7 @@
                 "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
               ],
               "artifacts": [
-                "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.0\" }",
+                "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
@@ -5072,7 +5072,7 @@
                 "{ \"repo_url\": \"https://repo1.maven.org/maven2\" }"
               ],
               "artifacts": [
-                "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.0\" }",
+                "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
@@ -6716,23 +6716,23 @@
               "downloaded_file_path": "v1/com/google/api/grpc/proto-google-common-protos/2.23.0/proto-google-common-protos-2.23.0.jar"
             }
           },
-          "commons_io_commons_io_2_16_0": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "d1e417901235fae3aa0cb9736baeaf5b74de7349817d1c72390d82e3d83d3a97",
-              "urls": [
-                "https://repo1.maven.org/maven2/commons-io/commons-io/2.16.0/commons-io-2.16.0.jar"
-              ],
-              "downloaded_file_path": "v1/commons-io/commons-io/2.16.0/commons-io-2.16.0.jar"
-            }
-          },
           "org_apache_httpcomponents_httpcore": {
             "bzlFile": "@@rules_jvm_external~//private:compat_repository.bzl",
             "ruleClassName": "compat_repository",
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "org_apache_httpcomponents_httpcore"
+            }
+          },
+          "commons_io_commons_io_2_16_1": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f41f7baacd716896447ace9758621f62c1c6b0a91d89acee488da26fc477c84f",
+              "urls": [
+                "https://repo1.maven.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar"
+              ],
+              "downloaded_file_path": "v1/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar"
             }
           },
           "com_squareup_okhttp_okhttp": {
