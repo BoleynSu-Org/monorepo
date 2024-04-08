@@ -1,7 +1,6 @@
 module(
     name = 'rules_oci',
     version = '1.7.5',
-    compatibility_level = 1,
 )
 
 bazel_dep(

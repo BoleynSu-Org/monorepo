@@ -2,5 +2,4 @@ module(
     name = 'com_github_cdolivet_editarea',
     version = '0.8.2',
     repo_name = 'com_github_cdolivet_editarea',
-    compatibility_level = 1,
 )
