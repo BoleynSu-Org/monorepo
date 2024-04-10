@@ -395,10 +395,10 @@ bazel_deps:
       value: [sha256]
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.4/rules_kotlin-v1.9.4.tar.gz
-  sha256: 76c0fcc2c23edf736320aded1acd9dde0bae418e5731df12933d886cba86b795
-  version: v1.9.4
-  updated_at: '2024-03-29'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.5/rules_kotlin-v1.9.5.tar.gz
+  sha256: 34e8c0351764b71d78f76c8746e98063979ce08dcf1a91666f3f3bc2949a533d
+  version: v1.9.5
+  updated_at: '2024-04-10'
   override_updater:
   - type: deps_updater
     name: bazel_deps
