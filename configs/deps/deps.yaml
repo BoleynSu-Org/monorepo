@@ -261,10 +261,10 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240415.221949'
-  sha256: 272291e7eb488b73207ba4d0edf42247b2527e4fe13e45fe8e0403bf6e55893c
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240415.221949/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-04-15'
+  version: '20240417.051956'
+  sha256: 92b4689454fd20dd63974941300e5dd2451f78a19fbe066240c4accaa31a50a3
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240417.051956/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-04-17'
   build_file_content: |
     filegroup(
         name = "sysroot",
@@ -712,10 +712,10 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240416.140306'
+  version: '20240417.051956'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240416.140306'
+  tag: '20240417.051956'
   digest: sha256:8a806bcec91a435440e7b0dd5a5b09b5b7841aeb1dc341e260a56947e636c87a
   updated_at: '2024-04-17'
   platforms:
@@ -763,20 +763,20 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240416.140306'
+  version: '20240417.051956'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240416.140306'
+  tag: '20240417.051956'
   digest: sha256:fc450b528c794b6ec3b60d053c8c7d25b94ec2807c9590ac8e6ce4c3df7d79ae
   updated_at: '2024-04-17'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240416.140306'
+  version: '20240417.051956'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240416.140306'
+  tag: '20240417.051956'
   digest: sha256:b26dc458455a28462fcdb429b97d902acd8ed4adc7b1033937220e5d541fbd61
   updated_at: '2024-04-17'
   platforms:
@@ -785,8 +785,8 @@ container_deps:
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:27e66600a5f445a6bbcd2861c2d3ba872ee4337b20ad37257f5e0681b38e6ecb
-  version: '20240416.140306'
-  tag: '20240416.140306'
+  version: '20240417.051956'
+  tag: '20240417.051956'
   updated_at: '2024-04-17'
   platforms:
   - linux/amd64
