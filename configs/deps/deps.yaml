@@ -161,7 +161,7 @@ bazel_deps:
   sha256: 47b58cf925b76252156da52187329d2cfede4f0f6f83416dcd9f0753592cb1f0
   strip_prefix: EditArea-0.8.2
   updated_at: '2022-07-24'
-  expires_at: '2024-07-24'
+  expires_at: '2025-04-18'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD'
 - name: llvm_linux_x86_64
@@ -275,13 +275,13 @@ bazel_deps:
   - chmod -R 755 .
 - name: bazel_features
   type: http_archive
-  version: v1.9.1
+  version: v1.10.0
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: d7787da289a7fb497352211ad200ec9f698822a9e0757a4976fd9f713ff372b3
-  strip_prefix: bazel_features-1.9.1
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.9.1/bazel_features-v1.9.1.tar.gz
+  sha256: 95fb3cfd11466b4cad6565e3647a76f89886d875556a4b827c021525cb2482bb
+  strip_prefix: bazel_features-1.10.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.10.0/bazel_features-v1.10.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-03-25'
+  updated_at: '2024-04-18'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -491,7 +491,7 @@ maven_deps:
   updated_at: '2022-04-09'
   # FIXME(https://github.com/BoleynSu/oj/issues/2):
   # Upgrade third-party JavaScript/stylesheet libraries
-  expires_at: '2024-04-09'
+  expires_at: '2025-04-18'
 - name: io.undertow:undertow-core
   version: 2.3.12.Final
   version_regex: (.*)\.Final
@@ -796,17 +796,21 @@ toolchain_deps:
 - name: c
   version: '17'
   updated_at: '2022-05-07'
-  expires_at: '2024-05-07'
+  expires_at: '2025-04-18'
 - name: cpp
   version: '20'
   updated_at: '2023-05-12'
+  expires_at: '2025-04-18'
 - name: java
   version: '21'
   updated_at: '2023-05-12'
+  expires_at: '2025-04-18'
 - name: python
-  version: 3.11.6
-  updated_at: '2023-12-14'
+  version: '3.12'
+  updated_at: '2024-04-18'
+  expires_at: '2025-04-18'
 - name: golang
-  version: 1.20.12
-  updated_at: '2023-12-14'
+  version: 1.22.2
+  updated_at: '2024-04-18'
+  expires_at: '2025-04-18'
 

@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.9.1',
+    version = '1.10.0',
     repo_name = 'io_bazel_rules_go_bazel_features',
 )
 
