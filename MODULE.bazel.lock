@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "67f85b6bafda84e8f2522f78820be7b548d2a7528b0aa4710b691e0cf74ba1da",
+  "moduleFileHash": "498ff2138777a3a7924ec2789ccb508233a7b5ce3691db5a8e396ff031a44661",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -205,7 +205,7 @@
                   "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.20",
                   "org.webjars:jquery:3.7.1",
                   "org.webjars:bootstrap:3.4.1",
-                  "io.undertow:undertow-core:2.3.12.Final",
+                  "io.undertow:undertow-core:2.3.13.Final",
                   "commons-validator:commons-validator:1.8.0",
                   "commons-codec:commons-codec:1.16.1",
                   "org.wildfly.common:wildfly-common:1.7.0.Final",
@@ -4386,7 +4386,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "32afc55b2608411fdadecdd099a530b16a8267fee6dcd401a721a902c11bbbc7"
+          "@@//maven_install.json": "fdc4a26e1512c7a1c389f527653bd95b718bd8f164623c05f017cba05b147a1d"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4930,7 +4930,7 @@
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
-                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.12.Final\" }",
+                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
@@ -5078,7 +5078,7 @@
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.20\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
-                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.12.Final\" }",
+                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
@@ -6683,17 +6683,6 @@
               "downloaded_file_path": "v1/io/grpc/grpc-protobuf/1.56.1/grpc-protobuf-1.56.1.jar"
             }
           },
-          "io_undertow_undertow_core_2_3_12_Final": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "3da2764c7a487e9bf196c9d28c95277648e0c510aa7449e17027b99a1052a53e",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/undertow/undertow-core/2.3.12.Final/undertow-core-2.3.12.Final.jar"
-              ],
-              "downloaded_file_path": "v1/io/undertow/undertow-core/2.3.12.Final/undertow-core-2.3.12.Final.jar"
-            }
-          },
           "com_google_guava_guava_32_1_3_android": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6793,6 +6782,17 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "io_netty_netty_codec_socks"
+            }
+          },
+          "io_undertow_undertow_core_2_3_13_Final": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "aee36ab37cec524c4f74a08154682da1d343bff772df66d4081cd08ef354df5b",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/undertow/undertow-core/2.3.13.Final/undertow-core-2.3.13.Final.jar"
+              ],
+              "downloaded_file_path": "v1/io/undertow/undertow-core/2.3.13.Final/undertow-core-2.3.13.Final.jar"
             }
           },
           "io_netty_netty_buffer": {
