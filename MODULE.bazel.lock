@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "f2d260c1ba0f585549c03671ef042eafe50bb93e948228f8965d812f552cc76d",
+  "moduleFileHash": "67f85b6bafda84e8f2522f78820be7b548d2a7528b0aa4710b691e0cf74ba1da",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -432,7 +432,7 @@
               "attributeValues": {
                 "name": "io_docker_library_mariadb",
                 "image": "index.docker.io/library/mariadb",
-                "digest": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+                "digest": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64/v8",
@@ -7779,7 +7779,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64"
             }
@@ -8027,7 +8027,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -8163,7 +8163,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8"
             }
@@ -8273,7 +8273,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le"
             }
@@ -8432,7 +8432,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:0f14fda0e514a7465dc0544a023942bda3c862e662b16695379635fc80491f91",
+              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x"
             }
