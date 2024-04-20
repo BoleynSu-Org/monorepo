@@ -1,7 +1,7 @@
-load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
-load(":run.bzl", "run")
+load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
 load(":expand_template.bzl", "expand_template")
+load(":run.bzl", "run")
 
 def genfile(*, name, src, out, comment = "# ", headers = None, test = True, failure_message = None, **kwargs):
     if headers == None:
@@ -24,6 +24,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
             inputs = [src],
             outputs = ["{}.genfile.out".format(name)],
             arguments = ["$(execpath {})".format(src), "$(execpath {})".format("{}.genfile.out".format(name))] + headers,
+            mnemonic = "GenfileHeader",
             **kwargs
         )
     else:

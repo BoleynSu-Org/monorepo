@@ -1,8 +1,6 @@
 metadata:
   name: boleynsu_org
   pin_cmd: bazel run //cmd/infra/deps:update
-  include:
-  - '@boleynsu_org//third_party/io_grpc_grpc_java:deps_yaml'
 
 bazel_deps:
 - name: rules_cc

@@ -1,22 +1,19 @@
-load("@bazel_deps//:deps.bzl", "DEPS")
 load("//tools/build/rules:genfile.bzl", "genfile")
 load("//tools/build/rules:run.bzl", "run")
-
-INCLUDES = DEPS["metadata"]["include"]
-
-alias(
-    name = "alias_to_avoid_duplicated_label",
-    actual = "deps.yaml",
-)
 
 run(
     name = "updated_deps_yaml",
     arguments = [
-        "$(execpath :alias_to_avoid_duplicated_label)",
+        "$(execpath :deps.yaml)",
         "$(execpath updated_deps.yaml)",
-    ] + ["--include=$(execpath {})".format(include) for include in INCLUDES],
+        "--include=$(execpath //third_party/io_grpc_grpc_java:deps_yaml)",
+    ],
     executable = "//deps_yaml:regenerate",
-    inputs = [":alias_to_avoid_duplicated_label"] + INCLUDES,
+    inputs = [
+        ":deps.yaml",
+        "//third_party/io_grpc_grpc_java:deps_yaml",
+    ],
+    mnemonic = "DepsYaml",
     outputs = ["updated_deps.yaml"],
     tools = ["//deps_yaml:regenerate"],
 )
