@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "1eac68e15dc3e55909bed5ee9caec68223384ad27265d0d0ddc887591d2289a6",
+  "moduleFileHash": "8f30c342edc79d2ac31cf3fe83e3c04bc8c6788c3510d8bfc53c6df294b7b307",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -30,7 +30,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 962,
+            "line": 961,
             "column": 27
           },
           "imports": {
@@ -47,7 +47,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 966,
+            "line": 965,
             "column": 23
           },
           "imports": {
@@ -65,7 +65,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 967,
+                "line": 966,
                 "column": 17
               }
             }
@@ -103,7 +103,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 975,
+                "line": 974,
                 "column": 11
               }
             },
@@ -124,7 +124,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 982,
+                "line": 981,
                 "column": 13
               }
             },
@@ -139,7 +139,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1056,
+                "line": 1055,
                 "column": 14
               }
             }
@@ -153,7 +153,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 989,
+            "line": 988,
             "column": 20
           },
           "imports": {
@@ -171,7 +171,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 990,
+                "line": 989,
                 "column": 10
               }
             }
@@ -185,7 +185,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 997,
+            "line": 996,
             "column": 22
           },
           "imports": {
@@ -257,7 +257,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 998,
+                "line": 997,
                 "column": 14
               }
             }
@@ -271,7 +271,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1015,
+            "line": 1014,
             "column": 21
           },
           "imports": {
@@ -303,7 +303,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1016,
+                "line": 1015,
                 "column": 15
               }
             },
@@ -319,7 +319,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1033,
+                "line": 1032,
                 "column": 13
               }
             }
@@ -333,7 +333,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1041,
+            "line": 1040,
             "column": 23
           },
           "imports": {
@@ -352,7 +352,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1042,
+                "line": 1041,
                 "column": 16
               }
             }
@@ -366,7 +366,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1050,
+            "line": 1049,
             "column": 27
           },
           "imports": {
@@ -382,7 +382,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1051,
+                "line": 1050,
                 "column": 21
               }
             }
@@ -396,7 +396,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1067,
+            "line": 1066,
             "column": 20
           },
           "imports": {
@@ -423,7 +423,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -443,7 +443,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -467,7 +467,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -486,7 +486,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -504,7 +504,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -521,7 +521,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             },
@@ -539,7 +539,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1070,
+                "line": 1069,
                 "column": 17
               }
             }
@@ -553,7 +553,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1084,
+            "line": 1083,
             "column": 37
           },
           "imports": {
@@ -583,7 +583,7 @@
         "bazel_linux_x86_64": "bazel_linux_x86_64@7.1.1",
         "rules_license": "rules_license@0.0.8",
         "platforms": "platforms@0.0.9",
-        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240418.190955",
+        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240420.123051",
         "bazel_features": "bazel_features@1.10.0",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
@@ -2199,10 +2199,10 @@
         }
       }
     },
-    "sysroot_linux_x86_64@20240418.190955": {
+    "sysroot_linux_x86_64@20240420.123051": {
       "name": "sysroot_linux_x86_64",
-      "version": "20240418.190955",
-      "key": "sysroot_linux_x86_64@20240418.190955",
+      "version": "20240420.123051",
+      "key": "sysroot_linux_x86_64@20240420.123051",
       "repoName": "sysroot_linux_x86_64",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -2216,12 +2216,12 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240418.190955/sysroot_linux_x86_64.tar.gz"
+            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240420.123051/sysroot_linux_x86_64.tar.gz"
           ],
-          "integrity": "sha256-F4lBTPsxCM4gbkF+2tMcrz7bOuSMqFr9ro3K0jEUcz4=",
+          "integrity": "sha256-Z/dMpgQB15YvYXjn+5Rt9HLDA1uTzC6OOlV77DNMFhM=",
           "strip_prefix": "",
           "remote_patches": {
-            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240418.190955/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
+            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240420.123051/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
           },
           "remote_patch_strip": 0
         }
