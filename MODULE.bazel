@@ -828,12 +828,12 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "20240418.175558",
+            "version": "20240420.100650",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "20240418.175558",
-            "digest": "sha256:b80b45216d646cd81113fa5591cea29133bf2de10915d1b4e714add03e208c53",
-            "updated_at": "2024-04-18",
+            "tag": "20240420.100650",
+            "digest": "sha256:1b354e6c01d01d9d77fe9f01483557f018e8b7220d20cbeb3a80650c5037bbec",
+            "updated_at": "2024-04-20",
             "platforms": ["linux/amd64"],
         },
         {

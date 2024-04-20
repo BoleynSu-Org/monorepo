@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "498ff2138777a3a7924ec2789ccb508233a7b5ce3691db5a8e396ff031a44661",
+  "moduleFileHash": "20f460fd83f86fe1546362b10466e1b60cdde84894631ca93b87c3b8af69f8e4",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -415,7 +415,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_ci_runner",
                 "image": "quay.io/boleynsu/ci-runner",
-                "digest": "sha256:b80b45216d646cd81113fa5591cea29133bf2de10915d1b4e714add03e208c53",
+                "digest": "sha256:1b354e6c01d01d9d77fe9f01483557f018e8b7220d20cbeb3a80650c5037bbec",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -8176,7 +8176,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:b80b45216d646cd81113fa5591cea29133bf2de10915d1b4e714add03e208c53",
+              "identifier": "sha256:1b354e6c01d01d9d77fe9f01483557f018e8b7220d20cbeb3a80650c5037bbec",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -8216,7 +8216,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:b80b45216d646cd81113fa5591cea29133bf2de10915d1b4e714add03e208c53",
+              "identifier": "sha256:1b354e6c01d01d9d77fe9f01483557f018e8b7220d20cbeb3a80650c5037bbec",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
             }
