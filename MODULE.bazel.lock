@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "edbb8b9caa4c85a8248136de2c92a075a8eaa8ca0dc4cb71b2e1855efd198471",
+  "moduleFileHash": "471f45bfbaf5a31acef586f71e8ce469ede51b0ccaf2cc670cc8251e1066c66e",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -583,7 +583,7 @@
         "bazel_linux_x86_64": "bazel_linux_x86_64@7.1.1",
         "rules_license": "rules_license@0.0.8",
         "platforms": "platforms@0.0.9",
-        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240421.235140",
+        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240422.205109",
         "bazel_features": "bazel_features@1.10.0",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
@@ -2199,10 +2199,10 @@
         }
       }
     },
-    "sysroot_linux_x86_64@20240421.235140": {
+    "sysroot_linux_x86_64@20240422.205109": {
       "name": "sysroot_linux_x86_64",
-      "version": "20240421.235140",
-      "key": "sysroot_linux_x86_64@20240421.235140",
+      "version": "20240422.205109",
+      "key": "sysroot_linux_x86_64@20240422.205109",
       "repoName": "sysroot_linux_x86_64",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -2216,12 +2216,12 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240421.235140/sysroot_linux_x86_64.tar.gz"
+            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240422.205109/sysroot_linux_x86_64.tar.gz"
           ],
-          "integrity": "sha256-n9Uas6Q4WEK2+jjJsVbZ1rWF2ubwGrcLv7nCG+vuX0w=",
+          "integrity": "sha256-ngb91kCFAV07stkrjsODE8GMu5/xn3XpMOcyg/vEhqA=",
           "strip_prefix": "",
           "remote_patches": {
-            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240421.235140/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
+            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240422.205109/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
           },
           "remote_patch_strip": 0
         }
