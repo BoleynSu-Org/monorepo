@@ -7,12 +7,12 @@ module(
 
 bazel_dep(
     name = 'bazel_skylib',
-    version = '1.5.0',
+    version = '1.6.1',
 )
 
 bazel_dep(
     name = 'platforms',
-    version = '0.0.9',
+    version = '0.0.10',
 )
 
 apple_cc_configure_extension = use_extension(

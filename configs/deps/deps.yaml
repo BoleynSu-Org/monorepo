@@ -66,11 +66,11 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 3ff4f1607c010b2785400ce37141400d24133099529947f7850b50a8d95cafe6
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.46.0.tar.gz
-  updated_at: '2024-02-10'
-  version: v0.46.0
-  strip_prefix: rules_go-0.46.0
+  sha256: 20a8307de8c1babaf201d68f67e5e6a008a4d4414ece610eeebc1f7e173d982c
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.47.0.tar.gz
+  updated_at: '2024-04-26'
+  version: v0.47.0
+  strip_prefix: rules_go-0.47.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk")
     load("@io_bazel_rules_go//go/private:nogo.bzl", "go_register_nogo", "DEFAULT_NOGO")
@@ -105,11 +105,11 @@ bazel_deps:
       )
 - name: bazel_skylib
   type: http_archive
-  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.5.0.tar.gz
-  sha256: 118e313990135890ee4cc8504e32929844f9578804a1b2f571d69b1dd080cfb8
-  updated_at: '2023-11-06'
-  version: 1.5.0
-  strip_prefix: bazel-skylib-1.5.0
+  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.6.1.tar.gz
+  sha256: aede1b60709ac12b3461ee0bb3fa097b58a86fbfdb88ef7e9f90424a69043167
+  updated_at: '2024-04-26'
+  version: 1.6.1
+  strip_prefix: bazel-skylib-1.6.1
 - name: rules_jvm_external
   type: http_archive
   sha256: a566f1c84dbc09c19b3086bdfe9ffc2e02058675067a8286fb11a604508a4a09
@@ -234,11 +234,11 @@ bazel_deps:
   version: 0.0.8
 - name: platforms
   type: http_archive
-  sha256: b929b3159b8d8f3c8a4675a23211b0f36607352e97ed8e684d3d3e3b9d4f2e13
-  strip_prefix: platforms-0.0.9
-  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.9.tar.gz
-  updated_at: '2024-03-21'
-  version: 0.0.9
+  sha256: 3df33228654e56b09f17613613767b052581b822d57cb9cfd5e7b19a8e617b42
+  strip_prefix: platforms-0.0.10
+  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.10.tar.gz
+  updated_at: '2024-04-26'
+  version: 0.0.10
 - name: kubectl_linux_amd64
   type: http_file
   url: https://dl.k8s.io/release/v1.30.0/bin/linux/amd64/kubectl
@@ -475,11 +475,11 @@ maven_deps:
   version: 3.3.3
   updated_at: '2024-02-21'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.20
-  updated_at: '2024-03-26'
+  version: 10.1.23
+  updated_at: '2024-04-26'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.20
-  updated_at: '2024-03-26'
+  version: 10.1.23
+  updated_at: '2024-04-26'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -710,12 +710,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240422.103701'
+  version: '20240423.122946'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240422.103701'
-  digest: sha256:2b1985ab4f04bc5ea290647ec33e6358f805f195645630595f332be5e9643c81
-  updated_at: '2024-04-22'
+  tag: '20240423.122946'
+  digest: sha256:aec1de8dfbe34a5109bed7d459661b988998f9ed9c1641b49575d9ad1b62b49b
+  updated_at: '2024-04-26'
   platforms:
   - linux/amd64
 - name: io_docker_library_mariadb
@@ -738,8 +738,8 @@ container_deps:
   registry: docker.io
   repository: library/adminer
   tag: 4.8.1
-  digest: sha256:ceca91abccc1fcd97d66cd4e8994e6f0a97a92c0e3dbdc8200d5d735e3088cd1
-  updated_at: '2024-04-10'
+  digest: sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d
+  updated_at: '2024-04-26'
   platforms:
   - linux/amd64
   - linux/arm/v5
@@ -761,31 +761,31 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240422.103701'
+  version: '20240423.122946'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240422.103701'
-  digest: sha256:9665d1af885ac3500f8cdb6c9a1f6306362b6cbd09227b711fc39e9af42b4126
-  updated_at: '2024-04-22'
+  tag: '20240423.122946'
+  digest: sha256:1290a9682b259c355229a86dba78f39e17b8bf48c91cf09d836a13322c7fa503
+  updated_at: '2024-04-26'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240422.103701'
+  version: '20240423.122946'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240422.103701'
-  digest: sha256:5cc9ae3a35b1dd666699b000946169c3fdff5337b5a423851b12b9352faed6c6
-  updated_at: '2024-04-22'
+  tag: '20240423.122946'
+  digest: sha256:15982ef93193d075ba49b8e859a0c40244fc1effe7e8f223e79b09526152bcc1
+  updated_at: '2024-04-26'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:8bb2882e15acdf5cd8983df6a0f8a5fd837bf9422aa6a732ec77b56b24543804
-  version: '20240422.103701'
-  tag: '20240422.103701'
-  updated_at: '2024-04-22'
+  digest: sha256:92151a00e6e3b568aa91ea78c96830c9ce55c422ee079fd614ff99203cd2b7cf
+  version: '20240423.122946'
+  tag: '20240423.122946'
+  updated_at: '2024-04-26'
   platforms:
   - linux/amd64
   - linux/arm64
