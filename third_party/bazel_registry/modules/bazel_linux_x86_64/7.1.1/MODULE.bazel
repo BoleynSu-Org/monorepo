@@ -1,5 +1,4 @@
 module(
     name = 'bazel_linux_x86_64',
     version = '7.1.1',
-    repo_name = 'bazel_linux_x86_64',
 )

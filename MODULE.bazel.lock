@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "90474709e627df3997b1356a42b5cb541834244f89284340916334e630c33760",
+  "moduleFileHash": "432498890e5cc81ce214d9f6a74ddd88d64f1d9bb3cdca230fadc2c3ad11622f",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -30,7 +30,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 961,
+            "line": 970,
             "column": 27
           },
           "imports": {
@@ -47,7 +47,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 965,
+            "line": 974,
             "column": 23
           },
           "imports": {
@@ -65,7 +65,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 966,
+                "line": 975,
                 "column": 17
               }
             }
@@ -103,7 +103,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 974,
+                "line": 983,
                 "column": 11
               }
             },
@@ -124,7 +124,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 981,
+                "line": 990,
                 "column": 13
               }
             },
@@ -139,7 +139,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1055,
+                "line": 1064,
                 "column": 14
               }
             }
@@ -153,7 +153,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 988,
+            "line": 997,
             "column": 20
           },
           "imports": {
@@ -171,7 +171,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 989,
+                "line": 998,
                 "column": 10
               }
             }
@@ -185,7 +185,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 996,
+            "line": 1005,
             "column": 22
           },
           "imports": {
@@ -207,7 +207,7 @@
                   "org.webjars:bootstrap:3.4.1",
                   "io.undertow:undertow-core:2.3.13.Final",
                   "commons-validator:commons-validator:1.8.0",
-                  "commons-codec:commons-codec:1.16.1",
+                  "commons-codec:commons-codec:1.17.0",
                   "org.wildfly.common:wildfly-common:1.7.0.Final",
                   "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer:20240325.1",
                   "org.apache.commons:commons-text:1.12.0",
@@ -257,7 +257,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 997,
+                "line": 1006,
                 "column": 14
               }
             }
@@ -271,7 +271,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1014,
+            "line": 1023,
             "column": 21
           },
           "imports": {
@@ -303,7 +303,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1015,
+                "line": 1024,
                 "column": 15
               }
             },
@@ -319,7 +319,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1032,
+                "line": 1041,
                 "column": 13
               }
             }
@@ -333,7 +333,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1040,
+            "line": 1049,
             "column": 23
           },
           "imports": {
@@ -352,7 +352,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1041,
+                "line": 1050,
                 "column": 16
               }
             }
@@ -366,7 +366,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1049,
+            "line": 1058,
             "column": 27
           },
           "imports": {
@@ -382,7 +382,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1050,
+                "line": 1059,
                 "column": 21
               }
             }
@@ -396,7 +396,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1066,
+            "line": 1075,
             "column": 20
           },
           "imports": {
@@ -415,7 +415,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_ci_runner",
                 "image": "quay.io/boleynsu/ci-runner",
-                "digest": "sha256:aec1de8dfbe34a5109bed7d459661b988998f9ed9c1641b49575d9ad1b62b49b",
+                "digest": "sha256:1f8128d71bce7178b0d8708453c65aa6044ac46ef6bb603051417e8a7cde4332",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -423,7 +423,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -432,7 +432,7 @@
               "attributeValues": {
                 "name": "io_docker_library_mariadb",
                 "image": "index.docker.io/library/mariadb",
-                "digest": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+                "digest": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64/v8",
@@ -443,7 +443,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -467,7 +467,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -486,7 +486,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -495,7 +495,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_oj_c99runner",
                 "image": "quay.io/boleynsu/oj-c99runner",
-                "digest": "sha256:1290a9682b259c355229a86dba78f39e17b8bf48c91cf09d836a13322c7fa503",
+                "digest": "sha256:56f6cdd34bdc56ce8315ac672c5d0bf8b778866490ea1d721d2666bc13ca430c",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -504,7 +504,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -513,7 +513,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_rbe_fedora",
                 "image": "quay.io/boleynsu/rbe-fedora",
-                "digest": "sha256:15982ef93193d075ba49b8e859a0c40244fc1effe7e8f223e79b09526152bcc1",
+                "digest": "sha256:c4c43ab05c4b08039b73c123f3587dddffa1245942eecf50de1401e9b8e79c6c",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -521,7 +521,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             },
@@ -530,7 +530,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_base",
                 "image": "quay.io/boleynsu/base",
-                "digest": "sha256:92151a00e6e3b568aa91ea78c96830c9ce55c422ee079fd614ff99203cd2b7cf",
+                "digest": "sha256:c10746e221cc07d1e6eda0b7ab7d25e84ac5655a00bdd9f9abe0966078c987ac",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -539,7 +539,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 1069,
+                "line": 1078,
                 "column": 17
               }
             }
@@ -553,7 +553,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 1083,
+            "line": 1092,
             "column": 37
           },
           "imports": {
@@ -583,7 +583,7 @@
         "bazel_linux_x86_64": "bazel_linux_x86_64@7.1.1",
         "rules_license": "rules_license@0.0.8",
         "platforms": "platforms@0.0.10",
-        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240422.205109",
+        "sysroot_linux_x86_64": "sysroot_linux_x86_64@20240427.75658",
         "bazel_features": "bazel_features@1.10.0",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
@@ -592,6 +592,7 @@
         "rules_kotlin": "rules_kotlin@1.9.5",
         "aspect_bazel_lib": "aspect_bazel_lib@2.7.1",
         "buildozer": "buildozer@6.4.0.2",
+        "rules_android": "rules_android@0.1.1",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       }
@@ -2237,10 +2238,10 @@
         }
       }
     },
-    "sysroot_linux_x86_64@20240422.205109": {
+    "sysroot_linux_x86_64@20240427.75658": {
       "name": "sysroot_linux_x86_64",
-      "version": "20240422.205109",
-      "key": "sysroot_linux_x86_64@20240422.205109",
+      "version": "20240427.75658",
+      "key": "sysroot_linux_x86_64@20240427.75658",
       "repoName": "sysroot_linux_x86_64",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -2254,12 +2255,12 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240422.205109/sysroot_linux_x86_64.tar.gz"
+            "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240427.075658/sysroot_linux_x86_64.tar.gz"
           ],
-          "integrity": "sha256-ngb91kCFAV07stkrjsODE8GMu5/xn3XpMOcyg/vEhqA=",
+          "integrity": "sha256-ufnl2rJfy1Q7ANw0FL7phzEZao9ALuszXIIm4OF3RHQ=",
           "strip_prefix": "",
           "remote_patches": {
-            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240422.205109/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
+            "file://%workspace%/third_party/bazel_registry/modules/sysroot_linux_x86_64/20240427.75658/patches/patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
           },
           "remote_patch_strip": 0
         }
@@ -2807,6 +2808,32 @@
           ],
           "integrity": "sha256-k7tFKQMR2AygxpmZfH0yEPnQmF3efFgD9rBPkj+Yz/8=",
           "strip_prefix": "buildozer-6.4.0.2",
+          "remote_patches": {},
+          "remote_patch_strip": 0
+        }
+      }
+    },
+    "rules_android@0.1.1": {
+      "name": "rules_android",
+      "version": "0.1.1",
+      "key": "rules_android@0.1.1",
+      "repoName": "rules_android",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [],
+      "extensionUsages": [],
+      "deps": {
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "urls": [
+            "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.1.1.tar.gz"
+          ],
+          "integrity": "sha256-ZGHBxXREQrOU9GZFlX1r00IOsbQhkI/mPKoDCRsbNlU=",
+          "strip_prefix": "rules_android-0.1.1",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -4235,7 +4262,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "39666640ca1ad8a66bd5c3912bb534aaba3468216cf83f5bb389f3e8959259e2"
+          "@@//maven_install.json": "1357a84a295b5de3f0ea96481f901568dbcc0ed5ef9c23c9c57c198de4d9f4ef"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4781,7 +4808,7 @@
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
-                "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
+                "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.17.0\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
                 "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20240325.1\" }",
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.12.0\" }",
@@ -4929,7 +4956,7 @@
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.8.0\" }",
-                "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.16.1\" }",
+                "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.17.0\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
                 "{ \"group\": \"com.googlecode.owasp-java-html-sanitizer\", \"artifact\": \"owasp-java-html-sanitizer\", \"version\": \"20240325.1\" }",
                 "{ \"group\": \"org.apache.commons\", \"artifact\": \"commons-text\", \"version\": \"1.12.0\" }",
@@ -7115,17 +7142,6 @@
               "target_name": "com_google_errorprone_error_prone_annotations"
             }
           },
-          "commons_codec_commons_codec_1_16_1": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "ec87bfb55f22cbd1b21e2190eeda28b2b312ed2a431ee49fbdcc01812d04a5e4",
-              "urls": [
-                "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar"
-              ],
-              "downloaded_file_path": "v1/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar"
-            }
-          },
           "io_netty_netty_transport_native_unix_common_4_1_100_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -7354,6 +7370,17 @@
                 "https://repo1.maven.org/maven2/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
               ],
               "downloaded_file_path": "v1/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar"
+            }
+          },
+          "commons_codec_commons_codec_1_17_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f700de80ac270d0344fdea7468201d8b9c805e5c648331c3619f2ee067ccfc59",
+              "urls": [
+                "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar"
+              ],
+              "downloaded_file_path": "v1/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.jar"
             }
           },
           "commons_collections_commons_collections": {
@@ -7628,7 +7655,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+              "identifier": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64"
             }
@@ -7640,7 +7667,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:92151a00e6e3b568aa91ea78c96830c9ce55c422ee079fd614ff99203cd2b7cf",
+              "identifier": "sha256:c10746e221cc07d1e6eda0b7ab7d25e84ac5655a00bdd9f9abe0966078c987ac",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_base_linux_amd64"
             }
@@ -7661,7 +7688,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:92151a00e6e3b568aa91ea78c96830c9ce55c422ee079fd614ff99203cd2b7cf",
+              "identifier": "sha256:c10746e221cc07d1e6eda0b7ab7d25e84ac5655a00bdd9f9abe0966078c987ac",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_base_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_base_linux_arm64"
@@ -7778,7 +7805,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:1290a9682b259c355229a86dba78f39e17b8bf48c91cf09d836a13322c7fa503",
+              "identifier": "sha256:56f6cdd34bdc56ce8315ac672c5d0bf8b778866490ea1d721d2666bc13ca430c",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64"
             }
@@ -7876,7 +7903,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+              "identifier": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -7894,7 +7921,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:92151a00e6e3b568aa91ea78c96830c9ce55c422ee079fd614ff99203cd2b7cf",
+              "identifier": "sha256:c10746e221cc07d1e6eda0b7ab7d25e84ac5655a00bdd9f9abe0966078c987ac",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_base_linux_arm64"
             }
@@ -7961,7 +7988,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:1290a9682b259c355229a86dba78f39e17b8bf48c91cf09d836a13322c7fa503",
+              "identifier": "sha256:56f6cdd34bdc56ce8315ac672c5d0bf8b778866490ea1d721d2666bc13ca430c",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64"
             }
@@ -7997,7 +8024,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:15982ef93193d075ba49b8e859a0c40244fc1effe7e8f223e79b09526152bcc1",
+              "identifier": "sha256:c4c43ab05c4b08039b73c123f3587dddffa1245942eecf50de1401e9b8e79c6c",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -8012,7 +8039,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+              "identifier": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8"
             }
@@ -8025,7 +8052,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:aec1de8dfbe34a5109bed7d459661b988998f9ed9c1641b49575d9ad1b62b49b",
+              "identifier": "sha256:1f8128d71bce7178b0d8708453c65aa6044ac46ef6bb603051417e8a7cde4332",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -8053,7 +8080,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:15982ef93193d075ba49b8e859a0c40244fc1effe7e8f223e79b09526152bcc1",
+              "identifier": "sha256:c4c43ab05c4b08039b73c123f3587dddffa1245942eecf50de1401e9b8e79c6c",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64"
             }
@@ -8065,7 +8092,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:aec1de8dfbe34a5109bed7d459661b988998f9ed9c1641b49575d9ad1b62b49b",
+              "identifier": "sha256:1f8128d71bce7178b0d8708453c65aa6044ac46ef6bb603051417e8a7cde4332",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
             }
@@ -8122,7 +8149,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+              "identifier": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le"
             }
@@ -8215,7 +8242,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:1290a9682b259c355229a86dba78f39e17b8bf48c91cf09d836a13322c7fa503",
+              "identifier": "sha256:56f6cdd34bdc56ce8315ac672c5d0bf8b778866490ea1d721d2666bc13ca430c",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_oj_c99runner_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_oj_c99runner_linux_arm64"
@@ -8281,7 +8308,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:78d0c3b8c39b47e91cc32df64ef1e26f797b54b1dd762c850e7350095ed4715f",
+              "identifier": "sha256:416016f57f522c215d2908866e56e13e6474f071cd65112c216ba19e68f219ca",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x"
             }
