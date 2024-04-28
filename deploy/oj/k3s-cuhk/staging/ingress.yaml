@@ -4,8 +4,7 @@ metadata:
   name: oj-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod-cluster-issuer"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      add_header X-Robots-Tag "noindex, nofollow";
+    nginx.ingress.kubernetes.io/custom-headers: oj-custom-headers-configmap
 spec:
   tls:
     - hosts:
