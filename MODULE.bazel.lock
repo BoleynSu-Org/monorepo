@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "ff342c52ac2169f2695436a28423d3011e8d9d12f20aad8bdb3f3c486cefaa79",
+  "moduleFileHash": "6d3b208499ec74f39a372929d544ed59eadc04f3a59172761422c6693edb55c5",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -415,7 +415,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_ci_runner",
                 "image": "quay.io/boleynsu/ci-runner",
-                "digest": "sha256:586f12f855846c7269a525ff9e92e797f21f3f183a2491d82103bb9d185ec316",
+                "digest": "sha256:ad21b1965d2397d1791c57a309f296f64af212404cf2d80e3c39f3c695f330b4",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -432,7 +432,7 @@
               "attributeValues": {
                 "name": "io_docker_library_mariadb",
                 "image": "index.docker.io/library/mariadb",
-                "digest": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+                "digest": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64/v8",
@@ -495,7 +495,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_oj_c99runner",
                 "image": "quay.io/boleynsu/oj-c99runner",
-                "digest": "sha256:b3fef5cbe2bf1e7364a8ee4e71c430c73ac8e9237656f59a1dc6f24b8a49278f",
+                "digest": "sha256:87364033d56a704c2f967c29320f7582e7e926f0678d7dd24320d712f4902254",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -513,7 +513,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_rbe_fedora",
                 "image": "quay.io/boleynsu/rbe-fedora",
-                "digest": "sha256:a39b6790ec1b77be873166077f693bdcc7c2b8174db4829b27b6bf3030059136",
+                "digest": "sha256:14fe0885b861c13be0d6efeb2af1e77a00a5ffb699139c90ddb50f450df72c37",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -530,7 +530,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_base",
                 "image": "quay.io/boleynsu/base",
-                "digest": "sha256:2b159024451b20355f035a3a5b4ee8c63f025825fd57cd911917708407339b5f",
+                "digest": "sha256:2eaf4250238218dc40aa9b8bd2dabdbfbbbb33944cc374cdd595f7418579ce08",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -7701,7 +7701,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64"
             }
@@ -7713,7 +7713,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:2b159024451b20355f035a3a5b4ee8c63f025825fd57cd911917708407339b5f",
+              "identifier": "sha256:2eaf4250238218dc40aa9b8bd2dabdbfbbbb33944cc374cdd595f7418579ce08",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_base_linux_amd64"
             }
@@ -7734,7 +7734,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:2b159024451b20355f035a3a5b4ee8c63f025825fd57cd911917708407339b5f",
+              "identifier": "sha256:2eaf4250238218dc40aa9b8bd2dabdbfbbbb33944cc374cdd595f7418579ce08",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_base_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_base_linux_arm64"
@@ -7851,7 +7851,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:b3fef5cbe2bf1e7364a8ee4e71c430c73ac8e9237656f59a1dc6f24b8a49278f",
+              "identifier": "sha256:87364033d56a704c2f967c29320f7582e7e926f0678d7dd24320d712f4902254",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64"
             }
@@ -7949,7 +7949,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -7967,7 +7967,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:2b159024451b20355f035a3a5b4ee8c63f025825fd57cd911917708407339b5f",
+              "identifier": "sha256:2eaf4250238218dc40aa9b8bd2dabdbfbbbb33944cc374cdd595f7418579ce08",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_base_linux_arm64"
             }
@@ -8034,7 +8034,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:b3fef5cbe2bf1e7364a8ee4e71c430c73ac8e9237656f59a1dc6f24b8a49278f",
+              "identifier": "sha256:87364033d56a704c2f967c29320f7582e7e926f0678d7dd24320d712f4902254",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64"
             }
@@ -8070,7 +8070,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:a39b6790ec1b77be873166077f693bdcc7c2b8174db4829b27b6bf3030059136",
+              "identifier": "sha256:14fe0885b861c13be0d6efeb2af1e77a00a5ffb699139c90ddb50f450df72c37",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -8085,7 +8085,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8"
             }
@@ -8098,7 +8098,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:586f12f855846c7269a525ff9e92e797f21f3f183a2491d82103bb9d185ec316",
+              "identifier": "sha256:ad21b1965d2397d1791c57a309f296f64af212404cf2d80e3c39f3c695f330b4",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -8126,7 +8126,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:a39b6790ec1b77be873166077f693bdcc7c2b8174db4829b27b6bf3030059136",
+              "identifier": "sha256:14fe0885b861c13be0d6efeb2af1e77a00a5ffb699139c90ddb50f450df72c37",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64"
             }
@@ -8138,7 +8138,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:586f12f855846c7269a525ff9e92e797f21f3f183a2491d82103bb9d185ec316",
+              "identifier": "sha256:ad21b1965d2397d1791c57a309f296f64af212404cf2d80e3c39f3c695f330b4",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
             }
@@ -8195,7 +8195,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le"
             }
@@ -8288,7 +8288,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:b3fef5cbe2bf1e7364a8ee4e71c430c73ac8e9237656f59a1dc6f24b8a49278f",
+              "identifier": "sha256:87364033d56a704c2f967c29320f7582e7e926f0678d7dd24320d712f4902254",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_oj_c99runner_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_oj_c99runner_linux_arm64"
@@ -8354,7 +8354,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:baca4137adc50f75a3d5ce91d8ef00e61d89159acdd152c4b81060a35fd66161",
+              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x"
             }
