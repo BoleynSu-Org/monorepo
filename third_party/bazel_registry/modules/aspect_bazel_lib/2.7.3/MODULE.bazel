@@ -1,6 +1,6 @@
 module(
     name = 'aspect_bazel_lib',
-    version = '2.7.2',
+    version = '2.7.3',
     bazel_compatibility = ['>=6.0.0'],
 )
 
@@ -74,6 +74,7 @@ register_toolchains(
     '@expand_template_toolchains//:all',
     '@bats_toolchains//:all',
     '@bsd_tar_toolchains//:all',
+    '@zstd_toolchains//:all',
 )
 
 bazel_dep(

@@ -200,11 +200,11 @@ bazel_deps:
   version: 1.0.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 7.1.1
-  url: https://github.com/bazelbuild/bazel/releases/download/7.1.1/bazel-7.1.1-installer-linux-x86_64.sh
+  version: 7.1.2
+  url: https://github.com/bazelbuild/bazel/releases/download/7.1.2/bazel-7.1.2-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: 47ac556eed788e1e83727d3d3bb5949418ee89ac528034e3a7b3c8615ed47b63
-  updated_at: '2024-03-21'
+  sha256: de8a2ddb0d77293c97c4280ea60ce313487dfd1ba88cc7816d16ba640ac2fb3f
+  updated_at: '2024-05-11'
   executable: true
   override_updater:
   - type: deps_updater
@@ -413,13 +413,13 @@ bazel_deps:
       value: [sha256]
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.7.2
+  version: v2.7.3
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: a8a92645e7298bbf538aa880131c6adb4cf6239bbd27230f077a00414d58e4ce
-  strip_prefix: bazel-lib-2.7.2
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.7.2/bazel-lib-v2.7.2.tar.gz
+  sha256: 87ab4ec479ebeb00d286266aca2068caeef1bb0b1765e8f71c7b6cfee6af4226
+  strip_prefix: bazel-lib-2.7.3
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.7.3/bazel-lib-v2.7.3.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2024-05-04'
+  updated_at: '2024-05-11'
   override_updater:
   - type: deps_updater
     name: bazel_deps
