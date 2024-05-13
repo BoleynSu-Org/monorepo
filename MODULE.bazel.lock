@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "fc937385575e10f464dc02b7b69152582c994956d1b526a57daa01a8266268e8",
+  "moduleFileHash": "8b449380248d63fe24358a6dfacd6cec5b0840980c7faf4c55416e0246f9c1f0",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -201,8 +201,8 @@
                 "artifacts": [
                   "commons-io:commons-io:2.16.1",
                   "org.mariadb.jdbc:mariadb-java-client:3.3.3",
-                  "org.apache.tomcat.embed:tomcat-embed-core:10.1.23",
-                  "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.23",
+                  "org.apache.tomcat.embed:tomcat-embed-core:10.1.24",
+                  "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.24",
                   "org.webjars:jquery:3.7.1",
                   "org.webjars:bootstrap:3.4.1",
                   "io.undertow:undertow-core:2.3.13.Final",
@@ -4346,7 +4346,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "1357a84a295b5de3f0ea96481f901568dbcc0ed5ef9c23c9c57c198de4d9f4ef"
+          "@@//maven_install.json": "8a7b34c4abcc9f6078d9201e75744a14d9c570e950b01256ff5652968ec544e4"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4414,6 +4414,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/sdk-core/2.20.128/sdk-core-2.20.128.jar"
             }
           },
+          "org_apache_tomcat_embed_tomcat_embed_core_10_1_24": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "8bced76143c505907256d10c5d13b510f941a381f2ec1dce11ab99c37b277901",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.24/tomcat-embed-core-10.1.24.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-core/10.1.24/tomcat-embed-core-10.1.24.jar"
+            }
+          },
           "org_wildfly_client_wildfly_client_config_1_0_1_Final": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4423,17 +4434,6 @@
                 "https://repo1.maven.org/maven2/org/wildfly/client/wildfly-client-config/1.0.1.Final/wildfly-client-config-1.0.1.Final.jar"
               ],
               "downloaded_file_path": "v1/org/wildfly/client/wildfly-client-config/1.0.1.Final/wildfly-client-config-1.0.1.Final.jar"
-            }
-          },
-          "org_apache_tomcat_embed_tomcat_embed_core_10_1_23": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "9432db4416f2320138508cf7719ef2920fdb851b92c255438430dff9cb1545c0",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.23/tomcat-embed-core-10.1.23.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-core/10.1.23/tomcat-embed-core-10.1.23.jar"
             }
           },
           "software_amazon_awssdk_endpoints_spi_2_20_128": {
@@ -4464,17 +4464,6 @@
                 "https://repo1.maven.org/maven2/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/gax-grpc/2.32.0/gax-grpc-2.32.0.jar"
-            }
-          },
-          "org_apache_tomcat_embed_tomcat_embed_jasper_10_1_23": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "a4355fd7a5f6a322719581424506fc9543fa6d978720a6fb8f192aa9beb8e555",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.23/tomcat-embed-jasper-10.1.23.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.23/tomcat-embed-jasper-10.1.23.jar"
             }
           },
           "com_google_truth_truth": {
@@ -4630,6 +4619,17 @@
               "ignore_empty_files": false
             }
           },
+          "org_apache_tomcat_embed_tomcat_embed_jasper_10_1_24": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d4fb52154c60d29ad774d3f36242a9c29d9d1f9964ea73dbc5382e12a95e4108",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.24/tomcat-embed-jasper-10.1.24.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-jasper/10.1.24/tomcat-embed-jasper-10.1.24.jar"
+            }
+          },
           "org_apache_commons_commons_lang3_3_12_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4767,6 +4767,17 @@
               "downloaded_file_path": "v1/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar"
             }
           },
+          "org_apache_tomcat_tomcat_annotations_api_10_1_24": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "f6484df8f6234075cec91b8d4ad404639e6ba2bf09284c650b237687cbb5cf33",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/10.1.24/tomcat-annotations-api-10.1.24.jar"
+              ],
+              "downloaded_file_path": "v1/org/apache/tomcat/tomcat-annotations-api/10.1.24/tomcat-annotations-api-10.1.24.jar"
+            }
+          },
           "io_grpc_grpc_protobuf_lite_1_56_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -4787,17 +4798,6 @@
                 "https://repo1.maven.org/maven2/com/google/api/grpc/gapic-google-cloud-storage-v2/2.26.1-alpha/gapic-google-cloud-storage-v2-2.26.1-alpha.jar"
               ],
               "downloaded_file_path": "v1/com/google/api/grpc/gapic-google-cloud-storage-v2/2.26.1-alpha/gapic-google-cloud-storage-v2-2.26.1-alpha.jar"
-            }
-          },
-          "org_apache_tomcat_tomcat_annotations_api_10_1_23": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "38e1860bef0461cf5ec1e6cb35237efb5f998235f3974b054693fb16f0e6e68d",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-annotations-api/10.1.23/tomcat-annotations-api-10.1.23.jar"
-              ],
-              "downloaded_file_path": "v1/org/apache/tomcat/tomcat-annotations-api/10.1.23/tomcat-annotations-api-10.1.23.jar"
             }
           },
           "software_amazon_awssdk_auth_2_20_128": {
@@ -4886,8 +4886,8 @@
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.23\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.23\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.24\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
@@ -5034,8 +5034,8 @@
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
                 "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.23\" }",
-                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.23\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.24\" }",
+                "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
                 "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
@@ -6880,15 +6880,15 @@
               "target_name": "io_netty_netty_transport_classes_epoll"
             }
           },
-          "org_apache_tomcat_embed_tomcat_embed_el_10_1_23": {
+          "org_apache_tomcat_embed_tomcat_embed_el_10_1_24": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
             "attributes": {
-              "sha256": "44f1c11f1646c57cb9135deb10ff5a51916eb71aec6ea01fa7f7682161e40f9a",
+              "sha256": "7d869fdc8b5c4621ca37962849fc2f78e3f440beacafae12a7b59e451dacb78b",
               "urls": [
-                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.23/tomcat-embed-el-10.1.23.jar"
+                "https://repo1.maven.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.24/tomcat-embed-el-10.1.24.jar"
               ],
-              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-el/10.1.23/tomcat-embed-el-10.1.23.jar"
+              "downloaded_file_path": "v1/org/apache/tomcat/embed/tomcat-embed-el/10.1.24/tomcat-embed-el-10.1.24.jar"
             }
           },
           "com_google_api_api_common_2_15_0": {
