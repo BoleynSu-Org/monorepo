@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '0.31.0',
+    version = '0.32.1',
 )
 
 bazel_dep(
@@ -11,6 +11,11 @@ bazel_dep(
 bazel_dep(
     name = 'bazel_skylib',
     version = '1.6.1',
+)
+
+bazel_dep(
+    name = 'rules_cc',
+    version = '0.0.9',
 )
 
 bazel_dep(
@@ -30,7 +35,7 @@ bazel_dep(
 )
 
 internal_deps = use_extension(
-    '@rules_python//python/private/bzlmod:internal_deps.bzl',
+    '//python/private/bzlmod:internal_deps.bzl',
     'internal_deps',
 )
 
@@ -58,7 +63,7 @@ use_repo(
 )
 
 python = use_extension(
-    '@rules_python//python/extensions:python.bzl',
+    '//python/extensions:python.bzl',
     'python',
 )
 
@@ -69,9 +74,29 @@ python.toolchain(
 
 use_repo(
     python,
+    'python_versions',
     'pythons_hub',
 )
 
 register_toolchains(
     '@pythons_hub//:all',
+)
+
+pip = use_extension(
+    '//python/extensions:pip.bzl',
+    'pip',
+)
+
+pip.parse(
+    experimental_index_url = 'https://pypi.org/simple',
+    hub_name = 'rules_python_publish_deps',
+    python_version = '3.11',
+    requirements_darwin = '//tools/publish:requirements_darwin.txt',
+    requirements_lock = '//tools/publish:requirements.txt',
+    requirements_windows = '//tools/publish:requirements_windows.txt',
+)
+
+use_repo(
+    pip,
+    'rules_python_publish_deps',
 )
