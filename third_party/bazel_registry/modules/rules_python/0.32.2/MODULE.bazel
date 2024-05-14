@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '0.32.1',
+    version = '0.32.2',
 )
 
 bazel_dep(
@@ -74,6 +74,7 @@ python.toolchain(
 
 use_repo(
     python,
+    'python_3_11',
     'python_versions',
     'pythons_hub',
 )

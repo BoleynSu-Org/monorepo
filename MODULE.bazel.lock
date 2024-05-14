@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "8b449380248d63fe24358a6dfacd6cec5b0840980c7faf4c55416e0246f9c1f0",
+  "moduleFileHash": "f3d36bb73e21841acb7439f3fe46f4aa625e27a3a0877940858141bd5719e269",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -452,7 +452,7 @@
               "attributeValues": {
                 "name": "io_docker_library_adminer",
                 "image": "index.docker.io/library/adminer",
-                "digest": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+                "digest": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm/v5",
@@ -568,7 +568,7 @@
       "deps": {
         "rules_cc": "rules_cc@0.0.9",
         "rules_java": "rules_java@7.5.0",
-        "rules_python": "rules_python@0.32.1",
+        "rules_python": "rules_python@0.32.2",
         "rules_proto": "rules_proto@6.0.0",
         "io_bazel_rules_go": "rules_go@0.47.1",
         "rules_oci": "rules_oci@1.7.5",
@@ -750,10 +750,10 @@
         }
       }
     },
-    "rules_python@0.32.1": {
+    "rules_python@0.32.2": {
       "name": "rules_python",
-      "version": "0.32.1",
-      "key": "rules_python@0.32.1",
+      "version": "0.32.2",
+      "key": "rules_python@0.32.2",
       "repoName": "rules_python",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -763,9 +763,9 @@
         {
           "extensionBzlFile": "@rules_python//python/private/bzlmod:internal_deps.bzl",
           "extensionName": "internal_deps",
-          "usingModule": "rules_python@0.32.1",
+          "usingModule": "rules_python@0.32.2",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
             "line": 37,
             "column": 30
           },
@@ -794,7 +794,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
                 "line": 42,
                 "column": 22
               }
@@ -806,13 +806,14 @@
         {
           "extensionBzlFile": "@rules_python//python/extensions:python.bzl",
           "extensionName": "python",
-          "usingModule": "rules_python@0.32.1",
+          "usingModule": "rules_python@0.32.2",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
             "line": 65,
             "column": 23
           },
           "imports": {
+            "python_3_11": "python_3_11",
             "python_versions": "python_versions",
             "pythons_hub": "pythons_hub"
           },
@@ -826,7 +827,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
                 "line": 70,
                 "column": 17
               }
@@ -838,10 +839,10 @@
         {
           "extensionBzlFile": "@rules_python//python/extensions:pip.bzl",
           "extensionName": "pip",
-          "usingModule": "rules_python@0.32.1",
+          "usingModule": "rules_python@0.32.2",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
-            "line": 85,
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
+            "line": 86,
             "column": 20
           },
           "imports": {
@@ -861,8 +862,8 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.1/MODULE.bazel",
-                "line": 90,
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_python/0.32.2/MODULE.bazel",
+                "line": 91,
                 "column": 10
               }
             }
@@ -886,10 +887,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.32.1.tar.gz"
+            "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.32.2.tar.gz"
           ],
-          "integrity": "sha256-somwsCPHG4DybTlHbl4sPPctIcsnWbzwJji6PMSA6d8=",
-          "strip_prefix": "rules_python-0.32.1",
+          "integrity": "sha256-SRLO1w3BoqjkuGzsIzsZLKBT6CvHLYd7mOEmFW6PIo0=",
+          "strip_prefix": "rules_python-0.32.2",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -1490,7 +1491,7 @@
       "extensionUsages": [],
       "deps": {
         "rules_license": "rules_license@0.0.8",
-        "rules_python": "rules_python@0.32.1",
+        "rules_python": "rules_python@0.32.2",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -2360,7 +2361,7 @@
       "deps": {
         "bazel_skylib": "bazel_skylib@1.6.1",
         "zlib": "zlib@1.3.1",
-        "rules_python": "rules_python@0.32.1",
+        "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
         "rules_proto": "rules_proto@6.0.0",
         "rules_java": "rules_java@7.5.0",
@@ -2589,7 +2590,7 @@
         "platforms": "platforms@0.0.10",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "rules_java": "rules_java@7.5.0",
-        "rules_python": "rules_python@0.32.1",
+        "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
         "rules_proto": "rules_proto@6.0.0",
         "bazel_tools": "bazel_tools@_",
@@ -3031,7 +3032,7 @@
         "rules_java": "rules_java@7.5.0",
         "rules_license": "rules_license@0.0.8",
         "rules_proto": "rules_proto@6.0.0",
-        "rules_python": "rules_python@0.32.1",
+        "rules_python": "rules_python@0.32.2",
         "buildozer": "buildozer@6.4.0.2",
         "platforms": "platforms@0.0.10",
         "com_google_protobuf": "protobuf@3.19.6",
@@ -7795,7 +7796,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/386",
               "target_name": "io_docker_library_adminer_linux_386"
             }
@@ -7815,7 +7816,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/mips64le",
               "target_name": "io_docker_library_adminer_linux_mips64le"
             }
@@ -7870,7 +7871,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_library_adminer_linux_arm_v7"
             }
@@ -7909,7 +7910,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/arm/v5",
               "target_name": "io_docker_library_adminer_linux_arm_v5"
             }
@@ -7966,7 +7967,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_adminer_linux_s390x"
             }
@@ -8033,7 +8034,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_adminer_linux_amd64"
             }
@@ -8272,7 +8273,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_adminer_linux_amd64",
                 "@@platforms//cpu:armv7": "@io_docker_library_adminer_linux_arm_v7",
@@ -8293,7 +8294,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_adminer_linux_arm64_v8"
             }
@@ -8350,7 +8351,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:4d06c61fbc5f21e83e3aebf15912736e4730a814b03adc1063dd1fc9cd22e58d",
+              "identifier": "sha256:3b3465294f25c3d9519a76dbad10f12cd9c097de24915fab1ba62462f2cbc881",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_adminer_linux_ppc64le"
             }
@@ -8435,7 +8436,7 @@
     },
     "@@rules_python~//python/extensions:pip.bzl%pip": {
       "os:linux,arch:amd64": {
-        "bzlTransitiveDigest": "+cc9XMHZar9J4oePaTdDr7n0j+XxUpZt0cBpOKh1i5U=",
+        "bzlTransitiveDigest": "RHXOH7W7u4fA5zwGbCOiQL74C5qdyXPtX0U+0rst74o=",
         "recordedFileInputs": {
           "@@_main~_repo_rules~pinned_pip//requirements.txt": "c40295af64948be3940a5231234fddb58a691dc55ee37a4bfd8f3c79c678d35a",
           "@@rules_python~//tools/publish/requirements.txt": "8ced1e640eab3ee44298590e5ad88cd612f5bf96245af1981709f7a8884a982b"
@@ -9171,7 +9172,7 @@
     },
     "@@rules_python~//python/extensions:python.bzl%python": {
       "general": {
-        "bzlTransitiveDigest": "Q3Cm3GiTHKulz8gi0yMjUs30DUZ+QbjOeAI/VRFzNKk=",
+        "bzlTransitiveDigest": "edBvwplYZml7N83AeuVHqQt08wQir1gxodtEEUpj57k=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
