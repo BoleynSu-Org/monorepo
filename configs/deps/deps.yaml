@@ -241,10 +241,10 @@ bazel_deps:
   version: 0.0.10
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.30.0/bin/linux/amd64/kubectl
-  sha256: 7c3807c0f5c1b30110a2ff1e55da1d112a6d0096201f1beb81b269f582b5d1c5
-  version: v1.30.0
-  updated_at: '2024-04-17'
+  url: https://dl.k8s.io/release/v1.30.1/bin/linux/amd64/kubectl
+  sha256: 5b86f0b06e1a5ba6f8f00e2b01e8ed39407729c4990aeda961f83a586f975e8a
+  version: v1.30.1
+  updated_at: '2024-05-15'
   executable: true
   override_updater:
   - type: shell

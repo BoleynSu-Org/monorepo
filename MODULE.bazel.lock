@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "a4ebf586cbc12d2b9b537bdf3510e5dc4edf963347a056f85db5a3986c489cfb",
+  "moduleFileHash": "ef104c6cc37ba26f92860263510a9f15fddff3a8a600caa9d9373d7a7cb70e9b",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -131,8 +131,8 @@
             {
               "tagName": "@bazel_tools//tools/build_defs/repo:http.bzl%http_file",
               "attributeValues": {
-                "url": "https://dl.k8s.io/release/v1.30.0/bin/linux/amd64/kubectl",
-                "sha256": "7c3807c0f5c1b30110a2ff1e55da1d112a6d0096201f1beb81b269f582b5d1c5",
+                "url": "https://dl.k8s.io/release/v1.30.1/bin/linux/amd64/kubectl",
+                "sha256": "5b86f0b06e1a5ba6f8f00e2b01e8ed39407729c4990aeda961f83a586f975e8a",
                 "executable": true,
                 "name": "kubectl_linux_amd64"
               },
