@@ -12,11 +12,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: 4dc0a0283fddd2023ec1bd32f337d56b0f7572772e6c1360ad266e94c04c17d3
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.5.0.tar.gz
-  strip_prefix: rules_java-7.5.0
-  updated_at: '2024-03-20'
-  version: 7.5.0
+  sha256: f9cabbc4dc2167bc01b38f5253307d2dbb72b55b02cd4a9c8eed649ba89f2331
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.0.tar.gz
+  strip_prefix: rules_java-7.6.0
+  updated_at: '2024-05-15'
+  version: 7.6.0
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -273,13 +273,13 @@ bazel_deps:
   - chmod -R 755 .
 - name: bazel_features
   type: http_archive
-  version: v1.10.0
+  version: v1.11.0
   commit: 8e490647a04dae5ec92342d6f29d893d7b177584
-  sha256: 95fb3cfd11466b4cad6565e3647a76f89886d875556a4b827c021525cb2482bb
-  strip_prefix: bazel_features-1.10.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.10.0/bazel_features-v1.10.0.tar.gz
+  sha256: 2cd9e57d4c38675d321731d65c15258f3a66438ad531ae09cb8bb14217dc8572
+  strip_prefix: bazel_features-1.11.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.11.0/bazel_features-v1.11.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-04-18'
+  updated_at: '2024-05-15'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -717,12 +717,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240514.094212'
+  version: '20240515.082315'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240514.094212'
-  digest: sha256:a24c34c3d6990d5f4d8b5595fbb1120d8e56b1bc5d8f4057c40526f3567e19df
-  updated_at: '2024-05-14'
+  tag: '20240515.082315'
+  digest: sha256:3fd97b2a50a9d902a04edf4efd46e4072e184e1707b36e429c515fbc401f3f57
+  updated_at: '2024-05-15'
   platforms:
   - linux/amd64
 - name: io_docker_library_mariadb
@@ -768,31 +768,31 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240514.094212'
+  version: '20240515.082315'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240514.094212'
-  digest: sha256:5abbaec23ee54e419a5b4de4d205c3f1003f6d663422e7b0bbe4598120cbfa6d
-  updated_at: '2024-05-14'
+  tag: '20240515.082315'
+  digest: sha256:1600800bdb3764b685552e319cef5176d161062ba1de946c4c3cb0b854c8077e
+  updated_at: '2024-05-15'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240514.094212'
+  version: '20240515.082315'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240514.094212'
-  digest: sha256:4dec03367bf39844a7bdd4e8a0072f22de24099aa74b5479b94d5a7354909bbe
-  updated_at: '2024-05-14'
+  tag: '20240515.082315'
+  digest: sha256:8e4f690cc60a71f9c8d8d1bb9bd4abb0bf98fafdad82d79b89b048619bdbfd92
+  updated_at: '2024-05-15'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:76cd218e2af5f15ee37af5df49e8d0e9ded352193ae30c7fd10475fa30b1ecb8
-  version: '20240514.094212'
-  tag: '20240514.094212'
-  updated_at: '2024-05-14'
+  digest: sha256:0b2c18f94b328425c414c7bc2dca279abb60fb432c1ae84f20c38278dfe09082
+  version: '20240515.082315'
+  tag: '20240515.082315'
+  updated_at: '2024-05-15'
   platforms:
   - linux/amd64
   - linux/arm64

@@ -1,6 +1,6 @@
 module(
     name = 'rules_java',
-    version = '7.5.0',
+    version = '7.6.0',
     bazel_compatibility = ['>=7.0.0'],
 )
 
@@ -71,6 +71,36 @@ use_repo(
 register_toolchains(
     '@local_jdk//:runtime_toolchain_definition',
     '@local_jdk//:bootstrap_runtime_toolchain_definition',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_linux_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_linux_aarch64_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_linux_s390x_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_macos_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_macos_aarch64_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
+    'remote_jdk8_windows_toolchain_config_repo',
 )
 
 use_repo(
@@ -191,6 +221,30 @@ use_repo(
 use_repo(
     toolchains,
     'remotejdk21_win_arm64_toolchain_config_repo',
+)
+
+register_toolchains(
+    '@remote_jdk8_linux_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remote_jdk8_linux_aarch64_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remote_jdk8_linux_s390x_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remote_jdk8_macos_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remote_jdk8_macos_aarch64_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remote_jdk8_windows_toolchain_config_repo//:all',
 )
 
 register_toolchains(
