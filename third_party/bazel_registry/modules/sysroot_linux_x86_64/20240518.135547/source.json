@@ -1,0 +1,7 @@
+{
+  "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240518.135547/sysroot_linux_x86_64.tar.gz",
+  "integrity": "sha256-1SKHk//F99yoPXhb5oUZaJnUTdQ/WJvv/fwc1c0I4i4=",
+  "patches": {
+    "patch-100000.patch": "sha256-xWHPzM6aOteZIYLV7gOR0K+Dd9UKcqE/dggH9jNzAFc="
+  }
+}
