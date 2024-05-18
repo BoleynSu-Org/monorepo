@@ -12,11 +12,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: f9cabbc4dc2167bc01b38f5253307d2dbb72b55b02cd4a9c8eed649ba89f2331
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.0.tar.gz
-  strip_prefix: rules_java-7.6.0
-  updated_at: '2024-05-15'
-  version: 7.6.0
+  sha256: 42ed62ddbb682c4b5efca161272a95a8a79756cf34840dad95b2691b9a905b2e
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.1.tar.gz
+  strip_prefix: rules_java-7.6.1
+  updated_at: '2024-05-18'
+  version: 7.6.1
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -479,8 +479,8 @@ maven_deps:
   version: 2.16.1
   updated_at: '2024-04-08'
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.3.3
-  updated_at: '2024-02-21'
+  version: 3.4.0
+  updated_at: '2024-05-18'
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 10.1.24
   updated_at: '2024-05-13'

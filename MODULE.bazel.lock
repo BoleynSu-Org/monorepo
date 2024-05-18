@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "464b718e9f763bf4ff8a3418bef88ffebb28d48e3cab4a2832b393947c4bf543",
+  "moduleFileHash": "899e3c8591b1f12ad5ea0bac44b246d582f0880ec73e56a4d7caa9d8e59c2e79",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -200,7 +200,7 @@
                 "name": "boleynsu_org_maven",
                 "artifacts": [
                   "commons-io:commons-io:2.16.1",
-                  "org.mariadb.jdbc:mariadb-java-client:3.3.3",
+                  "org.mariadb.jdbc:mariadb-java-client:3.4.0",
                   "org.apache.tomcat.embed:tomcat-embed-core:10.1.24",
                   "org.apache.tomcat.embed:tomcat-embed-jasper:10.1.24",
                   "org.webjars:jquery:3.7.1",
@@ -567,7 +567,7 @@
       ],
       "deps": {
         "rules_cc": "rules_cc@0.0.9",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_python": "rules_python@0.32.2",
         "rules_proto": "rules_proto@6.0.0",
         "io_bazel_rules_go": "rules_go@0.47.1",
@@ -644,10 +644,10 @@
         }
       }
     },
-    "rules_java@7.6.0": {
+    "rules_java@7.6.1": {
       "name": "rules_java",
-      "version": "7.6.0",
-      "key": "rules_java@7.6.0",
+      "version": "7.6.1",
+      "key": "rules_java@7.6.1",
       "repoName": "rules_java",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -689,10 +689,10 @@
         {
           "extensionBzlFile": "@rules_java//java:extensions.bzl",
           "extensionName": "toolchains",
-          "usingModule": "rules_java@7.6.0",
+          "usingModule": "rules_java@7.6.1",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_java/7.6.0/MODULE.bazel",
-            "line": 36,
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_java/7.6.1/MODULE.bazel",
+            "line": 41,
             "column": 27
           },
           "imports": {
@@ -742,6 +742,7 @@
       "deps": {
         "platforms": "platforms@0.0.10",
         "rules_cc": "rules_cc@0.0.9",
+        "bazel_features": "bazel_features@1.11.0",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "rules_proto": "rules_proto@6.0.0",
         "rules_license": "rules_license@0.0.8",
@@ -753,10 +754,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.0.tar.gz"
+            "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.1.tar.gz"
           ],
-          "integrity": "sha256-+cq7xNwhZ7wBs49SUzB9LbtytVsCzUqcju1km6ifIzE=",
-          "strip_prefix": "rules_java-7.6.0",
+          "integrity": "sha256-Qu1i3btoLEte/KFhJyqVqKeXVs80hA2tlbJpG5qQWy4=",
+          "strip_prefix": "rules_java-7.6.1",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -1473,7 +1474,7 @@
       "deps": {
         "bazel_skylib": "bazel_skylib@1.6.1",
         "platforms": "platforms@0.0.10",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_kotlin": "rules_kotlin@1.9.5",
         "io_bazel_stardoc": "stardoc@0.6.2",
         "bazel_tools": "bazel_tools@_",
@@ -2376,7 +2377,7 @@
         "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
         "rules_proto": "rules_proto@6.0.0",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -2528,7 +2529,7 @@
       ],
       "deps": {
         "bazel_skylib": "bazel_skylib@1.6.1",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_license": "rules_license@0.0.8",
         "com_google_protobuf": "protobuf@3.19.6",
@@ -2601,7 +2602,7 @@
       "deps": {
         "platforms": "platforms@0.0.10",
         "bazel_skylib": "bazel_skylib@1.6.1",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
         "rules_proto": "rules_proto@6.0.0",
@@ -3041,7 +3042,7 @@
       ],
       "deps": {
         "rules_cc": "rules_cc@0.0.9",
-        "rules_java": "rules_java@7.6.0",
+        "rules_java": "rules_java@7.6.1",
         "rules_license": "rules_license@0.0.8",
         "rules_proto": "rules_proto@6.0.0",
         "rules_python": "rules_python@0.32.2",
@@ -3761,7 +3762,7 @@
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
-          "@@//maven_install.json": "8a7b34c4abcc9f6078d9201e75744a14d9c570e950b01256ff5652968ec544e4"
+          "@@//maven_install.json": "c2671334611c70724b47e4330c78278b4969a5e2c75c9c60ce5f8c796f2e0f55"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4300,7 +4301,7 @@
               ],
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
-                "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
+                "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.4.0\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
@@ -4448,7 +4449,7 @@
               ],
               "artifacts": [
                 "{ \"group\": \"commons-io\", \"artifact\": \"commons-io\", \"version\": \"2.16.1\" }",
-                "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.3.3\" }",
+                "{ \"group\": \"org.mariadb.jdbc\", \"artifact\": \"mariadb-java-client\", \"version\": \"3.4.0\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-core\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.24\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
@@ -5612,17 +5613,6 @@
               "downloaded_file_path": "v1/com/google/auto/value/auto-value-annotations/1.8.1/auto-value-annotations-1.8.1.jar"
             }
           },
-          "org_mariadb_jdbc_mariadb_java_client_3_3_3": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "89d71a6ffd800c032b23e588108688d391631f0aba962ba2381cc82cb111b796",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/3.3.3/mariadb-java-client-3.3.3.jar"
-              ],
-              "downloaded_file_path": "v1/org/mariadb/jdbc/mariadb-java-client/3.3.3/mariadb-java-client-3.3.3.jar"
-            }
-          },
           "io_grpc_grpc_xds_1_56_1": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -6007,6 +5997,17 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "org_wildfly_common_wildfly_common"
+            }
+          },
+          "org_mariadb_jdbc_mariadb_java_client_3_4_0": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "d83970dcda3198ca480e59b38e9e7055df09833e40d898c8ec5778a1e767f93b",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/3.4.0/mariadb-java-client-3.4.0.jar"
+              ],
+              "downloaded_file_path": "v1/org/mariadb/jdbc/mariadb-java-client/3.4.0/mariadb-java-client-3.4.0.jar"
             }
           },
           "com_google_auto_value_auto_value_annotations": {
