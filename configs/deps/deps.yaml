@@ -757,12 +757,12 @@ container_deps:
   - linux/ppc64le
   - linux/s390x
 - name: io_docker_filebrowser_filebrowser
-  version: v2.29.0
+  version: v2.30.0
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.29.0
-  digest: sha256:33816c92ba4401bab465528bb54655df427eaaa80dc177e5aecb33d5b8b0a8f7
-  updated_at: '2024-04-30'
+  tag: v2.30.0
+  digest: sha256:862a8f4f4829cb2747ced869aea8593204bbc718c92f0f11c97e7b669a54b53d
+  updated_at: '2024-05-19'
   platforms:
   - linux/amd64
   - linux/arm64
