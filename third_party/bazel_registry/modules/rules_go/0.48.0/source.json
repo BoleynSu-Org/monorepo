@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.48.0.tar.gz",
+  "integrity": "sha256-BZFezXQNCbE+00WBFg/bo0KxXRmqCkuAYS4QoUz2a9M=",
+  "strip_prefix": "rules_go-0.48.0"
+}

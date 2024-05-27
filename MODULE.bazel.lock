@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "66c3c82dd845af14c5d84fcaf5e2e554b2bb1dea30459d980f90cb5502525527",
+  "moduleFileHash": "f1ec362e8975cf6caa3925a8ee77f3a8364e826f2f105d691f5d05f327b34ec6",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -432,7 +432,7 @@
               "attributeValues": {
                 "name": "io_docker_library_mariadb",
                 "image": "index.docker.io/library/mariadb",
-                "digest": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+                "digest": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64/v8",
@@ -570,13 +570,13 @@
         "rules_java": "rules_java@7.6.1",
         "rules_python": "rules_python@0.32.2",
         "rules_proto": "rules_proto@6.0.0",
-        "io_bazel_rules_go": "rules_go@0.47.1",
+        "io_bazel_rules_go": "rules_go@0.48.0",
         "rules_oci": "rules_oci@1.7.5",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_pkg": "rules_pkg@0.10.1",
         "io_grpc_grpc_java": "io_grpc_grpc_java@1.63.0",
-        "bazel_gazelle": "gazelle@0.36.0",
+        "bazel_gazelle": "gazelle@0.37.0",
         "com_github_cdolivet_editarea": "com_github_cdolivet_editarea@0.8.2",
         "llvm_linux_x86_64": "llvm_linux_x86_64@17.0.6",
         "toolchains_llvm": "toolchains_llvm@1.0.0",
@@ -590,8 +590,8 @@
         "apple_support": "apple_support@1.15.1",
         "stardoc": "stardoc@0.6.2",
         "rules_kotlin": "rules_kotlin@1.9.5",
-        "aspect_bazel_lib": "aspect_bazel_lib@2.7.3",
-        "buildozer": "buildozer@6.4.0.2",
+        "aspect_bazel_lib": "aspect_bazel_lib@2.7.6",
+        "buildozer": "buildozer@7.1.2",
         "rules_android": "rules_android@0.1.1",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -938,10 +938,10 @@
         }
       }
     },
-    "rules_go@0.47.1": {
+    "rules_go@0.48.0": {
       "name": "rules_go",
-      "version": "0.47.1",
-      "key": "rules_go@0.47.1",
+      "version": "0.48.0",
+      "key": "rules_go@0.48.0",
       "repoName": "io_bazel_rules_go",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -951,9 +951,9 @@
         {
           "extensionBzlFile": "@io_bazel_rules_go//go:extensions.bzl",
           "extensionName": "go_sdk",
-          "usingModule": "rules_go@0.47.1",
+          "usingModule": "rules_go@0.48.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.47.1/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.48.0/MODULE.bazel",
             "line": 34,
             "column": 23
           },
@@ -971,7 +971,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.47.1/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.48.0/MODULE.bazel",
                 "line": 39,
                 "column": 16
               }
@@ -983,9 +983,9 @@
         {
           "extensionBzlFile": "@gazelle//:extensions.bzl",
           "extensionName": "go_deps",
-          "usingModule": "rules_go@0.47.1",
+          "usingModule": "rules_go@0.48.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.47.1/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.48.0/MODULE.bazel",
             "line": 59,
             "column": 24
           },
@@ -1010,7 +1010,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.47.1/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/rules_go/0.48.0/MODULE.bazel",
                 "line": 64,
                 "column": 18
               }
@@ -1026,7 +1026,7 @@
         "platforms": "platforms@0.0.10",
         "rules_proto": "rules_proto@6.0.0",
         "com_google_protobuf": "protobuf@3.19.6",
-        "gazelle": "gazelle@0.36.0",
+        "gazelle": "gazelle@0.37.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -1035,10 +1035,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.47.1.tar.gz"
+            "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.48.0.tar.gz"
           ],
-          "integrity": "sha256-vHp+TCu7TyHOCcx1pbq1g61kfSlpn5HotFT1LlsOa2w=",
-          "strip_prefix": "rules_go-0.47.1",
+          "integrity": "sha256-BZFezXQNCbE+00WBFg/bo0KxXRmqCkuAYS4QoUz2a9M=",
+          "strip_prefix": "rules_go-0.48.0",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -1088,7 +1088,7 @@
         }
       ],
       "deps": {
-        "aspect_bazel_lib": "aspect_bazel_lib@2.7.3",
+        "aspect_bazel_lib": "aspect_bazel_lib@2.7.6",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "platforms": "platforms@0.0.10",
         "bazel_tools": "bazel_tools@_",
@@ -1983,10 +1983,10 @@
         }
       }
     },
-    "gazelle@0.36.0": {
+    "gazelle@0.37.0": {
       "name": "gazelle",
-      "version": "0.36.0",
-      "key": "gazelle@0.36.0",
+      "version": "0.37.0",
+      "key": "gazelle@0.37.0",
       "repoName": "bazel_gazelle",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -1994,9 +1994,9 @@
         {
           "extensionBzlFile": "@io_bazel_rules_go//go:extensions.bzl",
           "extensionName": "go_sdk",
-          "usingModule": "gazelle@0.36.0",
+          "usingModule": "gazelle@0.37.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.36.0/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.37.0/MODULE.bazel",
             "line": 34,
             "column": 23
           },
@@ -2011,9 +2011,9 @@
         {
           "extensionBzlFile": "@bazel_gazelle//internal/bzlmod:non_module_deps.bzl",
           "extensionName": "non_module_deps",
-          "usingModule": "gazelle@0.36.0",
+          "usingModule": "gazelle@0.37.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.36.0/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.37.0/MODULE.bazel",
             "line": 44,
             "column": 32
           },
@@ -2030,9 +2030,9 @@
         {
           "extensionBzlFile": "@bazel_gazelle//:extensions.bzl",
           "extensionName": "go_deps",
-          "usingModule": "gazelle@0.36.0",
+          "usingModule": "gazelle@0.37.0",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.36.0/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.37.0/MODULE.bazel",
             "line": 56,
             "column": 24
           },
@@ -2059,7 +2059,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.36.0/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.37.0/MODULE.bazel",
                 "line": 61,
                 "column": 18
               }
@@ -2073,7 +2073,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.36.0/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/gazelle/0.37.0/MODULE.bazel",
                 "line": 65,
                 "column": 15
               }
@@ -2087,7 +2087,7 @@
         "bazel_features": "bazel_features@1.11.0",
         "bazel_skylib": "bazel_skylib@1.6.1",
         "com_google_protobuf": "protobuf@3.19.6",
-        "io_bazel_rules_go": "rules_go@0.47.1",
+        "io_bazel_rules_go": "rules_go@0.48.0",
         "rules_proto": "rules_proto@6.0.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -2097,10 +2097,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.36.0.tar.gz"
+            "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.37.0.tar.gz"
           ],
-          "integrity": "sha256-EGWCjH6vc9mSIb1dYdeNB61vYEIY+xjUQ1QNoYaD5Ig=",
-          "strip_prefix": "bazel-gazelle-0.36.0",
+          "integrity": "sha256-BFRqUkh3A0IYoTMnCmuVpi6PrwCZBc94JQJ6D/SNyVU=",
+          "strip_prefix": "bazel-gazelle-0.37.0",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -2623,10 +2623,10 @@
         }
       }
     },
-    "aspect_bazel_lib@2.7.3": {
+    "aspect_bazel_lib@2.7.6": {
       "name": "aspect_bazel_lib",
-      "version": "2.7.3",
-      "key": "aspect_bazel_lib@2.7.3",
+      "version": "2.7.6",
+      "key": "aspect_bazel_lib@2.7.6",
       "repoName": "aspect_bazel_lib",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
@@ -2644,9 +2644,9 @@
         {
           "extensionBzlFile": "@aspect_bazel_lib//lib:extensions.bzl",
           "extensionName": "toolchains",
-          "usingModule": "aspect_bazel_lib@2.7.3",
+          "usingModule": "aspect_bazel_lib@2.7.6",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
             "line": 23,
             "column": 27
           },
@@ -2668,7 +2668,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 28,
                 "column": 26
               }
@@ -2678,7 +2678,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 31,
                 "column": 29
               }
@@ -2688,7 +2688,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 34,
                 "column": 14
               }
@@ -2698,7 +2698,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 37,
                 "column": 14
               }
@@ -2708,7 +2708,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 40,
                 "column": 21
               }
@@ -2718,7 +2718,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 43,
                 "column": 15
               }
@@ -2728,7 +2728,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 46,
                 "column": 16
               }
@@ -2738,7 +2738,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 49,
                 "column": 27
               }
@@ -2748,7 +2748,7 @@
               "attributeValues": {},
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 52,
                 "column": 16
               }
@@ -2760,9 +2760,9 @@
         {
           "extensionBzlFile": "@gazelle//:extensions.bzl",
           "extensionName": "go_deps",
-          "usingModule": "aspect_bazel_lib@2.7.3",
+          "usingModule": "aspect_bazel_lib@2.7.6",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+            "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
             "line": 91,
             "column": 24
           },
@@ -2779,7 +2779,7 @@
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.3/MODULE.bazel",
+                "file": "file://%workspace%/third_party/bazel_registry/modules/aspect_bazel_lib/2.7.6/MODULE.bazel",
                 "line": 96,
                 "column": 18
               }
@@ -2793,8 +2793,8 @@
         "bazel_skylib": "bazel_skylib@1.6.1",
         "platforms": "platforms@0.0.10",
         "io_bazel_stardoc": "stardoc@0.6.2",
-        "gazelle": "gazelle@0.36.0",
-        "io_bazel_rules_go": "rules_go@0.47.1",
+        "gazelle": "gazelle@0.37.0",
+        "io_bazel_rules_go": "rules_go@0.48.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -2803,19 +2803,19 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/aspect-build/bazel-lib/releases/download/v2.7.3/bazel-lib-v2.7.3.tar.gz"
+            "https://github.com/aspect-build/bazel-lib/releases/download/v2.7.6/bazel-lib-v2.7.6.tar.gz"
           ],
-          "integrity": "sha256-h6tOxHnr6wDShiZqyiBoyu7xuwsXZej3HHts/uavQiY=",
-          "strip_prefix": "bazel-lib-2.7.3",
+          "integrity": "sha256-tZeBk59AyL8Uj0pxvQbjAn4V5A6YFD6laIuDUx7IUo8=",
+          "strip_prefix": "bazel-lib-2.7.6",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
       }
     },
-    "buildozer@6.4.0.2": {
+    "buildozer@7.1.2": {
       "name": "buildozer",
-      "version": "6.4.0.2",
-      "key": "buildozer@6.4.0.2",
+      "version": "7.1.2",
+      "key": "buildozer@7.1.2",
       "repoName": "buildozer",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [],
@@ -2823,10 +2823,10 @@
         {
           "extensionBzlFile": "@buildozer//:buildozer_binary.bzl",
           "extensionName": "buildozer_binary",
-          "usingModule": "buildozer@6.4.0.2",
+          "usingModule": "buildozer@7.1.2",
           "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/buildozer/6.4.0.2/MODULE.bazel",
-            "line": 7,
+            "file": "file://%workspace%/third_party/bazel_registry/modules/buildozer/7.1.2/MODULE.bazel",
+            "line": 12,
             "column": 33
           },
           "imports": {
@@ -2838,18 +2838,18 @@
               "tagName": "buildozer",
               "attributeValues": {
                 "sha256": {
-                  "darwin-amd64": "d29e347ecd6b5673d72cb1a8de05bf1b06178dd229ff5eb67fad5100c840cc8e",
-                  "darwin-arm64": "9b9e71bdbec5e7223871e913b65d12f6d8fa026684daf991f00e52ed36a6978d",
-                  "linux-amd64": "8dfd6345da4e9042daa738d7fdf34f699c5dfce4632f7207956fceedd8494119",
-                  "linux-arm64": "6559558fded658c8fa7432a9d011f7c4dcbac6b738feae73d2d5c352e5f605fa",
-                  "windows-amd64": "e7f05bf847f7c3689dd28926460ce6e1097ae97380ac8e6ae7147b7b706ba19b"
+                  "darwin-amd64": "90da5cf4f7db73007977a8c6bec23fa7022265978187e1da8df5edc91daf6ee1",
+                  "darwin-arm64": "bedff301bc51f04da46d2c8900c1753032ea88485af375a9f1b7bed0915558e0",
+                  "linux-amd64": "8d5c459ab21b411b8be059a8bdf59f0d3eabf9dff943d5eccb80e36e525cc09d",
+                  "linux-arm64": "a00d1790e8c92c5022d83e345d6629506836d73c23c5338d5f777589bfaed02d",
+                  "windows-amd64": "3a650e10f07787760889d7e5694924d881265ae2384499fd59ada7c39c02366e"
                 },
-                "version": "6.4.0"
+                "version": "7.1.2"
               },
               "devDependency": false,
               "location": {
-                "file": "file://%workspace%/third_party/bazel_registry/modules/buildozer/6.4.0.2/MODULE.bazel",
-                "line": 12,
+                "file": "file://%workspace%/third_party/bazel_registry/modules/buildozer/7.1.2/MODULE.bazel",
+                "line": 17,
                 "column": 27
               }
             }
@@ -2859,6 +2859,7 @@
         }
       ],
       "deps": {
+        "bazel_features": "bazel_features@1.11.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -2867,10 +2868,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/fmeum/buildozer/releases/download/v6.4.0.2/buildozer-v6.4.0.2.tar.gz"
+            "https://github.com/fmeum/buildozer/releases/download/v7.1.2/buildozer-v7.1.2.tar.gz"
           ],
-          "integrity": "sha256-k7tFKQMR2AygxpmZfH0yEPnQmF3efFgD9rBPkj+Yz/8=",
-          "strip_prefix": "buildozer-6.4.0.2",
+          "integrity": "sha256-/HfDfwjmdFCKV5jYSRiuUrO5UQGZ4KwBESo3iWfaQVg=",
+          "strip_prefix": "buildozer-7.1.2",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -3046,7 +3047,7 @@
         "rules_license": "rules_license@0.0.8",
         "rules_proto": "rules_proto@6.0.0",
         "rules_python": "rules_python@0.32.2",
-        "buildozer": "buildozer@6.4.0.2",
+        "buildozer": "buildozer@7.1.2",
         "platforms": "platforms@0.0.10",
         "com_google_protobuf": "protobuf@3.19.6",
         "zlib": "zlib@1.3.1",
@@ -3116,7 +3117,7 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "VYD/lur0i130gzmHkIOPOj3le83s7Xpuy+Tn7KiyOAE=",
+        "bzlTransitiveDigest": "jRSe5nPhOc6hpkqfAg7O3juIICyQm8Hk8cRpc4v8Yh4=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3709,31 +3710,6 @@
               "urls": [
                 "https://mirror.bazel.build/bazel_coverage_output_generator/releases/coverage_output_generator-v2.6.zip"
               ]
-            }
-          }
-        },
-        "recordedRepoMappingEntries": []
-      }
-    },
-    "@@buildozer~//:buildozer_binary.bzl%buildozer_binary": {
-      "general": {
-        "bzlTransitiveDigest": "EleDU/FQ1+e/RgkW3aIDmdaxZEthvoWQhsqFTxiSgMI=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "buildozer_binary": {
-            "bzlFile": "@@buildozer~//private:buildozer_binary.bzl",
-            "ruleClassName": "_buildozer_binary_repo",
-            "attributes": {
-              "sha256": {
-                "darwin-amd64": "d29e347ecd6b5673d72cb1a8de05bf1b06178dd229ff5eb67fad5100c840cc8e",
-                "darwin-arm64": "9b9e71bdbec5e7223871e913b65d12f6d8fa026684daf991f00e52ed36a6978d",
-                "linux-amd64": "8dfd6345da4e9042daa738d7fdf34f699c5dfce4632f7207956fceedd8494119",
-                "linux-arm64": "6559558fded658c8fa7432a9d011f7c4dcbac6b738feae73d2d5c352e5f605fa",
-                "windows-amd64": "e7f05bf847f7c3689dd28926460ce6e1097ae97380ac8e6ae7147b7b706ba19b"
-              },
-              "version": "6.4.0"
             }
           }
         },
@@ -7143,7 +7119,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "Gj9uN9kQsUmYkAVxJqbfh2HtuIqb5L5C/LHoRa8SUUQ=",
+        "bzlTransitiveDigest": "5g8PaiS8861TFnioewv5MqOl1WeWxBS9rlyMtVORlEI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -7155,7 +7131,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+              "identifier": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64"
             }
@@ -7403,7 +7379,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+              "identifier": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -7539,7 +7515,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+              "identifier": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8"
             }
@@ -7649,7 +7625,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+              "identifier": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le"
             }
@@ -7808,7 +7784,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:f0a6faee9d0e55492f238d1d11ff13d77616ea12d8c38bedf090da2ee05532be",
+              "identifier": "sha256:3c43c6f4bc2931825c1207328429f422f30ce2cb029567da1df9a8cdcf2b8552",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x"
             }
