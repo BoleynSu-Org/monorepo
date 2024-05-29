@@ -245,9 +245,9 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "20240528.130147",
-            "sha256": "056da957c9d581cc828d717e0e65d0f0fbcafd1432b36b5d664c5fb0f7bccc58",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240528.130147/sysroot_linux_x86_64.tar.gz",
+            "version": "20240529.013838",
+            "sha256": "10c0ddc2962c42f30d2cf966e3f7abee16192a097a35209665e7df0b0fb37bd2",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240529.013838/sysroot_linux_x86_64.tar.gz",
             "updated_at": "2024-05-29",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
             "patch_cmds": ["chmod -R 755 ."],
