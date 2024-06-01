@@ -259,9 +259,9 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240601.014355'
-  sha256: 1420725e1d98cd4fe36a893f8c2f3051f82197d67b020ea1a65258515b246633
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240601.014355/sysroot_linux_x86_64.tar.gz
+  version: '20240601.131900'
+  sha256: 5904f82b52bc297e0d89088083cca8455053526b784317da95e4e695490d0402
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240601.131900/sysroot_linux_x86_64.tar.gz
   updated_at: '2024-06-01'
   build_file_content: |
     filegroup(
@@ -717,11 +717,11 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240601.014355'
+  version: '20240601.131900'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240601.014355'
-  digest: sha256:a3f2b60abcf7783bd5feef9ddc1ee5f9d5af5e8f1458afabf5efe3c514666ef9
+  tag: '20240601.131900'
+  digest: sha256:1b630f8c0ba2da29a83469c347b6329a446b1973523a2f0e0d0eedea52dc43b9
   updated_at: '2024-06-01'
   platforms:
   - linux/amd64
@@ -768,30 +768,30 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240601.014355'
+  version: '20240601.131900'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240601.014355'
-  digest: sha256:4c94d7ee23f2144036aeb850236db431d9d57bb6144f2d36eaa5ace48d31f517
+  tag: '20240601.131900'
+  digest: sha256:c1e60a445a202ea8c28dc58b7302f59046314144ecfb1b18c578f36e6347da42
   updated_at: '2024-06-01'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240601.014355'
+  version: '20240601.131900'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240601.014355'
-  digest: sha256:8bd43b3c9b0cf6cab410749c7e1af2d40582edc6d40e3666a4255964ed25febb
+  tag: '20240601.131900'
+  digest: sha256:0313ea365f247c398328355bfae311c54c4931d9259e636c40872c9a40abb22d
   updated_at: '2024-06-01'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:c22e2b7985c379ba8504ca87c15a2eb70bc9d1ef5f1ca8bc74a6abe91e3459f6
-  version: '20240601.014355'
-  tag: '20240601.014355'
+  digest: sha256:313661b9f2a0a79dbf7494395a4d53e67af6ff2c856a368257cd491504bc6bcc
+  version: '20240601.131900'
+  tag: '20240601.131900'
   updated_at: '2024-06-01'
   platforms:
   - linux/amd64
