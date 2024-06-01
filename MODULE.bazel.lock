@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "dffb547d609002860a9b42d79e151d757b42655ed3a766917eaf7bd9680a59c7",
+  "moduleFileHash": "2a310bd8efdcf7107c3ffb3cfd8cf755f9995f2e483734130bdf200977cb6244",
   "flags": {
     "cmdRegistries": [
       "file://%workspace%/third_party/bazel_registry"
@@ -415,7 +415,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_ci_runner",
                 "image": "quay.io/boleynsu/ci-runner",
-                "digest": "sha256:b9fef4cf98aff4a78ec0c41209da0162bfe98d7151bce64425c72d874c802dc9",
+                "digest": "sha256:9cdef9f720a834dcc531b945e8472ef088851d196abb9c51bcaca6317c453d83",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -432,7 +432,7 @@
               "attributeValues": {
                 "name": "io_docker_library_mariadb",
                 "image": "index.docker.io/library/mariadb",
-                "digest": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+                "digest": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64/v8",
@@ -495,7 +495,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_oj_c99runner",
                 "image": "quay.io/boleynsu/oj-c99runner",
-                "digest": "sha256:6e47bdc7e63e6ab015fee507234620e037f2cb056947e29e6b531ead321cffbf",
+                "digest": "sha256:4d5ce718afd9080850e5bb1610511dc4b32a601dd406175664d881b9d7875f26",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -513,7 +513,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_rbe_fedora",
                 "image": "quay.io/boleynsu/rbe-fedora",
-                "digest": "sha256:e8e0eceec78e2b35eeca085e98633cb3ea5978b716bb3d766b7bd8f341ebb8d8",
+                "digest": "sha256:443b6785220c57cd34523b2f288c76c726e688fbf42e5f1df79cd30998e0961b",
                 "platforms": [
                   "linux/amd64"
                 ]
@@ -530,7 +530,7 @@
               "attributeValues": {
                 "name": "io_quay_boleynsu_base",
                 "image": "quay.io/boleynsu/base",
-                "digest": "sha256:4693cac7f45afd4cd72dc13a13ca4ce76baf00658827bd343fde804d706611b7",
+                "digest": "sha256:1bc1c769f56334b84120f1ed99cadbe5a3d1bde8b1cb37b19f93a4dd59739f9c",
                 "platforms": [
                   "linux/amd64",
                   "linux/arm64"
@@ -572,7 +572,7 @@
         "rules_proto": "rules_proto@6.0.0",
         "io_bazel_rules_go": "rules_go@0.48.0",
         "rules_oci": "rules_oci@1.7.5",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_pkg": "rules_pkg@0.10.1",
         "io_grpc_grpc_java": "io_grpc_grpc_java@1.63.0",
@@ -743,7 +743,7 @@
         "platforms": "platforms@0.0.10",
         "rules_cc": "rules_cc@0.0.9",
         "bazel_features": "bazel_features@1.11.0",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_proto": "rules_proto@6.0.0",
         "rules_license": "rules_license@0.0.8",
         "bazel_tools": "bazel_tools@_",
@@ -887,7 +887,7 @@
       ],
       "deps": {
         "bazel_features": "bazel_features@1.11.0",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_cc": "rules_cc@0.0.9",
         "platforms": "platforms@0.0.10",
         "rules_proto": "rules_proto@6.0.0",
@@ -919,7 +919,7 @@
       "extensionUsages": [],
       "deps": {
         "rules_license": "rules_license@0.0.8",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "bazel_features": "bazel_features@1.11.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -1022,7 +1022,7 @@
       ],
       "deps": {
         "io_bazel_rules_go_bazel_features": "bazel_features@1.11.0",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "platforms": "platforms@0.0.10",
         "rules_proto": "rules_proto@6.0.0",
         "com_google_protobuf": "protobuf@3.19.6",
@@ -1089,7 +1089,7 @@
       ],
       "deps": {
         "aspect_bazel_lib": "aspect_bazel_lib@2.7.7",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "platforms": "platforms@0.0.10",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -1108,56 +1108,20 @@
         }
       }
     },
-    "bazel_skylib@1.6.1": {
+    "bazel_skylib@1.7.0": {
       "name": "bazel_skylib",
-      "version": "1.6.1",
-      "key": "bazel_skylib@1.6.1",
+      "version": "1.7.0",
+      "key": "bazel_skylib@1.7.0",
       "repoName": "bazel_skylib",
       "executionPlatformsToRegister": [],
       "toolchainsToRegister": [
         "//toolchains/unittest:cmd_toolchain",
         "//toolchains/unittest:bash_toolchain"
       ],
-      "extensionUsages": [
-        {
-          "extensionBzlFile": "@bazel_skylib//tests:modules_test.bzl",
-          "extensionName": "as_extension_test_ext",
-          "usingModule": "bazel_skylib@1.6.1",
-          "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/bazel_skylib/1.6.1/MODULE.bazel",
-            "line": 16,
-            "column": 38
-          },
-          "imports": {
-            "bar": "bar",
-            "foo": "foo"
-          },
-          "devImports": [],
-          "tags": [],
-          "hasDevUseExtension": false,
-          "hasNonDevUseExtension": true
-        },
-        {
-          "extensionBzlFile": "@bazel_skylib//tests:modules_test.bzl",
-          "extensionName": "use_all_repos_test_ext",
-          "usingModule": "bazel_skylib@1.6.1",
-          "location": {
-            "file": "file://%workspace%/third_party/bazel_registry/modules/bazel_skylib/1.6.1/MODULE.bazel",
-            "line": 27,
-            "column": 39
-          },
-          "imports": {
-            "baz": "baz",
-            "qux": "qux"
-          },
-          "devImports": [],
-          "tags": [],
-          "hasDevUseExtension": false,
-          "hasNonDevUseExtension": true
-        }
-      ],
+      "extensionUsages": [],
       "deps": {
         "platforms": "platforms@0.0.10",
+        "rules_license": "rules_license@0.0.8",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -1166,10 +1130,10 @@
         "ruleClassName": "http_archive",
         "attributes": {
           "urls": [
-            "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.6.1.tar.gz"
+            "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.7.0.tar.gz"
           ],
-          "integrity": "sha256-rt4bYHCawSs0Ye4Ls/oJe1iob7/biO9+n5BCSmkEMWc=",
-          "strip_prefix": "bazel-skylib-1.6.1",
+          "integrity": "sha256-eUiEKJg9H6wzGiSLyoZmBxRH4FgllaVKU4a5reE+eBU=",
+          "strip_prefix": "bazel-skylib-1.7.0",
           "remote_patches": {},
           "remote_patch_strip": 0
         }
@@ -1472,7 +1436,7 @@
         }
       ],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "platforms": "platforms@0.0.10",
         "rules_java": "rules_java@7.6.1",
         "rules_kotlin": "rules_kotlin@1.9.5",
@@ -1505,7 +1469,7 @@
       "deps": {
         "rules_license": "rules_license@0.0.8",
         "rules_python": "rules_python@0.32.2",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -2085,7 +2049,7 @@
       ],
       "deps": {
         "bazel_features": "bazel_features@1.11.0",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "com_google_protobuf": "protobuf@3.19.6",
         "io_bazel_rules_go": "rules_go@0.48.0",
         "rules_proto": "rules_proto@6.0.0",
@@ -2169,7 +2133,7 @@
       "toolchainsToRegister": [],
       "extensionUsages": [],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_cc": "rules_cc@0.0.9",
         "platforms": "platforms@0.0.10",
         "bazel_tools": "bazel_tools@_",
@@ -2345,7 +2309,7 @@
         }
       ],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       },
@@ -2372,7 +2336,7 @@
       "toolchainsToRegister": [],
       "extensionUsages": [],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "zlib": "zlib@1.3.1",
         "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
@@ -2456,7 +2420,7 @@
         }
       ],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "platforms": "platforms@0.0.10",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
@@ -2528,7 +2492,7 @@
         }
       ],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_java": "rules_java@7.6.1",
         "rules_jvm_external": "rules_jvm_external@6.0",
         "rules_license": "rules_license@0.0.8",
@@ -2601,7 +2565,7 @@
       ],
       "deps": {
         "platforms": "platforms@0.0.10",
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "rules_java": "rules_java@7.6.1",
         "rules_python": "rules_python@0.32.2",
         "rules_cc": "rules_cc@0.0.9",
@@ -2790,7 +2754,7 @@
         }
       ],
       "deps": {
-        "bazel_skylib": "bazel_skylib@1.6.1",
+        "bazel_skylib": "bazel_skylib@1.7.0",
         "platforms": "platforms@0.0.10",
         "io_bazel_stardoc": "stardoc@0.6.2",
         "gazelle": "gazelle@0.37.0",
@@ -3579,31 +3543,6 @@
             "bazel_tools"
           ]
         ]
-      }
-    },
-    "@@bazel_skylib~//tests:modules_test.bzl%use_all_repos_test_ext": {
-      "general": {
-        "bzlTransitiveDigest": "rY2EpMYKLh+k8B1wXPzbnlrTfkvV17Bab6lUiQozZR0=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "qux": {
-            "bzlFile": "@@bazel_skylib~//tests:modules_test.bzl",
-            "ruleClassName": "_repo_rule",
-            "attributes": {}
-          },
-          "baz": {
-            "bzlFile": "@@bazel_skylib~//tests:modules_test.bzl",
-            "ruleClassName": "_repo_rule",
-            "attributes": {}
-          }
-        },
-        "moduleExtensionMetadata": {
-          "useAllRepos": "DEV",
-          "reproducible": false
-        },
-        "recordedRepoMappingEntries": []
       }
     },
     "@@bazel_tools//tools/android:android_extensions.bzl%remote_android_tools_extensions": {
@@ -7131,7 +7070,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+              "identifier": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64"
             }
@@ -7143,7 +7082,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:4693cac7f45afd4cd72dc13a13ca4ce76baf00658827bd343fde804d706611b7",
+              "identifier": "sha256:1bc1c769f56334b84120f1ed99cadbe5a3d1bde8b1cb37b19f93a4dd59739f9c",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_base_linux_amd64"
             }
@@ -7164,7 +7103,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:4693cac7f45afd4cd72dc13a13ca4ce76baf00658827bd343fde804d706611b7",
+              "identifier": "sha256:1bc1c769f56334b84120f1ed99cadbe5a3d1bde8b1cb37b19f93a4dd59739f9c",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_base_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_base_linux_arm64"
@@ -7281,7 +7220,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:6e47bdc7e63e6ab015fee507234620e037f2cb056947e29e6b531ead321cffbf",
+              "identifier": "sha256:4d5ce718afd9080850e5bb1610511dc4b32a601dd406175664d881b9d7875f26",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64"
             }
@@ -7379,7 +7318,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+              "identifier": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -7397,7 +7336,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:4693cac7f45afd4cd72dc13a13ca4ce76baf00658827bd343fde804d706611b7",
+              "identifier": "sha256:1bc1c769f56334b84120f1ed99cadbe5a3d1bde8b1cb37b19f93a4dd59739f9c",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_base_linux_arm64"
             }
@@ -7464,7 +7403,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:6e47bdc7e63e6ab015fee507234620e037f2cb056947e29e6b531ead321cffbf",
+              "identifier": "sha256:4d5ce718afd9080850e5bb1610511dc4b32a601dd406175664d881b9d7875f26",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64"
             }
@@ -7500,7 +7439,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:e8e0eceec78e2b35eeca085e98633cb3ea5978b716bb3d766b7bd8f341ebb8d8",
+              "identifier": "sha256:443b6785220c57cd34523b2f288c76c726e688fbf42e5f1df79cd30998e0961b",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -7515,7 +7454,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+              "identifier": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8"
             }
@@ -7528,7 +7467,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:b9fef4cf98aff4a78ec0c41209da0162bfe98d7151bce64425c72d874c802dc9",
+              "identifier": "sha256:9cdef9f720a834dcc531b945e8472ef088851d196abb9c51bcaca6317c453d83",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -7556,7 +7495,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:e8e0eceec78e2b35eeca085e98633cb3ea5978b716bb3d766b7bd8f341ebb8d8",
+              "identifier": "sha256:443b6785220c57cd34523b2f288c76c726e688fbf42e5f1df79cd30998e0961b",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64"
             }
@@ -7568,7 +7507,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:b9fef4cf98aff4a78ec0c41209da0162bfe98d7151bce64425c72d874c802dc9",
+              "identifier": "sha256:9cdef9f720a834dcc531b945e8472ef088851d196abb9c51bcaca6317c453d83",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
             }
@@ -7625,7 +7564,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+              "identifier": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le"
             }
@@ -7718,7 +7657,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:6e47bdc7e63e6ab015fee507234620e037f2cb056947e29e6b531ead321cffbf",
+              "identifier": "sha256:4d5ce718afd9080850e5bb1610511dc4b32a601dd406175664d881b9d7875f26",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_oj_c99runner_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_oj_c99runner_linux_arm64"
@@ -7784,7 +7723,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e101f9db31916a5d4d7d594dd0dd092fb23ab4f499f1d7a7425d1afd4162c4bc",
+              "identifier": "sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x"
             }
