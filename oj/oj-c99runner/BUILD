@@ -1,6 +1,6 @@
 load("@rules_java//java:defs.bzl", "java_binary", "java_library")
-load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 
 java_library(
     name = "lib",
@@ -30,17 +30,15 @@ java_binary(
 pkg_tar(
     name = "oj-c99runner.tar",
     srcs = [":oj-c99runner"],
-    empty_dirs = ["/usr/local/bin/oj-c99runner.runfiles"],
+    empty_dirs = ["oj-c99runner.runfiles/_main"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
-    symlinks = {"_main": "oj-c99runner.runfiles"},
 )
 
 oci_image(
     name = "image",
     base = "//base_images:oj-c99runner",
     entrypoint = ["/usr/local/bin/oj-c99runner"],
-    env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-c99runner.tar"],
     visibility = ["//visibility:public"],
 )

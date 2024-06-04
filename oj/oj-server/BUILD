@@ -115,17 +115,15 @@ java_binary(
 pkg_tar(
     name = "oj-server.tar",
     srcs = [":oj-server"],
-    empty_dirs = ["/usr/local/bin/oj-server.runfiles"],
+    empty_dirs = ["oj-server.runfiles/_main"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
-    symlinks = {"_main": "oj-server.runfiles"},
 )
 
 oci_image(
     name = "image",
     base = "//base_images:base",
     entrypoint = ["/usr/local/bin/oj-server"],
-    env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-server.tar"],
     visibility = ["//visibility:public"],
 )

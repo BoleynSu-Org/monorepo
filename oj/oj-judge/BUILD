@@ -1,8 +1,8 @@
-load("@rules_java//java:defs.bzl", "java_binary")
-load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@io_grpc_grpc_java//:java_grpc_library.bzl", "java_grpc_library")
-load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@rules_proto//proto:defs.bzl", "proto_library")
 
 proto_library(
     name = "task_proto",
@@ -69,17 +69,15 @@ java_binary(
 pkg_tar(
     name = "oj-judge.tar",
     srcs = [":oj-judge"],
-    empty_dirs = ["/usr/local/bin/oj-judge.runfiles"],
+    empty_dirs = ["oj-judge.runfiles/_main"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
-    symlinks = {"_main": "oj-judge.runfiles"},
 )
 
 oci_image(
     name = "image",
     base = "//base_images:base",
     entrypoint = ["/usr/local/bin/oj-judge"],
-    env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":oj-judge.tar"],
     visibility = ["//visibility:public"],
 )

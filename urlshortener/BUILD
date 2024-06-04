@@ -1,6 +1,6 @@
 load("@rules_java//java:defs.bzl", "java_binary")
-load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("@rules_oci//oci:defs.bzl", "oci_image")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 
 java_binary(
     name = "urlshortener",
@@ -25,17 +25,15 @@ java_binary(
 pkg_tar(
     name = "urlshortener.tar",
     srcs = [":urlshortener"],
-    empty_dirs = ["/usr/local/bin/urlshortener.runfiles"],
+    empty_dirs = ["urlshortener.runfiles/_main"],
     include_runfiles = True,
     package_dir = "/usr/local/bin",
-    symlinks = {"_main": "urlshortener.runfiles"},
 )
 
 oci_image(
     name = "image",
     base = "//base_images:base",
     entrypoint = ["/usr/local/bin/urlshortener"],
-    env = {"JAVA_RUNFILES": "/usr/local/bin"},
     tars = [":urlshortener.tar"],
     visibility = ["//visibility:public"],
 )
