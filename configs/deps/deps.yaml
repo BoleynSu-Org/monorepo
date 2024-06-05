@@ -717,12 +717,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240603.094345'
+  version: '20240604.121749'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240603.094345'
-  digest: sha256:cd11eebf95da35848c804374e96535374d97dc311ce4bfeebaa83996df931264
-  updated_at: '2024-06-04'
+  tag: '20240604.121749'
+  digest: sha256:922afd7efa214edae06c86eefce161d4f0eaa600006d7a3a774a2e1bebe4b370
+  updated_at: '2024-06-05'
   platforms:
   - linux/amd64
 - name: io_docker_library_mariadb
@@ -733,8 +733,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:a891b59da43875e5fa2e260da7901b10c5e01e63e26cc33981ffdd9ab2c50d3b
-  updated_at: '2024-06-01'
+  digest: sha256:12244ee83e3c6e934c15c71b7b6028fc4a4413e74dbecbb36a6982417e0d2361
+  updated_at: '2024-06-05'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -768,31 +768,31 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240603.094345'
+  version: '20240604.121749'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240603.094345'
-  digest: sha256:c898066908b449e2fddc6285733c12abde5fc998399903249251894a942ac9d0
-  updated_at: '2024-06-04'
+  tag: '20240604.121749'
+  digest: sha256:45638df3027a48fc64bbe58ea9160da7b08b750dfc5309b999151f556d2f9b9b
+  updated_at: '2024-06-05'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240603.094345'
+  version: '20240604.121749'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240603.094345'
-  digest: sha256:493a9fbdd27057d8bba82b5a69886c93a684ed7327c757e91dd18f467bdabb3c
-  updated_at: '2024-06-04'
+  tag: '20240604.121749'
+  digest: sha256:2649e257d8318377c69d1a1f5154d34ad457dafb2df329b3e5e6299d466aa666
+  updated_at: '2024-06-05'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:4ead275b6df7843b62fa8681652d100646bb667c4d0940b8e584c6c7cf7e86cc
-  version: '20240603.094345'
-  tag: '20240603.094345'
-  updated_at: '2024-06-04'
+  digest: sha256:3e69af75620f372441deef9f5cf3bfe6a988d3795a7603c01039b1e5cd22e0a8
+  version: '20240604.121749'
+  tag: '20240604.121749'
+  updated_at: '2024-06-05'
   platforms:
   - linux/amd64
   - linux/arm64
