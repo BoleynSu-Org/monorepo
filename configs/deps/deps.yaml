@@ -200,11 +200,11 @@ bazel_deps:
   version: 1.0.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 7.1.2
-  url: https://github.com/bazelbuild/bazel/releases/download/7.1.2/bazel-7.1.2-installer-linux-x86_64.sh
+  version: 7.2.0
+  url: https://github.com/bazelbuild/bazel/releases/download/7.2.0/bazel-7.2.0-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: de8a2ddb0d77293c97c4280ea60ce313487dfd1ba88cc7816d16ba640ac2fb3f
-  updated_at: '2024-05-11'
+  sha256: 63434c9d4d352e829d89180a08e04f0e71cca68daf27c382d6f40fa50c48de6a
+  updated_at: '2024-06-10'
   executable: true
   override_updater:
   - type: deps_updater
@@ -259,10 +259,10 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240608.172707'
-  sha256: ea1ac64141a983b941c1b3a6c2294bf64000354e98a1bf1266b30075e8e9c451
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240608.172707/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-06-08'
+  version: '20240610.064653'
+  sha256: 3c044ec30c09d5158ee3e6a1af13c92deb77055f7c02b739fe4552649f41429c
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240610.064653/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-06-10'
   build_file_content: |
     filegroup(
         name = "sysroot",
@@ -717,11 +717,11 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240609.101738'
+  version: '20240610.064653'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240609.101738'
-  digest: sha256:230705815a090e9e4a5355aeb91b0ee24f97a8ba3992f8aa7d36c08db89492a5
+  tag: '20240610.064653'
+  digest: sha256:c6d068d66df2b60a2d03096c9a20309d30535b1e34826b83bcd9b4a03d3c998f
   updated_at: '2024-06-10'
   platforms:
   - linux/amd64
@@ -768,30 +768,30 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240609.101738'
+  version: '20240610.064653'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240609.101738'
-  digest: sha256:9ef12fa7a2eaf0b30d231593519088d2b796a86328af11bc713105a8fd7c550d
+  tag: '20240610.064653'
+  digest: sha256:2371cadde39dad04bf9ca48dd7c1dd6306b5d5f79ca7626ae5bedce3e5103eec
   updated_at: '2024-06-10'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240609.101738'
+  version: '20240610.064653'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240609.101738'
-  digest: sha256:f1e2ba3b9e32afd3f5497d5e61d15aa84549b8c437d34c0f595cdfb8758d6fa8
+  tag: '20240610.064653'
+  digest: sha256:06122bdf83a410c6db7b01dd3a3cda1a3ee7f1b9cb8503feaacdbbd43afb5299
   updated_at: '2024-06-10'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:09aea9c45cbfb3744595c171324d3787b4d3ff9aa7935136eaca7f0ce8408309
-  version: '20240609.101738'
-  tag: '20240609.101738'
+  digest: sha256:0e3670f15e1193787a9137232c0e4c4eb36f85cd42e9c9bc669089860d89219e
+  version: '20240610.064653'
+  tag: '20240610.064653'
   updated_at: '2024-06-10'
   platforms:
   - linux/amd64
