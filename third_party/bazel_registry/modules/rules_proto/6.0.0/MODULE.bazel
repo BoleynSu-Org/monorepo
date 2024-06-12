@@ -15,5 +15,5 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.12.0',
+    version = '1.13.0',
 )

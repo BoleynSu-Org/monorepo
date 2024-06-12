@@ -1,7 +1,15 @@
-load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS_ = "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
 load("//tools/build/rules:genfile.bzl", "genfile")
+
+IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS = {
+    artifact: target
+    for artifact, target in IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS_.items()
+    if target not in [
+        "@com_google_protobuf_javalite//:protobuf_javalite",
+    ]
+}
 
 write_file(
     name = "deps_yaml",
