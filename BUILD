@@ -10,4 +10,5 @@ genfile(
     name = "bazelversion",
     src = "//configs/bazel:bazelversion",
     out = ".bazelversion",
+    headers = [],
 )
