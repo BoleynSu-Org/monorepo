@@ -3916,7 +3916,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "4vnXZHHt84snhh7Ad0eHePkBgcj5MGKQor95hLU7igg=",
-        "usagesDigest": "0sgWmnE/x9+Xsjv0KJEx4i4N25L8BhS65vGoXenRZDI=",
+        "usagesDigest": "Z4N41pTH+b/eelxnD8kzO9keZHDY9KC+b+5rrX4sqOQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

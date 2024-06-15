@@ -1068,7 +1068,7 @@ oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
     [
         oci.pull(
             name = image["name"],
-            image = "{}/{}".format("index.docker.io" if image["registry"] == "docker.io" else image["registry"], image["repository"]),
+            image = "{}/{}".format(image["registry"], image["repository"]),
             digest = image["digest"],
             platforms = image.get("platforms", []),
         ),
