@@ -112,11 +112,13 @@ bazel_deps:
   strip_prefix: bazel-skylib-1.7.1
 - name: rules_jvm_external
   type: http_archive
-  sha256: a566f1c84dbc09c19b3086bdfe9ffc2e02058675067a8286fb11a604508a4a09
-  strip_prefix: rules_jvm_external-6.0
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.0.tar.gz
-  updated_at: '2024-01-19'
-  version: '6.0'
+  sha256: 40add16e054fe719e5850b9ab1ccee29f6dce35bf9bbbb0853cc67d56f6bbbc2
+  strip_prefix: rules_jvm_external-6.1
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.1.tar.gz
+  updated_at: '2024-06-15'
+  version: '6.1'
+  patches:
+  - '@boleynsu_org//third_party/rules_jvm_external:bzlmod.patch'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.0.0.tar.gz

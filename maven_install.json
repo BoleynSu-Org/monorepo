@@ -1789,5 +1789,247 @@
       "org.wildfly.common:wildfly-common"
     ]
   },
+  "services": {
+    "com.github.waffle:waffle-jna": {
+      "waffle.util.cache.CacheSupplier": [
+        "waffle.util.cache.CaffeineCacheSupplier"
+      ]
+    },
+    "com.google.auto.value:auto-value": {
+      "autovalue.shaded.kotlinx.metadata.internal.extensions.MetadataExtensions": [
+        "autovalue.shaded.kotlinx.metadata.jvm.internal.JvmMetadataExtensions"
+      ],
+      "com.google.auto.value.extension.AutoValueExtension": [
+        "com.google.auto.value.extension.memoized.processor.MemoizeExtension",
+        "com.google.auto.value.extension.serializable.processor.SerializableAutoValueExtension",
+        "com.google.auto.value.extension.toprettystring.processor.ToPrettyStringExtension"
+      ],
+      "com.google.auto.value.extension.serializable.serializer.interfaces.SerializerExtension": [
+        "com.google.auto.value.extension.serializable.serializer.impl.ImmutableListSerializerExtension",
+        "com.google.auto.value.extension.serializable.serializer.impl.ImmutableMapSerializerExtension",
+        "com.google.auto.value.extension.serializable.serializer.impl.OptionalSerializerExtension"
+      ],
+      "javax.annotation.processing.Processor": [
+        "com.google.auto.value.extension.memoized.processor.MemoizedValidator",
+        "com.google.auto.value.extension.toprettystring.processor.ToPrettyStringValidator",
+        "com.google.auto.value.processor.AutoAnnotationProcessor",
+        "com.google.auto.value.processor.AutoBuilderProcessor",
+        "com.google.auto.value.processor.AutoOneOfProcessor",
+        "com.google.auto.value.processor.AutoValueBuilderProcessor",
+        "com.google.auto.value.processor.AutoValueProcessor"
+      ]
+    },
+    "io.netty:netty-common": {
+      "reactor.blockhound.integration.BlockHoundIntegration": [
+        "io.netty.util.internal.Hidden$NettyBlockHoundIntegration"
+      ]
+    },
+    "io.undertow:undertow-core": {
+      "io.undertow.attribute.ExchangeAttributeBuilder": [
+        "io.undertow.attribute.AuthenticationTypeExchangeAttribute$Builder",
+        "io.undertow.attribute.BytesSentAttribute$Builder",
+        "io.undertow.attribute.CookieAttribute$Builder",
+        "io.undertow.attribute.DateTimeAttribute$Builder",
+        "io.undertow.attribute.HostAndPortAttribute$Builder",
+        "io.undertow.attribute.IdentUsernameAttribute$Builder",
+        "io.undertow.attribute.LocalIPAttribute$Builder",
+        "io.undertow.attribute.LocalPortAttribute$Builder",
+        "io.undertow.attribute.LocalServerNameAttribute$Builder",
+        "io.undertow.attribute.NullAttribute$Builder",
+        "io.undertow.attribute.PathParameterAttribute$Builder",
+        "io.undertow.attribute.PredicateContextAttribute$Builder",
+        "io.undertow.attribute.QueryParameterAttribute$Builder",
+        "io.undertow.attribute.QueryStringAttribute$Builder",
+        "io.undertow.attribute.RelativePathAttribute$Builder",
+        "io.undertow.attribute.RemoteHostAttribute$Builder",
+        "io.undertow.attribute.RemoteIPAttribute$Builder",
+        "io.undertow.attribute.RemoteObfuscatedIPAttribute$Builder",
+        "io.undertow.attribute.RemoteUserAttribute$Builder",
+        "io.undertow.attribute.RequestCookieAttribute$Builder",
+        "io.undertow.attribute.RequestHeaderAttribute$Builder",
+        "io.undertow.attribute.RequestLineAttribute$Builder",
+        "io.undertow.attribute.RequestMethodAttribute$Builder",
+        "io.undertow.attribute.RequestPathAttribute$Builder",
+        "io.undertow.attribute.RequestProtocolAttribute$Builder",
+        "io.undertow.attribute.RequestSchemeAttribute$Builder",
+        "io.undertow.attribute.RequestURLAttribute$Builder",
+        "io.undertow.attribute.ResolvedPathAttribute$Builder",
+        "io.undertow.attribute.ResponseCodeAttribute$Builder",
+        "io.undertow.attribute.ResponseCookieAttribute$Builder",
+        "io.undertow.attribute.ResponseHeaderAttribute$Builder",
+        "io.undertow.attribute.ResponseReasonPhraseAttribute$Builder",
+        "io.undertow.attribute.ResponseTimeAttribute$Builder",
+        "io.undertow.attribute.SecureExchangeAttribute$Builder",
+        "io.undertow.attribute.SslCipherAttribute$Builder",
+        "io.undertow.attribute.SslClientCertAttribute$Builder",
+        "io.undertow.attribute.SslSessionIdAttribute$Builder",
+        "io.undertow.attribute.StoredResponse$Builder",
+        "io.undertow.attribute.ThreadNameAttribute$Builder",
+        "io.undertow.attribute.TransportProtocolAttribute$Builder"
+      ],
+      "io.undertow.client.ClientProvider": [
+        "io.undertow.client.ajp.AjpClientProvider",
+        "io.undertow.client.http.HttpClientProvider",
+        "io.undertow.client.http2.Http2ClearClientProvider",
+        "io.undertow.client.http2.Http2ClientProvider",
+        "io.undertow.client.http2.Http2PriorKnowledgeClientProvider"
+      ],
+      "io.undertow.predicate.PredicateBuilder": [
+        "io.undertow.predicate.AuthenticationRequiredPredicate$Builder",
+        "io.undertow.predicate.ContainsPredicate$Builder",
+        "io.undertow.predicate.EqualsPredicate$Builder",
+        "io.undertow.predicate.ExistsPredicate$Builder",
+        "io.undertow.predicate.IdempotentPredicate$Builder",
+        "io.undertow.predicate.MaxContentSizePredicate$Builder",
+        "io.undertow.predicate.MethodPredicate$Builder",
+        "io.undertow.predicate.MinContentSizePredicate$Builder",
+        "io.undertow.predicate.PathMatchPredicate$Builder",
+        "io.undertow.predicate.PathPrefixPredicate$Builder",
+        "io.undertow.predicate.PathSuffixPredicate$Builder",
+        "io.undertow.predicate.PathTemplatePredicate$Builder",
+        "io.undertow.predicate.RegularExpressionPredicate$Builder",
+        "io.undertow.predicate.RequestLargerThanPredicate$Builder",
+        "io.undertow.predicate.RequestSmallerThanPredicate$Builder",
+        "io.undertow.predicate.SecurePredicate$Builder"
+      ],
+      "io.undertow.protocols.alpn.ALPNEngineManager": [
+        "io.undertow.protocols.alpn.DefaultAlpnEngineManager",
+        "io.undertow.protocols.ssl.SNIAlpnEngineManager"
+      ],
+      "io.undertow.protocols.alpn.ALPNProvider": [
+        "io.undertow.protocols.alpn.ModularJdkAlpnProvider",
+        "io.undertow.protocols.alpn.OpenSSLAlpnProvider"
+      ],
+      "io.undertow.server.handlers.builder.HandlerBuilder": [
+        "io.undertow.predicate.PredicatesHandler$DoneHandlerBuilder",
+        "io.undertow.predicate.PredicatesHandler$RestartHandlerBuilder",
+        "io.undertow.server.JvmRouteHandler$Builder",
+        "io.undertow.server.handlers.AccessControlListHandler$Builder",
+        "io.undertow.server.handlers.ActiveRequestTrackerHandler$Builder",
+        "io.undertow.server.handlers.AllowedMethodsHandler$Builder",
+        "io.undertow.server.handlers.BlockingHandler$Builder",
+        "io.undertow.server.handlers.ByteRangeHandler$Builder",
+        "io.undertow.server.handlers.CanonicalPathHandler$Builder",
+        "io.undertow.server.handlers.DisableCacheHandler$Builder",
+        "io.undertow.server.handlers.DisallowedMethodsHandler$Builder",
+        "io.undertow.server.handlers.ForwardedHandler$Builder",
+        "io.undertow.server.handlers.HttpContinueAcceptingHandler$Builder",
+        "io.undertow.server.handlers.HttpTraceHandler$Builder",
+        "io.undertow.server.handlers.IPAddressAccessControlHandler$Builder",
+        "io.undertow.server.handlers.JDBCLogHandler$Builder",
+        "io.undertow.server.handlers.LearningPushHandler$Builder",
+        "io.undertow.server.handlers.LocalNameResolvingHandler$Builder",
+        "io.undertow.server.handlers.PathSeparatorHandler$Builder",
+        "io.undertow.server.handlers.PeerNameResolvingHandler$Builder",
+        "io.undertow.server.handlers.ProxyPeerAddressHandler$Builder",
+        "io.undertow.server.handlers.RedirectHandler$Builder",
+        "io.undertow.server.handlers.RequestBufferingHandler$Builder",
+        "io.undertow.server.handlers.RequestDumpingHandler$Builder",
+        "io.undertow.server.handlers.RequestLimitingHandler$Builder",
+        "io.undertow.server.handlers.ResponseRateLimitingHandler$Builder",
+        "io.undertow.server.handlers.SSLHeaderHandler$Builder",
+        "io.undertow.server.handlers.SameSiteCookieHandler$Builder",
+        "io.undertow.server.handlers.SecureCookieHandler$Builder",
+        "io.undertow.server.handlers.SetAttributeHandler$Builder",
+        "io.undertow.server.handlers.SetAttributeHandler$ClearBuilder",
+        "io.undertow.server.handlers.SetErrorHandler$Builder",
+        "io.undertow.server.handlers.SetHeaderHandler$Builder",
+        "io.undertow.server.handlers.StoredResponseHandler$Builder",
+        "io.undertow.server.handlers.StuckThreadDetectionHandler$Builder",
+        "io.undertow.server.handlers.URLDecodingHandler$Builder",
+        "io.undertow.server.handlers.accesslog.AccessLogHandler$Builder",
+        "io.undertow.server.handlers.builder.ResponseCodeHandlerBuilder",
+        "io.undertow.server.handlers.builder.RewriteHandlerBuilder",
+        "io.undertow.server.handlers.encoding.EncodingHandler$Builder",
+        "io.undertow.server.handlers.encoding.RequestEncodingHandler$Builder",
+        "io.undertow.server.handlers.error.FileErrorPageHandler$Builder",
+        "io.undertow.server.handlers.form.EagerFormParsingHandler$Builder",
+        "io.undertow.server.handlers.proxy.ProxyHandlerBuilder",
+        "io.undertow.server.handlers.resource.ResourceHandler$Builder"
+      ]
+    },
+    "org.apache.tomcat.embed:tomcat-embed-el": {
+      "jakarta.el.ExpressionFactory": [
+        "org.apache.el.ExpressionFactoryImpl"
+      ]
+    },
+    "org.apache.tomcat.embed:tomcat-embed-jasper": {
+      "jakarta.servlet.ServletContainerInitializer": [
+        "org.apache.jasper.servlet.JasperInitializer"
+      ]
+    },
+    "org.eclipse.jdt:ecj": {
+      "javax.tools.JavaCompiler": [
+        "org.eclipse.jdt.internal.compiler.tool.EclipseCompiler"
+      ]
+    },
+    "org.jboss.xnio:xnio-nio": {
+      "org.xnio.XnioProvider": [
+        "org.xnio.nio.NioXnioProvider"
+      ]
+    },
+    "org.mariadb.jdbc:mariadb-java-client": {
+      "java.sql.Driver": [
+        "org.mariadb.jdbc.Driver"
+      ],
+      "org.mariadb.jdbc.plugin.AuthenticationPlugin": [
+        "org.mariadb.jdbc.plugin.authentication.addon.ClearPasswordPlugin",
+        "org.mariadb.jdbc.plugin.authentication.addon.SendGssApiAuthPacket",
+        "org.mariadb.jdbc.plugin.authentication.standard.CachingSha2PasswordPlugin",
+        "org.mariadb.jdbc.plugin.authentication.standard.Ed25519PasswordPlugin",
+        "org.mariadb.jdbc.plugin.authentication.standard.NativePasswordPlugin",
+        "org.mariadb.jdbc.plugin.authentication.standard.SendPamAuthPacket"
+      ],
+      "org.mariadb.jdbc.plugin.Codec": [
+        "org.mariadb.jdbc.plugin.codec.BigDecimalCodec",
+        "org.mariadb.jdbc.plugin.codec.BigIntegerCodec",
+        "org.mariadb.jdbc.plugin.codec.BitSetCodec",
+        "org.mariadb.jdbc.plugin.codec.BlobCodec",
+        "org.mariadb.jdbc.plugin.codec.BooleanCodec",
+        "org.mariadb.jdbc.plugin.codec.ByteArrayCodec",
+        "org.mariadb.jdbc.plugin.codec.ByteCodec",
+        "org.mariadb.jdbc.plugin.codec.ClobCodec",
+        "org.mariadb.jdbc.plugin.codec.DateCodec",
+        "org.mariadb.jdbc.plugin.codec.DoubleCodec",
+        "org.mariadb.jdbc.plugin.codec.DurationCodec",
+        "org.mariadb.jdbc.plugin.codec.FloatCodec",
+        "org.mariadb.jdbc.plugin.codec.GeometryCollectionCodec",
+        "org.mariadb.jdbc.plugin.codec.InstantCodec",
+        "org.mariadb.jdbc.plugin.codec.IntCodec",
+        "org.mariadb.jdbc.plugin.codec.LineStringCodec",
+        "org.mariadb.jdbc.plugin.codec.LocalDateCodec",
+        "org.mariadb.jdbc.plugin.codec.LocalDateTimeCodec",
+        "org.mariadb.jdbc.plugin.codec.LocalTimeCodec",
+        "org.mariadb.jdbc.plugin.codec.LongCodec",
+        "org.mariadb.jdbc.plugin.codec.MultiLinestringCodec",
+        "org.mariadb.jdbc.plugin.codec.MultiPointCodec",
+        "org.mariadb.jdbc.plugin.codec.MultiPolygonCodec",
+        "org.mariadb.jdbc.plugin.codec.OffsetDateTimeCodec",
+        "org.mariadb.jdbc.plugin.codec.PointCodec",
+        "org.mariadb.jdbc.plugin.codec.PolygonCodec",
+        "org.mariadb.jdbc.plugin.codec.ReaderCodec",
+        "org.mariadb.jdbc.plugin.codec.ShortCodec",
+        "org.mariadb.jdbc.plugin.codec.StreamCodec",
+        "org.mariadb.jdbc.plugin.codec.StringCodec",
+        "org.mariadb.jdbc.plugin.codec.TimeCodec",
+        "org.mariadb.jdbc.plugin.codec.TimestampCodec",
+        "org.mariadb.jdbc.plugin.codec.UuidCodec",
+        "org.mariadb.jdbc.plugin.codec.ZonedDateTimeCodec"
+      ],
+      "org.mariadb.jdbc.plugin.CredentialPlugin": [
+        "org.mariadb.jdbc.plugin.credential.aws.AwsIamCredentialPlugin",
+        "org.mariadb.jdbc.plugin.credential.env.EnvCredentialPlugin",
+        "org.mariadb.jdbc.plugin.credential.system.PropertiesCredentialPlugin"
+      ],
+      "org.mariadb.jdbc.plugin.TlsSocketPlugin": [
+        "org.mariadb.jdbc.plugin.tls.main.DefaultTlsSocketPlugin"
+      ]
+    },
+    "org.slf4j:jcl-over-slf4j": {
+      "org.apache.commons.logging.LogFactory": [
+        "org.apache.commons.logging.impl.SLF4JLogFactory"
+      ]
+    }
+  },
   "version": "2"
 }

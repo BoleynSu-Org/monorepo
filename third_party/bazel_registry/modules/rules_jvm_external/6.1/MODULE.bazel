@@ -1,6 +1,7 @@
 module(
     name = 'rules_jvm_external',
-    version = '6.0',
+    bazel_compatibility = ['>=7.0.0'],
+    version = '6.1',
 )
 
 bazel_dep(
@@ -21,6 +22,11 @@ bazel_dep(
 bazel_dep(
     name = 'rules_kotlin',
     version = '1.9.5',
+)
+
+bazel_dep(
+    name = 'rules_android',
+    version = '0.1.1',
 )
 
 bazel_dep(
@@ -47,18 +53,14 @@ maven = use_extension(
 
 maven.install(
     name = 'rules_jvm_external_deps',
-    artifacts = ['com.google.auth:google-auth-library-credentials:1.19.0', 'com.google.auth:google-auth-library-oauth2-http:1.19.0', 'com.google.cloud:google-cloud-core:2.22.0', 'com.google.cloud:google-cloud-storage:2.26.1', 'com.google.code.gson:gson:2.10.1', 'com.google.googlejavaformat:google-java-format:1.17.0', 'com.google.guava:guava:32.1.2-jre', 'org.apache.maven:maven-artifact:3.9.4', 'software.amazon.awssdk:s3:2.20.128'],
+    artifacts = ['com.google.auth:google-auth-library-credentials:1.23.0', 'com.google.auth:google-auth-library-oauth2-http:1.23.0', 'com.google.cloud:google-cloud-core:2.36.1', 'com.google.cloud:google-cloud-storage:2.36.1', 'com.google.code.gson:gson:2.10.1', 'com.google.googlejavaformat:google-java-format:1.22.0', 'com.google.guava:guava:33.1.0-jre', 'org.apache.maven:maven-artifact:3.9.6', 'org.apache.maven:maven-core:3.9.6', 'org.apache.maven:maven-model:3.9.6', 'org.apache.maven:maven-model-builder:3.9.6', 'org.apache.maven:maven-settings:3.9.6', 'org.apache.maven:maven-settings-builder:3.9.6', 'org.apache.maven:maven-resolver-provider:3.9.6', 'org.apache.maven.resolver:maven-resolver-api:1.9.18', 'org.apache.maven.resolver:maven-resolver-impl:1.9.18', 'org.apache.maven.resolver:maven-resolver-connector-basic:1.9.18', 'org.apache.maven.resolver:maven-resolver-spi:1.9.18', 'org.apache.maven.resolver:maven-resolver-transport-file:1.9.18', 'org.apache.maven.resolver:maven-resolver-transport-http:1.9.18', 'org.apache.maven.resolver:maven-resolver-util:1.9.18', 'org.codehaus.plexus:plexus-cipher:2.1.0', 'org.codehaus.plexus:plexus-sec-dispatcher:2.0', 'org.fusesource.jansi:jansi:2.4.1', 'org.slf4j:jul-to-slf4j:2.0.12', 'org.slf4j:log4j-over-slf4j:2.0.12', 'org.slf4j:slf4j-simple:2.0.12', 'software.amazon.awssdk:s3:2.25.23'],
+    fail_if_repin_required = True,
+    fetch_sources = True,
     lock_file = '//:rules_jvm_external_deps_install.json',
-)
-
-maven.install(
-    name = 'maven_jar_migrator',
-    artifacts = ['com.google.guava:guava:28.0-jre'],
 )
 
 use_repo(
     maven,
-    'maven_jar_migrator',
     'rules_jvm_external_deps',
     'unpinned_rules_jvm_external_deps',
 )
@@ -138,4 +140,11 @@ http_file(
     downloaded_file_path = 'google-api-services-compute-v1-rev235-1.25.0-javadoc.jar',
     sha256 = 'b03be5ee8effba3bfbaae53891a9c01d70e2e3bd82ad8889d78e641b22bd76c2',
     urls = ['https://repo1.maven.org/maven2/com/google/apis/google-api-services-compute/v1-rev235-1.25.0/google-api-services-compute-v1-rev235-1.25.0-javadoc.jar'],
+)
+
+http_file(
+    name = 'lombok_for_test',
+    downloaded_file_path = 'lombok-1.18.22.jar',
+    sha256 = 'ecef1581411d7a82cc04281667ee0bac5d7c0a5aae74cfc38430396c91c31831',
+    urls = ['https://repo1.maven.org/maven2/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar'],
 )
