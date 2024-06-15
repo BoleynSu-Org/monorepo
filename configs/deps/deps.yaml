@@ -259,10 +259,10 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240614.030623'
-  sha256: 2c6bc6e23ee2fc0eadcaf97a8f9ecb8f831c9f684c962bc422354cfee1bac5a0
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240614.030623/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-06-14'
+  version: '20240615.032524'
+  sha256: 8386802f97d373a005674bef0eee0697219150bb2e08bffa307ab8fd149a4651
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240615.032524/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-06-15'
   build_file_content: |
     filegroup(
         name = "sysroot",
@@ -710,11 +710,11 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240614.103325'
+  version: '20240615.083836'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240614.103325'
-  digest: sha256:7d95f6a4451229b9cd83eb3a9e1f632be2b47943e9e8ae3eda0a952e1488cbf4
+  tag: '20240615.083836'
+  digest: sha256:5930e2e8a4bfe59cfb7219fea1beadac2eb9acc887f7fe153d58e7cc8624d246
   updated_at: '2024-06-15'
   platforms:
   - linux/amd64
