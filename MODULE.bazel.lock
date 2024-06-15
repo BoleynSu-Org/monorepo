@@ -3916,7 +3916,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "4vnXZHHt84snhh7Ad0eHePkBgcj5MGKQor95hLU7igg=",
-        "usagesDigest": "80FLpoLzDg8oJ4y2IxHXHQGiK3/zPI2CZv6kkBEgeFc=",
+        "usagesDigest": "8pZ355YpAoGmEibw6gdOPoHKgALzOgRymSoaS8k4ie0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -4297,7 +4297,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:b0a8bdcc58286dab03c4342cb8882f40c3ff0c5eff18ef256f781b2784a8709d",
+              "identifier": "sha256:e3e5baf71671c080fb492c9f590564b235c487a651a47a1172f6692ede729c59",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -4325,7 +4325,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:c366d24406fb58db5308c2dd83c7c3ecbb3dbc60670c9f7d8379d592fb336810",
+              "identifier": "sha256:7d95f6a4451229b9cd83eb3a9e1f632be2b47943e9e8ae3eda0a952e1488cbf4",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -4353,7 +4353,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:b0a8bdcc58286dab03c4342cb8882f40c3ff0c5eff18ef256f781b2784a8709d",
+              "identifier": "sha256:e3e5baf71671c080fb492c9f590564b235c487a651a47a1172f6692ede729c59",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64"
             }
@@ -4365,7 +4365,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:c366d24406fb58db5308c2dd83c7c3ecbb3dbc60670c9f7d8379d592fb336810",
+              "identifier": "sha256:7d95f6a4451229b9cd83eb3a9e1f632be2b47943e9e8ae3eda0a952e1488cbf4",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
             }
