@@ -5,3 +5,9 @@ genfile(
     src = "//configs/bazel:bazelrc",
     out = ".bazelrc",
 )
+
+genfile(
+    name = "bazelversion",
+    src = "//configs/bazel:bazelversion",
+    out = ".bazelversion",
+)

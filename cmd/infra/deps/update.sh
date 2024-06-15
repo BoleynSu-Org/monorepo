@@ -11,6 +11,7 @@ fi
 export REPIN=1
 
 bazel run --lockfile_mode=update //configs/deps:deps_yaml.genfile
+bazel run --lockfile_mode=update //:bazelversion.genfile
 bazel run --lockfile_mode=update @unpinned_maven//:pin
 bazel run --lockfile_mode=update @unpinned_pip//:pin
 bazel run --lockfile_mode=update //third_party/io_grpc_grpc_java:module_bazel.genfile

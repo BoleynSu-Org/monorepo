@@ -537,7 +537,7 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "aME0tyUxYd+PGhICmzT9zEnIgZNf05hZhsfDD5v0JXM=",
-        "usagesDigest": "dwDLJqcgkoPbfSGtTZQCySU35Ckx3UzM/bFExYdaWNE=",
+        "usagesDigest": "T2ulLObP98ydFYeFcyo2+5v6s7MNlphwCzFidSJxmGQ=",
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "cafb5d2d8119391eb2b322ce3840d3352ea82d496bdb8cbd4b6779ec4d044dda",
