@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/6.0.0.tar.gz",
-  "integrity": "sha256-MD6G5yKlIPbzJqULQc/Ba5j+bRlVzkZkKlt6Z8EcD10=",
-  "strip_prefix": "rules_proto-6.0.0"
-}
