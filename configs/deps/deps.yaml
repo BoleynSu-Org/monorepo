@@ -24,11 +24,11 @@ bazel_deps:
       remote_jdk21_repos()
 - name: rules_python
   type: http_archive
-  sha256: 5bcfa3852444d084b1d3262714cec151b797648d4d444ea9895c7c7ed79cd715
-  strip_prefix: rules_python-0.33.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.33.1.tar.gz
-  updated_at: '2024-06-13'
-  version: 0.33.1
+  sha256: e3f1cc7a04d9b09635afb3130731ed82b5f58eadc8233d4efb59944d92ffc06f
+  strip_prefix: rules_python-0.33.2
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.33.2.tar.gz
+  updated_at: '2024-06-19'
+  version: 0.33.2
   load_deps: |
     load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")
     load("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")
@@ -261,9 +261,9 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240619.080251'
-  sha256: ab875f5d7125c87edfc6ed95e2bd0805203e713166d023f2d63c63a14da354fd
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240619.080251/sysroot_linux_x86_64.tar.gz
+  version: '20240619.093614'
+  sha256: eb3957ba65ef1d0a449bc63c52520a885a92d63d7d99fe34f3f4665f93042e7f
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240619.093614/sysroot_linux_x86_64.tar.gz
   updated_at: '2024-06-19'
   build_file_content: |
     filegroup(
