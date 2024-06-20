@@ -12,11 +12,11 @@ bazel_deps:
   updated_at: '2023-09-22'
 - name: rules_java
   type: http_archive
-  sha256: f9906361daa04dc5041dfcd3c7f2622e9d6a160ae27ecf90de6a4c7cfd8799a0
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.4.tar.gz
-  strip_prefix: rules_java-7.6.4
-  updated_at: '2024-06-17'
-  version: 7.6.4
+  sha256: 33105cd67e9d5504dae44d29de313dc1661d5b320d01bbc3cab1f4cfa6ef8182
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.6.5.tar.gz
+  strip_prefix: rules_java-7.6.5
+  updated_at: '2024-06-20'
+  version: 7.6.5
   load_deps: |
     load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")
     def deps():
@@ -712,12 +712,12 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20240619.080251'
+  version: '20240620.064625'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20240619.080251'
-  digest: sha256:6e923ec4c21e1fd4f1df30c321f87bb4b99a67c93c408779de6f9d7200679830
-  updated_at: '2024-06-19'
+  tag: '20240620.064625'
+  digest: sha256:8073dd404e3ce5a36fe3d7c985177944af3100161228ce6c5116189874914f53
+  updated_at: '2024-06-20'
   platforms:
   - linux/amd64
 - name: io_docker_library_mariadb
@@ -763,31 +763,31 @@ container_deps:
   - linux/arm64
   - linux/arm/v7
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20240619.080251'
+  version: '20240620.064625'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20240619.080251'
-  digest: sha256:c8218fb3354758804c44fe161dcf045373c25488925f5e60ff302f0a2bc1afa1
-  updated_at: '2024-06-19'
+  tag: '20240620.064625'
+  digest: sha256:75843eba6bf543b08e011c115bc4d7e4998278eabf685d8f08272e5069a4fef8
+  updated_at: '2024-06-20'
   platforms:
   - linux/amd64
   - linux/arm64
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20240619.080251'
+  version: '20240620.064625'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20240619.080251'
-  digest: sha256:6901843383ccfe39990842a259881b0029404a3ea0511b0e8f9fd3c577a7a3ce
-  updated_at: '2024-06-19'
+  tag: '20240620.064625'
+  digest: sha256:d0a77b793cc06e4baf907e60d499443a6baf800de7a41f66357c78a95012eaa5
+  updated_at: '2024-06-20'
   platforms:
   - linux/amd64
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:bd79962e2c3c12bbd4049ca2df010252c8350924b1e5b7951f316580a5bccf7d
-  version: '20240619.080251'
-  tag: '20240619.080251'
-  updated_at: '2024-06-19'
+  digest: sha256:7263c916e3b334951510451782a31f0b7b5c44917a8897bb24489022a3937242
+  version: '20240620.064625'
+  tag: '20240620.064625'
+  updated_at: '2024-06-20'
   platforms:
   - linux/amd64
   - linux/arm64
