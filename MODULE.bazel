@@ -56,11 +56,11 @@ DEPS = {
             "name": "io_bazel_rules_go",
             "module_name": "rules_go",
             "type": "http_archive",
-            "sha256": "05915ecd740d09b13ed34581160fdba342b15d19aa0a4b80612e10a14cf66bd3",
-            "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.48.0.tar.gz",
-            "updated_at": "2024-05-27",
-            "version": "v0.48.0",
-            "strip_prefix": "rules_go-0.48.0",
+            "sha256": "651af142ba9dc2c2538d884d0d2a1fb8ab82f72fd570e8e457dc75fa9fa2ebdd",
+            "url": "https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.48.1.tar.gz",
+            "updated_at": "2024-06-20",
+            "version": "v0.48.1",
+            "strip_prefix": "rules_go-0.48.1",
             "load_deps": 'load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk")\nload("@io_bazel_rules_go//go/private:nogo.bzl", "go_register_nogo", "DEFAULT_NOGO")\nload("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")\ndef deps():\n  go_register_nogo(\n      name = "io_bazel_rules_nogo",\n      nogo = DEFAULT_NOGO,\n  )\n  go_download_sdk(\n      name = "go_linux_amd64",\n      goos = "linux",\n      goarch = "amd64",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n',
             "patch_cmds": [
                 "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl"
@@ -469,13 +469,13 @@ DEPS = {
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
-            "version": "10.1.24",
-            "updated_at": "2024-05-13",
+            "version": "10.1.25",
+            "updated_at": "2024-06-20",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-            "version": "10.1.24",
-            "updated_at": "2024-05-13",
+            "version": "10.1.25",
+            "updated_at": "2024-06-20",
         },
         {"name": "org.webjars:jquery", "version": "3.7.1", "updated_at": "2023-09-02"},
         {
