@@ -246,10 +246,10 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "20240619.093614",
-            "sha256": "eb3957ba65ef1d0a449bc63c52520a885a92d63d7d99fe34f3f4665f93042e7f",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240619.093614/sysroot_linux_x86_64.tar.gz",
-            "updated_at": "2024-06-19",
+            "version": "20240620.135118",
+            "sha256": "9d16a462032874c11a953581f98a377ddc1258b3cdd6a34a97e5b4a5bb26d32a",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240620.135118/sysroot_linux_x86_64.tar.gz",
+            "updated_at": "2024-06-20",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
             "patch_cmds": ["chmod -R 755 ."],
         },
@@ -346,10 +346,10 @@ DEPS = {
         {
             "name": "stardoc",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/stardoc/releases/download/0.6.2/stardoc-0.6.2.tar.gz",
-            "sha256": "62bd2e60216b7a6fec3ac79341aa201e0956477e7c8f6ccc286f279ad1d96432",
-            "version": "0.6.2",
-            "updated_at": "2024-01-06",
+            "url": "https://github.com/bazelbuild/stardoc/releases/download/0.7.0/stardoc-0.7.0.tar.gz",
+            "sha256": "dd7f32f4fe2537ce2452c51f816a5962d48888a5b07de2c195f3b3da86c545d3",
+            "version": "0.7.0",
+            "updated_at": "2024-06-20",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -487,9 +487,9 @@ DEPS = {
         },
         {
             "name": "io.undertow:undertow-core",
-            "version": "2.3.13.Final",
+            "version": "2.3.14.Final",
             "version_regex": "(.*)\\.Final",
-            "updated_at": "2024-04-19",
+            "updated_at": "2024-06-20",
         },
         {
             "name": "commons-validator:commons-validator",

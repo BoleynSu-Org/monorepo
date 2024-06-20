@@ -537,11 +537,11 @@
     "@@rules_jvm_external~//:extensions.bzl%maven": {
       "general": {
         "bzlTransitiveDigest": "2VPO5oohJszy/+49ErhD2MM5UoVfTeuJyPje+wZQ8pw=",
-        "usagesDigest": "t7sVRV6fEGdirHZHIvIUvg69/wpmHuv+NZUUQ0R6hwE=",
+        "usagesDigest": "oXSMQnr1C3QhGYNsTRsuoNgKD1em5YXY+8MV1j0oX5k=",
         "recordedFileInputs": {
           "@@stardoc~//maven_install.json": "de0bfa778b4ed6aebb77509362dd87ab8d20fc7c7c18d2a7429cdfee03949a21",
           "@@rules_jvm_external~//rules_jvm_external_deps_install.json": "0bfbc915d9155df44d7a3b216e8f3c1fbcd110e358dd07637dc393583a5227e8",
-          "@@//maven_install.json": "974aacb50e4dcd51472a0b97244dda87fbe33ed91212b67b27425eb9d407b2b8"
+          "@@//maven_install.json": "644fa40f74de860629d36a5d5eccb12b297afb37d127cfd57b5e4fbeb10562c2"
         },
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1037,7 +1037,7 @@
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.25\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
-                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
+                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.14.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.9.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.17.0\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
@@ -1159,7 +1159,7 @@
                 "{ \"group\": \"org.apache.tomcat.embed\", \"artifact\": \"tomcat-embed-jasper\", \"version\": \"10.1.25\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"jquery\", \"version\": \"3.7.1\" }",
                 "{ \"group\": \"org.webjars\", \"artifact\": \"bootstrap\", \"version\": \"3.4.1\" }",
-                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.13.Final\" }",
+                "{ \"group\": \"io.undertow\", \"artifact\": \"undertow-core\", \"version\": \"2.3.14.Final\" }",
                 "{ \"group\": \"commons-validator\", \"artifact\": \"commons-validator\", \"version\": \"1.9.0\" }",
                 "{ \"group\": \"commons-codec\", \"artifact\": \"commons-codec\", \"version\": \"1.17.0\" }",
                 "{ \"group\": \"org.wildfly.common\", \"artifact\": \"wildfly-common\", \"version\": \"1.7.0.Final\" }",
@@ -1449,6 +1449,17 @@
               "downloaded_file_path": "v1/software/amazon/awssdk/identity-spi/2.25.23/identity-spi-2.25.23.jar"
             }
           },
+          "io_undertow_undertow_core_2_3_14_Final": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "857584b5386d7c6c3860c4cb00bc268e10139443b0738609f8248fe1fd0274bd",
+              "urls": [
+                "https://repo1.maven.org/maven2/io/undertow/undertow-core/2.3.14.Final/undertow-core-2.3.14.Final.jar"
+              ],
+              "downloaded_file_path": "v1/io/undertow/undertow-core/2.3.14.Final/undertow-core-2.3.14.Final.jar"
+            }
+          },
           "software_amazon_awssdk_aws_core_2_25_23": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -1559,6 +1570,17 @@
                 "https://repo1.maven.org/maven2/com/google/auto/value/auto-value-annotations/1.10.4/auto-value-annotations-1.10.4.jar"
               ],
               "downloaded_file_path": "v1/com/google/auto/value/auto-value-annotations/1.10.4/auto-value-annotations-1.10.4.jar"
+            }
+          },
+          "org_jboss_xnio_xnio_nio_3_8_16_Final": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "cee1ad9674ff4615f492a314a986c77b7c223ae03255c77aacc60c6cea62d59c",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/jboss/xnio/xnio-nio/3.8.16.Final/xnio-nio-3.8.16.Final.jar"
+              ],
+              "downloaded_file_path": "v1/org/jboss/xnio/xnio-nio/3.8.16.Final/xnio-nio-3.8.16.Final.jar"
             }
           },
           "com_google_j2objc_j2objc_annotations_1_3": {
@@ -2544,17 +2566,6 @@
             "attributes": {
               "generating_repository": "boleynsu_org_maven",
               "target_name": "io_netty_netty_codec_socks"
-            }
-          },
-          "io_undertow_undertow_core_2_3_13_Final": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "aee36ab37cec524c4f74a08154682da1d343bff772df66d4081cd08ef354df5b",
-              "urls": [
-                "https://repo1.maven.org/maven2/io/undertow/undertow-core/2.3.13.Final/undertow-core-2.3.13.Final.jar"
-              ],
-              "downloaded_file_path": "v1/io/undertow/undertow-core/2.3.13.Final/undertow-core-2.3.13.Final.jar"
             }
           },
           "org_apache_httpcomponents_httpcore_jar_sources_4_4_16": {
@@ -3856,17 +3867,6 @@
                 "https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M2/org.eclipse.sisu.inject-0.9.0.M2-sources.jar"
               ],
               "downloaded_file_path": "v1/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M2/org.eclipse.sisu.inject-0.9.0.M2-sources.jar"
-            }
-          },
-          "org_jboss_xnio_xnio_api_3_8_8_Final": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "701988bea1c7426d0cdbbd94c02141031cfe3001a470750e2d25b6ac166b7873",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/jboss/xnio/xnio-api/3.8.8.Final/xnio-api-3.8.8.Final.jar"
-              ],
-              "downloaded_file_path": "v1/org/jboss/xnio/xnio-api/3.8.8.Final/xnio-api-3.8.8.Final.jar"
             }
           },
           "javax_inject_javax_inject_jar_sources_1": {
@@ -5222,6 +5222,17 @@
               "target_name": "io_grpc_grpc_context"
             }
           },
+          "org_jboss_xnio_xnio_api_3_8_16_Final": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "sha256": "3572098fe1687dabd90f0222080fb158f63ca771c42ef1d39974434849f78bc4",
+              "urls": [
+                "https://repo1.maven.org/maven2/org/jboss/xnio/xnio-api/3.8.16.Final/xnio-api-3.8.16.Final.jar"
+              ],
+              "downloaded_file_path": "v1/org/jboss/xnio/xnio-api/3.8.16.Final/xnio-api-3.8.16.Final.jar"
+            }
+          },
           "com_google_apis_google_api_services_storage_jar_sources_v1_rev20240311_2_0_0": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
             "ruleClassName": "http_file",
@@ -5797,17 +5808,6 @@
                 "https://repo1.maven.org/maven2/software/amazon/awssdk/netty-nio-client/2.25.23/netty-nio-client-2.25.23-sources.jar"
               ],
               "downloaded_file_path": "v1/software/amazon/awssdk/netty-nio-client/2.25.23/netty-nio-client-2.25.23-sources.jar"
-            }
-          },
-          "org_jboss_xnio_xnio_nio_3_8_8_Final": {
-            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
-            "ruleClassName": "http_file",
-            "attributes": {
-              "sha256": "714c2d102c16aba245e5f50007bff49aba4d5e06c5303bd398df071c7614bc5f",
-              "urls": [
-                "https://repo1.maven.org/maven2/org/jboss/xnio/xnio-nio/3.8.8.Final/xnio-nio-3.8.8.Final.jar"
-              ],
-              "downloaded_file_path": "v1/org/jboss/xnio/xnio-nio/3.8.8.Final/xnio-nio-3.8.8.Final.jar"
             }
           },
           "com_google_protobuf_protobuf_java_util_jar_sources_3_25_2": {
