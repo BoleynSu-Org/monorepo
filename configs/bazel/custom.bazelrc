@@ -1,45 +1,45 @@
 common --registry=file://%workspace%/third_party/bazel_registry
 
 # Toolchains
-build --extra_toolchains=@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux
-build --extra_toolchains=@rules_java//toolchains:toolchain_jdk_21_definition
-build --extra_toolchains=@remotejdk21_linux_toolchain_config_repo//:bootstrap_runtime_toolchain
-build --extra_toolchains=@remotejdk21_linux_toolchain_config_repo//:toolchain
-build --extra_toolchains=@python_sdk_toolchains//:all
-build --extra_toolchains=@go_linux_amd64_toolchains//:all
+common --extra_toolchains=@llvm_toolchain_linux_x86_64//:cc-toolchain-x86_64-linux
+common --extra_toolchains=@rules_java//toolchains:toolchain_jdk_21_definition
+common --extra_toolchains=@remotejdk21_linux_toolchain_config_repo//:bootstrap_runtime_toolchain
+common --extra_toolchains=@remotejdk21_linux_toolchain_config_repo//:toolchain
+common --extra_toolchains=@python_sdk_toolchains//:all
+common --extra_toolchains=@go_linux_amd64_toolchains//:all
 
 # @io_bazel_rules_go
 # See https://github.com/bazelbuild/rules_go/blob/7309aba88014f97d6a3c2916a5ed4e2ca2017d83/go/modes.rst
-build --@io_bazel_rules_go//go/config:pure=true
-build --@io_bazel_rules_go//go/config:static=true
+common --@io_bazel_rules_go//go/config:pure=true
+common --@io_bazel_rules_go//go/config:static=true
 
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
-build:remote --remote_executor=grpcs://remote.buildbuddy.io
-build:remote --remote_instance_name=monorepo
-build:remote --remote_timeout=3600
-build:remote --remote_download_outputs=minimal
+common:remote --remote_executor=grpcs://remote.buildbuddy.io
+common:remote --remote_instance_name=monorepo
+common:remote --remote_timeout=3600
+common:remote --remote_download_outputs=minimal
 ## Build Event Service
-build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
-build:remote --bes_backend=grpcs://remote.buildbuddy.io
+common:remote --bes_results_url=https://app.buildbuddy.io/invocation/
+common:remote --bes_backend=grpcs://remote.buildbuddy.io
 ## Platform
-build:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
+common:remote --extra_execution_platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
 ## Misc
-build:remote --jobs=80
-build:remote --remote_upload_local_results=false
-build:remote --remote_cache_compression=true
+common:remote --jobs=80
+common:remote --remote_upload_local_results=false
+common:remote --remote_cache_compression=true
 
 # CI/CD
 ## build and test
-build:ci-build-and-test --config=remote
-build:ci-build-and-test --platforms=//configs/build/platforms:linux_x86_64
+common:ci-build-and-test --config=remote
+common:ci-build-and-test --platforms=//configs/build/platforms:linux_x86_64
 ## deploy
-build:ci-deploy --config=remote
-build:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
-build:ci-deploy --compilation_mode=opt
+common:ci-deploy --config=remote
+common:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
+common:ci-deploy --compilation_mode=opt
 
 # Misc
 ## See https://github.com/bazelbuild/bazel/issues/6648#issuecomment-1133656002
-build --incompatible_strict_action_env=true
+common --incompatible_strict_action_env=true
 
 try-import %workspace%/.user.bazelrc
