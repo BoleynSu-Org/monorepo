@@ -6702,7 +6702,7 @@
     },
     "@@rules_python~//python/private/bzlmod:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "pzmiMP4rR4tISLfmOfNhgTea5tz1e6JfwaIO6S59k6U=",
+        "bzlTransitiveDigest": "TQoAO5CHaCKqy1UlGJkAw+MH/UgtBRtCZCneWb6/dq0=",
         "usagesDigest": "spYTfmH5Mw462zD7a6kcJXCuJA9q0cpZZc4yYSSxiPw=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "8ced1e640eab3ee44298590e5ad88cd612f5bf96245af1981709f7a8884a982b",
