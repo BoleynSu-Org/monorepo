@@ -261,10 +261,10 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240623.150238'
-  sha256: 9fabf6d35ff045187ab40aed0b56db491a2d43ef3991a25f8205fdf24be527a3
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240623.150238/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-06-23'
+  version: '20240630.105205'
+  sha256: f1a18e2496b38a17a471da28c07e07a0c816d6b3ccc93a30647c0a0d54a33999
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240630.105205/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-06-30'
   build_file_content: |
     filegroup(
         name = "sysroot",
