@@ -370,10 +370,10 @@ DEPS = {
         {
             "name": "rules_kotlin",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.5/rules_kotlin-v1.9.5.tar.gz",
-            "sha256": "34e8c0351764b71d78f76c8746e98063979ce08dcf1a91666f3f3bc2949a533d",
-            "version": "v1.9.5",
-            "updated_at": "2024-04-10",
+            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.6/rules_kotlin-v1.9.6.tar.gz",
+            "sha256": "3b772976fec7bdcda1d84b9d39b176589424c047eb2175bed09aac630e50af43",
+            "version": "v1.9.6",
+            "updated_at": "2024-07-02",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -858,8 +858,8 @@ DEPS = {
             "registry": "docker.io",
             "repository": "library/adminer",
             "tag": "4.8.1",
-            "digest": "sha256:ee90fd19757e0f89bb991f63bf04fd0530a0f98f408605d2b88f812fc0c3ec7b",
-            "updated_at": "2024-06-14",
+            "digest": "sha256:b652db0fa109e295c0bed36ef8c539f09124de19467cb2698829986bb7913c0e",
+            "updated_at": "2024-07-02",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v5",
