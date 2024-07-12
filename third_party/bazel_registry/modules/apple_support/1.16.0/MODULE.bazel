@@ -1,8 +1,13 @@
 module(
     name = 'apple_support',
-    version = '1.15.1',
+    version = '1.16.0',
     bazel_compatibility = ['>=6.0.0'],
     repo_name = 'build_bazel_apple_support',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.13.0',
 )
 
 bazel_dep(

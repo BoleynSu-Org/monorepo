@@ -1,7 +1,12 @@
 module(
     name = 'rules_jvm_external',
+    version = '6.2',
     bazel_compatibility = ['>=7.0.0'],
-    version = '6.1',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.13.0',
 )
 
 bazel_dep(
@@ -16,7 +21,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '7.6.5',
+    version = '7.7.0',
 )
 
 bazel_dep(
@@ -31,8 +36,8 @@ bazel_dep(
 
 bazel_dep(
     name = 'stardoc',
-    repo_name = 'io_bazel_stardoc',
     version = '0.7.0',
+    repo_name = 'io_bazel_stardoc',
 )
 
 remote_android_tools_extensions = use_extension(
@@ -53,10 +58,11 @@ maven = use_extension(
 
 maven.install(
     name = 'rules_jvm_external_deps',
-    artifacts = ['com.google.auth:google-auth-library-credentials:1.23.0', 'com.google.auth:google-auth-library-oauth2-http:1.23.0', 'com.google.cloud:google-cloud-core:2.36.1', 'com.google.cloud:google-cloud-storage:2.36.1', 'com.google.code.gson:gson:2.10.1', 'com.google.googlejavaformat:google-java-format:1.22.0', 'com.google.guava:guava:33.1.0-jre', 'org.apache.maven:maven-artifact:3.9.6', 'org.apache.maven:maven-core:3.9.6', 'org.apache.maven:maven-model:3.9.6', 'org.apache.maven:maven-model-builder:3.9.6', 'org.apache.maven:maven-settings:3.9.6', 'org.apache.maven:maven-settings-builder:3.9.6', 'org.apache.maven:maven-resolver-provider:3.9.6', 'org.apache.maven.resolver:maven-resolver-api:1.9.18', 'org.apache.maven.resolver:maven-resolver-impl:1.9.18', 'org.apache.maven.resolver:maven-resolver-connector-basic:1.9.18', 'org.apache.maven.resolver:maven-resolver-spi:1.9.18', 'org.apache.maven.resolver:maven-resolver-transport-file:1.9.18', 'org.apache.maven.resolver:maven-resolver-transport-http:1.9.18', 'org.apache.maven.resolver:maven-resolver-util:1.9.18', 'org.codehaus.plexus:plexus-cipher:2.1.0', 'org.codehaus.plexus:plexus-sec-dispatcher:2.0', 'org.fusesource.jansi:jansi:2.4.1', 'org.slf4j:jul-to-slf4j:2.0.12', 'org.slf4j:log4j-over-slf4j:2.0.12', 'org.slf4j:slf4j-simple:2.0.12', 'software.amazon.awssdk:s3:2.25.23'],
+    artifacts = ['com.google.auth:google-auth-library-credentials:1.23.0', 'com.google.auth:google-auth-library-oauth2-http:1.23.0', 'com.google.cloud:google-cloud-core:2.40.0', 'com.google.cloud:google-cloud-storage:2.40.1', 'com.google.code.gson:gson:2.11.0', 'com.google.googlejavaformat:google-java-format:1.22.0', 'com.google.guava:guava:33.2.1-jre', 'org.apache.maven:maven-artifact:3.9.8', 'org.apache.maven:maven-core:3.9.8', 'org.apache.maven:maven-model:3.9.8', 'org.apache.maven:maven-model-builder:3.9.8', 'org.apache.maven:maven-settings:3.9.8', 'org.apache.maven:maven-settings-builder:3.9.8', 'org.apache.maven:maven-resolver-provider:3.9.8', 'org.apache.maven.resolver:maven-resolver-api:1.9.20', 'org.apache.maven.resolver:maven-resolver-impl:1.9.20', 'org.apache.maven.resolver:maven-resolver-connector-basic:1.9.20', 'org.apache.maven.resolver:maven-resolver-spi:1.9.20', 'org.apache.maven.resolver:maven-resolver-transport-file:1.9.20', 'org.apache.maven.resolver:maven-resolver-transport-http:1.9.20', 'org.apache.maven.resolver:maven-resolver-util:1.9.20', 'org.codehaus.plexus:plexus-cipher:2.1.0', 'org.codehaus.plexus:plexus-sec-dispatcher:2.0', 'org.codehaus.plexus:plexus-utils:3.5.1', 'org.fusesource.jansi:jansi:2.4.1', 'org.slf4j:jul-to-slf4j:2.0.12', 'org.slf4j:log4j-over-slf4j:2.0.12', 'org.slf4j:slf4j-simple:2.0.12', 'software.amazon.awssdk:s3:2.26.12'],
     fail_if_repin_required = True,
     fetch_sources = True,
     lock_file = '//:rules_jvm_external_deps_install.json',
+    strict_visibility = True,
 )
 
 use_repo(
@@ -78,26 +84,26 @@ http_file(
 
 http_file(
     name = 'buildifier-linux-arm64',
-    sha256 = '917d599dbb040e63ae7a7e1adb710d2057811902fdc9e35cce925ebfd966eeb8',
-    urls = ['https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-linux-arm64'],
+    sha256 = 'c22a44eee37b8927167ee6ee67573303f4e31171e7ec3a8ea021a6a660040437',
+    urls = ['https://github.com/bazelbuild/buildtools/releases/download/v7.1.2/buildifier-linux-arm64'],
 )
 
 http_file(
     name = 'buildifier-linux-x86_64',
-    sha256 = '52bf6b102cb4f88464e197caac06d69793fa2b05f5ad50a7e7bf6fbd656648a3',
-    urls = ['https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-linux-amd64'],
+    sha256 = '28285fe7e39ed23dc1a3a525dfcdccbc96c0034ff1d4277905d2672a71b38f13',
+    urls = ['https://github.com/bazelbuild/buildtools/releases/download/v7.1.2/buildifier-linux-amd64'],
 )
 
 http_file(
     name = 'buildifier-macos-arm64',
-    sha256 = '745feb5ea96cb6ff39a76b2821c57591fd70b528325562486d47b5d08900e2e4',
-    urls = ['https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-darwin-arm64'],
+    sha256 = 'd0909b645496608fd6dfc67f95d9d3b01d90736d7b8c8ec41e802cb0b7ceae7c',
+    urls = ['https://github.com/bazelbuild/buildtools/releases/download/v7.1.2/buildifier-darwin-arm64'],
 )
 
 http_file(
     name = 'buildifier-macos-x86_64',
-    sha256 = 'c9378d9f4293fc38ec54a08fbc74e7a9d28914dae6891334401e59f38f6e65dc',
-    urls = ['https://github.com/bazelbuild/buildtools/releases/download/5.1.0/buildifier-darwin-amd64'],
+    sha256 = '687c49c318fb655970cf716eed3c7bfc9caeea4f2931a2fd36593c458de0c537',
+    urls = ['https://github.com/bazelbuild/buildtools/releases/download/v7.1.2/buildifier-darwin-amd64'],
 )
 
 http_file(

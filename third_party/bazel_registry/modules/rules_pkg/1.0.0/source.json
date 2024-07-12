@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.0.0.tar.gz",
-  "integrity": "sha256-zB1vWOubwr+tJHsg8Hcl3aLWsRm2KxHx2rmglKJCIuY=",
-  "strip_prefix": "rules_pkg-1.0.0"
-}
