@@ -66,11 +66,11 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 651af142ba9dc2c2538d884d0d2a1fb8ab82f72fd570e8e457dc75fa9fa2ebdd
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.48.1.tar.gz
-  updated_at: '2024-06-20'
-  version: v0.48.1
-  strip_prefix: rules_go-0.48.1
+  sha256: d9fa26d4c687b57093ae86f1635e5b7c146603b92e3a3fa73723eded464f1ff7
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.49.0.tar.gz
+  updated_at: '2024-07-13'
+  version: v0.49.0
+  strip_prefix: rules_go-0.49.0
   load_deps: |
     load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk")
     load("@io_bazel_rules_go//go/private:nogo.bzl", "go_register_nogo", "DEFAULT_NOGO")
@@ -259,10 +259,10 @@ bazel_deps:
       value: [sha256]
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20240630.105205'
-  sha256: f1a18e2496b38a17a471da28c07e07a0c816d6b3ccc93a30647c0a0d54a33999
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240630.105205/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-06-30'
+  version: '20240712.143124'
+  sha256: 572b93dc2263aaf4ffbed4bc016386b909f647409c90f186b70a84f26af37b99
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240712.143124/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-07-13'
   build_file_content: |
     filegroup(
         name = "sysroot",
@@ -479,11 +479,11 @@ maven_deps:
   version: 3.4.0
   updated_at: '2024-05-18'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.25
-  updated_at: '2024-06-20'
+  version: 10.1.26
+  updated_at: '2024-07-13'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.25
-  updated_at: '2024-06-20'
+  version: 10.1.26
+  updated_at: '2024-07-13'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
