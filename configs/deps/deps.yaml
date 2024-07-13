@@ -56,7 +56,7 @@ bazel_deps:
   url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/6.0.2.tar.gz
   updated_at: '2024-06-17'
   version: 6.0.2
-  version_regex: ([^-]*)[0-9.-]*$
+  version_regex: ([^-]*)[0-9.-]*
   load_deps: |
     load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")
     def deps():
@@ -305,7 +305,7 @@ bazel_deps:
   sha256: 9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056
   strip_prefix: protobuf-3.19.6
   version: v3.19.6
-  version_regex: ^v(3)\.([0-9.]*)$
+  version_regex: v(3)\.([0-9.]*)
   updated_at: '2024-01-06'
   module_file_content: |
     module(
@@ -489,7 +489,7 @@ maven_deps:
   updated_at: '2023-09-02'
 - name: org.webjars:bootstrap
   version: 3.4.1
-  version_regex: 3\..*
+  version_regex: (3\..*)
   updated_at: '2022-04-09'
   # FIXME(https://github.com/BoleynSu/oj/issues/2):
   # Upgrade third-party JavaScript/stylesheet libraries
@@ -722,7 +722,7 @@ container_deps:
   version: latest
   # latest is the stable version.
   # See https://mariadb.org/mariadb/all-releases/
-  version_regex: ^(latest)$
+  version_regex: (latest)
   registry: docker.io
   repository: library/mariadb
   tag: latest

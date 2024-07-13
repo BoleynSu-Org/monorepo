@@ -46,7 +46,7 @@ DEPS = {
             "url": "https://github.com/bazelbuild/rules_proto/archive/refs/tags/6.0.2.tar.gz",
             "updated_at": "2024-06-17",
             "version": "6.0.2",
-            "version_regex": "([^-]*)[0-9.-]*$",
+            "version_regex": "([^-]*)[0-9.-]*",
             "load_deps": 'load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")\ndef deps():\n  rules_proto_dependencies()\n',
             "patch_cmds": [
                 "sed -i 's/protobuf_workspace(name = \"com_google_protobuf\")//g' proto/repositories.bzl"
@@ -287,7 +287,7 @@ DEPS = {
             "sha256": "9a301cf94a8ddcb380b901e7aac852780b826595075577bb967004050c835056",
             "strip_prefix": "protobuf-3.19.6",
             "version": "v3.19.6",
-            "version_regex": "^v(3)\\.([0-9.]*)$",
+            "version_regex": "v(3)\\.([0-9.]*)",
             "updated_at": "2024-01-06",
             "module_file_content": 'module(\n    name = "protobuf",\n    version = "3.19.6",\n    repo_name = "com_google_protobuf",\n)\nbazel_dep(name = "bazel_skylib", version = "1.0.3")\nbazel_dep(name = "zlib", version = "1.2.12")\nbazel_dep(name = "rules_python", version = "0.4.0")\nbazel_dep(name = "rules_cc", version = "0.0.1")\nbazel_dep(name = "rules_proto", version = "4.0.0")\nbazel_dep(name = "rules_java", version = "4.0.0")\nbazel_dep(name = "rules_jvm_external", version = "0.0.0")\n',
         },
@@ -480,7 +480,7 @@ DEPS = {
         {
             "name": "org.webjars:bootstrap",
             "version": "3.4.1",
-            "version_regex": "3\\..*",
+            "version_regex": "(3\\..*)",
             "updated_at": "2022-04-09",
             "expires_at": "2025-04-18",
         },
@@ -838,7 +838,7 @@ DEPS = {
         {
             "name": "io_docker_library_mariadb",
             "version": "latest",
-            "version_regex": "^(latest)$",
+            "version_regex": "(latest)",
             "registry": "docker.io",
             "repository": "library/mariadb",
             "tag": "latest",
