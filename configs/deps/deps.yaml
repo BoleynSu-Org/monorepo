@@ -495,9 +495,9 @@ maven_deps:
   # Upgrade third-party JavaScript/stylesheet libraries
   expires_at: '2025-04-18'
 - name: io.undertow:undertow-core
-  version: 2.3.14.Final
+  version: 2.3.15.Final
   version_regex: (.*)\.Final
-  updated_at: '2024-06-20'
+  updated_at: '2024-07-16'
 - name: commons-validator:commons-validator
   version: 1.9.0
   updated_at: '2024-05-29'
