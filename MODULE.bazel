@@ -255,12 +255,12 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.13.0",
-            "sha256": "5d7e4eb0bb17aee392143cd667b67d9044c270a9345776a5e5a3cccbc44aa4b3",
-            "strip_prefix": "bazel_features-1.13.0",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.13.0/bazel_features-v1.13.0.tar.gz",
+            "version": "v1.14.0",
+            "sha256": "5ac743bf5f05d88e84962e978811f2524df09602b789c92cf7ae2111ecdeda94",
+            "strip_prefix": "bazel_features-1.14.0",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.14.0/bazel_features-v1.14.0.tar.gz",
             "github_repo": "bazel-contrib/bazel_features",
-            "updated_at": "2024-06-12",
+            "updated_at": "2024-07-16",
             "override_updater": [
                 {
                     "type": "deps_updater",
