@@ -225,10 +225,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.30.2/bin/linux/amd64/kubectl",
-            "sha256": "c6e9c45ce3f82c90663e3c30db3b27c167e8b19d83ed4048b61c1013f6a7c66e",
-            "version": "v1.30.2",
-            "updated_at": "2024-06-12",
+            "url": "https://dl.k8s.io/release/v1.30.3/bin/linux/amd64/kubectl",
+            "sha256": "abd83816bd236b266c3643e6c852b446f068fe260f3296af1a25b550854ec7e5",
+            "version": "v1.30.3",
+            "updated_at": "2024-07-17",
             "executable": True,
             "override_updater": [
                 {
