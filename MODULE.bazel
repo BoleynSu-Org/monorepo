@@ -463,8 +463,8 @@ DEPS = {
         },
         {
             "name": "org.mariadb.jdbc:mariadb-java-client",
-            "version": "3.4.0",
-            "updated_at": "2024-05-18",
+            "version": "3.4.1",
+            "updated_at": "2024-07-17",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
