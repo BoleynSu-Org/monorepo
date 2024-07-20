@@ -52,8 +52,8 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "SK+5VjMKVX5gfuC//JqN+b1rWW3PNLeAEsqwiD3CAOA=",
-        "usagesDigest": "NvePMSmsBsbO2Xhm2gbUHDCjROwKkLRAoHI3jgeA7PQ=",
+        "bzlTransitiveDigest": "jl6upvbQ+op05W1a3gE6bja6dc7fvsNfslO0m46Ma3s=",
+        "usagesDigest": "jZoBBOhYiSTDGSD4Kpc4kSxqHQX9sXEtVNQMZ3ro3eU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -605,7 +605,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "CsOQz1fOfs37oOQvgMgTDNNumYD1Sv0oCXUuEOyGhxE=",
+        "bzlTransitiveDigest": "mOhOVjTjRgaN1ifrutyv4CdDUXZ06CskMJXYYLcYqYk=",
         "usagesDigest": "ve7VEyMGownjUxBJfElsMtOci7G714tqOGl2XFtAZlo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
