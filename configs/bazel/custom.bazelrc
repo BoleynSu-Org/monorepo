@@ -1,3 +1,4 @@
+common --enable_workspace=false
 common --registry=file://%workspace%/third_party/bazel_registry
 
 # Toolchains
