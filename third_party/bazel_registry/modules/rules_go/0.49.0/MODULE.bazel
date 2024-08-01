@@ -53,7 +53,7 @@ register_toolchains(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.37.0',
+    version = '0.38.0',
 )
 
 go_deps = use_extension(
