@@ -170,11 +170,11 @@ DEPS = {
         {
             "name": "toolchains_llvm",
             "type": "http_archive",
-            "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/1.0.0.tar.gz",
-            "sha256": "6a23ed55e5b802e3e0790173c3acfffa0938f3ac2f01cddd82b8e51f8e42d71f",
-            "strip_prefix": "toolchains_llvm-1.0.0",
-            "updated_at": "2024-03-16",
-            "version": "1.0.0",
+            "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.1.0.tar.gz",
+            "sha256": "57cc7e86ec51e552145036a9cc1396186ff57d9d57e56971f25297f80e0c19db",
+            "strip_prefix": "toolchains_llvm-1.1.0",
+            "updated_at": "2024-08-01",
+            "version": "v1.1.0",
         },
         {
             "name": "bazel_linux_x86_64",

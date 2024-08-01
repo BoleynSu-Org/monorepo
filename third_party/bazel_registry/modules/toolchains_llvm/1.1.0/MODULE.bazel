@@ -1,6 +1,6 @@
 module(
     name = 'toolchains_llvm',
-    version = '1.0.0',
+    version = '1.1.0',
     bazel_compatibility = ['>=7.0.0'],
 )
 

@@ -3534,7 +3534,7 @@
     },
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
-        "bzlTransitiveDigest": "1w0wdH2QnKapJmTbk88f5iQjNlw7vw4f4r1cNf1vWVI=",
+        "bzlTransitiveDigest": "y9h5L2NtWbogyWSOJgqnUaU50MTPWAW+waelXSirMVg=",
         "usagesDigest": "DrkRJlH3pJEfv+Jq7o8WuG4rBfhARqWAEFhwCg2e/ek=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -3601,6 +3601,11 @@
           }
         },
         "recordedRepoMappingEntries": [
+          [
+            "toolchains_llvm~",
+            "bazel_skylib",
+            "bazel_skylib~"
+          ],
           [
             "toolchains_llvm~",
             "bazel_tools",

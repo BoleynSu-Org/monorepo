@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.1.0.tar.gz",
+  "integrity": "sha256-V8x+huxR5VIUUDapzBOWGG/1fZ1X5Wlx8lKX+A4MGds=",
+  "strip_prefix": "toolchains_llvm-1.1.0"
+}
