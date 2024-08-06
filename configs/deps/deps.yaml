@@ -479,11 +479,11 @@ maven_deps:
   version: 3.4.1
   updated_at: '2024-07-17'
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 10.1.26
-  updated_at: '2024-07-13'
+  version: 10.1.28
+  updated_at: '2024-08-06'
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 10.1.26
-  updated_at: '2024-07-13'
+  version: 10.1.28
+  updated_at: '2024-08-06'
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
