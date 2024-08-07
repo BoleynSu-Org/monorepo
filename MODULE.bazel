@@ -7,6 +7,7 @@ DEPS = {
     "metadata": {
         "name": "boleynsu_org",
         "pin_cmd": "bazel run //cmd/infra/deps:update",
+        "include": ["@boleynsu_org//third_party/io_grpc_grpc_java:deps_yaml"],
     },
     "bazel_deps": [
         {
@@ -69,11 +70,11 @@ DEPS = {
         {
             "name": "rules_oci",
             "type": "http_archive",
-            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.7.5.tar.gz",
-            "sha256": "56d5499025d67a6b86b2e6ebae5232c72104ae682b5a21287770bd3bf0661abf",
-            "strip_prefix": "rules_oci-1.7.5",
-            "updated_at": "2024-03-28",
-            "version": "v1.7.5",
+            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.8.0.tar.gz",
+            "sha256": "46ce9edcff4d3d7b3a550774b82396c0fa619cc9ce9da00c1b09a08b45ea5a14",
+            "strip_prefix": "rules_oci-1.8.0",
+            "updated_at": "2024-08-07",
+            "version": "v1.8.0",
             "load_deps": 'load("@rules_oci//oci:repositories.bzl", "LATEST_CRANE_VERSION", "oci_register_toolchains")\ndef deps():\n  oci_register_toolchains(\n      name = "oci",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n',
         },
         {
@@ -105,12 +106,13 @@ DEPS = {
         },
         {
             "name": "io_grpc_grpc_java",
+            "module_name": "grpc-java",
             "type": "http_archive",
-            "sha256": "2c8bba5c3d77d78b5ad5ea2d68a4c6faf5233e527e780f2190d5e9c8961cfb77",
-            "strip_prefix": "grpc-java-1.63.0",
-            "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.63.0.tar.gz",
-            "updated_at": "2024-04-05",
-            "version": "v1.63.0",
+            "sha256": "59ded3553cf6f5d6ecc26eccc22cb267692af67ac73520aed5105faf60ce34b5",
+            "strip_prefix": "grpc-java-1.65.1",
+            "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.65.1.tar.gz",
+            "updated_at": "2024-08-07",
+            "version": "v1.65.1",
             "load_deps": 'load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")\ndef deps():\n  grpc_java_repositories()\n',
             "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel",
         },
@@ -467,6 +469,15 @@ DEPS = {
             "sha256": "8a3d0830e4eb4f66c4fa907c06edf6ce1c719ced811a12e26d9d3162f8471758",
             "strip_prefix": "abseil-py-2.1.0",
             "url": "https://github.com/abseil/abseil-py/archive/refs/tags/v2.1.0.tar.gz",
+            "updated_at": "2024-08-07",
+        },
+        {
+            "name": "container_structure_test",
+            "type": "http_archive",
+            "version": "v1.19.1",
+            "sha256": "b56a53fb7734f93216b60f8cdd3b98fbbd767e9f412c061d4fa4798e579c4971",
+            "strip_prefix": "container-structure-test-1.19.1",
+            "url": "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.19.1.tar.gz",
             "updated_at": "2024-08-07",
         },
     ],
@@ -841,6 +852,11 @@ DEPS = {
             "version": "override",
             "override_target": "@io_grpc_grpc_java//util",
             "included_from": "io_grpc_grpc_java",
+        },
+        {
+            "name": "com.google.j2objc:j2objc-annotations",
+            "version": "3.0.0",
+            "updated_at": "2024-08-07",
         },
     ],
     "container_deps": [

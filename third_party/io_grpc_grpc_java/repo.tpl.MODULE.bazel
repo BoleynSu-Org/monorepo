@@ -1,12 +1,13 @@
 module(
-    name = "io_grpc_grpc_java",
+    name = "grpc-java",
     version = "1.60.1",
+    repo_name = "io_grpc_grpc_java",
 )
 
 bazel_dep(name = "rules_cc", version = "0.0.9")
+bazel_dep(name = "rules_java", version = "7.8.0")
 bazel_dep(name = "rules_jvm_external", version = "5.3")
 bazel_dep(name = "protobuf", version = "3.19.6", repo_name = "com_google_protobuf")
-bazel_dep(name = "boleynsu_org", version = "0.0.0")
 
 ARTIFACTS = ARTIFACTS_PLACE_HOLDER + [
     # missing
@@ -17,7 +18,6 @@ OVERRIDE_TARGETS = OVERRIDE_TARGETS_PLACE_HOLDER
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
-    name = "io_grpc_grpc_java_maven",
     artifacts = ARTIFACTS,
     generate_compat_repositories = True,
     repositories = [
@@ -27,17 +27,10 @@ maven.install(
 
 [
     maven.override(
-        name = "io_grpc_grpc_java_maven",
         coordinates = coordinates,
         target = target,
     )
     for coordinates, target in OVERRIDE_TARGETS.items()
 ]
 
-[
-    use_repo(
-        maven,
-        "_".join(artifact.split(":")[:2] + artifact.split(":")[3:4]).replace(".", "_").replace("-", "_"),
-    )
-    for artifact in ARTIFACTS
-]
+use_repo(maven, "maven")

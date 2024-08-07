@@ -1,6 +1,6 @@
 module(
     name = 'rules_oci',
-    version = '1.7.5',
+    version = '1.8.0',
 )
 
 bazel_dep(
@@ -36,4 +36,26 @@ use_repo(
 register_toolchains(
     '@oci_crane_toolchains//:all',
     '@oci_crane_registry_toolchains//:all',
+)
+
+toolchains = use_extension(
+    '@aspect_bazel_lib//lib:extensions.bzl',
+    'toolchains',
+)
+
+toolchains.jq(
+)
+
+toolchains.yq(
+)
+
+use_repo(
+    toolchains,
+    'jq_toolchains',
+    'yq_toolchains',
+)
+
+bazel_dep(
+    name = 'container_structure_test',
+    version = '1.19.1',
 )

@@ -53,7 +53,7 @@
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
         "bzlTransitiveDigest": "jl6upvbQ+op05W1a3gE6bja6dc7fvsNfslO0m46Ma3s=",
-        "usagesDigest": "jZoBBOhYiSTDGSD4Kpc4kSxqHQX9sXEtVNQMZ3ro3eU=",
+        "usagesDigest": "Fv0zhwfPjMUGLZWPCyjq50R/324IhtJLvg+Qz37RfJg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -517,6 +517,131 @@
         ]
       }
     },
+    "@@container_structure_test~//:repositories.bzl%extension": {
+      "general": {
+        "bzlTransitiveDigest": "y6qIdcmStsnQ0X0xYJ35mfWmx3gfApvha6UoFdLlSEM=",
+        "usagesDigest": "mE7vyAM9GWUsa2dGxm0a3i92Vj4x7viP1gjgoHjzzUE=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "structure_test_st_linux_amd64": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "linux_amd64"
+            }
+          },
+          "jq_linux_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "platform": "linux_amd64",
+              "version": "1.7"
+            }
+          },
+          "jq": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_host_alias_repo",
+            "attributes": {}
+          },
+          "jq_darwin_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "platform": "darwin_amd64",
+              "version": "1.7"
+            }
+          },
+          "structure_test_st_windows_amd64": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "windows_amd64"
+            }
+          },
+          "structure_test_toolchains": {
+            "bzlFile": "@@container_structure_test~//bazel:toolchains_repo.bzl",
+            "ruleClassName": "toolchains_repo",
+            "attributes": {
+              "toolchain_type": "@container_structure_test//bazel:structure_test_toolchain_type",
+              "toolchain": "@structure_test_st_{platform}//:structure_test_toolchain"
+            }
+          },
+          "jq_linux_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "platform": "linux_arm64",
+              "version": "1.7"
+            }
+          },
+          "jq_windows_amd64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "platform": "windows_amd64",
+              "version": "1.7"
+            }
+          },
+          "jq_toolchains": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_toolchains_repo",
+            "attributes": {
+              "user_repository_name": "jq"
+            }
+          },
+          "structure_test_st_linux_s390x": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "linux_s390x"
+            }
+          },
+          "structure_test_st_darwin_arm64": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "darwin_arm64"
+            }
+          },
+          "jq_darwin_arm64": {
+            "bzlFile": "@@aspect_bazel_lib~//lib/private:jq_toolchain.bzl",
+            "ruleClassName": "jq_platform_repo",
+            "attributes": {
+              "platform": "darwin_arm64",
+              "version": "1.7"
+            }
+          },
+          "structure_test_st_darwin_amd64": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "darwin_amd64"
+            }
+          },
+          "structure_test_st_linux_arm64": {
+            "bzlFile": "@@container_structure_test~//:repositories.bzl",
+            "ruleClassName": "structure_test_repositories",
+            "attributes": {
+              "platform": "linux_arm64"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "aspect_bazel_lib~",
+            "bazel_tools",
+            "bazel_tools"
+          ],
+          [
+            "container_structure_test~",
+            "aspect_bazel_lib",
+            "aspect_bazel_lib~"
+          ]
+        ]
+      }
+    },
     "@@platforms//host:extension.bzl%host_platform": {
       "general": {
         "bzlTransitiveDigest": "xelQcPZH8+tmuOHVjL9vDxMnnQNMlwj0SlvgoqBkm4U=",
@@ -648,8 +773,8 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "mOhOVjTjRgaN1ifrutyv4CdDUXZ06CskMJXYYLcYqYk=",
-        "usagesDigest": "V57SckdfYXWc1v6k8Y5qYc0Y1DVl/HfwZ01Ez9KUBSo=",
+        "bzlTransitiveDigest": "Y6o7hfMyOP67ZLfBYa8oL0ed63NDysiKL6SceoHbsWc=",
+        "usagesDigest": "Q3KE+3zRA0J+FsWDUcEIqf5pX4h5Re5haVJ2ViPHChc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -663,7 +788,8 @@
               "repository": "library/mariadb",
               "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
               "platform": "linux/amd64",
-              "target_name": "io_docker_library_mariadb_linux_amd64"
+              "target_name": "io_docker_library_mariadb_linux_amd64",
+              "bazel_tags": []
             }
           },
           "io_quay_boleynsu_base_linux_amd64": {
@@ -675,7 +801,8 @@
               "repository": "boleynsu/base",
               "identifier": "sha256:0aa9925430151105d4c5c7d9989c645e97bb801bd33622eecc53562139a99fb9",
               "platform": "linux/amd64",
-              "target_name": "io_quay_boleynsu_base_linux_amd64"
+              "target_name": "io_quay_boleynsu_base_linux_amd64",
+              "bazel_tags": []
             }
           },
           "oci_crane_registry_toolchains": {
@@ -719,7 +846,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/386",
-              "target_name": "io_docker_library_adminer_linux_386"
+              "target_name": "io_docker_library_adminer_linux_386",
+              "bazel_tags": []
             }
           },
           "jq_darwin_amd64": {
@@ -739,7 +867,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/mips64le",
-              "target_name": "io_docker_library_adminer_linux_mips64le"
+              "target_name": "io_docker_library_adminer_linux_mips64le",
+              "bazel_tags": []
             }
           },
           "copy_to_directory_freebsd_amd64": {
@@ -758,7 +887,8 @@
               "repository": "filebrowser/filebrowser",
               "identifier": "sha256:862a8f4f4829cb2747ced869aea8593204bbc718c92f0f11c97e7b669a54b53d",
               "platform": "linux/arm/v7",
-              "target_name": "io_docker_filebrowser_filebrowser_linux_arm_v7"
+              "target_name": "io_docker_filebrowser_filebrowser_linux_arm_v7",
+              "bazel_tags": []
             }
           },
           "oci_crane_linux_arm64": {
@@ -794,7 +924,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/arm/v7",
-              "target_name": "io_docker_library_adminer_linux_arm_v7"
+              "target_name": "io_docker_library_adminer_linux_arm_v7",
+              "bazel_tags": []
             }
           },
           "copy_to_directory_linux_arm64": {
@@ -813,7 +944,8 @@
               "repository": "boleynsu/oj-c99runner",
               "identifier": "sha256:7ca580c17ff29afc363bd6bfc9c94b605df86fe6d7b12f90a945e55ad0725d2a",
               "platform": "linux/amd64",
-              "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64"
+              "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64",
+              "bazel_tags": []
             }
           },
           "oci_crane_linux_amd64": {
@@ -833,7 +965,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/arm/v5",
-              "target_name": "io_docker_library_adminer_linux_arm_v5"
+              "target_name": "io_docker_library_adminer_linux_arm_v5",
+              "bazel_tags": []
             }
           },
           "coreutils_darwin_amd64": {
@@ -890,7 +1023,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/s390x",
-              "target_name": "io_docker_library_adminer_linux_s390x"
+              "target_name": "io_docker_library_adminer_linux_s390x",
+              "bazel_tags": []
             }
           },
           "yq_darwin_amd64": {
@@ -929,7 +1063,8 @@
               "repository": "boleynsu/base",
               "identifier": "sha256:0aa9925430151105d4c5c7d9989c645e97bb801bd33622eecc53562139a99fb9",
               "platform": "linux/arm64",
-              "target_name": "io_quay_boleynsu_base_linux_arm64"
+              "target_name": "io_quay_boleynsu_base_linux_arm64",
+              "bazel_tags": []
             }
           },
           "oci_crane_linux_i386": {
@@ -957,7 +1092,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/amd64",
-              "target_name": "io_docker_library_adminer_linux_amd64"
+              "target_name": "io_docker_library_adminer_linux_amd64",
+              "bazel_tags": []
             }
           },
           "io_docker_filebrowser_filebrowser_linux_amd64": {
@@ -969,7 +1105,8 @@
               "repository": "filebrowser/filebrowser",
               "identifier": "sha256:862a8f4f4829cb2747ced869aea8593204bbc718c92f0f11c97e7b669a54b53d",
               "platform": "linux/amd64",
-              "target_name": "io_docker_filebrowser_filebrowser_linux_amd64"
+              "target_name": "io_docker_filebrowser_filebrowser_linux_amd64",
+              "bazel_tags": []
             }
           },
           "oci_crane_toolchains": {
@@ -996,7 +1133,8 @@
               "repository": "boleynsu/oj-c99runner",
               "identifier": "sha256:7ca580c17ff29afc363bd6bfc9c94b605df86fe6d7b12f90a945e55ad0725d2a",
               "platform": "linux/arm64",
-              "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64"
+              "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64",
+              "bazel_tags": []
             }
           },
           "yq_toolchains": {
@@ -1047,7 +1185,8 @@
               "repository": "library/mariadb",
               "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
               "platform": "linux/arm64/v8",
-              "target_name": "io_docker_library_mariadb_linux_arm64_v8"
+              "target_name": "io_docker_library_mariadb_linux_arm64_v8",
+              "bazel_tags": []
             }
           },
           "io_quay_boleynsu_ci_runner": {
@@ -1088,7 +1227,8 @@
               "repository": "boleynsu/rbe-fedora",
               "identifier": "sha256:b27c7e5d3465d4d7d2fcd9dfdae4d3145d7e96dad9ac9f8aee4c20594f164181",
               "platform": "linux/amd64",
-              "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64"
+              "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64",
+              "bazel_tags": []
             }
           },
           "io_quay_boleynsu_ci_runner_linux_amd64": {
@@ -1100,7 +1240,8 @@
               "repository": "boleynsu/ci-runner",
               "identifier": "sha256:c0825bdfb0c92fc044c9cc9c1dd042b35c98d4163ad9febd349aa9a8562d834a",
               "platform": "linux/amd64",
-              "target_name": "io_quay_boleynsu_ci_runner_linux_amd64"
+              "target_name": "io_quay_boleynsu_ci_runner_linux_amd64",
+              "bazel_tags": []
             }
           },
           "copy_to_directory_linux_amd64": {
@@ -1157,7 +1298,8 @@
               "repository": "library/mariadb",
               "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
               "platform": "linux/ppc64le",
-              "target_name": "io_docker_library_mariadb_linux_ppc64le"
+              "target_name": "io_docker_library_mariadb_linux_ppc64le",
+              "bazel_tags": []
             }
           },
           "jq_linux_amd64": {
@@ -1217,7 +1359,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/arm64/v8",
-              "target_name": "io_docker_library_adminer_linux_arm64_v8"
+              "target_name": "io_docker_library_adminer_linux_arm64_v8",
+              "bazel_tags": []
             }
           },
           "yq_windows_amd64": {
@@ -1237,7 +1380,8 @@
               "repository": "filebrowser/filebrowser",
               "identifier": "sha256:862a8f4f4829cb2747ced869aea8593204bbc718c92f0f11c97e7b669a54b53d",
               "platform": "linux/arm64",
-              "target_name": "io_docker_filebrowser_filebrowser_linux_arm64"
+              "target_name": "io_docker_filebrowser_filebrowser_linux_arm64",
+              "bazel_tags": []
             }
           },
           "io_quay_boleynsu_oj_c99runner": {
@@ -1274,7 +1418,8 @@
               "repository": "library/adminer",
               "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
               "platform": "linux/ppc64le",
-              "target_name": "io_docker_library_adminer_linux_ppc64le"
+              "target_name": "io_docker_library_adminer_linux_ppc64le",
+              "bazel_tags": []
             }
           },
           "yq_linux_ppc64le": {
@@ -1316,7 +1461,8 @@
               "repository": "library/mariadb",
               "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
               "platform": "linux/s390x",
-              "target_name": "io_docker_library_mariadb_linux_s390x"
+              "target_name": "io_docker_library_mariadb_linux_s390x",
+              "bazel_tags": []
             }
           },
           "coreutils_windows_amd64": {
@@ -1335,6 +1481,20 @@
               "version": "4.25.2"
             }
           }
+        },
+        "moduleExtensionMetadata": {
+          "explicitRootModuleDirectDeps": [
+            "io_quay_boleynsu_ci_runner",
+            "io_docker_library_mariadb",
+            "io_docker_library_adminer",
+            "io_docker_filebrowser_filebrowser",
+            "io_quay_boleynsu_oj_c99runner",
+            "io_quay_boleynsu_rbe_fedora",
+            "io_quay_boleynsu_base"
+          ],
+          "explicitRootModuleDirectDevDeps": [],
+          "useAllRepos": "NO",
+          "reproducible": false
         },
         "recordedRepoMappingEntries": [
           [
