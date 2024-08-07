@@ -457,19 +457,34 @@ bazel_deps:
       value: [sha256]
 - name: rules_android
   type: http_archive
-  version: v0.1.1
-  sha256: 6461c1c5744442b394f46645957d6bd3420eb1b421908fe63caa03091b1b3655
-  strip_prefix: rules_android-0.1.1
-  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.1.1.tar.gz
-  updated_at: '2024-04-27'
+  version: v0.5.0
+  sha256: fc6b022e97c2d5893aa3dd01b480f37cd386d82fc7e14edbcba393cd390a244e
+  strip_prefix: rules_android-0.5.0
+  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.5.0.tar.gz
+  updated_at: '2024-08-07'
+- name: rules_robolectric
+  type: http_archive
+  version: '4.13'
+  sha256: a270fd6fd83f9f024623e787696e6b73c44664b7c95f3d937ed35bf0a94a67ae
+  strip_prefix: robolectric-bazel-4.13
+  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.13.tar.gz
+  updated_at: '2024-08-07'
+- name: io_abseil_py
+  module_name: abseil-py
+  type: http_archive
+  version: v2.1.0
+  sha256: 8a3d0830e4eb4f66c4fa907c06edf6ce1c719ced811a12e26d9d3162f8471758
+  strip_prefix: abseil-py-2.1.0
+  url: https://github.com/abseil/abseil-py/archive/refs/tags/v2.1.0.tar.gz
+  updated_at: '2024-08-07'
 
 pip_deps:
 - name: ruamel.yaml
   version: 0.18.6
   updated_at: '2024-02-07'
 - name: PyYAML
-  version: 6.0.1
-  updated_at: '2023-07-22'
+  version: 6.0.2
+  updated_at: '2024-08-07'
 
 maven_deps:
 - name: commons-io:commons-io

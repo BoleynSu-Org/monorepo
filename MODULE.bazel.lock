@@ -534,6 +534,49 @@
         "recordedRepoMappingEntries": []
       }
     },
+    "@@rules_android~//bzlmod_extensions:apksig.bzl%apksig_extension": {
+      "general": {
+        "bzlTransitiveDigest": "xSX4P09Iy1fBUY83Fl1yQQPQ072ZatN+D6DyDGJrU9w=",
+        "usagesDigest": "qlyEfIV8Y7PQk7iunYt9+POc4dyJZrrmx8S7mUe41Sw=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "apksig": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_archive",
+            "attributes": {
+              "url": "https://android.googlesource.com/platform/tools/apksig/+archive/24e3075e68ebe17c0b529bb24bfda819db5e2f3b.tar.gz",
+              "build_file": "@@rules_android~//bzlmod_extensions:apksig.BUILD"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "rules_android~",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
+      }
+    },
+    "@@rules_android~//rules/android_sdk_repository:rule.bzl%android_sdk_repository_extension": {
+      "general": {
+        "bzlTransitiveDigest": "VJX2d3UN/rqmnV5m4p7It8a+U3C9uJo3OZvya+s1VO4=",
+        "usagesDigest": "3bp+k+RITXZvIbHpfpZrS54mNo5bWLpSn81bqeUFfx8=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "androidsdk": {
+            "bzlFile": "@@rules_android~//rules/android_sdk_repository:rule.bzl",
+            "ruleClassName": "_android_sdk_repository",
+            "attributes": {}
+          }
+        },
+        "recordedRepoMappingEntries": []
+      }
+    },
     "@@rules_kotlin~//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
         "bzlTransitiveDigest": "l//eFZVgEUHSUfuQ1zQw9uxmcJku8ikraA2fv/2Pyh0=",
