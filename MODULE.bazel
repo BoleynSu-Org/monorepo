@@ -143,33 +143,6 @@ DEPS = {
             "build_file": "@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD",
         },
         {
-            "name": "llvm_linux_x86_64",
-            "type": "http_archive",
-            "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz",
-            "sha256": "884ee67d647d77e58740c1e645649e29ae9e8a6fe87c1376be0f3a30f3cc9ab3",
-            "strip_prefix": "clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04",
-            "version": "llvmorg-17.0.6",
-            "version_regex": "llvmorg-(.*)",
-            "updated_at": "2023-11-28",
-            "module_file_content": 'module(\n    name = "llvm_linux_x86_64",\n    version = "0.0.0",\n)\n',
-            "override_updater": [
-                {
-                    "type": "deps_updater",
-                    "name": "bazel_deps",
-                    "extra_args": [{"name": "fields", "value": ["version"]}],
-                },
-                {
-                    "type": "shell",
-                    "cmd": "name=$(curl --netrc-optional -sL https://api.github.com/repos/llvm/llvm-project/releases | jq -r '.[] | select(.tag_name == \"'${DEPS_UPDATER_version}'\") | .assets[] | select(.name | test(\"x86_64-linux-gnu-ubuntu.*tar.xz$\")) | .name')\necho DEPS_UPDATER_url=https://github.com/llvm/llvm-project/releases/download/${DEPS_UPDATER_version}/${name}\necho DEPS_UPDATER_strip_prefix=${name%.tar.xz}\n",
-                },
-                {
-                    "type": "deps_updater",
-                    "name": "bazel_deps",
-                    "extra_args": [{"name": "fields", "value": ["sha256"]}],
-                },
-            ],
-        },
-        {
             "name": "toolchains_llvm",
             "type": "http_archive",
             "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.1.2.tar.gz",
@@ -252,7 +225,15 @@ DEPS = {
             "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240809.104826/sysroot_linux_x86_64.tar.gz",
             "updated_at": "2024-08-09",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
-            "patch_cmds": ["chmod -R 755 ."],
+        },
+        {
+            "name": "clang_linux_x86_64",
+            "type": "http_archive",
+            "version": "clang-llvmorg-17.0.6-fedora-40-20240809.165157-20240809.183610",
+            "version_regex": "clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)",
+            "sha256": "c6bcebd59d332371ca6db7b6f72b4e84bb637dabbc26d0afd9dfbb935e775f86",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-17.0.6-fedora-40-20240809.165157-20240809.183610/clang_linux_x86_64.tar.gz",
+            "updated_at": "2024-08-09",
         },
         {
             "name": "bazel_features",
@@ -985,7 +966,9 @@ DEPS = {
     bazel_dep(
         name = dep.get("module_name", dep["name"]),
         version = ".".join([str(int(v)) for v in (dep["version"].lstrip("v") if "-" not in dep["version"] else (
-            dep["version"][8:] if "llvmorg-" in dep["version"] else dep["version"].split("-")[0]
+            dep["version"][len("llvmorg-"):] if dep["version"].startswith("llvmorg-") else (
+                ".".join([dep["version"].split("-")[i] for i in [2, 4, 5, 6]]) if dep["version"].startswith("clang-llvmorg-") else dep["version"].split("-")[0]
+            )
         )).split(".")]),
         repo_name = dep["name"],
     )
@@ -1045,23 +1028,20 @@ maven.install(
 )
 use_repo(maven, unpinned_maven = "unpinned_boleynsu_org_maven", maven = "boleynsu_org_maven")
 
-(LLVM,) = [dep for dep in DEPS["bazel_deps"] if dep["name"] == "llvm_linux_x86_64"]
+(CLANG,) = [dep for dep in DEPS["bazel_deps"] if dep["name"] == "clang_linux_x86_64"]
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
 llvm.toolchain(
     name = "llvm_toolchain_linux_x86_64",
     llvm_versions = {
-        "linux-x86_64": LLVM["version"][len("llvmorg-"):],
+        "linux-x86_64": CLANG["version"].split("-")[2],
     },
     exec_os = "linux",
     exec_arch = "x86_64",
     urls = {
-        "linux-x86_64": [LLVM["url"]],
-    },
-    strip_prefix = {
-        "linux-x86_64": LLVM["strip_prefix"],
+        "linux-x86_64": [CLANG["url"]],
     },
     sha256 = {
-        "linux-x86_64": LLVM["sha256"],
+        "linux-x86_64": CLANG["sha256"],
     },
 )
 llvm.sysroot(

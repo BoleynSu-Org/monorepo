@@ -3738,7 +3738,7 @@
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "y9h5L2NtWbogyWSOJgqnUaU50MTPWAW+waelXSirMVg=",
-        "usagesDigest": "DrkRJlH3pJEfv+Jq7o8WuG4rBfhARqWAEFhwCg2e/ek=",
+        "usagesDigest": "bwyR3jkFMlNWH3AcMI5g2KkMKnR962GtkhvxYQJzRFY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3790,14 +3790,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "884ee67d647d77e58740c1e645649e29ae9e8a6fe87c1376be0f3a30f3cc9ab3"
+                "linux-x86_64": "c6bcebd59d332371ca6db7b6f72b4e84bb637dabbc26d0afd9dfbb935e775f86"
               },
-              "strip_prefix": {
-                "linux-x86_64": "clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04"
-              },
+              "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04.tar.xz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-17.0.6-fedora-40-20240809.165157-20240809.183610/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
