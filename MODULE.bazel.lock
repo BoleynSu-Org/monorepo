@@ -3738,7 +3738,7 @@
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "y9h5L2NtWbogyWSOJgqnUaU50MTPWAW+waelXSirMVg=",
-        "usagesDigest": "bwyR3jkFMlNWH3AcMI5g2KkMKnR962GtkhvxYQJzRFY=",
+        "usagesDigest": "ng07fnfBdsUDuiwRfJeOf+nDDX94hzSFT8RBAkCaBoo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3761,7 +3761,7 @@
               "link_flags": {},
               "link_libs": {},
               "llvm_versions": {
-                "linux-x86_64": "17.0.6"
+                "linux-x86_64": "18.1.8"
               },
               "opt_compile_flags": {},
               "opt_link_flags": {},
@@ -3786,16 +3786,16 @@
               "llvm_mirror": "",
               "llvm_version": "",
               "llvm_versions": {
-                "linux-x86_64": "17.0.6"
+                "linux-x86_64": "18.1.8"
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "c6bcebd59d332371ca6db7b6f72b4e84bb637dabbc26d0afd9dfbb935e775f86"
+                "linux-x86_64": "948d656b351717656dc28b678a9a796437837f4ae2c1e78525313baa3353b68a"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-17.0.6-fedora-40-20240809.165157-20240809.183610/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240809.201350-20240809.211720/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
