@@ -1090,7 +1090,7 @@ maven.install(
 use_repo(maven, unpinned_maven = "unpinned_boleynsu_org_maven", maven = "boleynsu_org_maven")
 
 (CLANG,) = [dep for dep in DEPS["bazel_deps"] if dep["name"] == "clang_linux_x86_64"]
-llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm")
+llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm", dev_dependency = True)
 llvm.toolchain(
     name = "llvm_toolchain_linux_x86_64",
     llvm_versions = {
@@ -1113,7 +1113,7 @@ llvm.sysroot(
 use_repo(llvm, "llvm_toolchain_linux_x86_64")
 
 (GOLANG_VERSION,) = [dep["version"] for dep in DEPS["toolchain_deps"] if dep["name"] == "golang"]
-go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
+go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk", dev_dependency = True)
 go_sdk.download(
     name = "go_linux_amd64",
     goos = "linux",
