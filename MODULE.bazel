@@ -18,6 +18,7 @@ DEPS = {
             "version": "0.0.9",
             "strip_prefix": "rules_cc-0.0.9",
             "updated_at": "2023-09-22",
+            "module_version": "0.0.9",
         },
         {
             "name": "rules_java",
@@ -28,6 +29,7 @@ DEPS = {
             "updated_at": "2024-07-22",
             "version": "7.8.0",
             "load_deps": 'load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n',
+            "module_version": "7.8.0",
         },
         {
             "name": "rules_python",
@@ -38,6 +40,7 @@ DEPS = {
             "updated_at": "2024-07-12",
             "version": "0.34.0",
             "load_deps": 'load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")\nload("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")\nload("@rules_python//python:repositories.bzl", "python_register_toolchains")\nload("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")\nload("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")\ndef deps():\n  internal_config_repo(name = "rules_python_internal")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = "python_sdk",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = "python_sdk_toolchains",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = "python_sdk",\n  )\n',
+            "module_version": "0.34.0",
         },
         {
             "name": "rules_proto",
@@ -52,6 +55,7 @@ DEPS = {
             "patch_cmds": [
                 "sed -i 's/protobuf_workspace(name = \"com_google_protobuf\")//g' proto/repositories.bzl"
             ],
+            "module_version": "6.0.2",
         },
         {
             "name": "io_bazel_rules_go",
@@ -66,6 +70,7 @@ DEPS = {
             "patch_cmds": [
                 "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl"
             ],
+            "module_version": "0.49.0",
         },
         {
             "name": "rules_oci",
@@ -76,6 +81,7 @@ DEPS = {
             "updated_at": "2024-08-07",
             "version": "v1.8.0",
             "load_deps": 'load("@rules_oci//oci:repositories.bzl", "LATEST_CRANE_VERSION", "oci_register_toolchains")\ndef deps():\n  oci_register_toolchains(\n      name = "oci",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n',
+            "module_version": "1.8.0",
         },
         {
             "name": "bazel_skylib",
@@ -85,6 +91,7 @@ DEPS = {
             "updated_at": "2024-06-04",
             "version": "1.7.1",
             "strip_prefix": "bazel-skylib-1.7.1",
+            "module_version": "1.7.1",
         },
         {
             "name": "rules_jvm_external",
@@ -94,6 +101,7 @@ DEPS = {
             "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.2.tar.gz",
             "updated_at": "2024-07-12",
             "version": "6.2",
+            "module_version": "6.2",
         },
         {
             "name": "rules_pkg",
@@ -103,6 +111,7 @@ DEPS = {
             "updated_at": "2024-07-12",
             "version": "1.0.1",
             "strip_prefix": "rules_pkg-1.0.1",
+            "module_version": "1.0.1",
         },
         {
             "name": "io_grpc_grpc_java",
@@ -115,6 +124,7 @@ DEPS = {
             "version": "v1.65.1",
             "load_deps": 'load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")\ndef deps():\n  grpc_java_repositories()\n',
             "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel",
+            "module_version": "1.65.1",
         },
         {
             "name": "bazel_gazelle",
@@ -130,6 +140,7 @@ DEPS = {
                 "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl",
             ],
             "load_deps": 'load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")\ndef deps():\n  gazelle_dependencies()\n',
+            "module_version": "0.38.0",
         },
         {
             "name": "com_github_cdolivet_editarea",
@@ -141,6 +152,7 @@ DEPS = {
             "expires_at": "2025-04-18",
             "version": "v0.8.2",
             "build_file": "@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD",
+            "module_version": "0.8.2",
         },
         {
             "name": "toolchains_llvm",
@@ -150,6 +162,7 @@ DEPS = {
             "strip_prefix": "toolchains_llvm-1.1.2",
             "updated_at": "2024-08-01",
             "version": "v1.1.2",
+            "module_version": "1.1.2",
         },
         {
             "name": "bazel_linux_x86_64",
@@ -178,6 +191,7 @@ DEPS = {
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
             "load_deps": 'load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")\ndef deps():\n  if BAZEL_DEPS["bazel_linux_x86_64"]["version"] != native.bazel_version:\n    print("You are using an unsupported version of Bazel")\n',
+            "module_version": "7.2.1",
         },
         {
             "name": "rules_license",
@@ -187,6 +201,7 @@ DEPS = {
             "url": "https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.8.tar.gz",
             "updated_at": "2024-01-24",
             "version": "0.0.8",
+            "module_version": "0.0.8",
         },
         {
             "name": "platforms",
@@ -196,6 +211,7 @@ DEPS = {
             "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.10.tar.gz",
             "updated_at": "2024-04-26",
             "version": "0.0.10",
+            "module_version": "0.0.10",
         },
         {
             "name": "kubectl_linux_amd64",
@@ -216,6 +232,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "1.30.3",
         },
         {
             "name": "sysroot_linux_x86_64",
@@ -225,6 +242,7 @@ DEPS = {
             "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20240809.104826/sysroot_linux_x86_64.tar.gz",
             "updated_at": "2024-08-09",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
+            "module_version": "20240809.104826",
         },
         {
             "name": "clang_linux_x86_64",
@@ -234,6 +252,7 @@ DEPS = {
             "sha256": "948d656b351717656dc28b678a9a796437837f4ae2c1e78525313baa3353b68a",
             "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240809.201350-20240809.211720/clang_linux_x86_64.tar.gz",
             "updated_at": "2024-08-10",
+            "module_version": "18.1.8.40.20240809.201350.20240809.211720",
         },
         {
             "name": "bazel_features",
@@ -261,6 +280,7 @@ DEPS = {
                 },
             ],
             "load_deps": 'load("@bazel_features//:deps.bzl", "bazel_features_deps")\ndef deps():\n  bazel_features_deps()\n',
+            "module_version": "1.15.0",
         },
         {
             "name": "com_google_protobuf",
@@ -273,6 +293,7 @@ DEPS = {
             "version_regex": "v(3)\\.([0-9.]*)",
             "updated_at": "2024-01-06",
             "module_file_content": 'module(\n    name = "protobuf",\n    version = "3.19.6",\n    repo_name = "com_google_protobuf",\n)\nbazel_dep(name = "bazel_skylib", version = "1.0.3")\nbazel_dep(name = "zlib", version = "1.2.12")\nbazel_dep(name = "rules_python", version = "0.4.0")\nbazel_dep(name = "rules_cc", version = "0.0.1")\nbazel_dep(name = "rules_proto", version = "4.0.0")\nbazel_dep(name = "rules_java", version = "4.0.0")\nbazel_dep(name = "rules_jvm_external", version = "0.0.0")\n',
+            "module_version": "3.19.6",
         },
         {
             "name": "zlib",
@@ -300,6 +321,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "1.3.1",
         },
         {
             "name": "apple_support",
@@ -324,6 +346,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "1.16.0",
         },
         {
             "name": "stardoc",
@@ -348,6 +371,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "0.7.0",
         },
         {
             "name": "rules_kotlin",
@@ -372,6 +396,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "1.9.6",
         },
         {
             "name": "aspect_bazel_lib",
@@ -398,6 +423,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "2.7.9",
         },
         {
             "name": "buildozer",
@@ -423,6 +449,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
+            "module_version": "7.1.2",
         },
         {
             "name": "rules_android",
@@ -432,6 +459,7 @@ DEPS = {
             "strip_prefix": "rules_android-0.5.1",
             "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.5.1.tar.gz",
             "updated_at": "2024-08-07",
+            "module_version": "0.5.1",
         },
         {
             "name": "rules_robolectric",
@@ -441,6 +469,7 @@ DEPS = {
             "strip_prefix": "robolectric-bazel-4.13",
             "url": "https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.13.tar.gz",
             "updated_at": "2024-08-07",
+            "module_version": "4.13",
         },
         {
             "name": "io_abseil_py",
@@ -451,6 +480,7 @@ DEPS = {
             "strip_prefix": "abseil-py-2.1.0",
             "url": "https://github.com/abseil/abseil-py/archive/refs/tags/v2.1.0.tar.gz",
             "updated_at": "2024-08-07",
+            "module_version": "2.1.0",
         },
         {
             "name": "container_structure_test",
@@ -460,72 +490,99 @@ DEPS = {
             "strip_prefix": "container-structure-test-1.19.1",
             "url": "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.19.1.tar.gz",
             "updated_at": "2024-08-07",
+            "module_version": "1.19.1",
         },
     ],
     "pip_deps": [
-        {"name": "ruamel.yaml", "version": "0.18.6", "updated_at": "2024-02-07"},
-        {"name": "PyYAML", "version": "6.0.2", "updated_at": "2024-08-07"},
+        {
+            "name": "ruamel.yaml",
+            "version": "0.18.6",
+            "updated_at": "2024-02-07",
+            "module_version": "0.18.6",
+        },
+        {
+            "name": "PyYAML",
+            "version": "6.0.2",
+            "updated_at": "2024-08-07",
+            "module_version": "6.0.2",
+        },
     ],
     "maven_deps": [
         {
             "name": "commons-io:commons-io",
             "version": "2.16.1",
             "updated_at": "2024-04-08",
+            "module_version": "2.16.1",
         },
         {
             "name": "org.mariadb.jdbc:mariadb-java-client",
             "version": "3.4.1",
             "updated_at": "2024-07-17",
+            "module_version": "3.4.1",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
             "version": "10.1.28",
             "updated_at": "2024-08-06",
+            "module_version": "10.1.28",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
             "version": "10.1.28",
             "updated_at": "2024-08-06",
+            "module_version": "10.1.28",
         },
-        {"name": "org.webjars:jquery", "version": "3.7.1", "updated_at": "2023-09-02"},
+        {
+            "name": "org.webjars:jquery",
+            "version": "3.7.1",
+            "updated_at": "2023-09-02",
+            "module_version": "3.7.1",
+        },
         {
             "name": "org.webjars:bootstrap",
             "version": "3.4.1",
             "version_regex": "(3\\..*)",
             "updated_at": "2022-04-09",
             "expires_at": "2025-04-18",
+            "module_version": "3.4.1",
         },
         {
             "name": "io.undertow:undertow-core",
             "version": "2.3.15.Final",
             "version_regex": "(.*)\\.Final",
             "updated_at": "2024-07-16",
+            "module_version": "2.3.15",
         },
         {
             "name": "commons-validator:commons-validator",
             "version": "1.9.0",
             "updated_at": "2024-05-29",
+            "module_version": "1.9.0",
         },
         {
             "name": "commons-codec:commons-codec",
             "version": "1.17.1",
             "updated_at": "2024-07-16",
+            "module_version": "1.17.1",
         },
         {
             "name": "org.wildfly.common:wildfly-common",
             "version": "1.7.0.Final",
             "version_regex": "(.*)\\.Final",
             "updated_at": "2023-11-03",
+            "module_version": "1.7.0",
         },
         {
             "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
             "version": "20240325.1",
             "updated_at": "2024-03-26",
+            "module_version": "20240325.1",
         },
         {
             "name": "org.apache.commons:commons-text",
             "version": "1.12.0",
             "updated_at": "2024-04-17",
+            "module_version": "1.12.0",
         },
         {
             "name": "com.google.android:annotations",
@@ -838,6 +895,7 @@ DEPS = {
             "name": "com.google.j2objc:j2objc-annotations",
             "version": "3.0.0",
             "updated_at": "2024-08-07",
+            "module_version": "3.0.0",
         },
     ],
     "container_deps": [
@@ -850,6 +908,7 @@ DEPS = {
             "digest": "sha256:9564272c7eba92dc89c4c7dda73bcf1f880d30addb68f9fbbd20bb6a6949cbbd",
             "updated_at": "2024-08-09",
             "platforms": ["linux/amd64"],
+            "module_version": "20240809.15646",
         },
         {
             "name": "io_docker_library_mariadb",
@@ -866,6 +925,7 @@ DEPS = {
                 "linux/ppc64le",
                 "linux/s390x",
             ],
+            "module_version": "0.0.0",
         },
         {
             "name": "io_docker_library_adminer",
@@ -885,6 +945,7 @@ DEPS = {
                 "linux/ppc64le",
                 "linux/s390x",
             ],
+            "module_version": "4.8.1",
         },
         {
             "name": "io_docker_filebrowser_filebrowser",
@@ -895,6 +956,7 @@ DEPS = {
             "digest": "sha256:862a8f4f4829cb2747ced869aea8593204bbc718c92f0f11c97e7b669a54b53d",
             "updated_at": "2024-05-19",
             "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7"],
+            "module_version": "2.30.0",
         },
         {
             "name": "io_quay_boleynsu_oj_c99runner",
@@ -905,6 +967,7 @@ DEPS = {
             "digest": "sha256:e837c800d1c342ac505300ade45e794af3d36901f817b46031542ef8b2e6e183",
             "updated_at": "2024-08-09",
             "platforms": ["linux/amd64", "linux/arm64"],
+            "module_version": "20240809.15646",
         },
         {
             "name": "io_quay_boleynsu_rbe_fedora",
@@ -915,6 +978,7 @@ DEPS = {
             "digest": "sha256:f167fc431466fc8e8546914b616267580b3704d17759b2d7903c19366dc02a4e",
             "updated_at": "2024-08-09",
             "platforms": ["linux/amd64"],
+            "module_version": "20240809.15646",
         },
         {
             "name": "io_quay_boleynsu_base",
@@ -925,6 +989,7 @@ DEPS = {
             "tag": "20240809.015646",
             "updated_at": "2024-08-09",
             "platforms": ["linux/amd64", "linux/arm64"],
+            "module_version": "20240809.15646",
         },
     ],
     "toolchain_deps": [
@@ -965,11 +1030,7 @@ DEPS = {
 [
     bazel_dep(
         name = dep.get("module_name", dep["name"]),
-        version = ".".join([str(int(v)) for v in (dep["version"].lstrip("v") if "-" not in dep["version"] else (
-            dep["version"][len("llvmorg-"):] if dep["version"].startswith("llvmorg-") else (
-                ".".join([dep["version"].split("-")[i] for i in [2, 4, 5, 6]]) if dep["version"].startswith("clang-llvmorg-") else dep["version"].split("-")[0]
-            )
-        )).split(".")]),
+        version = dep.get("module_version", dep["version"]),
         repo_name = dep["name"],
     )
     for dep in DEPS["bazel_deps"]
