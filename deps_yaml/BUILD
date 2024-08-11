@@ -5,7 +5,7 @@ py_library(
     srcs = ["include.py"],
     visibility = ["//visibility:public"],
     deps = [
-        "@pip_ruamel_yaml//:pkg",
+        "@pip//ruamel_yaml:pkg",
     ],
 )
 
@@ -15,6 +15,6 @@ py_binary(
     visibility = ["//visibility:public"],
     deps = [
         ":include",
-        "@pip_ruamel_yaml//:pkg",
+        "@pip//ruamel_yaml:pkg",
     ],
 )
