@@ -28,7 +28,6 @@ DEPS = {
             "strip_prefix": "rules_java-7.8.0",
             "updated_at": "2024-07-22",
             "version": "7.8.0",
-            "load_deps": 'load("@rules_java//java:repositories.bzl", "java_tools_repos", "remote_jdk21_repos")\ndef deps():\n  java_tools_repos()\n  remote_jdk21_repos()\n',
             "module_version": "7.8.0",
         },
         {
@@ -39,7 +38,6 @@ DEPS = {
             "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.34.0.tar.gz",
             "updated_at": "2024-07-12",
             "version": "0.34.0",
-            "load_deps": 'load("@rules_python//python/private:internal_config_repo.bzl", "internal_config_repo")\nload("@rules_python//python/pip_install:repositories.bzl", "pip_install_dependencies")\nload("@rules_python//python:repositories.bzl", "python_register_toolchains")\nload("@rules_python//python/private:toolchains_repo.bzl", "toolchains_repo")\nload("@bazel_deps//:toolchain_deps.bzl", "PYTHON_VERSION")\ndef deps():\n  internal_config_repo(name = "rules_python_internal")\n  pip_install_dependencies()\n  python_register_toolchains(\n    name = "python_sdk",\n    python_version = PYTHON_VERSION,\n    register_toolchains = False,\n  )\n  toolchains_repo(\n      name = "python_sdk_toolchains",\n      python_version = PYTHON_VERSION,\n      set_python_version_constraint = False,\n      user_repository_name = "python_sdk",\n  )\n',
             "module_version": "0.34.0",
         },
         {
@@ -51,10 +49,6 @@ DEPS = {
             "updated_at": "2024-06-17",
             "version": "6.0.2",
             "version_regex": "([^-]*)[0-9.-]*",
-            "load_deps": 'load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies")\ndef deps():\n  rules_proto_dependencies()\n',
-            "patch_cmds": [
-                "sed -i 's/protobuf_workspace(name = \"com_google_protobuf\")//g' proto/repositories.bzl"
-            ],
             "module_version": "6.0.2",
         },
         {
@@ -66,10 +60,6 @@ DEPS = {
             "updated_at": "2024-07-13",
             "version": "v0.49.0",
             "strip_prefix": "rules_go-0.49.0",
-            "load_deps": 'load("@io_bazel_rules_go//go:deps.bzl", "go_download_sdk")\nload("@io_bazel_rules_go//go/private:nogo.bzl", "go_register_nogo", "DEFAULT_NOGO")\nload("@bazel_deps//:toolchain_deps.bzl", "GOLANG_VERSION")\ndef deps():\n  go_register_nogo(\n      name = "io_bazel_rules_nogo",\n      nogo = DEFAULT_NOGO,\n  )\n  go_download_sdk(\n      name = "go_linux_amd64",\n      goos = "linux",\n      goarch = "amd64",\n      version = GOLANG_VERSION,\n      register_toolchains = False,\n  )\n',
-            "patch_cmds": [
-                "sed -i 's/io_bazel_rules_go_bazel_features/bazel_features/g' MODULE.bazel go/private/*.bzl"
-            ],
             "module_version": "0.49.0",
         },
         {
@@ -80,7 +70,6 @@ DEPS = {
             "strip_prefix": "rules_oci-1.8.0",
             "updated_at": "2024-08-07",
             "version": "v1.8.0",
-            "load_deps": 'load("@rules_oci//oci:repositories.bzl", "LATEST_CRANE_VERSION", "oci_register_toolchains")\ndef deps():\n  oci_register_toolchains(\n      name = "oci",\n      crane_version = LATEST_CRANE_VERSION,\n  )\n',
             "module_version": "1.8.0",
         },
         {
@@ -122,7 +111,6 @@ DEPS = {
             "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.65.1.tar.gz",
             "updated_at": "2024-08-07",
             "version": "v1.65.1",
-            "load_deps": 'load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories")\ndef deps():\n  grpc_java_repositories()\n',
             "module_file": "@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel",
             "module_version": "1.65.1",
         },
@@ -135,11 +123,6 @@ DEPS = {
             "updated_at": "2024-08-01",
             "version": "v0.38.0",
             "strip_prefix": "bazel-gazelle-0.38.0",
-            "patch_cmds": [
-                "sed -i 's#go_repository = _go_repository#go_repository = _go_repository\\ndef fake_go_repository(**kwargs): pass#g' deps.bzl",
-                "sed -i 's# go_repository,# fake_go_repository,#g' deps.bzl",
-            ],
-            "load_deps": 'load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")\ndef deps():\n  gazelle_dependencies()\n',
             "module_version": "0.38.0",
         },
         {
@@ -190,7 +173,6 @@ DEPS = {
                 },
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
-            "load_deps": 'load("@bazel_deps//:bazel_deps.bzl", "BAZEL_DEPS")\ndef deps():\n  if BAZEL_DEPS["bazel_linux_x86_64"]["version"] != native.bazel_version:\n    print("You are using an unsupported version of Bazel")\n',
             "module_version": "7.2.1",
         },
         {
@@ -279,7 +261,6 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "load_deps": 'load("@bazel_features//:deps.bzl", "bazel_features_deps")\ndef deps():\n  bazel_features_deps()\n',
             "module_version": "1.15.0",
         },
         {
