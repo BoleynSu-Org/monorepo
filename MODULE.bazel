@@ -150,11 +150,11 @@ DEPS = {
         {
             "name": "bazel_linux_x86_64",
             "type": "http_archive",
-            "version": "7.2.1",
-            "url": "https://github.com/bazelbuild/bazel/releases/download/7.2.1/bazel-7.2.1-installer-linux-x86_64.sh",
+            "version": "7.3.0",
+            "url": "https://github.com/bazelbuild/bazel/releases/download/7.3.0/bazel-7.3.0-installer-linux-x86_64.sh",
             "archive_type": "zip",
-            "sha256": "32c13822a1891ae1d9812f84a853624665f5f59863e65b46427255b7fbe29fe3",
-            "updated_at": "2024-06-29",
+            "sha256": "2fa86d2ce8b33ced4e5ad6b36c7ab0d399dee6d6a4f12df4a21675084f286e13",
+            "updated_at": "2024-08-13",
             "executable": True,
             "override_updater": [
                 {
@@ -173,7 +173,7 @@ DEPS = {
                 },
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
-            "module_version": "7.2.1",
+            "module_version": "7.3.0",
         },
         {
             "name": "rules_license",
@@ -198,10 +198,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.30.3/bin/linux/amd64/kubectl",
-            "sha256": "abd83816bd236b266c3643e6c852b446f068fe260f3296af1a25b550854ec7e5",
-            "version": "v1.30.3",
-            "updated_at": "2024-07-17",
+            "url": "https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl",
+            "sha256": "7c27adc64a84d1c0cc3dcf7bf4b6e916cc00f3f576a2dbac51b318d926032437",
+            "version": "v1.31.0",
+            "updated_at": "2024-08-13",
             "executable": True,
             "override_updater": [
                 {
@@ -214,7 +214,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.30.3",
+            "module_version": "1.31.0",
         },
         {
             "name": "sysroot_linux_x86_64",
@@ -898,8 +898,8 @@ DEPS = {
             "registry": "docker.io",
             "repository": "library/mariadb",
             "tag": "latest",
-            "digest": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
-            "updated_at": "2024-06-18",
+            "digest": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
+            "updated_at": "2024-08-13",
             "platforms": [
                 "linux/amd64",
                 "linux/arm64/v8",
@@ -1009,11 +1009,17 @@ DEPS = {
 # DEPS END
 
 [
-    bazel_dep(
-        name = dep.get("module_name", dep["name"]),
-        version = dep.get("module_version", dep["version"]),
-        repo_name = dep["name"],
-    )
+    [
+        bazel_dep(
+            name = dep.get("module_name", dep["name"]),
+            version = dep.get("module_version", dep["version"]),
+            repo_name = dep["name"],
+        ),
+        single_version_override(
+            module_name = dep.get("module_name", dep["name"]),
+            version = dep.get("module_version", dep["version"]),
+        ),
+    ]
     for dep in DEPS["bazel_deps"]
     if dep["type"] == "http_archive"
 ]

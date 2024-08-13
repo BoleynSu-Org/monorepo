@@ -774,7 +774,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "Y6o7hfMyOP67ZLfBYa8oL0ed63NDysiKL6SceoHbsWc=",
-        "usagesDigest": "wfOov3Qtgvsy9yZ4m7ZSbl69mMhcbiG3HzGxxqQYgvU=",
+        "usagesDigest": "cbhW3GRKX5QtmQCl3ysA8h13VxJULB3k8abdEiXf+DE=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -786,7 +786,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
+              "identifier": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
               "platform": "linux/amd64",
               "target_name": "io_docker_library_mariadb_linux_amd64",
               "bazel_tags": []
@@ -1043,7 +1043,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
+              "identifier": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_library_mariadb_linux_arm64_v8",
@@ -1183,7 +1183,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
+              "identifier": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_library_mariadb_linux_arm64_v8",
               "bazel_tags": []
@@ -1296,7 +1296,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
+              "identifier": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_library_mariadb_linux_ppc64le",
               "bazel_tags": []
@@ -1459,7 +1459,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:e59ba8783bf7bc02a4779f103bb0d8751ac0e10f9471089709608377eded7aa8",
+              "identifier": "sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050",
               "platform": "linux/s390x",
               "target_name": "io_docker_library_mariadb_linux_s390x",
               "bazel_tags": []
@@ -1517,7 +1517,7 @@
     },
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "WHKPI5DKBFZyOdeHXRPeTjE/eDuRsYAz4M8DK5/OcPw=",
+        "bzlTransitiveDigest": "lN4SyKZFrwO3pJWvIQn1CmkBudo80olpITiINv5nd5M=",
         "usagesDigest": "oYkedjxSdBorV3xQF7DIKk/vNNIQfMYhJ6f7cAJ0nis=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",
