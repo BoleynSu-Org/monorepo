@@ -52,8 +52,8 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "jl6upvbQ+op05W1a3gE6bja6dc7fvsNfslO0m46Ma3s=",
-        "usagesDigest": "Fv0zhwfPjMUGLZWPCyjq50R/324IhtJLvg+Qz37RfJg=",
+        "bzlTransitiveDigest": "4z68+Zupkgvbh3DNKdL/JJXt9QfpOOmPhuzIsf/tfbI=",
+        "usagesDigest": "MrS0HoR+OByElJnUH554RpJ3I6n96sA9VphHYQcYH0s=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -519,7 +519,7 @@
     },
     "@@container_structure_test~//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "y6qIdcmStsnQ0X0xYJ35mfWmx3gfApvha6UoFdLlSEM=",
+        "bzlTransitiveDigest": "MY5/xpa1k1tuijiszllTObmvNwL/4J1wvV28hrI3C2k=",
         "usagesDigest": "mE7vyAM9GWUsa2dGxm0a3i92Vj4x7viP1gjgoHjzzUE=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -773,7 +773,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "Y6o7hfMyOP67ZLfBYa8oL0ed63NDysiKL6SceoHbsWc=",
+        "bzlTransitiveDigest": "SYP4WkpFrncW3rJO1wn4fHrAWZO6HQF2nXfit+2GYUc=",
         "usagesDigest": "cbhW3GRKX5QtmQCl3ysA8h13VxJULB3k8abdEiXf+DE=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
