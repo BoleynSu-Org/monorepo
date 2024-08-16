@@ -23,12 +23,12 @@ bazel_deps:
   module_version: 7.9.0
 - name: rules_python
   type: http_archive
-  sha256: 778aaeab3e6cfd56d681c89f5c10d7ad6bf8d2f1a72de9de55b23081b2d31618
-  strip_prefix: rules_python-0.34.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.34.0.tar.gz
-  updated_at: '2024-07-12'
-  version: 0.34.0
-  module_version: 0.34.0
+  sha256: be04b635c7be4604be1ef20542e9870af3c49778ce841ee2d92fcb42f9d9516a
+  strip_prefix: rules_python-0.35.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.35.0.tar.gz
+  updated_at: '2024-08-16'
+  version: 0.35.0
+  module_version: 0.35.0
 - name: rules_proto
   type: http_archive
   sha256: 6fb6767d1bef535310547e03247f7518b03487740c11b6c6adb7952033fe1295
@@ -703,8 +703,8 @@ container_deps:
   registry: docker.io
   repository: library/mariadb
   tag: latest
-  digest: sha256:196329ec891258644741b0273232550778d523e56ce69119e70d0429f0dd0050
-  updated_at: '2024-08-13'
+  digest: sha256:018e5ae1207e80a5c65e24d78d836ac4f82de5d7bf9a035c44fa06d9cb75c2f4
+  updated_at: '2024-08-16'
   platforms:
   - linux/amd64
   - linux/arm64/v8
