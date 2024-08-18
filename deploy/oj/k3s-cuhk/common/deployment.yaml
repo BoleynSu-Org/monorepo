@@ -220,6 +220,7 @@ spec:
         - name: registry-access-token-secret
       enableServiceLinks: false
       automountServiceAccountToken: false
+      runtimeClassName: gvisor
 ---
 apiVersion: apps/v1
 kind: Deployment
