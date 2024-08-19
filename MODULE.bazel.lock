@@ -1517,7 +1517,7 @@
     },
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "tcYJqmKUpdLvmrLDkbYsKGHUCI5046+8T9ounBTFFTQ=",
+        "bzlTransitiveDigest": "BT+sTJVMq/OH9DaPFudJh5n62RQTbbZPAd3ijnTFZsc=",
         "usagesDigest": "moHoYY1OP7kHaHHJ5EAvm+zksRZt5n3lvjcOhYhq7uY=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",
@@ -3770,7 +3770,7 @@
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "y9h5L2NtWbogyWSOJgqnUaU50MTPWAW+waelXSirMVg=",
-        "usagesDigest": "+cCIvQjT6wYTmcFk8lNfh4F1mePXHBZ7mXB6W4hXsQE=",
+        "usagesDigest": "AmtwECGnnnZmohvvBCRlLV7N+by3x/6qoQD+XKb+RVg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3822,12 +3822,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "34640bf416b7cfcbb27532611ec2de93d5262f4e473c8a1291d70d9a90fe3271"
+                "linux-x86_64": "fbce23447b73744884b9e419a760e1bc4ae84a8d10414487c04db9006c4c4d8b"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240814.185806-20240814.235916/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240818.083021-20240819.144355/clang_linux_x86_64.tar.gz"
                 ]
               }
             }

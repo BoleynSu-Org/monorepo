@@ -118,11 +118,11 @@ bazel_deps:
   module_version: 1.1.2
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 7.3.0
-  url: https://github.com/bazelbuild/bazel/releases/download/7.3.0/bazel-7.3.0-installer-linux-x86_64.sh
+  version: 7.3.1
+  url: https://github.com/bazelbuild/bazel/releases/download/7.3.1/bazel-7.3.1-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: 2fa86d2ce8b33ced4e5ad6b36c7ab0d399dee6d6a4f12df4a21675084f286e13
-  updated_at: '2024-08-13'
+  sha256: 6f2e5c0c2e5e17ba4e9b48ba67f507c31a1c5d6aa49989c364fb9bc19504ca73
+  updated_at: '2024-08-19'
   executable: true
   override_updater:
   - type: deps_updater
@@ -138,7 +138,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 7.3.0
+  module_version: 7.3.1
 - name: rules_license
   type: http_archive
   sha256: 8c1155797cb5f5697ea8c6eac6c154cf51aa020e368813d9d9b949558c84f2da
@@ -189,12 +189,12 @@ bazel_deps:
   module_version: '20240816.124703'
 - name: clang_linux_x86_64
   type: http_archive
-  version: clang-llvmorg-18.1.8-fedora-40-20240814.185806-20240814.235916
+  version: clang-llvmorg-18.1.8-fedora-40-20240818.083021-20240819.144355
   version_regex: clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 34640bf416b7cfcbb27532611ec2de93d5262f4e473c8a1291d70d9a90fe3271
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240814.185806-20240814.235916/clang_linux_x86_64.tar.gz
-  updated_at: '2024-08-15'
-  module_version: 18.1.8.40.20240814.185806.20240814.235916
+  sha256: fbce23447b73744884b9e419a760e1bc4ae84a8d10414487c04db9006c4c4d8b
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-18.1.8-fedora-40-20240818.083021-20240819.144355/clang_linux_x86_64.tar.gz
+  updated_at: '2024-08-19'
+  module_version: 18.1.8.40.20240818.83021.20240819.144355
 - name: bazel_features
   type: http_archive
   version: v1.15.0
