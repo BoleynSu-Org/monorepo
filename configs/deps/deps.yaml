@@ -41,12 +41,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: d9fa26d4c687b57093ae86f1635e5b7c146603b92e3a3fa73723eded464f1ff7
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.49.0.tar.gz
-  updated_at: '2024-07-13'
-  version: v0.49.0
-  strip_prefix: rules_go-0.49.0
-  module_version: 0.49.0
+  sha256: d58f1ed0422a28333689bb97284d0d6097c1abccb32f402a3e42cd2d5080940f
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.50.0.tar.gz
+  updated_at: '2024-08-31'
+  version: v0.50.0
+  strip_prefix: rules_go-0.50.0
+  module_version: 0.50.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.8.0.tar.gz
@@ -729,17 +729,17 @@ container_deps:
   - linux/s390x
   module_version: 4.8.1
 - name: io_docker_filebrowser_filebrowser
-  version: v2.31.0
+  version: v2.31.1
   registry: docker.io
   repository: filebrowser/filebrowser
-  tag: v2.31.0
-  digest: sha256:e68df99eecbb2ec6ee15ac57a49848986c26500f455182a0261b53b71f76d008
-  updated_at: '2024-08-30'
+  tag: v2.31.1
+  digest: sha256:b9b0dcac8b20c01ed4777889c8ae6ff74443ed604e11e4b862d9f3068eeb9114
+  updated_at: '2024-08-31'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.31.0
+  module_version: 2.31.1
 - name: io_quay_boleynsu_oj_c99runner
   version: '20240830.075225'
   registry: quay.io
