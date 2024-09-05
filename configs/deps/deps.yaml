@@ -41,12 +41,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: d58f1ed0422a28333689bb97284d0d6097c1abccb32f402a3e42cd2d5080940f
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.50.0.tar.gz
-  updated_at: '2024-08-31'
-  version: v0.50.0
-  strip_prefix: rules_go-0.50.0
-  module_version: 0.50.0
+  sha256: b8e1e0cd332c5861b58f9d5200fcb755c68bbb1473bdcf44f5edd20f9678fe1d
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.50.1.tar.gz
+  updated_at: '2024-09-05'
+  version: v0.50.1
+  strip_prefix: rules_go-0.50.1
+  module_version: 0.50.1
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v1.8.0.tar.gz
@@ -141,12 +141,12 @@ bazel_deps:
   module_version: 7.3.1
 - name: rules_license
   type: http_archive
-  sha256: 8c1155797cb5f5697ea8c6eac6c154cf51aa020e368813d9d9b949558c84f2da
-  strip_prefix: rules_license-0.0.8
-  url: https://github.com/bazelbuild/rules_license/archive/refs/tags/0.0.8.tar.gz
-  updated_at: '2024-01-24'
-  version: 0.0.8
-  module_version: 0.0.8
+  sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
+  strip_prefix: rules_license-1.0.0
+  url: https://github.com/bazelbuild/rules_license/archive/refs/tags/1.0.0.tar.gz
+  updated_at: '2024-09-05'
+  version: 1.0.0
+  module_version: 1.0.0
 - name: platforms
   type: http_archive
   sha256: 3df33228654e56b09f17613613767b052581b822d57cb9cfd5e7b19a8e617b42
