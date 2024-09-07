@@ -496,48 +496,32 @@ struct TypeInfer {
                 }
                 b->D.d = find(b->D.d);
                 shared_ptr<Kind> k;
-                shared_ptr<Mono> h, hnt;
+                shared_ptr<Mono> h;
                 if (is_cd(a)) {
                   k = context.kind[a->D.D];
                   h = new_const(a->D.D, k);
-                  hnt = new_const(a->D.D, k);
                 } else {
                   a->D.d = find(a->D.d);
                   k = a->D.d->kind;
                   h = new_const(a->D.d, k);
-                  hnt = new_const(a->D.d, k);
                 }
                 for (size_t i = 0; i + b->tau.size() < a->tau.size(); i++) {
                   h->tau.push_back(a->tau[i]);
-                  hnt->tau.push_back(a->tau[i]);
                   auto t = new_kind();
                   if (!unify(k, new_kind(a->tau[i]->kind, t), cerr)) {
                     return false;
                   }
                   k = t;
+                  h->kind = k;
                 }
-                if (st != nullptr && st->count(b->D.d)) {
-                  if (cerr != nullptr) {
-                    (*cerr) << "type error: " << to_string(b->D.d) << " !< "
-                            << to_string(h) << endl;
-                  }
-                  return false;
-                } else {
-                  b->D.d->par = h;
-                  if (!unify(k, b->D.d->kind, cerr)) {
+                b->D.d->par = h;
+                for (size_t i = 0; i < b->tau.size(); i++) {
+                  if (!unify(a->tau[a->tau.size() - b->tau.size() + i],
+                             b->tau[i], cerr, st)) {
                     return false;
                   }
-                  for (size_t i = 0; i < b->tau.size(); i++) {
-                    hnt->tau.push_back(
-                        a->tau[a->tau.size() - b->tau.size() + i]);
-                    if (!unify(a->tau[a->tau.size() - b->tau.size() + i],
-                               b->tau[i], cerr, st)) {
-                      return false;
-                    }
-                  }
-                  b.swap(hnt);
-                  return true;
                 }
+                return true;
               } else {
                 if (is_cd(a)) {
                   if (cerr != nullptr) {
@@ -548,49 +532,33 @@ struct TypeInfer {
                 }
                 a->D.d = find(a->D.d);
                 shared_ptr<Kind> k;
-                shared_ptr<Mono> h, hnt;
+                shared_ptr<Mono> h;
                 if (is_cd(b)) {
                   k = context.kind[b->D.D];
                   h = new_const(b->D.D, k);
-                  hnt = new_const(b->D.D, k);
                 } else {
                   b->D.d = find(b->D.d);
                   k = b->D.d->kind;
                   h = new_const(b->D.d, k);
-                  hnt = new_const(b->D.d, k);
                 }
                 for (size_t i = 0; i + a->tau.size() < b->tau.size(); i++) {
                   h->tau.push_back(b->tau[i]);
-                  hnt->tau.push_back(b->tau[i]);
                   auto t = new_kind();
                   if (!unify(k, new_kind(b->tau[i]->kind, t), cerr)) {
                     return false;
                   }
                   k = t;
+                  h->kind = k;
                 }
-                if (st != nullptr && !st->count(a->D.d)) {
-                  if (cerr != nullptr) {
-                    (*cerr) << "type error: " << to_string(a->D.d) << " !< "
-                            << to_string(h) << endl;
-                  }
-                  return false;
-                } else {
-                  a->D.d->par = h;
-                  if (!unify(k, a->D.d->kind, cerr)) {
+                a->D.d->par = h;
+                for (size_t i = 0; i < a->tau.size(); i++) {
+                  if (!unify(a->tau[i],
+                             b->tau[b->tau.size() - a->tau.size() + i], cerr,
+                             st)) {
                     return false;
                   }
-                  for (size_t i = 0; i < a->tau.size(); i++) {
-                    hnt->tau.push_back(
-                        b->tau[b->tau.size() - a->tau.size() + i]);
-                    if (!unify(a->tau[i],
-                               b->tau[b->tau.size() - a->tau.size() + i], cerr,
-                               st)) {
-                      return false;
-                    }
-                  }
-                  a.swap(hnt);
-                  return true;
                 }
+                return true;
               }
             }
           }
