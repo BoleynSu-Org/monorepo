@@ -15,7 +15,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '7.11.0',
+    version = '7.11.1',
 )
 
 toolchains = use_extension(
