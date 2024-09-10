@@ -23,12 +23,12 @@ DEPS = {
         {
             "name": "rules_java",
             "type": "http_archive",
-            "sha256": "0633f37a935edd082571c0f1abf2e748a940f6ce59c4fc913afe38ae1a631287",
-            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.10.0.tar.gz",
-            "strip_prefix": "rules_java-7.10.0",
-            "updated_at": "2024-09-03",
-            "version": "7.10.0",
-            "module_version": "7.10.0",
+            "sha256": "3f721171879c55cf533cfc787aa5afa4220ebcc7b5f6fe8790a05dd2d3d96feb",
+            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/7.11.0.tar.gz",
+            "strip_prefix": "rules_java-7.11.0",
+            "updated_at": "2024-09-09",
+            "version": "7.11.0",
+            "module_version": "7.11.0",
         },
         {
             "name": "rules_python",
@@ -307,10 +307,10 @@ DEPS = {
         {
             "name": "apple_support",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.16.0/apple_support.1.16.0.tar.gz",
-            "sha256": "c31ce8e531b50ef1338392ee29dd3db3689668701ec3237b9c61e26a1937ab07",
-            "version": "1.16.0",
-            "updated_at": "2024-07-12",
+            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.17.0/apple_support.1.17.0.tar.gz",
+            "sha256": "02f7456e589471dcfc73f1b9ca7f2c2ea5ca4aea999674abea9aebe818700b6e",
+            "version": "1.17.0",
+            "updated_at": "2024-09-09",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -327,7 +327,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.16.0",
+            "module_version": "1.17.0",
         },
         {
             "name": "stardoc",
