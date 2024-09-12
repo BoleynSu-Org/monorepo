@@ -85,12 +85,12 @@ DEPS = {
         {
             "name": "rules_jvm_external",
             "type": "http_archive",
-            "sha256": "96f3d62aea5cf03f1d9c6945f1d0320d1b1c06aae898777fb6b4931f4538b863",
-            "strip_prefix": "rules_jvm_external-6.2",
-            "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.2.tar.gz",
-            "updated_at": "2024-07-12",
-            "version": "6.2",
-            "module_version": "6.2",
+            "sha256": "145718a446715e4653f0a3bc79cf79c70413642573ba8e16a37131944847bd2b",
+            "strip_prefix": "rules_jvm_external-6.3",
+            "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.3.tar.gz",
+            "updated_at": "2024-09-12",
+            "version": "6.3",
+            "module_version": "6.3",
         },
         {
             "name": "rules_pkg",
