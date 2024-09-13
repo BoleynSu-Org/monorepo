@@ -7,12 +7,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.9.tar.gz
-  sha256: 2037875b9a4456dce4a79d112a8ae885bbc4aad968e6587dca6e64f3a0900cdf
-  version: 0.0.9
-  strip_prefix: rules_cc-0.0.9
-  updated_at: '2023-09-22'
-  module_version: 0.0.9
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.10.tar.gz
+  sha256: 65b67b81c6da378f136cc7e7e14ee08d5b9375973427eceb8c773a4f69fa7e49
+  version: 0.0.10
+  strip_prefix: rules_cc-0.0.10
+  updated_at: '2024-09-13'
+  module_version: 0.0.10
 - name: rules_java
   type: http_archive
   sha256: 9ed389fece20e3fd9d80edd22a87f4056ebc731b8540cfbdd26f58a1e5db9ad3
@@ -197,12 +197,12 @@ bazel_deps:
   module_version: 18.1.8.40.20240818.83021.20240819.144355
 - name: bazel_features
   type: http_archive
-  version: v1.16.0
-  sha256: 3a900b9d62f19c6168c41694268e93cca355d1d35fae48c6d13eb7947026a35b
-  strip_prefix: bazel_features-1.16.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.16.0/bazel_features-v1.16.0.tar.gz
+  version: v1.17.0
+  sha256: bdc12fcbe6076180d835c9dd5b3685d509966191760a0eb10b276025fcb76158
+  strip_prefix: bazel_features-1.17.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.17.0/bazel_features-v1.17.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-09-12'
+  updated_at: '2024-09-13'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -218,7 +218,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.16.0
+  module_version: 1.17.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive

@@ -1,23 +1,4 @@
 module(
-    name = 'rules_cc',
-    version = '0.0.9',
-)
-
-bazel_dep(
-    name = 'platforms',
-    version = '0.0.10',
-)
-
-cc_configure_extension = use_extension(
-    '@bazel_tools//tools/cpp:cc_configure.bzl',
-    'cc_configure_extension',
-)
-
-use_repo(
-    cc_configure_extension,
-    'local_config_cc_toolchains',
-)
-
-register_toolchains(
-    '@local_config_cc_toolchains//:all',
+    name = "rules_cc",
+    version = "0.0.9",
 )
