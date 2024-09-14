@@ -143,8 +143,8 @@ data Expr {
 }
 
 data Mono {
-    MonoTerm:Int->Mono;
-    MonoFunc:Mono->Mono->Mono
+    MonoVar:Int->Mono;
+    MonoApp:List Char->List Mono->Mono
 }
 
 data Poly {
@@ -161,6 +161,10 @@ data TypeInferState {
 data TypeInfer a {
     TypeInfer:forall a.(TypeInferState->Either (List Char) (Pair TypeInferState a))-> -- runTypeInfer
                        TypeInfer a
+}
+
+data Any {
+    Any:(forall a.a)->Any
 }
 
 -- ffi
@@ -296,7 +300,7 @@ in
 
 -- parser combinator
 let runParser = \p -> case p of { Parser runParser -> runParser } in
-let MonadParser:forall t.forall e.Monad (Parser t e) =
+let MonadParser =
     let fmap = \f -> \p -> Parser \t -> case runParser p t of {
         Left e -> Left e;
         Right r -> case r of { Pair nt x ->
@@ -415,12 +419,34 @@ rec typeToString = \t -> Cons (toChar ffi ` 't' `) (toString ffi ` ({
     s;
 }) `)
 and monoToString = \t -> case t of {
-    MonoTerm t -> typeToString t;
-    MonoFunc t1 t2 -> listJoin (Cons (toString ffi ` "(" `)
-                               (Cons (monoToString t1)
-                               (Cons (toString ffi ` "->" `)
-                               (Cons (monoToString t2)
-                               (Cons (toString ffi ` ")" `) Nil)))))
+    MonoVar t -> typeToString t;
+    MonoApp c ts -> case stringEq c (toString ffi ` "->" `) of {
+        True -> case ts of {
+            Nil -> undefined;
+            Cons t1 ts -> case ts of {
+                Nil -> undefined;
+                Cons t2 ts ->
+                    listJoin (Cons (toString ffi ` "(" `)
+                             (Cons (monoToString t1)
+                             (Cons (toString ffi ` "->" `)
+                             (Cons (monoToString t2)
+                             (Cons (toString ffi ` ")" `) Nil)))))
+            }
+        };
+        False ->
+            rec monoListToString = \ts -> case ts of {
+                Nil -> Nil;
+                Cons h t ->
+                    listJoin (Cons (toString ffi ` " " `)
+                             (Cons (monoToString h)
+                             (Cons (monoListToString t) Nil)))
+            }
+            in
+            listJoin (Cons (toString ffi ` "(" `)
+                     (Cons c
+                     (Cons (monoListToString ts)
+                     (Cons (toString ffi ` ")" `) Nil))))
+    }
 }
 and polyToString = \t -> case t of {
     PolyTerm t -> monoToString t;
@@ -935,25 +961,25 @@ let typeInfer = \e ->
                 Cons h t -> case h of {
                     Pair k v -> case intEq k x of {
                         True -> case v of {
-                            MonoTerm t -> find t par;
-                            MonoFunc t1 t2 -> v
+                            MonoVar t -> find t par;
+                            MonoApp c ts -> v
                         };
                         False -> find x t
                     }
                 };
-                Nil -> MonoTerm x
+                Nil -> MonoVar x
             }
             in
             case x of {
-                MonoTerm t -> Right (Pair s (find t par));
-                MonoFunc t1 t2 -> Right (Pair s x);
+                MonoVar t -> Right (Pair s (find t par));
+                MonoApp c ts -> Right (Pair s x);
             }
     }
     in
     let inst =
         let apply = \s ->
             rec apply = \m -> bind (find m) \m -> case m of {
-                MonoTerm t ->
+                MonoVar t ->
                     rec lookup = \m -> case m of {
                         Cons mh mt -> case mh of {
                             Pair k v -> case intEq k t of {
@@ -964,10 +990,18 @@ let typeInfer = \e ->
                         Nil -> t
                     }
                     in
-                    return (MonoTerm (lookup s));
-                MonoFunc t1 t2 -> bind (apply t1) \t1 ->
-                                  bind (apply t2) \t2 ->
-                                       return (MonoFunc t1 t2)
+                    return (MonoVar (lookup s));
+                MonoApp c ts ->
+                    rec apply' = \ts -> case ts of {
+                        Cons h t ->
+                            bind (apply h) \h ->
+                            bind (apply' t) \t ->
+                                 return (Cons h t);
+                        Nil -> return Nil
+                    }
+                    in
+                    bind (apply' ts) \ts ->
+                         return (MonoApp c ts)
             }
             in
             apply
@@ -983,12 +1017,17 @@ let typeInfer = \e ->
     in
     let occ = \x ->
         rec occ = \y -> bind (find y) \y -> case y of {
-            MonoTerm t -> case intEq x t of {
+            MonoVar t -> case intEq x t of {
                 True -> fail (toString ffi ` "occ" `);
                 False -> return Unit
             };
-            MonoFunc t1 t2 -> bind (occ t1) \_ ->
-                                   occ t2
+            MonoApp c ts ->
+                rec occ' = \ts -> case ts of {
+                    Cons h t -> bind (occ h) \_ ->
+                                     occ' t;
+                    Nil -> return Unit
+                }
+                in occ' ts
         }
         in
         occ
@@ -1001,10 +1040,16 @@ let typeInfer = \e ->
         PolyForall t p -> bind (ftv p) \f -> return (diff f (Cons t Nil));
         PolyTerm m ->
             rec ftv' = \m -> bind (find m) \m -> case m of {
-                MonoTerm t -> return (Cons t Nil);
-                MonoFunc t1 t2 -> bind (ftv' t1) \f1 ->
-                                  bind (ftv' t2) \f2 ->
-                                       return (listJoin (Cons f1 (Cons f2 Nil)))
+                MonoVar t -> return (Cons t Nil);
+                MonoApp c ts ->
+                    rec ftv'' = \ts -> case ts of {
+                        Cons h t ->
+                            bind (ftv' h) \h ->
+                            bind (ftv'' t) \t ->
+                                 return (listJoin (Cons h (Cons t Nil)));
+                        Nil -> return Nil
+                    }
+                    in ftv'' ts
             }
             in
             ftv' m
@@ -1033,22 +1078,37 @@ let typeInfer = \e ->
              let fa = uniq (diff mf ctxf) in
              return (toPoly m mf)
     in
-    rec unify:Mono->Mono->TypeInfer Unit = \x -> \y ->
+    rec unify = \x -> \y ->
         bind (find x) \x ->
         bind (find y) \y ->
              case x of {
-                 MonoTerm t -> case y of {
-                     MonoTerm s -> case intEq t s of {
+                 MonoVar t -> case y of {
+                     MonoVar s -> case intEq t s of {
                         True -> return Unit;
                         False -> setPar t y
                      };
-                     MonoFunc s1 s2 -> setPar t y
+                     MonoApp cs s -> setPar t y
                  };
-                 MonoFunc t1 t2 -> case y of {
-                     MonoTerm s -> setPar s x;
-                     MonoFunc s1 s2 ->
-                         bind (unify t1 s1) \_ ->
-                              unify t2 s2
+                 MonoApp ct t -> case y of {
+                     MonoVar s -> setPar s x;
+                     MonoApp cs s -> case stringEq ct cs of {
+                        False -> fail (toString ffi ` "unify: failed" `);
+                        True ->
+                            rec unify' = \t -> \s -> case t of {
+                                Cons th tt -> case s of {
+                                    Cons sh st ->
+                                        bind (unify th sh) \_ ->
+                                             unify' tt st;
+                                    Nil -> fail (toString ffi ` "unify: failed" `)
+                                };
+                                Nil -> case s of {
+                                    Cons sh st -> fail (toString ffi ` "unify: failed" `);
+                                    Nil -> return Unit
+                                }
+                            }
+                            in
+                            unify' t s
+                     }
                  }
              }
     in
@@ -1061,13 +1121,13 @@ let typeInfer = \e ->
             bind (typeInfer ctx e1) \t1 ->
             bind (typeInfer ctx e2) \t2 ->
             bind newVar \t3 ->
-            bind (unify t1 (MonoFunc t2 (MonoTerm t3))) \_ ->
-                 return (MonoTerm t3);
+            bind (unify t1 (MonoApp (toString ffi ` "->" `) (Cons t2 (Cons (MonoVar t3) Nil)))) \_ ->
+                 return (MonoVar t3);
         AbsExpr x e ->
             bind newVar \tx ->
-                 let ctx' = insert x (PolyTerm (MonoTerm tx)) ctx in
+                 let ctx' = insert x (PolyTerm (MonoVar tx)) ctx in
             bind (typeInfer ctx' e) \te->
-                 return (MonoFunc (MonoTerm tx) te);
+                 return (MonoApp (toString ffi ` "->" `) (Cons (MonoVar tx) (Cons te Nil)));
         LetExpr x e1 e2 ->
             bind (typeInfer ctx e1) \t1 ->
             bind (gen ctx t1) \p1 ->
@@ -1078,19 +1138,40 @@ let typeInfer = \e ->
     }
     in
     rec sub = \x -> bind (find x) \x -> case x of {
-        MonoTerm t ->  return x;
-        MonoFunc t1 t2 -> bind (sub t1) \t1 ->
-                          bind (sub t2) \t2 ->
-                               return (MonoFunc t1 t2)
+        MonoVar t ->  return x;
+        MonoApp c ts ->
+            rec sub' = \ts -> case ts of {
+                Cons h t ->
+                    bind (sub h) \h ->
+                    bind (sub' t) \t ->
+                         return (Cons h t);
+                Nil -> return Nil
+            }
+            in
+            bind (sub' ts) \ts ->
+                 return (MonoApp c ts)
     }
     in
+    let stringType = MonoApp (toString ffi ` "List" `) (Cons (MonoApp (toString ffi ` "Char" `) Nil) Nil) in
+    let unitType = MonoApp (toString ffi ` "Unit" `) Nil in
+    let ioUnitType = MonoApp (toString ffi ` "IO" `) (Cons unitType Nil) in
+    let writeString = Pair (toString ffi ` "writeString" `)
+                        (PolyTerm (MonoApp (toString ffi ` "->" `) (Cons stringType (Cons ioUnitType Nil))))
+    in
+    let str = Pair (toString ffi ` "str" `) (PolyTerm stringType)
+    in
+    let builtin = Cons writeString
+                (Cons str Nil)
+    in
     runTypeInfer (
-        bind (typeInfer Nil e) \t ->
+        bind (typeInfer builtin e) \t ->
              sub t
     )
 in
 
 let eval =
+    let bind = bind MonadIO in
+    let return = return MonadIO in
     let lookup = \x ->
         rec lookup = \m -> case m of {
             Cons h t -> case h of {
@@ -1103,31 +1184,68 @@ let eval =
         }
         in lookup
     in
-    rec eval = \ctx -> \e -> case e of {
+    rec eval1 = \ctx -> \e -> case e of {
         VarExpr x -> case lookup x ctx of {
             Just v -> v;
             Nothing -> e;
         };
         AppExpr e1 e2 ->
-            let e1 = eval ctx e1 in
-            let e2 = eval ctx e2 in
+            let e1 = eval1 ctx e1 in
+            let e2 = eval1 ctx e2 in
             case e1 of {
                 VarExpr x -> AppExpr e1 e2;
                 AppExpr e1' e2' -> AppExpr e1 e2;
-                AbsExpr x e -> eval (Cons (Pair x e2) ctx) e;
+                AbsExpr x e -> eval1 (Cons (Pair x e2) ctx) e;
                 LetExpr x e1 e2 -> undefined;
                 RecExpr xes e -> undefined;
                 CaseExpr e pes -> undefined;
                 FfiExpr s -> undefined
             };
-        AbsExpr x e -> AbsExpr x (eval (Cons (Pair x (VarExpr x)) ctx) e);
+        AbsExpr x e -> AbsExpr x (eval1 (Cons (Pair x (VarExpr x)) ctx) e);
+        LetExpr x e1 e2 -> eval1 (Cons (Pair x (eval1 ctx e1)) ctx) e2;
+        RecExpr xes e -> undefined;
+        CaseExpr e pes -> undefined;
+        FfiExpr s -> undefined
+    }
+    in
+    let toAny = \x -> Any ffi ` $x ` in
+    let fromAny = \x -> case x of { Any x -> x } in
+    rec eval = \ctx -> \e -> case e of {
+        VarExpr x -> case lookup x ctx of {
+            Just v -> v;
+            Nothing -> undefined;
+        };
+        AppExpr e1 e2 ->
+            let e1 = eval ctx e1 in
+            let e2 = eval ctx e2 in
+            toAny ((fromAny e1) (fromAny e2));
+        AbsExpr x e -> toAny \v -> eval (Cons (Pair x v) ctx) e;
         LetExpr x e1 e2 -> eval (Cons (Pair x (eval ctx e1)) ctx) e2;
         RecExpr xes e -> undefined;
         CaseExpr e pes -> undefined;
         FfiExpr s -> undefined
     }
     in
-    eval Nil
+    rec writeString' = \s -> case s of {
+        Cons h t -> bind (writeChar h) \u ->
+                         writeString' t;
+        Nil -> return Unit
+    }
+    in
+    let writeString =
+        Pair (toString ffi ` "writeString" `) (toAny writeString')
+    in
+    let str = Pair (toString ffi ` "str" `) (toAny (toString ffi ` "hello world!\n" `)) in
+    let builtin = Cons writeString
+                 (Cons str Nil)
+    in
+    \e ->
+             let e = eval1 Nil e in
+             let r = fromAny (eval builtin e) in
+        bind (writeString' (toString ffi ` "expr: " `)) \_ ->
+        bind (writeString' (exprToString e)) \_ ->
+        bind (writeString' (toString ffi ` "\neval:\n" `)) \_ ->
+             r
 in
 
 let main =
@@ -1151,6 +1269,8 @@ let main =
     in
 
     bind readString \s ->
+    bind (writeString (toString ffi ` "input:\n" `)) \_ ->
+    bind (writeString s) \_ ->
          let tokens = case runParser lex s of {
             Left e -> case e of {
                 ParsingError e -> Left e;
@@ -1172,21 +1292,53 @@ let main =
             }
          }
          in
+         let type = case expr of {
+            Left e -> Left e;
+            Right expr -> typeInfer expr
+         }
+         in
          let output = case expr of {
             Left e -> e;
-            Right expr -> case typeInfer expr of {
+            Right expr -> case type of {
                 Left e -> e;
                 Right t -> listJoin (Cons (exprToString expr)
                                     (Cons (toString ffi ` " : " `)
-                                    (Cons (monoToString t)
-                                    (Cons (toString ffi ` "\neval: " `)
-                                    (Cons (exprToString (eval expr)) Nil)))))
+                                    (Cons (monoToString t) Nil)))
             }
          }
          in
-    bind (writeString output) \u ->
-    bind (writeString (toString ffi ` "\ninput:\n" `)) \u ->
-    bind (writeString s) \u ->
-         return u
+    bind (writeString (toString ffi ` "output:\n" `)) \_ ->
+    bind (writeString output) \_ ->
+    bind (writeString (toString ffi ` "\n" `)) \_ ->
+         let eval = case type of {
+            Left e -> writeString e;
+            Right t -> case t of {
+                MonoVar t -> writeString (toString ffi ` "output: expect IO Unit" `);
+                MonoApp c ts -> case stringEq c (toString ffi ` "IO" `) of {
+                    False -> writeString (toString ffi ` "output: expect IO Unit" `);
+                    True -> case ts of {
+                        Cons h t -> case t of {
+                            Cons h t -> writeString (toString ffi ` "output: expect IO Unit" `);
+                            Nil -> case h of {
+                                MonoVar t -> writeString (toString ffi ` "output: expect IO Unit" `);
+                                MonoApp c ts -> case stringEq c (toString ffi ` "Unit" `) of {
+                                    False -> writeString (toString ffi ` "output: expect IO Unit" `);
+                                    True -> case t of {
+                                        Cons h t -> writeString (toString ffi ` "output: expect IO Unit" `);
+                                        Nil -> case expr of {
+                                            Left e -> undefined;
+                                            Right expr -> eval expr
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                        Nil -> writeString (toString ffi ` "output: expect IO Unit" `);
+                    }
+                }
+            }
+         }
+         in
+         eval
 in
 runIO main

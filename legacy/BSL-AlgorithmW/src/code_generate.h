@@ -587,18 +587,21 @@ struct CodeGenerator {
               if ((!to_ptr.count(da->name) || i != to_ptr[da->name]) &&
                   e->pes.count(c->name)) {
                 auto &pes = e->pes.find(c->name)->second;
+                nout << "  {" << endl;
                 if (c->arg == 1 && da->constructors.size() == 1) {
-                  nout << "  " << BSL_RT_VAR_T << " " << var(pes.first.front())
-                       << " = " << tmp() << ";" << endl;
+                  nout << "    " << BSL_RT_VAR_T << " "
+                       << var(pes.first.front()) << " = " << tmp() << ";"
+                       << endl;
                 } else {
                   for (size_t i = 0; i < pes.first.size(); i++) {
-                    nout << "  " << BSL_RT_VAR_T << " " << var(pes.first[i])
+                    nout << "    " << BSL_RT_VAR_T << " " << var(pes.first[i])
                          << " = ((" << type(da->name) << "*)(" << tmp()
                          << "))->" << arg(i) << ";" << endl;
                   }
                 }
-                nout << "  return " << nouts[da->constructors[i]->name].str()
-                     << ";" << endl;
+                nout << "    return " << nouts[da->constructors[i]->name].str()
+                     << ";" << endl
+                     << "  }" << endl;
               }
             }
           }

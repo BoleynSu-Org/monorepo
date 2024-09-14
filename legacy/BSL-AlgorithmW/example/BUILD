@@ -44,3 +44,12 @@ bsl_binary(
     name = "std",
     srcs = ["std.bsl"],
 )
+
+sh_test(
+    name = "bootstrap_test",
+    srcs = ["bootstrap_test.sh"],
+    data = [
+        ":bootstrap",
+        "@bazel_tools//tools/bash/runfiles",
+    ],
+)
