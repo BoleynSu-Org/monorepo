@@ -409,6 +409,28 @@ rec exprToString = \e -> case e of {
 }
 in
 
+rec typeToString = \t -> Cons (toChar ffi ` 't' `) (toString ffi ` ({
+    char* s = BSL_RT_MALLOC(11);
+    sprintf(s, "%d", *(int*)$t);
+    s;
+}) `)
+and monoToString = \t -> case t of {
+    MonoTerm t -> typeToString t;
+    MonoFunc t1 t2 -> listJoin (Cons (toString ffi ` "(" `)
+                               (Cons (monoToString t1)
+                               (Cons (toString ffi ` "->" `)
+                               (Cons (monoToString t2)
+                               (Cons (toString ffi ` ")" `) Nil)))))
+}
+and polyToString = \t -> case t of {
+    PolyTerm t -> monoToString t;
+    PolyForall t p -> listJoin (Cons (toString ffi ` "forall " `)
+                               (Cons (typeToString t)
+                               (Cons (toString ffi ` "." `)
+                               (Cons (polyToString p) Nil))))
+}
+in
+
 let lex =
     let bind = bind MonadParser in
     let return = return MonadParser in
@@ -836,28 +858,6 @@ let parse =
          return e
 in
 
-rec typeToString = \t -> Cons (toChar ffi ` 't' `) (toString ffi ` ({
-    char* s = BSL_RT_MALLOC(11);
-    sprintf(s, "%d", *(int*)$t);
-    s;
-}) `)
-and monoToString = \t -> case t of {
-    MonoTerm t -> typeToString t;
-    MonoFunc t1 t2 -> listJoin (Cons (toString ffi ` "(" `)
-                               (Cons (monoToString t1)
-                               (Cons (toString ffi ` "->" `)
-                               (Cons (monoToString t2)
-                               (Cons (toString ffi ` ")" `) Nil)))))
-}
-and polyToString = \t -> case t of {
-    PolyTerm t -> monoToString t;
-    PolyForall t p -> listJoin (Cons (toString ffi ` "forall " `)
-                               (Cons (typeToString t)
-                               (Cons (toString ffi ` "." `)
-                               (Cons (polyToString p) Nil))))
-}
-in
-
 let typeInfer = \e ->
     let bind = \m -> \f -> TypeInfer \s -> case m of {
         TypeInfer runTypeInfer -> case runTypeInfer s of {
@@ -1090,6 +1090,46 @@ let typeInfer = \e ->
     )
 in
 
+let eval =
+    let lookup = \x ->
+        rec lookup = \m -> case m of {
+            Cons h t -> case h of {
+                Pair k v -> case stringEq k x of{
+                    True -> Just v;
+                    False -> lookup t
+                }
+            };
+            Nil -> Nothing
+        }
+        in lookup
+    in
+    rec eval = \ctx -> \e -> case e of {
+        VarExpr x -> case lookup x ctx of {
+            Just v -> v;
+            Nothing -> e;
+        };
+        AppExpr e1 e2 ->
+            let e1 = eval ctx e1 in
+            let e2 = eval ctx e2 in
+            case e1 of {
+                VarExpr x -> AppExpr e1 e2;
+                AppExpr e1' e2' -> AppExpr e1 e2;
+                AbsExpr x e -> eval (Cons (Pair x e2) ctx) e;
+                LetExpr x e1 e2 -> undefined;
+                RecExpr xes e -> undefined;
+                CaseExpr e pes -> undefined;
+                FfiExpr s -> undefined
+            };
+        AbsExpr x e -> AbsExpr x (eval (Cons (Pair x (VarExpr x)) ctx) e);
+        LetExpr x e1 e2 -> eval (Cons (Pair x (eval ctx e1)) ctx) e2;
+        RecExpr xes e -> undefined;
+        CaseExpr e pes -> undefined;
+        FfiExpr s -> undefined
+    }
+    in
+    eval Nil
+in
+
 let main =
     let bind = bind MonadIO in
     let return = return MonadIO in
@@ -1138,7 +1178,9 @@ let main =
                 Left e -> e;
                 Right t -> listJoin (Cons (exprToString expr)
                                     (Cons (toString ffi ` " : " `)
-                                    (Cons (monoToString t) Nil)))
+                                    (Cons (monoToString t)
+                                    (Cons (toString ffi ` "\neval: " `)
+                                    (Cons (exprToString (eval expr)) Nil)))))
             }
          }
          in
