@@ -122,7 +122,7 @@ data Token {
   Identifier:List Char->Token;
 
   Whitespace:List Char->Token;
-  Comment:List Char->Token;
+  Comment:List Char->Token
 }
 
 data Position {
@@ -132,6 +132,24 @@ data Position {
              Position
 }
 
+data SigMono {
+    SigMonoVar:List Char->SigMono;
+    SigMonoApp:SigPoly->SigPoly->SigMono
+}
+
+data SigPoly {
+    SigPolyTerm:SigMono->SigPoly;
+    SigPolyForall:List Char->SigPoly->SigPoly
+}
+
+data DataCtor {
+    DataCtor:List Char->SigPoly->DataCtor
+}
+
+data Gadt {
+    Gadt:List Char->List (List Char)->List DataCtor->Gadt
+}
+
 data Expr {
     VarExpr:List Char->Expr;
     AppExpr:Expr->Expr->Expr;
@@ -139,7 +157,7 @@ data Expr {
     LetExpr:List Char->Expr->Expr->Expr;
     RecExpr:List (Pair (List Char) Expr)->Expr->Expr;
     CaseExpr:Expr->List (Pair (List Char) (Pair (List (List Char)) Expr))->Expr;
-    FfiExpr:List Char->Expr;
+    FfiExpr:List Char->Expr
 }
 
 data Mono {
@@ -155,7 +173,7 @@ data Poly {
 data TypeInferState {
     TypeInferState:Int-> -- nextVar
                    List (Pair Int Mono)-> -- par
-                   TypeInferState;
+                   TypeInferState
 }
 
 data TypeInfer a {
@@ -168,13 +186,13 @@ data Any {
 }
 
 -- ffi
-let toChar:FfiInt -> Char = \c -> ffi ` ({
+let toChar {- :FfiInt -> Char -} = \c -> ffi ` ({
     char* c = BSL_RT_MALLOC(sizeof (char));
     *c = (int)$c;
     c;
 }) `
 in
-rec toString:FfiString -> List Char = \s -> ffi ` ({
+rec toString {- :FfiString -> List Char -} = \s -> ffi ` ({
     char* s = $s;
     void* ret;
     if (!s[0]) {
@@ -185,14 +203,14 @@ rec toString:FfiString -> List Char = \s -> ffi ` ({
     ret;
 }) `
 in
-let toInt:FfiInt -> Int = \i -> ffi ` ({
+let toInt {- :FfiInt -> Int -} = \i -> ffi ` ({
     int* i = BSL_RT_MALLOC(sizeof (int));
     *i = (int)$i;
     i;
 }) `
 in
 
-let readChar:IO (Maybe Char) = IO \r -> Pair r ffi ` ({
+let readChar {- :IO (Maybe Char) -} = IO \r -> Pair r ffi ` ({
     int c = getchar();
     void* ret;
     if (c == -1) {
@@ -203,7 +221,7 @@ let readChar:IO (Maybe Char) = IO \r -> Pair r ffi ` ({
     ret;
 }) `
 in
-let writeChar:Char->IO Unit = \c -> IO \r -> Pair r ffi ` ({
+let writeChar {- :Char->IO Unit -} = \c -> IO \r -> Pair r ffi ` ({
     putchar(*(char*)$c);
     $Unit;
 }) `
@@ -220,9 +238,9 @@ let undefined = ffi ` NULL ` in
 let debug = \x -> let y = ffi ` puts("debug") ` in x in
 
 -- std library
-let charEq:Char->Char->Bool = \x -> \y -> ffi ` (*(char*)$x == *(char*)$y ? $True : $False) ` in
-let charCompare:Char->Char->Ordering = \x -> \y -> ffi ` (*(char*)$x == *(char*)$y ? $EQ : *(char*)$x < *(char*)$y ? $LT : $GT) ` in
-let intEq:Int->Int->Bool = \x -> \y -> ffi ` (*(int*)$x == *(int*)$y ? $True : $False) ` in
+let charEq {- :Char->Char->Bool -} = \x -> \y -> ffi ` (*(char*)$x == *(char*)$y ? $True : $False) ` in
+let charCompare {- :Char->Char->Ordering -} = \x -> \y -> ffi ` (*(char*)$x == *(char*)$y ? $EQ : *(char*)$x < *(char*)$y ? $LT : $GT) ` in
+let intEq {- :Int->Int->Bool -} = \x -> \y -> ffi ` (*(int*)$x == *(int*)$y ? $True : $False) ` in
 rec stringEq = \s1 -> \s2 -> case s1 of {
     Cons h1 t1 -> case s2 of {
         Cons h2 t2 -> case charEq h1 h2 of {
@@ -388,6 +406,49 @@ let tokenToString = \t -> case t of {
 }
 in
 
+let gadtsToString =
+    rec monoToString = \m -> case m of {
+        SigMonoVar t -> t;
+        SigMonoApp t1 t2 -> case stringEq (polyToString t1) (toString ffi ` "->" `) of {
+            True ->
+                listJoin (Cons (polyToString t2)
+                         (Cons (toString ffi ` " ->" `) Nil));
+            False ->
+                listJoin (Cons (toString ffi ` "(" `)
+                         (Cons (polyToString t1)
+                         (Cons (toString ffi ` " " `)
+                         (Cons (polyToString t2)
+                         (Cons (toString ffi ` ")" `) Nil)))))
+        }
+    }
+    and polyToString = \p -> case p of {
+        SigPolyForall t p -> listJoin (Cons (toString ffi ` "forall " `)
+                                      (Cons t
+                                      (Cons (toString ffi ` "." `)
+                                      (Cons (polyToString p) Nil))));
+        SigPolyTerm m -> monoToString m
+    }
+    in
+    let dataCotrToString = \dataCotr -> case dataCotr of {
+        DataCtor ctor sig -> listJoin (Cons (toString ffi ` "  "` )
+                                      (Cons ctor
+                                      (Cons (toString ffi ` ":"` )
+                                      (Cons (polyToString sig)
+                                      (Cons (toString ffi ` ";\n"` ) Nil)))))
+    }
+    in
+    let gadtToString = \gadt -> case gadt of {
+        Gadt c ts dataCotrs ->
+            listJoin (Cons (toString ffi ` "data " `)
+                     (Cons c
+                     (Cons (listJoin (map (\t -> listJoin (Cons (toString ffi ` " " `) (Cons t Nil))) ts))
+                     (Cons (toString ffi ` " where {\n" `)
+                     (Cons (listJoin (map dataCotrToString dataCotrs))
+                     (Cons (toString ffi ` "}\n" `) Nil))))))
+    }
+    in
+    \gadts -> listJoin (map (\gadt -> gadtToString gadt) gadts)
+in
 rec exprToString = \e -> case e of {
     VarExpr v -> v;
     AppExpr e1 e2 -> listJoin (Cons (toString ffi ` "(" `)
@@ -407,9 +468,54 @@ rec exprToString = \e -> case e of {
                                 (Cons (toString ffi ` " in " `)
                                 (Cons (exprToString e2)
                                 (Cons (toString ffi ` ")" `) Nil)))))));
-    RecExpr xes e -> toString ffi ` "not implemented" `;
-    CaseExpr e pes -> toString ffi ` "not implemented" `;
-    FfiExpr s -> toString ffi ` "not implemented" `
+    RecExpr xes e -> case xes of {
+        Cons xe xes ->
+            let xeToString = \xe -> case xe of {
+                Pair x e -> listJoin
+                    (Cons x
+                    (Cons (toString ffi ` " = " `)
+                    (Cons (exprToString e) Nil)))
+            }
+            in
+            listJoin (Cons (toString ffi ` "(rec " `)
+                     (Cons (listJoin (Cons (xeToString xe) (map (\xe -> listJoin (Cons (toString ffi ` " and " `) (Cons (xeToString xe) Nil))) xes)))
+                     (Cons (toString ffi ` " in " `)
+                     (Cons (exprToString e)
+                     (Cons (toString ffi ` ")" `) Nil)))));
+        Nil -> toString ffi ` "unreachable" `
+    };
+    CaseExpr e pes -> case pes of {
+        Cons pe pes ->
+            let peToString = \pe -> case pe of {
+                Pair c dse -> case dse of {
+                    Pair ds e ->
+                        listJoin
+                            (Cons c
+                            (Cons (listJoin (map (\s -> listJoin (Cons (toString ffi ` " " `) (Cons s Nil))) ds))
+                            (Cons (toString ffi ` " -> " `)
+                            (Cons (exprToString e) Nil))))
+                }
+            }
+            in
+            listJoin
+                (Cons (toString ffi ` "case " `)
+                (Cons (exprToString e)
+                (Cons (toString ffi ` " of {" `)
+                (Cons (listJoin (Cons (peToString pe) (map (\pe -> listJoin (Cons (toString ffi ` "; " `) (Cons (peToString pe) Nil))) pes)))
+                (Cons (toString ffi ` "}" `) Nil)))));
+        Nil -> toString ffi ` "unreachable" `
+    };
+    FfiExpr s ->
+        let sep = Cons (toChar ffi ` 36 `)
+                 (Cons (toChar ffi ` 36 `) Nil) -- $$
+        in
+        listJoin
+            (Cons (toString ffi ` "ffi " `)
+            (Cons sep
+            (Cons (toString ffi ` " " `)
+            (Cons s
+            (Cons (toString ffi ` " " `)
+            (Cons sep Nil))))))
 }
 in
 
@@ -422,9 +528,9 @@ and monoToString = \t -> case t of {
     MonoVar t -> typeToString t;
     MonoApp c ts -> case stringEq c (toString ffi ` "->" `) of {
         True -> case ts of {
-            Nil -> undefined;
+            Nil -> toString ffi ` "unreachable" `;
             Cons t1 ts -> case ts of {
-                Nil -> undefined;
+                Nil -> toString ffi ` "unreachable" `;
                 Cons t2 ts ->
                     listJoin (Cons (toString ffi ` "(" `)
                              (Cons (monoToString t1)
@@ -460,6 +566,10 @@ in
 let lex =
     let bind = bind MonadParser in
     let return = return MonadParser in
+    let empty = case AlternativeParser of {
+        MkAlternative a e alt -> e
+    }
+    in
     rec many = \x -> Parser \t -> case runParser x t of {
         Left e -> Right (Pair t Nil);
         Right r -> case r of { Pair nt h ->
@@ -472,78 +582,155 @@ let lex =
     in
     let some = \x -> bind x \h -> bind (many x) \t -> return (Cons h t) in
     let alt = case AlternativeParser of { MkAlternative a e alt -> alt } in
-    rec all = \x -> Parser \ts -> case ts of {
-        Nil -> Right (Pair Nil Nil);
-        Cons h t -> case runParser x ts of {
-            Left e -> Left e;
-            Right r -> case r of { Pair nt h ->
-                case runParser (all x) nt of {
-                    Left e -> Left e;
-                    Right r -> case r of { Pair nt t-> Right (Pair nt (Cons h t)) }
-                }
-            }
-        }
+    let eof = Parser \t -> case t of {
+        Nil -> Right (Pair Nil Unit);
+        Cons h t -> Left (ParsingError (toString ffi ` "eof" `))
     }
     in
     let matchChar = \c -> satisfy (charEq c) in
-    let isUppercase =
-        let check = \c -> case charCompare c (toChar ffi ` 'Z' `) of {
-            EQ-> True;
-            GT-> False;
-            LT-> True;
+    rec matchString = \s -> case s of {
+        Cons h t -> bind (satisfy (charEq h)) \h ->
+                    bind (matchString t) \t ->
+                         return (Cons h t);
+        Nil -> return Nil
+    }
+    in
+    let matchNewline = alt (matchString (toString ffi ` "\n" `))
+                      (alt (matchString (toString ffi ` "\r\n" `))
+                           (matchString (toString ffi ` "\r" `)))
+    in
+    let matchWhitespace = alt (matchString (toString ffi ` " " `))
+                              (matchString (toString ffi ` "\t" `))
+    in
+    let elem = \e ->
+        rec elem = \l -> case l of {
+            Cons h t -> case charEq h e of {
+                True -> True;
+                False -> elem t
+            };
+            Nil -> False
         }
         in
-        \c -> case charCompare c (toChar ffi ` 'A' `) of {
-            EQ-> check c;
-            GT-> check c;
-            LT-> False;
-        }
-    in
-    let isLowercase =
-        let check = \c -> case charCompare c (toChar ffi ` 'z' `) of {
-            EQ-> True;
-            GT-> False;
-            LT-> True;
-        }
-        in
-        \c -> case charCompare c (toChar ffi ` 'a' `) of {
-            EQ-> check c;
-            GT-> check c;
-            LT-> False;
-        }
+        elem
     in
 
-    let arrow = bind (matchChar (toChar ffi ` '-' `)) \c ->
-                bind (matchChar (toChar ffi ` '>' `)) \c ->
-                     return Arrow
+    let sep = bind maybePeek \c -> case c of {
+        Nothing -> return Unit;
+        Just c -> case elem c (toString ffi ` "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789'" `) of {
+            True -> empty;
+            False -> return Unit
+        }
+    }
     in
-    let lambda = bind (matchChar (toChar ffi ` '\\' `)) \c ->
-                      return Lambda
+    let data_ = bind (matchString (toString ffi ` "data" `)) \_ -> bind sep \_ -> return Data in
+    let forall_ = bind (matchString (toString ffi ` "forall" `)) \_ -> bind sep  \_ -> return Forall in
+    let dot = bind (matchString (toString ffi ` "." `)) \_ -> return Dot in
+    let colon = bind (matchString (toString ffi ` ":" `)) \_ -> return Colon in
+    let arrow = bind (matchString (toString ffi ` "->" `)) \_ -> return Arrow in
+    let semicolon = bind (matchString (toString ffi ` ";" `)) \_ -> return Semicolon in
+
+    let lambda = bind (matchString (toString ffi ` "\\" `)) \_ -> return Lambda in
+    let let_ = bind (matchString (toString ffi ` "let" `)) \_ -> bind sep  \_ -> return Let in
+    let equal = bind (matchString (toString ffi ` "=" `)) \_ -> return Equal in
+    let in_ = bind (matchString (toString ffi ` "in" `)) \_ -> bind sep \_ -> return In in
+    let rec_ = bind (matchString (toString ffi ` "rec" `)) \_ -> bind sep  \_ -> return Rec in
+    let and_ = bind (matchString (toString ffi ` "and" `)) \_ -> bind sep  \_ -> return And in
+    let case_ = bind (matchString (toString ffi ` "case" `)) \_ -> bind sep  \_ -> return Case in
+    let of_ = bind (matchString (toString ffi ` "of" `)) \_ -> bind sep  \_ -> return Of in
+    let ffi_ = bind (matchString (toString ffi ` "ffi" `)) \_ ->
+               bind (some (alt matchNewline matchWhitespace)) \_ ->
+               bind (some (satisfy \c -> not (elem c (toString ffi ` " \t\n\r" `)))) \sep ->
+               bind (let matchSep = bind (matchString sep) \_ -> return Nothing in
+                     let matchAny = bind (satisfy \c -> True) \c -> return (Just c) in
+                     rec t = \u ->
+                        bind (alt matchSep matchAny) \c -> case c of {
+                            Nothing -> return Nil;
+                            Just c -> bind (t Unit) \s -> return (Cons c s)
+                        }
+                     in
+                     t Unit) \s ->
+                    return (Ffi s) in
+    let leftParenthesis = bind (matchString (toString ffi ` "(" `)) \_ -> return LeftParenthesis in
+    let rightParenthesis = bind (matchString (toString ffi ` ")" `)) \_ -> return RightParenthesis in
+    let leftBrace = bind (matchString (toString ffi ` "{" `)) \_ -> return LeftBrace in
+    let rightBrace = bind (matchString (toString ffi ` "}" `)) \_ -> return RightBrace in
+    let identifier = bind (satisfy \c -> elem c (toString ffi ` "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_" `)) \h ->
+                     bind (many (satisfy \c -> elem c (toString ffi ` "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789'" `))) \t ->
+                          return (Identifier (Cons h t))
     in
-    let let_ = bind (matchChar (toChar ffi ` 'l' `)) \c ->
-               bind (matchChar (toChar ffi ` 'e' `)) \c ->
-               bind (matchChar (toChar ffi ` 't' `)) \c ->
-                    return Let
+    let whitespace = bind (some (alt matchWhitespace matchNewline)) \s ->
+                          return (Whitespace (listJoin s))
     in
-    let equal = bind (matchChar (toChar ffi ` '=' `)) \c ->
-                     return Equal
-    in
-    let in_ = bind (matchChar (toChar ffi ` 'i' `)) \c ->
-              bind (matchChar (toChar ffi ` 'n' `)) \c ->
-                   return In
-    in
-    let identifier = bind (some (alt (satisfy isLowercase) (satisfy isUppercase))) \s ->
-                          return (Identifier s)
-    in
-    let whitespace = bind (some (alt (matchChar (toChar ffi ` ' ' `))
-                                (alt (matchChar (toChar ffi ` '\t' `))
-                                (alt (matchChar (toChar ffi ` '\n' `))
-                                     (bind (matchChar (toChar ffi ` '\r' `)) \c ->
-                                           (alt (matchChar (toChar ffi ` '\n' `)) (return (toChar ffi ` '\0' `)))))))) \s ->
-                          return (Whitespace s)
+    let comment = alt (bind (matchString (toString ffi ` "--" `)) \s1 ->
+                       bind (many (satisfy (\c -> not (elem c (toString ffi ` "\n\r" `))))) \s2 ->
+                            return (Comment (listJoin (Cons s1 (Cons s2 Nil)))))
+                      (bind (matchString (toString ffi ` "{-" `)) \s1 ->
+                       bind (many (alt (satisfy \c -> not (charEq c (toChar ffi ` '-' `))) (bind (matchChar (toChar ffi ` '-' `)) \c ->
+                                                                                            bind maybePeek \p -> case p of {
+                                                                                                Nothing -> empty;
+                                                                                                Just p -> case charEq p (toChar ffi ` '}' `) of {
+                                                                                                    True -> empty;
+                                                                                                    False -> return c
+                                                                                                }
+                                                                                            }))) \s2 ->
+                       bind (matchString (toString ffi ` "-}" `)) \s3 ->
+                            return (Comment (listJoin (Cons s1 (Cons s2 (Cons s3 Nil))))))
     in
 
-    all (alt arrow (alt lambda (alt let_ (alt equal (alt in_ (alt identifier whitespace))))))
+    let skip = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> True;
+        Comment s -> True
+    }
+    in
+
+    bind (many (alt data_
+               (alt forall_
+               (alt dot
+               (alt colon
+               (alt arrow
+               (alt semicolon
+               (alt lambda
+               (alt let_
+               (alt equal
+               (alt in_
+               (alt rec_
+               (alt and_
+               (alt case_
+               (alt of_
+               (alt ffi_
+               (alt whitespace
+               (alt comment
+               (alt leftParenthesis
+               (alt rightParenthesis
+               (alt leftBrace
+               (alt rightBrace
+                    identifier)))))))))))))))))))))) \tokens ->
+    bind eof \_ ->
+         return (filter (\t -> not (skip t)) tokens)
 in
 
 let parse =
@@ -566,13 +753,128 @@ let parse =
     let some = \x -> bind x \h -> bind (many x) \t -> return (Cons h t) in
     let alt = case AlternativeParser of { MkAlternative a e alt -> alt } in
     let unreachable = Parser \t -> Left (ParsingError (toString ffi ` "unreachable" `)) in
-    let skip = \p -> Parser \t -> Right (Pair (filter p t) Unit) in
     let eof = Parser \t -> case t of {
         Nil -> Right (Pair Nil Unit);
         Cons h t -> Left (ParsingError (toString ffi ` "eof" `))
     }
     in
 
+    let isData = \t -> case t of {
+        Data -> True;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isForall = \t -> case t of {
+        Data -> False;
+        Forall -> True;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isDot = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> True;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isColon = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> True;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
     let isArrow = \t -> case t of {
         Data -> False;
         Forall -> False;
@@ -580,6 +882,35 @@ let parse =
         Colon -> False;
         Arrow -> True;
         Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isSemicolon = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> True;
 
         Lambda -> False;
         Let -> False;
@@ -718,7 +1049,7 @@ let parse =
         Comment s -> False
     }
     in
-    let isWhitespace = \t -> case t of {
+    let isRec = \t -> case t of {
         Data -> False;
         Forall -> False;
         Dot -> False;
@@ -730,36 +1061,7 @@ let parse =
         Let -> False;
         Equal -> False;
         In -> False;
-        Rec -> False;
-        And -> False;
-        Case -> False;
-        Of -> False;
-        Ffi s -> False;
-
-        LeftParenthesis -> False;
-        RightParenthesis -> False;
-        LeftBrace -> False;
-        RightBrace -> False;
-
-        Identifier s -> False;
-
-        Whitespace s -> True;
-        Comment s -> False
-    }
-    in
-    let isComment = \t -> case t of {
-        Data -> False;
-        Forall -> False;
-        Dot -> False;
-        Colon -> False;
-        Arrow -> False;
-        Semicolon -> False;
-
-        Lambda -> False;
-        Let -> False;
-        Equal -> False;
-        In -> False;
-        Rec -> False;
+        Rec -> True;
         And -> False;
         Case -> False;
         Of -> False;
@@ -773,7 +1075,239 @@ let parse =
         Identifier s -> False;
 
         Whitespace s -> False;
-        Comment s -> True
+        Comment s -> False
+    }
+    in
+    let isAnd = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> True;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isCase = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> True;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isOf = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> True;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let getFfi = \t -> case t of {
+        Data -> Nothing;
+        Forall -> Nothing;
+        Dot -> Nothing;
+        Colon -> Nothing;
+        Arrow -> Nothing;
+        Semicolon -> Nothing;
+
+        Lambda -> Nothing;
+        Let -> Nothing;
+        Equal -> Nothing;
+        In -> Nothing;
+        Rec -> Nothing;
+        And -> Nothing;
+        Case -> Nothing;
+        Of -> Nothing;
+        Ffi s -> Just s;
+
+        LeftParenthesis -> Nothing;
+        RightParenthesis -> Nothing;
+        LeftBrace -> Nothing;
+        RightBrace -> Nothing;
+
+        Identifier s -> Nothing;
+
+        Whitespace s -> Nothing;
+        Comment s -> Nothing
+    }
+    in
+    let isLeftParenthesis = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> True;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isRightParenthesis = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> True;
+        LeftBrace -> False;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isLeftBrace = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> True;
+        RightBrace -> False;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
+    }
+    in
+    let isRightBrace = \t -> case t of {
+        Data -> False;
+        Forall -> False;
+        Dot -> False;
+        Colon -> False;
+        Arrow -> False;
+        Semicolon -> False;
+
+        Lambda -> False;
+        Let -> False;
+        Equal -> False;
+        In -> False;
+        Rec -> False;
+        And -> False;
+        Case -> False;
+        Of -> False;
+        Ffi s -> False;
+
+        LeftParenthesis -> False;
+        RightParenthesis -> False;
+        LeftBrace -> False;
+        RightBrace -> True;
+
+        Identifier s -> False;
+
+        Whitespace s -> False;
+        Comment s -> False
     }
     in
     let getIdentifier = \t -> case t of {
@@ -806,9 +1340,32 @@ let parse =
     }
     in
 
+    let data_ = satisfy isData in
+    let forall_ = satisfy isForall in
+    let dot = satisfy isDot in
+    let colon = satisfy isColon in
     let arrow = satisfy isArrow in
+    let semicolon = satisfy isSemicolon in
     let lambda = satisfy isLambda in
     let let_ = satisfy isLet in
+    let equal = satisfy isEqual in
+    let in_ = satisfy isIn in
+    let rec_ = satisfy isRec in
+    let and_ = satisfy isAnd in
+    let case_ = satisfy isCase in
+    let of_ = satisfy isOf in
+    let ffi_ = bind (satisfy \t -> case getFfi t of {
+        Nothing -> False;
+        Just x -> True
+    }) \x -> case getFfi x of {
+        Nothing -> unreachable;
+        Just x -> return x
+    }
+    in
+    let leftParenthesis = satisfy isLeftParenthesis in
+    let rightParenthesis = satisfy isRightParenthesis in
+    let leftBrace = satisfy isLeftBrace in
+    let rightBrace = satisfy isRightBrace in
     let identifier = bind (satisfy \t -> case getIdentifier t of {
         Nothing -> False;
         Just x -> True
@@ -817,29 +1374,137 @@ let parse =
         Just x -> return x
     }
     in
-    let equal = satisfy isEqual in
-    let in_ = satisfy isIn in
 
     let isApp1 = bind maybePeek \x -> case x of {
         Nothing -> return False;
-        Just x -> return (or (isLambda x) (isLet x))
+        Just x -> return (or (isLambda x) (or (isLet x) (isRec x)))
     }
     in
-    let isApp2 = bind maybePeek \x -> case x of {
-        Nothing -> return False;
-        Just x -> return case getIdentifier x of {
+    let isApp2 =
+        let isIdentifier = \x ->case getIdentifier x of {
             Nothing -> False;
             Just s -> True
         }
+        in
+        let isFfi = \x ->case getFfi x of {
+            Nothing -> False;
+            Just s -> True
+        }
+        in
+        bind maybePeek \x -> case x of {
+            Nothing -> return False;
+            Just x -> return (or (isIdentifier x) (or (isLeftParenthesis x) (or (isCase x) (isFfi x))))
     }
     in
 
+    let sig =
+        let forall_ =
+            bind forall_ \_ ->
+            bind identifier \t ->
+            bind dot \_ ->
+                 return (Just t)
+        in
+        rec poly_ = \u ->
+            let poly_ = \u ->
+                bind (alt (satisfy (\t -> case getIdentifier t of {Just _ -> True; Nothing -> False})) leftParenthesis) \t -> case getIdentifier t of {
+                    Just c -> return (SigPolyTerm (SigMonoVar c));
+                    Nothing ->
+                        bind (poly u) \t ->
+                        bind rightParenthesis \_ ->
+                             return t
+                }
+            in
+            rec app = \c -> \ts -> case ts of {
+                Cons h t -> app (SigPolyTerm (SigMonoApp c h)) t;
+                Nil -> c
+            }
+            in
+            bind (poly_ u) \c ->
+            bind (many (poly_ u)) \ts ->
+                 return (app c ts)
+        and mono = \u ->
+            bind (poly_ u) \t1 ->
+            bind maybePeek \t -> case t of {
+                Just t -> case isArrow t of {
+                    True ->
+                        bind arrow \_ ->
+                        bind (mono u) \t2 ->
+                             return (SigPolyTerm (SigMonoApp (SigPolyTerm (SigMonoApp (SigPolyTerm (SigMonoVar (toString ffi ` "->" `))) t1)) t2));
+                    False -> return t1
+                };
+                Nothing -> return t1
+            }
+        and poly = \u ->
+            bind (alt forall_ (return Nothing)) \t -> case t of {
+                Just t ->
+                    bind (poly u) \poly ->
+                         return (SigPolyForall t poly);
+                Nothing ->
+                    bind (mono u) \mono ->
+                        return mono
+            }
+        in
+        poly Unit
+    in
+    let dataCtor =
+        bind identifier \ctor ->
+        bind colon \_ ->
+        bind sig \sig ->
+             return (DataCtor ctor sig)
+    in
+    let dataCtors =
+        rec dataCtors = \u ->
+            bind dataCtor \d ->
+                 alt (
+                     bind semicolon \_ ->
+                     bind (dataCtors u) \ds ->
+                         return (Cons d ds)
+                 ) (return (Cons d Nil))
+        in
+        alt (dataCtors Unit) (return Nil)
+    in
+    let gadts = many (
+        bind data_ \_ ->
+        bind identifier \c ->
+        bind (many identifier) \ts ->
+        bind leftBrace \_ ->
+        bind dataCtors \ctors ->
+        bind rightBrace \_ ->
+             return (Gadt c ts ctors)
+    )
+    in
     rec expr = \u -> alt (absExpr u)
-                    (alt (letExpr u) (appExpr1 u))
-    and expr_ = \u -> (varExpr u)
+                    (alt (letExpr u)
+                    (alt (recExpr u) (appExpr1 u)))
+    and expr_ = \u -> alt (varExpr u)
+                     (alt (bind leftParenthesis \_ ->
+                           bind (expr u) \e ->
+                           bind rightParenthesis \_ ->
+                                return e)
+                     (alt (caseExpr u)
+                          (ffiExpr u)))
     and varExpr = \u ->
         bind identifier \x ->
              return (VarExpr x)
+    and caseExpr = \u ->
+        let peExpr =
+            bind identifier \c ->
+            bind (many identifier) \ds ->
+            bind arrow \_ ->
+            bind (expr u) \e ->
+                 return (Pair c (Pair ds e))
+        in
+        bind case_ \_ ->
+        bind (expr u) \e ->
+        bind of_ \_ ->
+        bind leftBrace \_ ->
+        bind peExpr \pe ->
+        bind (many (bind semicolon \_ -> peExpr)) \pes ->
+        bind rightBrace \_ ->
+             return (CaseExpr e (Cons pe pes))
+    and ffiExpr = \u ->
+        bind ffi_ \s ->
+             return (FfiExpr s)
     and appExpr1 = \u ->
         bind (appExpr2 u) \e1 ->
         bind isApp1 \b -> case b of {
@@ -876,15 +1541,30 @@ let parse =
         bind in_ \_ ->
         bind (expr u) \e2 ->
             return (LetExpr x e1 e2)
+    and recExpr = \u ->
+        let xeExpr =
+            bind identifier \x ->
+            bind equal \_ ->
+            bind (expr u) \e ->
+                 return (Pair x e)
+        in
+        bind rec_ \_ ->
+        bind xeExpr \xe ->
+        bind (many (bind and_ \_ -> xeExpr)) \xes ->
+        bind in_ \_ ->
+        bind (expr u) \e ->
+             return (RecExpr (Cons xe xes) e)
     in
 
-    bind (skip (\x -> not (or (isWhitespace x) (isComment x)))) \_ ->
+    bind gadts \gadts ->
     bind (expr Unit) \e ->
     bind eof \_ ->
-         return e
+         return (Pair gadts e)
 in
 
 let typeInfer = \e ->
+    let gadts = case e of { Pair gadts _ -> gadts } in
+    let e = case e of { Pair _ e -> e} in
     let bind = \m -> \f -> TypeInfer \s -> case m of {
         TypeInfer runTypeInfer -> case runTypeInfer s of {
             Left e -> Left e;
@@ -972,7 +1652,7 @@ let typeInfer = \e ->
             in
             case x of {
                 MonoVar t -> Right (Pair s (find t par));
-                MonoApp c ts -> Right (Pair s x);
+                MonoApp c ts -> Right (Pair s x)
             }
     }
     in
@@ -1132,9 +1812,60 @@ let typeInfer = \e ->
             bind (typeInfer ctx e1) \t1 ->
             bind (gen ctx t1) \p1 ->
                  typeInfer (Cons (Pair x p1) ctx) e2;
-        RecExpr xes e -> fail (toString ffi ` "not implemented" `);
-        CaseExpr e pes -> fail (toString ffi ` "not implemented" `);
-        FfiExpr s -> fail (toString ffi ` "not implemented" `)
+        -- TODO: implement type infer for rec/case
+        RecExpr xes e ->
+            rec xets = \xes -> case xes of {
+                Cons xe xes -> case xe of {
+                    Pair x e ->
+                        bind newVar \tx ->
+                        bind (xets xes) \ctx ->
+                             return (Cons (Pair x (Pair e (MonoVar tx))) ctx)
+                };
+                Nil -> return Nil
+            }
+            in
+            let newCtx = \ctx' ->
+                rec infer = \xets -> case xets of {
+                    Cons xet xets -> case xet of {
+                        Pair x et -> case et of {
+                            Pair e t ->
+                                bind (typeInfer ctx' e) \t' ->
+                                bind (unify t t') \_ ->
+                                     infer xets
+                        }
+                    };
+                    Nil -> return Unit
+                }
+                in
+                rec newCtx = \xets -> case xets of {
+                    Cons xet xets -> case xet of {
+                        Pair x et -> case et of {
+                            Pair e t ->
+                                bind (gen ctx t) \t ->
+                                bind (newCtx xets) \ctx ->
+                                     return (Cons (Pair x t) ctx)
+                        }
+                    };
+                    Nil -> return ctx
+                }
+                in
+                \xets -> bind (infer xets) \_ ->
+                              newCtx xets
+            in
+            bind (xets xes) \xets ->
+                 let xts = map (\xet -> case xet of {
+                    Pair x et -> case et of {
+                        Pair e t -> Pair x (PolyTerm t)
+                    }
+                 }) xets
+                 in
+                 let ctx' = listJoin (Cons xts (Cons ctx Nil)) in
+            bind (newCtx ctx' xets) \ctx ->
+                 typeInfer ctx e;
+        CaseExpr e pes -> bind (typeInfer ctx e) \t ->
+                               return t;
+        FfiExpr s -> bind newVar \tx ->
+                          return (MonoVar tx)
     }
     in
     rec sub = \x -> bind (find x) \x -> case x of {
@@ -1152,16 +1883,16 @@ let typeInfer = \e ->
                  return (MonoApp c ts)
     }
     in
-    let stringType = MonoApp (toString ffi ` "List" `) (Cons (MonoApp (toString ffi ` "Char" `) Nil) Nil) in
-    let unitType = MonoApp (toString ffi ` "Unit" `) Nil in
-    let ioUnitType = MonoApp (toString ffi ` "IO" `) (Cons unitType Nil) in
-    let writeString = Pair (toString ffi ` "writeString" `)
-                        (PolyTerm (MonoApp (toString ffi ` "->" `) (Cons stringType (Cons ioUnitType Nil))))
-    in
-    let str = Pair (toString ffi ` "str" `) (PolyTerm stringType)
-    in
-    let builtin = Cons writeString
-                (Cons str Nil)
+    let builtin =
+        let stringType = MonoApp (toString ffi ` "List" `) (Cons (MonoApp (toString ffi ` "Char" `) Nil) Nil) in
+        let unitType = MonoApp (toString ffi ` "Unit" `) Nil in
+        let ioUnitType = MonoApp (toString ffi ` "IO" `) (Cons unitType Nil) in
+        let writeString = Pair (toString ffi ` "writeString" `)
+                               (PolyTerm (MonoApp (toString ffi ` "->" `) (Cons stringType (Cons ioUnitType Nil))))
+        in
+        let str = Pair (toString ffi ` "str" `) (PolyTerm stringType)
+        in
+        Cons writeString (Cons str Nil)
     in
     runTypeInfer (
         bind (typeInfer builtin e) \t ->
@@ -1184,36 +1915,104 @@ let eval =
         }
         in lookup
     in
-    rec eval1 = \ctx -> \e -> case e of {
-        VarExpr x -> case lookup x ctx of {
-            Just v -> v;
-            Nothing -> e;
-        };
-        AppExpr e1 e2 ->
-            let e1 = eval1 ctx e1 in
-            let e2 = eval1 ctx e2 in
-            case e1 of {
-                VarExpr x -> AppExpr e1 e2;
-                AppExpr e1' e2' -> AppExpr e1 e2;
-                AbsExpr x e -> eval1 (Cons (Pair x e2) ctx) e;
-                LetExpr x e1 e2 -> undefined;
-                RecExpr xes e -> undefined;
-                CaseExpr e pes -> undefined;
-                FfiExpr s -> undefined
+    let unreachable = ffi ` NULL ` in
+    let pureEval =
+        let nextX = \m ->
+            rec nextX = \x -> case lookup x m of {
+                Just x -> nextX (Cons (toChar ffi ` 36 `) x);
+                Nothing -> x
+            }
+            in
+            nextX
+        in
+        rec sub = \m -> \e -> case e of {
+            VarExpr x -> case lookup x m of {
+                Just v -> VarExpr v;
+                Nothing -> e
             };
-        AbsExpr x e -> AbsExpr x (eval1 (Cons (Pair x (VarExpr x)) ctx) e);
-        LetExpr x e1 e2 -> eval1 (Cons (Pair x (eval1 ctx e1)) ctx) e2;
-        RecExpr xes e -> undefined;
-        CaseExpr e pes -> undefined;
-        FfiExpr s -> undefined
-    }
+            AppExpr e1 e2 -> AppExpr (sub m e1) (sub m e2);
+            AbsExpr x e ->
+                let x' = nextX m x in
+                AbsExpr x' (sub (Cons (Pair x x') m) e);
+            LetExpr x e1 e2 ->
+                let x' = nextX m x in
+                LetExpr x' (sub m e1) (sub (Cons (Pair x x') m) e2);
+            RecExpr xes e ->
+                rec newM = \xes -> case xes of {
+                    Cons xe xes -> case xe of {
+                        Pair x e ->
+                            let x' = nextX m x in
+                            Cons (Pair x x') (newM xes)
+                    };
+                    Nil -> m
+                }
+                in
+                let newM = newM xes in
+                rec newXes = \xes -> case xes of {
+                    Cons xe xes -> case xe of {
+                        Pair x e -> Cons (Pair (case lookup x newM of {
+                            Nothing -> unreachable;
+                            Just x -> x
+                        }) (sub newM e)) (newXes xes)
+                    };
+                    Nil -> Nil
+                }
+                in
+                let newXes = newXes xes in
+                RecExpr newXes (sub newM e);
+            CaseExpr e' pes -> e;
+            FfiExpr s -> e
+        }
+        in
+        rec eval = \ctx -> \e -> case e of {
+            VarExpr x -> case lookup x ctx of {
+                Just v -> sub (map (\x -> case x of { Pair x e -> Pair x x }) ctx) v;
+                Nothing -> e
+            };
+            AppExpr e1 e2 ->
+                let e1 = eval ctx e1 in
+                let e2 = eval ctx e2 in
+                case e1 of {
+                    VarExpr x -> AppExpr e1 e2;
+                    AppExpr e1' e2' -> AppExpr e1 e2;
+                    AbsExpr x e -> eval (Cons (Pair x e2) ctx) e;
+                    LetExpr x e1 e2 -> unreachable;
+                    RecExpr xes e -> AppExpr e1 e2;
+                    CaseExpr e pes -> AppExpr e1 e2;
+                    FfiExpr s -> AppExpr e1 e2
+                };
+            AbsExpr x e -> AbsExpr x (eval (Cons (Pair x (VarExpr x)) ctx) e);
+            LetExpr x e1 e2 -> eval (Cons (Pair x (eval ctx e1)) ctx) e2;
+            RecExpr xes e ->
+                rec newCtx = \xes -> case xes of {
+                    Cons xe xes -> case xe of {
+                        Pair x e -> Cons (Pair x (VarExpr x)) (newCtx xes)
+                    };
+                    Nil -> ctx
+                }
+                in
+                let ctx' = newCtx xes in
+                rec newXes = \xes -> case xes of {
+                    Cons xe xes -> case xe of {
+                        Pair x e -> Cons (Pair x (eval ctx' e)) (newXes xes)
+                    };
+                    Nil -> Nil
+                }
+                in
+                RecExpr (newXes xes) (eval ctx' e);
+            CaseExpr e' pes -> e;
+            FfiExpr s -> e
+        }
+        in
+        \e -> eval Nil (sub Nil e)
     in
     let toAny = \x -> Any ffi ` $x ` in
     let fromAny = \x -> case x of { Any x -> x } in
+    let unreachable = Any ffi ` NULL ` in
     rec eval = \ctx -> \e -> case e of {
         VarExpr x -> case lookup x ctx of {
             Just v -> v;
-            Nothing -> undefined;
+            Nothing -> unreachable
         };
         AppExpr e1 e2 ->
             let e1 = eval ctx e1 in
@@ -1221,31 +2020,40 @@ let eval =
             toAny ((fromAny e1) (fromAny e2));
         AbsExpr x e -> toAny \v -> eval (Cons (Pair x v) ctx) e;
         LetExpr x e1 e2 -> eval (Cons (Pair x (eval ctx e1)) ctx) e2;
-        RecExpr xes e -> undefined;
-        CaseExpr e pes -> undefined;
-        FfiExpr s -> undefined
+        RecExpr xes e ->
+            rec ctx' = \xes' -> case xes' of {
+                Cons xe xes'' -> case xe of {
+                    Pair x e -> Cons (Pair x (toAny \v -> fromAny (eval (ctx' xes) e) v)) (ctx' xes'')
+                };
+                Nil -> ctx
+            }
+            in
+            eval (ctx' xes) e;
+        CaseExpr e pes -> toAny undefined;
+        FfiExpr s -> toAny undefined
     }
     in
-    rec writeString' = \s -> case s of {
+    rec writeString = \s -> case s of {
         Cons h t -> bind (writeChar h) \u ->
-                         writeString' t;
+                         writeString t;
         Nil -> return Unit
     }
     in
-    let writeString =
-        Pair (toString ffi ` "writeString" `) (toAny writeString')
-    in
-    let str = Pair (toString ffi ` "str" `) (toAny (toString ffi ` "hello world!\n" `)) in
-    let builtin = Cons writeString
-                 (Cons str Nil)
+    let builtin =
+        let writeString =
+            Pair (toString ffi ` "writeString" `) (toAny writeString)
+        in
+        let str = Pair (toString ffi ` "str" `) (toAny (toString ffi ` "hello world!\n" `)) in
+        Cons writeString (Cons str Nil)
     in
     \e ->
-             let e = eval1 Nil e in
+             let gadts = case e of { Pair gadts _ -> gadts } in
+             let e = case e of { Pair _ e -> pureEval e } in
              let r = fromAny (eval builtin e) in
-        bind (writeString' (toString ffi ` "expr: " `)) \_ ->
-        bind (writeString' (exprToString e)) \_ ->
-        bind (writeString' (toString ffi ` "\neval:\n" `)) \_ ->
-             r
+        bind (writeString (toString ffi ` "expr: " `)) \_ ->
+        bind (writeString (exprToString e)) \_ ->
+        bind (writeString (toString ffi ` "\neval:\n" `)) \_ ->
+        bind r \u -> return case u of { Unit -> Unit}
 in
 
 let main =
@@ -1297,13 +2105,20 @@ let main =
             Right expr -> typeInfer expr
          }
          in
-         let output = case expr of {
+         let output = case tokens of {
             Left e -> e;
-            Right expr -> case type of {
+            Right tokens -> case expr of {
                 Left e -> e;
-                Right t -> listJoin (Cons (exprToString expr)
-                                    (Cons (toString ffi ` " : " `)
-                                    (Cons (monoToString t) Nil)))
+                Right expr ->  case expr of {
+                    Pair gadts expr -> case type of {
+                        Left e -> e;
+                        Right t -> listJoin (Cons (listJoin (map (\t ->listJoin (Cons (tokenToString t) (Cons (toString ffi ` " " `) Nil))) tokens))
+                                            (Cons (gadtsToString gadts)
+                                            (Cons (exprToString expr)
+                                            (Cons (toString ffi ` " : " `)
+                                            (Cons (monoToString t) Nil)))))
+                    }
+                }
             }
          }
          in
@@ -1311,7 +2126,7 @@ let main =
     bind (writeString output) \_ ->
     bind (writeString (toString ffi ` "\n" `)) \_ ->
          let eval = case type of {
-            Left e -> writeString e;
+            Left e -> return Unit;
             Right t -> case t of {
                 MonoVar t -> writeString (toString ffi ` "output: expect IO Unit" `);
                 MonoApp c ts -> case stringEq c (toString ffi ` "IO" `) of {
@@ -1326,14 +2141,14 @@ let main =
                                     True -> case t of {
                                         Cons h t -> writeString (toString ffi ` "output: expect IO Unit" `);
                                         Nil -> case expr of {
-                                            Left e -> undefined;
+                                            Left e -> writeString (toString ffi ` "output: unreachable" `);
                                             Right expr -> eval expr
                                         }
                                     }
                                 }
                             }
                         };
-                        Nil -> writeString (toString ffi ` "output: expect IO Unit" `);
+                        Nil -> writeString (toString ffi ` "output: expect IO Unit" `)
                     }
                 }
             }
