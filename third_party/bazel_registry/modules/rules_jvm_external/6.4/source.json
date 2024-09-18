@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.4.tar.gz",
+  "integrity": "sha256-pMz8PLhkSPDI8dLWulnqNPdx+FTn0W4471KaMac54lA=",
+  "strip_prefix": "rules_jvm_external-6.4"
+}

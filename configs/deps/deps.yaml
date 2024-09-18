@@ -65,12 +65,12 @@ bazel_deps:
   module_version: 1.7.1
 - name: rules_jvm_external
   type: http_archive
-  sha256: 145718a446715e4653f0a3bc79cf79c70413642573ba8e16a37131944847bd2b
-  strip_prefix: rules_jvm_external-6.3
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.3.tar.gz
-  updated_at: '2024-09-12'
-  version: '6.3'
-  module_version: '6.3'
+  sha256: a4ccfc3cb86448f0c8f1d2d6ba59ea34f771f854e7d16e38ef529a31a739e250
+  strip_prefix: rules_jvm_external-6.4
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.4.tar.gz
+  updated_at: '2024-09-18'
+  version: '6.4'
+  module_version: '6.4'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.0.1.tar.gz
