@@ -52,8 +52,8 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "o+c8qRBWojmxp6XnxraB8cDLR3egI6E7hjYq4t1rzM8=",
-        "usagesDigest": "uI3X1eYoO52kW5WpZ+UZpAzh9dcHbYBn7jeLTzE4zx8=",
+        "bzlTransitiveDigest": "w/CHOzFR7H7jxnYVn2nZCc5t8JsSe8erirmxjfrhtlI=",
+        "usagesDigest": "EarwUECJL0fveYYzEwuWAnjCwJobiEuikhKcBDgsquk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -107,7 +107,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "darwin_arm64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "copy_to_directory_linux_arm64": {
@@ -136,7 +136,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "darwin_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "coreutils_linux_arm64": {
@@ -144,7 +144,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "linux_arm64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "zstd_linux_arm64": {
@@ -308,7 +308,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "linux_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "copy_directory_toolchains": {
@@ -486,7 +486,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "windows_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "yq_linux_arm64": {
@@ -519,7 +519,7 @@
     },
     "@@container_structure_test~//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "N3vZqw3OlfuboMVlxmTq4XDxBdvPu2kNIEGbsKnRL2A=",
+        "bzlTransitiveDigest": "yHG+XJh/jPdFOQm1OdJIHdqSC4SuVSFDchNBX1bOP7g=",
         "usagesDigest": "mE7vyAM9GWUsa2dGxm0a3i92Vj4x7viP1gjgoHjzzUE=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -773,7 +773,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "T9GQHzgFf4ZX5/Ltz2N6OeV3C3daaLJSzgawT8mghww=",
+        "bzlTransitiveDigest": "UmxL6nQwsTsx6zfWV/6dXBlCbd2Uu7xzJIG7hW2WEic=",
         "usagesDigest": "tU3kbZeh6cPm6UORQYbpueYmuot5TI2gS7uDDXXLwJU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -909,7 +909,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "darwin_arm64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "io_docker_library_adminer_linux_arm_v7": {
@@ -993,7 +993,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "darwin_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "coreutils_linux_arm64": {
@@ -1001,7 +1001,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "linux_arm64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "zstd_linux_arm64": {
@@ -1324,7 +1324,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "linux_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           },
           "bazel_skylib": {
@@ -1582,7 +1582,7 @@
             "ruleClassName": "coreutils_platform_repo",
             "attributes": {
               "platform": "windows_amd64",
-              "version": "0.0.26"
+              "version": "0.0.27"
             }
           }
         },
