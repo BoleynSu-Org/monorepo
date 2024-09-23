@@ -15,7 +15,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'stardoc',
-    version = '0.7.0',
+    version = '0.7.1',
 )
 
 cc_configure_extension = use_extension(
