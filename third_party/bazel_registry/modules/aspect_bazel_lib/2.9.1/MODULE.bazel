@@ -1,6 +1,6 @@
 module(
     name = 'aspect_bazel_lib',
-    version = '2.9.0',
+    version = '2.9.1',
     bazel_compatibility = ['>=6.0.0'],
 )
 
@@ -104,4 +104,14 @@ use_repo(
     'com_github_bmatcuk_doublestar_v4',
     'org_golang_x_exp',
     'org_golang_x_sys',
+)
+
+host_platform = use_extension(
+    '@platforms//host:extension.bzl',
+    'host_platform',
+)
+
+use_repo(
+    host_platform,
+    'host_platform',
 )
