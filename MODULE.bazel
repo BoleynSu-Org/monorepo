@@ -632,62 +632,62 @@ DEPS = {
         },
         {
             "name": "io.netty:netty-buffer",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-codec-http2",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-codec-http",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-codec-socks",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-codec",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-common",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-handler-proxy",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-handler",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-resolver",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-tcnative-boringssl-static",
-            "version": "2.0.61.Final",
+            "version": "2.0.65.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-transport-native-epoll:jar:linux-x86_64",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-transport",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
@@ -852,12 +852,12 @@ DEPS = {
         },
         {
             "name": "io.netty:netty-tcnative-classes",
-            "version": "2.0.61.Final",
+            "version": "2.0.65.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
             "name": "io.netty:netty-transport-native-unix-common",
-            "version": "4.1.100.Final",
+            "version": "4.1.110.Final",
             "included_from": "io_grpc_grpc_java",
         },
         {
