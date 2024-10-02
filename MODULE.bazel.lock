@@ -774,7 +774,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "n3IJt5maTJ3INsWgtHre6APi4pBCRYJm0gE5M80TRUY=",
-        "usagesDigest": "ceq/f/xY42/DzB102a0TJkRI5vVWwLSsrsUKE1x1cgU=",
+        "usagesDigest": "TWgoN3VZEQs1kFmjL8TY/YQP6JjiF42Xxc3qz3jU9Yg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -799,7 +799,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:770529b8742ff7440194f24d89339bac68d69c93547f1b49223c85d8c3b15cd7",
+              "identifier": "sha256:cc5d939228bff45b3909b81ac2b5775a7f15cd96b243c11172cdcf4389b75503",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_base_linux_amd64",
               "bazel_tags": []
@@ -818,7 +818,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:770529b8742ff7440194f24d89339bac68d69c93547f1b49223c85d8c3b15cd7",
+              "identifier": "sha256:cc5d939228bff45b3909b81ac2b5775a7f15cd96b243c11172cdcf4389b75503",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_base_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_base_linux_arm64"
@@ -961,7 +961,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:57974e5fd28406a4def495f779627b830e28edde708e65112958e2764af43ca7",
+              "identifier": "sha256:d0e1d66ffcdc2794391d6977908e6f3866abbd3d75fe0081f3488d70ee1ed8ab",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64",
               "bazel_tags": []
@@ -1073,7 +1073,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:770529b8742ff7440194f24d89339bac68d69c93547f1b49223c85d8c3b15cd7",
+              "identifier": "sha256:cc5d939228bff45b3909b81ac2b5775a7f15cd96b243c11172cdcf4389b75503",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_base_linux_arm64",
               "bazel_tags": []
@@ -1171,7 +1171,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:57974e5fd28406a4def495f779627b830e28edde708e65112958e2764af43ca7",
+              "identifier": "sha256:d0e1d66ffcdc2794391d6977908e6f3866abbd3d75fe0081f3488d70ee1ed8ab",
               "platform": "linux/arm64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64",
               "bazel_tags": []
@@ -1490,7 +1490,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:57974e5fd28406a4def495f779627b830e28edde708e65112958e2764af43ca7",
+              "identifier": "sha256:d0e1d66ffcdc2794391d6977908e6f3866abbd3d75fe0081f3488d70ee1ed8ab",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_oj_c99runner_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_oj_c99runner_linux_arm64"
@@ -1652,7 +1652,7 @@
     },
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "kTjyiz7RWGV3rgSimDdHE+DOSV2YQh6auurEXEa04kk=",
+        "bzlTransitiveDigest": "VeL0H/rhDJsQ7KYx4me3PToT5r+bYD7ZuvcjDjtm3mA=",
         "usagesDigest": "Uu+eQolCXDoyIgvFjLDBDgjgBSkRuuldwUQnjKYjsz8=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",
@@ -3904,7 +3904,7 @@
     },
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
-        "bzlTransitiveDigest": "y9h5L2NtWbogyWSOJgqnUaU50MTPWAW+waelXSirMVg=",
+        "bzlTransitiveDigest": "dZkcElkfice3BvKPXtFwrvPABm8ac+SwfynSinwK4dQ=",
         "usagesDigest": "cHc4ZOZHd7qS3a7enY9iU1Rv1OGj5GGAUtdSgMfP+3I=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -3925,6 +3925,8 @@
               "dbg_compile_flags": {},
               "exec_arch": "x86_64",
               "exec_os": "linux",
+              "extra_exec_compatible_with": {},
+              "extra_target_compatible_with": {},
               "link_flags": {},
               "link_libs": {},
               "llvm_versions": {
