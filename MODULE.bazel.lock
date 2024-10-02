@@ -774,7 +774,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "n3IJt5maTJ3INsWgtHre6APi4pBCRYJm0gE5M80TRUY=",
-        "usagesDigest": "TWgoN3VZEQs1kFmjL8TY/YQP6JjiF42Xxc3qz3jU9Yg=",
+        "usagesDigest": "UbpKDSJp/L2FWkLKceBM9pU8BBCoLDCoTcr8LS5oLCA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1258,7 +1258,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:39bad5addfcf1fa005df6bab2a21c63783d6699e5e1261749b498e6e584d0c8b",
+              "identifier": "sha256:70e14fac87d514ed7853f609d6946ee9443832d3fd116027261efb861798ea82",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -1299,7 +1299,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:39bad5addfcf1fa005df6bab2a21c63783d6699e5e1261749b498e6e584d0c8b",
+              "identifier": "sha256:70e14fac87d514ed7853f609d6946ee9443832d3fd116027261efb861798ea82",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64",
               "bazel_tags": []
@@ -3905,7 +3905,7 @@
     "@@toolchains_llvm~//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "dZkcElkfice3BvKPXtFwrvPABm8ac+SwfynSinwK4dQ=",
-        "usagesDigest": "cHc4ZOZHd7qS3a7enY9iU1Rv1OGj5GGAUtdSgMfP+3I=",
+        "usagesDigest": "+c8pkVmdAquxjMBVkeryVvEyLMDQKUxRIdnSv8x0njA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3959,12 +3959,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "aa82716e1851e3003ef6d63502e3ea98f23973bb713349806d1b7599b451d91f"
+                "linux-x86_64": "632d9d416e274e5b2ac82369636741d0f40245aeadff65493942f7fb7c5de853"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.0-fedora-40-20240925.084428-20240925.115802/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.0-fedora-40-20241001.175917-20241002.012717/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
