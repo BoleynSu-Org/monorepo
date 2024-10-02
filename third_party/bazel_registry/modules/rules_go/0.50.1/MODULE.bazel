@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.17.0',
+    version = '1.18.0',
     repo_name = 'io_bazel_rules_go_bazel_features',
 )
 
@@ -53,7 +53,7 @@ register_toolchains(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.39.0',
+    version = '0.39.1',
 )
 
 go_deps = use_extension(

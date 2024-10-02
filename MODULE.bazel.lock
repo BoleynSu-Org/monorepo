@@ -773,7 +773,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "n3IJt5maTJ3INsWgtHre6APi4pBCRYJm0gE5M80TRUY=",
+        "bzlTransitiveDigest": "vNju55d0iQ6kThy5sA8fqGhpieTpiyeuBrlfDSDZNVg=",
         "usagesDigest": "Dg2TucE7W/w50C3eQcV2t7G7H/F42lSaKPkNYDydNdQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -1573,7 +1573,12 @@
                 "__TestingOnly_NeverAvailable": "1000000000.0.0"
               },
               "legacy_globals": {
-                "ProtoInfo": "8.0.0"
+                "JavaInfo": "8.0.0",
+                "JavaPluginInfo": "8.0.0",
+                "ProtoInfo": "8.0.0",
+                "PyCcLinkParamsProvider": "8.0.0",
+                "PyInfo": "8.0.0",
+                "PyRuntimeInfo": "8.0.0"
               }
             }
           },
@@ -1652,7 +1657,7 @@
     },
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "VeL0H/rhDJsQ7KYx4me3PToT5r+bYD7ZuvcjDjtm3mA=",
+        "bzlTransitiveDigest": "AXuC39z9PEs4NRYwr/Lo4WsjTZ1wHHwXovk5ytAdUsw=",
         "usagesDigest": "Uu+eQolCXDoyIgvFjLDBDgjgBSkRuuldwUQnjKYjsz8=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",

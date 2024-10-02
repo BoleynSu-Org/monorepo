@@ -92,12 +92,12 @@ bazel_deps:
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: 24e76b59907c40e7b8d4b3c7f2d9f031e00fa8da70e0e3b77e502bc0e545352c
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.39.0.tar.gz
-  updated_at: '2024-09-25'
-  version: v0.39.0
-  strip_prefix: bazel-gazelle-0.39.0
-  module_version: 0.39.0
+  sha256: dcdab026e60076db9da79c8063c184766e95146b19dca63be21cfab9c222760c
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.39.1.tar.gz
+  updated_at: '2024-10-02'
+  version: v0.39.1
+  strip_prefix: bazel-gazelle-0.39.1
+  module_version: 0.39.1
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -197,12 +197,12 @@ bazel_deps:
   module_version: 19.1.1.40.20241002.41029.20241002.54754
 - name: bazel_features
   type: http_archive
-  version: v1.17.0
-  sha256: bdc12fcbe6076180d835c9dd5b3685d509966191760a0eb10b276025fcb76158
-  strip_prefix: bazel_features-1.17.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.17.0/bazel_features-v1.17.0.tar.gz
+  version: v1.18.0
+  sha256: b4b145c19e08fd48337f53c383db46398d0a810002907ff0c590762d926e05be
+  strip_prefix: bazel_features-1.18.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.18.0/bazel_features-v1.18.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-09-13'
+  updated_at: '2024-10-02'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -218,7 +218,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.17.0
+  module_version: 1.18.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
