@@ -20,6 +20,8 @@ bazel_deps:
   strip_prefix: rules_java-7.12.1
   updated_at: '2024-10-02'
   version: 7.12.1
+  version_skip:
+  - 8.0.0
   module_version: 7.12.1
 - name: rules_python
   type: http_archive
@@ -447,6 +449,7 @@ maven_deps:
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
+  expires_at: '2025-10-01'
   module_version: 3.7.1
 - name: org.webjars:bootstrap
   version: 3.4.1
@@ -791,7 +794,7 @@ toolchain_deps:
   updated_at: '2024-04-18'
   expires_at: '2025-04-18'
 - name: golang
-  version: 1.22.2
-  updated_at: '2024-04-18'
+  version: 1.22.8
+  updated_at: '2024-10-06'
   expires_at: '2025-04-18'
 
