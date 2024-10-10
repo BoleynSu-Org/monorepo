@@ -30,7 +30,7 @@ use_repo(
 
 bazel_dep(
     name = 'protobuf',
-    version = '3.19.6',
+    version = '28.2',
     repo_name = 'com_google_protobuf',
 )
 

@@ -773,7 +773,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "vNju55d0iQ6kThy5sA8fqGhpieTpiyeuBrlfDSDZNVg=",
+        "bzlTransitiveDigest": "z8LZGs8+xwrjMXkj1wB0jCF425Ow6E4IbngAwbvxjyo=",
         "usagesDigest": "z3uwSq2yuMwJzAZLaxqoh5TKSbd1pdbgv77q2QbuFrM=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -1566,7 +1566,8 @@
             "ruleClassName": "globals_repo",
             "attributes": {
               "globals": {
-                "CcSharedLibraryInfo": "7.0.0",
+                "CcSharedLibraryInfo": "6.0.0-pre.20220630.1",
+                "CcSharedLibraryHintInfo": "7.0.0-pre.20230316.2",
                 "PackageSpecificationInfo": "6.4.0",
                 "RunEnvironmentInfo": "5.3.0",
                 "DefaultInfo": "0.0.1",
@@ -1657,7 +1658,7 @@
     },
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
-        "bzlTransitiveDigest": "AXuC39z9PEs4NRYwr/Lo4WsjTZ1wHHwXovk5ytAdUsw=",
+        "bzlTransitiveDigest": "+Cd0WRYY0zwK8PxfQttwUF3YtLCRDaPUmOofR6rLdRY=",
         "usagesDigest": "Uu+eQolCXDoyIgvFjLDBDgjgBSkRuuldwUQnjKYjsz8=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",

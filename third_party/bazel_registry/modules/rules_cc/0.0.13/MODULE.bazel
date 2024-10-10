@@ -1,6 +1,6 @@
 module(
     name = 'rules_cc',
-    version = '0.0.12',
+    version = '0.0.13',
 )
 
 bazel_dep(
@@ -11,6 +11,11 @@ bazel_dep(
 bazel_dep(
     name = 'platforms',
     version = '0.0.10',
+)
+
+bazel_dep(
+    name = 'protobuf',
+    version = '28.2',
 )
 
 cc_configure_extension = use_extension(
