@@ -66,12 +66,12 @@ DEPS = {
         {
             "name": "rules_oci",
             "type": "http_archive",
-            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.0.0.tar.gz",
-            "sha256": "d007e6c96eb62c88397b68f329e4ca56e0cfe31204a2c54b0cb17819f89f83c8",
-            "strip_prefix": "rules_oci-2.0.0",
-            "updated_at": "2024-09-06",
-            "version": "v2.0.0",
-            "module_version": "2.0.0",
+            "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.0.1.tar.gz",
+            "sha256": "acbf8f40e062f707f8754e914dcb0013803c6e5e3679d3e05b571a9f5c7e0b43",
+            "strip_prefix": "rules_oci-2.0.1",
+            "updated_at": "2024-10-14",
+            "version": "v2.0.1",
+            "module_version": "2.0.1",
         },
         {
             "name": "bazel_skylib",
