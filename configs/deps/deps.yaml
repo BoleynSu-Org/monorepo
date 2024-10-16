@@ -765,15 +765,15 @@ container_deps:
   - linux/arm64
   module_version: '20241014.31447'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20241014.031447'
+  version: '20241016.152555'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20241014.031447'
-  digest: sha256:93f6aef3bc0dd373fead4173aa2810311dde80defa6b047cb78e2154340ca598
-  updated_at: '2024-10-14'
+  tag: '20241016.152555'
+  digest: sha256:5b40eab400b54a7ccdb2b7a32ff1b9f55efeab4f013309ee2fc3ba0fea77847f
+  updated_at: '2024-10-16'
   platforms:
   - linux/amd64
-  module_version: '20241014.31447'
+  module_version: '20241016.152555'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base

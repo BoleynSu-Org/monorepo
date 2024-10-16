@@ -774,7 +774,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "+RFvJ5G4QrAo3fZanGRntfgSBeOWVhKOPzZ3Lkdj/b4=",
-        "usagesDigest": "iO3wJSykOivL6+6eImOlkH148Q9Ty8kAdVxXb9lD3iY=",
+        "usagesDigest": "+Igyk1MB2mohKFm9DgvTv8pOSWDyt4n6yMP/kP6KTXY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1208,7 +1208,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:93f6aef3bc0dd373fead4173aa2810311dde80defa6b047cb78e2154340ca598",
+              "identifier": "sha256:5b40eab400b54a7ccdb2b7a32ff1b9f55efeab4f013309ee2fc3ba0fea77847f",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -1279,7 +1279,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:93f6aef3bc0dd373fead4173aa2810311dde80defa6b047cb78e2154340ca598",
+              "identifier": "sha256:5b40eab400b54a7ccdb2b7a32ff1b9f55efeab4f013309ee2fc3ba0fea77847f",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64",
               "bazel_tags": []
