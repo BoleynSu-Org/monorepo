@@ -230,12 +230,12 @@ DEPS = {
         {
             "name": "clang_linux_x86_64",
             "type": "http_archive",
-            "version": "clang-llvmorg-19.1.1-fedora-40-20241002.041029-20241002.054754",
+            "version": "clang-llvmorg-19.1.2-fedora-40-20241015.154605-20241015.205630",
             "version_regex": "clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "9920c99b62ce581178eb21d298612d02edcf440e6f422740ccb37cb19eda8ae7",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.1-fedora-40-20241002.041029-20241002.054754/clang_linux_x86_64.tar.gz",
-            "updated_at": "2024-10-02",
-            "module_version": "19.1.1.40.20241002.41029.20241002.54754",
+            "sha256": "9e4fa0fb0ea710d9286360c52b9be993b0a25058de3d984a499ceaaf32dd4e61",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.2-fedora-40-20241015.154605-20241015.205630/clang_linux_x86_64.tar.gz",
+            "updated_at": "2024-10-16",
+            "module_version": "19.1.2.40.20241015.154605.20241015.205630",
         },
         {
             "name": "bazel_features",
@@ -382,12 +382,12 @@ DEPS = {
         {
             "name": "aspect_bazel_lib",
             "type": "http_archive",
-            "version": "v2.9.1",
-            "sha256": "f93d386d8d0b0149031175e81df42a488be4267c3ca2249ba5321c23c60bc1f0",
-            "strip_prefix": "bazel-lib-2.9.1",
-            "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.9.1/bazel-lib-v2.9.1.tar.gz",
+            "version": "v2.9.2",
+            "sha256": "0e31778f1fd574d2c05d238bfc4c785fa4b7e50a5ef38b506e01cfd8ec2fccb3",
+            "strip_prefix": "bazel-lib-2.9.2",
+            "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.9.2/bazel-lib-v2.9.2.tar.gz",
             "github_repo": "aspect-build/bazel-lib",
-            "updated_at": "2024-09-26",
+            "updated_at": "2024-10-16",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -404,7 +404,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "2.9.1",
+            "module_version": "2.9.2",
         },
         {
             "name": "buildozer",
