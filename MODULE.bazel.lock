@@ -52,8 +52,8 @@
     },
     "@@aspect_bazel_lib~//lib:extensions.bzl%toolchains": {
       "general": {
-        "bzlTransitiveDigest": "r7IIh4EKfqAOVGQAdB5/k5x8zTeExJ6xqLXx7uQWmGY=",
-        "usagesDigest": "5jAw+O7hkKjkT0z+6MmP+F6+Evc5iip4rOJ7ZyoJNu8=",
+        "bzlTransitiveDigest": "RDy5XYaNwkIyk1DrM5ylA69W9bs5KbJgL3YINTvNEqw=",
+        "usagesDigest": "3lKCnJqJ3yap4oXw6usL8PfBs+aMarU5ISzUN37zAcc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -519,7 +519,7 @@
     },
     "@@container_structure_test~//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "3yAusNnhxoEL5ggDIweuqgJcOUbitv4vGEnDJAvrKDQ=",
+        "bzlTransitiveDigest": "yXGUuixZwgOWgN4jXzUPjIhh9WDjEmVZPeHIxGa+AGY=",
         "usagesDigest": "mE7vyAM9GWUsa2dGxm0a3i92Vj4x7viP1gjgoHjzzUE=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -645,7 +645,7 @@
     "@@platforms//host:extension.bzl%host_platform": {
       "general": {
         "bzlTransitiveDigest": "xelQcPZH8+tmuOHVjL9vDxMnnQNMlwj0SlvgoqBkm4U=",
-        "usagesDigest": "OXfFQ7MOzTK6XK3ycmTZJP7GtuyLkBqW81ceegY6MjA=",
+        "usagesDigest": "ZYS4EfE9BaXiEiAsNo3pNlsGd7yFnPalrCIvL4p/Fm0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -773,7 +773,7 @@
     },
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "+RFvJ5G4QrAo3fZanGRntfgSBeOWVhKOPzZ3Lkdj/b4=",
+        "bzlTransitiveDigest": "8y3QqoQu3AfZxEIHdBpL4oLqkCRpAgf5Jxs9Ylax87E=",
         "usagesDigest": "EWnKQMiiQtq2j4kKlGd2+KGuT0V+OMwpm8ou+JE9eKU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
