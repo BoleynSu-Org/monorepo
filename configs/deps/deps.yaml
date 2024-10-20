@@ -22,6 +22,8 @@ bazel_deps:
   version: 7.12.1
   version_skip:
   - 8.0.0
+  - 8.0.1
+  - 8.1.0
   module_version: 7.12.1
 - name: rules_python
   type: http_archive
