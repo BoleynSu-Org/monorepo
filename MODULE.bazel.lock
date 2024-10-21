@@ -520,7 +520,7 @@
     "@@container_structure_test~//:repositories.bzl%extension": {
       "general": {
         "bzlTransitiveDigest": "yXGUuixZwgOWgN4jXzUPjIhh9WDjEmVZPeHIxGa+AGY=",
-        "usagesDigest": "mE7vyAM9GWUsa2dGxm0a3i92Vj4x7viP1gjgoHjzzUE=",
+        "usagesDigest": "ah8rqRl0AGOg/RQg6dwbr4LPVlYjWxGpuyXj4SFSJUo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
