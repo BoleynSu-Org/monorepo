@@ -122,11 +122,11 @@ bazel_deps:
   module_version: 1.2.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 7.3.2
-  url: https://github.com/bazelbuild/bazel/releases/download/7.3.2/bazel-7.3.2-installer-linux-x86_64.sh
+  version: 7.4.0
+  url: https://github.com/bazelbuild/bazel/releases/download/7.4.0/bazel-7.4.0-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: d5d6386873ae60688aa85ca6a1b700717c40c30545880c6a7b306c42073a06d3
-  updated_at: '2024-10-02'
+  sha256: e02bc61225822ebac551237420a7087a1727d4f1248bea1dea1d210bc10d6e9a
+  updated_at: '2024-10-22'
   executable: true
   override_updater:
   - type: deps_updater
@@ -142,7 +142,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 7.3.2
+  module_version: 7.4.0
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -416,12 +416,12 @@ bazel_deps:
   module_version: 2.1.0
 - name: container_structure_test
   type: http_archive
-  version: v1.19.2
-  sha256: 5d4c64c5132c0942dbed912fe0104447a9f4b871c9d6b448d3053196a9ac7de0
-  strip_prefix: container-structure-test-1.19.2
-  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.19.2.tar.gz
-  updated_at: '2024-10-21'
-  module_version: 1.19.2
+  version: v1.19.3
+  sha256: c91a76f7b4949775941f8308ee7676285555ae4756ec1ec990c609c975a55f93
+  strip_prefix: container-structure-test-1.19.3
+  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.19.3.tar.gz
+  updated_at: '2024-10-22'
+  module_version: 1.19.3
 - name: abseil-cpp
   type: http_archive
   version: '20240722.0'
