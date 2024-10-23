@@ -15,7 +15,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'protobuf',
-    version = '28.2',
+    version = '28.3',
 )
 
 cc_configure_extension = use_extension(

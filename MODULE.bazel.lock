@@ -1638,7 +1638,7 @@
     "@@rules_python~//python/private/pypi:pip.bzl%pip_internal": {
       "general": {
         "bzlTransitiveDigest": "lhz6uBGeNa1ROkpJImKcvHrtfAf/DYUj46pTipIgE5E=",
-        "usagesDigest": "6aWn2ksPPX2aQupUm1XC31uuo/EZomMWelG48CsA6Wc=",
+        "usagesDigest": "S4eiAUtZXBBK/BrxeoSGkP8I3FuLOMrp/CKt3FE4kWw=",
         "recordedFileInputs": {
           "@@rules_python~//tools/publish/requirements.txt": "031e35d03dde03ae6305fe4b3d1f58ad7bdad857379752deede0f93649991b8a",
           "@@rules_python~//tools/publish/requirements_windows.txt": "27831a1477549ad865043f17a9c1dd9a19566d460ba1f68cd8dfded642accbca",

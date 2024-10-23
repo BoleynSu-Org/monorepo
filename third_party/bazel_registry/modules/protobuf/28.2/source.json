@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v28.2.tar.gz",
-  "integrity": "sha256-sjQKpH+vfvEKAygZAxnT877hsk9CbUzo9CU7byfOFts=",
-  "strip_prefix": "protobuf-28.2"
-}
