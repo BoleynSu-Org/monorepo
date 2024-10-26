@@ -15,16 +15,12 @@ bazel_deps:
   module_version: 0.0.13
 - name: rules_java
   type: http_archive
-  sha256: 1e47522b418e153ef62ab9226e0a52037f7b7851c1e47744655a2383ede21eca
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/7.12.2.tar.gz
-  strip_prefix: rules_java-7.12.2
-  updated_at: '2024-10-20'
-  version: 7.12.2
-  version_skip:
-  - 8.0.0
-  - 8.0.1
-  - 8.1.0
-  module_version: 7.12.2
+  sha256: 79d30d725d8e78793afca2b1eb8dcb32e4d7d08a974f13bed44a9de6b5103e7e
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/8.2.0.tar.gz
+  strip_prefix: rules_java-8.2.0
+  updated_at: '2024-10-26'
+  version: 8.2.0
+  module_version: 8.2.0
 - name: rules_python
   type: http_archive
   sha256: bd4797821b72b80b69e3c5ab4ad037e7fd1e6a0a27aebf42424c7ab0ce32e254
@@ -201,12 +197,12 @@ bazel_deps:
   module_version: 19.1.2.40.20241015.154605.20241015.205630
 - name: bazel_features
   type: http_archive
-  version: v1.19.0
-  sha256: 3646ffd447753490b77d2380fa63f4d55dd9722e565d84dfda01536b48e183da
-  strip_prefix: bazel_features-1.19.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.19.0/bazel_features-v1.19.0.tar.gz
+  version: v1.20.0
+  sha256: c2596994cf63513bd44180411a4ac3ae95d32bf59148fcb6087a4642b3ffef11
+  strip_prefix: bazel_features-1.20.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.20.0/bazel_features-v1.20.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-10-10'
+  updated_at: '2024-10-26'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -222,7 +218,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.19.0
+  module_version: 1.20.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -447,9 +443,9 @@ maven_deps:
   updated_at: '2024-09-19'
   module_version: 2.17.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.4.1
-  updated_at: '2024-07-17'
-  module_version: 3.4.1
+  version: 3.5.0
+  updated_at: '2024-10-26'
+  module_version: 3.5.0
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.0
   updated_at: '2024-10-10'
@@ -701,15 +697,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20241023.072914'
+  version: '20241024.164718'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20241023.072914'
-  digest: sha256:43a25ee990bbca6f668593c077d236113018919ed2ac8badcafdb320518cee47
-  updated_at: '2024-10-23'
+  tag: '20241024.164718'
+  digest: sha256:ed74778b28a1ad6e25f5055ffeb9d051c14e1e09dd28b5ee1fac9f31c392b9ea
+  updated_at: '2024-10-26'
   platforms:
   - linux/amd64
-  module_version: '20241023.72914'
+  module_version: '20241024.164718'
 - name: io_docker_library_mariadb
   version: latest
   # latest is the stable version.
@@ -756,37 +752,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.31.2
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20241023.072914'
+  version: '20241024.164718'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20241023.072914'
-  digest: sha256:c4d6c5c08b5517a60fc2c24c59fc4a6f7a7f72a60aad2a936e987d83b98bb59d
-  updated_at: '2024-10-23'
+  tag: '20241024.164718'
+  digest: sha256:41c889b62a7701ff7c0aa6999577f971dd8cd5089a5cc80936807324c9850bd4
+  updated_at: '2024-10-26'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241023.72914'
+  module_version: '20241024.164718'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20241023.072914'
+  version: '20241024.164718'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20241023.072914'
-  digest: sha256:3e0984c502c897c9c012707710c8c1b9e29779cc5fa869f5402f0d9420b96f97
-  updated_at: '2024-10-23'
+  tag: '20241024.164718'
+  digest: sha256:941c9f7a691e6175b98d5a92777ebae41e9c3e3e99645c80bae4528c970c1a09
+  updated_at: '2024-10-26'
   platforms:
   - linux/amd64
-  module_version: '20241023.72914'
+  module_version: '20241024.164718'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:eaad0def07c1f885ad071e633818c8e657a6d571bc06a8d4ad6160bb2c541d2d
-  version: '20241023.072914'
-  tag: '20241023.072914'
-  updated_at: '2024-10-23'
+  digest: sha256:356b520ea7b063eba5b78da31a83b015b8de566e3603905edb0bbdadea04f5e1
+  version: '20241024.164718'
+  tag: '20241024.164718'
+  updated_at: '2024-10-26'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241023.72914'
+  module_version: '20241024.164718'
 
 toolchain_deps:
 - name: c

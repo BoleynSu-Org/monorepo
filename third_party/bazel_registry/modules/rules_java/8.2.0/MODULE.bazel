@@ -1,7 +1,7 @@
 module(
     name = 'rules_java',
-    version = '7.12.2',
-    bazel_compatibility = ['>=6.2.0'],
+    version = '8.2.0',
+    bazel_compatibility = ['>=7.3.2'],
 )
 
 bazel_dep(
@@ -16,7 +16,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.19.0',
+    version = '1.20.0',
 )
 
 bazel_dep(
@@ -25,8 +25,8 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'rules_proto',
-    version = '6.0.2',
+    name = 'protobuf',
+    version = '28.3',
 )
 
 bazel_dep(
