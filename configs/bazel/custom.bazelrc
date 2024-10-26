@@ -9,6 +9,14 @@ common --extra_toolchains=@remotejdk21_linux_toolchain_config_repo//:toolchain
 common --extra_toolchains=@python_sdk_toolchains//:all
 common --extra_toolchains=@go_linux_amd64_toolchains//:all
 
+# Java
+# See https://github.com/bazelbuild/rules_java/issues/233#issuecomment-2418834258
+common --experimental_rule_extension_api
+
+# @rules_jvm_external
+# The stamping is not deterministic
+common --@rules_jvm_external//settings:stamp_manifest=false
+
 # @io_bazel_rules_go
 # See https://github.com/bazelbuild/rules_go/blob/7309aba88014f97d6a3c2916a5ed4e2ca2017d83/go/modes.rst
 common --@io_bazel_rules_go//go/config:pure=true
