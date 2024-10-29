@@ -894,6 +894,17 @@ DEPS = {
             "override_target": "@com_google_protobuf//:protobuf_javalite",
             "included_from": "io_grpc_grpc_java",
         },
+        {
+            "name": "org.checkerframework:checker-qual",
+            "version": "3.12.0",
+            "included_from": "io_grpc_grpc_java",
+        },
+        {
+            "name": "io.grpc:grpc-s2a",
+            "version": "override",
+            "override_target": "@io_grpc_grpc_java//s2a",
+            "included_from": "io_grpc_grpc_java",
+        },
     ],
     "container_deps": [
         {
