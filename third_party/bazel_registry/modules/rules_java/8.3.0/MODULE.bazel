@@ -1,6 +1,6 @@
 module(
     name = 'rules_java',
-    version = '8.2.0',
+    version = '8.3.0',
     bazel_compatibility = ['>=7.3.2'],
 )
 
@@ -352,4 +352,14 @@ register_toolchains(
 
 register_toolchains(
     '@remotejdk21_win_arm64_toolchain_config_repo//:all',
+)
+
+compatibility_proxy = use_extension(
+    '//java:extensions.bzl',
+    'compatibility_proxy',
+)
+
+use_repo(
+    compatibility_proxy,
+    'compatibility_proxy',
 )

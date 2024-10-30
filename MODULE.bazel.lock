@@ -702,6 +702,49 @@
         "recordedRepoMappingEntries": []
       }
     },
+    "@@rules_java~//java:extensions.bzl%compatibility_proxy": {
+      "general": {
+        "bzlTransitiveDigest": "Odz7Evzh+lablxkRGoZdYrxh23h29UgGb9pHpbVXZqA=",
+        "usagesDigest": "0/TyZruTcO4Acns2lBIfsdJDXcTS869yRn0gpAYMGww=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "compatibility_proxy": {
+            "bzlFile": "@@rules_java~//java:repositories.bzl",
+            "ruleClassName": "_compatibility_proxy_repo_rule",
+            "attributes": {}
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "bazel_features~",
+            "bazel_features_globals",
+            "bazel_features~~version_extension~bazel_features_globals"
+          ],
+          [
+            "bazel_features~",
+            "bazel_features_version",
+            "bazel_features~~version_extension~bazel_features_version"
+          ],
+          [
+            "rules_java~",
+            "bazel_features",
+            "bazel_features~"
+          ],
+          [
+            "rules_java~",
+            "bazel_tools",
+            "bazel_tools"
+          ],
+          [
+            "rules_java~",
+            "remote_java_tools",
+            "rules_java~~toolchains~remote_java_tools"
+          ]
+        ]
+      }
+    },
     "@@rules_kotlin~//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
         "bzlTransitiveDigest": "fus14IFJ/1LGWWGKPH/U18VnJCoMjfDt1ckahqCnM0A=",
