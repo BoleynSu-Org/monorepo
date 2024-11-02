@@ -484,6 +484,7 @@ maven_deps:
   version: 1.7.0.Final
   version_regex: (.*)\.Final
   updated_at: '2023-11-03'
+  expires_at: '2025-10-01'
   module_version: 1.7.0
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
   version: '20240325.1'
