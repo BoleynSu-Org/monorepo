@@ -11,7 +11,7 @@ common --extra_toolchains=@go_linux_amd64_toolchains//:all
 
 # Java
 # See https://github.com/bazelbuild/rules_java/issues/233#issuecomment-2418834258
-common --experimental_rule_extension_api
+common --experimental_rule_extension_api=true
 
 # @rules_jvm_external
 # The stamping is not deterministic

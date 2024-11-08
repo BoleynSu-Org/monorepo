@@ -7,12 +7,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.13.tar.gz
-  sha256: d9bdd3ec66b6871456ec9c965809f43a0901e692d754885e89293807762d3d80
-  version: 0.0.13
-  strip_prefix: rules_cc-0.0.13
-  updated_at: '2024-10-10'
-  module_version: 0.0.13
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.1.0.tar.gz
+  sha256: 4b12149a041ddfb8306a8fd0e904e39d673552ce82e4296e96fac9cbf0780e59
+  version: 0.1.0
+  strip_prefix: rules_cc-0.1.0
+  updated_at: '2024-11-08'
+  module_version: 0.1.0
 - name: rules_java
   type: http_archive
   sha256: a0709dd4236ca74bcb547aabaac10bbf556271528075a27bcc29980c45e02bce
@@ -23,19 +23,22 @@ bazel_deps:
   module_version: 8.3.0
 - name: rules_python
   type: http_archive
-  sha256: c6fb25d0ba0246f6d5bd820dd0b2e66b339ccc510242fd4956b9a639b548d113
-  strip_prefix: rules_python-0.37.2
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.37.2.tar.gz
-  updated_at: '2024-10-28'
-  version: 0.37.2
-  module_version: 0.37.2
+  sha256: ca2671529884e3ecb5b79d6a5608c7373a82078c3553b1fa53206e6b9dddab34
+  strip_prefix: rules_python-0.38.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/0.38.0.tar.gz
+  updated_at: '2024-11-08'
+  version: 0.38.0
+  module_version: 0.38.0
 - name: rules_proto
   type: http_archive
   sha256: 6fb6767d1bef535310547e03247f7518b03487740c11b6c6adb7952033fe1295
   strip_prefix: rules_proto-6.0.2
   url: https://github.com/bazelbuild/rules_proto/archive/refs/tags/6.0.2.tar.gz
-  updated_at: '2024-06-17'
+  updated_at: '2024-11-08'
   version: 6.0.2
+  version_skip:
+  - 7.0.0
+  - 7.0.1
   version_regex: ([^-]*)[0-9.-]*
   module_version: 6.0.2
 - name: io_bazel_rules_go
@@ -227,22 +230,6 @@ bazel_deps:
   strip_prefix: protobuf-28.3
   version: v28.3
   updated_at: '2024-10-23'
-  module_file_content: |
-    module(
-        name = "protobuf",
-        version = "3.19.6",
-        repo_name = "com_google_protobuf",
-    )
-    bazel_dep(name = "bazel_skylib", version = "1.0.3")
-    bazel_dep(name = "zlib", version = "1.2.12")
-    bazel_dep(name = "rules_python", version = "0.4.0")
-    bazel_dep(name = "rules_cc", version = "0.0.1")
-    bazel_dep(name = "rules_proto", version = "4.0.0")
-    bazel_dep(name = "rules_java", version = "4.0.0")
-    bazel_dep(name = "rules_jvm_external", version = "0.0.0")
-    bazel_dep(name = "rules_pkg", version = "1.0.1")
-    bazel_dep(name = "platforms", version = "0.0.7")
-    bazel_dep(name = "abseil-cpp", version = "0.0.0", repo_name = "com_google_absl")
   module_version: '28.3'
 - name: zlib
   type: http_archive
@@ -426,6 +413,27 @@ bazel_deps:
   url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20240722.0.tar.gz
   updated_at: '2024-10-10'
   module_version: '20240722.0'
+- name: rules_rust
+  type: http_archive
+  version: 0.54.1
+  sha256: af4f56caae50a99a68bfce39b141b509dd68548c8204b98ab7a1cafc94d5bb02
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.54.1/rules_rust-v0.54.1.tar.gz
+  updated_at: '2024-11-08'
+  module_version: 0.54.1
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/bazelbuild/rules_rust/releases/download/${DEPS_UPDATER_version}/rules_rust-v${DEPS_UPDATER_version}.tar.gz
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
 
 pip_deps:
 - name: ruamel.yaml
