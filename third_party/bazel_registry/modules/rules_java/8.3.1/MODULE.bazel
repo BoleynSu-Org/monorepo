@@ -1,6 +1,6 @@
 module(
     name = 'rules_java',
-    version = '8.3.0',
+    version = '8.3.1',
     bazel_compatibility = ['>=7.3.2'],
 )
 
@@ -27,6 +27,7 @@ bazel_dep(
 bazel_dep(
     name = 'protobuf',
     version = '28.3',
+    repo_name = 'com_google_protobuf',
 )
 
 bazel_dep(
