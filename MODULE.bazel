@@ -537,15 +537,15 @@ DEPS = {
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
-            "version": "11.0.0",
-            "updated_at": "2024-10-10",
-            "module_version": "11.0.0",
+            "version": "11.0.1",
+            "updated_at": "2024-11-10",
+            "module_version": "11.0.1",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-            "version": "11.0.0",
-            "updated_at": "2024-10-10",
-            "module_version": "11.0.0",
+            "version": "11.0.1",
+            "updated_at": "2024-11-10",
+            "module_version": "11.0.1",
         },
         {
             "name": "org.webjars:jquery",
