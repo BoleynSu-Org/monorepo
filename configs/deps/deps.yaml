@@ -723,21 +723,26 @@ container_deps:
   - linux/amd64
   module_version: '20241105.171532'
 - name: io_docker_library_mariadb
-  version: latest
-  # latest is the stable version.
-  # See https://mariadb.org/mariadb/all-releases/
-  version_regex: (latest)
+  version: 11.5.2
   registry: docker.io
   repository: library/mariadb
-  tag: latest
+  tag: 11.5.2
   digest: sha256:4a1de8fa2a929944373d7421105500ff6f889ce90dcb883fbb2fdb070e4d427e
-  updated_at: '2024-10-16'
+  updated_at: '2024-11-10'
   platforms:
   - linux/amd64
   - linux/arm64/v8
   - linux/ppc64le
   - linux/s390x
-  module_version: 0.0.0
+  module_version: 11.5.2
+  override_updater:
+  - type: shell
+    cmd: echo DEPS_UPDATER_version=$(curl https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\+</a></td><td>[0-9-]\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\+' | head -1)
+  - type: deps_updater
+    name: container_deps
+    extra_args:
+    - name: update_version
+      value: false
 - name: io_docker_library_adminer
   version: 4.8.1
   registry: docker.io
