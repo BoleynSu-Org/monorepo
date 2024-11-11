@@ -704,8 +704,8 @@
     },
     "@@rules_java~//java:extensions.bzl%compatibility_proxy": {
       "general": {
-        "bzlTransitiveDigest": "Theh3A/MIYgU5cZh5n3h5me5gjPUsREZgnhhfFwKMMI=",
-        "usagesDigest": "xpjtNTHKNTxqBkAIM8kCjwvcMhXBoxJptRhR8vXpaoE=",
+        "bzlTransitiveDigest": "qQDt/3sW+S6X0UOPtgAOHAS2gxyGRaCjcI38DZI6Y+A=",
+        "usagesDigest": "ZChfISbgDBxi53ax6lwLKuvmELYbMLKVAZp1P9keIho=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
