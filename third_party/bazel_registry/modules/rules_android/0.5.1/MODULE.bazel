@@ -120,7 +120,7 @@ python.toolchain(
 
 bazel_dep(
     name = 'rules_proto',
-    version = '6.0.2',
+    version = '7.0.2',
     repo_name = 'rules_proto',
 )
 
