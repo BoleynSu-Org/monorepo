@@ -1,3 +1,4 @@
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
 load(":defs.bzl", "bsl_binary")
 
 bsl_binary(

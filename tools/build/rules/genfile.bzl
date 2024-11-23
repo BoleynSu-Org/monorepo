@@ -1,5 +1,6 @@
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 load("@bazel_skylib//rules:diff_test.bzl", "diff_test")
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 load(":expand_template.bzl", "expand_template")
 load(":run.bzl", "run")
 
@@ -47,7 +48,7 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
         **kwargs
     )
 
-    native.sh_binary(
+    sh_binary(
         name = "{}.genfile".format(name),
         srcs = [":{}.genfile.sh".format(name)],
         data = [name],

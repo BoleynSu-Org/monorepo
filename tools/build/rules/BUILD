@@ -1,3 +1,5 @@
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+
 filegroup(
     name = "genfile_tpl_sh",
     srcs = ["genfile.tpl.sh"],

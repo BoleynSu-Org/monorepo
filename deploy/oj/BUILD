@@ -1,5 +1,6 @@
 load("@bazel_deps//:deps.bzl", "DEPS")
 load("@rules_oci//oci:defs.bzl", "oci_push")
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 load("//tools/build/rules:expand_template.bzl", "expand_template")
 
 CONTAINER_IMAGES = {
