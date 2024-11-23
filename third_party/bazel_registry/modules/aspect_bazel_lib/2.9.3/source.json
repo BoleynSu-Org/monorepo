@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.9.3/bazel-lib-v2.9.3.tar.gz",
-  "integrity": "sha256-onLXm7Csa2llqhmbH4QzNBNFLofwQ7U+yn80eiOkeOg=",
-  "strip_prefix": "bazel-lib-2.9.3"
-}

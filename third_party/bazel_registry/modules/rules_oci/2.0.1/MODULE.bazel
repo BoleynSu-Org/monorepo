@@ -5,7 +5,7 @@ module(
 
 bazel_dep(
     name = 'aspect_bazel_lib',
-    version = '2.9.3',
+    version = '2.9.4',
 )
 
 bazel_dep(
