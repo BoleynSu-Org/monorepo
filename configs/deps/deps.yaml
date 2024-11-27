@@ -176,17 +176,17 @@ bazel_deps:
   module_version: 1.31.3
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20241111.134859'
-  sha256: 12fe7dea1e3f1d7b2231de420a7fa1e96378a84919d0cf3e7a7929f2f9676583
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241111.134859/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-11-11'
+  version: '20241127.083945'
+  sha256: 0091cfc67c9d685c47f489a5bf93e5e75757c001414e8ca80e64aa1bf371c002
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241127.083945/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-11-27'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: '20241111.134859'
+  module_version: '20241127.83945'
 - name: clang_linux_x86_64
   type: http_archive
   version: clang-llvmorg-19.1.3-fedora-41-20241104.154738-20241104.204900
@@ -728,15 +728,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20241123.032012'
+  version: '20241127.083945'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20241123.032012'
-  digest: sha256:277e29f7113cba354c7823ba7f32875e7704e94a4ab1b6631d5a07332210f581
+  tag: '20241127.083945'
+  digest: sha256:ac641b69e128baeaff3a59435707a2d0222a040c9167cabda4efddbb025e819b
   updated_at: '2024-11-27'
   platforms:
   - linux/amd64
-  module_version: '20241123.32012'
+  module_version: '20241127.83945'
 - name: io_docker_library_mariadb
   version: 11.6.2
   registry: docker.io

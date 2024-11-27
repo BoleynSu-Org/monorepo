@@ -797,7 +797,7 @@
     "@@rules_oci~//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "5vjESDiXYTxfLF42F81lo28aZGmvAFjgx/kjcXP4Gtc=",
-        "usagesDigest": "FvRSsE5do1jJRmHIN96X9tV5rwY7g86RhLvlm17lZbI=",
+        "usagesDigest": "//7GrcPg05IBoKe65pwZ+EJZpaHzSMhNqX8v1Dz6jes=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -809,7 +809,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:277e29f7113cba354c7823ba7f32875e7704e94a4ab1b6631d5a07332210f581",
+              "identifier": "sha256:ac641b69e128baeaff3a59435707a2d0222a040c9167cabda4efddbb025e819b",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64",
               "bazel_tags": []
@@ -823,7 +823,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:277e29f7113cba354c7823ba7f32875e7704e94a4ab1b6631d5a07332210f581",
+              "identifier": "sha256:ac641b69e128baeaff3a59435707a2d0222a040c9167cabda4efddbb025e819b",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
