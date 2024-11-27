@@ -65,12 +65,12 @@ bazel_deps:
   module_version: 1.7.1
 - name: rules_jvm_external
   type: http_archive
-  sha256: f854cfddbeda7b25bdf33838ece7a756f3a755fab581dde4fac84ee9cb8edfc7
-  strip_prefix: rules_jvm_external-6.5
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.5.tar.gz
-  updated_at: '2024-10-30'
-  version: '6.5'
-  module_version: '6.5'
+  sha256: b5153b0e7fc473a2c23e829abc6d4aaec7abe6b7bbb57901eb048208c06cd562
+  strip_prefix: rules_jvm_external-6.6
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.6.tar.gz
+  updated_at: '2024-11-27'
+  version: '6.6'
+  module_version: '6.6'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.0.1.tar.gz
@@ -197,12 +197,12 @@ bazel_deps:
   module_version: 19.1.3.41.20241104.154738.20241104.204900
 - name: bazel_features
   type: http_archive
-  version: v1.20.0
-  sha256: c2596994cf63513bd44180411a4ac3ae95d32bf59148fcb6087a4642b3ffef11
-  strip_prefix: bazel_features-1.20.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.20.0/bazel_features-v1.20.0.tar.gz
+  version: v1.21.0
+  sha256: af3d4fb1cf4f25942cb4a933b1ad93a0ea9fe9ee70c2af7f369fb72a67c266e5
+  strip_prefix: bazel_features-1.21.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.21.0/bazel_features-v1.21.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2024-10-26'
+  updated_at: '2024-11-27'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -217,7 +217,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.20.0
+  module_version: 1.21.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -375,12 +375,12 @@ bazel_deps:
   module_version: 0.5.1
 - name: rules_robolectric
   type: http_archive
-  version: '4.14'
-  sha256: a3c7632b96d651dd073ba0794da62dc7a4509710cc5dee3418fceadb9307c235
-  strip_prefix: robolectric-bazel-4.14
-  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.14.tar.gz
-  updated_at: '2024-11-23'
-  module_version: '4.14'
+  version: 4.14.1
+  sha256: bea2aaad74171fa011e39937c2e8ba2f3885614b1364bccba9ecbb51c5acbde0
+  strip_prefix: robolectric-bazel-4.14.1
+  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.14.1.tar.gz
+  updated_at: '2024-11-27'
+  module_version: 4.14.1
 - name: io_abseil_py
   module_name: abseil-py
   type: http_archive
@@ -728,15 +728,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20241111.012726'
+  version: '20241123.032012'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20241111.012726'
-  digest: sha256:6ddb364aaa2d6316c004f2ed01fc303f16413de7b4afffd8500059f7076dcd1a
-  updated_at: '2024-11-11'
+  tag: '20241123.032012'
+  digest: sha256:277e29f7113cba354c7823ba7f32875e7704e94a4ab1b6631d5a07332210f581
+  updated_at: '2024-11-27'
   platforms:
   - linux/amd64
-  module_version: '20241111.12726'
+  module_version: '20241123.32012'
 - name: io_docker_library_mariadb
   version: 11.6.2
   registry: docker.io
@@ -788,37 +788,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.31.2
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20241111.012726'
+  version: '20241123.032012'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20241111.012726'
-  digest: sha256:1f4ce5fe38ef9af29e4a4a9dee82ee973a1f8801625192666ffd7e1a6a11e706
-  updated_at: '2024-11-11'
+  tag: '20241123.032012'
+  digest: sha256:c22f4207d1efbecb8c3ef7ee154aeff232532f49ec8ed7308fbffc2603756276
+  updated_at: '2024-11-27'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241111.12726'
+  module_version: '20241123.32012'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20241111.012726'
+  version: '20241123.032012'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20241111.012726'
-  digest: sha256:e4b5945419835d90bd678f5cdaba3db4c5c6682b57cd22d4437512d3f485cc16
-  updated_at: '2024-11-11'
+  tag: '20241123.032012'
+  digest: sha256:24de0ec6f48cfc236e29e64b439490d5d06cbbeb7f8a3d2e66915cfe1174155d
+  updated_at: '2024-11-27'
   platforms:
   - linux/amd64
-  module_version: '20241111.12726'
+  module_version: '20241123.32012'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:17efcbf39ba1fdc499e35955cdc62ceeed26e18714866357e5eb5b1bd234ff98
-  version: '20241111.012726'
-  tag: '20241111.012726'
-  updated_at: '2024-11-11'
+  digest: sha256:fb723a037f4b9a76f3b0694da4b462cc3f7615541e97430add0b48eb4f0d0372
+  version: '20241123.032012'
+  tag: '20241123.032012'
+  updated_at: '2024-11-27'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241111.12726'
+  module_version: '20241123.32012'
 
 toolchain_deps:
 - name: c

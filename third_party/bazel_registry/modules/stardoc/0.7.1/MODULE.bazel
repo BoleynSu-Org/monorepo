@@ -16,7 +16,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_jvm_external',
-    version = '6.5',
+    version = '6.6',
 )
 
 bazel_dep(

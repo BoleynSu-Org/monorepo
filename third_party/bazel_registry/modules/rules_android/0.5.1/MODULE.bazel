@@ -36,7 +36,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_jvm_external',
-    version = '6.5',
+    version = '6.6',
 )
 
 bazel_dep(
@@ -46,7 +46,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_robolectric',
-    version = '4.14',
+    version = '4.14.1',
     repo_name = 'robolectric',
 )
 
