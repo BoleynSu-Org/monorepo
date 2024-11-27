@@ -5,7 +5,7 @@ module(
 
 bazel_dep(
     name = 'protobuf',
-    version = '28.3',
+    version = '29.0',
     repo_name = 'com_google_protobuf',
 )
 

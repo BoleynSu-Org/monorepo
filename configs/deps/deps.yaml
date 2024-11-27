@@ -221,12 +221,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v28.3.tar.gz
-  sha256: 7c3ebd7aaedd86fa5dc479a0fda803f602caaf78d8aff7ce83b89e1b8ae7442a
-  strip_prefix: protobuf-28.3
-  version: v28.3
-  updated_at: '2024-10-23'
-  module_version: '28.3'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v29.0.tar.gz
+  sha256: 10a0d58f39a1a909e95e00e8ba0b5b1dc64d02997f741151953a2b3659f6e78c
+  strip_prefix: protobuf-29.0
+  version: v29.0
+  updated_at: '2024-11-27'
+  module_version: '29.0'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
@@ -280,10 +280,10 @@ bazel_deps:
   module_version: 1.17.1
 - name: stardoc
   type: http_archive
-  url: https://github.com/bazelbuild/stardoc/releases/download/0.7.1/stardoc-0.7.1.tar.gz
-  sha256: fabb280f6c92a3b55eed89a918ca91e39fb733373c81e87a18ae9e33e75023ec
-  version: 0.7.1
-  updated_at: '2024-09-23'
+  url: https://github.com/bazelbuild/stardoc/releases/download/0.7.2/stardoc-0.7.2.tar.gz
+  sha256: 0e1ed4a98f26e718776bd64d053d02bb34d98572ccd03d6ba355112a1205706b
+  version: 0.7.2
+  updated_at: '2024-11-27'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -298,7 +298,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 0.7.1
+  module_version: 0.7.2
 - name: rules_kotlin
   type: http_archive
   url: https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.6/rules_kotlin-v1.9.6.tar.gz

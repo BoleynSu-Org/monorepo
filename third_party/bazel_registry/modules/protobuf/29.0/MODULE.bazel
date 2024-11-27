@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '28.3',
+    version = '29.0',
     repo_name = 'com_google_protobuf',
 )
 
@@ -33,6 +33,16 @@ bazel_dep(
 )
 
 bazel_dep(
+    name = 'rules_kotlin',
+    version = '1.9.6',
+)
+
+bazel_dep(
+    name = 'rules_license',
+    version = '1.0.0',
+)
+
+bazel_dep(
     name = 'rules_pkg',
     version = '1.0.1',
 )
@@ -40,11 +50,6 @@ bazel_dep(
 bazel_dep(
     name = 'rules_python',
     version = '0.40.0',
-)
-
-bazel_dep(
-    name = 'rules_rust',
-    version = '0.54.1',
 )
 
 bazel_dep(
@@ -58,8 +63,18 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'rules_proto',
-    version = '7.0.2',
+    name = 'bazel_features',
+    version = '1.21.0',
+    repo_name = 'proto_bazel_features',
+)
+
+bazel_dep(
+    name = 'rules_shell',
+    version = '0.3.0',
+)
+
+register_toolchains(
+    '//bazel/private/toolchains:all',
 )
 
 python = use_extension(
@@ -137,43 +152,17 @@ use_repo(
     'pip_deps',
 )
 
-rust = use_extension(
-    '@rules_rust//rust:extensions.bzl',
-    'rust',
+maven = use_extension(
+    '@rules_jvm_external//:extensions.bzl',
+    'maven',
 )
 
-rust.toolchain(
-    edition = '2021',
-)
-
-use_repo(
-    rust,
-    'rust_toolchains',
-)
-
-register_toolchains(
-    '@rust_toolchains//:all',
-)
-
-crate = use_extension(
-    '@rules_rust//crate_universe:extension.bzl',
-    'crate',
-)
-
-crate.spec(
-    package = 'googletest',
-    version = '>0.0.0',
-)
-
-crate.spec(
-    package = 'paste',
-    version = '>=1',
-)
-
-crate.from_specs(
+maven.install(
+    artifacts = ['com.google.caliper:caliper:1.0-beta-3', 'com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.8.9', 'com.google.errorprone:error_prone_annotations:2.5.1', 'com.google.j2objc:j2objc-annotations:2.8', 'com.google.guava:guava:32.0.1-jre', 'com.google.guava:guava-testlib:32.0.1-jre', 'com.google.truth:truth:1.1.2', 'junit:junit:4.13.2', 'org.mockito:mockito-core:4.3.1', 'biz.aQute.bnd:biz.aQute.bndlib:6.4.0', 'info.picocli:picocli:4.6.3'],
+    repositories = ['https://repo1.maven.org/maven2', 'https://repo.maven.apache.org/maven2'],
 )
 
 use_repo(
-    crate,
-    crate_index = 'crates',
+    maven,
+    'maven',
 )

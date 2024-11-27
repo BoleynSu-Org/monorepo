@@ -1,7 +1,13 @@
 module(
     name = 'stardoc',
-    version = '0.7.1',
+    version = '0.7.2',
     bazel_compatibility = ['>=7.0.0'],
+)
+
+bazel_dep(
+    name = 'protobuf',
+    version = '29.0',
+    repo_name = 'com_google_protobuf',
 )
 
 bazel_dep(
