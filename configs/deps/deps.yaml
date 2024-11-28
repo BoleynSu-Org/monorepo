@@ -82,13 +82,13 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 416cc427008f5b6ed80695a1353bcc41a6d6cfa760ea7a8858e6244efd1b2ee0
-  strip_prefix: grpc-java-1.68.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.68.1.tar.gz
-  updated_at: '2024-10-29'
-  version: v1.68.1
+  sha256: dc1ad2272c1442075c59116ec468a7227d0612350c44401237facd35aab15732
+  strip_prefix: grpc-java-1.68.2
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.68.2.tar.gz
+  updated_at: '2024-11-28'
+  version: v1.68.2
   module_file: '@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel'
-  module_version: 1.68.1
+  module_version: 1.68.2
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
