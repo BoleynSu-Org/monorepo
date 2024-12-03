@@ -23,12 +23,12 @@ DEPS = {
         {
             "name": "rules_java",
             "type": "http_archive",
-            "sha256": "0868adfca5fc69a60acfbf9615a550319a81bbf779715fb7453c52706994fccf",
-            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/8.5.1.tar.gz",
-            "strip_prefix": "rules_java-8.5.1",
-            "updated_at": "2024-11-23",
-            "version": "8.5.1",
-            "module_version": "8.5.1",
+            "sha256": "deabe297754f51b2d0a576adaaec191410ed1fece5dce94ba5a38c0996767c26",
+            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/8.6.0.tar.gz",
+            "strip_prefix": "rules_java-8.6.0",
+            "updated_at": "2024-12-03",
+            "version": "8.6.0",
+            "module_version": "8.6.0",
         },
         {
             "name": "rules_python",
@@ -985,7 +985,7 @@ DEPS = {
             "registry": "docker.io",
             "repository": "library/mariadb",
             "tag": "11.6.2",
-            "digest": "sha256:9c7dda66d9b5ff4820d8fcdcfbe8943418640ce6f4626754fa67f4a3bd24eefa",
+            "digest": "sha256:a9547599cd87d7242435aea6fda22a9d83e2c06d16c658ef70d2868b3d3f6a80",
             "updated_at": "2024-12-03",
             "platforms": [
                 "linux/amd64",

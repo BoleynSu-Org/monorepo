@@ -1,7 +1,7 @@
 module(
     name = 'rules_java',
-    version = '8.5.1',
-    bazel_compatibility = ['>=6.3.0'],
+    version = '8.6.0',
+    bazel_compatibility = ['>=6.4.0'],
 )
 
 bazel_dep(
