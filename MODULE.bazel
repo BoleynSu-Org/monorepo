@@ -229,12 +229,12 @@ DEPS = {
         {
             "name": "clang_linux_x86_64",
             "type": "http_archive",
-            "version": "clang-llvmorg-19.1.4-fedora-41-20241127.083945-20241127.095203",
+            "version": "clang-llvmorg-19.1.5-fedora-41-20241203.124321-20241203.175529",
             "version_regex": "clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "a21c68c0a8448e855c0b396f6d3daecc4071d566d9d9fe83e1c1c9c247e739d8",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.4-fedora-41-20241127.083945-20241127.095203/clang_linux_x86_64.tar.gz",
-            "updated_at": "2024-11-27",
-            "module_version": "19.1.4.41.20241127.83945.20241127.95203",
+            "sha256": "b81d50ec0e7e0a772262f6270b1d46568e41437a12b86879b616343c69ea3766",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.5-fedora-41-20241203.124321-20241203.175529/clang_linux_x86_64.tar.gz",
+            "updated_at": "2024-12-03",
+            "module_version": "19.1.5.41.20241203.124321.20241203.175529",
         },
         {
             "name": "bazel_features",
