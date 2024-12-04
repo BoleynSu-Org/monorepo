@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '29.0',
+    version = '29.1',
     repo_name = 'com_google_protobuf',
 )
 
@@ -158,11 +158,12 @@ maven = use_extension(
 )
 
 maven.install(
+    name = 'protobuf_maven',
     artifacts = ['com.google.caliper:caliper:1.0-beta-3', 'com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.8.9', 'com.google.errorprone:error_prone_annotations:2.5.1', 'com.google.j2objc:j2objc-annotations:2.8', 'com.google.guava:guava:32.0.1-jre', 'com.google.guava:guava-testlib:32.0.1-jre', 'com.google.truth:truth:1.1.2', 'junit:junit:4.13.2', 'org.mockito:mockito-core:4.3.1', 'biz.aQute.bnd:biz.aQute.bndlib:6.4.0', 'info.picocli:picocli:4.6.3'],
     repositories = ['https://repo1.maven.org/maven2', 'https://repo.maven.apache.org/maven2'],
 )
 
 use_repo(
     maven,
-    'maven',
+    'protobuf_maven',
 )
