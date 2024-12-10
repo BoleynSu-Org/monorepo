@@ -421,7 +421,7 @@ bazel_deps:
       value: [version]
   - type: shell
     cmd: |
-      echo DEPS_UPDATER_url=https://github.com/bazelbuild/rules_rust/releases/download/${DEPS_UPDATER_version}/rules_rust-v${DEPS_UPDATER_version}.tar.gz
+      echo DEPS_UPDATER_url=https://github.com/bazelbuild/rules_rust/releases/download/${DEPS_UPDATER_version}/rules_rust-${DEPS_UPDATER_version}.tar.gz
   - type: deps_updater
     name: bazel_deps
     extra_args:
