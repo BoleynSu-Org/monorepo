@@ -1,4 +1,0 @@
-module(
-    name = "rules_python",
-    version = "0.22.1",
-)

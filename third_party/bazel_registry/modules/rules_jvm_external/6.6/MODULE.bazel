@@ -6,12 +6,12 @@ module(
 
 bazel_dep(
     name = 'rules_android',
-    version = '0.5.1',
+    version = '0.6.0',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.21.0',
+    version = '1.22.0',
 )
 
 bazel_dep(
@@ -31,7 +31,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '8.6.1',
+    version = '8.6.2',
 )
 
 bazel_dep(

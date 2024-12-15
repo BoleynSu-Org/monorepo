@@ -1,4 +1,0 @@
-module(
-    name = "rules_proto",
-    version = "4.0.0",
-)

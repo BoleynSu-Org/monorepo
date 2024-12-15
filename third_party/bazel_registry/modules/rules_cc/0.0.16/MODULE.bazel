@@ -1,0 +1,4 @@
+module(
+    name = "rules_cc",
+    version = "0.0.16",
+)

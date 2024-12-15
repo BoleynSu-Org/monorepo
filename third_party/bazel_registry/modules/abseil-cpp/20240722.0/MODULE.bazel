@@ -3,14 +3,9 @@ module(
     version = '20240722.0',
 )
 
-cc_configure_extension = use_extension(
-    '@bazel_tools//tools/cpp:cc_configure.bzl',
-    'cc_configure_extension',
-)
-
-use_repo(
-    cc_configure_extension,
-    'local_config_cc',
+bazel_dep(
+    name = 'rules_cc',
+    version = '0.1.0',
 )
 
 bazel_dep(
@@ -18,8 +13,8 @@ bazel_dep(
     version = '1.7.1',
 )
 
-
 bazel_dep(
     name = 'platforms',
     version = '0.0.10',
 )
+

@@ -1,4 +1,0 @@
-module(
-    name = "rules_java",
-    version = "7.6.5",
-)

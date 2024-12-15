@@ -24,7 +24,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '8.6.1',
+    version = '8.6.2',
 )
 
 bazel_dep(
@@ -49,7 +49,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '0.40.0',
+    version = '1.0.0',
 )
 
 bazel_dep(
@@ -64,7 +64,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.21.0',
+    version = '1.22.0',
     repo_name = 'proto_bazel_features',
 )
 
