@@ -1,6 +1,6 @@
 module(
     name = 'rules_go',
-    version = '0.50.1',
+    version = '0.51.0',
     repo_name = 'io_bazel_rules_go',
 )
 
@@ -31,6 +31,11 @@ bazel_dep(
     repo_name = 'com_google_protobuf',
 )
 
+bazel_dep(
+    name = 'rules_shell',
+    version = '0.3.0',
+)
+
 go_sdk = use_extension(
     '//go:extensions.bzl',
     'go_sdk',
@@ -38,7 +43,7 @@ go_sdk = use_extension(
 
 go_sdk.download(
     name = 'go_default_sdk',
-    version = '1.21.8',
+    version = '1.22.7',
 )
 
 use_repo(
