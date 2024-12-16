@@ -176,25 +176,25 @@ bazel_deps:
   module_version: 1.32.0
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20241130.064158'
-  sha256: 07c0f069f0c50ce32f279db04112662918e826c379226ef11cf485449f491752
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241130.064158/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-11-30'
+  version: '20241215.233712'
+  sha256: 085d5963550d456784d505e3411f2f84e4f1e6c54ee965261231dd0a99610478
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241215.233712/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-12-15'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: '20241130.64158'
+  module_version: '20241215.233712'
 - name: clang_linux_x86_64
   type: http_archive
-  version: clang-llvmorg-19.1.5-fedora-41-20241203.124321-20241203.175529
+  version: clang-llvmorg-19.1.5-fedora-41-20241215.180247-20241215.233712
   version_regex: clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: b81d50ec0e7e0a772262f6270b1d46568e41437a12b86879b616343c69ea3766
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.5-fedora-41-20241203.124321-20241203.175529/clang_linux_x86_64.tar.gz
-  updated_at: '2024-12-03'
-  module_version: 19.1.5.41.20241203.124321.20241203.175529
+  sha256: f3a0c770fdeecd5c342897e7d86db686f2540af4234c9f0b14250a464b1cfb3a
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.5-fedora-41-20241215.180247-20241215.233712/clang_linux_x86_64.tar.gz
+  updated_at: '2024-12-15'
+  module_version: 19.1.5.41.20241215.180247.20241215.233712
 - name: bazel_features
   type: http_archive
   version: v1.22.0
