@@ -493,11 +493,11 @@ DEPS = {
         {
             "name": "rules_rust",
             "type": "http_archive",
-            "version": "0.55.6",
-            "sha256": "8274ad963107e140dff75d5bffe9d1b7b09a57958f1ea36162142bd0e7af5232",
-            "url": "https://github.com/bazelbuild/rules_rust/releases/download/0.55.6/rules_rust-0.55.6.tar.gz",
-            "updated_at": "2024-12-15",
-            "module_version": "0.55.6",
+            "version": "0.56.0",
+            "sha256": "f1306aac0b258b790df01ad9abc6abb0df0b65416c74b4ef27f4aab298780a64",
+            "url": "https://github.com/bazelbuild/rules_rust/releases/download/0.56.0/rules_rust-0.56.0.tar.gz",
+            "updated_at": "2024-12-16",
+            "module_version": "0.56.0",
             "override_updater": [
                 {
                     "type": "deps_updater",

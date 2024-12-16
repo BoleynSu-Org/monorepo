@@ -3746,8 +3746,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu": {
       "general": {
-        "bzlTransitiveDigest": "DRgHAANCKE4/ZHzRCa+gop7jUM5XTWE9QWTztzBroyo=",
-        "usagesDigest": "NMP5Ho08syD2t2XvqWVqGKWH1EOMK2w+zt1QL4/rleM=",
+        "bzlTransitiveDigest": "A5lUfPnfuncUDqPMeq57JGXFz4mXduI0qr8rVwOvBwA=",
+        "usagesDigest": "n9K7ly55ogh0e0ZhNzZBlusPSFC/o5aliHkw+zHwGfc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -7010,8 +7010,8 @@
     },
     "@@rules_rust+//rust/private:internal_extensions.bzl%i": {
       "general": {
-        "bzlTransitiveDigest": "miUc5HuDd4ktCYG1k+Kc7TqG/vpLs18lBhg5joB1pg4=",
-        "usagesDigest": "/2hS/04Iz6uXu1jnxQmr5Js1b6SeH80DmxB7awkp5dY=",
+        "bzlTransitiveDigest": "Cop02mtwntJlcrwl66dA3/nNKZAM7I5XDy4WsKFT2fI=",
+        "usagesDigest": "8daAc/SRar7Mu8+uVH3y5t7CY0RsiqVBIznBuEjXJ4w=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
