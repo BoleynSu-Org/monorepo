@@ -308,7 +308,7 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "8jk/Th7NR9AxgpaBve8zU3N/mmBOMcs+whhrtHEJc04=",
+        "bzlTransitiveDigest": "g5Nqu7NjvAwcAtr8BYJS+7V+3UJ2OU1RwR7Nz1LDOjw=",
         "usagesDigest": "HNe2QMLGqqp2MVNKkvcL7tuhVHihnddR1+oGbrzR6tA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -707,7 +707,8 @@
                 "ProtoInfo": "8.0.0",
                 "PyCcLinkParamsProvider": "8.0.0",
                 "PyInfo": "8.0.0",
-                "PyRuntimeInfo": "8.0.0"
+                "PyRuntimeInfo": "8.0.0",
+                "cc_proto_aspect": "8.0.0"
               }
             }
           },
@@ -1095,8 +1096,8 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "Tejk7wJ5Qbk2XM9VGoIoZktbJ+Y9czP4cMJNfKEPYoI=",
-        "usagesDigest": "Okyn60QQ6ByKzOrBEz4Fpju0U1pPTqg3eeMaTTSiNpU=",
+        "bzlTransitiveDigest": "gEWgLqOCU/7iElrP5p6QyrfqBoLCwzuE5ly5kL1aiRs=",
+        "usagesDigest": "we68XSoN7opDTXzTa+pbCH7LS9dRqkXvKBGQOV6nS4c=",
         "recordedFileInputs": {
           "@@+_repo_rules+pinned_pip//requirements.txt": "b320cb4e932998a3cc69cb344bdfe332e631ad1502b1a647c38140bd114b6065",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",

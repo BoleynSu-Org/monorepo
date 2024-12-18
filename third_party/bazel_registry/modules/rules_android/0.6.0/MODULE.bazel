@@ -35,7 +35,7 @@ use_repo(
 
 bazel_dep(
     name = 'protobuf',
-    version = '29.1',
+    version = '29.2',
     repo_name = 'com_google_protobuf',
 )
 
@@ -128,7 +128,7 @@ python.toolchain(
 
 bazel_dep(
     name = 'rules_proto',
-    version = '7.0.2',
+    version = '7.1.0',
     repo_name = 'rules_proto',
 )
 
