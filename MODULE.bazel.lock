@@ -222,8 +222,8 @@
     },
     "@@rules_java+//java:rules_java_deps.bzl%compatibility_proxy": {
       "general": {
-        "bzlTransitiveDigest": "IE9Jf/hSIsrRtFcI+JIEY1/u5/Xx5lYQlsKyYsCmw14=",
-        "usagesDigest": "X4ewgNVwfFpjcoUGfH11OoTLxcMeSgijJ9qZWhEAeQs=",
+        "bzlTransitiveDigest": "9SPkp75wN6dP9sKiOgU1uOCTNNA08v8PVBMYs+SZ27s=",
+        "usagesDigest": "ZsMvJZXTm/u0lYuq0P/yTF2h6FdynULVT3mwKA1SE5k=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

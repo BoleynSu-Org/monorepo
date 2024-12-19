@@ -31,7 +31,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '8.6.2',
+    version = '8.6.3',
 )
 
 bazel_dep(
