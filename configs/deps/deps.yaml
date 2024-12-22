@@ -176,17 +176,17 @@ bazel_deps:
   module_version: 1.32.0
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: '20241215.233712'
-  sha256: 085d5963550d456784d505e3411f2f84e4f1e6c54ee965261231dd0a99610478
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241215.233712/sysroot_linux_x86_64.tar.gz
-  updated_at: '2024-12-15'
+  version: '20241222.082352'
+  sha256: 0c95d9bb20bab2a5dfeadd27d16451c445920b9ed626ecb8214a52b7d827b9f0
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241222.082352/sysroot_linux_x86_64.tar.gz
+  updated_at: '2024-12-22'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: '20241215.233712'
+  module_version: '20241222.82352'
 - name: clang_linux_x86_64
   type: http_archive
   version: clang-llvmorg-19.1.6-fedora-41-20241218.055748-20241218.162727
