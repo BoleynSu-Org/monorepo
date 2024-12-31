@@ -359,10 +359,10 @@ DEPS = {
         {
             "name": "rules_kotlin",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v1.9.6/rules_kotlin-v1.9.6.tar.gz",
-            "sha256": "3b772976fec7bdcda1d84b9d39b176589424c047eb2175bed09aac630e50af43",
-            "version": "v1.9.6",
-            "updated_at": "2024-07-02",
+            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v2.1.0/rules_kotlin-v2.1.0.tar.gz",
+            "sha256": "dd32f19e73c70f32ccb9a166c615c0ca4aed8e27e72c4a6330c3523eafa1aa55",
+            "version": "v2.1.0",
+            "updated_at": "2024-12-31",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -379,7 +379,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.9.6",
+            "module_version": "2.1.0",
         },
         {
             "name": "aspect_bazel_lib",
