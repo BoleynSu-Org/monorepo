@@ -219,12 +219,12 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "20241229.062217",
-            "sha256": "99413511a91330932403bb290bd1af714cbfc785ae4be68d34a5d9ad9ee5d0d3",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20241229.062217/sysroot_linux_x86_64.tar.gz",
-            "updated_at": "2024-12-29",
+            "version": "20250105.094335",
+            "sha256": "1994c997c8586ad9776f97f23470b7cc36b10fd5db750b0db1718f1cd2a14a9b",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20250105.094335/sysroot_linux_x86_64.tar.gz",
+            "updated_at": "2025-01-05",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
-            "module_version": "20241229.62217",
+            "module_version": "20250105.94335",
         },
         {
             "name": "clang_linux_x86_64",
@@ -547,9 +547,9 @@ DEPS = {
     "pip_deps": [
         {
             "name": "ruamel.yaml",
-            "version": "0.18.8",
-            "updated_at": "2025-01-02",
-            "module_version": "0.18.8",
+            "version": "0.18.9",
+            "updated_at": "2025-01-05",
+            "module_version": "0.18.9",
         },
         {
             "name": "PyYAML",
