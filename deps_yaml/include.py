@@ -39,10 +39,8 @@ def include(deps, included_deps):
     for kind in set(deps.keys()).union(set(included_deps.keys())):
         if kind == "metadata":
             continue
-        if kind not in deps:
-            deps[kind] = []
-        if kind not in included_deps:
-            included_deps[kind] = []
+        deps.setdefault(kind, [])
+        included_deps.setdefault(kind, [])
         deps_mapping = {dep["name"]: i for i, dep in enumerate(deps[kind])}
         for included_dep in included_deps[kind]:
             included_dep = _normalize(included_dep)
