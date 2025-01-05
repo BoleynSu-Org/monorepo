@@ -729,15 +729,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20241229.005317'
+  version: '20250105.035519'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20241229.005317'
-  digest: sha256:2f0562f6549db8690230de94b0132596c0d82724b4605b1fd8ba1a8afe7aa5b0
-  updated_at: '2024-12-29'
+  tag: '20250105.035519'
+  digest: sha256:5332dec6ee8e9f2ad50dd067d6b0e355745c864cc1078f75a6ed8e1256ad4a38
+  updated_at: '2025-01-05'
   platforms:
   - linux/amd64
-  module_version: '20241229.5317'
+  module_version: '20250105.35519'
 - name: io_docker_library_mariadb
   version: 11.6.2
   registry: docker.io
@@ -789,37 +789,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.31.2
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20241229.005317'
+  version: '20250105.035519'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20241229.005317'
-  digest: sha256:7a15d9059e4df13bd17cb7474d576f039dcdff7f42d982b0dbf472b64c34bf47
-  updated_at: '2024-12-29'
+  tag: '20250105.035519'
+  digest: sha256:54257d54ebc6e54b40aef7bdbd79dab993192812be9032a51f1923b68220b950
+  updated_at: '2025-01-05'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241229.5317'
+  module_version: '20250105.35519'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20241229.005317'
+  version: '20250105.035519'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20241229.005317'
-  digest: sha256:de357aca0bd703eed53e9a99b979d9dbef2968dbafe45b5b9c8b09d0e8256ebd
-  updated_at: '2024-12-29'
+  tag: '20250105.035519'
+  digest: sha256:d1190a28e49b7dff39408a0c77f0ac1a06753f7b6ccff75acc28d4d9eb0a21e4
+  updated_at: '2025-01-05'
   platforms:
   - linux/amd64
-  module_version: '20241229.5317'
+  module_version: '20250105.35519'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:a28bbaf825ad201c5aa2a591ecfda4400ee426bfc0920f7923cbde7c9a040290
-  version: '20241229.005317'
-  tag: '20241229.005317'
-  updated_at: '2024-12-29'
+  digest: sha256:e79a92912c9fb9d4819a847da3795388c59b399e05371dbd3e8001309ce7925d
+  version: '20250105.035519'
+  tag: '20250105.035519'
+  updated_at: '2025-01-05'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20241229.5317'
+  module_version: '20250105.35519'
 
 toolchain_deps:
 - name: c
