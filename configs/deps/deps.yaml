@@ -501,9 +501,9 @@ maven_deps:
   updated_at: '2024-05-29'
   module_version: 1.9.0
 - name: commons-codec:commons-codec
-  version: 1.17.1
-  updated_at: '2024-07-16'
-  module_version: 1.17.1
+  version: 1.17.2
+  updated_at: '2025-01-06'
+  module_version: 1.17.2
 - name: org.wildfly.common:wildfly-common
   version: 1.7.0.Final
   version_regex: (.*)\.Final
