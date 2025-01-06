@@ -547,9 +547,9 @@ DEPS = {
     "pip_deps": [
         {
             "name": "ruamel.yaml",
-            "version": "0.18.9",
-            "updated_at": "2025-01-05",
-            "module_version": "0.18.9",
+            "version": "0.18.10",
+            "updated_at": "2025-01-06",
+            "module_version": "0.18.10",
         },
         {
             "name": "PyYAML",

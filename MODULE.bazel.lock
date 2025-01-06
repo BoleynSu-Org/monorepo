@@ -1116,7 +1116,7 @@
         "bzlTransitiveDigest": "gEWgLqOCU/7iElrP5p6QyrfqBoLCwzuE5ly5kL1aiRs=",
         "usagesDigest": "we68XSoN7opDTXzTa+pbCH7LS9dRqkXvKBGQOV6nS4c=",
         "recordedFileInputs": {
-          "@@+_repo_rules+pinned_pip//requirements.txt": "1567ee3aedf02ec4c94507f9bf2986501485a089fcaefdc140fab6b84133dbe6",
+          "@@+_repo_rules+pinned_pip//requirements.txt": "4f26d227a31986d99a023e8fd9626297acee0b215cba48b393d7899fedf175e8",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_python+//tools/publish/requirements_darwin.txt": "2994136eab7e57b083c3de76faf46f70fad130bc8e7360a7fed2b288b69e79dc",
           "@@rules_python+//tools/publish/requirements_linux.txt": "8175b4c8df50ae2f22d1706961884beeb54e7da27bd2447018314a175981997d",
@@ -1143,7 +1143,7 @@
               "dep_template": "@boleynsu_org_pip//{name}:{target}",
               "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
               "repo": "boleynsu_org_pip_312",
-              "requirement": "ruamel-yaml==0.18.9     --hash=sha256:59d0f8b10c658bd55ecd107e334d4117d766a2b9cc8f5176afcdadcff6f84a5e     --hash=sha256:c17d2a7ccf7fd2dd4b6d699111c37e94f12277a1db71e847ad7f3d19b8e3e9f4"
+              "requirement": "ruamel-yaml==0.18.10     --hash=sha256:20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58     --hash=sha256:30f22513ab2301b3d2b577adc121c6471f28734d3d9728581245f1e76468b4f1"
             }
           },
           "boleynsu_org_pip_312_ruamel_yaml_clib": {
