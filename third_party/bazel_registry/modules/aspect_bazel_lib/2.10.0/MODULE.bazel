@@ -86,7 +86,7 @@ register_toolchains(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.40.0',
+    version = '0.41.0',
 )
 
 bazel_dep(

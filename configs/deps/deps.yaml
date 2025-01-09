@@ -92,12 +92,12 @@ bazel_deps:
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: 06923a9c39227ad22ac4b92e73527da448cfb420304cb5973ef1ad9050da1ae3
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.40.0.tar.gz
-  updated_at: '2024-11-23'
-  version: v0.40.0
-  strip_prefix: bazel-gazelle-0.40.0
-  module_version: 0.40.0
+  sha256: 96c950fcc896dcd683ec50b18f361dc008b8caa7e7b5b5c2c0f3a969327328f9
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.41.0.tar.gz
+  updated_at: '2025-01-09'
+  version: v0.41.0
+  strip_prefix: bazel-gazelle-0.41.0
+  module_version: 0.41.0
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -221,12 +221,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v29.2.tar.gz
-  sha256: 63150aba23f7a90fd7d87bdf514e459dd5fe7023fdde01b56ac53335df64d4bd
-  strip_prefix: protobuf-29.2
-  version: v29.2
-  updated_at: '2024-12-18'
-  module_version: '29.2'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v29.3.tar.gz
+  sha256: 008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e
+  strip_prefix: protobuf-29.3
+  version: v29.3
+  updated_at: '2025-01-09'
+  module_version: '29.3'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
