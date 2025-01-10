@@ -165,7 +165,7 @@ bazel_deps:
   override_updater:
   - type: shell
     cmd: |
-      version=$(curl -sL https://dl.k8s.io/release/stable.txt)
+      version=$(curl -sfL https://dl.k8s.io/release/stable.txt)
       echo DEPS_UPDATER_version=${version}
       echo DEPS_UPDATER_url=https://dl.k8s.io/release/${version}/bin/linux/amd64/kubectl
   - type: deps_updater
@@ -753,7 +753,7 @@ container_deps:
   module_version: 11.6.2
   override_updater:
   - type: shell
-    cmd: echo DEPS_UPDATER_version=$(curl -sL https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\+</a></td><td>[0-9-]\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\+' | head -1)
+    cmd: echo DEPS_UPDATER_version=$(curl -sfL https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\+</a></td><td>[0-9-]\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\+' | head -1)
   - type: deps_updater
     name: container_deps
     extra_args:

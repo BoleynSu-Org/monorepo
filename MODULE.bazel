@@ -206,7 +206,7 @@ DEPS = {
             "override_updater": [
                 {
                     "type": "shell",
-                    "cmd": "version=$(curl -sL https://dl.k8s.io/release/stable.txt)\necho DEPS_UPDATER_version=${version}\necho DEPS_UPDATER_url=https://dl.k8s.io/release/${version}/bin/linux/amd64/kubectl\n",
+                    "cmd": "version=$(curl -sfL https://dl.k8s.io/release/stable.txt)\necho DEPS_UPDATER_version=${version}\necho DEPS_UPDATER_url=https://dl.k8s.io/release/${version}/bin/linux/amd64/kubectl\n",
                 },
                 {
                     "type": "deps_updater",
@@ -998,7 +998,7 @@ DEPS = {
             "override_updater": [
                 {
                     "type": "shell",
-                    "cmd": "echo DEPS_UPDATER_version=$(curl -sL https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\\+</a></td><td>[0-9-]\\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\\+' | head -1)",
+                    "cmd": "echo DEPS_UPDATER_version=$(curl -sfL https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\\+</a></td><td>[0-9-]\\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\\+' | head -1)",
                 },
                 {
                     "type": "deps_updater",
