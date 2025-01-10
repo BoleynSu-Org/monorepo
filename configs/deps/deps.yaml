@@ -149,12 +149,12 @@ bazel_deps:
   module_version: 1.0.0
 - name: platforms
   type: http_archive
-  sha256: 3df33228654e56b09f17613613767b052581b822d57cb9cfd5e7b19a8e617b42
-  strip_prefix: platforms-0.0.10
-  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.10.tar.gz
-  updated_at: '2024-04-26'
-  version: 0.0.10
-  module_version: 0.0.10
+  sha256: ace459f5d033c86e6578df817f739b21101c0ebcd409a97badc2979c22ce9fdc
+  strip_prefix: platforms-0.0.11
+  url: https://github.com/bazelbuild/platforms/archive/refs/tags/0.0.11.tar.gz
+  updated_at: '2025-01-10'
+  version: 0.0.11
+  module_version: 0.0.11
 - name: kubectl_linux_amd64
   type: http_file
   url: https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl
