@@ -450,6 +450,29 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
+- name: jq_linux_amd64
+  type: http_file
+  version: jq-1.7.1
+  version_regex: jq-([0-9.]+)
+  url: https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux64
+  sha256: 5942c9b0934e510ee61eb3e30273f1b3fe2590df93933a93d7c58b81d19c8ff5
+  executable: true
+  updated_at: '2023-12-14'
+  expires_at: '2025-12-14'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: echo DEPS_UPDATER_url=https://github.com/jqlang/jq/releases/download/${DEPS_UPDATER_version}/jq-linux64
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256]
+  module_version: 1.7.1
 
 pip_deps:
 - name: ruamel.yaml

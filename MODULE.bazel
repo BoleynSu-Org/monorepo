@@ -543,6 +543,34 @@ DEPS = {
                 },
             ],
         },
+        {
+            "name": "jq_linux_amd64",
+            "type": "http_file",
+            "version": "jq-1.7.1",
+            "version_regex": "jq-([0-9.]+)",
+            "url": "https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux64",
+            "sha256": "5942c9b0934e510ee61eb3e30273f1b3fe2590df93933a93d7c58b81d19c8ff5",
+            "executable": True,
+            "updated_at": "2023-12-14",
+            "expires_at": "2025-12-14",
+            "override_updater": [
+                {
+                    "type": "deps_updater",
+                    "name": "bazel_deps",
+                    "extra_args": [{"name": "fields", "value": ["version"]}],
+                },
+                {
+                    "type": "shell",
+                    "cmd": "echo DEPS_UPDATER_url=https://github.com/jqlang/jq/releases/download/${DEPS_UPDATER_version}/jq-linux64",
+                },
+                {
+                    "type": "deps_updater",
+                    "name": "bazel_deps",
+                    "extra_args": [{"name": "fields", "value": ["sha256"]}],
+                },
+            ],
+            "module_version": "1.7.1",
+        },
     ],
     "pip_deps": [
         {
@@ -1123,8 +1151,9 @@ DEPS = {
     if dep["type"] == "http_archive"
 ]
 
+(JAVA_VERSION,) = [dep["version"] for dep in DEPS["toolchain_deps"] if dep["name"] == "java"]
 toolchains = use_extension("@rules_java//java:extensions.bzl", "toolchains")
-use_repo(toolchains, "remotejdk21_linux_toolchain_config_repo")
+use_repo(toolchains, "remotejdk{}_linux_toolchain_config_repo".format(JAVA_VERSION))
 
 (PYTHON_VERSION,) = [dep["version"] for dep in DEPS["toolchain_deps"] if dep["name"] == "python"]
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
@@ -1241,6 +1270,3 @@ oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
     ]
     for image in DEPS["container_deps"]
 ]
-
-bazel_lib_toolchains = use_extension("@aspect_bazel_lib//lib:extensions.bzl", "toolchains")
-use_repo(bazel_lib_toolchains, "jq_linux_amd64")
