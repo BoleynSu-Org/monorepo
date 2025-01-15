@@ -1,6 +1,6 @@
 module(
     name = 'rules_java',
-    version = '8.6.3',
+    version = '8.7.0',
     bazel_compatibility = ['>=6.4.0'],
 )
 
@@ -212,6 +212,11 @@ use_repo(
 
 use_repo(
     toolchains,
+    'remotejdk21_linux_riscv64_toolchain_config_repo',
+)
+
+use_repo(
+    toolchains,
     'remotejdk21_linux_s390x_toolchain_config_repo',
 )
 
@@ -333,6 +338,10 @@ register_toolchains(
 
 register_toolchains(
     '@remotejdk21_linux_ppc64le_toolchain_config_repo//:all',
+)
+
+register_toolchains(
+    '@remotejdk21_linux_riscv64_toolchain_config_repo//:all',
 )
 
 register_toolchains(
