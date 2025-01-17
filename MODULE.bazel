@@ -23,12 +23,12 @@ DEPS = {
         {
             "name": "rules_java",
             "type": "http_archive",
-            "sha256": "2b33e4c649532c9b01c0f8cf772d57ffe3cff041c39c595272df19e46f8dc4f7",
-            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/8.7.0.tar.gz",
-            "strip_prefix": "rules_java-8.7.0",
-            "updated_at": "2025-01-15",
-            "version": "8.7.0",
-            "module_version": "8.7.0",
+            "sha256": "e05da2137a4f4f7de3739eac0867a41e9b4d60de27088044d545ff666eb1fa54",
+            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/8.7.1.tar.gz",
+            "strip_prefix": "rules_java-8.7.1",
+            "updated_at": "2025-01-17",
+            "version": "8.7.1",
+            "module_version": "8.7.1",
         },
         {
             "name": "rules_python",
