@@ -23,12 +23,12 @@ bazel_deps:
   module_version: 8.7.0
 - name: rules_python
   type: http_archive
-  sha256: 4f7e2aa1eb9aa722d96498f5ef514f426c1f55161c3c9ae628c857a7128ceb07
-  strip_prefix: rules_python-1.0.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.0.0.tar.gz
-  updated_at: '2024-12-15'
-  version: 1.0.0
-  module_version: 1.0.0
+  sha256: 9c6e26911a79fbf510a8f06d8eedb40f412023cf7fa6d1461def27116bff022c
+  strip_prefix: rules_python-1.1.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.1.0.tar.gz
+  updated_at: '2025-01-17'
+  version: 1.1.0
+  module_version: 1.1.0
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
