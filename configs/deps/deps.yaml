@@ -82,13 +82,13 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 5c3178f118190d73f52460d671c7b6fc42249b7b5890d228ce422f2ca20b1a68
-  strip_prefix: grpc-java-1.69.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.69.0.tar.gz
-  updated_at: '2024-12-15'
-  version: v1.69.0
+  sha256: 970ac87fccbaa6c978dc56b0ba72db53b6401821c01197e1942aecb347e5f218
+  strip_prefix: grpc-java-1.69.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.69.1.tar.gz
+  updated_at: '2025-01-18'
+  version: v1.69.1
   module_file: '@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel'
-  module_version: 1.69.0
+  module_version: 1.69.1
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -118,11 +118,11 @@ bazel_deps:
   module_version: 1.2.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 8.0.0
-  url: https://github.com/bazelbuild/bazel/releases/download/8.0.0/bazel-8.0.0-installer-linux-x86_64.sh
+  version: 8.0.1
+  url: https://github.com/bazelbuild/bazel/releases/download/8.0.1/bazel-8.0.1-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: 7fabbf9a948004434415c0239c2c26554c5f2f7c66e15575605262c005e93303
-  updated_at: '2024-12-15'
+  sha256: 1fa1ace0dabd60ebc29afb59bafb4ac6771836e2758c6350250f5128681dd986
+  updated_at: '2025-01-18'
   executable: true
   override_updater:
   - type: deps_updater
@@ -138,7 +138,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 8.0.0
+  module_version: 8.0.1
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
