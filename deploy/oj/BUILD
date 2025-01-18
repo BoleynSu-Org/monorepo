@@ -88,6 +88,6 @@ sh_binary(
     ],
     data = DATA + [
         "k3s-cuhk/common/deployment.yaml",
-        "@bazel_tools//tools/bash/runfiles",
+        "@rules_shell//shell/runfiles",
     ],
 )

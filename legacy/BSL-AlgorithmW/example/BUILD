@@ -51,6 +51,6 @@ sh_test(
     srcs = ["bootstrap_test.sh"],
     data = [
         ":bootstrap",
-        "@bazel_tools//tools/bash/runfiles",
+        "@rules_shell//shell/runfiles",
     ],
 )

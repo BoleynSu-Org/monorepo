@@ -35,7 +35,7 @@ sh_binary(
     name = "pin",
     srcs = ["pin.sh"],
     data = ["requirements.txt"],
-    deps = ["@bazel_tools//tools/bash/runfiles"],
+    deps = ["@rules_shell//shell/runfiles"],
 )
 """)
 
