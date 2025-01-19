@@ -7770,7 +7770,7 @@
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "2UD8x0LHy2fgOvBmCL8R0HPa9/omkySg1/dsFBzYcH8=",
-        "usagesDigest": "5fQVVt/t2VF4660EfcHORlzw9/7+ax2qvxMdOvuu3QE=",
+        "usagesDigest": "l74kOh2zToS+LUA05TvyGe4kzPdeMS73Fqxb+vxzUbo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -7790,12 +7790,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "84e4a9cab0473805165101835399a167a13588e4cdddd960265cad0d30ae8793"
+                "linux-x86_64": "f06fcb92d5299d83c87f2b5a929d45d37a3c8438a110cf00239144944fcb5765"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.7-fedora-41-20250114.154518-20250114.194151/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.7-fedora-41-20250119.010838-20250119.082638/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
