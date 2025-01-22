@@ -4092,7 +4092,7 @@
     },
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
-        "bzlTransitiveDigest": "2UD8x0LHy2fgOvBmCL8R0HPa9/omkySg1/dsFBzYcH8=",
+        "bzlTransitiveDigest": "2eLMaPh4QKrn3wPljYBu5jSkkp9DfCf4yGKTR9lBN3c=",
         "usagesDigest": "l74kOh2zToS+LUA05TvyGe4kzPdeMS73Fqxb+vxzUbo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -4106,6 +4106,7 @@
               "distribution": "auto",
               "exec_arch": "x86_64",
               "exec_os": "linux",
+              "libclang_rt": {},
               "llvm_mirror": "",
               "llvm_version": "",
               "llvm_versions": {
@@ -4129,6 +4130,7 @@
               "absolute_paths": false,
               "archive_flags": {},
               "compile_flags": {},
+              "conly_flags": {},
               "coverage_compile_flags": {},
               "coverage_link_flags": {},
               "cxx_builtin_include_directories": {},
