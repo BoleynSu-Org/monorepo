@@ -3726,12 +3726,19 @@
     },
     "@@rules_rust+//cargo/private:internal_extensions.bzl%i": {
       "general": {
-        "bzlTransitiveDigest": "mZi1oIcBNFVkThGHsuNpSX9Xzhn6j9YdvCtI5HfPOXY=",
-        "usagesDigest": "ghwjHh0kIp++0LV3XUhmk1+gm8qw9h7zVwXaLXeylvg=",
+        "bzlTransitiveDigest": "7W/jvnF3GDtlB11Zp3OHh6ccTwJsGrwmOvRxEkB0Dnk=",
+        "usagesDigest": "44NapJNcDDl7g/avr9Z+huiyJvLuC+hsktRy/1rZBIk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
         "generatedRepoSpecs": {
+          "rrcti": {
+            "repoRuleId": "@@rules_rust+//crate_universe/private:crates_vendor.bzl%crates_vendor_remote_repository",
+            "attributes": {
+              "build_file": "@@rules_rust+//cargo/private/cargo_toml_info/3rdparty/crates:BUILD.bazel",
+              "defs_module": "@@rules_rust+//cargo/private/cargo_toml_info/3rdparty/crates:defs.bzl"
+            }
+          },
           "rrcti__cargo_toml-0.20.5": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
@@ -3927,6 +3934,7 @@
         },
         "moduleExtensionMetadata": {
           "explicitRootModuleDirectDeps": [
+            "rrcti",
             "rrcti__cargo_toml-0.20.5"
           ],
           "explicitRootModuleDirectDevDeps": [],
@@ -3947,15 +3955,20 @@
           [
             "rules_rust+",
             "rrcti",
-            "rrcti"
+            "rules_rust++i2+rrcti"
+          ],
+          [
+            "rules_rust+",
+            "rules_rust",
+            "rules_rust+"
           ]
         ]
       }
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "av85JN3ctM50NHRNS8vZKyYzIx/BP6/eqX2jCWeC9/8=",
-        "usagesDigest": "y6BFi/0Udc5/Shj1dxUxX4jfu5ybjfOiQhztUDSA7ws=",
+        "bzlTransitiveDigest": "ZPhI91LzpEmEdh8nf2VVEKGxugHKYYXqaasvWtE1VZI=",
+        "usagesDigest": "JTRjQHmqGCK2FUQYDLQD4VejKtuKKC8LrOQhFOpHPPo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
