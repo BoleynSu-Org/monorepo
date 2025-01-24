@@ -10,7 +10,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.23.0',
+    version = '1.24.0',
 )
 
 bazel_dep(
