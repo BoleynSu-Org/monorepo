@@ -49,12 +49,12 @@ bazel_deps:
   module_version: 0.52.0
 - name: rules_oci
   type: http_archive
-  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.0.tar.gz
-  sha256: 1bd16e455278d523f01326e0c3964cd64d7840a7e99cdd6e2617e59f698f3504
-  strip_prefix: rules_oci-2.2.0
-  updated_at: '2024-12-15'
-  version: v2.2.0
-  module_version: 2.2.0
+  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.1.tar.gz
+  sha256: cfea16076ebbec1faea494882ab97d94b1a62d6bcd5aceabad8f95ea0d0a1361
+  strip_prefix: rules_oci-2.2.1
+  updated_at: '2025-01-28'
+  version: v2.2.1
+  module_version: 2.2.1
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.7.1.tar.gz
@@ -92,12 +92,12 @@ bazel_deps:
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: 96c950fcc896dcd683ec50b18f361dc008b8caa7e7b5b5c2c0f3a969327328f9
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.41.0.tar.gz
-  updated_at: '2025-01-09'
-  version: v0.41.0
-  strip_prefix: bazel-gazelle-0.41.0
-  module_version: 0.41.0
+  sha256: b9bd60e869ac69b083e818a5e4c6803fea17442576d111a2d05f7a314f34b466
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.42.0.tar.gz
+  updated_at: '2025-01-28'
+  version: v0.42.0
+  strip_prefix: bazel-gazelle-0.42.0
+  module_version: 0.42.0
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -197,12 +197,12 @@ bazel_deps:
   module_version: 19.1.7.41.20250119.10838.20250119.82638
 - name: bazel_features
   type: http_archive
-  version: v1.24.0
-  sha256: ce32a02849c861e6e3e4d40fcc875f979b7c489e92a426831d4588290fa16068
-  strip_prefix: bazel_features-1.24.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.24.0/bazel_features-v1.24.0.tar.gz
+  version: v1.25.0
+  sha256: 4fd9922d464686820ffd8fcefa28ccffa147f7cdc6b6ac0d8b07fde565c65d66
+  strip_prefix: bazel_features-1.25.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.25.0/bazel_features-v1.25.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2025-01-24'
+  updated_at: '2025-01-28'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -217,7 +217,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.24.0
+  module_version: 1.25.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -524,9 +524,9 @@ maven_deps:
   updated_at: '2024-05-29'
   module_version: 1.9.0
 - name: commons-codec:commons-codec
-  version: 1.17.2
-  updated_at: '2025-01-06'
-  module_version: 1.17.2
+  version: 1.18.0
+  updated_at: '2025-01-28'
+  module_version: 1.18.0
 - name: org.wildfly.common:wildfly-common
   version: 1.7.0.Final
   version_regex: (.*)\.Final
