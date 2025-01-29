@@ -322,12 +322,12 @@ bazel_deps:
   module_version: 2.1.0
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.11.0
-  sha256: c96db69dd2714a37f3298338a1a42b27e3a2696c3b36dd4441b9bf7a1a12bee0
-  strip_prefix: bazel-lib-2.11.0
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.11.0/bazel-lib-v2.11.0.tar.gz
+  version: v2.12.0
+  sha256: 73bbffa96b4470692e74800c1c8b09d2ed2a9015fe78246efab8f7614c933250
+  strip_prefix: bazel-lib-2.12.0
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.12.0/bazel-lib-v2.12.0.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2025-01-13'
+  updated_at: '2025-01-29'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -342,7 +342,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 2.11.0
+  module_version: 2.12.0
 - name: buildozer
   type: http_archive
   version: v7.1.2
