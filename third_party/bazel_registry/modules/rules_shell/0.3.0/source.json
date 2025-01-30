@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazelbuild/rules_shell/releases/download/v0.3.0/rules_shell-v0.3.0.tar.gz",
-  "integrity": "sha256-2M1KOpH8HcaNTH1rZV8J3vEJ9xhkN+P1Cptgq0NqDFM=",
-  "strip_prefix": "rules_shell-0.3.0"
-}

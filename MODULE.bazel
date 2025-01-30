@@ -518,12 +518,12 @@ DEPS = {
         {
             "name": "rules_shell",
             "type": "http_archive",
-            "version": "v0.3.0",
-            "sha256": "d8cd4a3a91fc1dc68d4c7d6b655f09def109f7186437e3f50a9b60ab436a0c53",
-            "strip_prefix": "rules_shell-0.3.0",
-            "url": "https://github.com/bazelbuild/rules_shell/releases/download/v0.3.0/rules_shell-v0.3.0.tar.gz",
-            "updated_at": "2024-11-23",
-            "module_version": "0.3.0",
+            "version": "v0.4.0",
+            "sha256": "3e114424a5c7e4fd43e0133cc6ecdfe54e45ae8affa14fadd839f29901424043",
+            "strip_prefix": "rules_shell-0.4.0",
+            "url": "https://github.com/bazelbuild/rules_shell/releases/download/v0.4.0/rules_shell-v0.4.0.tar.gz",
+            "updated_at": "2025-01-30",
+            "module_version": "0.4.0",
             "override_updater": [
                 {
                     "type": "deps_updater",
