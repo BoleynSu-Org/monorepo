@@ -63,9 +63,9 @@ expand_template(
             )
             for image in CONTAINER_IMAGES.values()
             if image["registry"] + "/" + image["repository"] in [
-                "docker.io/library/mariadb",
-                "docker.io/library/adminer",
-                "docker.io/filebrowser/filebrowser",
+                "index.docker.io/library/mariadb",
+                "index.docker.io/library/adminer",
+                "index.docker.io/filebrowser/filebrowser",
             ]
         ] + [
             '-e "s#images_boleynsu_org_oj_{name}#ghcr.io/boleynsu-org/images_boleynsu_org_oj_{name}@$("$(rlocation "$(rlocationpath @jq_linux_amd64//file)")" -r ".manifests[0].digest" "$(rlocation "$(rlocationpath //oj/{name}:image)/index.json")")#g" '.format(name = name)
