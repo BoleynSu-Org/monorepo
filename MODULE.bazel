@@ -482,12 +482,12 @@ DEPS = {
         {
             "name": "abseil-cpp",
             "type": "http_archive",
-            "version": "20240722.1",
-            "sha256": "40cee67604060a7c8794d931538cb55f4d444073e556980c88b6c49bb9b19bb7",
-            "strip_prefix": "abseil-cpp-20240722.1",
-            "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20240722.1.tar.gz",
-            "updated_at": "2025-01-23",
-            "module_version": "20240722.1",
+            "version": "20250127.0",
+            "sha256": "16242f394245627e508ec6bb296b433c90f8d914f73b9c026fddb905e27276e8",
+            "strip_prefix": "abseil-cpp-20250127.0",
+            "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20250127.0.tar.gz",
+            "updated_at": "2025-02-04",
+            "module_version": "20250127.0",
             "module_file": "@boleynsu_org//third_party/abseil-cpp:repo.MODULE.bazel",
         },
         {
@@ -1014,7 +1014,7 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/mariadb",
             "tag": "11.6.2",
-            "digest": "sha256:afa422247e5be10d65ede83821b4f6f018733e3f838613ca72e7f44f1e3999f1",
+            "digest": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
             "updated_at": "2025-02-04",
             "platforms": [
                 "linux/amd64",
