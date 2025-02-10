@@ -23,8 +23,8 @@
     },
     "@@apple_support+//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
-        "bzlTransitiveDigest": "MtGuRnlpiRxqGyaOta9K1ddN+gbhfXJQi/QEHU1mCY4=",
-        "usagesDigest": "3L+PK6aRnliv0iIS8m3kdo+LjmvjJWoFCm3qZcPSg+8=",
+        "bzlTransitiveDigest": "SrA4ObmIum2UsCWODYu8Os0I7Tx+YbIRpTCh5tGuwsU=",
+        "usagesDigest": "zUjeD9wz2MhHGLXpFcm35KN6vhAyz43Rl8KRWgc8LMs=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -166,7 +166,7 @@
     "@@rules_android+//bzlmod_extensions:apksig.bzl%apksig_extension": {
       "general": {
         "bzlTransitiveDigest": "BjalZzJZCCeFUitHa3nPXYW0o22VinHOSCBGaN0y87Q=",
-        "usagesDigest": "e4ckeOnzg06Fr7DT0gu4mzeX8LSpZuX/wUu21TSbi94=",
+        "usagesDigest": "Q1K6gUNGvlIU1euKR0hYgZa7vTWqjzrtkDji9A5WftA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -191,7 +191,7 @@
     "@@rules_android+//rules/android_sdk_repository:rule.bzl%android_sdk_repository_extension": {
       "general": {
         "bzlTransitiveDigest": "NAy+0M15JNVEBb8Tny6t7j3lKqTnsAMjoBB6LJ+C370=",
-        "usagesDigest": "RggQggGrrSxE82NbmFqjxH3BgjyNl10vAJoWciFfcqw=",
+        "usagesDigest": "SRVpVPgmP1dgoQIQOY/xQJ6g8CD5FPaCy1ugB3gAxRg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3967,7 +3967,7 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "30trgAacsCFER80jacKP/S4gew/mcOpMDui6AlD62kE=",
+        "bzlTransitiveDigest": "YMFiQ3pleEAuFhwS4SZgcRMCr3IL8phels8S275Be0U=",
         "usagesDigest": "JTRjQHmqGCK2FUQYDLQD4VejKtuKKC8LrOQhFOpHPPo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -4069,6 +4069,11 @@
             "rules_cc+",
             "bazel_tools",
             "bazel_tools"
+          ],
+          [
+            "rules_cc+",
+            "rules_cc",
+            "rules_cc+"
           ],
           [
             "rules_rust+",
