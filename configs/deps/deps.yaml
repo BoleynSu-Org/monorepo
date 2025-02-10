@@ -189,12 +189,12 @@ bazel_deps:
   module_version: '20250210.73706'
 - name: clang_linux_x86_64
   type: http_archive
-  version: clang-llvmorg-19.1.7-fedora-41-20250119.010838-20250119.082638
+  version: clang-llvmorg-19.1.7-fedora-41-20250210.073706-20250210.081915
   version_regex: clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: f06fcb92d5299d83c87f2b5a929d45d37a3c8438a110cf00239144944fcb5765
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.7-fedora-41-20250119.010838-20250119.082638/clang_linux_x86_64.tar.gz
-  updated_at: '2025-01-19'
-  module_version: 19.1.7.41.20250119.10838.20250119.82638
+  sha256: 8c35f50dfe9b60f332e10f80e5cf6121fc0148a4b0646d671f6a59e2bb3baaa3
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-19.1.7-fedora-41-20250210.073706-20250210.081915/clang_linux_x86_64.tar.gz
+  updated_at: '2025-02-10'
+  module_version: 19.1.7.41.20250210.73706.20250210.81915
 - name: bazel_features
   type: http_archive
   version: v1.25.0
@@ -494,13 +494,13 @@ maven_deps:
   updated_at: '2024-11-23'
   module_version: 3.5.1
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.2
-  updated_at: '2024-12-15'
-  module_version: 11.0.2
+  version: 11.0.3
+  updated_at: '2025-02-10'
+  module_version: 11.0.3
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.2
-  updated_at: '2024-12-15'
-  module_version: 11.0.2
+  version: 11.0.3
+  updated_at: '2025-02-10'
+  module_version: 11.0.3
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
