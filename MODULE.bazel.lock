@@ -288,7 +288,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "vsZ/63d7SFdr0xzOg3fgM9l7vh1FBpIEODQiOFp1BXg=",
-        "usagesDigest": "xuFdhNu/UNwrTdZc/nCwCGjXOIEvxe/VPk2CpxPb1vU=",
+        "usagesDigest": "wyydR377vftzXVdgdSqrzPZNFEKTTpYYjnc6eQ3DaQ8=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
