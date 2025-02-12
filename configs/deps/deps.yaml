@@ -41,12 +41,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 4cb0a284e01f5d06497f1d60ea377607e6ad3e91ba5efa9f2ae25875374c01e3
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.52.0.tar.gz
-  updated_at: '2025-01-13'
-  version: v0.52.0
-  strip_prefix: rules_go-0.52.0
-  module_version: 0.52.0
+  sha256: 924153c3199e0b17ee05abc1271b85bcfb5576b59e4c07f5b60bd114116a5443
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.53.0.tar.gz
+  updated_at: '2025-02-12'
+  version: v0.53.0
+  strip_prefix: rules_go-0.53.0
+  module_version: 0.53.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.1.tar.gz
@@ -490,9 +490,9 @@ maven_deps:
   updated_at: '2024-11-23'
   module_version: 2.18.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.5.1
-  updated_at: '2024-11-23'
-  module_version: 3.5.1
+  version: 3.5.2
+  updated_at: '2025-02-12'
+  module_version: 3.5.2
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.3
   updated_at: '2025-02-10'
