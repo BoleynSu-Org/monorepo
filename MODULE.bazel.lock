@@ -1,5 +1,5 @@
 {
-  "lockFileVersion": 16,
+  "lockFileVersion": 18,
   "registryFileHashes": {},
   "selectedYankedVersions": {},
   "moduleExtensions": {
@@ -288,7 +288,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "vsZ/63d7SFdr0xzOg3fgM9l7vh1FBpIEODQiOFp1BXg=",
-        "usagesDigest": "wyydR377vftzXVdgdSqrzPZNFEKTTpYYjnc6eQ3DaQ8=",
+        "usagesDigest": "od9p9nIRbS9myVugGMpyRYAuepTQxxPSdW7vcKPGaTI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -326,7 +326,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
+              "identifier": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_library_mariadb_linux_amd64",
               "bazel_tags": []
@@ -338,7 +338,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
+              "identifier": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_index_library_mariadb_linux_arm64_v8",
               "bazel_tags": []
@@ -350,7 +350,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
+              "identifier": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_index_library_mariadb_linux_ppc64le",
               "bazel_tags": []
@@ -362,7 +362,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
+              "identifier": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
               "platform": "linux/s390x",
               "target_name": "io_docker_index_library_mariadb_linux_s390x",
               "bazel_tags": []
@@ -375,7 +375,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
-              "identifier": "sha256:bfb1298c06cd15f446f1c59600b3a856dae861705d1a2bd2a00edbd6c74ba748",
+              "identifier": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_library_mariadb_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_index_library_mariadb_linux_arm64_v8",
@@ -1075,7 +1075,7 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "5HB4krXMqbslRZB8IGZf+agTEGg2j1164bLSH8zQJT8=",
+        "bzlTransitiveDigest": "jx2CWevPAmri4c/drs93shkVMSYcd/hZ3qeCmKeCg4M=",
         "usagesDigest": "JCLQJBWCM3DDUc5MjwbpwL1kovUtsaOhHhRzS7E5N78=",
         "recordedFileInputs": {
           "@@+_repo_rules+pinned_pip//requirements.txt": "4f26d227a31986d99a023e8fd9626297acee0b215cba48b393d7899fedf175e8",
@@ -3592,6 +3592,11 @@
         },
         "recordedRepoMappingEntries": [
           [
+            "",
+            "pinned_pip",
+            "+_repo_rules+pinned_pip"
+          ],
+          [
             "bazel_features+",
             "bazel_features_globals",
             "bazel_features++version_extension+bazel_features_globals"
@@ -3967,7 +3972,7 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "YMFiQ3pleEAuFhwS4SZgcRMCr3IL8phels8S275Be0U=",
+        "bzlTransitiveDigest": "JBFuFy8hVZ+5p1QBlpf00ArDqEzE5lpWj1xzQ7fH+9M=",
         "usagesDigest": "JTRjQHmqGCK2FUQYDLQD4VejKtuKKC8LrOQhFOpHPPo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -4177,6 +4182,11 @@
           }
         },
         "recordedRepoMappingEntries": [
+          [
+            "",
+            "sysroot_linux_x86_64",
+            "sysroot_linux_x86_64+"
+          ],
           [
             "toolchains_llvm+",
             "bazel_skylib",

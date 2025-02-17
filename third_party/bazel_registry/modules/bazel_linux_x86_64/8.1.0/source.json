@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/bazelbuild/bazel/releases/download/8.1.0/bazel-8.1.0-installer-linux-x86_64.sh",
+  "integrity": "sha256-TkDLB41/44Cdl+5h6eurln1knpNBbpZ0Slw7arUsr+M=",
+  "patches": {
+    "patch-100000.patch": "sha256-QkU+ebn2tVTOkV4BidacbHgj57epjoHEEKGUTg05gwI="
+  },
+  "archive_type": "zip"
+}
