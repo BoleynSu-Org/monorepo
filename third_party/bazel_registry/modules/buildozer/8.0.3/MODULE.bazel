@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.25.0',
+    version = '1.26.0',
 )
 
 buildozer_binary = use_extension(
