@@ -752,15 +752,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20250223.140007'
+  version: '20250224.024036'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20250223.140007'
-  digest: sha256:0e7092367cc66b40798b0cebe451a0c4c714851169e38fce05bfab96f1a885bd
-  updated_at: '2025-02-23'
+  tag: '20250224.024036'
+  digest: sha256:4713faed0efcecb5d6a89b92f2a966479acfeb84659c1a851769bf0f459acb6b
+  updated_at: '2025-02-24'
   platforms:
   - linux/amd64
-  module_version: '20250223.140007'
+  module_version: '20250224.24036'
 - name: io_docker_index_library_mariadb
   version: 11.7.2
   registry: index.docker.io
@@ -812,37 +812,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.32.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20250217.132723'
+  version: '20250224.024036'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20250217.132723'
-  digest: sha256:81523258b816d8d6375553fd719606c85699c0aa7484ccc257ab17b414504c04
-  updated_at: '2025-02-17'
+  tag: '20250224.024036'
+  digest: sha256:bb9a53c786934b4aa4dc1d1a92eefe7b104cc25d658ec39ffcd330a0294633b2
+  updated_at: '2025-02-24'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250217.132723'
+  module_version: '20250224.24036'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20250223.142023'
+  version: '20250224.024036'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20250223.142023'
-  digest: sha256:661a497bea377542b4a76e75398077867c315fdedb262c581c97f96c285007ec
-  updated_at: '2025-02-23'
+  tag: '20250224.024036'
+  digest: sha256:4366405d93e8b031da2ccda0e5fa896d1539ca8af9292866469fe206291c4fb1
+  updated_at: '2025-02-24'
   platforms:
   - linux/amd64
-  module_version: '20250223.142023'
+  module_version: '20250224.24036'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:ec7a5194a7b623eccad0dd4974abf710c398102e2867e1d820e6c7a16fbbb0ed
-  version: '20250217.132723'
-  tag: '20250217.132723'
-  updated_at: '2025-02-17'
+  digest: sha256:f5dcf4d0861c4ce46ced0f5bb5b223dc55c304ab61c236bbf2c486190905be37
+  version: '20250224.024036'
+  tag: '20250224.024036'
+  updated_at: '2025-02-24'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250217.132723'
+  module_version: '20250224.24036'
 
 toolchain_deps:
 - name: c
