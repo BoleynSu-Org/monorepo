@@ -288,7 +288,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "vsZ/63d7SFdr0xzOg3fgM9l7vh1FBpIEODQiOFp1BXg=",
-        "usagesDigest": "mVkCwKMg5iG3L3zuurUNvIHG+3dX4pPzNYVmayNVkH0=",
+        "usagesDigest": "l7PRetkgBU5IS2pU7EuvOF9z+AmZtwvGRJLeFlxHuAc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -386,99 +386,14 @@
               "reproducible": true
             }
           },
-          "io_docker_index_library_adminer_linux_amd64": {
+          "io_docker_index_library_adminer_single": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/amd64",
-              "target_name": "io_docker_index_library_adminer_linux_amd64",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_arm_v5": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/arm/v5",
-              "target_name": "io_docker_index_library_adminer_linux_arm_v5",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_arm_v7": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/arm/v7",
-              "target_name": "io_docker_index_library_adminer_linux_arm_v7",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_arm64_v8": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/arm64/v8",
-              "target_name": "io_docker_index_library_adminer_linux_arm64_v8",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_386": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/386",
-              "target_name": "io_docker_index_library_adminer_linux_386",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_mips64le": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/mips64le",
-              "target_name": "io_docker_index_library_adminer_linux_mips64le",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_ppc64le": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/ppc64le",
-              "target_name": "io_docker_index_library_adminer_linux_ppc64le",
-              "bazel_tags": []
-            }
-          },
-          "io_docker_index_library_adminer_linux_s390x": {
-            "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
-            "attributes": {
-              "scheme": "https",
-              "registry": "index.docker.io",
-              "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platform": "linux/s390x",
-              "target_name": "io_docker_index_library_adminer_linux_s390x",
+              "identifier": "sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb",
+              "target_name": "io_docker_index_library_adminer_single",
               "bazel_tags": []
             }
           },
@@ -489,16 +404,9 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802",
-              "platforms": {
-                "@@platforms//cpu:x86_64": "@io_docker_index_library_adminer_linux_amd64",
-                "@@platforms//cpu:armv7": "@io_docker_index_library_adminer_linux_arm_v7",
-                "@@platforms//cpu:arm64": "@io_docker_index_library_adminer_linux_arm64_v8",
-                "@@platforms//cpu:i386": "@io_docker_index_library_adminer_linux_386",
-                "@@platforms//cpu:mips64": "@io_docker_index_library_adminer_linux_mips64le",
-                "@@platforms//cpu:ppc": "@io_docker_index_library_adminer_linux_ppc64le",
-                "@@platforms//cpu:s390x": "@io_docker_index_library_adminer_linux_s390x"
-              },
+              "identifier": "sha256:eb37f58646a901dc7727cf448cae36daaefaba79de33b5058dab79aa4c04aefb",
+              "platforms": {},
+              "platform": "@@rules_oci+//oci:io_docker_index_library_adminer_single",
               "bzlmod_repository": "io_docker_index_library_adminer",
               "reproducible": true
             }
@@ -1019,14 +927,6 @@
             "io_docker_index_library_mariadb_linux_ppc64le",
             "io_docker_index_library_mariadb_linux_s390x",
             "io_docker_index_library_adminer",
-            "io_docker_index_library_adminer_linux_amd64",
-            "io_docker_index_library_adminer_linux_arm_v5",
-            "io_docker_index_library_adminer_linux_arm_v7",
-            "io_docker_index_library_adminer_linux_arm64_v8",
-            "io_docker_index_library_adminer_linux_386",
-            "io_docker_index_library_adminer_linux_mips64le",
-            "io_docker_index_library_adminer_linux_ppc64le",
-            "io_docker_index_library_adminer_linux_s390x",
             "io_docker_index_filebrowser_filebrowser",
             "io_docker_index_filebrowser_filebrowser_linux_amd64",
             "io_docker_index_filebrowser_filebrowser_linux_arm64",
@@ -1075,7 +975,7 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "5riLtoor/gQtvAsrTx/zZ4aBNlbZGMZ1R5ikPsE/WVs=",
+        "bzlTransitiveDigest": "K3V39+09lP3tota9PIyv0dkB7J5q1mbUSJF8aU65R7U=",
         "usagesDigest": "JCLQJBWCM3DDUc5MjwbpwL1kovUtsaOhHhRzS7E5N78=",
         "recordedFileInputs": {
           "@@+_repo_rules+pinned_pip//requirements.txt": "4f26d227a31986d99a023e8fd9626297acee0b215cba48b393d7899fedf175e8",
@@ -3972,7 +3872,7 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "c9QVQGHPVbMR4eT6otpsKZJGoTij8nbTpJZdt5YbAVg=",
+        "bzlTransitiveDigest": "Jjfh2RnAo3kPcdfh6dqeVidH+x6H3lPqNJdj+UVxDtE=",
         "usagesDigest": "JTRjQHmqGCK2FUQYDLQD4VejKtuKKC8LrOQhFOpHPPo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
