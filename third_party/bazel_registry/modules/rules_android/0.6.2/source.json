@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.6.2.tar.gz",
+  "integrity": "sha256-INeOgABzNa6Dvw3m/Xvhkve2VQhX+pNzTbwoeZXu51Y=",
+  "strip_prefix": "rules_android-0.6.2"
+}
