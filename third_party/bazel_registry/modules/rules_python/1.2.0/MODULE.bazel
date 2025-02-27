@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '1.1.0',
+    version = '1.2.0',
 )
 
 bazel_dep(
@@ -21,11 +21,6 @@ bazel_dep(
 bazel_dep(
     name = 'platforms',
     version = '0.0.11',
-)
-
-bazel_dep(
-    name = 'rules_proto',
-    version = '7.1.0',
 )
 
 bazel_dep(
@@ -72,8 +67,8 @@ python.toolchain(
 use_repo(
     python,
     'python_3_11',
-    'python_versions',
     'pythons_hub',
+    python = 'python_versions',
 )
 
 register_toolchains(
