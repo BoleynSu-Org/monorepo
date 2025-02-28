@@ -367,12 +367,12 @@ bazel_deps:
   module_version: 8.0.3
 - name: rules_android
   type: http_archive
-  version: v0.6.2
-  sha256: 20d78e80007335ae83bf0de6fd7be192f7b6550857fa93734dbc287995eee756
-  strip_prefix: rules_android-0.6.2
-  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.6.2.tar.gz
-  updated_at: '2025-02-26'
-  module_version: 0.6.2
+  version: v0.6.3
+  sha256: 16cb3e7fa0e9633730414ffad5bc4ef9722336c217f57bd130e3e95689138f45
+  strip_prefix: rules_android-0.6.3
+  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.6.3.tar.gz
+  updated_at: '2025-02-28'
+  module_version: 0.6.3
 - name: rules_robolectric
   type: http_archive
   version: 4.14.1.2
