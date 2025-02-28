@@ -409,11 +409,11 @@ bazel_deps:
   module_file: '@boleynsu_org//third_party/abseil-cpp:repo.MODULE.bazel'
 - name: rules_rust
   type: http_archive
-  version: 0.57.1
-  sha256: e2a3abd3a11683a05305bbfd33cc494df79b36413d54c057b1ad7b4590f4ef52
-  url: https://github.com/bazelbuild/rules_rust/releases/download/0.57.1/rules_rust-0.57.1.tar.gz
-  updated_at: '2025-01-23'
-  module_version: 0.57.1
+  version: 0.58.0
+  sha256: 962075c164a603f43fb4a3d19615ab91e41bcd0581c8da2f70a1aef27381fe53
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.58.0/rules_rust-0.58.0.tar.gz
+  updated_at: '2025-02-28'
+  module_version: 0.58.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
