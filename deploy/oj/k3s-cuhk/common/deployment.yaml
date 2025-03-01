@@ -216,6 +216,9 @@ spec:
             runAsNonRoot: true
             runAsUser: 1993
             runAsGroup: 1993
+          readinessProbe:
+            tcpSocket:
+              port: oj-runner
       imagePullSecrets:
         - name: registry-access-token-secret
       enableServiceLinks: false
