@@ -128,7 +128,8 @@ public class Main extends RunnerGrpc.RunnerImplBase {
             System.err.println("The runner is not running as pid 1. Some security features will not be available.");
         }
         Server server = NettyServerBuilder.forAddress(new InetSocketAddress(RUNNER_ADDRESS, RUNNER_PORT))
-                .maxInboundMessageSize(100 * 1024 * 1024).addService(new Main()).build();
+                .maxInboundMessageSize(100 * 1024 * 1024).addService(new Main())
+                .permitKeepAliveTime(5, TimeUnit.SECONDS).build();
         server.start();
         server.awaitTermination();
     }

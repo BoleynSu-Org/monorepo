@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -22,7 +23,8 @@ public class User extends Config {
     private static final String RUNNER_HOST = getOrElse("RUNNER_HOST", "localhost");
     private static final int RUNNER_PORT = Integer.parseInt(getOrElse("RUNNER_PORT", "1993"));
     private static final ManagedChannel channel = ManagedChannelBuilder.forAddress(RUNNER_HOST, RUNNER_PORT)
-            .usePlaintext().maxInboundMessageSize(100 * 1024 * 1024).build();
+            .usePlaintext().maxInboundMessageSize(100 * 1024 * 1024).keepAliveTime(10, TimeUnit.SECONDS)
+            .keepAliveTimeout(1, TimeUnit.SECONDS).build();
     private static final RunnerGrpc.RunnerBlockingStub runner = RunnerGrpc.newBlockingStub(channel).withWaitForReady();
 
     static final String ADMIN_ACCOUNT = "boleynsu";
@@ -130,7 +132,7 @@ public class User extends Config {
             out.println("Please login in first.");
         } else {
             Task task = Task.newBuilder().setSource(get("source")).setInput(get("input")).build();
-            String output = runner.run(task).getOutput();
+            String output = runner.withDeadlineAfter(30, TimeUnit.SECONDS).run(task).getOutput();
             if (output.length() > 1024 * 4) {
                 output = "Only the first 4k chars are shown.\n" + output.substring(0, 1024 * 4);
             }

@@ -2,6 +2,7 @@ package su.boleyn.oj.judge;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -37,7 +38,7 @@ public class Main extends Config {
                     Task task = Task.newBuilder().setSource(source).setInput(input)
                             .setTimeLimit(problem.getInt("time_limit")).build();
                     SQL.setResult(id, "running " + i, time, memory);
-                    Result result = runner.run(task);
+                    Result result = runner.withDeadlineAfter(30, TimeUnit.SECONDS).run(task);
                     time = Math.max(time, result.getTime());
                     memory = Math.max(memory, result.getMemory());
                     if (!"accepted".equals(result.getResult())) {
@@ -76,7 +77,8 @@ public class Main extends Config {
         while (true) {
             try {
                 ManagedChannel channel = ManagedChannelBuilder.forAddress(RUNNER_HOST, RUNNER_PORT).usePlaintext()
-                        .maxInboundMessageSize(100 * 1024 * 1024).build();
+                        .maxInboundMessageSize(100 * 1024 * 1024).keepAliveTime(10, TimeUnit.SECONDS)
+                        .keepAliveTimeout(1, TimeUnit.SECONDS).build();
                 RunnerGrpc.RunnerBlockingStub runner = RunnerGrpc.newBlockingStub(channel).withWaitForReady();
                 go(runner);
             } catch (Exception e) {
