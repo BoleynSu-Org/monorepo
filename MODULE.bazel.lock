@@ -206,8 +206,8 @@
     },
     "@@rules_kotlin+//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
-        "bzlTransitiveDigest": "oKa2waAeVGFHgr2g+1meOHgHY8qUvp0GbYOy7H7UK+k=",
-        "usagesDigest": "Zmj5J4eKSDHhWnQDqGxgAe+28qLfgFsNuCU3HGSMOu8=",
+        "bzlTransitiveDigest": "HQj+CxiKO2Qusxix8lH5ytNvW/JndcsFbJxBlRDFd2s=",
+        "usagesDigest": "5i73UwROy0vI2gnB5U1DcXtgN79Xi3WIPLTi4CxIAxc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
