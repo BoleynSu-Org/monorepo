@@ -54,7 +54,7 @@
     },
     "@@container_structure_test+//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "j77kXW0F9y/OL68eA1LoaK3Bhetiq7ljq7mtpePZPXs=",
+        "bzlTransitiveDigest": "5klaDwSlqa5N2mdX1ABHApA8t/wUYl9PbmY7Za/dfPw=",
         "usagesDigest": "MYuDQ4QlarTFaaHIRIRWTce2J/li5P0ge3kgRbqSkd4=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -287,7 +287,7 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "vsZ/63d7SFdr0xzOg3fgM9l7vh1FBpIEODQiOFp1BXg=",
+        "bzlTransitiveDigest": "9Lgr/D2NoQvo/jyBT31TCLsgnDcgdO53QO5YtoSImmQ=",
         "usagesDigest": "wMssC6Hlq8t3Bnxr7OT5ah52s6V+C1xXEoiLyraF3yk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -850,6 +850,12 @@
             "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
             "attributes": {
               "platform": "linux_arm64"
+            }
+          },
+          "copy_to_directory_linux_s390x": {
+            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
+            "attributes": {
+              "platform": "linux_s390x"
             }
           },
           "copy_to_directory_windows_amd64": {
