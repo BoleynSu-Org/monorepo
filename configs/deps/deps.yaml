@@ -82,13 +82,13 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 14e31cc6605afc3f1d8bd04767ec741f49eada314a167dd45886206c31341e33
-  strip_prefix: grpc-java-1.70.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.70.0.tar.gz
-  updated_at: '2025-01-24'
-  version: v1.70.0
+  sha256: 2942a56b794479a0bc1c0e69039c9ae615f1cb39d0e3af12af35c0eb3bd73fdf
+  strip_prefix: grpc-java-1.71.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.71.0.tar.gz
+  updated_at: '2025-03-05'
+  version: v1.71.0
   module_file: '@boleynsu_org//third_party/io_grpc_grpc_java:repo.MODULE.bazel'
-  module_version: 1.70.0
+  module_version: 1.71.0
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -221,12 +221,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v29.3.tar.gz
-  sha256: 008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e
-  strip_prefix: protobuf-29.3
-  version: v29.3
-  updated_at: '2025-01-09'
-  module_version: '29.3'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v30.0.tar.gz
+  sha256: 9df0e9e8ebe39f4fbbb9cf7db3d811287fe3616b2f191eb2bf5eaa12539c881f
+  strip_prefix: protobuf-30.0
+  version: v30.0
+  updated_at: '2025-03-05'
+  module_version: '30.0'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
@@ -494,13 +494,13 @@ maven_deps:
   updated_at: '2025-02-12'
   module_version: 3.5.2
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.4
-  updated_at: '2025-02-17'
-  module_version: 11.0.4
+  version: 11.0.5
+  updated_at: '2025-03-05'
+  module_version: 11.0.5
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.4
-  updated_at: '2025-02-17'
-  module_version: 11.0.4
+  version: 11.0.5
+  updated_at: '2025-03-05'
+  module_version: 11.0.5
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -545,7 +545,7 @@ maven_deps:
   version: 4.1.1.4
   included_from: io_grpc_grpc_java
 - name: com.google.api.grpc:proto-google-common-protos
-  version: 2.48.0
+  version: 2.51.0
   included_from: io_grpc_grpc_java
 - name: com.google.auth:google-auth-library-credentials
   version: 1.24.1
@@ -608,7 +608,7 @@ maven_deps:
   version: 4.1.110.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-boringssl-static
-  version: 2.0.65.Final
+  version: 2.0.70.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-epoll:jar:linux-x86_64
   version: 4.1.110.Final
@@ -702,7 +702,7 @@ maven_deps:
   version: 2.11.0
   included_from: io_grpc_grpc_java
 - name: com.google.re2j:re2j
-  version: '1.7'
+  version: '1.8'
   included_from: io_grpc_grpc_java
 - name: io.grpc:grpc-googleapis
   version: override
@@ -721,7 +721,7 @@ maven_deps:
   override_target: '@io_grpc_grpc_java//xds:xds_maven'
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-tcnative-classes
-  version: 2.0.65.Final
+  version: 2.0.70.Final
   included_from: io_grpc_grpc_java
 - name: io.netty:netty-transport-native-unix-common
   version: 4.1.110.Final
@@ -752,15 +752,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20250303.013122'
+  version: '20250304.194916'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20250303.013122'
+  tag: '20250304.194916'
   digest: sha256:bcfacaa2f4a6bc09678cd627083cdbae632ce2a746c7e91ed7109066f779763d
-  updated_at: '2025-03-03'
+  updated_at: '2025-03-05'
   platforms:
   - linux/amd64
-  module_version: '20250303.13122'
+  module_version: '20250304.194916'
 - name: io_docker_index_library_mariadb
   version: 11.7.2
   registry: index.docker.io
@@ -812,37 +812,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.32.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20250303.013122'
+  version: '20250304.194916'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20250303.013122'
+  tag: '20250304.194916'
   digest: sha256:e8cf2082e4c34b2e9730a8e6fb095ec87c03cfdbe55b0c4be3801f36b78f35ae
-  updated_at: '2025-03-03'
+  updated_at: '2025-03-05'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250303.13122'
+  module_version: '20250304.194916'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20250303.013122'
+  version: '20250304.194916'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20250303.013122'
+  tag: '20250304.194916'
   digest: sha256:42be991b9e221025f20d5218085cbdbc3970d4e348a6ab9e5dd98e4720ccfdf5
-  updated_at: '2025-03-03'
+  updated_at: '2025-03-05'
   platforms:
   - linux/amd64
-  module_version: '20250303.13122'
+  module_version: '20250304.194916'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:171a9c986784924c8a20f50561cee23980898cd10cc6d34f01bd27359bd434c6
-  version: '20250303.013122'
-  tag: '20250303.013122'
-  updated_at: '2025-03-03'
+  version: '20250304.194916'
+  tag: '20250304.194916'
+  updated_at: '2025-03-05'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250303.13122'
+  module_version: '20250304.194916'
 
 toolchain_deps:
 - name: c
