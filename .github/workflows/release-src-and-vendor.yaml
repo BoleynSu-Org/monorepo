@@ -36,8 +36,11 @@ jobs:
 
       - name: Run bazel build without network
         run: |
-          unshare -c -n bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-          unshare -c -n bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+          bazel shutdown
+          unshare -c -n bash -c "
+            bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+            bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+          "
 
       - name: Release
         uses: softprops/action-gh-release@v2
