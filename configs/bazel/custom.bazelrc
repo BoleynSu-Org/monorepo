@@ -34,6 +34,14 @@ common:remote --jobs=80
 common:remote --remote_upload_local_results=false
 common:remote --remote_cache_compression=true
 
+# Vendor
+common:vendor --repo_env=GOCACHE=
+common:vendor --repo_env=GOPATH=
+common:vendor --repo_env=HOME=
+common:vendor --repo_env=XDG_RUNTIME_DIR=
+common:vendor --repo_env=DOCKER_CONFIG=
+common:vendor --vendor_dir=vendor
+
 # CI/CD
 ## build and test
 common:ci-build-and-test --config=remote

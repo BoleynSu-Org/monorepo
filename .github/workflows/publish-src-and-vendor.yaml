@@ -1,0 +1,33 @@
+name: Release source code and vendored dependencies
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  relase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download bazel
+        run: |
+          mkdir $HOME/bin
+          curl -L https://github.com/bazelbuild/bazel/releases/download/8.1.1/bazel-8.1.1-installer-linux-x86_64.sh >$HOME/bin/bazel
+          chmod +x $HOME/bin/bazel
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Run bazel vendor
+        run: |
+          bazel vendor --config=vendor --config=ci-build-and-test //...
+          bazel vendor --config=vendor --config=ci-deploy //...
+
+      - name: Clean bazel cache
+        run: |
+          bazel clean --expunge
+
+      - name: Run bazel build without network
+        run: |
+          unshare -r -n bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+          unshare -r -n bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
