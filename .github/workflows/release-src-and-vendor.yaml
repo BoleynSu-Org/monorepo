@@ -34,16 +34,24 @@ jobs:
         run: |
           bazel clean --expunge
 
-      - name: Run bazel build without network
+      - name: Run bazel test without network
         run: |
           id=$(id -u)
           unshare -r -n bash -c "
             ip link set dev lo up
             unshare --map-user $id bash -c '
-              bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-              bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              bazel test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              bazel test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
             '
           "
 
+      - name: Package source code and vendored dependencies
+        run: |
+          git archive --format=tar --output=src-and-vendor.tar HEAD .
+          tar rf src-and-vendor.tar.gz vendor/
+          gzip src-and-vendor.tar.gz
+
       - name: Release
         uses: softprops/action-gh-release@v2
+        with:
+          files: src-and-vendor.tar.gz
