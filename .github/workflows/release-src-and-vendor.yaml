@@ -36,10 +36,13 @@ jobs:
 
       - name: Run bazel build without network
         run: |
-          bazel shutdown
-          unshare -c -n bash -c "
-            bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-            bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+          id=$(id -u)
+          unshare -r -n bash -c "
+            ip link set dev lo up
+            unshare --map-user $id bash -c '
+              bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+            '
           "
 
       - name: Release
