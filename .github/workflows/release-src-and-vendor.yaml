@@ -48,6 +48,7 @@ jobs:
       - name: Package source code and vendored dependencies
         run: |
           git archive --format=tar --output=src-and-vendor.tar HEAD .
+          chmod +r -R vendor/
           tar rf src-and-vendor.tar.gz vendor/
           gzip src-and-vendor.tar.gz
 
