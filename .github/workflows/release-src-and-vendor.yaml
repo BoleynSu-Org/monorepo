@@ -27,6 +27,11 @@ jobs:
         run: |
           bazel clean --expunge
 
+      - name: Set sysctl to allow unshare
+        run: |
+          # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
+          sudo sysctl -w kernel.unprivileged_userns_clone=1
+
       - name: Run bazel build without network
         run: |
           unshare -r -n bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
