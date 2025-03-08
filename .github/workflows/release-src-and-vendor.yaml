@@ -15,6 +15,13 @@ jobs:
           curl -L https://github.com/bazelbuild/bazel/releases/download/8.1.1/bazel-8.1.1-installer-linux-x86_64.sh >$HOME/bin/bazel
           chmod +x $HOME/bin/bazel
 
+      - name: Set sysctl to allow unshare
+        run: |
+          # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
+          sudo sysctl -w kernel.unprivileged_userns_clone=1
+          # See https://github.com/lima-vm/lima/issues/2319#issuecomment-2094746425
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -27,15 +34,10 @@ jobs:
         run: |
           bazel clean --expunge
 
-      - name: Set sysctl to allow unshare
-        run: |
-          # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
-          sudo sysctl -w kernel.unprivileged_userns_clone=1
-
       - name: Run bazel build without network
         run: |
-          unshare -r -n bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-          unshare -r -n bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+          unshare -c -n bazel build --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+          unshare -c -n bazel build --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
 
       - name: Release
         uses: softprops/action-gh-release@v2
