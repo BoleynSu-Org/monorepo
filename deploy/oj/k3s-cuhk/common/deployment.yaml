@@ -68,12 +68,18 @@ spec:
           ports:
             - name: http
               containerPort: 8080
+          startupProbe:
+            httpGet:
+              path: /chat
+              port: http
+            periodSeconds: 1
+            failureThreshold: 60
           readinessProbe:
             httpGet:
               path: /chat
               port: http
             periodSeconds: 3
-            failureThreshold: 100
+            failureThreshold: 3
           livenessProbe:
             httpGet:
               path: /chat
@@ -216,9 +222,21 @@ spec:
             runAsNonRoot: true
             runAsUser: 1993
             runAsGroup: 1993
+          startupProbe:
+            tcpSocket:
+              port: oj-runner
+            periodSeconds: 1
+            failureThreshold: 60
           readinessProbe:
             tcpSocket:
               port: oj-runner
+            periodSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            tcpSocket:
+              port: oj-runner
+            periodSeconds: 10
+            failureThreshold: 3
       imagePullSecrets:
         - name: registry-access-token-secret
       enableServiceLinks: false
@@ -397,12 +415,18 @@ spec:
             runAsNonRoot: true
             runAsUser: 1993
             runAsGroup: 1993
+          startupProbe:
+            httpGet:
+              path: /file
+              port: http
+            periodSeconds: 1
+            failureThreshold: 60
           readinessProbe:
             httpGet:
               path: /file
               port: http
             periodSeconds: 3
-            failureThreshold: 100
+            failureThreshold: 3
           livenessProbe:
             httpGet:
               path: /file
