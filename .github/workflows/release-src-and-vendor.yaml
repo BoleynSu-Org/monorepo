@@ -49,8 +49,8 @@ jobs:
         run: |
           git archive --format=tar --output=src-and-vendor.tar HEAD .
           chmod +r -R vendor/
-          tar rf src-and-vendor.tar.gz vendor/
-          gzip src-and-vendor.tar.gz
+          tar rf src-and-vendor.tar vendor/
+          gzip src-and-vendor.tar
 
       - name: Release
         uses: softprops/action-gh-release@v2
