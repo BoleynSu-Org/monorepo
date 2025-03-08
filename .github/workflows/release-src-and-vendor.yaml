@@ -9,12 +9,6 @@ jobs:
   release-src-and-vendor:
     runs-on: ubuntu-latest
     steps:
-      - name: Install bazel
-        run: |
-          mkdir $HOME/bin
-          curl -L https://github.com/bazelbuild/bazel/releases/download/8.1.1/bazel-8.1.1-installer-linux-x86_64.sh >$HOME/bin/bazel
-          chmod +x $HOME/bin/bazel
-
       - name: Set sysctl to allow unshare
         run: |
           # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
@@ -27,11 +21,13 @@ jobs:
 
       - name: Run bazel vendor
         run: |
+          alias bazel=bazelisk
           bazel vendor --config=vendor --config=ci-build-and-test //...
           bazel vendor --config=vendor --config=ci-deploy //...
 
       - name: Clean bazel cache
         run: |
+          alias bazel=bazelisk
           bazel clean --expunge
 
       - name: Run bazel test without network
@@ -40,6 +36,7 @@ jobs:
           unshare -r -n bash -c "
             ip link set dev lo up
             unshare --map-user $id bash -c '
+              alias bazel=bazelisk
               bazel test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
               bazel test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
             '
@@ -47,12 +44,11 @@ jobs:
 
       - name: Package source code and vendored dependencies
         run: |
-          git archive --format=tar --output=src-and-vendor.tar HEAD .
+          git archive --format=zip --output=src-and-vendor.zip HEAD .
           chmod +r -R vendor/
-          tar rf src-and-vendor.tar vendor/
-          gzip src-and-vendor.tar
+          zip -yuqr src-and-vendor.zip vendor/
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: src-and-vendor.tar.gz
+          files: src-and-vendor.zip
