@@ -9,26 +9,18 @@ jobs:
   release-src-and-vendor:
     runs-on: ubuntu-24.04
     steps:
-      - name: Set sysctl to allow unshare
-        run: |
-          set -euo pipefail
-          # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
-          sudo sysctl -w kernel.unprivileged_userns_clone=1
-          # See https://github.com/lima-vm/lima/issues/2319#issuecomment-2094746425
-          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Run bazel vendor
         run: |
           set -euo pipefail
-          alias bazel=bazelisk
           # To workaround https://github.com/bazelbuild/bazel/issues/25503
           python3 -m http.server 1993 2>/dev/null &
           pid=$!
-          bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-build-and-test //...
-          bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-deploy //...
+          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor @bazel_linux_x86_64//:bazel
+          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-build-and-test //...
+          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-deploy //...
           kill "$pid"
 
       - name: Package source code and vendored dependencies
@@ -39,10 +31,11 @@ jobs:
           git diff >vendor.patch
           zip -yuqr src-and-vendor.zip vendor.patch vendor/
 
-      - name: Clean bazel cache
+      - name: Clean bazel and bazelisk cache
         run: |
           set -euo pipefail
           sudo rm $HOME/.cache/bazel -rf
+          sudo rm $HOME/.cache/bazelisk -rf
 
       - name: Run bazel test without network
         run: |
@@ -58,10 +51,9 @@ jobs:
             ip link set dev lo up
             unshare --map-user $id bash -c '
               set -euo pipefail
-              alias bazel=bazelisk
-              ! curl https://github.com
-              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              ! bazelisk version
+              ./vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              ./vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
             '
           "
 
