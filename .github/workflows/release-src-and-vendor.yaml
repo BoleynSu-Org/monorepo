@@ -7,10 +7,11 @@ on:
 
 jobs:
   release-src-and-vendor:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Set sysctl to allow unshare
         run: |
+          set -euo pipefail
           # See https://github.com/actions/runner-images/issues/10443#issuecomment-2296608244
           sudo sysctl -w kernel.unprivileged_userns_clone=1
           # See https://github.com/lima-vm/lima/issues/2319#issuecomment-2094746425
@@ -21,32 +22,75 @@ jobs:
 
       - name: Run bazel vendor
         run: |
+          set -euo pipefail
           alias bazel=bazelisk
-          bazel vendor --config=vendor --config=ci-build-and-test //...
-          bazel vendor --config=vendor --config=ci-deploy //...
+          # To workaround https://github.com/bazelbuild/bazel/issues/25503
+          python3 -m http.server 1993 2>/dev/null &
+          pid=$!
+          bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=off --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-build-and-test //...
+          bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=off --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-deploy //...
+          kill "$pid"
 
-      - name: Clean bazel cache
+      - name: Clean bazel cache for first offline build
         run: |
-          alias bazel=bazelisk
-          bazel clean --expunge
+          set -euo pipefail
+          sudo rm $HOME/.cache/bazel -rf
 
       - name: Run bazel test without network
         run: |
+          set -euo pipefail
           id=$(id -u)
           unshare -r -n bash -c "
+            set -euo pipefail
             ip link set dev lo up
             unshare --map-user $id bash -c '
+              set -euo pipefail
               alias bazel=bazelisk
-              bazel test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-              bazel test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              ! curl https://github.com
+              python3 -m http.server 1993 2>/dev/null &
+              pid=\$!
+              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --lockfile_mode=update --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --lockfile_mode=update --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              kill "\$pid"
             '
           "
 
       - name: Package source code and vendored dependencies
         run: |
+          set -euo pipefail
           git archive --format=zip --output=src-and-vendor.zip HEAD .
           chmod +r -R vendor/
-          zip -yuqr src-and-vendor.zip vendor/
+          git diff >vendor.patch
+          zip -yuqr src-and-vendor.zip vendor.patch vendor/
+
+      - name: Clean bazel cache for second offline build
+        run: |
+          set -euo pipefail
+          sudo rm $HOME/.cache/bazel -rf
+
+      - name: Run bazel test without network from src-and-vendor.zip
+        run: |
+          set -euo pipefail
+          ws=$(mktemp -d)
+          src_and_vendor_zip=$(realpath src-and-vendor.zip)
+          cd "$ws"
+          unzip -q "$src_and_vendor_zip"
+          patch -p1 <vendor.patch
+          id=$(id -u)
+          unshare -r -n bash -c "
+            set -euo pipefail
+            ip link set dev lo up
+            unshare --map-user $id bash -c '
+              set -euo pipefail
+              alias bazel=bazelisk
+              ! curl https://github.com
+              python3 -m http.server 1993 2>/dev/null &
+              pid=\$!
+              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              kill "\$pid"
+            '
+          "
 
       - name: Release
         uses: softprops/action-gh-release@v2

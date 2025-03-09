@@ -1,0 +1,1 @@
+common --registry=http://localhost:1993/third_party/bazel_registry
