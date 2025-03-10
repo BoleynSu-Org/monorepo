@@ -26,10 +26,10 @@ jobs:
       - name: Package source code and vendored dependencies
         run: |
           set -euo pipefail
-          git archive --format=zip --output=src-and-vendor.zip HEAD .
-          chmod +r -R vendor/
+          git archive --format=zip --output=src-and-vendor.zip HEAD
+          chmod +r -R third_party/bazel_vendor/
           git diff >vendor.patch
-          zip -yuqr src-and-vendor.zip vendor.patch vendor/
+          zip -yuqr src-and-vendor.zip vendor.patch third_party/bazel_vendor/
 
       - name: Clean bazel and bazelisk cache
         run: |
@@ -58,8 +58,8 @@ jobs:
             unshare --map-user $id bash -c '
               set -euo pipefail
               ! bazelisk version
-              ./vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-              ./vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
+              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
             '
           "
 

@@ -40,7 +40,7 @@ common:vendor --repo_env=GOPATH=
 common:vendor --repo_env=HOME=
 common:vendor --repo_env=XDG_RUNTIME_DIR=
 common:vendor --repo_env=DOCKER_CONFIG=
-common:vendor --vendor_dir=vendor
+common:vendor --vendor_dir=third_party/bazel_vendor
 
 # CI/CD
 ## build and test
