@@ -28,6 +28,7 @@ jobs:
           set -euo pipefail
           git archive --format=zip --output=src-and-vendor.zip HEAD
           chmod +r -R third_party/bazel_vendor/
+          rm third_party/bazel_vendor/bazel-external
           git diff >vendor.patch
           zip -yuqr src-and-vendor.zip vendor.patch third_party/bazel_vendor/
 
