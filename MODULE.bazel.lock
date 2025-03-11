@@ -3624,8 +3624,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "ge8I9xh3VpeW8HWtub5qliy/PwdCO1HmcE9cu5z8Uek=",
-        "usagesDigest": "lPkIsUDOqCZobpiJMMNaUvXGAD4GBpE6gXkDflNSmvc=",
+        "bzlTransitiveDigest": "Y3kxpBWiUbqZdbMhgK2MM3NfxjM/ivbsB/1SEYJSdTU=",
+        "usagesDigest": "d/re4PvwtnhCwmqUuiqi0olLEkfrKaerJDMVwnkKeFA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3756,6 +3756,11 @@
             "rules_rust+",
             "rules_rust",
             "rules_rust+"
+          ],
+          [
+            "rules_rust+",
+            "rules_rust_ctve",
+            "rules_rust_ctve"
           ]
         ]
       }
