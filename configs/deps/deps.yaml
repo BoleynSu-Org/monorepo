@@ -784,12 +784,12 @@ container_deps:
     - name: update_version
       value: false
 - name: io_docker_index_library_adminer
-  version: 4.17.1
+  version: 5.0.2
   registry: index.docker.io
   repository: library/adminer
-  tag: 4.17.1
-  digest: sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c
-  updated_at: '2025-02-26'
+  tag: 5.0.2
+  digest: sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab
+  updated_at: '2025-03-11'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -799,7 +799,7 @@ container_deps:
   - linux/ppc64le
   - linux/riscv64
   - linux/s390x
-  module_version: 4.17.1
+  module_version: 5.0.2
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.32.0
   registry: index.docker.io

@@ -288,7 +288,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "9Lgr/D2NoQvo/jyBT31TCLsgnDcgdO53QO5YtoSImmQ=",
-        "usagesDigest": "8rwEOlZk9MBcOKZbP3L6nitjMsfxoXxi3Yv727IgqS8=",
+        "usagesDigest": "pkO00L47v0BbV8BbbbQl4saUZWXzv80SIPOwUHN4Qxk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -392,7 +392,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_library_adminer_linux_amd64",
               "bazel_tags": []
@@ -404,7 +404,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/arm/v6",
               "target_name": "io_docker_index_library_adminer_linux_arm_v6",
               "bazel_tags": []
@@ -416,7 +416,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_index_library_adminer_linux_arm_v7",
               "bazel_tags": []
@@ -428,7 +428,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_index_library_adminer_linux_arm64_v8",
               "bazel_tags": []
@@ -440,7 +440,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/386",
               "target_name": "io_docker_index_library_adminer_linux_386",
               "bazel_tags": []
@@ -452,7 +452,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_index_library_adminer_linux_ppc64le",
               "bazel_tags": []
@@ -464,7 +464,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/riscv64",
               "target_name": "io_docker_index_library_adminer_linux_riscv64",
               "bazel_tags": []
@@ -476,7 +476,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platform": "linux/s390x",
               "target_name": "io_docker_index_library_adminer_linux_s390x",
               "bazel_tags": []
@@ -489,7 +489,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:6913d5258e447eb36d70b1067a28bbe2fab517eb8126b8c25222bc7fccec189c",
+              "identifier": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_library_adminer_linux_amd64",
                 "@@platforms//cpu:armv7": "@io_docker_index_library_adminer_linux_arm_v7",
