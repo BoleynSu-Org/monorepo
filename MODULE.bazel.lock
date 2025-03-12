@@ -287,8 +287,8 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "9Lgr/D2NoQvo/jyBT31TCLsgnDcgdO53QO5YtoSImmQ=",
-        "usagesDigest": "pkO00L47v0BbV8BbbbQl4saUZWXzv80SIPOwUHN4Qxk=",
+        "bzlTransitiveDigest": "i5nCft/PWo0U/E8V4xF6Pn5d+SohQ1Mu9Res6se2wcc=",
+        "usagesDigest": "dC8OgtFo8ohDM4nidWp0ZtzNN13CdS1lYypvMGxDTFM=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

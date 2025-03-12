@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.2.tar.gz",
-  "integrity": "sha256-hnYUT5bdYylDM5BrJt6iOI9hytrx3qWaIl59vFLMcvo=",
-  "strip_prefix": "rules_oci-2.2.2"
-}
