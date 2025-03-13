@@ -1038,12 +1038,12 @@ DEPS = {
         },
         {
             "name": "io_docker_index_library_adminer",
-            "version": "5.0.2",
+            "version": "5.0.4",
             "registry": "index.docker.io",
             "repository": "library/adminer",
-            "tag": "5.0.2",
-            "digest": "sha256:e0a8cc24a1d603c32a161d281b0f1f6ffa22121b6df66bb1d2f61c724a3e3dab",
-            "updated_at": "2025-03-11",
+            "tag": "5.0.4",
+            "digest": "sha256:f01629adf5f21450d467e209f4daa921c443c002479aa49a68525fe2679c45e4",
+            "updated_at": "2025-03-13",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
@@ -1054,7 +1054,7 @@ DEPS = {
                 "linux/riscv64",
                 "linux/s390x",
             ],
-            "module_version": "5.0.2",
+            "module_version": "5.0.4",
         },
         {
             "name": "io_docker_index_filebrowser_filebrowser",
