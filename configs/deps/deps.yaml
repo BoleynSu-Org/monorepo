@@ -788,7 +788,7 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.0.4
-  digest: sha256:7e590fdf9e93925632b7838accb496ecaa918363cd2443969517d77bf6642250
+  digest: sha256:fed2362f71fa14cc7d57e2cf916a0160aeb8ea7ef869f67dbe478457fe1d3af4
   updated_at: '2025-03-14'
   platforms:
   - linux/amd64
