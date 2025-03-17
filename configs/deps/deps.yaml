@@ -753,15 +753,15 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: '20250316.235914'
+  version: '20250317.050843'
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: '20250316.235914'
-  digest: sha256:46209a9195017bab0b479b44ed373cd6530866eb3db7f9eaf88fbec5649f2993
+  tag: '20250317.050843'
+  digest: sha256:3b2b459e1a013f4532d133aa64f8376af780636d397b515a7052c34d3bfb5764
   updated_at: '2025-03-17'
   platforms:
   - linux/amd64
-  module_version: '20250316.235914'
+  module_version: '20250317.50843'
 - name: io_docker_index_library_mariadb
   version: 11.7.2
   registry: index.docker.io
@@ -813,37 +813,37 @@ container_deps:
   - linux/arm/v7
   module_version: 2.32.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20250316.235914'
+  version: '20250317.050843'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20250316.235914'
-  digest: sha256:3d4c52baf1187a9e79153fc2ebea3388a4d8fc0968cc73ce3ed414a273298ac4
+  tag: '20250317.050843'
+  digest: sha256:b65e81752fefd2dd26ffb0c45f6b7bcef43dcac729c5525b4c4e5b5b239b5bbf
   updated_at: '2025-03-17'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250316.235914'
+  module_version: '20250317.50843'
 - name: io_quay_boleynsu_rbe_fedora
-  version: '20250316.235914'
+  version: '20250317.050843'
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: '20250316.235914'
-  digest: sha256:97fd9456de207a77608fbec55259bb76856aa82ed82064106a195935357ad5b8
+  tag: '20250317.050843'
+  digest: sha256:edde73a97ca178be8a69b013b9f512dc526e9b671a2f719328255f68a9a4ebd4
   updated_at: '2025-03-17'
   platforms:
   - linux/amd64
-  module_version: '20250316.235914'
+  module_version: '20250317.50843'
 - name: io_quay_boleynsu_base
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:28c793bd6c16917f58f16584d918cd74470d7b8ec026260b890dbf1907ec03ae
-  version: '20250316.235914'
-  tag: '20250316.235914'
+  digest: sha256:7a3e2103318a964000c63bf5667081f84c722b0fd2d842e4c979f881265fbe9e
+  version: '20250317.050843'
+  tag: '20250317.050843'
   updated_at: '2025-03-17'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250316.235914'
+  module_version: '20250317.50843'
 
 toolchain_deps:
 - name: c
