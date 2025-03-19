@@ -189,12 +189,12 @@ bazel_deps:
   module_version: '20250317.103133'
 - name: clang_linux_x86_64
   type: http_archive
-  version: clang-llvmorg-20.1.0-fedora-41-20250316.075159-20250316.105227
+  version: clang-llvmorg-20.1.1-fedora-41-20250319.011637-20250319.062631
   version_regex: clang-llvmorg-([0-9.]*)-fedora-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: bea63b3dd2a12ca1a4ff41ddb43159aa8022a2339706dc393ab1a39ba22498f6
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-20.1.0-fedora-41-20250316.075159-20250316.105227/clang_linux_x86_64.tar.gz
-  updated_at: '2025-03-16'
-  module_version: 20.1.0.41.20250316.75159.20250316.105227
+  sha256: 2524dc873b94ea821a005fec7432f88a5b8155cfbc7949dbc03f42287ac28379
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/clang-llvmorg-20.1.1-fedora-41-20250319.011637-20250319.062631/clang_linux_x86_64.tar.gz
+  updated_at: '2025-03-19'
+  module_version: 20.1.1.41.20250319.11637.20250319.62631
 - name: bazel_features
   type: http_archive
   version: v1.26.0
