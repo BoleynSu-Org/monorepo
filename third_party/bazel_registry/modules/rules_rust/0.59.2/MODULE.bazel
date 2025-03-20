@@ -1,6 +1,6 @@
 module(
     name = 'rules_rust',
-    version = '0.59.1',
+    version = '0.59.2',
 )
 
 bazel_dep(
@@ -122,7 +122,6 @@ use_repo(
     'cargo_bazel.buildifier-darwin-arm64',
     'cargo_bazel.buildifier-linux-amd64',
     'cargo_bazel.buildifier-linux-arm64',
-    'cargo_bazel.buildifier-linux-s390x',
     'cargo_bazel.buildifier-windows-amd64.exe',
     'cui',
     'cui__anyhow-1.0.95',
@@ -133,7 +132,7 @@ use_repo(
     'cui__cargo_toml-0.21.0',
     'cui__cfg-expr-0.17.2',
     'cui__clap-4.5.26',
-    'cui__crates-index-3.6.0',
+    'cui__crates-index-3.7.0',
     'cui__glob-0.3.2',
     'cui__hex-0.4.3',
     'cui__indoc-2.0.5',

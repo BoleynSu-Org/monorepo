@@ -3624,8 +3624,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "nvv/Audl9CkujbxAlOXeTJtKOqpelWGG8O7uOHmjlvE=",
-        "usagesDigest": "4ikmpf9jN/yH1/hFGS+ZwIqSrQqRW+tI6/UHB2AjxH4=",
+        "bzlTransitiveDigest": "bV2Cxd6NP37LS8d7k7ZenduyKu32dnzRSlWndpzVex8=",
+        "usagesDigest": "VsWDZXUQBqQa0ho1SU+gICiR3/gHVjTHrV0OwJokhBc=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -3690,7 +3690,7 @@
               "binary": "cargo-bazel",
               "cargo_lockfile": "@@rules_rust+//crate_universe:Cargo.lock",
               "cargo_toml": "@@rules_rust+//crate_universe:Cargo.toml",
-              "version": "1.85.0",
+              "version": "1.85.1",
               "timeout": 900,
               "rust_toolchain_cargo_template": "@rust_host_tools//:bin/{tool}",
               "rust_toolchain_rustc_template": "@rust_host_tools//:bin/{tool}",
