@@ -23,8 +23,8 @@
     },
     "@@apple_support+//crosstool:setup.bzl%apple_cc_configure_extension": {
       "general": {
-        "bzlTransitiveDigest": "SrA4ObmIum2UsCWODYu8Os0I7Tx+YbIRpTCh5tGuwsU=",
-        "usagesDigest": "/DnDAihdyIDNStzF0O5YelU+mzxM1p/QT+e6NCg0xhM=",
+        "bzlTransitiveDigest": "gv4nokEMGNye4Jvoh7Tw0Lzs63zfklj+n4t0UegI7Ms=",
+        "usagesDigest": "nqxcU1Nxpapai48UqcLYJnFkImqvvMpYtD//StSWrxY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
