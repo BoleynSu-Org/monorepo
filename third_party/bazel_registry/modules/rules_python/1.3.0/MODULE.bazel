@@ -1,11 +1,11 @@
 module(
     name = 'rules_python',
-    version = '1.2.0',
+    version = '1.3.0',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.26.0',
+    version = '1.27.0',
 )
 
 bazel_dep(
@@ -25,7 +25,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'protobuf',
-    version = '30.1',
+    version = '30.2',
     repo_name = 'com_google_protobuf',
 )
 
@@ -97,4 +97,64 @@ bazel_dep(
     name = 'stardoc',
     version = '0.8.0',
     repo_name = 'io_bazel_stardoc',
+)
+
+uv = use_extension(
+    '//python/uv:uv.bzl',
+    'uv',
+)
+
+uv.default(
+    base_url = 'https://github.com/astral-sh/uv/releases/download',
+    manifest_filename = 'dist-manifest.json',
+    version = '0.6.3',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:macos', '@platforms//cpu:aarch64'],
+    platform = 'aarch64-apple-darwin',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:aarch64'],
+    platform = 'aarch64-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:ppc'],
+    platform = 'powerpc64-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:ppc64le'],
+    platform = 'powerpc64le-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:s390x'],
+    platform = 's390x-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:macos', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-apple-darwin',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:windows', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-pc-windows-msvc',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-unknown-linux-gnu',
+)
+
+use_repo(
+    uv,
+    'uv',
+)
+
+register_toolchains(
+    '@uv//:all',
 )

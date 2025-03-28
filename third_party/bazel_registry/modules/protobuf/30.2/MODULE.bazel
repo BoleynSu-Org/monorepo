@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '30.1',
+    version = '30.2',
     repo_name = 'com_google_protobuf',
 )
 
@@ -28,7 +28,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.26.0',
+    version = '1.27.0',
     repo_name = 'proto_bazel_features',
 )
 
@@ -66,7 +66,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '1.2.0',
+    version = '1.3.0',
 )
 
 bazel_dep(
@@ -122,20 +122,21 @@ use_repo(
     system_python = 'python_3_12',
 )
 
-maven_1 = use_extension(
+maven = use_extension(
     '@rules_jvm_external//:extensions.bzl',
     'maven',
 )
 
-maven_1.install(
-    name = 'maven',
+maven.install(
+    name = 'protobuf_maven',
     artifacts = ['com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.8.9', 'com.google.errorprone:error_prone_annotations:2.5.1', 'com.google.j2objc:j2objc-annotations:2.8', 'com.google.guava:guava:32.0.1-jre'],
+    lock_file = '//:maven_install.json',
     repositories = ['https://repo1.maven.org/maven2', 'https://repo.maven.apache.org/maven2'],
 )
 
 use_repo(
-    maven_1,
-    'maven',
+    maven,
+    'protobuf_maven',
 )
 
 cc_configure_extension = use_extension(

@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.26.0',
+    version = '1.27.0',
     repo_name = 'io_bazel_rules_go_bazel_features',
 )
 
@@ -27,7 +27,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'protobuf',
-    version = '30.1',
+    version = '30.2',
     repo_name = 'com_google_protobuf',
 )
 
