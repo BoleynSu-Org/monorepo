@@ -813,16 +813,16 @@ container_deps:
   - linux/arm/v7
   module_version: 2.32.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: '20250331.044306'
+  version: '20250401.182610'
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: '20250331.044306'
+  tag: '20250401.182610'
   digest: sha256:5d023c4cd2d667ec072f7501b815b8df410e2e206b0e65d93509a494af56f274
-  updated_at: '2025-03-31'
+  updated_at: '2025-04-01'
   platforms:
   - linux/amd64
   - linux/arm64
-  module_version: '20250331.44306'
+  module_version: '20250401.182610'
 - name: io_quay_boleynsu_rbe_fedora
   version: '20250401.155420'
   registry: quay.io
