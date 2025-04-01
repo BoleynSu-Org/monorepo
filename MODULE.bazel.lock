@@ -287,8 +287,8 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "i5nCft/PWo0U/E8V4xF6Pn5d+SohQ1Mu9Res6se2wcc=",
-        "usagesDigest": "SpXhJJ12sBDiVChIcu27hLddzMu024PJ4NafrTwS9SI=",
+        "bzlTransitiveDigest": "+TpcEqx+HTk5hj62gejKaF76B35Hh6+0ukcsMFxn/MQ=",
+        "usagesDigest": "7m+KdcUgPA0lbhPHdhm/oSVnfsv4MjIeuvhqfzBLUXA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -296,6 +296,7 @@
           "io_quay_boleynsu_ci_runner_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
@@ -309,6 +310,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_quay_boleynsu_ci_runner",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
@@ -323,6 +325,7 @@
           "io_docker_index_library_mariadb_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
@@ -335,6 +338,7 @@
           "io_docker_index_library_mariadb_linux_arm64_v8": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
@@ -347,6 +351,7 @@
           "io_docker_index_library_mariadb_linux_ppc64le": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
@@ -359,6 +364,7 @@
           "io_docker_index_library_mariadb_linux_s390x": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
@@ -372,6 +378,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_docker_index_library_mariadb",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/mariadb",
@@ -389,6 +396,7 @@
           "io_docker_index_library_adminer_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -401,6 +409,7 @@
           "io_docker_index_library_adminer_linux_arm_v6": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -413,6 +422,7 @@
           "io_docker_index_library_adminer_linux_arm_v7": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -425,6 +435,7 @@
           "io_docker_index_library_adminer_linux_arm64_v8": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -437,6 +448,7 @@
           "io_docker_index_library_adminer_linux_386": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -449,6 +461,7 @@
           "io_docker_index_library_adminer_linux_ppc64le": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -461,6 +474,7 @@
           "io_docker_index_library_adminer_linux_riscv64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -473,6 +487,7 @@
           "io_docker_index_library_adminer_linux_s390x": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -486,6 +501,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_docker_index_library_adminer",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
@@ -505,6 +521,7 @@
           "io_docker_index_filebrowser_filebrowser_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
@@ -517,6 +534,7 @@
           "io_docker_index_filebrowser_filebrowser_linux_arm64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
@@ -529,6 +547,7 @@
           "io_docker_index_filebrowser_filebrowser_linux_arm_v7": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
@@ -542,6 +561,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_docker_index_filebrowser_filebrowser",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
@@ -558,6 +578,7 @@
           "io_quay_boleynsu_oj_c99runner_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
@@ -570,6 +591,7 @@
           "io_quay_boleynsu_oj_c99runner_linux_arm64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
@@ -583,6 +605,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_quay_boleynsu_oj_c99runner",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
@@ -598,6 +621,7 @@
           "io_quay_boleynsu_rbe_fedora_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
@@ -611,6 +635,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_quay_boleynsu_rbe_fedora",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
@@ -625,6 +650,7 @@
           "io_quay_boleynsu_base_linux_amd64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
@@ -637,6 +663,7 @@
           "io_quay_boleynsu_base_linux_arm64": {
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_pull",
             "attributes": {
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
@@ -650,6 +677,7 @@
             "repoRuleId": "@@rules_oci+//oci/private:pull.bzl%oci_alias",
             "attributes": {
               "target_name": "io_quay_boleynsu_base",
+              "www_authenticate_challenges": {},
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
@@ -660,244 +688,6 @@
               },
               "bzlmod_repository": "io_quay_boleynsu_base",
               "reproducible": true
-            }
-          },
-          "bazel_features_version": {
-            "repoRuleId": "@@bazel_features+//private:version_repo.bzl%version_repo",
-            "attributes": {}
-          },
-          "bazel_features_globals": {
-            "repoRuleId": "@@bazel_features+//private:globals_repo.bzl%globals_repo",
-            "attributes": {
-              "globals": {
-                "CcSharedLibraryInfo": "6.0.0-pre.20220630.1",
-                "CcSharedLibraryHintInfo": "7.0.0-pre.20230316.2",
-                "macro": "8.0.0",
-                "PackageSpecificationInfo": "6.4.0",
-                "RunEnvironmentInfo": "5.3.0",
-                "subrule": "7.0.0",
-                "DefaultInfo": "0.0.1",
-                "__TestingOnly_NeverAvailable": "1000000000.0.0"
-              },
-              "legacy_globals": {
-                "JavaInfo": "8.0.0",
-                "JavaPluginInfo": "8.0.0",
-                "ProtoInfo": "8.0.0",
-                "PyCcLinkParamsProvider": "8.0.0",
-                "PyInfo": "8.0.0",
-                "PyRuntimeInfo": "8.0.0",
-                "cc_proto_aspect": "8.0.0"
-              }
-            }
-          },
-          "bazel_skylib": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "sha256": "9f38886a40548c6e96c106b752f242130ee11aaa068a56ba7e56f4511f33e4f2",
-              "urls": [
-                "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.6.1/bazel-skylib-1.6.1.tar.gz",
-                "https://github.com/bazelbuild/bazel-skylib/releases/download/1.6.1/bazel-skylib-1.6.1.tar.gz"
-              ]
-            }
-          },
-          "jq_darwin_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_platform_repo",
-            "attributes": {
-              "platform": "darwin_amd64",
-              "version": "1.7"
-            }
-          },
-          "jq_darwin_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_platform_repo",
-            "attributes": {
-              "platform": "darwin_arm64",
-              "version": "1.7"
-            }
-          },
-          "jq_linux_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_platform_repo",
-            "attributes": {
-              "platform": "linux_amd64",
-              "version": "1.7"
-            }
-          },
-          "jq_linux_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_platform_repo",
-            "attributes": {
-              "platform": "linux_arm64",
-              "version": "1.7"
-            }
-          },
-          "jq_windows_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_platform_repo",
-            "attributes": {
-              "platform": "windows_amd64",
-              "version": "1.7"
-            }
-          },
-          "jq": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_host_alias_repo",
-            "attributes": {}
-          },
-          "jq_toolchains": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:jq_toolchain.bzl%jq_toolchains_repo",
-            "attributes": {
-              "user_repository_name": "jq"
-            }
-          },
-          "bsd_tar_darwin_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%bsdtar_binary_repo",
-            "attributes": {
-              "platform": "darwin_amd64"
-            }
-          },
-          "bsd_tar_darwin_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%bsdtar_binary_repo",
-            "attributes": {
-              "platform": "darwin_arm64"
-            }
-          },
-          "bsd_tar_linux_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%bsdtar_binary_repo",
-            "attributes": {
-              "platform": "linux_amd64"
-            }
-          },
-          "bsd_tar_linux_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%bsdtar_binary_repo",
-            "attributes": {
-              "platform": "linux_arm64"
-            }
-          },
-          "bsd_tar_windows_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%bsdtar_binary_repo",
-            "attributes": {
-              "platform": "windows_amd64"
-            }
-          },
-          "bsd_tar_toolchains": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:tar_toolchain.bzl%tar_toolchains_repo",
-            "attributes": {
-              "user_repository_name": "bsd_tar"
-            }
-          },
-          "coreutils_darwin_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_platform_repo",
-            "attributes": {
-              "platform": "darwin_amd64",
-              "version": "0.0.27"
-            }
-          },
-          "coreutils_darwin_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_platform_repo",
-            "attributes": {
-              "platform": "darwin_arm64",
-              "version": "0.0.27"
-            }
-          },
-          "coreutils_linux_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_platform_repo",
-            "attributes": {
-              "platform": "linux_amd64",
-              "version": "0.0.27"
-            }
-          },
-          "coreutils_linux_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_platform_repo",
-            "attributes": {
-              "platform": "linux_arm64",
-              "version": "0.0.27"
-            }
-          },
-          "coreutils_windows_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_platform_repo",
-            "attributes": {
-              "platform": "windows_amd64",
-              "version": "0.0.27"
-            }
-          },
-          "coreutils_toolchains": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:coreutils_toolchain.bzl%coreutils_toolchains_repo",
-            "attributes": {
-              "user_repository_name": "coreutils"
-            }
-          },
-          "copy_to_directory_darwin_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "darwin_amd64"
-            }
-          },
-          "copy_to_directory_darwin_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "darwin_arm64"
-            }
-          },
-          "copy_to_directory_freebsd_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "freebsd_amd64"
-            }
-          },
-          "copy_to_directory_linux_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "linux_amd64"
-            }
-          },
-          "copy_to_directory_linux_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "linux_arm64"
-            }
-          },
-          "copy_to_directory_linux_s390x": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "linux_s390x"
-            }
-          },
-          "copy_to_directory_windows_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_platform_repo",
-            "attributes": {
-              "platform": "windows_amd64"
-            }
-          },
-          "copy_to_directory_toolchains": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:copy_to_directory_toolchain.bzl%copy_to_directory_toolchains_repo",
-            "attributes": {
-              "user_repository_name": "copy_to_directory"
-            }
-          },
-          "zstd_darwin_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:zstd_toolchain.bzl%zstd_binary_repo",
-            "attributes": {
-              "platform": "darwin_amd64"
-            }
-          },
-          "zstd_darwin_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:zstd_toolchain.bzl%zstd_binary_repo",
-            "attributes": {
-              "platform": "darwin_arm64"
-            }
-          },
-          "zstd_linux_amd64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:zstd_toolchain.bzl%zstd_binary_repo",
-            "attributes": {
-              "platform": "linux_amd64"
-            }
-          },
-          "zstd_linux_arm64": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:zstd_toolchain.bzl%zstd_binary_repo",
-            "attributes": {
-              "platform": "linux_arm64"
-            }
-          },
-          "zstd_toolchains": {
-            "repoRuleId": "@@aspect_bazel_lib+//lib/private:zstd_toolchain.bzl%zstd_toolchains_repo",
-            "attributes": {
-              "user_repository_name": "zstd"
             }
           },
           "oci_crane_darwin_amd64": {
