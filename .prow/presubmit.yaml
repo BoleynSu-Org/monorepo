@@ -10,6 +10,14 @@ presubmits:
     labels:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
+      initContainers:
+        - image: quay.io/boleynsu/ci-runner@sha256:a05d1abe759a54ffef67b9c497f670f01c3b014b0b3b64be6a723b5045ea42df
+          command:
+            - chown
+            - 1000:1000
+            - /home/ci-runner/.cache
+          securityContext:
+            runAsUser: 0
       containers:
         - image: quay.io/boleynsu/ci-runner@sha256:a05d1abe759a54ffef67b9c497f670f01c3b014b0b3b64be6a723b5045ea42df
           command:
@@ -41,6 +49,14 @@ presubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
       use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
     spec:
+      initContainers:
+        - image: quay.io/boleynsu/ci-runner@sha256:a05d1abe759a54ffef67b9c497f670f01c3b014b0b3b64be6a723b5045ea42df
+          command:
+            - chown
+            - 1000:1000
+            - /home/ci-runner/.cache
+          securityContext:
+            runAsUser: 0
       containers:
         - image: quay.io/boleynsu/ci-runner@sha256:a05d1abe759a54ffef67b9c497f670f01c3b014b0b3b64be6a723b5045ea42df
           command:

@@ -9,6 +9,14 @@ postsubmits:
     labels:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
+      initContainers:
+        - image: quay.io/boleynsu/ci-runner
+          command:
+            - chown
+            - 1000:1000
+            - /home/ci-runner/.cache
+          securityContext:
+            runAsUser: 0
       containers:
         - image: quay.io/boleynsu/ci-runner
           command:
