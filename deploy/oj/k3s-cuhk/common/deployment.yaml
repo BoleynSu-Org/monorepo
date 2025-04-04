@@ -275,7 +275,7 @@ spec:
             - --character-set-server=utf8mb4
             - --collation-server=utf8mb4_unicode_520_ci
             - --init-connect=SET NAMES utf8mb4
-            - --default-time-zone=Hongkong
+            - --default-time-zone=+8:00
           ports:
             - name: mariadb
               containerPort: 3306
