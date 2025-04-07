@@ -859,11 +859,11 @@ toolchain_deps:
   updated_at: '2023-05-12'
   expires_at: '2025-04-18'
 - name: python
-  version: '3.12'
-  updated_at: '2024-04-18'
-  expires_at: '2025-04-18'
+  version: '3.13'
+  updated_at: '2025-04-07'
+  expires_at: '2026-04-18'
 - name: golang
-  version: 1.23.4
-  updated_at: '2024-12-16'
-  expires_at: '2025-04-18'
+  version: 1.24.2
+  updated_at: '2025-04-07'
+  expires_at: '2026-04-18'
 
