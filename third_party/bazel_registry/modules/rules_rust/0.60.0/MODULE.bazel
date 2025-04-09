@@ -1,6 +1,6 @@
 module(
     name = 'rules_rust',
-    version = '0.59.2',
+    version = '0.60.0',
 )
 
 bazel_dep(
@@ -48,6 +48,7 @@ use_repo(
     i,
     'rrra',
     'rrra__anyhow-1.0.71',
+    'rrra__camino-1.1.9',
     'rrra__clap-4.3.11',
     'rrra__env_logger-0.10.0',
     'rrra__itertools-0.11.0',

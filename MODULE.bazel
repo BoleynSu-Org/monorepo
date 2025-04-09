@@ -494,11 +494,11 @@ DEPS = {
         {
             "name": "rules_rust",
             "type": "http_archive",
-            "version": "0.59.2",
-            "sha256": "09e17b47c0150465631aa319f2742760a43ededab2e9c012f91d0ae2eff02268",
-            "url": "https://github.com/bazelbuild/rules_rust/releases/download/0.59.2/rules_rust-0.59.2.tar.gz",
-            "updated_at": "2025-03-20",
-            "module_version": "0.59.2",
+            "version": "0.60.0",
+            "sha256": "7825214ccad7c2482cb490ac91dbc1e88b30223062796ce328aca893b74ae342",
+            "url": "https://github.com/bazelbuild/rules_rust/releases/download/0.60.0/rules_rust-0.60.0.tar.gz",
+            "updated_at": "2025-04-09",
+            "module_version": "0.60.0",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -602,15 +602,15 @@ DEPS = {
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
-            "version": "11.0.5",
-            "updated_at": "2025-03-05",
-            "module_version": "11.0.5",
+            "version": "11.0.6",
+            "updated_at": "2025-04-09",
+            "module_version": "11.0.6",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
-            "version": "11.0.5",
-            "updated_at": "2025-03-05",
-            "module_version": "11.0.5",
+            "version": "11.0.6",
+            "updated_at": "2025-04-09",
+            "module_version": "11.0.6",
         },
         {
             "name": "org.webjars:jquery",
@@ -1015,8 +1015,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/mariadb",
             "tag": "11.7.2",
-            "digest": "sha256:310d29fbb58169dcddb384b0ff138edb081e2773d6e2eceb976b3668089f2f84",
-            "updated_at": "2025-02-17",
+            "digest": "sha256:81e893032978c4bf8ad43710b7a979774ed90787fa32d199162148ce28fe3b76",
+            "updated_at": "2025-04-09",
             "platforms": [
                 "linux/amd64",
                 "linux/arm64/v8",
