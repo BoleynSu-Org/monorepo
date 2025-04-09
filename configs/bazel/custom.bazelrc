@@ -18,6 +18,10 @@ common --@rules_jvm_external//settings:stamp_manifest=false
 common --@io_bazel_rules_go//go/config:pure=true
 common --@io_bazel_rules_go//go/config:static=true
 
+# @rules_python
+common --@rules_python//python/config_settings:bootstrap_impl=script
+common --@rules_python//python/config_settings:venvs_use_declare_symlink=no
+
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
 common:remote --remote_executor=grpcs://remote.buildbuddy.io
