@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.28.0/bazel_features-v1.28.0.tar.gz",
+  "integrity": "sha256-LwV90CCYoQYJXqKRtDRCVzmKBZ6tssdMxHDeD5Zk3M0=",
+  "strip_prefix": "bazel_features-1.28.0"
+}

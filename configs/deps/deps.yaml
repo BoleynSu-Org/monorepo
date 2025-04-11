@@ -197,12 +197,12 @@ bazel_deps:
   module_version: 20.1.2.41.20250402.55222.20250402.144447
 - name: bazel_features
   type: http_archive
-  version: v1.27.0
-  sha256: 2da0aaccbd725ad61f4e35d6d75ed421bf73ec1de167458b00ffecef3cd78f6d
-  strip_prefix: bazel_features-1.27.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.27.0/bazel_features-v1.27.0.tar.gz
+  version: v1.28.0
+  sha256: 2f057dd02098a106095ea291b4344257398a059eadb2c74cc470de0f9664dccd
+  strip_prefix: bazel_features-1.28.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.28.0/bazel_features-v1.28.0.tar.gz
   github_repo: bazel-contrib/bazel_features
-  updated_at: '2025-03-28'
+  updated_at: '2025-04-11'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -217,7 +217,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.27.0
+  module_version: 1.28.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -539,9 +539,9 @@ maven_deps:
   updated_at: '2024-03-26'
   module_version: '20240325.1'
 - name: org.apache.commons:commons-text
-  version: 1.13.0
-  updated_at: '2024-12-15'
-  module_version: 1.13.0
+  version: 1.13.1
+  updated_at: '2025-04-11'
+  module_version: 1.13.1
 - name: com.google.android:annotations
   version: 4.1.1.4
   included_from: io_grpc_grpc_java
