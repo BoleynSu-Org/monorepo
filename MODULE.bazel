@@ -219,12 +219,12 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "20250407.125227",
-            "sha256": "2fb043292239cc24c0586d5f536e31505088ea9909da16514364fd82b896fc95",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20250407.125227/sysroot_linux_x86_64.tar.gz",
-            "updated_at": "2025-04-07",
+            "version": "20250413.235652",
+            "sha256": "b505140e85df60eaaae72b67b8bfb7c16755696cd0fe46d95c7421b02eff6fe7",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/20250413.235652/sysroot_linux_x86_64.tar.gz",
+            "updated_at": "2025-04-14",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
-            "module_version": "20250407.125227",
+            "module_version": "20250413.235652",
         },
         {
             "name": "clang_linux_x86_64",
