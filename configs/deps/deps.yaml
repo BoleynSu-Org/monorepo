@@ -41,12 +41,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 924153c3199e0b17ee05abc1271b85bcfb5576b59e4c07f5b60bd114116a5443
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.53.0.tar.gz
-  updated_at: '2025-02-12'
-  version: v0.53.0
-  strip_prefix: rules_go-0.53.0
-  module_version: 0.53.0
+  sha256: beaccc21f78ca8940e609f773046b3b18d5acd49718715704286e22dafacea24
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.54.0.tar.gz
+  updated_at: '2025-04-14'
+  version: v0.54.0
+  strip_prefix: rules_go-0.54.0
+  module_version: 0.54.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.5.tar.gz
@@ -118,11 +118,11 @@ bazel_deps:
   module_version: 1.4.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 8.1.1
-  url: https://github.com/bazelbuild/bazel/releases/download/8.1.1/bazel-8.1.1-installer-linux-x86_64.sh
+  version: 8.2.0
+  url: https://github.com/bazelbuild/bazel/releases/download/8.2.0/bazel-8.2.0-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: 6b6b926413a123b615597474e1bab24bddcb9d56e191ea17aaccaf29132b2534
-  updated_at: '2025-02-25'
+  sha256: b2cfee0668e3ac5a0c733e94dbe7fc48a2bf7f9a7da978c43924e1ae77abdf52
+  updated_at: '2025-04-14'
   executable: true
   override_updater:
   - type: deps_updater
@@ -138,7 +138,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 8.1.1
+  module_version: 8.2.0
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -784,12 +784,12 @@ container_deps:
     - name: update_version
       value: false
 - name: io_docker_index_library_adminer
-  version: 5.1.0
+  version: 5.2.1
   registry: index.docker.io
   repository: library/adminer
-  tag: 5.1.0
-  digest: sha256:0b26fae1673904a6fa4733951be3c3ac906e5921ba140852a8f72bdec894fa15
-  updated_at: '2025-04-12'
+  tag: 5.2.1
+  digest: sha256:f1a433dce87897f4c34a38d491fd3593fa141473b03904a863ca4288726d7804
+  updated_at: '2025-04-14'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -799,7 +799,7 @@ container_deps:
   - linux/ppc64le
   - linux/riscv64
   - linux/s390x
-  module_version: 5.1.0
+  module_version: 5.2.1
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.32.0
   registry: index.docker.io
