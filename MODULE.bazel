@@ -150,11 +150,11 @@ DEPS = {
         {
             "name": "bazel_linux_x86_64",
             "type": "http_archive",
-            "version": "8.2.0",
-            "url": "https://github.com/bazelbuild/bazel/releases/download/8.2.0/bazel-8.2.0-installer-linux-x86_64.sh",
+            "version": "8.2.1",
+            "url": "https://github.com/bazelbuild/bazel/releases/download/8.2.1/bazel-8.2.1-installer-linux-x86_64.sh",
             "archive_type": "zip",
-            "sha256": "b2cfee0668e3ac5a0c733e94dbe7fc48a2bf7f9a7da978c43924e1ae77abdf52",
-            "updated_at": "2025-04-14",
+            "sha256": "46f5182d3fbd3ed6468ab314142a519958c21988abeaecc067dac2990d22cafd",
+            "updated_at": "2025-04-17",
             "executable": True,
             "override_updater": [
                 {
@@ -173,7 +173,7 @@ DEPS = {
                 },
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
-            "module_version": "8.2.0",
+            "module_version": "8.2.1",
         },
         {
             "name": "rules_license",
