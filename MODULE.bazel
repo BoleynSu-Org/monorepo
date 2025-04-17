@@ -996,6 +996,11 @@ DEPS = {
             "override_target": "@io_grpc_grpc_java//s2a",
             "included_from": "io_grpc_grpc_java",
         },
+        {
+            "name": "com.google.s2a.proto.v2:s2a-proto",
+            "version": "0.1.1",
+            "included_from": "io_grpc_grpc_java",
+        },
     ],
     "container_deps": [
         {
