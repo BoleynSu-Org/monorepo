@@ -4,7 +4,6 @@ module(
     repo_name = 'com_google_protobuf',
 )
 
-
 bazel_dep(
     name = 'apple_support',
     version = '1.21.1',
@@ -36,8 +35,6 @@ bazel_dep(
     name = 'bazel_skylib',
     version = '1.7.1',
 )
-
-
 
 bazel_dep(
     name = 'rules_java',

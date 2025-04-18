@@ -81,8 +81,6 @@ bazel_dep(
     repo_name = 'py_absl',
 )
 
-
-
 go_sdk = use_extension(
     '@io_bazel_rules_go//go:extensions.bzl',
     'go_sdk',
