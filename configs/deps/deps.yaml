@@ -404,7 +404,6 @@ bazel_deps:
   url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20250127.1.tar.gz
   updated_at: '2025-03-18'
   module_version: '20250127.1'
-  module_file: '@boleynsu_org//third_party/abseil-cpp:repo.MODULE.bazel'
 - name: rules_rust
   type: http_archive
   version: 0.60.0
