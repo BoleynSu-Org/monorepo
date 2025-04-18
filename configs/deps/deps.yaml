@@ -104,7 +104,7 @@ bazel_deps:
   sha256: 47b58cf925b76252156da52187329d2cfede4f0f6f83416dcd9f0753592cb1f0
   strip_prefix: EditArea-0.8.2
   updated_at: '2022-07-24'
-  expires_at: '2025-04-18'
+  expires_at: '2026-04-18'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD'
   module_version: 0.8.2
@@ -234,7 +234,7 @@ bazel_deps:
   strip_prefix: zlib-1.3.1
   version: v1.3.1
   updated_at: '2024-01-22'
-  expires_at: '2026-01-22'
+  expires_at: '2026-04-18'
   module_file_content: |
     module(
         name = "zlib",
@@ -513,7 +513,7 @@ maven_deps:
   updated_at: '2022-04-09'
   # FIXME(https://github.com/BoleynSu/oj/issues/2):
   # Upgrade third-party JavaScript/stylesheet libraries
-  expires_at: '2025-04-18'
+  expires_at: '2026-04-18'
   module_version: 3.4.1
 - name: io.undertow:undertow-core
   version: 2.3.18.Final
@@ -537,6 +537,7 @@ maven_deps:
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
   version: '20240325.1'
   updated_at: '2024-03-26'
+  expires_at: '2026-04-18'
   module_version: '20240325.1'
 - name: org.apache.commons:commons-text
   version: 1.13.1
@@ -852,15 +853,15 @@ toolchain_deps:
 - name: c
   version: '17'
   updated_at: '2022-05-07'
-  expires_at: '2025-04-18'
+  expires_at: '2026-04-18'
 - name: cpp
   version: '20'
   updated_at: '2023-05-12'
-  expires_at: '2025-04-18'
+  expires_at: '2026-04-18'
 - name: java
   version: '21'
   updated_at: '2023-05-12'
-  expires_at: '2025-04-18'
+  expires_at: '2026-04-18'
 - name: python
   version: '3.13'
   updated_at: '2025-04-07'
