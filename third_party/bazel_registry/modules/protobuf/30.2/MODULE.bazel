@@ -27,7 +27,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.28.0',
+    version = '1.29.0',
     repo_name = 'proto_bazel_features',
 )
 
@@ -48,7 +48,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_kotlin',
-    version = '2.1.3',
+    version = '2.1.4',
 )
 
 bazel_dep(
@@ -68,7 +68,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_rust',
-    version = '0.60.0',
+    version = '0.61.0',
 )
 
 bazel_dep(

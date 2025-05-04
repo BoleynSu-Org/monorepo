@@ -1,12 +1,12 @@
 module(
     name = 'aspect_bazel_lib',
-    version = '2.14.0',
+    version = '2.15.3',
     bazel_compatibility = ['>=6.0.0'],
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.28.0',
+    version = '1.29.0',
 )
 
 bazel_dep(
@@ -22,7 +22,6 @@ bazel_dep(
 bazel_dep(
     name = 'stardoc',
     version = '0.8.0',
-    repo_name = 'io_bazel_stardoc',
 )
 
 toolchains = use_extension(

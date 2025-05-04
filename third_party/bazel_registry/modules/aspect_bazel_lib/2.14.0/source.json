@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/aspect-build/bazel-lib/releases/download/v2.14.0/bazel-lib-v2.14.0.tar.gz",
-  "integrity": "sha256-QLqdD2LerIcZVyPw+JGpgDp7cg17iSBpgcpVcO+d8Vs=",
-  "strip_prefix": "bazel-lib-2.14.0"
-}

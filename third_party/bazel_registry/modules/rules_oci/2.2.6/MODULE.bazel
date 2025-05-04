@@ -1,16 +1,16 @@
 module(
     name = 'rules_oci',
-    version = '2.2.5',
+    version = '2.2.6',
 )
 
 bazel_dep(
     name = 'aspect_bazel_lib',
-    version = '2.14.0',
+    version = '2.15.3',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.28.0',
+    version = '1.29.0',
 )
 
 bazel_dep(
