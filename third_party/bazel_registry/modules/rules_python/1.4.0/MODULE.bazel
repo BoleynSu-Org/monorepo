@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '1.3.0',
+    version = '1.4.0',
 )
 
 bazel_dep(
@@ -133,6 +133,11 @@ uv.default(
 uv.default(
     compatible_with = ['@platforms//os:linux', '@platforms//cpu:s390x'],
     platform = 's390x-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:riscv64'],
+    platform = 'riscv64-unknown-linux-gnu',
 )
 
 uv.default(
