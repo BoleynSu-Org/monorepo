@@ -427,12 +427,12 @@ bazel_deps:
       value: [sha256]
 - name: rules_shell
   type: http_archive
-  version: v0.4.0
-  sha256: 3e114424a5c7e4fd43e0133cc6ecdfe54e45ae8affa14fadd839f29901424043
-  strip_prefix: rules_shell-0.4.0
-  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.4.0/rules_shell-v0.4.0.tar.gz
-  updated_at: '2025-01-30'
-  module_version: 0.4.0
+  version: v0.4.1
+  sha256: bc61ef94facc78e20a645726f64756e5e285a045037c7a61f65af2941f4c25e1
+  strip_prefix: rules_shell-0.4.1
+  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.4.1/rules_shell-v0.4.1.tar.gz
+  updated_at: '2025-05-06'
+  module_version: 0.4.1
   override_updater:
   - type: deps_updater
     name: bazel_deps
