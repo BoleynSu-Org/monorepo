@@ -54,7 +54,7 @@
     },
     "@@container_structure_test+//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "QDeVW/1JCtdBEzYGdPmtY2qiE3FwTRvZokM7/P3mfV4=",
+        "bzlTransitiveDigest": "KaU9cQ15sizSnVP/0EnCEsSAvMpHKEfvHgU9oD07VeA=",
         "usagesDigest": "MYuDQ4QlarTFaaHIRIRWTce2J/li5P0ge3kgRbqSkd4=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -335,7 +335,7 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "EhazFFV5egWY4qKyI3pZ7PEPw/i3na5ZR9AHVRu7hTA=",
+        "bzlTransitiveDigest": "LN8Ji3uYUdMHl7S0YCdq2AiHxQPoOX50vf4wXe+gNeo=",
         "usagesDigest": "lrF6tGwEzDt/oVjJSwBBMqdwtXab+YTwTnCUBouujNU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},

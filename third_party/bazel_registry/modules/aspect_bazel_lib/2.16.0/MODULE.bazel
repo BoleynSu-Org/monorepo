@@ -1,6 +1,6 @@
 module(
     name = 'aspect_bazel_lib',
-    version = '2.15.3',
+    version = '2.16.0',
     bazel_compatibility = ['>=6.0.0'],
 )
 
