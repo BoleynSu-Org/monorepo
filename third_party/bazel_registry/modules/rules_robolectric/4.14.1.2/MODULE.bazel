@@ -40,5 +40,5 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '1.4.0',
+    version = '1.4.1',
 )
