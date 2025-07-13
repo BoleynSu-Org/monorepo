@@ -1,0 +1,41 @@
+module(
+    name = 'rules_cc',
+    version = '0.1.2',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.32.0',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.8.1',
+)
+
+bazel_dep(
+    name = 'platforms',
+    version = '1.0.0',
+)
+
+bazel_dep(
+    name = 'protobuf',
+    version = '31.1',
+    repo_name = 'com_google_protobuf',
+)
+
+cc_configure_extension = use_extension(
+    '//cc:extensions.bzl',
+    'cc_configure_extension',
+)
+
+use_repo(
+    cc_configure_extension,
+    'local_config_cc',
+    'local_config_cc_toolchains',
+)
+
+register_toolchains(
+    '@local_config_cc_toolchains//:all',
+    '//cc/private/toolchain/test:default_test_runner_toolchain',
+)

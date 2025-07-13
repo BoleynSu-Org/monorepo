@@ -1,0 +1,19 @@
+module(
+    name = 'bazel_skylib',
+    version = '1.8.1',
+)
+
+register_toolchains(
+    '//toolchains/unittest:cmd_toolchain',
+    '//toolchains/unittest:bash_toolchain',
+)
+
+bazel_dep(
+    name = 'platforms',
+    version = '1.0.0',
+)
+
+bazel_dep(
+    name = 'rules_license',
+    version = '1.0.0',
+)

@@ -52,7 +52,12 @@ sh_binary(
     result = repository_ctx.execute([repository_ctx.attr.python_interpreter_target, "-m", "venv", "venv"])
     if result.return_code:
         fail("failed to run python -m venv: " + result.stderr)
-    result = repository_ctx.execute(["./venv/bin/pip", "install", "pip_tools"])
+    result = repository_ctx.execute([
+        "./venv/bin/pip",
+        "install",
+        "pip < 25.1",  # FIXME: https://github.com/jazzband/pip-tools/issues/2176 - Remove the workaround after the underlying issue gets fixed.
+        "pip_tools",
+    ])
     if result.return_code:
         fail("failed to run pip: " + result.stderr)
 

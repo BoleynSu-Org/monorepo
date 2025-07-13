@@ -11,12 +11,12 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '1.4.1',
+    version = '1.5.1',
 )
 
 bazel_dep(
     name = 'bazel_skylib',
-    version = '1.7.1',
+    version = '1.8.1',
 )
 
 local_repository = use_repo_rule(

@@ -58,9 +58,9 @@ def genfile(*, name, src, out, comment = "# ", headers = None, test = True, fail
 
     if test:
         diff_test(
-            "{}.genfile.test".format(name),
-            name,
-            out,
+            name = "{}.genfile.test".format(name),
+            file1 = name,
+            file2 = out,
             failure_message = failure_message,
             **kwargs
         )

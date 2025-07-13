@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.15.1.tar.gz",
+  "integrity": "sha256-cOyAPJORXVtQn4bGPVDzgbQatw63DiYIbvw9g7behSk=",
+  "strip_prefix": "robolectric-bazel-4.15.1"
+}

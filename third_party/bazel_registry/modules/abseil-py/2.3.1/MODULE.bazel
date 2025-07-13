@@ -1,0 +1,4 @@
+module(
+    name = 'abseil-py',
+    version = '2.3.1',
+)

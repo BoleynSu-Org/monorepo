@@ -1,0 +1,4 @@
+module(
+    name = "rules_java",
+    version = "8.12.0",
+)
