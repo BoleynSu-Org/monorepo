@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.1.2.tar.gz
-  sha256: d62624b45e0912713dcd3b8e30ba6ae55418ed6bf99e6d135cd61b8addae312b
-  version: 0.1.2
-  strip_prefix: rules_cc-0.1.2
-  updated_at: '2025-07-13'
-  module_version: 0.1.2
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.1.3.tar.gz
+  sha256: 64cb81641305dcf7b3b3d5a73095ee8fe7444b26f7b72a12227d36e15cfbb6cb
+  version: 0.1.3
+  strip_prefix: rules_cc-0.1.3
+  updated_at: '2025-07-17'
+  module_version: 0.1.3
 - name: rules_java
   type: http_archive
   sha256: 3103e2a0d2233e3732e3d21dd2d6aede84aae1634e472894a2e3fdffaf3fcab2
@@ -154,10 +154,10 @@ bazel_deps:
   module_version: 1.0.0
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.33.2/bin/linux/amd64/kubectl
-  sha256: 33d0cdec6967817468f0a4a90f537dfef394dcf815d91966ca651cc118393eea
-  version: v1.33.2
-  updated_at: '2025-07-13'
+  url: https://dl.k8s.io/release/v1.33.3/bin/linux/amd64/kubectl
+  sha256: 2fcf65c64f352742dc253a25a7c95617c2aba79843d1b74e585c69fe4884afb0
+  version: v1.33.3
+  updated_at: '2025-07-17'
   executable: true
   override_updater:
   - type: shell
@@ -170,7 +170,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.33.2
+  module_version: 1.33.3
 - name: sysroot_linux_x86_64
   type: http_archive
   version: '20250504.183622'
@@ -320,12 +320,12 @@ bazel_deps:
   module_version: 2.1.8
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.19.4
-  sha256: 9a44f457810ce64ec36a244cc7c807607541ab88f2535e07e0bf2976ef4b73fe
-  strip_prefix: bazel-lib-2.19.4
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.19.4/bazel-lib-v2.19.4.tar.gz
+  version: v2.20.0
+  sha256: 3522895fa13b97e8b27e3b642045682aa4233ae1a6b278aad6a3b483501dc9f2
+  strip_prefix: bazel-lib-2.20.0
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.20.0/bazel-lib-v2.20.0.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2025-07-13'
+  updated_at: '2025-07-17'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -340,7 +340,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 2.19.4
+  module_version: 2.20.0
 - name: buildozer
   type: http_archive
   version: v8.2.0
@@ -577,8 +577,8 @@ container_deps:
   registry: index.docker.io
   repository: library/mariadb
   tag: 11.8.2
-  digest: sha256:1e4ec03d1b73af8e7a63137b8ef4820ac7d54c654a1e99eb76235f210f7f0a06
-  updated_at: '2025-07-13'
+  digest: sha256:2bcbaec92bd9d4f6591bc8103d3a8e6d0512ee2235506e47a2e129d190444405
+  updated_at: '2025-07-17'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -598,8 +598,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.3.0
-  digest: sha256:6bc678e77abcd8c7f34133f4903a4be485ec38b17df3d40a845ee56af0fcb32a
-  updated_at: '2025-07-13'
+  digest: sha256:f6cd54b6269f33f55d9a1cc1e7e76e67f42d2fad5e95fae641f4dcc1705729a1
+  updated_at: '2025-07-17'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -611,17 +611,17 @@ container_deps:
   - linux/s390x
   module_version: 5.3.0
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.40.0
+  version: v2.40.1
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.40.0
-  digest: sha256:feedeba4f2a8c6b3a6191647a4e31ee6b925123db4feae04a251343674497908
-  updated_at: '2025-07-14'
+  tag: v2.40.1
+  digest: sha256:e94ade700dfc46b08e4444ade9cd7888e28288c4e5a04cc1e4124a15a97fa943
+  updated_at: '2025-07-17'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.40.0
+  module_version: 2.40.1
 - name: io_quay_boleynsu_oj_c99runner
   version: '20250511.025850'
   registry: quay.io
