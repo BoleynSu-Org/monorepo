@@ -611,17 +611,17 @@ container_deps:
   - linux/s390x
   module_version: 5.3.0
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.40.2
+  version: v2.41.0
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.40.2
-  digest: sha256:2cd16c5d480f68e79dd3b222c6b0ec855b755a4f61b45fdaa5c3cac0d4f8d8e8
-  updated_at: '2025-07-19'
+  tag: v2.41.0
+  digest: sha256:b7e05896700acf278bc4ee90cac1e13f17d7a983dfbe5744ee3690ee11dce766
+  updated_at: '2025-07-22'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.40.2
+  module_version: 2.41.0
 - name: io_quay_boleynsu_oj_c99runner
   version: '20250719.195831'
   registry: quay.io
