@@ -666,9 +666,9 @@ DEPS = {
         },
         {
             "name": "commons-codec:commons-codec",
-            "version": "1.18.0",
-            "updated_at": "2025-01-28",
-            "module_version": "1.18.0",
+            "version": "1.19.0",
+            "updated_at": "2025-07-23",
+            "module_version": "1.19.0",
         },
         {
             "name": "org.wildfly.common:wildfly-common",
