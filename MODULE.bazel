@@ -687,9 +687,9 @@ DEPS = {
         },
         {
             "name": "org.apache.commons:commons-text",
-            "version": "1.13.1",
-            "updated_at": "2025-04-11",
-            "module_version": "1.13.1",
+            "version": "1.14.0",
+            "updated_at": "2025-07-25",
+            "module_version": "1.14.0",
         },
     ],
     "container_deps": [

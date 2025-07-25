@@ -557,9 +557,9 @@ maven_deps:
   expires_at: '2026-04-18'
   module_version: '20240325.1'
 - name: org.apache.commons:commons-text
-  version: 1.13.1
-  updated_at: '2025-04-11'
-  module_version: 1.13.1
+  version: 1.14.0
+  updated_at: '2025-07-25'
+  module_version: 1.14.0
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
