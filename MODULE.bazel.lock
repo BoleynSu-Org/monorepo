@@ -370,7 +370,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "iQZOkLD5gZw8LZ9chmHTJF8IzhJjzPejnvw6vAz6Qmk=",
-        "usagesDigest": "MuMaoBM/v8lFvPv9Bq4+yGJ+QcrjZxyNImJ4ZpzxGKg=",
+        "usagesDigest": "vnu6ihNWqnVm5T6zCshJ9OWtiEBu21gwGXh272l+/30=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -607,7 +607,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:b7e05896700acf278bc4ee90cac1e13f17d7a983dfbe5744ee3690ee11dce766",
+              "identifier": "sha256:5096c405f00f1062facc843773e2de875a1fef177bc31b8f0e4d6aeab53a1219",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_amd64",
               "bazel_tags": []
@@ -620,7 +620,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:b7e05896700acf278bc4ee90cac1e13f17d7a983dfbe5744ee3690ee11dce766",
+              "identifier": "sha256:5096c405f00f1062facc843773e2de875a1fef177bc31b8f0e4d6aeab53a1219",
               "platform": "linux/arm64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm64",
               "bazel_tags": []
@@ -633,7 +633,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:b7e05896700acf278bc4ee90cac1e13f17d7a983dfbe5744ee3690ee11dce766",
+              "identifier": "sha256:5096c405f00f1062facc843773e2de875a1fef177bc31b8f0e4d6aeab53a1219",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm_v7",
               "bazel_tags": []
@@ -647,7 +647,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:b7e05896700acf278bc4ee90cac1e13f17d7a983dfbe5744ee3690ee11dce766",
+              "identifier": "sha256:5096c405f00f1062facc843773e2de875a1fef177bc31b8f0e4d6aeab53a1219",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_filebrowser_filebrowser_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_index_filebrowser_filebrowser_linux_arm64",
@@ -993,8 +993,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "eJZZLYSunj9PsvCLsqkDDGzdydUH3B62mh56YIOBO4o=",
-        "usagesDigest": "UWnpRlkSFx6zlujUh+aOuBGwtJYbR60HyNKAvijQ99g=",
+        "bzlTransitiveDigest": "drowc8fFWyNV9YviMHeRSqKX6ZyjuaAkaCDImaXt5Xg=",
+        "usagesDigest": "3vKI8uvqTpJCf+t8aU6UD5d5cUWinWhtMjKkRpCLR+A=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
