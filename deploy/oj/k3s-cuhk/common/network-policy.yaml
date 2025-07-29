@@ -184,4 +184,4 @@ spec:
           - oj-judge
           - oj-server
     ports:
-    - port: ci-runner
+    - port: oj-runner
