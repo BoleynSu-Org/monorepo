@@ -165,8 +165,8 @@
     },
     "@@grpc-java+//:repositories.bzl%grpc_java_repositories_extension": {
       "general": {
-        "bzlTransitiveDigest": "rmIV3NKhMUCexkAKY/W9YbwMUSAhAuWSFve68vOKJ7o=",
-        "usagesDigest": "JdNcGRWhsWnjF1/qWB3oqSiUIwF0ct3Pur8VVNhqJpU=",
+        "bzlTransitiveDigest": "91oLW1k5ofwoTA0462xQ2v6ZwjlAAtMPL4zIqZrIQZs=",
+        "usagesDigest": "r7o1nliGxTf3/T/lx9mnXSoJWP8iFewqR3bMpfDl2Qo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

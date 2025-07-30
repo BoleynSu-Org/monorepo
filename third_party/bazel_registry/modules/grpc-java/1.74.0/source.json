@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/grpc/grpc-java/archive/refs/tags/v1.74.0.tar.gz",
+  "integrity": "sha256-DGAoU9IXDHEEx2eEmTWFG6r1osVR7wrdBAMZrDr+m/w=",
+  "strip_prefix": "grpc-java-1.74.0"
+}
