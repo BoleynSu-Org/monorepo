@@ -237,12 +237,12 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.32.0",
-            "sha256": "07bd2b18764cdee1e0d6ff42c9c0a6111ffcbd0c17f0de38e7f44f1519d1c0cd",
-            "strip_prefix": "bazel_features-1.32.0",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.32.0/bazel_features-v1.32.0.tar.gz",
+            "version": "v1.33.0",
+            "sha256": "c41853e3b636c533b86bf5ab4658064e6cc9db0a3bce52cbff0629e094344ca9",
+            "strip_prefix": "bazel_features-1.33.0",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.33.0/bazel_features-v1.33.0.tar.gz",
             "github_repo": "bazel-contrib/bazel_features",
-            "updated_at": "2025-07-13",
+            "updated_at": "2025-07-31",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -261,7 +261,7 @@ DEPS = {
                     ],
                 },
             ],
-            "module_version": "1.32.0",
+            "module_version": "1.33.0",
         },
         {
             "name": "com_google_protobuf",
@@ -753,14 +753,14 @@ DEPS = {
         },
         {
             "name": "io_docker_index_filebrowser_filebrowser",
-            "version": "v2.42.0",
+            "version": "v2.42.1",
             "registry": "index.docker.io",
             "repository": "filebrowser/filebrowser",
-            "tag": "v2.42.0",
-            "digest": "sha256:5096c405f00f1062facc843773e2de875a1fef177bc31b8f0e4d6aeab53a1219",
-            "updated_at": "2025-07-28",
+            "tag": "v2.42.1",
+            "digest": "sha256:875d770714b8bb536307394c667f9480ae773e6fb1bcb990baadbc49032a08ed",
+            "updated_at": "2025-07-31",
             "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7"],
-            "module_version": "2.42.0",
+            "module_version": "2.42.1",
         },
         {
             "name": "io_quay_boleynsu_oj_c99runner",
