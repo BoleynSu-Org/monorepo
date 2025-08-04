@@ -370,7 +370,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "iQZOkLD5gZw8LZ9chmHTJF8IzhJjzPejnvw6vAz6Qmk=",
-        "usagesDigest": "dtrC1rOVwYM7sOoW42QVUO/pi3vfaWqrcCYAlkfrOyg=",
+        "usagesDigest": "Rsqnl62GoXInIln1eh/1dAmRZohlSKZYufyVdD4cFxM=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -382,7 +382,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:da27d79380272e68c036e6d0290b81a783e1c71f4bce2478269891240d7a88c4",
+              "identifier": "sha256:663c95768206449d3f923da8230e7ebd9931255771a584431999e9e6bf4af24a",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_ci_runner_linux_amd64",
               "bazel_tags": []
@@ -396,7 +396,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/ci-runner",
-              "identifier": "sha256:da27d79380272e68c036e6d0290b81a783e1c71f4bce2478269891240d7a88c4",
+              "identifier": "sha256:663c95768206449d3f923da8230e7ebd9931255771a584431999e9e6bf4af24a",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_ci_runner_linux_amd64"
               },
@@ -482,7 +482,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_library_adminer_linux_amd64",
               "bazel_tags": []
@@ -495,7 +495,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/arm/v6",
               "target_name": "io_docker_index_library_adminer_linux_arm_v6",
               "bazel_tags": []
@@ -508,7 +508,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_index_library_adminer_linux_arm_v7",
               "bazel_tags": []
@@ -521,7 +521,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/arm64/v8",
               "target_name": "io_docker_index_library_adminer_linux_arm64_v8",
               "bazel_tags": []
@@ -534,7 +534,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/386",
               "target_name": "io_docker_index_library_adminer_linux_386",
               "bazel_tags": []
@@ -547,7 +547,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/ppc64le",
               "target_name": "io_docker_index_library_adminer_linux_ppc64le",
               "bazel_tags": []
@@ -560,7 +560,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/riscv64",
               "target_name": "io_docker_index_library_adminer_linux_riscv64",
               "bazel_tags": []
@@ -573,7 +573,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platform": "linux/s390x",
               "target_name": "io_docker_index_library_adminer_linux_s390x",
               "bazel_tags": []
@@ -587,7 +587,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "library/adminer",
-              "identifier": "sha256:becd3a16f17d537547d613523246125f3dd73effeb109e3cefa6124996bfbbd2",
+              "identifier": "sha256:bc5cf005678e04bb1bd87d65a2c4f16c63ac7d1ea6ae6471851cec7feac403dc",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_library_adminer_linux_amd64",
                 "@@platforms//cpu:armv7": "@io_docker_index_library_adminer_linux_arm_v7",
@@ -664,7 +664,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:5e5880fec33c8eded20ae6109b0097a35c855455d7974f291616f6a2ecb0c64e",
+              "identifier": "sha256:d456d583d319724bf250477f6608c3f743ebb31cb9954b91eee4426ce840f10c",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_amd64",
               "bazel_tags": []
@@ -677,7 +677,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:5e5880fec33c8eded20ae6109b0097a35c855455d7974f291616f6a2ecb0c64e",
+              "identifier": "sha256:d456d583d319724bf250477f6608c3f743ebb31cb9954b91eee4426ce840f10c",
               "platform": "linux/arm64/v8",
               "target_name": "io_quay_boleynsu_oj_c99runner_linux_arm64_v8",
               "bazel_tags": []
@@ -691,7 +691,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/oj-c99runner",
-              "identifier": "sha256:5e5880fec33c8eded20ae6109b0097a35c855455d7974f291616f6a2ecb0c64e",
+              "identifier": "sha256:d456d583d319724bf250477f6608c3f743ebb31cb9954b91eee4426ce840f10c",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_oj_c99runner_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_oj_c99runner_linux_arm64_v8"
@@ -707,7 +707,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:4dce389080537f058eb47380a4da7ed230f3e3f341052902d7408ef6f1727382",
+              "identifier": "sha256:3e5763026fa8d869c42d2ade6c9e61c968d6c04988e800b09376a407f3f31532",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_rbe_fedora_linux_amd64",
               "bazel_tags": []
@@ -721,7 +721,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/rbe-fedora",
-              "identifier": "sha256:4dce389080537f058eb47380a4da7ed230f3e3f341052902d7408ef6f1727382",
+              "identifier": "sha256:3e5763026fa8d869c42d2ade6c9e61c968d6c04988e800b09376a407f3f31532",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_rbe_fedora_linux_amd64"
               },
@@ -736,7 +736,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:53ba38c3af19a4ece30d638cb2376d0c21906f30abe65cb8038aec6cc622e4c7",
+              "identifier": "sha256:aca8c29457ca8b34e854fb634782481e74c0cdd2822b045686d2236353c4b73e",
               "platform": "linux/amd64",
               "target_name": "io_quay_boleynsu_base_linux_amd64",
               "bazel_tags": []
@@ -749,7 +749,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:53ba38c3af19a4ece30d638cb2376d0c21906f30abe65cb8038aec6cc622e4c7",
+              "identifier": "sha256:aca8c29457ca8b34e854fb634782481e74c0cdd2822b045686d2236353c4b73e",
               "platform": "linux/arm64/v8",
               "target_name": "io_quay_boleynsu_base_linux_arm64_v8",
               "bazel_tags": []
@@ -763,7 +763,7 @@
               "scheme": "https",
               "registry": "quay.io",
               "repository": "boleynsu/base",
-              "identifier": "sha256:53ba38c3af19a4ece30d638cb2376d0c21906f30abe65cb8038aec6cc622e4c7",
+              "identifier": "sha256:aca8c29457ca8b34e854fb634782481e74c0cdd2822b045686d2236353c4b73e",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_quay_boleynsu_base_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_quay_boleynsu_base_linux_arm64_v8"
