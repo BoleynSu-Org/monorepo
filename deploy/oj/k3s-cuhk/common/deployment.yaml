@@ -14,6 +14,7 @@ spec:
       labels:
         app: oj-server
     spec:
+      hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -117,6 +118,7 @@ spec:
       labels:
         app: oj-judge
     spec:
+      hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -188,6 +190,7 @@ spec:
       labels:
         app: oj-c99runner
     spec:
+      hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -259,6 +262,7 @@ spec:
       labels:
         app: oj-db
     spec:
+      hostUsers: false
       volumes:
         - name: data
           persistentVolumeClaim:
@@ -323,6 +327,7 @@ spec:
       labels:
         app: oj-adminer
     spec:
+      hostUsers: false
       containers:
         - name: oj-adminer
           image: index.docker.io/library/adminer
@@ -368,6 +373,7 @@ spec:
       labels:
         app: oj-filebrowser
     spec:
+      hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -381,6 +387,8 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: oj-pv-claim
+        - name: emptydir
+          emptyDir: {}
       containers:
         - name: oj-filebrowser
           volumeMounts:
@@ -390,6 +398,8 @@ spec:
             - name: data
               mountPath: /conf
               subPath: "filebrowser-conf"
+            - name: emptydir
+              mountPath: /config
           image: index.docker.io/filebrowser/filebrowser
           env:
             - name: FB_PORT
