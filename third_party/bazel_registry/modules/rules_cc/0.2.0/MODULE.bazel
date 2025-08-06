@@ -1,6 +1,6 @@
 module(
     name = 'rules_cc',
-    version = '0.1.4',
+    version = '0.2.0',
 )
 
 bazel_dep(
@@ -38,4 +38,14 @@ use_repo(
 register_toolchains(
     '@local_config_cc_toolchains//:all',
     '//cc/private/toolchain/test:default_test_runner_toolchain',
+)
+
+compatibility_proxy = use_extension(
+    '//cc:extensions.bzl',
+    'compatibility_proxy',
+)
+
+use_repo(
+    compatibility_proxy,
+    'cc_compatibility_proxy',
 )
