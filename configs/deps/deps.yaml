@@ -501,6 +501,7 @@ pip_deps:
 - name: PyYAML
   version: 6.0.2
   updated_at: '2024-08-07'
+  expires_at: '2026-08-07'
   module_version: 6.0.2
 
 maven_deps:
