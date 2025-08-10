@@ -13,12 +13,12 @@ bazel_deps:
   module_version: 0.2.0
 - name: rules_java
   type: http_archive
-  sha256: 3d2d7c377cba487bc95e09238795ae390c5aa5fd19071397a1ed3223e1e6eafd
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/8.15.0.tar.gz
-  strip_prefix: rules_java-8.15.0
-  updated_at: '2025-08-04'
-  version: 8.15.0
-  module_version: 8.15.0
+  sha256: 50f42468a5f1eb8316778aa31db5ced0410689b67e3302f6b2f3bbd7a53fdba3
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/8.15.1.tar.gz
+  strip_prefix: rules_java-8.15.1
+  updated_at: '2025-08-10'
+  version: 8.15.1
+  module_version: 8.15.1
 - name: rules_python
   type: http_archive
   sha256: fa532d635f29c038a64c8062724af700c30cf6b31174dd4fac120bc561a1a560
@@ -344,11 +344,11 @@ bazel_deps:
   module_version: 2.20.0
 - name: buildozer
   type: http_archive
-  version: v8.2.0
-  sha256: f67ed13fab991e3655f1da5cc61206054f38e90605193ada0426e67aecc34b4e
-  strip_prefix: buildozer-8.2.0
-  url: https://github.com/fmeum/buildozer/releases/download/v8.2.0/buildozer-v8.2.0.tar.gz
-  updated_at: '2025-05-04'
+  version: v8.2.1
+  sha256: aa0b9ce8b2c57562fb397935066d9f6ad2eacce12082ed40bf9c0054d8899de7
+  strip_prefix: buildozer-8.2.1
+  url: https://github.com/fmeum/buildozer/releases/download/v8.2.1/buildozer-v8.2.1.tar.gz
+  updated_at: '2025-08-10'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -363,7 +363,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 8.2.0
+  module_version: 8.2.1
 - name: rules_android
   type: http_archive
   version: v0.6.5
@@ -510,9 +510,9 @@ maven_deps:
   updated_at: '2025-07-19'
   module_version: 2.20.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.5.4
-  updated_at: '2025-07-13'
-  module_version: 3.5.4
+  version: 3.5.5
+  updated_at: '2025-08-10'
+  module_version: 3.5.5
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.10
   updated_at: '2025-08-06'
@@ -614,17 +614,17 @@ container_deps:
   - linux/s390x
   module_version: 5.3.0
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.42.2
+  version: v2.42.3
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.42.2
-  digest: sha256:45931d1aca9d2e904913b46c52cc76fc1c3d9ceb6abe6e35d7ac9a4735d2707e
-  updated_at: '2025-08-06'
+  tag: v2.42.3
+  digest: sha256:822a6851fe09f967953cb60b596a140aa84cdcc002124ae530ba5b9a70a01d2a
+  updated_at: '2025-08-10'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.42.2
+  module_version: 2.42.3
 - name: io_quay_boleynsu_oj_c99runner
   version: 42-20250804.183517
   version_regex: ([0-9.]*)-([0-9.]*)
