@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class SQL extends Config {
     private static final String DB_HOST = getOrElse("DB_HOST", "localhost");
@@ -13,21 +14,36 @@ public class SQL extends Config {
     private static final String DB_USER = getOrFail("DB_USER");
     private static final String DB_PASSWD = getOrFail("DB_PASSWD");
     private static final String DB_ROOTCA = getOrElse("DB_ROOTCA", "");
+    private static final String TZ = getOrElse("TZ", "");
 
     private static Connection connection = null;
 
+    private static String getUrl(boolean includeDbName) {
+        String url = "jdbc:mariadb://" + DB_HOST + "/";
+        if (includeDbName) {
+            url += DB_NAME;
+        }
+        ArrayList<String> params = new ArrayList<>();
+        if (!DB_ROOTCA.isEmpty()) {
+            params.add("sslMode=verify-full&&serverSslCert=" + DB_ROOTCA);
+        }
+        if (!TZ.isEmpty()) {
+            params.add("serverTimezone=" + TZ);
+        }
+        if (!params.isEmpty()) {
+            url += "?" + (String.join("&&", params));
+        }
+        return url;
+    }
+
     private static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed() || !connection.isValid(0)) {
-            String url = "jdbc:mariadb://" + DB_HOST + "/" + DB_NAME;
-            if (!DB_ROOTCA.isEmpty()) {
-                url += "?sslMode=verify-full&&serverSslCert=" + DB_ROOTCA;
-            }
             try {
-                connection = DriverManager.getConnection(url, DB_USER, DB_PASSWD);
-                connection.createStatement().execute("show tables;");
+                connection = DriverManager.getConnection(getUrl(true), DB_USER, DB_PASSWD);
+                connection.createStatement().execute("select count(*) from user;");
             } catch (SQLException e) {
                 init();
-                connection = DriverManager.getConnection(url, DB_USER, DB_PASSWD);
+                connection = DriverManager.getConnection(getUrl(true), DB_USER, DB_PASSWD);
             }
         }
         return connection;
@@ -205,7 +221,7 @@ public class SQL extends Config {
     }
 
     private static void init() throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST, DB_USER, DB_PASSWD);
+        Connection connection = DriverManager.getConnection(getUrl(false), DB_USER, DB_PASSWD);
         Statement statement = connection.createStatement();
         statement.execute("create database " + DB_NAME + ";");
         statement.execute("use " + DB_NAME + ";");
