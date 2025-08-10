@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oj-adminer-configmap
+data:
+  login-ssl.php: |
+    <?php
+    require_once('plugins/login-ssl.php');
+
+    return new AdminerLoginSsl(
+            $ssl = ["ca" => "/rootca/rootca.crt", "verify" => false]
+    );

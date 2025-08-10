@@ -21,9 +21,10 @@ spec:
     - port: http
   egress:
   - to:
+    - namespaceSelector: {}
     - podSelector:
         matchLabels:
-          app: oj-db
+          app: mariadb
     ports:
     - port: mariadb
   - to:
@@ -56,9 +57,10 @@ spec:
   - Egress
   egress:
   - to:
+    - namespaceSelector: {}
     - podSelector:
         matchLabels:
-          app: oj-db
+          app: mariadb
     ports:
     - port: mariadb
   - to:
@@ -77,30 +79,6 @@ spec:
     ports:
     - port: dns
       protocol: UDP
----
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: oj-db-network-policy
-spec:
-  podSelector:
-    matchLabels:
-      app: oj-db
-  policyTypes:
-  - Ingress
-  - Egress
-  ingress:
-  - from:
-    - podSelector:
-        matchExpressions:
-        - key: app
-          operator: In
-          values:
-          - oj-server
-          - oj-judge
-          - oj-adminer
-    ports:
-    - port: mariadb
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -125,9 +103,10 @@ spec:
     - port: http
   egress:
   - to:
+    - namespaceSelector: {}
     - podSelector:
         matchLabels:
-          app: oj-db
+          app: mariadb
     ports:
     - port: mariadb
   - to:

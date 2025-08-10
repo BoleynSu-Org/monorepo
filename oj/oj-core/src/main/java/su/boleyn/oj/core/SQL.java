@@ -12,17 +12,22 @@ public class SQL extends Config {
     private static final String DB_NAME = getOrElse("DB_NAME", "online_judge");
     private static final String DB_USER = getOrFail("DB_USER");
     private static final String DB_PASSWD = getOrFail("DB_PASSWD");
+    private static final String DB_ROOTCA = getOrElse("DB_ROOTCA", "");
 
     private static Connection connection = null;
 
     private static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed() || !connection.isValid(0)) {
+            String url = "jdbc:mariadb://" + DB_HOST + "/" + DB_NAME;
+            if (!DB_ROOTCA.isEmpty()) {
+                url += "?sslMode=verify-full&&serverSslCert=" + DB_ROOTCA;
+            }
             try {
-                connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
+                connection = DriverManager.getConnection(url, DB_USER, DB_PASSWD);
                 connection.createStatement().execute("show tables;");
             } catch (SQLException e) {
                 init();
-                connection = DriverManager.getConnection("jdbc:mariadb://" + DB_HOST + "/" + DB_NAME, DB_USER, DB_PASSWD);
+                connection = DriverManager.getConnection(url, DB_USER, DB_PASSWD);
             }
         }
         return connection;

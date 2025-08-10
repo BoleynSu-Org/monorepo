@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oj-configmap
+data:
+  DB_USER: online_judge
+  DB_HOST: mariadb-service.prod.svc.k3s-cuhk.clusters.boleyn.su
+  DB_NAME: online_judge

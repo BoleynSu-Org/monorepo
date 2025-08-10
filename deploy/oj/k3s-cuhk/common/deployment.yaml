@@ -30,6 +30,9 @@ spec:
             claimName: oj-pv-claim
         - name: workdir
           emptyDir: {}
+        - name: rootca
+          configMap:
+            name: rootca-configmap
       containers:
         - name: oj-server
           volumeMounts:
@@ -39,20 +42,23 @@ spec:
               readOnly: true
             - mountPath: /workdir
               name: workdir
+            - name: rootca
+              mountPath: /rootca
           workingDir: /workdir
           image: images_boleynsu_org_oj_oj-server
+          envFrom:
+            - configMapRef:
+                name: oj-configmap
           env:
             - name: DATA
               value: /data
-            - name: DB_HOST
-              value: oj-db-service
-            - name: DB_USER
-              value: root
             - name: DB_PASSWD
               valueFrom:
                 secretKeyRef:
                   name: oj-secret
                   key: DB_PASSWORD
+            - name: DB_ROOTCA
+              value: /rootca/rootca.crt
             - name: PORT
               value: "8080"
             - name: TZ
@@ -132,6 +138,9 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: oj-pv-claim
+        - name: rootca
+          configMap:
+            name: rootca-configmap
       containers:
         - name: oj-judge
           volumeMounts:
@@ -139,19 +148,22 @@ spec:
               mountPath: /data
               subPath: "data"
               readOnly: true
+            - name: rootca
+              mountPath: /rootca
           image: images_boleynsu_org_oj_oj-judge
+          envFrom:
+            - configMapRef:
+                name: oj-configmap
           env:
             - name: DATA
               value: /data
-            - name: DB_HOST
-              value: oj-db-service
-            - name: DB_USER
-              value: root
             - name: DB_PASSWD
               valueFrom:
                 secretKeyRef:
                   name: oj-secret
                   key: DB_PASSWORD
+            - name: DB_ROOTCA
+              value: /rootca/rootca.crt
             - name: RUNNER_HOST
               value: oj-c99runner-service
           securityContext:
@@ -249,71 +261,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oj-db
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: oj-db
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        app: oj-db
-    spec:
-      hostUsers: false
-      volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: oj-pv-claim
-      containers:
-        - name: oj-db
-          volumeMounts:
-            - name: data
-              mountPath: /var/lib/mysql
-              subPath: "db"
-          image: index.docker.io/library/mariadb
-          # utf8mb4_uca1400_ai_ci is not yet supported by PHP.
-          args:
-            - --character-set-server=utf8mb4
-            - --collation-server=utf8mb4_unicode_520_ci
-            - --init-connect=SET NAMES utf8mb4
-            - --default-time-zone=+8:00
-          ports:
-            - name: mariadb
-              containerPort: 3306
-          env:
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: oj-secret
-                  key: DB_PASSWORD
-            - name: TZ
-              value: Hongkong
-          resources:
-            requests:
-              cpu: 100m
-              memory: 256Mi
-            limits:
-              cpu: 1000m
-              memory: 1Gi
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              drop:
-                - ALL
-            seccompProfile:
-              type: RuntimeDefault
-            runAsNonRoot: true
-            runAsUser: 999
-            runAsGroup: 999
-      enableServiceLinks: false
-      automountServiceAccountToken: false
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: oj-adminer
 spec:
   replicas: 1
@@ -328,12 +275,27 @@ spec:
         app: oj-adminer
     spec:
       hostUsers: false
+      volumes:
+        - name: plugins-enabled
+          configMap:
+            name: oj-adminer-configmap
+        - name: rootca
+          configMap:
+            name: rootca-configmap
       containers:
         - name: oj-adminer
           image: index.docker.io/library/adminer
           env:
             - name: ADMINER_DEFAULT_SERVER
-              value: oj-db-service
+              valueFrom:
+                configMapKeyRef:
+                  name: oj-configmap
+                  key: DB_HOST
+          volumeMounts:
+            - name: plugins-enabled
+              mountPath: /var/www/html/plugins-enabled
+            - name: rootca
+              mountPath: /rootca
           ports:
             - name: http
               containerPort: 8080
