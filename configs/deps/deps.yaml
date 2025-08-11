@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 8.15.1
 - name: rules_python
   type: http_archive
-  sha256: fa532d635f29c038a64c8062724af700c30cf6b31174dd4fac120bc561a1a560
-  strip_prefix: rules_python-1.5.1
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.5.1.tar.gz
-  updated_at: '2025-07-13'
-  version: 1.5.1
-  module_version: 1.5.1
+  sha256: 0e68f851a6fcf317eeab5f6dc79803cb183d30c0c65fb52e2c4b731d13b73349
+  strip_prefix: rules_python-1.5.2
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.5.2.tar.gz
+  updated_at: '2025-08-11'
+  version: 1.5.2
+  module_version: 1.5.2
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -173,18 +173,18 @@ bazel_deps:
   module_version: 1.33.3
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 41-20250804.183517-20250804.224418
+  version: 41-20250811.013424-20250811.083148
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 5c8003e0755fce27b146cddd5119e28c3d2d5a63f0df3fab0a392ea2ec0d7d3b
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250804.183517-20250804.224418/sysroot_linux_x86_64.tar.gz
-  updated_at: '2025-08-05'
+  sha256: 3d2afcaaa87e7700ed372822a1d71277519d2ffc4527c29884673ad643439cb1
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250811.013424-20250811.083148/sysroot_linux_x86_64.tar.gz
+  updated_at: '2025-08-11'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 41.20250804.183517.20250804.224418
+  module_version: 41.20250811.13424.20250811.83148
 - name: clang_linux_x86_64
   type: http_archive
   version: 20.1.8-41-20250803.175522-20250804.170823
