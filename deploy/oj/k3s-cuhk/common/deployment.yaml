@@ -349,7 +349,7 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: oj-pv-claim
-        - name: emptydir
+        - name: config
           emptyDir: {}
       containers:
         - name: oj-filebrowser
@@ -357,10 +357,7 @@ spec:
             - name: data
               mountPath: /srv
               subPath: "data"
-            - name: data
-              mountPath: /conf
-              subPath: "filebrowser-conf"
-            - name: emptydir
+            - name: config
               mountPath: /config
           image: index.docker.io/filebrowser/filebrowser
           env:
@@ -369,7 +366,7 @@ spec:
             - name: FB_BASEURL
               value: /file
             - name: FB_DATABASE
-              value: /conf/filebrowser.db
+              value: /config/filebrowser.db
             - name: FB_PASSWORD
               valueFrom:
                 secretKeyRef:
