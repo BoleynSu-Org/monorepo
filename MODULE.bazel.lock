@@ -953,7 +953,7 @@
     "@@rules_python+//python/uv:uv.bzl%uv": {
       "general": {
         "bzlTransitiveDigest": "bGHlxez0Lkvq2VwrlfCLraKHiJIRHSIJb432X2+pky8=",
-        "usagesDigest": "NpiUV+X/c1CxiPtmJPhqWybdhuV/lDqN1w8O2uMmmjg=",
+        "usagesDigest": "4FQg4uUSAYXV3gvUvHtsV28NjaoGjNF9sJNQ66s1Fl8=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
