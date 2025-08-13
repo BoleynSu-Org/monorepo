@@ -196,10 +196,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.33.3/bin/linux/amd64/kubectl",
-            "sha256": "2fcf65c64f352742dc253a25a7c95617c2aba79843d1b74e585c69fe4884afb0",
-            "version": "v1.33.3",
-            "updated_at": "2025-07-17",
+            "url": "https://dl.k8s.io/release/v1.33.4/bin/linux/amd64/kubectl",
+            "sha256": "c2ba72c115d524b72aaee9aab8df8b876e1596889d2f3f27d68405262ce86ca1",
+            "version": "v1.33.4",
+            "updated_at": "2025-08-13",
             "executable": True,
             "override_updater": [
                 {
@@ -212,7 +212,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.33.3",
+            "module_version": "1.33.4",
         },
         {
             "name": "sysroot_linux_x86_64",
@@ -441,12 +441,12 @@ DEPS = {
         {
             "name": "rules_android",
             "type": "http_archive",
-            "version": "v0.6.5",
-            "sha256": "5a5182c74828da53165221987395264d4a5cee8c10c17178a0d5e123bbd1623c",
-            "strip_prefix": "rules_android-0.6.5",
-            "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.6.5.tar.gz",
-            "updated_at": "2025-07-13",
-            "module_version": "0.6.5",
+            "version": "v0.6.6",
+            "sha256": "f8f8bca6df61ea6070a0a8abc4054940b19c9fdb4fabb864e40d29d124f517f9",
+            "strip_prefix": "rules_android-0.6.6",
+            "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.6.6.tar.gz",
+            "updated_at": "2025-08-13",
+            "module_version": "0.6.6",
         },
         {
             "name": "rules_robolectric",
