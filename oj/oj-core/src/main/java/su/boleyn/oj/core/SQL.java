@@ -27,9 +27,7 @@ public class SQL extends Config {
         if (!DB_ROOTCA.isEmpty()) {
             params.add("sslMode=verify-full&&serverSslCert=" + DB_ROOTCA);
         }
-        if (!TZ.isEmpty()) {
-            params.add("serverTimezone=" + TZ);
-        }
+        params.add("connectionTimeZone=LOCAL&&forceConnectionTimeZoneToSession=true&&preserveInstants=true");
         if (!params.isEmpty()) {
             url += "?" + (String.join("&&", params));
         }

@@ -62,7 +62,7 @@ spec:
             - name: PORT
               value: "8080"
             - name: TZ
-              value: Hongkong
+              value: Aisa/Hong_Kong
             - name: RUNNER_HOST
               value: oj-c99runner-service
           resources:
