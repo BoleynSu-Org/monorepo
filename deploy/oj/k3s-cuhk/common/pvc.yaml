@@ -4,11 +4,10 @@ metadata:
   name: oj-pv-claim
   labels:
     k8s.boleyn.su/backup: restic
-  annotations:
-    k8s.boleyn.su/backup-include: "db data filebrowser-conf"
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 30Gi
+      storage: 10Gi
+  storageClassName: nfs

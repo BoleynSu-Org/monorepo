@@ -1,0 +1,29 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: oj-server-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: oj-server
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: oj-judge-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: oj-judge
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: oj-c99runner-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: oj-c99runner

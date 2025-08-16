@@ -14,7 +14,8 @@ spec:
       labels:
         app: oj-server
     spec:
-      hostUsers: false
+      # Not yet supported by NFS
+      # hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -38,7 +39,6 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /data
-              subPath: "data"
               readOnly: true
             - mountPath: /workdir
               name: workdir
@@ -124,7 +124,8 @@ spec:
       labels:
         app: oj-judge
     spec:
-      hostUsers: false
+      # Not yet supported by NFS
+      # hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -146,7 +147,6 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /data
-              subPath: "data"
               readOnly: true
             - name: rootca
               mountPath: /rootca
@@ -335,7 +335,8 @@ spec:
       labels:
         app: oj-filebrowser
     spec:
-      hostUsers: false
+      # Not yet supported by NFS
+      # hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -356,7 +357,6 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /srv
-              subPath: "data"
             - name: config
               mountPath: /config
           image: index.docker.io/filebrowser/filebrowser
@@ -412,3 +412,6 @@ spec:
               memory: 1Gi
       enableServiceLinks: false
       automountServiceAccountToken: false
+      securityContext:
+        fsGroup: 1993
+        fsGroupChangePolicy: OnRootMismatch
