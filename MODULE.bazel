@@ -268,12 +268,12 @@ DEPS = {
             "name": "com_google_protobuf",
             "module_name": "protobuf",
             "type": "http_archive",
-            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v31.1.tar.gz",
-            "sha256": "c3a0a9ece8932e31c3b736e2db18b1c42e7070cd9b881388b26d01aa71e24ca2",
-            "strip_prefix": "protobuf-31.1",
-            "version": "v31.1",
-            "updated_at": "2025-07-13",
-            "module_version": "31.1",
+            "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.0.tar.gz",
+            "sha256": "3ad017543e502ffaa9cd1f4bd4fe96cf117ce7175970f191705fa0518aff80cd",
+            "strip_prefix": "protobuf-32.0",
+            "version": "v32.0",
+            "updated_at": "2025-08-17",
+            "module_version": "32.0",
         },
         {
             "name": "zlib",
@@ -756,14 +756,14 @@ DEPS = {
         },
         {
             "name": "io_docker_index_filebrowser_filebrowser",
-            "version": "v2.42.3",
+            "version": "v2.42.5",
             "registry": "index.docker.io",
             "repository": "filebrowser/filebrowser",
-            "tag": "v2.42.3",
-            "digest": "sha256:822a6851fe09f967953cb60b596a140aa84cdcc002124ae530ba5b9a70a01d2a",
-            "updated_at": "2025-08-10",
+            "tag": "v2.42.5",
+            "digest": "sha256:8c9aefde747d181f024c9d7f16c363603a4f2b966518217c02354c07c47df25e",
+            "updated_at": "2025-08-17",
             "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7"],
-            "module_version": "2.42.3",
+            "module_version": "2.42.5",
         },
         {
             "name": "io_quay_boleynsu_oj_c99runner",
@@ -891,20 +891,19 @@ use_repo(pip, pip = "boleynsu_org_pip")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
-    name = "boleynsu_org_maven",
     artifacts = [
         "{}:{}".format(artifact["name"], artifact["version"])
         for artifact in DEPS["maven_deps"]
         if "override_target" not in artifact
     ],
     lock_file = "//:maven_install.json",
-    generate_compat_repositories = True,
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
     fail_if_repin_required = True,
+    known_contributing_modules = ["boleynsu_org", "grpc-java", "protobuf"],
 )
-use_repo(maven, unpinned_maven = "unpinned_boleynsu_org_maven", maven = "boleynsu_org_maven")
+use_repo(maven, unpinned_maven = "unpinned_maven", maven = "maven")
 
 (CLANG,) = [dep for dep in DEPS["bazel_deps"] if dep["name"] == "clang_linux_x86_64"]
 llvm = use_extension("@toolchains_llvm//toolchain/extensions:llvm.bzl", "llvm", dev_dependency = True)

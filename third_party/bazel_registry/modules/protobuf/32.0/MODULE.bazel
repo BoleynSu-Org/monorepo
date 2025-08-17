@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '31.1',
+    version = '32.0',
     repo_name = 'com_google_protobuf',
 )
 
@@ -67,6 +67,11 @@ bazel_dep(
 )
 
 bazel_dep(
+    name = 'rules_proto',
+    version = '7.1.0',
+)
+
+bazel_dep(
     name = 'rules_shell',
     version = '0.5.1',
 )
@@ -86,26 +91,22 @@ python = use_extension(
 )
 
 python.toolchain(
-    ignore_root_user_error = True,
-    is_default = False,
     python_version = '3.9',
 )
 
 python.toolchain(
-    ignore_root_user_error = True,
-    is_default = False,
     python_version = '3.10',
 )
 
 python.toolchain(
-    ignore_root_user_error = True,
-    is_default = False,
     python_version = '3.11',
 )
 
 python.toolchain(
-    ignore_root_user_error = True,
-    is_default = True,
+    python_version = '3.12',
+)
+
+python.defaults(
     python_version = '3.12',
 )
 
@@ -120,7 +121,6 @@ maven = use_extension(
 )
 
 maven.install(
-    name = 'protobuf_maven',
     artifacts = ['com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.8.9', 'com.google.errorprone:error_prone_annotations:2.5.1', 'com.google.j2objc:j2objc-annotations:2.8', 'com.google.guava:guava:32.0.1-jre'],
     lock_file = '//:maven_install.json',
     repositories = ['https://repo1.maven.org/maven2', 'https://repo.maven.apache.org/maven2'],
@@ -128,7 +128,7 @@ maven.install(
 
 use_repo(
     maven,
-    'protobuf_maven',
+    'maven',
 )
 
 cc_configure_extension = use_extension(

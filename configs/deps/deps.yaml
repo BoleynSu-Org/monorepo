@@ -219,12 +219,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v31.1.tar.gz
-  sha256: c3a0a9ece8932e31c3b736e2db18b1c42e7070cd9b881388b26d01aa71e24ca2
-  strip_prefix: protobuf-31.1
-  version: v31.1
-  updated_at: '2025-07-13'
-  module_version: '31.1'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.0.tar.gz
+  sha256: 3ad017543e502ffaa9cd1f4bd4fe96cf117ce7175970f191705fa0518aff80cd
+  strip_prefix: protobuf-32.0
+  version: v32.0
+  updated_at: '2025-08-17'
+  module_version: '32.0'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
@@ -614,17 +614,17 @@ container_deps:
   - linux/s390x
   module_version: 5.3.0
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.42.3
+  version: v2.42.5
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.42.3
-  digest: sha256:822a6851fe09f967953cb60b596a140aa84cdcc002124ae530ba5b9a70a01d2a
-  updated_at: '2025-08-10'
+  tag: v2.42.5
+  digest: sha256:8c9aefde747d181f024c9d7f16c363603a4f2b966518217c02354c07c47df25e
+  updated_at: '2025-08-17'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.42.3
+  module_version: 2.42.5
 - name: io_quay_boleynsu_oj_c99runner
   version: 42-20250813.202948
   version_regex: ([0-9.]*)-([0-9.]*)
