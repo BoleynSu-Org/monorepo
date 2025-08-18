@@ -173,18 +173,18 @@ bazel_deps:
   module_version: 1.33.4
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 41-20250811.013424-20250811.083148
+  version: 41-20250818.042830-20250818.160638
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 3d2afcaaa87e7700ed372822a1d71277519d2ffc4527c29884673ad643439cb1
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250811.013424-20250811.083148/sysroot_linux_x86_64.tar.gz
-  updated_at: '2025-08-11'
+  sha256: c21cf33ca28689a871b613518ef70a499ca547f5b9479b7c17eaf174babf34f8
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250818.042830-20250818.160638/sysroot_linux_x86_64.tar.gz
+  updated_at: '2025-08-18'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 41.20250811.13424.20250811.83148
+  module_version: 41.20250818.42830.20250818.160638
 - name: clang_linux_x86_64
   type: http_archive
   version: 20.1.8-41-20250803.175522-20250804.170823
@@ -399,12 +399,12 @@ bazel_deps:
   module_version: 1.19.3
 - name: abseil-cpp
   type: http_archive
-  version: '20250512.1'
-  sha256: 9b7a064305e9fd94d124ffa6cc358592eb42b5da588fb4e07d09254aa40086db
-  strip_prefix: abseil-cpp-20250512.1
-  url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20250512.1.tar.gz
-  updated_at: '2025-07-13'
-  module_version: '20250512.1'
+  version: '20250814.0'
+  sha256: 9b2b72d4e8367c0b843fa2bcfa2b08debbe3cee34f7aaa27de55a6cbb3e843db
+  strip_prefix: abseil-cpp-20250814.0
+  url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20250814.0.tar.gz
+  updated_at: '2025-08-18'
+  module_version: '20250814.0'
 - name: rules_rust
   type: http_archive
   version: 0.63.0
