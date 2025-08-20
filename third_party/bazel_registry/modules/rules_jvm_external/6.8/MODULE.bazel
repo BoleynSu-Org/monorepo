@@ -41,7 +41,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_shell',
-    version = '0.5.1',
+    version = '0.6.0',
 )
 
 remote_android_tools_extensions = use_extension(
