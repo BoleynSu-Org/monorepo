@@ -39,12 +39,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 287405a29d1f6e1b22d1c42c467d32926fc4620b4f5bbc2601878de046f45f8b
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.56.1.tar.gz
-  updated_at: '2025-08-04'
-  version: v0.56.1
-  strip_prefix: rules_go-0.56.1
-  module_version: 0.56.1
+  sha256: 0d53d104e604a0d01c899a5e789733dd1d87c41223a2fead3da66f4a66bd5bdc
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.57.0.tar.gz
+  updated_at: '2025-08-21'
+  version: v0.57.0
+  strip_prefix: rules_go-0.57.0
+  module_version: 0.57.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.6.tar.gz
