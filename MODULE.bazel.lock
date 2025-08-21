@@ -163,54 +163,6 @@
         ]
       }
     },
-    "@@grpc-java+//:repositories.bzl%grpc_java_repositories_extension": {
-      "general": {
-        "bzlTransitiveDigest": "91oLW1k5ofwoTA0462xQ2v6ZwjlAAtMPL4zIqZrIQZs=",
-        "usagesDigest": "r7o1nliGxTf3/T/lx9mnXSoJWP8iFewqR3bMpfDl2Qo=",
-        "recordedFileInputs": {},
-        "recordedDirentsInputs": {},
-        "envVariables": {},
-        "generatedRepoSpecs": {
-          "com_github_cncf_xds": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "strip_prefix": "xds-024c85f92f20cab567a83acc50934c7f9711d124",
-              "sha256": "5f403aa681711500ca8e62387be3e37d971977db6e88616fc21862a406430649",
-              "urls": [
-                "https://github.com/cncf/xds/archive/024c85f92f20cab567a83acc50934c7f9711d124.tar.gz"
-              ]
-            }
-          },
-          "io_grpc_grpc_proto": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "sha256": "729ac127a003836d539ed9da72a21e094aac4c4609e0481d6fc9e28a844e11af",
-              "strip_prefix": "grpc-proto-4f245d272a28a680606c0739753506880cf33b5f",
-              "urls": [
-                "https://github.com/grpc/grpc-proto/archive/4f245d272a28a680606c0739753506880cf33b5f.zip"
-              ]
-            }
-          },
-          "envoy_api": {
-            "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-            "attributes": {
-              "sha256": "ecf71817233eba19cc8b4ee14e126ffd5838065d5b5a92b2506258a42ac55199",
-              "strip_prefix": "data-plane-api-0bc95493c5e88b7b07e62758d23b39341813a827",
-              "urls": [
-                "https://github.com/envoyproxy/data-plane-api/archive/0bc95493c5e88b7b07e62758d23b39341813a827.tar.gz"
-              ]
-            }
-          }
-        },
-        "recordedRepoMappingEntries": [
-          [
-            "grpc-java+",
-            "bazel_tools",
-            "bazel_tools"
-          ]
-        ]
-      }
-    },
     "@@rules_android+//bzlmod_extensions:apksig.bzl%apksig_extension": {
       "general": {
         "bzlTransitiveDigest": "6NJSHjev77G4XUXqswn+uU8LwqBD5JUgxtcFMWhBJUQ=",

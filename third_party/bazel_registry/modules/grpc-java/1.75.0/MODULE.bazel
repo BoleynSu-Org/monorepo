@@ -1,7 +1,7 @@
 module(
     name = 'grpc-java',
     repo_name = 'io_grpc_grpc_java',
-    version = '1.74.0',
+    version = '1.75.0',
 )
 
 bazel_dep(
@@ -26,12 +26,6 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'rules_go',
-    repo_name = 'io_bazel_rules_go',
-    version = '0.56.1',
-)
-
-bazel_dep(
     name = 'rules_jvm_external',
     version = '6.8',
 )
@@ -41,24 +35,13 @@ bazel_dep(
     version = '7.1.0',
 )
 
-grpc_java_repositories_extension = use_extension(
-    '//:repositories.bzl',
-    'grpc_java_repositories_extension',
-)
-
-use_repo(
-    grpc_java_repositories_extension,
-    'com_github_cncf_xds',
-    'envoy_api',
-)
-
 maven = use_extension(
     '@rules_jvm_external//:extensions.bzl',
     'maven',
 )
 
 maven.install(
-    artifacts = ['com.google.android:annotations:4.1.1.4', 'com.google.api.grpc:proto-google-common-protos:2.51.0', 'com.google.auth:google-auth-library-credentials:1.24.1', 'com.google.auth:google-auth-library-oauth2-http:1.24.1', 'com.google.auto.value:auto-value-annotations:1.11.0', 'com.google.auto.value:auto-value:1.11.0', 'com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.11.0', 'com.google.errorprone:error_prone_annotations:2.30.0', 'com.google.guava:failureaccess:1.0.1', 'com.google.guava:guava:33.3.1-android', 'com.google.re2j:re2j:1.8', 'com.google.s2a.proto.v2:s2a-proto:0.1.1', 'com.google.truth:truth:1.4.2', 'com.squareup.okhttp:okhttp:2.7.5', 'com.squareup.okio:okio:2.10.0', 'io.netty:netty-buffer:4.1.110.Final', 'io.netty:netty-codec-http2:4.1.110.Final', 'io.netty:netty-codec-http:4.1.110.Final', 'io.netty:netty-codec-socks:4.1.110.Final', 'io.netty:netty-codec:4.1.110.Final', 'io.netty:netty-common:4.1.110.Final', 'io.netty:netty-handler-proxy:4.1.110.Final', 'io.netty:netty-handler:4.1.110.Final', 'io.netty:netty-resolver:4.1.110.Final', 'io.netty:netty-tcnative-boringssl-static:2.0.70.Final', 'io.netty:netty-tcnative-classes:2.0.70.Final', 'io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.110.Final', 'io.netty:netty-transport-native-unix-common:4.1.110.Final', 'io.netty:netty-transport:4.1.110.Final', 'io.opencensus:opencensus-api:0.31.0', 'io.opencensus:opencensus-contrib-grpc-metrics:0.31.0', 'io.perfmark:perfmark-api:0.27.0', 'junit:junit:4.13.2', 'org.checkerframework:checker-qual:3.12.0', 'org.codehaus.mojo:animal-sniffer-annotations:1.24'],
+    artifacts = ['com.google.android:annotations:4.1.1.4', 'com.google.api.grpc:proto-google-common-protos:2.59.2', 'com.google.auth:google-auth-library-credentials:1.24.1', 'com.google.auth:google-auth-library-oauth2-http:1.24.1', 'com.google.auto.value:auto-value-annotations:1.11.0', 'com.google.auto.value:auto-value:1.11.0', 'com.google.code.findbugs:jsr305:3.0.2', 'com.google.code.gson:gson:2.11.0', 'com.google.errorprone:error_prone_annotations:2.30.0', 'com.google.guava:failureaccess:1.0.1', 'com.google.guava:guava:33.3.1-android', 'com.google.re2j:re2j:1.8', 'com.google.s2a.proto.v2:s2a-proto:0.1.2', 'com.google.truth:truth:1.4.2', 'com.squareup.okhttp:okhttp:2.7.5', 'com.squareup.okio:okio:2.10.0', 'io.netty:netty-buffer:4.1.124.Final', 'io.netty:netty-codec-http2:4.1.124.Final', 'io.netty:netty-codec-http:4.1.124.Final', 'io.netty:netty-codec-socks:4.1.124.Final', 'io.netty:netty-codec:4.1.124.Final', 'io.netty:netty-common:4.1.124.Final', 'io.netty:netty-handler-proxy:4.1.124.Final', 'io.netty:netty-handler:4.1.124.Final', 'io.netty:netty-resolver:4.1.124.Final', 'io.netty:netty-tcnative-boringssl-static:2.0.70.Final', 'io.netty:netty-tcnative-classes:2.0.70.Final', 'io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.124.Final', 'io.netty:netty-transport-native-unix-common:4.1.124.Final', 'io.netty:netty-transport:4.1.124.Final', 'io.opencensus:opencensus-api:0.31.0', 'io.opencensus:opencensus-contrib-grpc-metrics:0.31.0', 'io.perfmark:perfmark-api:0.27.0', 'junit:junit:4.13.2', 'org.checkerframework:checker-qual:3.12.0', 'org.codehaus.mojo:animal-sniffer-annotations:1.24'],
     repositories = ['https://repo.maven.apache.org/maven2/'],
     strict_visibility = True,
 )
