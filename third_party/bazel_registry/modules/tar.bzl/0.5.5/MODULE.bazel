@@ -1,6 +1,11 @@
 module(
-    name = 'jq.bzl',
-    version = '0.1.0',
+    name = 'tar.bzl',
+    version = '0.5.5',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.34.0',
 )
 
 bazel_dep(
@@ -19,15 +24,15 @@ bazel_dep(
 )
 
 toolchains = use_extension(
-    '@aspect_bazel_lib//lib:extensions.bzl',
+    '//tar:extensions.bzl',
     'toolchains',
 )
 
 use_repo(
     toolchains,
-    'jq_toolchains',
+    'bsd_tar_toolchains',
 )
 
 register_toolchains(
-    '@jq_toolchains//:all',
+    '@bsd_tar_toolchains//:all',
 )

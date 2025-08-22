@@ -321,12 +321,12 @@ bazel_deps:
   module_version: 2.1.8
 - name: aspect_bazel_lib
   type: http_archive
-  version: v2.21.0
-  sha256: 6d636cfdecc7f5c1a5d82b9790fb5d5d5e8aa6ea8b53a71a75f1ba53c8d29f61
-  strip_prefix: bazel-lib-2.21.0
-  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.21.0/bazel-lib-v2.21.0.tar.gz
+  version: v2.21.1
+  sha256: f525668442e4b19ae10d77e0b5ad15de5807025f321954dfb7065c0fe2429ec1
+  strip_prefix: bazel-lib-2.21.1
+  url: https://github.com/aspect-build/bazel-lib/releases/download/v2.21.1/bazel-lib-v2.21.1.tar.gz
   github_repo: aspect-build/bazel-lib
-  updated_at: '2025-08-17'
+  updated_at: '2025-08-22'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -341,7 +341,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 2.21.0
+  module_version: 2.21.1
 - name: buildozer
   type: http_archive
   version: v8.2.1
@@ -492,6 +492,28 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
+- name: tar.bzl
+  type: http_archive
+  version: v0.5.5
+  sha256: b025c3bab92066c23d070795b0e5de9c5d339c1953d5ed98aa686e89b914866d
+  strip_prefix: tar.bzl-0.5.5
+  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.5.5/tar.bzl-v0.5.5.tar.gz
+  updated_at: '2025-08-20'
+  module_version: 0.5.5
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/bazel-contrib/tar.bzl/releases/download/${DEPS_UPDATER_version}/tar.bzl-${DEPS_UPDATER_version}.tar.gz
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256, strip_prefix]
 
 pip_deps:
 - name: ruamel.yaml
@@ -576,18 +598,18 @@ container_deps:
   - linux/amd64
   module_version: 42.20250821.184338
 - name: io_docker_index_library_mariadb
-  version: 11.8.2
+  version: 12.0.2
   registry: index.docker.io
   repository: library/mariadb
-  tag: 11.8.2
-  digest: sha256:2bcbaec92bd9d4f6591bc8103d3a8e6d0512ee2235506e47a2e129d190444405
-  updated_at: '2025-07-17'
+  tag: 12.0.2
+  digest: sha256:b30cc65b57a11a2e791ad5c06284e599fe9f1bf3fe9081a88d85bcf36389be4a
+  updated_at: '2025-08-22'
   platforms:
   - linux/amd64
   - linux/arm64/v8
   - linux/ppc64le
   - linux/s390x
-  module_version: 11.8.2
+  module_version: 12.0.2
   override_updater:
   - type: shell
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://mariadb.org/mariadb/all-releases/ | grep -o '[0-9.]\+</a></td><td>[0-9-]\+</td><td>Stable</td></tr>' | grep -o '^[0-9.]\+' | head -1)
