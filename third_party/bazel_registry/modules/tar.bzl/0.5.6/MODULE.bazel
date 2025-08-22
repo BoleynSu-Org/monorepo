@@ -1,6 +1,6 @@
 module(
     name = 'tar.bzl',
-    version = '0.5.5',
+    version = '0.5.6',
 )
 
 bazel_dep(
