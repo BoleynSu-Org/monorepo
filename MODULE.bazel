@@ -309,10 +309,10 @@ DEPS = {
         {
             "name": "apple_support",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.22.1/apple_support.1.22.1.tar.gz",
-            "sha256": "6fe50a731bd31b4af3ad7bdefff19db47b36a684e55e4b9674a7af1401349eae",
-            "version": "1.22.1",
-            "updated_at": "2025-07-13",
+            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.23.0/apple_support.1.23.0.tar.gz",
+            "sha256": "bf36532a8dedf5fc2b11d03314606743e20d462086514e9090ddd0b106e3b97a",
+            "version": "1.23.0",
+            "updated_at": "2025-08-23",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -329,7 +329,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.22.1",
+            "module_version": "1.23.0",
         },
         {
             "name": "stardoc",
@@ -359,10 +359,10 @@ DEPS = {
         {
             "name": "rules_kotlin",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v2.1.8/rules_kotlin-v2.1.8.tar.gz",
-            "sha256": "e6ca53740703a709a017bf4441f260007a6075741af65da1b79bc31ada9a570a",
-            "version": "v2.1.8",
-            "updated_at": "2025-07-13",
+            "url": "https://github.com/bazelbuild/rules_kotlin/releases/download/v2.1.9/rules_kotlin-v2.1.9.tar.gz",
+            "sha256": "21b2b350f4856000bd7e3eb55befe37219b237fb37cc3ba272588c7eee4b4cea",
+            "version": "v2.1.9",
+            "updated_at": "2025-08-23",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -379,7 +379,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "2.1.8",
+            "module_version": "2.1.9",
         },
         {
             "name": "aspect_bazel_lib",

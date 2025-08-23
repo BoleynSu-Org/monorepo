@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'apple_support',
-    version = '1.22.1',
+    version = '1.23.0',
     repo_name = 'build_bazel_apple_support',
 )
 
@@ -48,7 +48,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_kotlin',
-    version = '2.1.8',
+    version = '2.1.9',
 )
 
 bazel_dep(
