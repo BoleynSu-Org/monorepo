@@ -187,12 +187,12 @@ bazel_deps:
   module_version: 41.20250824.123022.20250824.132112
 - name: clang_linux_x86_64
   type: http_archive
-  version: 20.1.8-41-20250820.014239-20250823.015308
+  version: 20.1.8-41-20250824.132844-20250824.161736
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 9c92f6e1d5af86b39964baeb23d2df6c45a84acc8062668ac813d517e37cd4f8
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/20.1.8-41-20250820.014239-20250823.015308/clang_linux_x86_64.tar.gz
-  updated_at: '2025-08-23'
-  module_version: 20.1.8.41.20250820.14239.20250823.15308
+  sha256: 5871c3366254d956d19a3eaae18ca9fb46071ff4728fe8c18435b7d6a0179842
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/20.1.8-41-20250824.132844-20250824.161736/clang_linux_x86_64.tar.gz
+  updated_at: '2025-08-24'
+  module_version: 20.1.8.41.20250824.132844.20250824.161736
 - name: bazel_features
   type: http_archive
   version: v1.35.0
