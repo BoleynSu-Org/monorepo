@@ -587,16 +587,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 42-20250823.152520
+  version: 42-20250824.123022
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 42-20250823.152520
-  digest: sha256:2c01584263be674e5b733e8659d4da850844f21169d4ae5762e763073906eb1d
-  updated_at: '2025-08-23'
+  tag: 42-20250824.123022
+  digest: sha256:aed303a1f53a6dce6141b0cf77fe20548fda703345f8b6fdd7378657133409ce
+  updated_at: '2025-08-24'
   platforms:
   - linux/amd64
-  module_version: 42.20250823.152520
+  module_version: 42.20250824.123022
 - name: io_docker_index_library_mariadb
   version: 12.0.2
   registry: index.docker.io
@@ -648,40 +648,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.42.5
 - name: io_quay_boleynsu_oj_c99runner
-  version: 42-20250823.152520
+  version: 42-20250824.123022
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 42-20250823.152520
-  digest: sha256:8cbdb0ce73e2f9e18e8909687e1073017868a0d9095ddd34a19868c83e24a8aa
-  updated_at: '2025-08-23'
+  tag: 42-20250824.123022
+  digest: sha256:9da459a399b78d3a7189a5e6801e40dfe704e3346a2cc068a91151f54315e170
+  updated_at: '2025-08-24'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250823.152520
+  module_version: 42.20250824.123022
 - name: io_quay_boleynsu_rbe_fedora
-  version: 42-20250823.152520
+  version: 42-20250824.123022
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 42-20250823.152520
-  digest: sha256:eba7bbc4d3651e43e5617700b3af31f3d44cf8bbd43d26899bb39494ca21562d
-  updated_at: '2025-08-23'
+  tag: 42-20250824.123022
+  digest: sha256:e3e1592f4cf4db8c33f842476fef9eb8d8ddb99062620f16638df78c070df2fb
+  updated_at: '2025-08-24'
   platforms:
   - linux/amd64
-  module_version: 42.20250823.152520
+  module_version: 42.20250824.123022
 - name: io_quay_boleynsu_base
-  version: 42-20250823.152520
+  version: 42-20250824.123022
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:2f34d97e9880db45b1ba5b7a1aa35e3bcc9216495e8cb8ba8b549024248d4e3c
-  tag: 42-20250823.152520
-  updated_at: '2025-08-23'
+  digest: sha256:44bfe8bdae6c9d44ecfa0043fdb8234bb81e2213f808e1a943106d7cede9b165
+  tag: 42-20250824.123022
+  updated_at: '2025-08-24'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250823.152520
+  module_version: 42.20250824.123022
 
 toolchain_deps:
 - name: c
