@@ -1058,7 +1058,7 @@
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "n8WR0DxEQ5FgfuREm47KayUAJKtFHcMNZLKerT+ixFY=",
-        "usagesDigest": "xcXafKkdf0pA5+JdUvsSNdSfC/Yf4zTuAHjjBEVA4uc=",
+        "usagesDigest": "4owKoXUzfvBiIXjpPKZxpX6WmuwEIcQPHQ3fYarpDY0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1075,16 +1075,16 @@
               "llvm_mirror": "",
               "llvm_version": "",
               "llvm_versions": {
-                "linux-x86_64": "20.1.8"
+                "linux-x86_64": "21.1.0"
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "5871c3366254d956d19a3eaae18ca9fb46071ff4728fe8c18435b7d6a0179842"
+                "linux-x86_64": "b06e94b2a27e528999b59da3d6b413d9affed93a22c42e5b051d72b846f93650"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/20.1.8-41-20250824.132844-20250824.161736/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.0-41-20250826.180819-20250826.231216/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
@@ -1109,7 +1109,7 @@
               "link_flags": {},
               "link_libs": {},
               "llvm_versions": {
-                "linux-x86_64": "20.1.8"
+                "linux-x86_64": "21.1.0"
               },
               "opt_compile_flags": {},
               "opt_link_flags": {},
