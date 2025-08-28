@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.1.tar.gz
-  sha256: 92fed78a5a310f86c060dcaed20f396ef0198cc3d46a46fdea7c469042cf02ce
-  version: 0.2.1
-  strip_prefix: rules_cc-0.2.1
-  updated_at: '2025-08-26'
-  module_version: 0.2.1
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.2.tar.gz
+  sha256: e50f24506011841e2ac83d9733a0c7e058eb3a10a6e3e10baa9c7942ff5f4767
+  version: 0.2.2
+  strip_prefix: rules_cc-0.2.2
+  updated_at: '2025-08-28'
+  module_version: 0.2.2
 - name: rules_java
   type: http_archive
   sha256: 50f42468a5f1eb8316778aa31db5ced0410689b67e3302f6b2f3bbd7a53fdba3
@@ -587,16 +587,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 42-20250827.194421
+  version: 42-20250828.054930
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 42-20250827.194421
+  tag: 42-20250828.054930
   digest: sha256:76c522b4b4c122c4d66dacd509a10b2504562ee8c559b0279ed8e4583c309641
   updated_at: '2025-08-28'
   platforms:
   - linux/amd64
-  module_version: 42.20250827.194421
+  module_version: 42.20250828.54930
 - name: io_docker_index_library_mariadb
   version: 12.0.2
   registry: index.docker.io
@@ -648,40 +648,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.42.5
 - name: io_quay_boleynsu_oj_c99runner
-  version: 42-20250827.194421
+  version: 42-20250828.054930
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 42-20250827.194421
+  tag: 42-20250828.054930
   digest: sha256:40a3f5722b40e3e392837808fafcd74d9f9cf29d2875d9bc98543db8cacb92b1
   updated_at: '2025-08-28'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250827.194421
+  module_version: 42.20250828.54930
 - name: io_quay_boleynsu_rbe_fedora
-  version: 42-20250827.194421
+  version: 42-20250828.054930
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 42-20250827.194421
+  tag: 42-20250828.054930
   digest: sha256:101875af518a406fb1fb3ddae1319c64f6aa2b672b3466275a04f545e3dac27e
   updated_at: '2025-08-28'
   platforms:
   - linux/amd64
-  module_version: 42.20250827.194421
+  module_version: 42.20250828.54930
 - name: io_quay_boleynsu_base
-  version: 42-20250827.194421
+  version: 42-20250828.054930
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:e9f5c447cf56401eaa00daaa351a91c4c1928381e2cd29eb3673c181266003b9
-  tag: 42-20250827.194421
+  tag: 42-20250828.054930
   updated_at: '2025-08-28'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250827.194421
+  module_version: 42.20250828.54930
 
 toolchain_deps:
 - name: c
