@@ -309,10 +309,10 @@ DEPS = {
         {
             "name": "apple_support",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.23.0/apple_support.1.23.0.tar.gz",
-            "sha256": "bf36532a8dedf5fc2b11d03314606743e20d462086514e9090ddd0b106e3b97a",
-            "version": "1.23.0",
-            "updated_at": "2025-08-23",
+            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.23.1/apple_support.1.23.1.tar.gz",
+            "sha256": "ee20cc5c0bab47065473c8033d462374dd38d172406ecc8de5c8f08487943f2f",
+            "version": "1.23.1",
+            "updated_at": "2025-08-28",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -329,7 +329,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.23.0",
+            "module_version": "1.23.1",
         },
         {
             "name": "stardoc",
