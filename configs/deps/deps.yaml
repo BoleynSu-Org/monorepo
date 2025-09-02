@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.2.tar.gz
-  sha256: e50f24506011841e2ac83d9733a0c7e058eb3a10a6e3e10baa9c7942ff5f4767
-  version: 0.2.2
-  strip_prefix: rules_cc-0.2.2
-  updated_at: '2025-08-28'
-  module_version: 0.2.2
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.3.tar.gz
+  sha256: 88661aba2ad049ae0be36eca8222c1911a397c077776aba8efa42b737eaa3152
+  version: 0.2.3
+  strip_prefix: rules_cc-0.2.3
+  updated_at: '2025-09-02'
+  module_version: 0.2.3
 - name: rules_java
   type: http_archive
   sha256: da427c33247aa080db24890fae21d9aa7e6d970ca52f5307ce8aa988c92a8d57
