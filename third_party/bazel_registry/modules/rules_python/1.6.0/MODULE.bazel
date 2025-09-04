@@ -1,0 +1,275 @@
+module(
+    name = 'rules_python',
+    version = '1.6.0',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.35.0',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.8.1',
+)
+
+bazel_dep(
+    name = 'rules_cc',
+    version = '0.2.3',
+)
+
+bazel_dep(
+    name = 'platforms',
+    version = '1.0.0',
+)
+
+bazel_dep(
+    name = 'protobuf',
+    version = '32.0',
+    repo_name = 'com_google_protobuf',
+)
+
+internal_deps = use_extension(
+    '//python/private:internal_deps.bzl',
+    'internal_deps',
+)
+
+use_repo(
+    internal_deps,
+    'pypi__build',
+    'pypi__click',
+    'pypi__colorama',
+    'pypi__importlib_metadata',
+    'pypi__installer',
+    'pypi__more_itertools',
+    'pypi__packaging',
+    'pypi__pep517',
+    'pypi__pip',
+    'pypi__pip_tools',
+    'pypi__pyproject_hooks',
+    'pypi__setuptools',
+    'pypi__tomli',
+    'pypi__wheel',
+    'pypi__zipp',
+    'rules_python_internal',
+)
+
+python = use_extension(
+    '//python/extensions:python.bzl',
+    'python',
+)
+
+python.toolchain(
+    is_default = True,
+    python_version = '3.11',
+)
+
+use_repo(
+    python,
+    'python_3_11',
+    'pythons_hub',
+    python = 'python_versions',
+)
+
+register_toolchains(
+    '@pythons_hub//:all',
+)
+
+pip = use_extension(
+    '//python/extensions:pip.bzl',
+    'pip',
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:linux', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '0'},
+    marker = '',
+    os_name = 'linux',
+    platform = 'linux_x86_64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['linux_x86_64', 'manylinux_*_x86_64'],
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:linux', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'linux',
+    platform = 'linux_x86_64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['linux_x86_64', 'manylinux_*_x86_64'],
+)
+
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:linux', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '0'},
+    marker = '',
+    os_name = 'linux',
+    platform = 'linux_aarch64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['linux_aarch64', 'manylinux_*_aarch64'],
+)
+
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:linux', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'linux',
+    platform = 'linux_aarch64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['linux_aarch64', 'manylinux_*_aarch64'],
+)
+
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:osx', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '14.0'},
+    marker = '',
+    os_name = 'osx',
+    platform = 'osx_aarch64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['macosx_*_universal2', 'macosx_*_arm64'],
+)
+
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:osx', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '14.0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'osx',
+    platform = 'osx_aarch64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['macosx_*_universal2', 'macosx_*_arm64'],
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:osx', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '14.0'},
+    marker = '',
+    os_name = 'osx',
+    platform = 'osx_x86_64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['macosx_*_universal2', 'macosx_*_x86_64'],
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:osx', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '14.0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'osx',
+    platform = 'osx_x86_64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['macosx_*_universal2', 'macosx_*_x86_64'],
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:windows', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '0'},
+    marker = '',
+    os_name = 'windows',
+    platform = 'windows_x86_64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['win_amd64'],
+)
+
+pip.default(
+    arch_name = 'x86_64',
+    config_settings = ['@platforms//cpu:x86_64', '@platforms//os:windows', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'windows',
+    platform = 'windows_x86_64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['win_amd64'],
+)
+
+pip.parse(
+    download_only = False,
+    experimental_index_url = 'https://pypi.org/simple',
+    hub_name = 'rules_python_publish_deps',
+    python_version = '3.11',
+    requirements_by_platform = {'//tools/publish:requirements_darwin.txt': 'osx_*', '//tools/publish:requirements_linux.txt': 'linux_*', '//tools/publish:requirements_windows.txt': 'windows_*'},
+)
+
+use_repo(
+    pip,
+    'rules_python_publish_deps',
+)
+
+bazel_dep(
+    name = 'stardoc',
+    version = '0.8.0',
+    repo_name = 'io_bazel_stardoc',
+)
+
+uv = use_extension(
+    '//python/uv:uv.bzl',
+    'uv',
+)
+
+uv.default(
+    base_url = 'https://github.com/astral-sh/uv/releases/download',
+    manifest_filename = 'dist-manifest.json',
+    version = '0.6.3',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:macos', '@platforms//cpu:aarch64'],
+    platform = 'aarch64-apple-darwin',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:aarch64'],
+    platform = 'aarch64-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:ppc'],
+    platform = 'powerpc64-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:ppc64le'],
+    platform = 'powerpc64le-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:s390x'],
+    platform = 's390x-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:riscv64'],
+    platform = 'riscv64-unknown-linux-gnu',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:macos', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-apple-darwin',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:windows', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-pc-windows-msvc',
+)
+
+uv.default(
+    compatible_with = ['@platforms//os:linux', '@platforms//cpu:x86_64'],
+    platform = 'x86_64-unknown-linux-gnu',
+)
+
+use_repo(
+    uv,
+    'uv',
+)
+
+register_toolchains(
+    '@uv//:all',
+)

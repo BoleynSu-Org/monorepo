@@ -874,7 +874,7 @@
     "@@rules_python+//python/uv:uv.bzl%uv": {
       "general": {
         "bzlTransitiveDigest": "bGHlxez0Lkvq2VwrlfCLraKHiJIRHSIJb432X2+pky8=",
-        "usagesDigest": "va9ETYwpdy25OvZdbZMHshDBpfvhJEyo+MjGA5UEBn4=",
+        "usagesDigest": "p80sy6cYQuWxx5jhV3fOTu+N9EyIUFG9+F7UC/nhXic=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -914,8 +914,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "7PsbEzFWfWsVMkmnkdvajbbiu3nAIyvQJLQs6aH8jrk=",
-        "usagesDigest": "3vKI8uvqTpJCf+t8aU6UD5d5cUWinWhtMjKkRpCLR+A=",
+        "bzlTransitiveDigest": "v29CfxEtC4vvEUA8nhHhwNEcwjGurBj+ch1efQB5cg4=",
+        "usagesDigest": "yb456V5AYswYUM/WEjkKkxrFqiIqIQ1/8DFU5pKMbsk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -946,7 +946,6 @@
                 "@@rules_rust+//crate_universe:src/metadata/cargo_tree_rustc_wrapper.sh",
                 "@@rules_rust+//crate_universe:src/metadata/dependency.rs",
                 "@@rules_rust+//crate_universe:src/metadata/metadata_annotation.rs",
-                "@@rules_rust+//crate_universe:src/metadata/workspace_discoverer.rs",
                 "@@rules_rust+//crate_universe:src/rendering.rs",
                 "@@rules_rust+//crate_universe:src/rendering/template_engine.rs",
                 "@@rules_rust+//crate_universe:src/rendering/templates/module_bzl.j2",
