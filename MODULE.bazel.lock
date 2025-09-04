@@ -23,7 +23,7 @@
     },
     "@@container_structure_test+//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "7t40ALw9nGjzvVaHQmzqu6rtLgI/1kLBK//2igpXL8U=",
+        "bzlTransitiveDigest": "fu0LMF1AdPdumuF1XERLZi4vFnxfXTc9tIrvwCoMyTs=",
         "usagesDigest": "MYuDQ4QlarTFaaHIRIRWTce2J/li5P0ge3kgRbqSkd4=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -134,7 +134,7 @@
     },
     "@@rules_android+//bzlmod_extensions:apksig.bzl%apksig_extension": {
       "general": {
-        "bzlTransitiveDigest": "6NJSHjev77G4XUXqswn+uU8LwqBD5JUgxtcFMWhBJUQ=",
+        "bzlTransitiveDigest": "oNxmR17oNBDtqdMtQ04f77G1dxpDmcW7KbgGb9I5vp0=",
         "usagesDigest": "xq6OVkELeJvOgYo3oY/sUBsGFbcqdV+9BYiNgSPV/po=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -159,7 +159,7 @@
     },
     "@@rules_android+//bzlmod_extensions:com_android_dex.bzl%com_android_dex_extension": {
       "general": {
-        "bzlTransitiveDigest": "aDSxoLkIA0GyiHP6VPgxLuAWEmulTMkYgxvB/P0Q42g=",
+        "bzlTransitiveDigest": "Rux2kPXUP93tJLEXkVk6q0CHomvsLAuRfqBNU8xddsY=",
         "usagesDigest": "toF8IFMu98H/VU2p1sfVC5fVXVYJunpbbmtM6tOsQXY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -200,7 +200,7 @@
     },
     "@@rules_kotlin+//src/main/starlark/core/repositories:bzlmod_setup.bzl%rules_kotlin_extensions": {
       "general": {
-        "bzlTransitiveDigest": "cRBMSVZP8qIwZJjb9A1of93/NH5o150OMcFHXhF3AbY=",
+        "bzlTransitiveDigest": "BpKZEsNfgjUOuN2PY8cZR/67fJnftlcLJE4ZBh7TZ58=",
         "usagesDigest": "MuUr8937cYwHs/gXOtu14rgCs0SvEk3vOhpKwe7uBqU=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -290,7 +290,7 @@
     },
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
-        "bzlTransitiveDigest": "MObYeJgeRukG0C/KOeHNd02huv38P3KnpPsNX1OgrI4=",
+        "bzlTransitiveDigest": "wpnwi989JUEReiBka08jrHl/G2W0T5K62RMgH2FZ4c4=",
         "usagesDigest": "zWFq/5wz/LDKKwSa+sLYGs1tKKErjlo2hpXd8A+qdAg=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -873,7 +873,7 @@
     },
     "@@rules_python+//python/uv:uv.bzl%uv": {
       "general": {
-        "bzlTransitiveDigest": "bGHlxez0Lkvq2VwrlfCLraKHiJIRHSIJb432X2+pky8=",
+        "bzlTransitiveDigest": "PmZM/pIkZKEDDL68TohlKJrWPYKL5VwUw3MA7kmm6fk=",
         "usagesDigest": "p80sy6cYQuWxx5jhV3fOTu+N9EyIUFG9+F7UC/nhXic=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -914,7 +914,7 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "v29CfxEtC4vvEUA8nhHhwNEcwjGurBj+ch1efQB5cg4=",
+        "bzlTransitiveDigest": "WNMXmddxtcvVMO3hD1M32stfg7ubg2LBGYyhbh3vQQg=",
         "usagesDigest": "yb456V5AYswYUM/WEjkKkxrFqiIqIQ1/8DFU5pKMbsk=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -1056,7 +1056,7 @@
     },
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
-        "bzlTransitiveDigest": "n8WR0DxEQ5FgfuREm47KayUAJKtFHcMNZLKerT+ixFY=",
+        "bzlTransitiveDigest": "PTwbeF8xQqmjtx3TS876KgxcmuOk2HBtFj2gwBStkxA=",
         "usagesDigest": "ZhVjE6UvYtTnPLdAPYjTbCOu9iHtNOPLkNLevw+P8OY=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
