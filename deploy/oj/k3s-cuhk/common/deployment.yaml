@@ -67,11 +67,10 @@ spec:
               value: oj-c99runner-service
           resources:
             requests:
-              memory: "300Mi"
+              memory: "256Mi"
               cpu: "100m"
             limits:
               memory: "1Gi"
-              cpu: "1000m"
           ports:
             - name: http
               containerPort: 8080
@@ -179,9 +178,8 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 256Mi
+              memory: 128Mi
             limits:
-              cpu: 1000m
               memory: 1Gi
       imagePullSecrets:
         - name: registry-access-token-secret
@@ -202,7 +200,6 @@ spec:
       labels:
         app: oj-c99runner
     spec:
-      hostUsers: false
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -217,13 +214,13 @@ spec:
           image: images_boleynsu_org_oj_oj-c99runner
           resources:
             requests:
-              memory: "512Mi"
-              cpu: "1m"
+              memory: "384Mi"
+              cpu: "1010m"
               ephemeral-storage: "2Gi"
             limits:
-              memory: "1Gi"
-              cpu: "1000m"
-              ephemeral-storage: "4Gi"
+              memory: "384Mi"
+              cpu: "1010m"
+              ephemeral-storage: "2Gi"
           ports:
             - name: oj-runner
               containerPort: 1993
@@ -314,7 +311,6 @@ spec:
               cpu: 100m
               memory: 32Mi
             limits:
-              cpu: 1000m
               memory: 1Gi
       enableServiceLinks: false
       automountServiceAccountToken: false
@@ -408,7 +404,6 @@ spec:
               cpu: 100m
               memory: 32Mi
             limits:
-              cpu: 1000m
               memory: 1Gi
       enableServiceLinks: false
       automountServiceAccountToken: false
