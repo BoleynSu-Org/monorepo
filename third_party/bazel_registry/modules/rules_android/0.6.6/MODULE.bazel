@@ -56,7 +56,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_robolectric',
-    version = '4.15.1',
+    version = '4.16',
     repo_name = 'robolectric',
 )
 
