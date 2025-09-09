@@ -769,7 +769,7 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.4.0",
-            "digest": "sha256:173dbf99571758eb6e3bd13bd6777fafeece56155d8b47ad3ded0a73febcbadb",
+            "digest": "sha256:e4dd6e76b140bbae45e22cd7e9a75f90a911ab05a63f590b7eeff84d122749fe",
             "updated_at": "2025-09-09",
             "platforms": [
                 "linux/amd64",
@@ -777,6 +777,8 @@ DEPS = {
                 "linux/arm/v7",
                 "linux/arm64/v8",
                 "linux/386",
+                "linux/riscv64",
+                "linux/s390x",
             ],
             "module_version": "5.4.0",
         },
