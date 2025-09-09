@@ -625,7 +625,7 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.0
-  digest: sha256:e4dd6e76b140bbae45e22cd7e9a75f90a911ab05a63f590b7eeff84d122749fe
+  digest: sha256:3af794aede16163e72832eee3dcaf3ca87961a7d120b1a3534ff5891c5c16329
   updated_at: '2025-09-09'
   platforms:
   - linux/amd64
@@ -633,6 +633,7 @@ container_deps:
   - linux/arm/v7
   - linux/arm64/v8
   - linux/386
+  - linux/ppc64le
   - linux/riscv64
   - linux/s390x
   module_version: 5.4.0
