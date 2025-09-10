@@ -197,10 +197,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.34.0/bin/linux/amd64/kubectl",
-            "sha256": "cfda68cba5848bc3b6c6135ae2f20ba2c78de20059f68789c090166d6abc3e2c",
-            "version": "v1.34.0",
-            "updated_at": "2025-08-27",
+            "url": "https://dl.k8s.io/release/v1.34.1/bin/linux/amd64/kubectl",
+            "sha256": "7721f265e18709862655affba5343e85e1980639395d5754473dafaadcaa69e3",
+            "version": "v1.34.1",
+            "updated_at": "2025-09-10",
             "executable": True,
             "override_updater": [
                 {
@@ -213,7 +213,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.34.0",
+            "module_version": "1.34.1",
         },
         {
             "name": "sysroot_linux_x86_64",
