@@ -25,7 +25,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_shell',
-    version = '0.6.0',
+    version = '0.6.1',
 )
 
 toolchains = use_extension(
