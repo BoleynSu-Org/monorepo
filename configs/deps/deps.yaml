@@ -117,11 +117,11 @@ bazel_deps:
   module_version: 1.4.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 8.4.0
-  url: https://github.com/bazelbuild/bazel/releases/download/8.4.0/bazel-8.4.0-installer-linux-x86_64.sh
+  version: 8.4.1
+  url: https://github.com/bazelbuild/bazel/releases/download/8.4.1/bazel-8.4.1-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: a13836dcf2bbc6d7cfff4db74c0a288eb89dfcae46e14c2c4ad6c6338675a342
-  updated_at: '2025-09-04'
+  sha256: b5ac9398d1277fe3fedd593193bb0a90c4007a36b78639786e3a61a2c12f32bb
+  updated_at: '2025-09-12'
   executable: true
   override_updater:
   - type: deps_updater
@@ -137,7 +137,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 8.4.0
+  module_version: 8.4.1
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -221,12 +221,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.0.tar.gz
-  sha256: 3ad017543e502ffaa9cd1f4bd4fe96cf117ce7175970f191705fa0518aff80cd
-  strip_prefix: protobuf-32.0
-  version: v32.0
-  updated_at: '2025-08-17'
-  module_version: '32.0'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.1.tar.gz
+  sha256: d2081ab9528292f7980ef2d88d2be472453eea4222141046ad4f660874d5f24e
+  strip_prefix: protobuf-32.1
+  version: v32.1
+  updated_at: '2025-09-12'
+  module_version: '32.1'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
