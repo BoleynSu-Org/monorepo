@@ -22,7 +22,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.5',
+    version = '0.2.7',
 )
 
 apple_cc_configure_extension = use_extension(
