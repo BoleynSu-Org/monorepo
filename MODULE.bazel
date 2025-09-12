@@ -12,12 +12,12 @@ DEPS = {
         {
             "name": "rules_cc",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.7.tar.gz",
-            "sha256": "36ebed732fbdb5aafc73f4ffc0e276717ca6c4d927e967f325a45d6abc141c74",
-            "version": "0.2.7",
-            "strip_prefix": "rules_cc-0.2.7",
+            "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.8.tar.gz",
+            "sha256": "207ea073dd20a705f9e8bc5ac02f5203e9621fc672774bb1a0935aefab7aebfa",
+            "version": "0.2.8",
+            "strip_prefix": "rules_cc-0.2.8",
             "updated_at": "2025-09-12",
-            "module_version": "0.2.7",
+            "module_version": "0.2.8",
         },
         {
             "name": "rules_java",
