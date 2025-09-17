@@ -10,7 +10,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'aspect_bazel_lib',
-    version = '2.21.1',
+    version = '2.21.2',
 )
 
 bazel_dep(
