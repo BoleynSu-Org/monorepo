@@ -409,11 +409,11 @@ bazel_deps:
   module_version: '20250814.0'
 - name: rules_rust
   type: http_archive
-  version: 0.64.0
-  sha256: d861fbeba9f04333a0ae69e448ee83d6917f242ddbb7fe35c68fc212a6aba546
-  url: https://github.com/bazelbuild/rules_rust/releases/download/0.64.0/rules_rust-0.64.0.tar.gz
-  updated_at: '2025-09-04'
-  module_version: 0.64.0
+  version: 0.65.0
+  sha256: 62b9c7fdff230a912a18053e91e36a6ae73e41275ef5e82d7055ea3ed26e79ee
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.65.0/rules_rust-0.65.0.tar.gz
+  updated_at: '2025-09-17'
+  module_version: 0.65.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
