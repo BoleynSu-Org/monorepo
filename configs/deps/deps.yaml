@@ -175,18 +175,18 @@ bazel_deps:
   module_version: 1.34.1
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 41-20250915.140656-20250915.185507
+  version: 41-20250922.132622-20250922.194839
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: e681009deaa30f6b5ce24bd4d80aaeb52c953ca7c31d543dd1ec3289f30c5a5e
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250915.140656-20250915.185507/sysroot_linux_x86_64.tar.gz
-  updated_at: '2025-09-15'
+  sha256: 93b3204322ceb4cee6ea5578704ca60672c9986977599b6b74de6c61c301a86b
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20250922.132622-20250922.194839/sysroot_linux_x86_64.tar.gz
+  updated_at: '2025-09-22'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 41.20250915.140656.20250915.185507
+  module_version: 41.20250922.132622.20250922.194839
 - name: clang_linux_x86_64
   type: http_archive
   version: 21.1.1-41-20250910.123327-20250910.163506
