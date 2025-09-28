@@ -181,6 +181,7 @@ DEPS = {
             "strip_prefix": "rules_license-1.0.0",
             "url": "https://github.com/bazelbuild/rules_license/archive/refs/tags/1.0.0.tar.gz",
             "updated_at": "2024-09-05",
+            "expires_at": "2026-09-05",
             "version": "1.0.0",
             "module_version": "1.0.0",
         },
