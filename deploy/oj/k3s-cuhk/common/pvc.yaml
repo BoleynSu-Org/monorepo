@@ -4,6 +4,9 @@ metadata:
   name: oj-pv-claim
   labels:
     k8s.boleyn.su/backup: restic
+  annotations:
+    k8s.boleyn.su/backup-uid: "1993"
+    k8s.boleyn.su/backup-gid: "1993"
 spec:
   accessModes:
     - ReadWriteMany
