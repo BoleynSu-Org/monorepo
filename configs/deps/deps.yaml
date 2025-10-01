@@ -117,11 +117,11 @@ bazel_deps:
   module_version: 1.4.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 8.4.1
-  url: https://github.com/bazelbuild/bazel/releases/download/8.4.1/bazel-8.4.1-installer-linux-x86_64.sh
+  version: 8.4.2
+  url: https://github.com/bazelbuild/bazel/releases/download/8.4.2/bazel-8.4.2-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: b5ac9398d1277fe3fedd593193bb0a90c4007a36b78639786e3a61a2c12f32bb
-  updated_at: '2025-09-12'
+  sha256: f6ca88cd58759c94a65bfdc1b28b23f41213e3ec6211ce3f96494669c1672e5e
+  updated_at: '2025-10-01'
   executable: true
   override_updater:
   - type: deps_updater
@@ -137,7 +137,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 8.4.1
+  module_version: 8.4.2
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -394,12 +394,12 @@ bazel_deps:
   module_version: 2.3.1
 - name: container_structure_test
   type: http_archive
-  version: v1.20.0
-  sha256: 7c5a492941c51e074edf6ea8af8ab7e77f695a89a27c7617c4ddbb3641a650ab
-  strip_prefix: container-structure-test-1.20.0
-  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.20.0.tar.gz
-  updated_at: '2025-09-22'
-  module_version: 1.20.0
+  version: v1.21.0
+  sha256: cba0e1a7c591bfc09b265c527cf2b4408acfa4983e1db6e1fc65f4fd0319a462
+  strip_prefix: container-structure-test-1.21.0
+  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.21.0.tar.gz
+  updated_at: '2025-10-01'
+  module_version: 1.21.0
 - name: abseil-cpp
   type: http_archive
   version: '20250814.1'
@@ -589,23 +589,23 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 42-20250929.050426
+  version: 42-20251001.174431
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 42-20250929.050426
+  tag: 42-20251001.174431
   digest: sha256:e7d899c3fddf4e45cdf98f5102fb30ba468c2aee4da0709e8fa722b84e194797
-  updated_at: '2025-09-29'
+  updated_at: '2025-10-01'
   platforms:
   - linux/amd64
-  module_version: 42.20250929.50426
+  module_version: 42.20251001.174431
 - name: io_docker_index_library_mariadb
   version: 12.0.2
   registry: index.docker.io
   repository: library/mariadb
   tag: 12.0.2
-  digest: sha256:b30cc65b57a11a2e791ad5c06284e599fe9f1bf3fe9081a88d85bcf36389be4a
-  updated_at: '2025-08-22'
+  digest: sha256:8a061ef9813cf960f94a262930a32b190c3fbe5c8d3ab58456ef1df4b90fd5dc
+  updated_at: '2025-10-01'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -650,40 +650,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.44.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: 42-20250929.050426
+  version: 42-20251001.174431
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 42-20250929.050426
+  tag: 42-20251001.174431
   digest: sha256:3c1c347a69b09b44cc90786d20e6edf075bdd7e91918c260cae29a813c985700
-  updated_at: '2025-09-29'
+  updated_at: '2025-10-01'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250929.50426
+  module_version: 42.20251001.174431
 - name: io_quay_boleynsu_rbe_fedora
-  version: 42-20250929.050426
+  version: 42-20251001.174431
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 42-20250929.050426
+  tag: 42-20251001.174431
   digest: sha256:610b8f1b7cbeb53b6b1d31600beadbdd787664674812481c44bff77bd9168ecf
-  updated_at: '2025-09-29'
+  updated_at: '2025-10-01'
   platforms:
   - linux/amd64
-  module_version: 42.20250929.50426
+  module_version: 42.20251001.174431
 - name: io_quay_boleynsu_base
-  version: 42-20250929.050426
+  version: 42-20251001.174431
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:e975899f64233f4941de9da6100fa56b918366d1a704bb86541517686d2e7d09
-  tag: 42-20250929.050426
-  updated_at: '2025-09-29'
+  tag: 42-20251001.174431
+  updated_at: '2025-10-01'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20250929.50426
+  module_version: 42.20251001.174431
 
 toolchain_deps:
 - name: c

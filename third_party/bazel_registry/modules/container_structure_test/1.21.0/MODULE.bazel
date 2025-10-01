@@ -1,6 +1,6 @@
 module(
     name = 'container_structure_test',
-    version = '1.20.0',
+    version = '1.21.0',
 )
 
 bazel_dep(
