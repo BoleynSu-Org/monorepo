@@ -23,8 +23,8 @@
     },
     "@@container_structure_test+//:repositories.bzl%extension": {
       "general": {
-        "bzlTransitiveDigest": "o+C3qZLQI/X3FYl2C9RBuSdZQnqeEXQ5F6/6DQqkeIM=",
-        "usagesDigest": "Y+7Tt3qhNnKcfYloHKHLb8AHeQ9aOAQhDiMe5AI2cFQ=",
+        "bzlTransitiveDigest": "oj9LqylDJhUgzT0peiokZgpDGMKG5NfSUUfvrM6FVgo=",
+        "usagesDigest": "8d+ZuFwH5T5O/U/YnFqYCPSzbjKyqQhsTmz4UuQ9ti0=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},

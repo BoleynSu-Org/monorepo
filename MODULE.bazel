@@ -474,12 +474,12 @@ DEPS = {
         {
             "name": "container_structure_test",
             "type": "http_archive",
-            "version": "v1.21.0",
-            "sha256": "cba0e1a7c591bfc09b265c527cf2b4408acfa4983e1db6e1fc65f4fd0319a462",
-            "strip_prefix": "container-structure-test-1.21.0",
-            "url": "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.21.0.tar.gz",
+            "version": "v1.21.1",
+            "sha256": "e29075885dac64ae88ef44d6d37b6f8f7e1cf6aa6cb298f641ce96fc279270bc",
+            "strip_prefix": "container-structure-test-1.21.1",
+            "url": "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.21.1.tar.gz",
             "updated_at": "2025-10-01",
-            "module_version": "1.21.0",
+            "module_version": "1.21.1",
         },
         {
             "name": "abseil-cpp",

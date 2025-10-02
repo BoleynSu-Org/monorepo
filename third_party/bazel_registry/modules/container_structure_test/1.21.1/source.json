@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.21.1.tar.gz",
+  "integrity": "sha256-4pB1iF2sZK6I70TW03tvj34c9qpsspj2Qc6W/CeScLw=",
+  "strip_prefix": "container-structure-test-1.21.1"
+}
