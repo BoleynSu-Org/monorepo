@@ -230,12 +230,12 @@ DEPS = {
         {
             "name": "clang_linux_x86_64",
             "type": "http_archive",
-            "version": "21.1.2-41-20250923.215201-20250924.080657",
+            "version": "21.1.2-41-20251004.155012-20251004.193257",
             "version_regex": "([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "261c5d8751019f52de0dd457b6ecf363ae9f2630c03a14b3766f7b8dc4deeb5d",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.2-41-20250923.215201-20250924.080657/clang_linux_x86_64.tar.gz",
-            "updated_at": "2025-09-24",
-            "module_version": "21.1.2.41.20250923.215201.20250924.80657",
+            "sha256": "4f66358e080a5f3efb062e1e9a2aa4c404c6f4de9d5c51104b826d3acb33c5e6",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.2-41-20251004.155012-20251004.193257/clang_linux_x86_64.tar.gz",
+            "updated_at": "2025-10-05",
+            "module_version": "21.1.2.41.20251004.155012.20251004.193257",
         },
         {
             "name": "bazel_features",
