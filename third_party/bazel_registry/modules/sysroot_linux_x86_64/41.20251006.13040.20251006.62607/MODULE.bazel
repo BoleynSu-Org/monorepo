@@ -1,0 +1,4 @@
+module(
+    name = 'sysroot_linux_x86_64',
+    version = '41.20251006.13040.20251006.62607',
+)
