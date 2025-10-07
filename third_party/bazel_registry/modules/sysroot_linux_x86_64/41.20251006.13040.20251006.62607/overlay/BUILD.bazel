@@ -1,0 +1,5 @@
+filegroup(
+    name = "sysroot",
+    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
+    visibility = ["//visibility:public"],
+)

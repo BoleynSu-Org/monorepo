@@ -1,8 +1,0 @@
---- /dev/null
-+++ BUILD.bazel
-@@ -0,0 +1,5 @@
-+filegroup(
-+    name = "sysroot",
-+    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
-+    visibility = ["//visibility:public"],
-+)
