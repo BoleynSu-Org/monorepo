@@ -27,7 +27,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.36.0',
+    version = '1.37.0',
     repo_name = 'proto_bazel_features',
 )
 
