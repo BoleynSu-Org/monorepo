@@ -410,11 +410,11 @@ bazel_deps:
   module_version: '20250814.1'
 - name: rules_rust
   type: http_archive
-  version: 0.65.0
-  sha256: 62b9c7fdff230a912a18053e91e36a6ae73e41275ef5e82d7055ea3ed26e79ee
-  url: https://github.com/bazelbuild/rules_rust/releases/download/0.65.0/rules_rust-0.65.0.tar.gz
-  updated_at: '2025-09-17'
-  module_version: 0.65.0
+  version: 0.66.0
+  sha256: e4a829fb971972b2684ce52af4217a28974db01db3373bd833d52760ca18e657
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.66.0/rules_rust-0.66.0.tar.gz
+  updated_at: '2025-10-08'
+  module_version: 0.66.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -538,13 +538,13 @@ maven_deps:
   updated_at: '2025-09-11'
   module_version: 3.5.6
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.11
-  updated_at: '2025-09-07'
-  module_version: 11.0.11
+  version: 11.0.12
+  updated_at: '2025-10-08'
+  module_version: 11.0.12
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.11
-  updated_at: '2025-09-07'
-  module_version: 11.0.11
+  version: 11.0.12
+  updated_at: '2025-10-08'
+  module_version: 11.0.12
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
@@ -589,16 +589,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 42-20251006.013040
+  version: 42-20251007.153340
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 42-20251006.013040
-  digest: sha256:2384086cc80bb98b4ade009193b971b14bd5bb127c3acaf583879c2bbae4feba
-  updated_at: '2025-10-06'
+  tag: 42-20251007.153340
+  digest: sha256:d6250838b54791d89d59337e6970716bcb01dec1da97c407b1d6c079bfab8434
+  updated_at: '2025-10-08'
   platforms:
   - linux/amd64
-  module_version: 42.20251006.13040
+  module_version: 42.20251007.153340
 - name: io_docker_index_library_mariadb
   version: 12.0.2
   registry: index.docker.io
@@ -650,40 +650,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.44.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: 42-20251006.013040
+  version: 42-20251007.153340
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 42-20251006.013040
-  digest: sha256:4ec6c5327637cdc3a55c408aa088aa7faf95ace2a965b87c3f0833f77b94cbfe
-  updated_at: '2025-10-06'
+  tag: 42-20251007.153340
+  digest: sha256:81bb36cd13fd323b0ceae6c0d6f95a7d1e63fdc21b57a53134576e914bfbedb3
+  updated_at: '2025-10-08'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20251006.13040
+  module_version: 42.20251007.153340
 - name: io_quay_boleynsu_rbe_fedora
-  version: 42-20251006.013040
+  version: 42-20251007.153340
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 42-20251006.013040
-  digest: sha256:42d69e07eb4792ac7f980d8dd9b40e92821d0ef1eb923ea6bb33b7774d0c2995
-  updated_at: '2025-10-06'
+  tag: 42-20251007.153340
+  digest: sha256:c03e8b017b871adb6a516ff2836f205f001cc0e412aa20e7ac31bd789e58739d
+  updated_at: '2025-10-08'
   platforms:
   - linux/amd64
-  module_version: 42.20251006.13040
+  module_version: 42.20251007.153340
 - name: io_quay_boleynsu_base
-  version: 42-20251006.013040
+  version: 42-20251007.153340
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:d9748cc1fba1bd1058675557aedd52448db9ba85659176e1d3fc761890de0787
-  tag: 42-20251006.013040
-  updated_at: '2025-10-06'
+  digest: sha256:3f8336e38b7b07d945095c237d425f27acb4187074cb1a9431a8df96871e2edd
+  tag: 42-20251007.153340
+  updated_at: '2025-10-08'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 42.20251006.13040
+  module_version: 42.20251007.153340
 
 toolchain_deps:
 - name: c
