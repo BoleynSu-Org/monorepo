@@ -559,10 +559,10 @@ maven_deps:
   expires_at: '2026-04-18'
   module_version: 3.4.1
 - name: io.undertow:undertow-core
-  version: 2.3.19.Final
+  version: 2.3.20.Final
   version_regex: (.*)\.Final
-  updated_at: '2025-09-07'
-  module_version: 2.3.19
+  updated_at: '2025-10-10'
+  module_version: 2.3.20
 - name: commons-validator:commons-validator
   version: 1.10.0
   updated_at: '2025-07-13'
