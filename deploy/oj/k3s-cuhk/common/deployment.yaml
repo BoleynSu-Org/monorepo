@@ -106,6 +106,7 @@ spec:
         - name: registry-access-token-secret
       enableServiceLinks: false
       automountServiceAccountToken: false
+      priorityClassName: application-critical
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -185,6 +186,7 @@ spec:
         - name: registry-access-token-secret
       enableServiceLinks: false
       automountServiceAccountToken: false
+      priorityClassName: application-critical
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -254,6 +256,7 @@ spec:
       enableServiceLinks: false
       automountServiceAccountToken: false
       runtimeClassName: gvisor
+      priorityClassName: application-critical
 ---
 apiVersion: apps/v1
 kind: Deployment
