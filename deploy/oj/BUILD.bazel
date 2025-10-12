@@ -80,14 +80,12 @@ sh_binary(
     name = "staging.apply",
     srcs = [":deploy"],
     args = [
-        "$(rootpath k3s-cuhk/common/deployment.yaml)",
-        "--cluster",
-        "k3s-cuhk",
+        "$(rootpath k3s-cuhk/staging/deployment.yaml)",
         "--namespace",
         "staging",
     ],
     data = DATA + [
-        "k3s-cuhk/common/deployment.yaml",
+        "k3s-cuhk/staging/deployment.yaml",
         "@rules_shell//shell/runfiles",
     ],
 )

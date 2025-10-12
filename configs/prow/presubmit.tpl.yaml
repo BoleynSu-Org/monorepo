@@ -48,7 +48,6 @@ presubmits:
             - //deploy/oj:staging.apply
             - --
             - --server-side
-            - --cluster=
           resources:
             limits:
               memory: 1.5Gi
