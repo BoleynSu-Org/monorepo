@@ -219,13 +219,13 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "41-20251007.153340-20251008.145852",
+            "version": "41-20251013.050029-20251013.155451",
             "version_regex": "([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "38b5b1245c88a89bd73d7cdfd3de3da89e82da1931d456ac68748a8b08d64ab8",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20251007.153340-20251008.145852/sysroot_linux_x86_64.tar.gz",
-            "updated_at": "2025-10-08",
+            "sha256": "c55a33caedccb4183c5070feec51c6e77b253a2bacee292e4f7495798c10dc27",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/41-20251013.050029-20251013.155451/sysroot_linux_x86_64.tar.gz",
+            "updated_at": "2025-10-13",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
-            "module_version": "41.20251007.153340.20251008.145852",
+            "module_version": "41.20251013.50029.20251013.155451",
         },
         {
             "name": "clang_linux_x86_64",
@@ -657,9 +657,9 @@ DEPS = {
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-core",
-            "version": "11.0.12",
-            "updated_at": "2025-10-08",
-            "module_version": "11.0.12",
+            "version": "11.0.13",
+            "updated_at": "2025-10-13",
+            "module_version": "11.0.13",
         },
         {
             "name": "org.apache.tomcat.embed:tomcat-embed-jasper",
