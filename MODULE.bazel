@@ -132,7 +132,7 @@ DEPS = {
             "updated_at": "2022-07-24",
             "expires_at": "2026-04-18",
             "version": "v0.8.2",
-            "build_file": "@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD",
+            "build_file": "@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD.bazel",
             "module_version": "0.8.2",
         },
         {
