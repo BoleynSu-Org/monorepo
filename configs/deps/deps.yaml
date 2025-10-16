@@ -222,12 +222,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v32.1.tar.gz
-  sha256: d2081ab9528292f7980ef2d88d2be472453eea4222141046ad4f660874d5f24e
-  strip_prefix: protobuf-32.1
-  version: v32.1
-  updated_at: '2025-09-12'
-  module_version: '32.1'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.0.tar.gz
+  sha256: b6b03fbaa3a90f3d4f2a3fa4ecc41d7cd0326f92fcc920a7843f12206c8d52cd
+  strip_prefix: protobuf-33.0
+  version: v33.0
+  updated_at: '2025-10-16'
+  module_version: '33.0'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
@@ -621,12 +621,12 @@ container_deps:
     - name: update_version
       value: false
 - name: io_docker_index_library_adminer
-  version: 5.4.0
+  version: 5.4.1
   registry: index.docker.io
   repository: library/adminer
-  tag: 5.4.0
-  digest: sha256:3a1399a54899a9b589885a1b508c37fec816724c7e7f9f883398f943afcebc5c
-  updated_at: '2025-10-13'
+  tag: 5.4.1
+  digest: sha256:0e1397d60d8f9fdcc88927c656df312cb31e66f9e5e489b0955ec927577aedb9
+  updated_at: '2025-10-16'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -634,9 +634,8 @@ container_deps:
   - linux/arm64/v8
   - linux/386
   - linux/ppc64le
-  - linux/riscv64
   - linux/s390x
-  module_version: 5.4.0
+  module_version: 5.4.1
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.44.0
   registry: index.docker.io
