@@ -311,10 +311,10 @@ DEPS = {
         {
             "name": "apple_support",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.23.1/apple_support.1.23.1.tar.gz",
-            "sha256": "ee20cc5c0bab47065473c8033d462374dd38d172406ecc8de5c8f08487943f2f",
-            "version": "1.23.1",
-            "updated_at": "2025-08-28",
+            "url": "https://github.com/bazelbuild/apple_support/releases/download/1.24.0/apple_support.1.24.0.tar.gz",
+            "sha256": "69b3f650e909df177ab157c26fd253396b15628f9775f037603fb9c3e6da7ad3",
+            "version": "1.24.0",
+            "updated_at": "2025-10-16",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -331,7 +331,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.23.1",
+            "module_version": "1.24.0",
         },
         {
             "name": "stardoc",
@@ -769,7 +769,7 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.4.1",
-            "digest": "sha256:0e1397d60d8f9fdcc88927c656df312cb31e66f9e5e489b0955ec927577aedb9",
+            "digest": "sha256:bf7ea9bd62afd2d34045b4098ad68feb4a08ad9f75f28dc5d9b7d6d84d63005c",
             "updated_at": "2025-10-16",
             "platforms": [
                 "linux/amd64",
@@ -778,6 +778,7 @@ DEPS = {
                 "linux/arm64/v8",
                 "linux/386",
                 "linux/ppc64le",
+                "linux/riscv64",
                 "linux/s390x",
             ],
             "module_version": "5.4.1",
