@@ -22,18 +22,23 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.9',
+    version = '0.2.11',
 )
 
 bazel_dep(
     name = 'rules_go',
-    version = '0.57.0',
+    version = '0.58.2',
     repo_name = 'io_bazel_rules_go',
 )
 
 bazel_dep(
     name = 'rules_license',
     version = '1.0.0',
+)
+
+bazel_dep(
+    name = 'package_metadata',
+    version = '0.0.6',
 )
 
 bazel_dep(

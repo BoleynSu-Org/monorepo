@@ -1,7 +1,7 @@
 module(
-    name = 'aspect_bazel_lib',
-    bazel_compatibility = ['>=6.5.0'],
-    version = '2.21.2',
+    name = 'bazel_lib',
+    bazel_compatibility = ['>=6.0.0'],
+    version = '3.0.0',
 )
 
 bazel_dep(
@@ -20,27 +20,12 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'stardoc',
-    version = '0.8.0',
-)
-
-bazel_dep(
     name = 'rules_shell',
     version = '0.6.1',
 )
 
-bazel_dep(
-    name = 'jq.bzl',
-    version = '0.4.0',
-)
-
-bazel_dep(
-    name = 'tar.bzl',
-    version = '0.6.0',
-)
-
 toolchains = use_extension(
-    '@aspect_bazel_lib//lib:extensions.bzl',
+    '@bazel_lib//lib:extensions.bzl',
     'toolchains',
 )
 
@@ -50,16 +35,7 @@ toolchains.copy_directory(
 toolchains.copy_to_directory(
 )
 
-toolchains.jq(
-)
-
-toolchains.yq(
-)
-
 toolchains.coreutils(
-)
-
-toolchains.tar(
 )
 
 toolchains.zstd(
@@ -74,27 +50,19 @@ toolchains.bats(
 use_repo(
     toolchains,
     'bats_toolchains',
-    'bsd_tar_toolchains',
     'copy_directory_toolchains',
     'copy_to_directory_toolchains',
     'coreutils_toolchains',
     'expand_template_toolchains',
-    'jq',
-    'jq_toolchains',
-    'yq',
-    'yq_toolchains',
     'zstd_toolchains',
 )
 
 register_toolchains(
     '@copy_directory_toolchains//:all',
     '@copy_to_directory_toolchains//:all',
-    '@jq_toolchains//:all',
-    '@yq_toolchains//:all',
     '@coreutils_toolchains//:all',
     '@expand_template_toolchains//:all',
     '@bats_toolchains//:all',
-    '@bsd_tar_toolchains//:all',
     '@zstd_toolchains//:all',
 )
 
