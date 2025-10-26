@@ -1,3 +1,2 @@
-ignore("@@rules_jvm_external++maven+boleynsu_org_maven")
-ignore("@@rules_jvm_external++maven+io_grpc_grpc_java_maven")
+ignore("@@rules_jvm_external++maven+maven")
 ignore("@@+_repo_rules+pinned_pip")
