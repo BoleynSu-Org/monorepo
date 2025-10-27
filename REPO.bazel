@@ -1,0 +1,6 @@
+ignore_directories([
+    ".git",
+    "external",
+    "third_party/bazel_registry",
+    "third_party/bazel_vendor",
+])
