@@ -914,7 +914,7 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "X1c+L4AC6ZtVhmSfrzhE1exAOXfT5eS928xE8R7+/ns=",
+        "bzlTransitiveDigest": "qE0m6EUkkAqIfFQ6WtE9zIAoJ6Z7AmTY4pjO7tEA8+I=",
         "usagesDigest": "dQ7SQZ7uSSL3vVKSMBKRxKJUm9OVrZZA+S1/QQfT570=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
