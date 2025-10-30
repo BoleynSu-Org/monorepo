@@ -1067,7 +1067,7 @@
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "PTwbeF8xQqmjtx3TS876KgxcmuOk2HBtFj2gwBStkxA=",
-        "usagesDigest": "GwrNWOb9BYsI91mXIZytmyaUt7DKDIItA4XrxvWp1S4=",
+        "usagesDigest": "ehjSlEMHuDZwzV/vQnr10uHEYOpZenO1SKU5LrMmgPo=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1088,12 +1088,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "9274890485d2ee31a6ce12ad139db465ac39c367a57e399d944a910e80a43af5"
+                "linux-x86_64": "21082d932c55d222faffac46e093a5f0ef1290e05ae8e0384bfad474cc819ef7"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.4-41-20251025.140541-20251025.171012/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.4-42-20251030.145903-20251030.220931/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
