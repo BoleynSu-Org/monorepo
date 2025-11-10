@@ -1,6 +1,6 @@
 module(
     name = 'rules_java',
-    version = '8.16.1',
+    version = '9.0.3',
     bazel_compatibility = ['>=6.4.0'],
 )
 
@@ -11,7 +11,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.13',
+    version = '0.2.14',
 )
 
 bazel_dep(
@@ -63,6 +63,11 @@ use_repo(
 use_repo(
     toolchains,
     'remote_java_tools_linux',
+)
+
+use_repo(
+    toolchains,
+    'remote_java_tools_linux_aarch64',
 )
 
 use_repo(
