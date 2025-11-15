@@ -838,14 +838,14 @@ DEPS = {
         },
         {
             "name": "io_docker_index_filebrowser_filebrowser",
-            "version": "v2.46.0",
+            "version": "v2.46.1",
             "registry": "index.docker.io",
             "repository": "filebrowser/filebrowser",
-            "tag": "v2.46.0",
-            "digest": "sha256:5333396817cb93b63e05b0c46fabfafcdb3241df0509860a86ec03d2345e62c5",
+            "tag": "v2.46.1",
+            "digest": "sha256:a3d21db89b6aa6b32d072184bf884a832725912f8bae1952338a09d10de415e2",
             "updated_at": "2025-11-15",
             "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7"],
-            "module_version": "2.46.0",
+            "module_version": "2.46.1",
         },
         {
             "name": "io_quay_boleynsu_oj_c99runner",
