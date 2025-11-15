@@ -1,6 +1,6 @@
 module(
     name = 'tar.bzl',
-    version = '0.6.0',
+    version = '0.7.0',
 )
 
 bazel_dep(
@@ -9,8 +9,8 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'aspect_bazel_lib',
-    version = '2.21.2',
+    name = 'bazel_lib',
+    version = '3.0.0',
 )
 
 bazel_dep(
