@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '1.6.3',
+    version = '1.7.0',
 )
 
 bazel_dep(
@@ -25,17 +25,17 @@ bazel_dep(
 
 bazel_dep(
     name = 'protobuf',
-    version = '33.0',
+    version = '33.1',
     repo_name = 'com_google_protobuf',
 )
 
-internal_deps = use_extension(
-    '//python/private:internal_deps.bzl',
-    'internal_deps',
+config = use_extension(
+    '//python/extensions:config.bzl',
+    'config',
 )
 
 use_repo(
-    internal_deps,
+    config,
     'pypi__build',
     'pypi__click',
     'pypi__colorama',
@@ -59,8 +59,11 @@ python = use_extension(
     'python',
 )
 
+python.defaults(
+    python_version = '3.11',
+)
+
 python.toolchain(
-    is_default = True,
     python_version = '3.11',
 )
 
@@ -190,9 +193,29 @@ pip.default(
     whl_platform_tags = ['win_amd64'],
 )
 
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:windows', '//python/config_settings:_is_py_freethreaded_no'],
+    env = {'platform_version': '0'},
+    marker = "python_version >= '3.11'",
+    os_name = 'windows',
+    platform = 'windows_aarch64',
+    whl_abi_tags = ['abi3', 'cp{major}{minor}'],
+    whl_platform_tags = ['win_arm64'],
+)
+
+pip.default(
+    arch_name = 'aarch64',
+    config_settings = ['@platforms//cpu:aarch64', '@platforms//os:windows', '//python/config_settings:_is_py_freethreaded_yes'],
+    env = {'platform_version': '0'},
+    marker = "python_version >= '3.13'",
+    os_name = 'windows',
+    platform = 'windows_aarch64_freethreaded',
+    whl_abi_tags = ['cp{major}{minor}t'],
+    whl_platform_tags = ['win_arm64'],
+)
+
 pip.parse(
-    download_only = False,
-    experimental_index_url = 'https://pypi.org/simple',
     hub_name = 'rules_python_publish_deps',
     python_version = '3.11',
     requirements_by_platform = {'//tools/publish:requirements_darwin.txt': 'osx_*', '//tools/publish:requirements_linux.txt': 'linux_*', '//tools/publish:requirements_windows.txt': 'windows_*'},

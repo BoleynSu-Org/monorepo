@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.0.3
 - name: rules_python
   type: http_archive
-  sha256: 2f5c284fbb4e86045c2632d3573fc006facbca5d1fa02976e89dc0cd5488b590
-  strip_prefix: rules_python-1.6.3
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.6.3.tar.gz
-  updated_at: '2025-09-22'
-  version: 1.6.3
-  module_version: 1.6.3
+  sha256: f609f341d6e9090b981b3f45324d05a819fd7a5a56434f849c761971ce2c47da
+  strip_prefix: rules_python-1.7.0
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.7.0.tar.gz
+  updated_at: '2025-11-15'
+  version: 1.7.0
+  module_version: 1.7.0
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -221,12 +221,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.0.tar.gz
-  sha256: b6b03fbaa3a90f3d4f2a3fa4ecc41d7cd0326f92fcc920a7843f12206c8d52cd
-  strip_prefix: protobuf-33.0
-  version: v33.0
-  updated_at: '2025-10-16'
-  module_version: '33.0'
+  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.1.tar.gz
+  sha256: 0c98bb704ceb4e68c92f93907951ca3c36130bc73f87264e8c0771a80362ac97
+  strip_prefix: protobuf-33.1
+  version: v33.1
+  updated_at: '2025-11-15'
+  module_version: '33.1'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
@@ -260,10 +260,10 @@ bazel_deps:
   module_version: 1.3.1
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/1.24.4/apple_support.1.24.4.tar.gz
-  sha256: 93456fae59f225693fae7e0fdbb2899433766d7e8c0797ed28e35c6f04b5f255
-  version: 1.24.4
-  updated_at: '2025-11-10'
+  url: https://github.com/bazelbuild/apple_support/releases/download/1.24.5/apple_support.1.24.5.tar.gz
+  sha256: 1ae6fcf983cff3edab717636f91ad0efff2e5ba75607fdddddfd6ad0dbdfaf10
+  version: 1.24.5
+  updated_at: '2025-11-15'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -278,7 +278,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.24.4
+  module_version: 1.24.5
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.0/stardoc-0.8.0.tar.gz
@@ -302,10 +302,10 @@ bazel_deps:
   module_version: 0.8.0
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.1.9/rules_kotlin-v2.1.9.tar.gz
-  sha256: 21b2b350f4856000bd7e3eb55befe37219b237fb37cc3ba272588c7eee4b4cea
-  version: v2.1.9
-  updated_at: '2025-08-23'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.2.0/rules_kotlin-v2.2.0.tar.gz
+  sha256: e124d13986085bc0a15be2c85c1415bab5708442b78d249fe22bf8df43a5340d
+  version: v2.2.0
+  updated_at: '2025-11-15'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -320,7 +320,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.1.9
+  module_version: 2.2.0
 - name: aspect_bazel_lib
   type: http_archive
   version: v2.21.2
@@ -393,12 +393,12 @@ bazel_deps:
   module_version: 2.3.1
 - name: container_structure_test
   type: http_archive
-  version: v1.21.1
-  sha256: e29075885dac64ae88ef44d6d37b6f8f7e1cf6aa6cb298f641ce96fc279270bc
-  strip_prefix: container-structure-test-1.21.1
-  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.21.1.tar.gz
-  updated_at: '2025-10-01'
-  module_version: 1.21.1
+  version: v1.22.0
+  sha256: 94f6ae60ddb13ba1774a226e3f2650f736871bad61a18982e0b825bde2ad568a
+  strip_prefix: container-structure-test-1.22.0
+  url: https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.22.0.tar.gz
+  updated_at: '2025-11-15'
+  module_version: 1.22.0
 - name: abseil-cpp
   type: http_archive
   version: '20250814.1'
@@ -634,23 +634,23 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20251111.230054
+  version: 43-20251112.142454
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20251111.230054
+  tag: 43-20251112.142454
   digest: sha256:6b54ca15a8500036bdecf414a39c0370cff167b5a91152684de565d2b9f780b2
-  updated_at: '2025-11-12'
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
-  module_version: 43.20251111.230054
+  module_version: 43.20251112.142454
 - name: io_docker_index_library_mariadb
   version: 12.0.2
   registry: index.docker.io
   repository: library/mariadb
   tag: 12.0.2
-  digest: sha256:439d77b7092f9acde784990bbc623f263b1e4e0540cf5e94fc49e4a33c0994a1
-  updated_at: '2025-11-10'
+  digest: sha256:607835cd628b78e2876f6a586d0ec37b296c47683b31ef750002d3d17d3d8f7a
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -683,52 +683,52 @@ container_deps:
   - linux/s390x
   module_version: 5.4.1
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.45.1
+  version: v2.46.0
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.45.1
-  digest: sha256:091f9107ae8b22254df4b069b0ec4a6e0ad2bf6332c65fba59fb9d0c8d7cab71
-  updated_at: '2025-11-11'
+  tag: v2.46.0
+  digest: sha256:5333396817cb93b63e05b0c46fabfafcdb3241df0509860a86ec03d2345e62c5
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.45.1
+  module_version: 2.46.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: 43-20251111.230054
+  version: 43-20251112.142454
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 43-20251111.230054
+  tag: 43-20251112.142454
   digest: sha256:747e0eced724d328b2def386a6ba0dbde2a770ba8a323ea2ebc29e8d572cc306
-  updated_at: '2025-11-12'
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20251111.230054
+  module_version: 43.20251112.142454
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20251111.230054
+  version: 43-20251112.142454
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20251111.230054
+  tag: 43-20251112.142454
   digest: sha256:69872a3de843bfe646bd38e90235a56bae29e2ef79aef8f36fa35fbd23dd99c1
-  updated_at: '2025-11-12'
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
-  module_version: 43.20251111.230054
+  module_version: 43.20251112.142454
 - name: io_quay_boleynsu_base
-  version: 43-20251111.230054
+  version: 43-20251112.142454
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:7de103e79a0980a172e710302c034bb6675f0d47650c1921a16c3d69277b6d38
-  tag: 43-20251111.230054
-  updated_at: '2025-11-12'
+  tag: 43-20251112.142454
+  updated_at: '2025-11-15'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20251111.230054
+  module_version: 43.20251112.142454
 
 toolchain_deps:
 - name: c
