@@ -80,12 +80,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 8c7ec45c35b0956044041799f7a028ccf76eb6c1fc8bde7bb3fcd8d896eb7b70
-  strip_prefix: grpc-java-1.76.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.76.0.tar.gz
-  updated_at: '2025-10-09'
-  version: v1.76.0
-  module_version: 1.76.0
+  sha256: b3ceab2114b3f30d1a5bedbc56998b3f128b8dce1b2d8dd436674c183506c9d1
+  strip_prefix: grpc-java-1.76.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.76.1.tar.gz
+  updated_at: '2025-11-17'
+  version: v1.76.1
+  module_version: 1.76.1
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -610,9 +610,9 @@ maven_deps:
   updated_at: '2025-10-10'
   module_version: 2.3.20
 - name: commons-validator:commons-validator
-  version: 1.10.0
-  updated_at: '2025-07-13'
-  module_version: 1.10.0
+  version: 1.10.1
+  updated_at: '2025-11-17'
+  module_version: 1.10.1
 - name: commons-codec:commons-codec
   version: 1.20.0
   updated_at: '2025-11-10'
