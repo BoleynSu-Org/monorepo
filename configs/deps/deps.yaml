@@ -190,12 +190,12 @@ bazel_deps:
   module_version: 42.20251117.45546.20251117.65804
 - name: clang_linux_x86_64
   type: http_archive
-  version: 21.1.5-42-20251110.153208-20251110.205659
+  version: 21.1.5-42-20251117.070548-20251117.080829
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 83bd730f10e53f461865da573e837a27f363bed32fc03a7594d467291c58be2d
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.5-42-20251110.153208-20251110.205659/clang_linux_x86_64.tar.gz
-  updated_at: '2025-11-11'
-  module_version: 21.1.5.42.20251110.153208.20251110.205659
+  sha256: 670ee4e42668afec1ce34696459f42719f5785369b9529b1bf2dc1c2561d46b2
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.5-42-20251117.070548-20251117.080829/clang_linux_x86_64.tar.gz
+  updated_at: '2025-11-17'
+  module_version: 21.1.5.42.20251117.70548.20251117.80829
 - name: bazel_features
   type: http_archive
   version: v1.38.0
@@ -683,17 +683,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.1
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.47.0
+  version: v2.48.1
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.47.0
-  digest: sha256:e5179691fd2af12faec4d51878a180ec8cabf51824e91bd7b104a1d67b25c73e
-  updated_at: '2025-11-16'
+  tag: v2.48.1
+  digest: sha256:7eba9e262147ad5715c8f75cddd51a3969159a1a7d8479e8aa8c05d30cc4644d
+  updated_at: '2025-11-17'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.47.0
+  module_version: 2.48.1
 - name: io_quay_boleynsu_oj_c99runner
   version: 43-20251117.045546
   version_regex: ([0-9.]*)-([0-9.]*)

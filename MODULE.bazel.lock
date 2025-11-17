@@ -201,7 +201,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "pJ5cWlKTkIDIyUuclTxx5XIlwybuT/LlYhkGN55cXyo=",
-        "usagesDigest": "Kyz8izON4ObyUeBB6kanbUvwq4Htw+argia8BNr++KU=",
+        "usagesDigest": "tvzhni7PLV1QFjuRT2XdI4PQUyFaz61EusXQy9w+7aA=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -438,7 +438,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:e5179691fd2af12faec4d51878a180ec8cabf51824e91bd7b104a1d67b25c73e",
+              "identifier": "sha256:7eba9e262147ad5715c8f75cddd51a3969159a1a7d8479e8aa8c05d30cc4644d",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_amd64",
               "bazel_tags": []
@@ -451,7 +451,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:e5179691fd2af12faec4d51878a180ec8cabf51824e91bd7b104a1d67b25c73e",
+              "identifier": "sha256:7eba9e262147ad5715c8f75cddd51a3969159a1a7d8479e8aa8c05d30cc4644d",
               "platform": "linux/arm64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm64",
               "bazel_tags": []
@@ -464,7 +464,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:e5179691fd2af12faec4d51878a180ec8cabf51824e91bd7b104a1d67b25c73e",
+              "identifier": "sha256:7eba9e262147ad5715c8f75cddd51a3969159a1a7d8479e8aa8c05d30cc4644d",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm_v7",
               "bazel_tags": []
@@ -478,7 +478,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:e5179691fd2af12faec4d51878a180ec8cabf51824e91bd7b104a1d67b25c73e",
+              "identifier": "sha256:7eba9e262147ad5715c8f75cddd51a3969159a1a7d8479e8aa8c05d30cc4644d",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_filebrowser_filebrowser_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_index_filebrowser_filebrowser_linux_arm64",
@@ -1212,7 +1212,7 @@
     "@@toolchains_llvm+//toolchain/extensions:llvm.bzl%llvm": {
       "general": {
         "bzlTransitiveDigest": "PTwbeF8xQqmjtx3TS876KgxcmuOk2HBtFj2gwBStkxA=",
-        "usagesDigest": "T6Fkmkoqzoinllgm1ZJAPmTF760R1iGNKhFlgha4oWE=",
+        "usagesDigest": "KDBms6jiOk9pATQv4ZcDzOOb7oKgeNxdXM1oUR0XXKI=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {},
@@ -1233,12 +1233,12 @@
               },
               "netrc": "",
               "sha256": {
-                "linux-x86_64": "83bd730f10e53f461865da573e837a27f363bed32fc03a7594d467291c58be2d"
+                "linux-x86_64": "670ee4e42668afec1ce34696459f42719f5785369b9529b1bf2dc1c2561d46b2"
               },
               "strip_prefix": {},
               "urls": {
                 "linux-x86_64": [
-                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.5-42-20251110.153208-20251110.205659/clang_linux_x86_64.tar.gz"
+                  "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.5-42-20251117.070548-20251117.080829/clang_linux_x86_64.tar.gz"
                 ]
               }
             }
