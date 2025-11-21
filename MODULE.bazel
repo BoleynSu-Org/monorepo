@@ -230,12 +230,12 @@ DEPS = {
         {
             "name": "clang_linux_x86_64",
             "type": "http_archive",
-            "version": "21.1.5-42-20251117.070548-20251117.080829",
+            "version": "21.1.6-42-20251119.003930-20251119.054021",
             "version_regex": "([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "670ee4e42668afec1ce34696459f42719f5785369b9529b1bf2dc1c2561d46b2",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.5-42-20251117.070548-20251117.080829/clang_linux_x86_64.tar.gz",
-            "updated_at": "2025-11-17",
-            "module_version": "21.1.5.42.20251117.70548.20251117.80829",
+            "sha256": "01506f299d2fb263553c3ac43c628c3748397ee8031a10963483f8882a750672",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.6-42-20251119.003930-20251119.054021/clang_linux_x86_64.tar.gz",
+            "updated_at": "2025-11-21",
+            "module_version": "21.1.6.42.20251119.3930.20251119.54021",
         },
         {
             "name": "bazel_features",
@@ -657,11 +657,11 @@ DEPS = {
         {
             "name": "package_metadata",
             "type": "http_archive",
-            "version": "v0.0.6",
-            "sha256": "5bd0cc7594ea528fd28f98d82457f157827d48cc20e07bcfdbb56072f35c8f67",
-            "strip_prefix": "supply-chain-0.0.6/metadata",
-            "url": "https://github.com/bazel-contrib/supply-chain/releases/download/v0.0.6/supply-chain-v0.0.6.tar.gz",
-            "updated_at": "2025-10-25",
+            "version": "v0.0.7",
+            "sha256": "8f27dc7393e3f3bdc793bdc4ba36d67a63c22cc9d38cc65d3204654974ea4563",
+            "strip_prefix": "supply-chain-0.0.7/metadata",
+            "url": "https://github.com/bazel-contrib/supply-chain/releases/download/v0.0.7/supply-chain-v0.0.7.tar.gz",
+            "updated_at": "2025-11-21",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -678,7 +678,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "0.0.6",
+            "module_version": "0.0.7",
         },
     ],
     "pip_deps": [
@@ -791,19 +791,19 @@ DEPS = {
         },
         {
             "name": "io_docker_index_library_mariadb",
-            "version": "12.0.2",
+            "version": "12.1.2",
             "registry": "index.docker.io",
             "repository": "library/mariadb",
-            "tag": "12.0.2",
-            "digest": "sha256:607835cd628b78e2876f6a586d0ec37b296c47683b31ef750002d3d17d3d8f7a",
-            "updated_at": "2025-11-15",
+            "tag": "12.1.2",
+            "digest": "sha256:e1bcd6f85781f4a875abefb11c4166c1d79e4237c23de597bf0df81fec225b40",
+            "updated_at": "2025-11-21",
             "platforms": [
                 "linux/amd64",
                 "linux/arm64/v8",
                 "linux/ppc64le",
                 "linux/s390x",
             ],
-            "module_version": "12.0.2",
+            "module_version": "12.1.2",
             "override_updater": [
                 {
                     "type": "shell",
@@ -822,8 +822,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.4.1",
-            "digest": "sha256:b1d44e230bed34ff218882f2884e1e78f9659d968d3230a3974d9018172783ea",
-            "updated_at": "2025-10-27",
+            "digest": "sha256:ceee80fff5c4404dfd63109d67dd3d2ccfda4111ce3c04d5ad11794c35154c8b",
+            "updated_at": "2025-11-21",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
