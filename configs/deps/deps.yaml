@@ -634,16 +634,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20251124.025226
+  version: 43-20251125.015941
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20251124.025226
+  tag: 43-20251125.015941
   digest: sha256:fabf9e0b57b805a9a2c457d455048fc56011e70d9eba122638eedccab518309a
-  updated_at: '2025-11-24'
+  updated_at: '2025-11-25'
   platforms:
   - linux/amd64
-  module_version: 43.20251124.25226
+  module_version: 43.20251125.15941
 - name: io_docker_index_library_mariadb
   version: 12.1.2
   registry: index.docker.io
@@ -695,40 +695,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.49.0
 - name: io_quay_boleynsu_oj_c99runner
-  version: 43-20251124.025226
+  version: 43-20251125.015941
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 43-20251124.025226
+  tag: 43-20251125.015941
   digest: sha256:3ed74d491e63328e3e826bae4bbb4ff9df094935b72069d3999f44f2b23aeda0
-  updated_at: '2025-11-24'
+  updated_at: '2025-11-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20251124.25226
+  module_version: 43.20251125.15941
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20251124.025226
+  version: 43-20251125.015941
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20251124.025226
+  tag: 43-20251125.015941
   digest: sha256:9e56ab44b209349a59500e56390aab198e3876f2e1b3a53b576ca3990d046777
-  updated_at: '2025-11-24'
+  updated_at: '2025-11-25'
   platforms:
   - linux/amd64
-  module_version: 43.20251124.25226
+  module_version: 43.20251125.15941
 - name: io_quay_boleynsu_base
-  version: 43-20251124.025226
+  version: 43-20251125.015941
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:f88165de0c7b3ad3e2f6729e6a6131c3949a7573eff720240d492d45bf7b4008
-  tag: 43-20251124.025226
-  updated_at: '2025-11-24'
+  tag: 43-20251125.015941
+  updated_at: '2025-11-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20251124.25226
+  module_version: 43.20251125.15941
 
 toolchain_deps:
 - name: c
