@@ -6,17 +6,17 @@ module(
 
 bazel_dep(
     name = 'rules_android',
-    version = '0.6.6',
+    version = '0.7.1',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.38.0',
+    version = '1.39.0',
 )
 
 bazel_dep(
     name = 'bazel_skylib',
-    version = '1.8.2',
+    version = '1.9.0',
 )
 
 bazel_dep(
@@ -36,12 +36,12 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_java',
-    version = '9.0.3',
+    version = '9.3.0',
 )
 
 bazel_dep(
     name = 'rules_kotlin',
-    version = '2.2.0',
+    version = '2.2.2',
 )
 
 bazel_dep(

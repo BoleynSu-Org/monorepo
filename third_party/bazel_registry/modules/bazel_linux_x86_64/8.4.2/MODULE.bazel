@@ -1,4 +1,0 @@
-module(
-    name = 'bazel_linux_x86_64',
-    version = '8.4.2',
-)

@@ -1,0 +1,9 @@
+module(
+    name = 'helly25_bzl',
+    version = '0.3.1',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.9.0',
+)

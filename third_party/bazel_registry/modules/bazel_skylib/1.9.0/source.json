@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.0.tar.gz",
+  "integrity": "sha256-2bh5A7leQS031BovprC0S4ulISLDiAUSZ0sm+s/JhaI=",
+  "strip_prefix": "bazel-skylib-1.9.0"
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/bazelbuild/bazel/releases/download/8.5.1/bazel-8.5.1-installer-linux-x86_64.sh",
+  "integrity": "sha256-k7WiddacPorMJ8HrszIBdt2YxYuqS6lbhLqvM+ZY53E=",
+  "overlay": {
+    "BUILD.bazel": "sha256-2Ts2irgDEMGr5gVDvW3NMEA9U8GtjdUh4DI8KcE/Gls="
+  },
+  "archive_type": "zip"
+}

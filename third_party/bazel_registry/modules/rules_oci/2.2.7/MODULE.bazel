@@ -1,0 +1,77 @@
+module(
+    name = 'rules_oci',
+    version = '2.2.7',
+)
+
+bazel_dep(
+    name = 'aspect_bazel_lib',
+    version = '2.22.5',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.39.0',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.9.0',
+)
+
+bazel_dep(
+    name = 'platforms',
+    version = '1.0.0',
+)
+
+oci = use_extension(
+    '//oci:extensions.bzl',
+    'oci',
+)
+
+oci.toolchains(
+)
+
+use_repo(
+    oci,
+    'oci_crane_toolchains',
+    'oci_regctl_toolchains',
+)
+
+register_toolchains(
+    '@oci_crane_toolchains//:all',
+    '@oci_regctl_toolchains//:all',
+)
+
+toolchains = use_extension(
+    '@aspect_bazel_lib//lib:extensions.bzl',
+    'toolchains',
+)
+
+toolchains.zstd(
+)
+
+use_repo(
+    toolchains,
+    'zstd_toolchains',
+)
+
+register_toolchains(
+    '@zstd_toolchains//:all',
+)
+
+toolchains_1 = use_extension(
+    '@aspect_bazel_lib//lib:extensions.bzl',
+    'toolchains',
+)
+
+toolchains_1.jq(
+)
+
+toolchains_1.tar(
+)
+
+use_repo(
+    toolchains_1,
+    'bsd_tar_toolchains',
+    'jq_toolchains',
+)
