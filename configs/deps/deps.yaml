@@ -189,12 +189,12 @@ bazel_deps:
   module_version: 42.20251124.25226.20251124.101744
 - name: clang_linux_x86_64
   type: http_archive
-  version: 21.1.6-42-20251119.003930-20251119.054021
+  version: 21.1.8-42-20260117.205508-20260118.034032
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 01506f299d2fb263553c3ac43c628c3748397ee8031a10963483f8882a750672
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.6-42-20251119.003930-20251119.054021/clang_linux_x86_64.tar.gz
-  updated_at: '2025-11-21'
-  module_version: 21.1.6.42.20251119.3930.20251119.54021
+  sha256: b2f385ef5ba9a8445ce036c1e4443b0693f58c422d5ff59f0815941fbc1c3c27
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.8-42-20260117.205508-20260118.034032/clang_linux_x86_64.tar.gz
+  updated_at: '2026-01-18'
+  module_version: 21.1.8.42.20260117.205508.20260118.34032
 - name: bazel_features
   type: http_archive
   version: v1.39.0
@@ -741,17 +741,17 @@ container_deps:
   - linux/amd64
   module_version: 43.20260117.205508
 - name: io_quay_boleynsu_base
-  version: 43-20251125.015941
+  version: 43-20260118.040955
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:f88165de0c7b3ad3e2f6729e6a6131c3949a7573eff720240d492d45bf7b4008
-  tag: 43-20251125.015941
-  updated_at: '2025-11-25'
+  digest: sha256:119aaf3dd136cb0dab4cfb2559f574688735439c923717a74612090cfa365ddc
+  tag: 43-20260118.040955
+  updated_at: '2026-01-18'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20251125.15941
+  module_version: 43.20260118.40955
 
 toolchain_deps:
 - name: c
