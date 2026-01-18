@@ -31,6 +31,8 @@ def _pinned_pip_impl(repository_ctx):
 def _unpinned_pip_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "")
     repository_ctx.file("BUILD", content = """
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+
 sh_binary(
     name = "pin",
     srcs = ["pin.sh"],
