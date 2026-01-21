@@ -1,5 +1,5 @@
 {
-  "url": "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.4.tar.gz",
-  "integrity": "sha256-E2oHqtSIzFArEcRBb+Sn3y396h0IM6eoIRAAv5UnKLo=",
+  "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.4/protobuf-33.4.bazel.tar.gz",
+  "integrity": "sha256-aH6YpHGXO1xf1xF1DEC4uCwK3jP2Sdtl4AspDyk0Wis=",
   "strip_prefix": "protobuf-33.4"
 }

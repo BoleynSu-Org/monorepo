@@ -1,4 +1,4 @@
 module(
     name = "rules_python",
-    version = "0.40.0",
+    version = "1.7.0",
 )

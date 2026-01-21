@@ -1,0 +1,4 @@
+module(
+    name = "apple_support",
+    version = "1.24.2",
+)

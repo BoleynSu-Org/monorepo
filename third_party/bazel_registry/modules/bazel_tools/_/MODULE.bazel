@@ -1,4 +1,0 @@
-module(
-    name = "bazel_tools",
-    version = "_",
-)

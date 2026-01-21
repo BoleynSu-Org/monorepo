@@ -1,4 +1,4 @@
 module(
     name = "rules_java",
-    version = "8.14.0",
+    version = "9.0.3",
 )

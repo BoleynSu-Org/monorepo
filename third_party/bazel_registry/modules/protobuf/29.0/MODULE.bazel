@@ -1,4 +1,0 @@
-module(
-    name = "protobuf",
-    version = "29.0",
-)

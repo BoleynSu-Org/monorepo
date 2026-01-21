@@ -1,4 +1,0 @@
-module(
-    name = "local_config_platform",
-    version = "_",
-)

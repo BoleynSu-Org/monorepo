@@ -1,4 +1,0 @@
-module(
-    name = "buildozer",
-    version = "7.1.2",
-)

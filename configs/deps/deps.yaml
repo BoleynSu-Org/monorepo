@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.3.0
 - name: rules_python
   type: http_archive
-  sha256: 0558021abbd244f3e2b51120a7ec4bded37c6cb02c372aaa188da9ba375560d8
-  strip_prefix: rules_python-1.8.0
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.8.0.tar.gz
-  updated_at: '2026-01-17'
-  version: 1.8.0
-  module_version: 1.8.0
+  sha256: 7ae25c0d3b52124fffe199a34520f43e496f4027d59452df70184eced23b96ef
+  strip_prefix: rules_python-1.8.1
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/1.8.1.tar.gz
+  updated_at: '2026-01-21'
+  version: 1.8.1
+  module_version: 1.8.1
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -116,11 +116,11 @@ bazel_deps:
   module_version: 1.6.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 8.5.1
-  url: https://github.com/bazelbuild/bazel/releases/download/8.5.1/bazel-8.5.1-installer-linux-x86_64.sh
+  version: 9.0.0
+  url: https://github.com/bazelbuild/bazel/releases/download/9.0.0/bazel-9.0.0-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: 93b5a275d69c3e8acc27c1ebb3320176dd98c58baa4ba95b84baaf33e658e771
-  updated_at: '2026-01-17'
+  sha256: 2d58e4f9cc71ac0f8a5794cfb15cca5fb4581439df15a9fd70d3ed00784e3d83
+  updated_at: '2026-01-21'
   executable: true
   override_updater:
   - type: deps_updater
@@ -136,7 +136,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 8.5.1
+  module_version: 9.0.0
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -220,12 +220,26 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/archive/refs/tags/v33.4.tar.gz
-  sha256: 136a07aad488cc502b11c4416fe4a7df2dfdea1d0833a7a8211000bf952728ba
+  url: https://github.com/protocolbuffers/protobuf/releases/download/v33.4/protobuf-33.4.bazel.tar.gz
+  sha256: 687e98a471973b5c5fd711750c40b8b82c0ade33f649db65e00b290f29345a2b
   strip_prefix: protobuf-33.4
   version: v33.4
-  updated_at: '2026-01-17'
+  updated_at: '2026-01-21'
   module_version: '33.4'
+  override_updater:
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [version]
+  - type: shell
+    cmd: |
+      echo DEPS_UPDATER_url=https://github.com/protocolbuffers/protobuf/releases/download/${DEPS_UPDATER_version}/protobuf-${DEPS_UPDATER_version#v}.bazel.tar.gz
+  - type: deps_updater
+    name: bazel_deps
+    extra_args:
+    - name: fields
+      value: [sha256, strip_prefix]
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.gz
