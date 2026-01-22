@@ -487,12 +487,12 @@ bazel_deps:
   module_version: 1.8.1
 - name: jq.bzl
   type: http_archive
-  version: v0.5.0
-  sha256: d642668f79bc0c9ccdc0b8c89964f71e6bb3cd564013ca642f8f544732a97f8c
-  strip_prefix: jq.bzl-0.5.0
-  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.5.0/jq.bzl-v0.5.0.tar.gz
-  updated_at: '2026-01-17'
-  module_version: 0.5.0
+  version: v0.5.1
+  sha256: ec80ea87132eada066fe6efe838b68feebc578626ba8fef7d620a8fc5a1279be
+  strip_prefix: jq.bzl-0.5.1
+  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.5.1/jq.bzl-v0.5.1.tar.gz
+  updated_at: '2026-01-22'
+  module_version: 0.5.1
   override_updater:
   - type: deps_updater
     name: bazel_deps

@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazel-contrib/jq.bzl/releases/download/v0.5.0/jq.bzl-v0.5.0.tar.gz",
-  "integrity": "sha256-1kJmj3m8DJzNwLjImWT3HmuzzVZAE8pkL49URzKpf4w=",
-  "strip_prefix": "jq.bzl-0.5.0"
-}
