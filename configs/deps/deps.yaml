@@ -389,12 +389,12 @@ bazel_deps:
   module_version: 0.7.1
 - name: rules_robolectric
   type: http_archive
-  version: '4.16'
-  sha256: cf04b4206b9d21b385e8dbee478fac619fc1344e8e46935dcec2d64939dd0525
-  strip_prefix: robolectric-bazel-4.16
-  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.16.tar.gz
-  updated_at: '2025-09-08'
-  module_version: '4.16'
+  version: v4.16.1
+  sha256: dae5b7250096188c7989f7db9df3d094be7a5c2ae17047499e4110f8c27fed8b
+  strip_prefix: robolectric-bazel-4.16.1
+  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/v4.16.1.tar.gz
+  updated_at: '2026-01-23'
+  module_version: 4.16.1
 - name: io_abseil_py
   module_name: abseil-py
   type: http_archive
