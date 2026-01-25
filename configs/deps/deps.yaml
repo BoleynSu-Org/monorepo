@@ -509,14 +509,12 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: tar.bzl
   type: http_archive
-  version: v0.7.0
-  version_skip:
-  - 0.8.0
-  sha256: a0d64064a598d7a1e58196d17de0deed6d3d2d8bfe1407ed9e68b24c31c38e8d
-  strip_prefix: tar.bzl-0.7.0
-  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.7.0/tar.bzl-v0.7.0.tar.gz
-  updated_at: '2025-11-15'
-  module_version: 0.7.0
+  version: v0.8.1
+  sha256: 8bac5a2b43f9988e4e69bb03a242b9cbed2c53f9cd4c989f879aaa441bda03f4
+  strip_prefix: tar.bzl-0.8.1
+  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.8.1/tar.bzl-v0.8.1.tar.gz
+  updated_at: '2026-01-25'
+  module_version: 0.8.1
   override_updater:
   - type: deps_updater
     name: bazel_deps
