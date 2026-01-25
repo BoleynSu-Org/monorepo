@@ -359,7 +359,7 @@ spec:
           env:
             - name: FB_PORT
               value: "8080"
-            - name: FB_BASEURL
+            - name: FB_BASE_URL
               value: /file
             - name: FB_DATABASE
               value: /config/filebrowser.db
