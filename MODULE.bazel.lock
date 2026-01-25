@@ -730,7 +730,7 @@
     "@@rules_python+//python/extensions:config.bzl%config": {
       "general": {
         "bzlTransitiveDigest": "wUM/eFwo5Zy7rn36nZ9ZxN9tXhmcWMVGXIExerGg6gM=",
-        "usagesDigest": "JoEJaFGCJXAu2aMckzsVrS0Gz9dIhMnc0PEav88G7ew=",
+        "usagesDigest": "qd0jlWr+rE/2SEHO1YveaPdRuB6u0oH+DOKE1b87Tv8=",
         "recordedInputs": [
           "REPO_MAPPING:rules_python+,bazel_tools bazel_tools",
           "REPO_MAPPING:rules_python+,pypi__build rules_python++config+pypi__build",
@@ -898,7 +898,7 @@
     "@@rules_python+//python/uv:uv.bzl%uv": {
       "general": {
         "bzlTransitiveDigest": "ijW9KS7qsIY+yBVvJ+Nr1mzwQox09j13DnE3iIwaeTM=",
-        "usagesDigest": "B/mAxYlrftJu4GYJNA3xazmr/pQLkAoZ3GdTzNQIzyo=",
+        "usagesDigest": "HGagQt14J46Cp1wCUrY4xt8aCQh15ZnItLdY6WyM/O0=",
         "recordedInputs": [
           "REPO_MAPPING:rules_python+,bazel_tools bazel_tools",
           "REPO_MAPPING:rules_python+,platforms platforms"

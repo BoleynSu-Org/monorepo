@@ -115,7 +115,7 @@ use_repo(
 
 bazel_dep(
     name = 'rules_python',
-    version = '1.8.1',
+    version = '1.8.2',
     repo_name = 'rules_python',
 )
 
