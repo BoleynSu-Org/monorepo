@@ -620,13 +620,13 @@ maven_deps:
   updated_at: '2026-01-17'
   module_version: 3.5.7
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.15
-  updated_at: '2026-01-17'
-  module_version: 11.0.15
+  version: 11.0.18
+  updated_at: '2026-01-26'
+  module_version: 11.0.18
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.15
-  updated_at: '2026-01-17'
-  module_version: 11.0.15
+  version: 11.0.18
+  updated_at: '2026-01-26'
+  module_version: 11.0.18
 - name: org.webjars:jquery
   version: 3.7.1
   updated_at: '2023-09-02'
