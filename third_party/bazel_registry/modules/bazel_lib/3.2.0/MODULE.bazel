@@ -1,12 +1,12 @@
 module(
     name = 'bazel_lib',
     bazel_compatibility = ['>=6.0.0'],
-    version = '3.1.1',
+    version = '3.2.0',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.39.0',
+    version = '1.41.0',
 )
 
 bazel_dep(

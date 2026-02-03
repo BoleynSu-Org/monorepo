@@ -40,7 +40,7 @@ use_repo(
 
 bazel_dep(
     name = 'protobuf',
-    version = '33.4',
+    version = '33.5',
     repo_name = 'com_google_protobuf',
 )
 
@@ -82,7 +82,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'abseil-py',
-    version = '2.3.1',
+    version = '2.4.0',
     repo_name = 'py_absl',
 )
 

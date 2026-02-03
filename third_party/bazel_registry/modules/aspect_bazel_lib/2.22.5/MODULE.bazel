@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.39.0',
+    version = '1.41.0',
 )
 
 bazel_dep(
@@ -21,7 +21,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'stardoc',
-    version = '0.8.0',
+    version = '0.8.1',
 )
 
 bazel_dep(
@@ -31,7 +31,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_lib',
-    version = '3.1.1',
+    version = '3.2.0',
 )
 
 bazel_dep(
