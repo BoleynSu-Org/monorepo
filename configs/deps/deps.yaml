@@ -81,12 +81,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: ce1afcdf5130e74138e93a0f9f0bb77241610d7f00c987f46dffc5fb083f6f0a
-  strip_prefix: grpc-java-1.78.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.78.0.tar.gz
-  updated_at: '2026-01-17'
-  version: v1.78.0
-  module_version: 1.78.0
+  sha256: ca53210ee823a15d9b1ebe86a36b564d6834fd0c049e207469803180b7f8a20e
+  strip_prefix: grpc-java-1.79.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.79.0.tar.gz
+  updated_at: '2026-02-03'
+  version: v1.79.0
+  module_version: 1.79.0
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -189,12 +189,12 @@ bazel_deps:
   module_version: 42.20260203.111053.20260203.150204
 - name: clang_linux_x86_64
   type: http_archive
-  version: 21.1.8-42-20260203.111053-20260203.150204
+  version: 21.1.8-42-20260203.111053-20260203.150746
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
   sha256: c4d9c62f7df404abe456f9476c3468dc94fc16713336b549ae9c2d17cd6f027d
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.8-42-20260203.111053-20260203.150204/clang_linux_x86_64.tar.gz
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/21.1.8-42-20260203.111053-20260203.150746/clang_linux_x86_64.tar.gz
   updated_at: '2026-02-03'
-  module_version: 21.1.8.42.20260203.111053.20260203.150204
+  module_version: 21.1.8.42.20260203.111053.20260203.150746
 - name: bazel_features
   type: http_archive
   version: v1.41.0
