@@ -27,7 +27,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_jvm_external',
-    version = '6.9',
+    version = '6.10',
 )
 
 maven = use_extension(
