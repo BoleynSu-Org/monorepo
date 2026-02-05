@@ -48,7 +48,7 @@
     "org.codehaus.mojo:animal-sniffer-annotations": -1634689353,
     "org.mariadb.jdbc:mariadb-java-client": 1507094011,
     "org.webjars:bootstrap": 3729564,
-    "org.webjars:jquery": 545754053,
+    "org.webjars:jquery": 1753563134,
     "org.wildfly.common:wildfly-common": 141048962,
     "repositories": -1949687017
   },
@@ -147,8 +147,8 @@
     "org.jspecify:jspecify": 117231129,
     "org.mariadb.jdbc:mariadb-java-client": 327997831,
     "org.ow2.asm:asm": 611381606,
-    "org.webjars:bootstrap": -367025704,
-    "org.webjars:jquery": -1995073269,
+    "org.webjars:bootstrap": 474415717,
+    "org.webjars:jquery": 59236587,
     "org.wildfly.client:wildfly-client-config": 1617764685,
     "org.wildfly.common:wildfly-common": -18123714
   },
@@ -705,9 +705,9 @@
     },
     "org.webjars:jquery": {
       "shasums": {
-        "jar": "262016dd3a559df87aefbe392804e9bf620787c9204c0ab8522d4c231ea65097"
+        "jar": "c53b0df333b525b93eba20af910e4ecc3a2f1690736b651fb3ebec479c1b08c2"
       },
-      "version": "3.7.1"
+      "version": "4.0.0"
     },
     "org.wildfly.client:wildfly-client-config": {
       "shasums": {

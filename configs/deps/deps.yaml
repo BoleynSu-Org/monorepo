@@ -635,10 +635,9 @@ maven_deps:
   updated_at: '2026-01-26'
   module_version: 11.0.18
 - name: org.webjars:jquery
-  version: 3.7.1
-  updated_at: '2023-09-02'
-  expires_at: '2027-10-01'
-  module_version: 3.7.1
+  version: 4.0.0
+  updated_at: '2026-02-05'
+  module_version: 4.0.0
 - name: org.webjars:bootstrap
   version: 3.4.1
   version_regex: (3\..*)
