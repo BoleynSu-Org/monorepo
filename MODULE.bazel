@@ -782,10 +782,10 @@ DEPS = {
         },
         {
             "name": "io.undertow:undertow-core",
-            "version": "2.3.22.Final",
+            "version": "2.3.23.Final",
             "version_regex": "(.*)\\.Final",
-            "updated_at": "2026-01-17",
-            "module_version": "2.3.22",
+            "updated_at": "2026-02-06",
+            "module_version": "2.3.23",
         },
         {
             "name": "commons-validator:commons-validator",
