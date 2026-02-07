@@ -8,5 +8,5 @@ data:
     require_once('plugins/login-ssl.php');
 
     return new AdminerLoginSsl(
-            $ssl = ["ca" => "/rootca/rootca.crt", "verify" => false]
+            $ssl = ["ca" => "/rootca/rootca.crt", "verify" => true]
     );
