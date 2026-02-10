@@ -40,12 +40,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 961e83d00c3a993873286507d141e84157d6d733eabdb5ca1db52ff9209c98a9
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.59.0.tar.gz
-  updated_at: '2025-11-10'
-  version: v0.59.0
-  strip_prefix: rules_go-0.59.0
-  module_version: 0.59.0
+  sha256: f9559fb15a12695160388ed37b34f34f55f8373aea3ceac95e882346df324c9f
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.60.0.tar.gz
+  updated_at: '2026-02-10'
+  version: v0.60.0
+  strip_prefix: rules_go-0.60.0
+  module_version: 0.60.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.7.tar.gz
@@ -690,8 +690,8 @@ container_deps:
   registry: index.docker.io
   repository: library/mariadb
   tag: 12.1.2
-  digest: sha256:f54db0cb3ccfe9431aba6d08c65a1763c499789b116b4cb651dd7fcf325965b3
-  updated_at: '2026-01-17'
+  digest: sha256:e487701b1f7e3f47319fe005b417c72becb67824a58b7bd35c6505f070f66dcd
+  updated_at: '2026-02-10'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -707,12 +707,12 @@ container_deps:
     - name: update_version
       value: false
 - name: io_docker_index_library_adminer
-  version: 5.4.1
+  version: 5.4.2
   registry: index.docker.io
   repository: library/adminer
-  tag: 5.4.1
-  digest: sha256:a3167350c4eb9ae4473b8ea0f49c8e5ae74c87b240ee2f6086521dba2a6bf243
-  updated_at: '2026-02-03'
+  tag: 5.4.2
+  digest: sha256:d9498e31999e5622e640b2fe64425099ffbecd3304486b7f343e13ec7c38e7dd
+  updated_at: '2026-02-10'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -722,7 +722,7 @@ container_deps:
   - linux/ppc64le
   - linux/riscv64
   - linux/s390x
-  module_version: 5.4.1
+  module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.57.1
   registry: index.docker.io

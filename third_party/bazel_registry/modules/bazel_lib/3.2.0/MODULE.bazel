@@ -74,7 +74,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_go',
-    version = '0.59.0',
+    version = '0.60.0',
     dev_dependency = False,
     repo_name = 'io_bazel_rules_go',
 )
