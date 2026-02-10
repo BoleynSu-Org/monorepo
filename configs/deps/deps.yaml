@@ -13,12 +13,12 @@ bazel_deps:
   module_version: 0.2.16
 - name: rules_java
   type: http_archive
-  sha256: 89d19bb6d2074c23a3c002a00c70e45de91c9fd6f44c4c8ce211b46da5d3b753
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/9.4.0.tar.gz
-  strip_prefix: rules_java-9.4.0
-  updated_at: '2026-02-09'
-  version: 9.4.0
-  module_version: 9.4.0
+  sha256: 87f5c5392e19a85b899fd72540e4356300ebadc848c5e06778d4f5e7f59524c7
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/9.4.1.tar.gz
+  strip_prefix: rules_java-9.4.1
+  updated_at: '2026-02-10'
+  version: 9.4.1
+  module_version: 9.4.1
 - name: rules_python
   type: http_archive
   sha256: 94a2b4c5d9c45323a9737f8de8f841923bb628cace1e8e51fec5525ed9ccfb2d
