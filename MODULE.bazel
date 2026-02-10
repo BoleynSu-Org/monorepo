@@ -22,12 +22,12 @@ DEPS = {
         {
             "name": "rules_java",
             "type": "http_archive",
-            "sha256": "87f5c5392e19a85b899fd72540e4356300ebadc848c5e06778d4f5e7f59524c7",
-            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/9.4.1.tar.gz",
-            "strip_prefix": "rules_java-9.4.1",
+            "sha256": "ecff34215d6f4fe7ce20dcd1cfbd3270afc08658e2b50fb307d9d18c16be5c4c",
+            "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/9.5.0.tar.gz",
+            "strip_prefix": "rules_java-9.5.0",
             "updated_at": "2026-02-10",
-            "version": "9.4.1",
-            "module_version": "9.4.1",
+            "version": "9.5.0",
+            "module_version": "9.5.0",
         },
         {
             "name": "rules_python",
@@ -198,10 +198,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.35.0/bin/linux/amd64/kubectl",
-            "sha256": "a2e984a18a0c063279d692533031c1eff93a262afcc0afdc517375432d060989",
-            "version": "v1.35.0",
-            "updated_at": "2026-01-17",
+            "url": "https://dl.k8s.io/release/v1.35.1/bin/linux/amd64/kubectl",
+            "sha256": "36e2f4ac66259232341dd7866952d64a958846470f6a9a6a813b9117bd965207",
+            "version": "v1.35.1",
+            "updated_at": "2026-02-10",
             "executable": True,
             "override_updater": [
                 {
@@ -214,7 +214,7 @@ DEPS = {
                     "extra_args": [{"name": "fields", "value": ["sha256"]}],
                 },
             ],
-            "module_version": "1.35.0",
+            "module_version": "1.35.1",
         },
         {
             "name": "sysroot_linux_x86_64",
