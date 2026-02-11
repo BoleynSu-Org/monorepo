@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/abseil/abseil-cpp/archive/refs/tags/20260107.1.tar.gz",
+  "integrity": "sha256-QxTip8usicrCWi8jIocPND2BV5dWzv9/QxgDwskJAZU=",
+  "strip_prefix": "abseil-cpp-20260107.1"
+}
