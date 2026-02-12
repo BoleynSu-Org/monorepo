@@ -432,11 +432,11 @@ DEPS = {
         {
             "name": "buildozer",
             "type": "http_archive",
-            "version": "v8.2.1",
-            "sha256": "aa0b9ce8b2c57562fb397935066d9f6ad2eacce12082ed40bf9c0054d8899de7",
-            "strip_prefix": "buildozer-8.2.1",
-            "url": "https://github.com/fmeum/buildozer/releases/download/v8.2.1/buildozer-v8.2.1.tar.gz",
-            "updated_at": "2025-08-10",
+            "version": "v8.5.1",
+            "sha256": "bd0786e0f8b6aed8c35898b4c06f64ba853d61d7c8361edb5a8d43c6ea37f5c6",
+            "strip_prefix": "buildozer-8.5.1",
+            "url": "https://github.com/fmeum/buildozer/releases/download/v8.5.1/buildozer-v8.5.1.tar.gz",
+            "updated_at": "2026-02-12",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -455,7 +455,7 @@ DEPS = {
                     ],
                 },
             ],
-            "module_version": "8.2.1",
+            "module_version": "8.5.1",
         },
         {
             "name": "rules_android",
