@@ -711,8 +711,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:d9498e31999e5622e640b2fe64425099ffbecd3304486b7f343e13ec7c38e7dd
-  updated_at: '2026-02-10'
+  digest: sha256:2fb88b98da9f0ae0157d8fcb73f447a0747b09ee8d2ff8a8e0695b30afed2116
+  updated_at: '2026-02-15'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -724,17 +724,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.57.1
+  version: v2.58.0
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.57.1
-  digest: sha256:6ef368f5a0730ee1638886e4b77a94503fcc302569f7d2ae980b23d59072a700
-  updated_at: '2026-02-08'
+  tag: v2.58.0
+  digest: sha256:d2c49584ea840f13860ca61f016e4aee0a858b07488ff4c303d54e4828f12e0b
+  updated_at: '2026-02-15'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.57.1
+  module_version: 2.58.0
 - name: io_quay_boleynsu_oj_c99runner
   version: 43-20260212.154505
   version_regex: ([0-9.]*)-([0-9.]*)
