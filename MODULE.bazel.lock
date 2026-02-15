@@ -170,7 +170,7 @@
     "@@rules_oci+//oci:extensions.bzl%oci": {
       "general": {
         "bzlTransitiveDigest": "g0+Y0xpCtTbaPQnqk4YR+G2KZVCewz3OhP/XyC6U99M=",
-        "usagesDigest": "m4ZKlMnpijpW9FuVoeoTw8m3TOtl12GPlFM3yFgZVDA=",
+        "usagesDigest": "VYE6RL0/QxLP9IaSyzvYEKgi40E7Av8GxQ6JQK0yi8I=",
         "recordedInputs": [
           "REPO_MAPPING:aspect_bazel_lib+,bazel_tools bazel_tools",
           "REPO_MAPPING:bazel_features+,bazel_tools bazel_tools",
@@ -411,7 +411,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:d2c49584ea840f13860ca61f016e4aee0a858b07488ff4c303d54e4828f12e0b",
+              "identifier": "sha256:6e950e90bae0c53c27f4be6eeeb88e4b9cffc1f9be05ca2a0c09e74663ae595d",
               "platform": "linux/amd64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_amd64",
               "bazel_tags": []
@@ -424,7 +424,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:d2c49584ea840f13860ca61f016e4aee0a858b07488ff4c303d54e4828f12e0b",
+              "identifier": "sha256:6e950e90bae0c53c27f4be6eeeb88e4b9cffc1f9be05ca2a0c09e74663ae595d",
               "platform": "linux/arm64",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm64",
               "bazel_tags": []
@@ -437,7 +437,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:d2c49584ea840f13860ca61f016e4aee0a858b07488ff4c303d54e4828f12e0b",
+              "identifier": "sha256:6e950e90bae0c53c27f4be6eeeb88e4b9cffc1f9be05ca2a0c09e74663ae595d",
               "platform": "linux/arm/v7",
               "target_name": "io_docker_index_filebrowser_filebrowser_linux_arm_v7",
               "bazel_tags": []
@@ -451,7 +451,7 @@
               "scheme": "https",
               "registry": "index.docker.io",
               "repository": "filebrowser/filebrowser",
-              "identifier": "sha256:d2c49584ea840f13860ca61f016e4aee0a858b07488ff4c303d54e4828f12e0b",
+              "identifier": "sha256:6e950e90bae0c53c27f4be6eeeb88e4b9cffc1f9be05ca2a0c09e74663ae595d",
               "platforms": {
                 "@@platforms//cpu:x86_64": "@io_docker_index_filebrowser_filebrowser_linux_amd64",
                 "@@platforms//cpu:arm64": "@io_docker_index_filebrowser_filebrowser_linux_arm64",
