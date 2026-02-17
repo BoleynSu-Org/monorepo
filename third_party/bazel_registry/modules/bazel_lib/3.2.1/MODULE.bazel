@@ -1,7 +1,7 @@
 module(
     name = 'bazel_lib',
     bazel_compatibility = ['>=6.0.0'],
-    version = '3.2.0',
+    version = '3.2.1',
 )
 
 bazel_dep(
