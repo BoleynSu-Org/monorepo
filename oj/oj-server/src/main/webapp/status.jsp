@@ -56,7 +56,6 @@ html, body {
 <link rel="stylesheet" href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap.min.css" />
 <link rel="stylesheet"
     href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap-theme.min.css" />
-<script src="/webjars/jquery/<%=su.boleyn.oj.server.Versions.JQUERY_VERSION%>/jquery.min.js"></script>
 <script src="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/js/bootstrap.min.js"></script>
 <script src="/static/my.js"></script>
 </head>
