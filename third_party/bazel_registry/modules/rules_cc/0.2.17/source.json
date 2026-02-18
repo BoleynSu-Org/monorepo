@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.17.tar.gz",
+  "integrity": "sha256-KD+hzarxcjN4mHSc9Lmx716iadpZVAlU5R+6DnuPJ3o=",
+  "strip_prefix": "rules_cc-0.2.17"
+}
