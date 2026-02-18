@@ -45,12 +45,10 @@ write_file(
 package su.boleyn.oj.server;
 
 public class Versions {{
-    public static String JQUERY_VERSION = "{JQUERY_VERSION}";
     public static String BOOTSTRAP_VERSION = "{BOOTSTRAP_VERSION}";
 }}
 """.format(
         BOOTSTRAP_VERSION = MAVEN_ARTIFACTS["org.webjars:bootstrap"],
-        JQUERY_VERSION = MAVEN_ARTIFACTS["org.webjars:jquery"],
     )],
     visibility = ["//visibility:public"],
 )
@@ -97,7 +95,6 @@ java_binary(
         ":editarea",
         "@io_grpc_grpc_java//netty",
         "@maven//:org_webjars_bootstrap",
-        "@maven//:org_webjars_jquery",
     ],
     deps = [
         "//oj/oj-core:lib",
