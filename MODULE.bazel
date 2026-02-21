@@ -591,12 +591,12 @@ DEPS = {
         {
             "name": "jq.bzl",
             "type": "http_archive",
-            "version": "v0.6.0",
-            "sha256": "d12aafaf39224d9d0642d62add75ad65b98aa20de82bead2b4ae9498452d5020",
-            "strip_prefix": "jq.bzl-0.6.0",
-            "url": "https://github.com/bazel-contrib/jq.bzl/releases/download/v0.6.0/jq.bzl-v0.6.0.tar.gz",
-            "updated_at": "2026-02-08",
-            "module_version": "0.6.0",
+            "version": "v0.6.1",
+            "sha256": "e2eab5410b2eecc72f01d73590c58aefeddbb696ddf9d9c34dcee02dd79625ab",
+            "strip_prefix": "jq.bzl-0.6.1",
+            "url": "https://github.com/bazel-contrib/jq.bzl/releases/download/v0.6.1/jq.bzl-v0.6.1.tar.gz",
+            "updated_at": "2026-02-21",
+            "module_version": "0.6.1",
             "override_updater": [
                 {
                     "type": "deps_updater",
