@@ -68,7 +68,12 @@ html, body {
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams({ source: source, input: input })
                 })
-                    .then(response => response.text())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Status: ${response.status}`);
+                        }
+                        return response.text()
+                    })
                     .then(data => {
                         document.getElementById('output').value = data;
                     })
