@@ -4,6 +4,5 @@
 package su.boleyn.oj.server;
 
 public class Versions {
-    public static String JQUERY_VERSION = "4.0.0";
     public static String BOOTSTRAP_VERSION = "3.4.1";
 }

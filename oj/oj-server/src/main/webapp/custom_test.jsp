@@ -38,7 +38,6 @@ html, body {
 <link rel="stylesheet" href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap.min.css" />
 <link rel="stylesheet"
     href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap-theme.min.css" />
-<script src="/webjars/jquery/<%=su.boleyn.oj.server.Versions.JQUERY_VERSION%>/jquery.min.js"></script>
 <script src="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/js/bootstrap.min.js"></script>
 <script src="/static/my.js"></script>
 <script src="/static/editarea/edit_area_full.js"></script>
@@ -51,31 +50,39 @@ html, body {
         language : "en",
         syntax : "c"
     });
-    $(function () {
-        $("#custom_test_form").submit(function () {
-            var source = editAreaLoader.getValue("source");
-            var input = $("#input").val();
-            if (source == "" && input == "") {
-                return false;
-            }
-            $("#source").prop('disabled', true);
-            $("#input").prop('disabled', true);
-            $("#run").prop('disabled', true);
-            $("#output").val("Running...");
-            $.ajax({
-                type: "post",
-                data: { source: source, input: input },
-            }).fail(function () {
-                $("#output").val("An error occurred!");
-            }).done(function (data) {
-                $("#output").val(data);
-            }).always(function () {
-                $("#source").prop('disabled', false);
-                $("#input").prop('disabled', false);
-                $("#run").prop('disabled', false);
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('custom_test_form');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                var source = editAreaLoader.getValue("source");
+                var input = document.getElementById('input').value;
+                if (source == "" && input == "") {
+                    return;
+                }
+                document.getElementById('source').disabled = true;
+                document.getElementById('input').disabled = true;
+                document.getElementById('run').disabled = true;
+                document.getElementById('output').value = "Running...";
+                fetch('/custom_test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ source: source, input: input })
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('output').value = data;
+                    })
+                    .catch(function () {
+                        document.getElementById('output').value = "An error occurred!";
+                    })
+                    .finally(function () {
+                        document.getElementById('source').disabled = false;
+                        document.getElementById('input').disabled = false;
+                        document.getElementById('run').disabled = false;
+                    });
+                e.preventDefault();
             });
-            return false;
-        });
+        }
     });
 </script>
 </head>
