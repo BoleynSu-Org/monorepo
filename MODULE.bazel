@@ -773,11 +773,11 @@ DEPS = {
         },
         {
             "name": "org.webjars:bootstrap",
-            "version": "3.4.1",
-            "version_regex": "(3\\..*)",
-            "updated_at": "2022-04-09",
-            "expires_at": "2026-04-18",
-            "module_version": "3.4.1",
+            "version": "5.3.3",
+            "version_regex": "(5\\..*)",
+            "updated_at": "2026-02-27",
+            "expires_at": "2026-05-27",
+            "module_version": "5.3.3",
         },
         {
             "name": "io.undertow:undertow-core",
