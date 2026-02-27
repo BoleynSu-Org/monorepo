@@ -4,5 +4,5 @@
 package su.boleyn.oj.server;
 
 public class Versions {
-    public static String BOOTSTRAP_VERSION = "3.4.1";
+    public static String BOOTSTRAP_VERSION = "5.3.3";
 }

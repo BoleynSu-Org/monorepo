@@ -47,7 +47,7 @@
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": -1634689353,
     "org.mariadb.jdbc:mariadb-java-client": 1507094011,
-    "org.webjars:bootstrap": 3729564,
+    "org.webjars:bootstrap": 1893933279,
     "org.webjars:jquery": 1753563134,
     "org.wildfly.common:wildfly-common": 141048962,
     "repositories": -1949687017
@@ -147,7 +147,7 @@
     "org.jspecify:jspecify": 117231129,
     "org.mariadb.jdbc:mariadb-java-client": 327997831,
     "org.ow2.asm:asm": 611381606,
-    "org.webjars:bootstrap": 474415717,
+    "org.webjars:bootstrap": 913590995,
     "org.webjars:jquery": 59236587,
     "org.wildfly.client:wildfly-client-config": 1617764685,
     "org.wildfly.common:wildfly-common": -18123714
@@ -699,9 +699,9 @@
     },
     "org.webjars:bootstrap": {
       "shasums": {
-        "jar": "90fdaa23fb3a9cbce04f4c51699312ab1f1fae2d70c0d1a84541b7e9a76e6e54"
+        "jar": "7cd698a335b16b0c55d901aa0c0657b1e1165163197c6139458b4e758df8c7f9"
       },
-      "version": "3.4.1"
+      "version": "5.3.3"
     },
     "org.webjars:jquery": {
       "shasums": {
@@ -1016,9 +1016,6 @@
     "org.jetbrains.kotlin:kotlin-stdlib": [
       "org.jetbrains.kotlin:kotlin-stdlib-common",
       "org.jetbrains:annotations"
-    ],
-    "org.webjars:bootstrap": [
-      "org.webjars:jquery"
     ],
     "org.wildfly.client:wildfly-client-config": [
       "org.jboss.logging:jboss-logging"
