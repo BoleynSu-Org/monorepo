@@ -70,9 +70,9 @@ html, body {
                 })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error(`Status: ${response.status}`);
+                            throw new Error("Status: " + response.status);
                         }
-                        return response.text()
+                        return response.text();
                     })
                     .then(data => {
                         document.getElementById('output').value = data;
