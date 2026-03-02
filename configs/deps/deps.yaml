@@ -156,10 +156,10 @@ bazel_deps:
   module_version: 1.0.0
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.35.1/bin/linux/amd64/kubectl
-  sha256: 36e2f4ac66259232341dd7866952d64a958846470f6a9a6a813b9117bd965207
-  version: v1.35.1
-  updated_at: '2026-02-10'
+  url: https://dl.k8s.io/release/v1.35.2/bin/linux/amd64/kubectl
+  sha256: 924eb50779153f20cb668117d141440b95df2f325a64452d78dff9469145e277
+  version: v1.35.2
+  updated_at: '2026-03-02'
   executable: true
   override_updater:
   - type: shell
@@ -172,7 +172,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.35.1
+  module_version: 1.35.2
 - name: sysroot_linux_x86_64
   type: http_archive
   version: 42-20260203.111053-20260203.150204
@@ -220,12 +220,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protobuf-33.5.bazel.tar.gz
-  sha256: 692ea6352402599c72020d2487c8bace5c50439bac2029ed864b323e5e214e8b
-  strip_prefix: protobuf-33.5
-  version: v33.5
-  updated_at: '2026-02-03'
-  module_version: '33.5'
+  url: https://github.com/protocolbuffers/protobuf/releases/download/v34.0/protobuf-34.0.tar.gz
+  sha256: e540aae70d3b4f758846588768c9e39090fab880bc3233a1f42a8ab8d3781efd
+  strip_prefix: protobuf-34.0
+  version: v34.0
+  updated_at: '2026-03-02'
+  module_version: '34.0'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -234,12 +234,14 @@ bazel_deps:
       value: [version]
   - type: shell
     cmd: |
-      echo DEPS_UPDATER_url=https://github.com/protocolbuffers/protobuf/releases/download/${DEPS_UPDATER_version}/protobuf-${DEPS_UPDATER_version#v}.bazel.tar.gz
+      echo DEPS_UPDATER_url=https://github.com/protocolbuffers/protobuf/releases/download/${DEPS_UPDATER_version}/protobuf-${DEPS_UPDATER_version#v}.tar.gz
   - type: deps_updater
     name: bazel_deps
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
+  patches:
+  - '@boleynsu_org//third_party/protocolbuffers:cc.patch'
 - name: zlib
   type: http_archive
   url: https://github.com/madler/zlib/releases/download/v1.3.2/zlib-1.3.2.tar.gz
@@ -428,11 +430,11 @@ bazel_deps:
   module_version: '20260107.1'
 - name: rules_rust
   type: http_archive
-  version: 0.68.1
-  sha256: c8aa806cf6066679ac23463241ee80ad692265dad0465f51111cbbe30b890352
-  url: https://github.com/bazelbuild/rules_rust/releases/download/0.68.1/rules_rust-0.68.1.tar.gz
-  updated_at: '2026-01-17'
-  module_version: 0.68.1
+  version: 0.69.0
+  sha256: bbc764c252d061281b2359277a4d46480e2dcfaf72afc1ce6e00ada58ccbfd4c
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/rules_rust-0.69.0.tar.gz
+  updated_at: '2026-03-02'
+  module_version: 0.69.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -515,12 +517,12 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: tar.bzl
   type: http_archive
-  version: v0.9.0
-  sha256: 4bd59d41aac03b6c4cf3f6acd8c1c50355a19d2887a140e793da54d40e116913
-  strip_prefix: tar.bzl-0.9.0
-  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.9.0/tar.bzl-v0.9.0.tar.gz
-  updated_at: '2026-02-15'
-  module_version: 0.9.0
+  version: v0.9.1
+  sha256: 7e67d127f64cbcc30501549233c27a15410a74a64a0dca08c547c2945af4003f
+  strip_prefix: tar.bzl-0.9.1
+  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.9.1/tar.bzl-v0.9.1.tar.gz
+  updated_at: '2026-03-02'
+  module_version: 0.9.1
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -723,17 +725,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.60.0
+  version: v2.61.0
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.60.0
-  digest: sha256:a7b81cab28cf93de4c3ac97403d92f38d23191d7247e9c37611d4afa2d8d0c69
-  updated_at: '2026-02-21'
+  tag: v2.61.0
+  digest: sha256:9ebcbf84ab4be44e915f2643df9a1c9b9616cd02b72be3f7735cf94e253da3f2
+  updated_at: '2026-03-02'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.60.0
+  module_version: 2.61.0
 - name: io_quay_boleynsu_oj_c99runner
   version: 43-20260224.031449
   version_regex: ([0-9.]*)-([0-9.]*)

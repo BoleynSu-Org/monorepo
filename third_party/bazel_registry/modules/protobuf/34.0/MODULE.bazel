@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '33.5',
+    version = '34.0',
     repo_name = 'com_google_protobuf',
 )
 
@@ -67,11 +67,6 @@ bazel_dep(
 )
 
 bazel_dep(
-    name = 'rules_proto',
-    version = '7.1.0',
-)
-
-bazel_dep(
     name = 'rules_shell',
     version = '0.6.1',
 )
@@ -82,29 +77,44 @@ bazel_dep(
 )
 
 protoc = use_extension(
-    '//bazel/private:prebuilt_protoc_extension.bzl',
+    '//bazel/private/oss/toolchains/prebuilt:protoc_extension.bzl',
     'protoc',
 )
 
 use_repo(
     protoc,
     'prebuilt_protoc.linux_aarch_64',
-    'prebuilt_protoc.osx_aarch_64',
     'prebuilt_protoc.linux_ppcle_64',
     'prebuilt_protoc.linux_s390_64',
     'prebuilt_protoc.linux_x86_32',
     'prebuilt_protoc.linux_x86_64',
+    'prebuilt_protoc.osx_aarch_64',
     'prebuilt_protoc.osx_x86_64',
     'prebuilt_protoc.win32',
     'prebuilt_protoc.win64',
 )
 
 register_toolchains(
-    '//bazel/private/toolchains/prebuilt:all',
+    '//bazel/private/oss/toolchains/prebuilt:all',
 )
 
 register_toolchains(
-    '//bazel/private/toolchains:all',
+    '//bazel/private/oss/toolchains:all',
+)
+
+system_python_extension = use_extension(
+    '//python/dist:system_python.bzl',
+    'system_python_extension',
+)
+
+system_python_extension.find(
+    name = 'system_python',
+    minimum = '3.9',
+)
+
+use_repo(
+    system_python_extension,
+    'system_python',
 )
 
 local_runtime_repo = use_repo_rule(
@@ -154,4 +164,17 @@ cc_configure_extension = use_extension(
 use_repo(
     cc_configure_extension,
     'local_config_cc',
+)
+
+register_toolchains(
+    '//toolchain:osx-x86_64-toolchain',
+    '//toolchain:osx-aarch_64-toolchain',
+    '//toolchain:linux-aarch_64-toolchain',
+    '//toolchain:linux-ppcle_64-toolchain',
+    '//toolchain:linux-s390_64-toolchain',
+    '//toolchain:linux-x86_32-toolchain',
+    '//toolchain:linux-x86_64-toolchain',
+    '//toolchain:win32-toolchain',
+    '//toolchain:win64-toolchain',
+    '//toolchain:k8-toolchain',
 )
