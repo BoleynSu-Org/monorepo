@@ -240,11 +240,11 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.42.0",
-            "sha256": "5d7bd1c44051cca8a9e0842eda9a5c223f2cb7264202022ff20ee77dcb3fb275",
-            "strip_prefix": "bazel_features-1.42.0",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.42.0/bazel_features-v1.42.0.tar.gz",
-            "updated_at": "2026-02-25",
+            "version": "v1.42.1",
+            "sha256": "8189bac9a6bf9cc155a854c4cbebfebf58b9ca7a2d0a67645f7d0c1f83c523ac",
+            "strip_prefix": "bazel_features-1.42.1",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.42.1/bazel_features-v1.42.1.tar.gz",
+            "updated_at": "2026-03-06",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -263,7 +263,7 @@ DEPS = {
                     ],
                 },
             ],
-            "module_version": "1.42.0",
+            "module_version": "1.42.1",
         },
         {
             "name": "com_google_protobuf",
@@ -620,12 +620,12 @@ DEPS = {
         {
             "name": "tar.bzl",
             "type": "http_archive",
-            "version": "v0.9.1",
-            "sha256": "7e67d127f64cbcc30501549233c27a15410a74a64a0dca08c547c2945af4003f",
-            "strip_prefix": "tar.bzl-0.9.1",
-            "url": "https://github.com/bazel-contrib/tar.bzl/releases/download/v0.9.1/tar.bzl-v0.9.1.tar.gz",
-            "updated_at": "2026-03-02",
-            "module_version": "0.9.1",
+            "version": "v0.10.0",
+            "sha256": "80d99a88c75efcb4e3a31661d53efbe9a6c50e497d9d033198b823868bc5434f",
+            "strip_prefix": "tar.bzl-0.10.0",
+            "url": "https://github.com/bazel-contrib/tar.bzl/releases/download/v0.10.0/tar.bzl-v0.10.0.tar.gz",
+            "updated_at": "2026-03-06",
+            "module_version": "0.10.0",
             "override_updater": [
                 {
                     "type": "deps_updater",

@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.42.0',
+    version = '1.42.1',
 )
 
 bazel_dep(
@@ -36,7 +36,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'tar.bzl',
-    version = '0.9.1',
+    version = '0.10.0',
 )
 
 toolchains = use_extension(
