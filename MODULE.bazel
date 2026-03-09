@@ -240,11 +240,11 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.42.1",
-            "sha256": "8189bac9a6bf9cc155a854c4cbebfebf58b9ca7a2d0a67645f7d0c1f83c523ac",
-            "strip_prefix": "bazel_features-1.42.1",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.42.1/bazel_features-v1.42.1.tar.gz",
-            "updated_at": "2026-03-06",
+            "version": "v1.43.0",
+            "sha256": "c26b4e69cf02fea24511a108d158188b9d8174426311aac59ce803a78d107648",
+            "strip_prefix": "bazel_features-1.43.0",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.43.0/bazel_features-v1.43.0.tar.gz",
+            "updated_at": "2026-03-09",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -263,7 +263,7 @@ DEPS = {
                     ],
                 },
             ],
-            "module_version": "1.42.1",
+            "module_version": "1.43.0",
         },
         {
             "name": "com_google_protobuf",

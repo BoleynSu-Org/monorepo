@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.42.1',
+    version = '1.43.0',
 )
 
 bazel_dep(
