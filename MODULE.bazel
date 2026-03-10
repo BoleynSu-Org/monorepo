@@ -149,11 +149,11 @@ DEPS = {
         {
             "name": "bazel_linux_x86_64",
             "type": "http_archive",
-            "version": "9.0.0",
-            "url": "https://github.com/bazelbuild/bazel/releases/download/9.0.0/bazel-9.0.0-installer-linux-x86_64.sh",
+            "version": "9.0.1",
+            "url": "https://github.com/bazelbuild/bazel/releases/download/9.0.1/bazel-9.0.1-installer-linux-x86_64.sh",
             "archive_type": "zip",
-            "sha256": "2d58e4f9cc71ac0f8a5794cfb15cca5fb4581439df15a9fd70d3ed00784e3d83",
-            "updated_at": "2026-01-21",
+            "sha256": "d216b18ee8a225a38610d23ab49cb62df5488bafdbd5f59d3f1f78ec59778976",
+            "updated_at": "2026-03-10",
             "executable": True,
             "override_updater": [
                 {
@@ -172,7 +172,7 @@ DEPS = {
                 },
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
-            "module_version": "9.0.0",
+            "module_version": "9.0.1",
         },
         {
             "name": "rules_license",
