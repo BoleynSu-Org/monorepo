@@ -48,12 +48,12 @@ bazel_deps:
   module_version: 0.60.0
 - name: rules_oci
   type: http_archive
-  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.2.7.tar.gz
-  sha256: b8db7ab889d501db33313620b2c8040dbb07e95c26a0fefe06004b35baf80e08
-  strip_prefix: rules_oci-2.2.7
-  updated_at: '2026-01-17'
-  version: v2.2.7
-  module_version: 2.2.7
+  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.0.tar.gz
+  sha256: e987cab7a35475cb9c9060fc3f338a1fc8896c240295a3272968b217acefd0cb
+  strip_prefix: rules_oci-2.3.0
+  updated_at: '2026-03-12'
+  version: v2.3.0
+  module_version: 2.3.0
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.0.tar.gz

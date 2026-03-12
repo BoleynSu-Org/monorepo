@@ -1,6 +1,6 @@
 module(
     name = 'rules_oci',
-    version = '2.2.7',
+    version = '2.3.0',
 )
 
 bazel_dep(
@@ -19,8 +19,18 @@ bazel_dep(
 )
 
 bazel_dep(
+    name = 'package_metadata',
+    version = '0.0.7',
+)
+
+bazel_dep(
     name = 'platforms',
     version = '1.0.0',
+)
+
+bazel_dep(
+    name = 'tar.bzl',
+    version = '0.10.0',
 )
 
 oci = use_extension(
@@ -67,11 +77,21 @@ toolchains_1 = use_extension(
 toolchains_1.jq(
 )
 
-toolchains_1.tar(
+use_repo(
+    toolchains_1,
+    'jq_toolchains',
+)
+
+toolchains_2 = use_extension(
+    '@tar.bzl//tar:extensions.bzl',
+    'toolchains',
 )
 
 use_repo(
-    toolchains_1,
+    toolchains_2,
     'bsd_tar_toolchains',
-    'jq_toolchains',
+)
+
+register_toolchains(
+    '@bsd_tar_toolchains//:all',
 )
