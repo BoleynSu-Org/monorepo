@@ -48,7 +48,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_shell',
-    version = '0.6.1',
+    version = '0.7.0',
 )
 
 go_sdk = use_extension(

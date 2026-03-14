@@ -16,7 +16,7 @@
     "com.google.re2j:re2j": 1525409503,
     "com.google.s2a.proto.v2:s2a-proto": 898932763,
     "com.google.truth:truth": 1696781452,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -1103855279,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 936437363,
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
     "commons-codec:commons-codec": 650994800,
@@ -73,9 +73,9 @@
     "com.google.re2j:re2j": -1688126233,
     "com.google.s2a.proto.v2:s2a-proto": 2034966493,
     "com.google.truth:truth": 1157646795,
-    "com.googlecode.owasp-java-html-sanitizer:java10-shim": -487963882,
-    "com.googlecode.owasp-java-html-sanitizer:java8-shim": -1547089613,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -562720221,
+    "com.googlecode.owasp-java-html-sanitizer:java10-shim": -1979107723,
+    "com.googlecode.owasp-java-html-sanitizer:java8-shim": 461010812,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1621764993,
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
     "commons-beanutils:commons-beanutils": 321236186,
@@ -280,21 +280,21 @@
     },
     "com.googlecode.owasp-java-html-sanitizer:java10-shim": {
       "shasums": {
-        "jar": "b81dad39ed33222dd38f4218f5891669233133d58806c27bbd21def92f695c9a"
+        "jar": "83fe042ed85211bece1b5f2f09c778802f51caa3036177c29705332f21a109eb"
       },
-      "version": "20260102.1"
+      "version": "20260313.1"
     },
     "com.googlecode.owasp-java-html-sanitizer:java8-shim": {
       "shasums": {
-        "jar": "6e0d2b3e43b79e380ce723286ed57d4fdb787a9ade2d1d320ecdad21c795a7da"
+        "jar": "968a4ea6db5395ba01198031c7c4331f3d92e029779495082f920646033377db"
       },
-      "version": "20260102.1"
+      "version": "20260313.1"
     },
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": {
       "shasums": {
-        "jar": "b2a7cb47d674efc2136dcfdba708e5d23b4a959104fe6cef53d6947d66d025cc"
+        "jar": "47800b2dbe419f7ace252577d5247f0969d3fef3f5043904fa775b289461a10a"
       },
-      "version": "20260102.1"
+      "version": "20260313.1"
     },
     "com.squareup.okhttp:okhttp": {
       "shasums": {

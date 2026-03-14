@@ -108,12 +108,12 @@ bazel_deps:
   module_version: 0.8.2
 - name: toolchains_llvm
   type: http_archive
-  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.6.0.tar.gz
-  sha256: 93ecdb95a03becbb0bd40bc7c3e5adf3d044fe79be5c26d21765c0986d327d9d
-  strip_prefix: toolchains_llvm-1.6.0
-  updated_at: '2026-01-17'
-  version: v1.6.0
-  module_version: 1.6.0
+  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.7.0.tar.gz
+  sha256: 973691168f59cb35027190e458e6674871009e9193498325d920bd170d4bc75f
+  strip_prefix: toolchains_llvm-1.7.0
+  updated_at: '2026-03-14'
+  version: v1.7.0
+  module_version: 1.7.0
 - name: bazel_linux_x86_64
   type: http_archive
   version: 9.0.1
@@ -451,12 +451,12 @@ bazel_deps:
       value: [sha256]
 - name: rules_shell
   type: http_archive
-  version: v0.6.1
-  sha256: e6b87c89bd0b27039e3af2c5da01147452f240f75d505f5b6880874f31036307
-  strip_prefix: rules_shell-0.6.1
-  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.6.1/rules_shell-v0.6.1.tar.gz
-  updated_at: '2025-09-10'
-  module_version: 0.6.1
+  version: v0.7.0
+  sha256: e17f72732618a6536559b3015dbe190ef592f7b9ba81969ff4bca766c451b3a5
+  strip_prefix: rules_shell-0.7.0
+  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.7.0/rules_shell-v0.7.0.tar.gz
+  updated_at: '2026-03-14'
+  module_version: 0.7.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -666,9 +666,9 @@ maven_deps:
   updated_at: '2025-10-25'
   module_version: 2.0.1
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
-  version: '20260102.1'
-  updated_at: '2026-01-17'
-  module_version: '20260102.1'
+  version: '20260313.1'
+  updated_at: '2026-03-14'
+  module_version: '20260313.1'
 - name: org.apache.commons:commons-text
   version: 1.15.0
   updated_at: '2026-01-17'
@@ -712,8 +712,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:8b5b5195c8c75e40ea1d60af5fc93cc7830f7bd5cd74b184e027ff16301a9302
-  updated_at: '2026-03-13'
+  digest: sha256:16a72c6140f64d00a3a9edf8d3d3b18a7b0a29ca31b0453378d9eb71f01f9e34
+  updated_at: '2026-03-14'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -725,17 +725,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.61.2
+  version: v2.62.1
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.61.2
-  digest: sha256:40e1185f13edf70be8e5ce0b2fb43cdd80900b1fc921e2256ab86c7865d56ec5
-  updated_at: '2026-03-06'
+  tag: v2.62.1
+  digest: sha256:6a0b050d4a5aae763783137eb3049f4f960428b363d05182c774bf4cc633becc
+  updated_at: '2026-03-14'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.61.2
+  module_version: 2.62.1
 - name: io_quay_boleynsu_oj_c99runner
   version: 43-20260312.003742
   version_regex: ([0-9.]*)-([0-9.]*)
