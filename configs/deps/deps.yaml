@@ -81,12 +81,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: ca53210ee823a15d9b1ebe86a36b564d6834fd0c049e207469803180b7f8a20e
-  strip_prefix: grpc-java-1.79.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.79.0.tar.gz
-  updated_at: '2026-02-03'
-  version: v1.79.0
-  module_version: 1.79.0
+  sha256: d202e1759913b3d789052e5d243a994a44d1a30b6fc0f4286802c859ffd8d866
+  strip_prefix: grpc-java-1.80.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.80.0.tar.gz
+  updated_at: '2026-03-17'
+  version: v1.80.0
+  module_version: 1.80.0
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -676,22 +676,22 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20260312.003742
+  version: 43-20260317.032526
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20260312.003742
-  digest: sha256:8ea86971554b63f7c173a72528e480e7d3ea6ce1c4193cf1bd1e22f6608b3223
-  updated_at: '2026-03-12'
+  tag: 43-20260317.032526
+  digest: sha256:c268af399d05ba58b50e7502d8d4faec89959d00639251d300a447e36371dd0a
+  updated_at: '2026-03-17'
   platforms:
   - linux/amd64
-  module_version: 43.20260312.3742
+  module_version: 43.20260317.32526
 - name: io_docker_index_library_mariadb
   version: 12.2.2
   registry: index.docker.io
   repository: library/mariadb
   tag: 12.2.2
-  digest: sha256:ddb976b14181e9783109fdf7d13d4b9eb8ea7cbdf59b4ed6c6551305ca73fe41
+  digest: sha256:e16f61b8f6ed25111adbb1c5c19bbc2904efc8ed14029999af0cbe1c7ae18bf1
   updated_at: '2026-03-17'
   platforms:
   - linux/amd64
@@ -737,40 +737,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.62.1
 - name: io_quay_boleynsu_oj_c99runner
-  version: 43-20260312.003742
+  version: 43-20260317.032526
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 43-20260312.003742
-  digest: sha256:77178342c6864200195e1facf17a32d6c5f96e690456c96519ffd50b5f3e5825
-  updated_at: '2026-03-12'
+  tag: 43-20260317.032526
+  digest: sha256:f4d377d53d7271a54272e607f135526304b7f0c08b12c0fb0c0bb298918a2093
+  updated_at: '2026-03-17'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260312.3742
+  module_version: 43.20260317.32526
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20260312.003742
+  version: 43-20260317.032526
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20260312.003742
-  digest: sha256:91643819c1d66c522a309d8efdcc69829ccba837e3c0e9ca63e89e060e993fbc
-  updated_at: '2026-03-12'
+  tag: 43-20260317.032526
+  digest: sha256:e2eb5ffb75c4cfcfb28d0a7b423a2de0f019ed33ebe1eb3bea7058f8b73a8fab
+  updated_at: '2026-03-17'
   platforms:
   - linux/amd64
-  module_version: 43.20260312.3742
+  module_version: 43.20260317.32526
 - name: io_quay_boleynsu_base
-  version: 43-20260312.003742
+  version: 43-20260317.032526
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:e40bd768cb778fbff5e283c3a7e85382b4b1773facac9bb90804bcef9547571c
-  tag: 43-20260312.003742
-  updated_at: '2026-03-12'
+  digest: sha256:405713bcc1dd03e8e1ce50c0b4a6bd7cb39b8d518e943d6a64c1c31b08bb96b5
+  tag: 43-20260317.032526
+  updated_at: '2026-03-17'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260312.3742
+  module_version: 43.20260317.32526
 
 toolchain_deps:
 - name: c
