@@ -316,10 +316,10 @@ bazel_deps:
   module_version: 0.8.1
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.3.10/rules_kotlin-v2.3.10.tar.gz
-  sha256: c8fda2b1518018f26d7ca914cd9adb0e9f1799d0db7c4b510de67ed500060dae
-  version: v2.3.10
-  updated_at: '2026-03-08'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.3.20/rules_kotlin-v2.3.20.tar.gz
+  sha256: 13d5b767d697473ced9b55547a18a6ab65ab3fae5440555deee8a44c886b50aa
+  version: v2.3.20
+  updated_at: '2026-03-18'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -334,7 +334,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.3.10
+  module_version: 2.3.20
 - name: aspect_bazel_lib
   type: http_archive
   version: v2.22.5
@@ -676,16 +676,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20260317.032526
+  version: 43-20260318.131400
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20260317.032526
-  digest: sha256:c268af399d05ba58b50e7502d8d4faec89959d00639251d300a447e36371dd0a
-  updated_at: '2026-03-17'
+  tag: 43-20260318.131400
+  digest: sha256:b0dcfd3898b378105d5df0e3a74135a63a54b3559859f4a83a5479a4c6d440ac
+  updated_at: '2026-03-18'
   platforms:
   - linux/amd64
-  module_version: 43.20260317.32526
+  module_version: 43.20260318.131400
 - name: io_docker_index_library_mariadb
   version: 12.2.2
   registry: index.docker.io
@@ -737,40 +737,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.62.1
 - name: io_quay_boleynsu_oj_c99runner
-  version: 43-20260317.032526
+  version: 43-20260318.131400
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 43-20260317.032526
+  tag: 43-20260318.131400
   digest: sha256:f4d377d53d7271a54272e607f135526304b7f0c08b12c0fb0c0bb298918a2093
-  updated_at: '2026-03-17'
+  updated_at: '2026-03-18'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260317.32526
+  module_version: 43.20260318.131400
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20260317.032526
+  version: 43-20260318.131400
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20260317.032526
+  tag: 43-20260318.131400
   digest: sha256:e2eb5ffb75c4cfcfb28d0a7b423a2de0f019ed33ebe1eb3bea7058f8b73a8fab
-  updated_at: '2026-03-17'
+  updated_at: '2026-03-18'
   platforms:
   - linux/amd64
-  module_version: 43.20260317.32526
+  module_version: 43.20260318.131400
 - name: io_quay_boleynsu_base
-  version: 43-20260317.032526
+  version: 43-20260318.131400
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:405713bcc1dd03e8e1ce50c0b4a6bd7cb39b8d518e943d6a64c1c31b08bb96b5
-  tag: 43-20260317.032526
-  updated_at: '2026-03-17'
+  tag: 43-20260318.131400
+  updated_at: '2026-03-18'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260317.32526
+  module_version: 43.20260318.131400
 
 toolchain_deps:
 - name: c
