@@ -790,7 +790,7 @@ toolchain_deps:
   updated_at: '2026-01-18'
   expires_at: '2027-01-18'
 - name: golang
-  version: 1.25.6
+  version: 1.26.1
   updated_at: '2026-01-18'
   expires_at: '2027-01-18'
 
