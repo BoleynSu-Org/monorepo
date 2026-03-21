@@ -1,6 +1,6 @@
 module(
     name = 'protobuf',
-    version = '34.0',
+    version = '34.1',
     repo_name = 'com_google_protobuf',
 )
 
@@ -8,6 +8,11 @@ bazel_dep(
     name = 'apple_support',
     version = '2.3.0',
     repo_name = 'build_bazel_apple_support',
+)
+
+bazel_dep(
+    name = 'rules_proto',
+    version = '7.1.0',
 )
 
 bazel_dep(
@@ -64,6 +69,11 @@ bazel_dep(
 bazel_dep(
     name = 'rules_python',
     version = '1.9.0',
+)
+
+bazel_dep(
+    name = 'aspect_bazel_lib',
+    version = '2.22.5',
 )
 
 bazel_dep(

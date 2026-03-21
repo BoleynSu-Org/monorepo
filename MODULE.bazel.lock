@@ -120,8 +120,8 @@
     },
     "@@protobuf+//python/dist:system_python.bzl%system_python_extension": {
       "general": {
-        "bzlTransitiveDigest": "pmsA+awieucfllLc2n7k8xEoPp0i5LF9Hw6mGX0cqSQ=",
-        "usagesDigest": "bnDXuCrIvo9HY0YVWgThWY4mknDSWNP6ksrSm3/I6Y4=",
+        "bzlTransitiveDigest": "qh0n9IrXU/xS94wxKQrG1J63zrLkA1Wy2Y3BQxptPcI=",
+        "usagesDigest": "AF5a9lHFrJtHw1GTt3jJOs7ZYl1+N2bkn1LbPFLoguA=",
         "recordedInputs": [],
         "generatedRepoSpecs": {
           "system_python": {
