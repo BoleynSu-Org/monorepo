@@ -629,13 +629,13 @@ maven_deps:
   updated_at: '2026-01-17'
   module_version: 3.5.7
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.18
-  updated_at: '2026-01-26'
-  module_version: 11.0.18
+  version: 11.0.20
+  updated_at: '2026-03-22'
+  module_version: 11.0.20
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.18
-  updated_at: '2026-01-26'
-  module_version: 11.0.18
+  version: 11.0.20
+  updated_at: '2026-03-22'
+  module_version: 11.0.20
 - name: org.webjars:jquery
   version: 4.0.0
   updated_at: '2026-02-05'
@@ -649,10 +649,10 @@ maven_deps:
   expires_at: '2026-04-18'
   module_version: 3.4.1
 - name: io.undertow:undertow-core
-  version: 2.3.23.Final
+  version: 2.3.24.Final
   version_regex: (.*)\.Final
-  updated_at: '2026-02-06'
-  module_version: 2.3.23
+  updated_at: '2026-03-22'
+  module_version: 2.3.24
 - name: commons-validator:commons-validator
   version: 1.10.1
   updated_at: '2025-11-17'
