@@ -197,11 +197,11 @@ bazel_deps:
   module_version: 21.1.8.42.20260203.111053.20260203.150746
 - name: bazel_features
   type: http_archive
-  version: v1.43.0
-  sha256: c26b4e69cf02fea24511a108d158188b9d8174426311aac59ce803a78d107648
-  strip_prefix: bazel_features-1.43.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.43.0/bazel_features-v1.43.0.tar.gz
-  updated_at: '2026-03-09'
+  version: v1.44.0
+  sha256: ccf85bbf0613d12bf6df2c8470ecec544a6fe8ceab684e970e8ed4dde4cb24ec
+  strip_prefix: bazel_features-1.44.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.44.0/bazel_features-v1.44.0.tar.gz
+  updated_at: '2026-03-23'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.43.0
+  module_version: 1.44.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -449,12 +449,12 @@ bazel_deps:
       value: [sha256]
 - name: rules_shell
   type: http_archive
-  version: v0.7.0
-  sha256: e17f72732618a6536559b3015dbe190ef592f7b9ba81969ff4bca766c451b3a5
-  strip_prefix: rules_shell-0.7.0
-  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.7.0/rules_shell-v0.7.0.tar.gz
-  updated_at: '2026-03-14'
-  module_version: 0.7.0
+  version: v0.7.1
+  sha256: 3709d1745ba4be4ef054449647b62e424267066eca887bb00dd29242cb8463a0
+  strip_prefix: rules_shell-0.7.1
+  url: https://github.com/bazelbuild/rules_shell/releases/download/v0.7.1/rules_shell-v0.7.1.tar.gz
+  updated_at: '2026-03-23'
+  module_version: 0.7.1
   override_updater:
   - type: deps_updater
     name: bazel_deps
