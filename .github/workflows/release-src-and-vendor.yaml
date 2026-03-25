@@ -1,7 +1,7 @@
 name: Release source code and vendored dependencies
 
 on:
-  create:
+  push:
     tags:
       - "v*"
 
