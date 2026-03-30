@@ -20,6 +20,9 @@ spec:
         - path:
             type: PathPrefix
             value: /
+      timeouts:
+        request: "30s"
+        backendRequest: "30s"
     - backendRefs:
         - group: ""
           kind: Service
@@ -30,6 +33,9 @@ spec:
         - path:
             type: PathPrefix
             value: /db
+      timeouts:
+        request: "1h"
+        backendRequest: "1h"
       filters:
         - type: ResponseHeaderModifier
           responseHeaderModifier:
@@ -46,6 +52,9 @@ spec:
         - path:
             type: PathPrefix
             value: /file
+      timeouts:
+        request: "1h"
+        backendRequest: "1h"
       filters:
         - type: ResponseHeaderModifier
           responseHeaderModifier:
