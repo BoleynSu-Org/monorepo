@@ -13,10 +13,11 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          kubernetes.io/metadata.name: envoy-gateway
       podSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          gateway.envoyproxy.io/owning-gateway-name: envoy-gateway
+          gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway
     ports:
     - port: http
   egress:
@@ -95,10 +96,11 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          kubernetes.io/metadata.name: envoy-gateway
       podSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          gateway.envoyproxy.io/owning-gateway-name: envoy-gateway
+          gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway
     ports:
     - port: http
   egress:
@@ -135,10 +137,11 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          kubernetes.io/metadata.name: envoy-gateway
       podSelector:
         matchLabels:
-          app.kubernetes.io/name: ingress-nginx
+          gateway.envoyproxy.io/owning-gateway-name: envoy-gateway
+          gateway.envoyproxy.io/owning-gateway-namespace: envoy-gateway
     ports:
     - port: http
 ---
