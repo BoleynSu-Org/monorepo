@@ -12,7 +12,7 @@ postsubmits:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:35297c501f1bcab3310a8213e03545cb4fa4e53676f5befba1a325dca315d5da
+        - image: quay.io/boleynsu/ci-runner@sha256:0a137b42e5a73d2dfb355b1c855530f9bcdd8a664131d80cd1907b35808a56a5
           command:
             - bazel
             - test
