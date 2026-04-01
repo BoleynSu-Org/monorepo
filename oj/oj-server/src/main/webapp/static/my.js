@@ -41,9 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chatWidget.style.width = '22%';
 
     var chatDiv = document.createElement('div');
-    chatDiv.className = 'panel panel-default';
+    chatDiv.className = 'card bg-white';
     chatDiv.style.height = '250px';
-    chatDiv.style.backgroundColor = 'white';
     chatDiv.style.marginBottom = '0';
     chatDiv.id = 'chat_div';
 
@@ -66,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var sendBtn = document.createElement('button');
     sendBtn.style.width = '20%';
-    sendBtn.className = 'btn btn-primary btn-xs';
+    sendBtn.className = 'btn btn-primary';
     sendBtn.id = 'send_btn';
     sendBtn.textContent = 'Send';
 
     var chatBtn = document.createElement('button');
-    chatBtn.className = 'btn btn-xs btn-primary';
+    chatBtn.className = 'btn btn-primary';
     chatBtn.style.width = '80%';
     chatBtn.id = 'chat_btn';
     chatBtn.textContent = 'Show/Hide chat room';
