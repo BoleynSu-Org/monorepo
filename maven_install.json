@@ -46,7 +46,7 @@
     "org.apache.tomcat.embed:tomcat-embed-jasper": -1767771363,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": -1634689353,
-    "org.mariadb.jdbc:mariadb-java-client": 1507094011,
+    "org.mariadb.jdbc:mariadb-java-client": -300360452,
     "org.webjars:bootstrap": 3729564,
     "org.webjars:jquery": 1753563134,
     "org.wildfly.common:wildfly-common": 141048962,
@@ -145,7 +145,7 @@
     "org.jetbrains.kotlin:kotlin-stdlib-common": 1443260454,
     "org.jetbrains:annotations": 554168982,
     "org.jspecify:jspecify": 117231129,
-    "org.mariadb.jdbc:mariadb-java-client": 327997831,
+    "org.mariadb.jdbc:mariadb-java-client": 459385075,
     "org.ow2.asm:asm": 611381606,
     "org.webjars:bootstrap": 474415717,
     "org.webjars:jquery": 59236587,
@@ -687,9 +687,9 @@
     },
     "org.mariadb.jdbc:mariadb-java-client": {
       "shasums": {
-        "jar": "07bb1229dc184f3313a5aef4c5a6b3207c8dbaa09db4a26814c936f004b4c526"
+        "jar": "6127dc7858047b3d4482899139640b0e2ab2b8abdeb708cfb8c011117771cddf"
       },
-      "version": "3.5.7"
+      "version": "3.5.8"
     },
     "org.ow2.asm:asm": {
       "shasums": {
@@ -2236,6 +2236,7 @@
         "org.mariadb.jdbc.plugin.codec.StringCodec",
         "org.mariadb.jdbc.plugin.codec.TimeCodec",
         "org.mariadb.jdbc.plugin.codec.TimestampCodec",
+        "org.mariadb.jdbc.plugin.codec.UtilDateCodec",
         "org.mariadb.jdbc.plugin.codec.UuidCodec",
         "org.mariadb.jdbc.plugin.codec.ZonedDateTimeCodec"
       ],

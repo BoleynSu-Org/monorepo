@@ -625,9 +625,9 @@ maven_deps:
   updated_at: '2025-11-10'
   module_version: 2.21.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.5.7
-  updated_at: '2026-01-17'
-  module_version: 3.5.7
+  version: 3.5.8
+  updated_at: '2026-04-02'
+  module_version: 3.5.8
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.20
   updated_at: '2026-03-22'
