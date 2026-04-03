@@ -240,11 +240,11 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.44.0",
-            "sha256": "ccf85bbf0613d12bf6df2c8470ecec544a6fe8ceab684e970e8ed4dde4cb24ec",
-            "strip_prefix": "bazel_features-1.44.0",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.44.0/bazel_features-v1.44.0.tar.gz",
-            "updated_at": "2026-03-23",
+            "version": "v1.45.0",
+            "sha256": "adfdb3cffab3a99a63363d844d559a81965d2b61a6062dd51a3d2478d416768f",
+            "strip_prefix": "bazel_features-1.45.0",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.45.0/bazel_features-v1.45.0.tar.gz",
+            "updated_at": "2026-04-03",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -263,7 +263,7 @@ DEPS = {
                     ],
                 },
             ],
-            "module_version": "1.44.0",
+            "module_version": "1.45.0",
         },
         {
             "name": "com_google_protobuf",
@@ -822,15 +822,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "43-20260402.150407",
+            "version": "43-20260402.203144",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "43-20260402.150407",
-            "digest": "sha256:0075c01d79ebb6643a7c26f941b0713fd25a7198a680166122605996a1e7d6e2",
-            "updated_at": "2026-04-02",
+            "tag": "43-20260402.203144",
+            "digest": "sha256:ec46a1e8270330bfcf413abac5619991843abfec371764e1bf67929bd4d53fc1",
+            "updated_at": "2026-04-03",
             "platforms": ["linux/amd64"],
-            "module_version": "43.20260402.150407",
+            "module_version": "43.20260402.203144",
         },
         {
             "name": "io_docker_index_library_mariadb",
