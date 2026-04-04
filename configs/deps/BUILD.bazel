@@ -1,4 +1,5 @@
-exports_files(
-    ["deps.yaml"],
+filegroup(
+    name = "deps_yaml",
+    srcs = ["deps.yaml"],
     visibility = ["//visibility:public"],
 )
