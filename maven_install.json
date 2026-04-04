@@ -42,8 +42,8 @@
     "io.undertow:undertow-core": -954538847,
     "junit:junit": -744267592,
     "org.apache.commons:commons-text": -1886494041,
-    "org.apache.tomcat.embed:tomcat-embed-core": -248693957,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": -1767771363,
+    "org.apache.tomcat.embed:tomcat-embed-core": -2056148420,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": 719741470,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": -1634689353,
     "org.mariadb.jdbc:mariadb-java-client": -300360452,
@@ -129,10 +129,10 @@
     "org.apache.commons:commons-text": 869132518,
     "org.apache.httpcomponents:httpclient": -954670100,
     "org.apache.httpcomponents:httpcore": 67453319,
-    "org.apache.tomcat.embed:tomcat-embed-core": -1976723201,
-    "org.apache.tomcat.embed:tomcat-embed-el": 140536477,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 582270996,
-    "org.apache.tomcat:tomcat-annotations-api": 1203559433,
+    "org.apache.tomcat.embed:tomcat-embed-core": 2015708870,
+    "org.apache.tomcat.embed:tomcat-embed-el": -2091587018,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": 1832078952,
+    "org.apache.tomcat:tomcat-annotations-api": 925375027,
     "org.checkerframework:checker-qual": 1860567376,
     "org.codehaus.mojo:animal-sniffer-annotations": -1201443841,
     "org.eclipse.jdt:ecj": 1612030828,
@@ -591,27 +591,27 @@
     },
     "org.apache.tomcat.embed:tomcat-embed-core": {
       "shasums": {
-        "jar": "55da6fc8b4e80d077ebf358aac8e643e53a84641e208ed387367b2ef7200a113"
+        "jar": "5dbe19880b5025e0b9de7c3de81cb837ce79636ea1da39c8d00a66d3add25567"
       },
-      "version": "11.0.20"
+      "version": "11.0.21"
     },
     "org.apache.tomcat.embed:tomcat-embed-el": {
       "shasums": {
-        "jar": "618a5b69216f49b4f646d4fd4a50e6e9104827022e6670d93b0a562f69a09c70"
+        "jar": "3745cb768f4ed74c2f4af8fc2453992143997019718f71c915d4545fdbef1fb3"
       },
-      "version": "11.0.20"
+      "version": "11.0.21"
     },
     "org.apache.tomcat.embed:tomcat-embed-jasper": {
       "shasums": {
-        "jar": "6c1e1fa59f1c5700ea2e9465ff6ec41215a58cac509afe4015e44512acfee9e2"
+        "jar": "b4d97d9bb32ba0bee2a7c6c67e127677e70283f6aa2757a3d5cf29767e6b4168"
       },
-      "version": "11.0.20"
+      "version": "11.0.21"
     },
     "org.apache.tomcat:tomcat-annotations-api": {
       "shasums": {
-        "jar": "52a8c8d0ccb5efe1b403c30bec7008b77c4948aa3300bd9f2b0eb84589f5b9bc"
+        "jar": "2f66697030bb986a69043ca3b55b838384c73de50aff1ef5452ae2c90cfaea70"
       },
-      "version": "11.0.20"
+      "version": "11.0.21"
     },
     "org.checkerframework:checker-qual": {
       "shasums": {
