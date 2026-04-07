@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.50.0.tar.gz",
+  "integrity": "sha256-YbMS3TaCG13NxSwWxBnCFhulbHu2fBEb+xoFEbOXYwY=",
+  "strip_prefix": "bazel-gazelle-0.50.0"
+}
