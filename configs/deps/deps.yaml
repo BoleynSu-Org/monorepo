@@ -116,11 +116,11 @@ bazel_deps:
   module_version: 1.7.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 9.0.1
-  url: https://github.com/bazelbuild/bazel/releases/download/9.0.1/bazel-9.0.1-installer-linux-x86_64.sh
+  version: 9.0.2
+  url: https://github.com/bazelbuild/bazel/releases/download/9.0.2/bazel-9.0.2-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: d216b18ee8a225a38610d23ab49cb62df5488bafdbd5f59d3f1f78ec59778976
-  updated_on: '2026-03-10'
+  sha256: cfaa87e8211db3d1d1621eee98fd32d5d98da3df592c2ebe8dac8f677c3616e5
+  updated_on: '2026-04-11'
   executable: true
   override_updater:
   - type: deps_updater
@@ -136,7 +136,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 9.0.1
+  module_version: 9.0.2
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -272,10 +272,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.5.2/apple_support.2.5.2.tar.gz
-  sha256: ce4fc3e360c151af7c142da190abd4cfb49ca90aa833291d136afa05e94ba4ea
-  version: 2.5.2
-  updated_on: '2026-03-30'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.5.3/apple_support.2.5.3.tar.gz
+  sha256: a5daa4702e7a357f423b83666680d3a97bb8ab2126aac5bd9c1895033f19a55a
+  version: 2.5.3
+  updated_on: '2026-04-11'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +290,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.5.2
+  module_version: 2.5.3
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
@@ -708,8 +708,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:16a72c6140f64d00a3a9edf8d3d3b18a7b0a29ca31b0453378d9eb71f01f9e34
-  updated_on: '2026-03-14'
+  digest: sha256:7ee51a180a918f034a356d9ee71a38fe6ad6c0251375cd8be2383fa8766fee71
+  updated_on: '2026-04-11'
   platforms:
   - linux/amd64
   - linux/arm/v6
