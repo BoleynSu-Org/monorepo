@@ -48,12 +48,12 @@ bazel_deps:
   module_version: 0.60.0
 - name: rules_oci
   type: http_archive
-  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.0.tar.gz
-  sha256: e987cab7a35475cb9c9060fc3f338a1fc8896c240295a3272968b217acefd0cb
-  strip_prefix: rules_oci-2.3.0
-  updated_on: '2026-03-12'
-  version: v2.3.0
-  module_version: 2.3.0
+  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.1.tar.gz
+  sha256: 6d47e0bb9d3c269695cbb35abb603d1db08434376a1210867da8f6f4a9c630ba
+  strip_prefix: rules_oci-2.3.1
+  updated_on: '2026-04-12'
+  version: v2.3.1
+  module_version: 2.3.1
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.0.tar.gz
@@ -678,16 +678,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20260411.040558
+  version: 43-20260412.141110
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20260411.040558
-  digest: sha256:725308b10d4881f6b719ecd138833461563696255d4d49f046a80ab9d0d5e297
-  updated_on: '2026-04-11'
+  tag: 43-20260412.141110
+  digest: sha256:255e4a805b07d88522327872e1dafd02aa37ff98e3c3c2c56fad05fde76a9f24
+  updated_on: '2026-04-12'
   platforms:
   - linux/amd64
-  module_version: 43.20260411.40558
+  module_version: 43.20260412.141110
 - name: io_docker_index_library_mariadb
   version: 11.8.6
   version_regex: (11\.8\.[0-9]+)
@@ -745,16 +745,16 @@ container_deps:
   - linux/arm64/v8
   module_version: 43.20260411.40558
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20260411.040558
+  version: 43-20260412.141110
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20260411.040558
-  digest: sha256:e45dee9c738d43fd434ea0bf27ffcf6a07a36419969acd4edfb7481ccc11d902
-  updated_on: '2026-04-11'
+  tag: 43-20260412.141110
+  digest: sha256:b62afa71ce50087173a2dbe0088ec5247874d64835bb226c31f643a89f7bd7e6
+  updated_on: '2026-04-12'
   platforms:
   - linux/amd64
-  module_version: 43.20260411.40558
+  module_version: 43.20260412.141110
 - name: io_quay_boleynsu_base
   version: 43-20260411.040558
   version_regex: ([0-9.]*)-([0-9.]*)
