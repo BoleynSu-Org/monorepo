@@ -204,10 +204,10 @@ DEPS = {
         {
             "name": "kubectl_linux_amd64",
             "type": "http_file",
-            "url": "https://dl.k8s.io/release/v1.35.3/bin/linux/amd64/kubectl",
-            "sha256": "fd31c7d7129260e608f6faf92d5984c3267ad0b5ead3bced2fe125686e286ad6",
-            "version": "v1.35.3",
-            "updated_on": "2026-03-19",
+            "url": "https://dl.k8s.io/release/v1.35.4/bin/linux/amd64/kubectl",
+            "sha256": "b529430df69a688fd61b64ad2299edb5fd71cb58be2a4779dba624c7d3510efd",
+            "version": "v1.35.4",
+            "updated_on": "2026-04-16",
             "executable": True,
             "override_updater": [
                 {
@@ -223,7 +223,7 @@ DEPS = {
                     }],
                 },
             ],
-            "module_version": "1.35.3",
+            "module_version": "1.35.4",
         },
         {
             "name": "sysroot_linux_x86_64",
@@ -958,8 +958,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/mariadb",
             "tag": "11.8.6",
-            "digest": "sha256:f5644a292224cdf4b6514aca38b3b4436f0b0443d54170a472cd14261f31402d",
-            "updated_on": "2026-04-07",
+            "digest": "sha256:78a5047d3ba33975f183f183c2464cc7f1eab13ec8667e57cc9a5821d6da7577",
+            "updated_on": "2026-04-16",
             "platforms": [
                 "linux/amd64",
                 "linux/arm64/v8",
@@ -974,8 +974,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.4.2",
-            "digest": "sha256:3a1582df310cf49a3c9cad2882496eed4596563f8d33250703f8b26e538cef7d",
-            "updated_on": "2026-04-12",
+            "digest": "sha256:ccfd9a428db4059185af2655e945526ebe50f81adbe908f78c353ab116dd47b3",
+            "updated_on": "2026-04-16",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
