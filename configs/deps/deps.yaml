@@ -116,11 +116,11 @@ bazel_deps:
   module_version: 1.7.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 9.0.2
-  url: https://github.com/bazelbuild/bazel/releases/download/9.0.2/bazel-9.0.2-installer-linux-x86_64.sh
+  version: 9.1.0
+  url: https://github.com/bazelbuild/bazel/releases/download/9.1.0/bazel-9.1.0-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: cfaa87e8211db3d1d1621eee98fd32d5d98da3df592c2ebe8dac8f677c3616e5
-  updated_on: '2026-04-11'
+  sha256: 7c24f89a64035c32f3a071d336f07bb41a75f657c7e79f3c053f9e04d89f338f
+  updated_on: '2026-04-20'
   executable: true
   override_updater:
   - type: deps_updater
@@ -136,7 +136,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 9.0.2
+  module_version: 9.1.0
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
