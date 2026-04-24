@@ -972,15 +972,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "43-20260424.135437",
+            "version": "43-20260424.155558",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "43-20260424.135437",
-            "digest": "sha256:80b8c231c2e4d6a87a9b3b8c8a9eb9ae66b272492b45904d8eba31bb147206a4",
+            "tag": "43-20260424.155558",
+            "digest": "sha256:3a9a8337ef9b322dac0b1a45d06d9a9694bf8b8bdcee0de0b8452d28d7016c12",
             "updated_on": "2026-04-24",
             "platforms": ["linux/amd64"],
-            "module_version": "43.20260424.135437",
+            "module_version": "43.20260424.155558",
         },
         {
             "name": "io_docker_index_library_mariadb",
