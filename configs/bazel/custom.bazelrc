@@ -54,6 +54,7 @@ common:vendor --vendor_dir=third_party/bazel_vendor
 # CI/CD
 common:ci --config=use_credential_helper
 common:ci --config=remote
+common:ci --build_metadata=VISIBILITY=PUBLIC
 ## build and test
 common:ci-build-and-test --config=ci
 common:ci-build-and-test --platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
