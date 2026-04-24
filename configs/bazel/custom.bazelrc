@@ -22,6 +22,11 @@ common --@io_bazel_rules_go//go/config:static=true
 common --@rules_python//python/config_settings:bootstrap_impl=script
 common --@rules_python//python/config_settings:venvs_use_declare_symlink=no
 
+# Credential Helpers
+## See https://github.com/bazelbuild/proposals/blob/124b188252d2b4da516898724e1ce6227a1aedaf/designs/2022-06-07-bazel-credential-helpers.md
+common:use_credential_helper --credential_helper=app.buildbuddy.io=credential-helper-bazel
+common:use_credential_helper --credential_helper=remote.buildbuddy.io=credential-helper-bazel
+
 # See https://github.com/bazelbuild/bazel-toolchains/blob/b9bc541aae7bd8e09c6954e2e9da3f7ffe4f77f0/bazelrc/bazel-4.1.0.bazelrc
 ## Remote Build Execution
 common:remote --remote_executor=grpcs://remote.buildbuddy.io
@@ -47,12 +52,13 @@ common:vendor --repo_env=DOCKER_CONFIG=
 common:vendor --vendor_dir=third_party/bazel_vendor
 
 # CI/CD
+common:ci --config=remote
 ## build and test
-common:ci-build-and-test --config=remote
-common:ci-build-and-test --platforms=//configs/build/platforms:linux_x86_64
+common:ci-build-and-test --config=ci
+common:ci-build-and-test --platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
 ## deploy
-common:ci-deploy --config=remote
-common:ci-deploy --platforms=//configs/build/platforms:linux_x86_64
+common:ci-deploy --config=ci
+common:ci-deploy --platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
 common:ci-deploy --compilation_mode=opt
 
 # Misc
