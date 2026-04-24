@@ -2,7 +2,7 @@ module(
     name = 'apple_support',
     bazel_compatibility = ['>=7.0.0'],
     repo_name = 'build_bazel_apple_support',
-    version = '2.5.3',
+    version = '2.5.4',
 )
 
 bazel_dep(
@@ -38,4 +38,14 @@ use_repo(
 
 register_toolchains(
     '@local_config_apple_cc_toolchains//:all',
+)
+
+xcode_configure_extension = use_extension(
+    '//xcode:xcode_configure.bzl',
+    'xcode_configure_extension',
+)
+
+use_repo(
+    xcode_configure_extension,
+    'local_config_xcode',
 )

@@ -272,10 +272,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.5.3/apple_support.2.5.3.tar.gz
-  sha256: a5daa4702e7a357f423b83666680d3a97bb8ab2126aac5bd9c1895033f19a55a
-  version: 2.5.3
-  updated_on: '2026-04-11'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.5.4/apple_support.2.5.4.tar.gz
+  sha256: 06367c5178e365ff9d9df48ab28e6b080c344a06f52cb01157df881739d2cb14
+  version: 2.5.4
+  updated_on: '2026-04-24'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +290,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.5.3
+  module_version: 2.5.4
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
