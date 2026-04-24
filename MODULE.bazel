@@ -842,6 +842,38 @@ DEPS = {
             ],
             "module_version": "0.3.1",
         },
+        {
+            "name": "toml.bzl",
+            "type": "http_archive",
+            "version": "v0.3.0",
+            "sha256": "c0642d5bb9d22f8e9fc7b6a7b1489d9634e253835f01cae8163e8fa8ed007014",
+            "strip_prefix": "toml.bzl-0.3.0",
+            "url": "https://github.com/jvolkman/toml.bzl/releases/download/v0.3.0/toml.bzl-v0.3.0.tar.gz",
+            "updated_on": "2026-04-24",
+            "override_updater": [
+                {
+                    "type": "deps_updater",
+                    "name": "bazel_deps",
+                    "extra_args": [{
+                        "name": "fields",
+                        "value": ["version"],
+                    }],
+                },
+                {
+                    "type": "shell",
+                    "cmd": "echo DEPS_UPDATER_url=https://github.com/jvolkman/toml.bzl/releases/download/${DEPS_UPDATER_version}/toml.bzl-${DEPS_UPDATER_version}.tar.gz\necho DEPS_UPDATER_strip_prefix=toml.bzl-${DEPS_UPDATER_version#v}\n",
+                },
+                {
+                    "type": "deps_updater",
+                    "name": "bazel_deps",
+                    "extra_args": [{
+                        "name": "fields",
+                        "value": ["sha256"],
+                    }],
+                },
+            ],
+            "module_version": "0.3.0",
+        },
     ],
     "pip_deps": [
         {
