@@ -16,7 +16,7 @@ presubmits:
             - -c
             - |
               set -euo pipefail
-              vault write auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
+              vault write -field=token auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
               bazel test --config=ci-build-and-test //...
           resources:
             limits:
@@ -50,7 +50,7 @@ presubmits:
             - -c
             - |
               set -euo pipefail
-              vault write auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
+              vault write -field=token auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
               bazel run --config=ci-deploy //deploy/oj:staging.apply -- --server-side
           resources:
             limits:
