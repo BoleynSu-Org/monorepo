@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.17.tar.gz
-  sha256: 283fa1cdaaf172337898749cf4b9b1ef5ea269da59540954e51fba0e7b8f277a
-  version: 0.2.17
-  strip_prefix: rules_cc-0.2.17
-  updated_on: '2026-02-18'
-  module_version: 0.2.17
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.18.tar.gz
+  sha256: 1de5b47721fce0af0dd453b3071228fdfc44bd18199826b3f0b03b423aae9f65
+  version: 0.2.18
+  strip_prefix: rules_cc-0.2.18
+  updated_on: '2026-04-24'
+  module_version: 0.2.18
 - name: rules_java
   type: http_archive
   sha256: b9c5ac9dfa76ab8e770ff8c979388878bf818afc850a8056fd7726a215354bf0
@@ -64,12 +64,12 @@ bazel_deps:
   module_version: 1.9.0
 - name: rules_jvm_external
   type: http_archive
-  sha256: d74bf9f851f75add26dd234580af09e1837f892930c5c45d30d24ec579b817e4
-  strip_prefix: rules_jvm_external-6.10
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/6.10.tar.gz
-  updated_on: '2026-02-04'
-  version: '6.10'
-  module_version: '6.10'
+  sha256: db871f27913e00a551986db488168106f297b65ea3ef587bfa56843c4759a443
+  strip_prefix: rules_jvm_external-7.0
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/7.0.tar.gz
+  updated_on: '2026-04-24'
+  version: '7.0'
+  module_version: '7.0'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.2.0.tar.gz
@@ -156,10 +156,10 @@ bazel_deps:
   module_version: 1.0.0
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.35.4/bin/linux/amd64/kubectl
-  sha256: b529430df69a688fd61b64ad2299edb5fd71cb58be2a4779dba624c7d3510efd
-  version: v1.35.4
-  updated_on: '2026-04-16'
+  url: https://dl.k8s.io/release/v1.36.0/bin/linux/amd64/kubectl
+  sha256: 123d8c8844f46b1244c547fffb3c17180c0c26dac9890589fe7e67763298748e
+  version: v1.36.0
+  updated_on: '2026-04-24'
   executable: true
   override_updater:
   - type: shell
@@ -172,7 +172,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.35.4
+  module_version: 1.36.0
 - name: sysroot_linux_x86_64
   type: http_archive
   version: 42-20260421.044457-20260421.131750
@@ -380,12 +380,12 @@ bazel_deps:
   module_version: 8.5.1
 - name: rules_android
   type: http_archive
-  version: v0.7.1
-  sha256: 7c45b6aaa837fb6f2f23ad11387638cb00fa9f839a04ec564caac70a543a9cd5
-  strip_prefix: rules_android-0.7.1
-  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.7.1.tar.gz
-  updated_on: '2026-01-17'
-  module_version: 0.7.1
+  version: v0.7.2
+  sha256: 0da7198c7c8bac7e11e08dca3c434617b8593075858716595672e9aeefbef2a7
+  strip_prefix: rules_android-0.7.2
+  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.7.2.tar.gz
+  updated_on: '2026-04-24'
+  module_version: 0.7.2
 - name: rules_robolectric
   type: http_archive
   version: v4.16.1
@@ -428,11 +428,11 @@ bazel_deps:
   module_version: '20260107.1'
 - name: rules_rust
   type: http_archive
-  version: 0.69.0
-  sha256: bbc764c252d061281b2359277a4d46480e2dcfaf72afc1ce6e00ada58ccbfd4c
-  url: https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/rules_rust-0.69.0.tar.gz
-  updated_on: '2026-03-02'
-  module_version: 0.69.0
+  version: 0.70.0
+  sha256: 5ffd9ff1f6f2f14f2057b7cbaa91a5e6acd9a4cbded5ac81dad9beb36859601e
+  url: https://github.com/bazelbuild/rules_rust/releases/download/0.70.0/rules_rust-0.70.0.tar.gz
+  updated_on: '2026-04-24'
+  module_version: 0.70.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -642,11 +642,11 @@ pip_deps:
 
 maven_deps:
 - name: commons-io:commons-io
-  version: 2.21.0
+  version: 2.22.0
   version_skip:
   - '20030203.000550'
-  updated_on: '2025-11-10'
-  module_version: 2.21.0
+  updated_on: '2026-04-24'
+  module_version: 2.22.0
 - name: org.mariadb.jdbc:mariadb-java-client
   version: 3.5.8
   updated_on: '2026-04-02'

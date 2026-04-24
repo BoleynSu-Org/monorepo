@@ -20,7 +20,7 @@
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
     "commons-codec:commons-codec": 650994800,
-    "commons-io:commons-io": -1192334111,
+    "commons-io:commons-io": 1305681826,
     "commons-validator:commons-validator": -359676327,
     "io.netty:netty-buffer": 1784613390,
     "io.netty:netty-codec": -147132380,
@@ -82,7 +82,7 @@
     "commons-codec:commons-codec": 58403102,
     "commons-collections:commons-collections": 7509648,
     "commons-digester:commons-digester": 781759527,
-    "commons-io:commons-io": 1539755249,
+    "commons-io:commons-io": 1072619124,
     "commons-logging:commons-logging": -1473372610,
     "commons-validator:commons-validator": -1005285782,
     "io.grpc:grpc-api": 80245831,
@@ -334,9 +334,9 @@
     },
     "commons-io:commons-io": {
       "shasums": {
-        "jar": "7d643a2afea8b058b762aa6fb90e5b256f6c729739f8b3784c3370ddc609e88d"
+        "jar": "2b9a7b1f726fb86216dbd2c8321eabe0221dbd5b1be81c18e1cb53811b104758"
       },
-      "version": "2.21.0"
+      "version": "2.22.0"
     },
     "commons-logging:commons-logging": {
       "shasums": {
