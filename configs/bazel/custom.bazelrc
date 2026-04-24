@@ -52,6 +52,7 @@ common:vendor --repo_env=DOCKER_CONFIG=
 common:vendor --vendor_dir=third_party/bazel_vendor
 
 # CI/CD
+common:ci --config=use_credential_helper
 common:ci --config=remote
 ## build and test
 common:ci-build-and-test --config=ci

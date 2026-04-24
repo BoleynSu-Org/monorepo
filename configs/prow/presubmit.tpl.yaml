@@ -7,14 +7,17 @@ presubmits:
     skip_report: false
     labels:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
+      use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
         - image: quay.io/boleynsu/ci-runner
           command:
-            - bazel
-            - test
-            - --config=ci-build-and-test
-            - //...
+            - bash
+            - -c
+            - |
+              set -euo pipefail
+              vault write auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
+              bazel test --config=ci-build-and-test //...
           resources:
             limits:
               memory: 1.5Gi
@@ -38,16 +41,17 @@ presubmits:
     labels:
       use-cache.k3s.cuhk.servers.boleyn.su: "true"
       use-ghcr.k3s.cuhk.servers.boleyn.su: "true"
+      use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
         - image: quay.io/boleynsu/ci-runner
           command:
-            - bazel
-            - run
-            - --config=ci-deploy
-            - //deploy/oj:staging.apply
-            - --
-            - --server-side
+            - bash
+            - -c
+            - |
+              set -euo pipefail
+              vault write auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
+              bazel run --config=ci-deploy //deploy/oj:staging.apply -- --server-side
           resources:
             limits:
               memory: 1.5Gi
