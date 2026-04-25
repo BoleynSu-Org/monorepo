@@ -102,7 +102,7 @@ bazel_deps:
   sha256: 47b58cf925b76252156da52187329d2cfede4f0f6f83416dcd9f0753592cb1f0
   strip_prefix: EditArea-0.8.2
   updated_on: '2022-07-24'
-  expires_on: '2026-04-18'
+  expires_on: '2027-04-18'
   version: v0.8.2
   build_file: '@boleynsu_org//third_party/com_github_cdolivet_editarea:repo.BUILD.bazel'
   module_version: 0.8.2
@@ -143,7 +143,7 @@ bazel_deps:
   strip_prefix: rules_license-1.0.0
   url: https://github.com/bazelbuild/rules_license/archive/refs/tags/1.0.0.tar.gz
   updated_on: '2024-09-05'
-  expires_on: '2026-09-05'
+  expires_on: '2027-09-05'
   version: 1.0.0
   module_version: 1.0.0
 - name: platforms
@@ -795,21 +795,26 @@ toolchain_deps:
 - name: c
   version: '17'
   updated_on: '2022-05-07'
-  expires_on: '2026-04-18'
+  expires_on: '2027-04-18'
 - name: cpp
   version: '20'
   updated_on: '2023-05-12'
-  expires_on: '2026-04-18'
+  expires_on: '2027-04-18'
 - name: java
   version: '21'
   updated_on: '2023-05-12'
-  expires_on: '2026-04-18'
+  expires_on: '2027-04-18'
 - name: python
   version: '3.14'
   updated_on: '2026-01-18'
   expires_on: '2027-01-18'
+  override_updater:
+  - type: shell
+    cmd: echo DEPS_UPDATER_version=$(curl -sfL https://www.python.org/api/v2/downloads/release/?format=json | jq -r '[ .[] | select(.pre_release == false) | .name | split(" ")[1] | select(. != "install") | split(".") | map(tonumber) ] | max | .[:2] | join(".")')
 - name: golang
   version: 1.26.1
   updated_on: '2026-01-18'
   expires_on: '2027-01-18'
-
+  override_updater:
+  - type: shell
+    cmd: echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r '[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")')
