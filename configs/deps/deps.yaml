@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20260425.170955
+  version: 43-20260425.171221
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20260425.170955
+  tag: 43-20260425.171221
   digest: sha256:0e2a2ec08d14446f4b368ee6ce9781b1b38227ae469cb5fe111ab67581d842bc
   updated_on: '2026-04-25'
   platforms:
   - linux/amd64
-  module_version: 43.20260425.170955
+  module_version: 43.20260425.171221
 - name: io_docker_index_library_mariadb
   version: 11.8.6
   version_regex: (11\.8\.[0-9]+)
@@ -756,40 +756,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.2
 - name: io_quay_boleynsu_oj_c99runner
-  version: 43-20260425.170955
+  version: 43-20260425.171221
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 43-20260425.170955
+  tag: 43-20260425.171221
   digest: sha256:d711d5ee738d9cd804294ca66dde4bc6a49d95fbccb83300aa4f391581ada5ba
   updated_on: '2026-04-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260425.170955
+  module_version: 43.20260425.171221
 - name: io_quay_boleynsu_rbe_fedora
-  version: 43-20260425.170955
+  version: 43-20260425.171221
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 43-20260425.170955
+  tag: 43-20260425.171221
   digest: sha256:ce3b42b750a2a08e03b0ea4151aec637dfeb53eba5312328cfed7a3fb1c8aa21
   updated_on: '2026-04-25'
   platforms:
   - linux/amd64
-  module_version: 43.20260425.170955
+  module_version: 43.20260425.171221
 - name: io_quay_boleynsu_base
-  version: 43-20260425.170955
+  version: 43-20260425.171221
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:7aa79264a750a20adf7cdeaf02c19979ad9db7c7b6bb72b5e187979129b10155
-  tag: 43-20260425.170955
+  tag: 43-20260425.171221
   updated_on: '2026-04-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 43.20260425.170955
+  module_version: 43.20260425.171221
 
 toolchain_deps:
 - name: c
