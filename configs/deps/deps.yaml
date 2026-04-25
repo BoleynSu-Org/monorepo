@@ -682,9 +682,9 @@ maven_deps:
   updated_on: '2025-11-17'
   module_version: 1.10.1
 - name: commons-codec:commons-codec
-  version: 1.21.0
-  updated_on: '2026-02-03'
-  module_version: 1.21.0
+  version: 1.22.0
+  updated_on: '2026-04-25'
+  module_version: 1.22.0
 - name: org.wildfly.common:wildfly-common
   version: 2.0.1
   version_regex: (.*)(?:|\.Final)
@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 43-20260424.155558
+  version: 43-20260425.143330
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 43-20260424.155558
+  tag: 43-20260425.143330
   digest: sha256:3a9a8337ef9b322dac0b1a45d06d9a9694bf8b8bdcee0de0b8452d28d7016c12
-  updated_on: '2026-04-24'
+  updated_on: '2026-04-25'
   platforms:
   - linux/amd64
-  module_version: 43.20260424.155558
+  module_version: 43.20260425.143330
 - name: io_docker_index_library_mariadb
   version: 11.8.6
   version_regex: (11\.8\.[0-9]+)
@@ -806,15 +806,15 @@ toolchain_deps:
   expires_on: '2027-04-18'
 - name: python
   version: '3.14'
-  updated_on: '2026-01-18'
-  expires_on: '2027-01-18'
+  updated_on: '2026-04-25'
   override_updater:
   - type: shell
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://www.python.org/api/v2/downloads/release/?format=json | jq -r '[ .[] | select(.pre_release == false) | .name | split(" ")[1] | select(. != "install") | split(".") | map(tonumber) ] | max | .[:2] | join(".")')
+  module_version: '3.14'
 - name: golang
-  version: 1.26.1
-  updated_on: '2026-01-18'
-  expires_on: '2027-01-18'
+  version: 1.26.2
+  updated_on: '2026-04-25'
   override_updater:
   - type: shell
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r '[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")')
+  module_version: 1.26.2
