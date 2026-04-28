@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '1.9.0',
+    version = '2.0.0',
 )
 
 bazel_dep(
@@ -226,12 +226,6 @@ use_repo(
     'rules_python_publish_deps',
 )
 
-bazel_dep(
-    name = 'stardoc',
-    version = '0.8.1',
-    repo_name = 'io_bazel_stardoc',
-)
-
 uv = use_extension(
     '//python/uv:uv.bzl',
     'uv',
@@ -240,7 +234,7 @@ uv = use_extension(
 uv.default(
     base_url = 'https://github.com/astral-sh/uv/releases/download',
     manifest_filename = 'dist-manifest.json',
-    version = '0.6.3',
+    version = '0.11.2',
 )
 
 uv.default(
@@ -251,11 +245,6 @@ uv.default(
 uv.default(
     compatible_with = ['@platforms//os:linux', '@platforms//cpu:aarch64'],
     platform = 'aarch64-unknown-linux-gnu',
-)
-
-uv.default(
-    compatible_with = ['@platforms//os:linux', '@platforms//cpu:ppc'],
-    platform = 'powerpc64-unknown-linux-gnu',
 )
 
 uv.default(

@@ -57,8 +57,7 @@ sh_binary(
     result = repository_ctx.execute([
         "./venv/bin/pip",
         "install",
-        "pip < 25.1",  # FIXME: https://github.com/jazzband/pip-tools/issues/2176 - Remove the workaround after the underlying issue gets fixed.
-        "pip_tools",
+        "uv",
     ])
     if result.return_code:
         fail("failed to run pip: " + result.stderr)
@@ -87,7 +86,7 @@ cp "$requirements_txt" "$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
 
     repository_ctx.file("requirements.txt")
     result = repository_ctx.execute(
-        ["./venv/bin/pip-compile", "--no-header", "--generate-hashes", "--output-file", "requirements.txt", "requirements.in"] + repository_ctx.attr.extra_args,
+        ["./venv/bin/uv", "pip", "compile", "--universal", "--no-header", "--generate-hashes", "--output-file", "requirements.txt", "requirements.in"],
         timeout = 86400,  # use a very large timeout, i.e. one day, to avoid timeout errors
     )
     if result.return_code:
@@ -111,6 +110,5 @@ unpinned_pip = repository_rule(
         "packages": attr.string_dict(),
         "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
         "python_interpreter_target": attr.label(allow_single_file = True, mandatory = True),
-        "extra_args": attr.string_list(),
     },
 )
