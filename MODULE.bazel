@@ -228,13 +228,13 @@ DEPS = {
         {
             "name": "sysroot_linux_x86_64",
             "type": "http_archive",
-            "version": "42-20260421.044457-20260421.131750",
+            "version": "42-20260428.160415-20260429.104913",
             "version_regex": "([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "85d8ff8a338cb64a198067ad323c0e9fd577724a8a39acba26ed5741fbf1b50c",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/42-20260421.044457-20260421.131750/sysroot_linux_x86_64.tar.gz",
-            "updated_on": "2026-04-21",
+            "sha256": "ad117230f41ef89e4e21505074c39192a4c975c27514b82b18f92b9d1a5f1e21",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/42-20260428.160415-20260429.104913/sysroot_linux_x86_64.tar.gz",
+            "updated_on": "2026-04-29",
             "build_file_content": 'filegroup(\n    name = "sysroot",\n    srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),\n    visibility = ["//visibility:public"],\n)\n',
-            "module_version": "42.20260421.44457.20260421.131750",
+            "module_version": "42.20260428.160415.20260429.104913",
         },
         {
             "name": "clang_linux_x86_64",
@@ -249,11 +249,11 @@ DEPS = {
         {
             "name": "bazel_features",
             "type": "http_archive",
-            "version": "v1.45.0",
-            "sha256": "adfdb3cffab3a99a63363d844d559a81965d2b61a6062dd51a3d2478d416768f",
-            "strip_prefix": "bazel_features-1.45.0",
-            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.45.0/bazel_features-v1.45.0.tar.gz",
-            "updated_on": "2026-04-03",
+            "version": "v1.46.0",
+            "sha256": "497a10560c07b0478026f49766ebdb6fd07b4fba9767db4f1c25cb6ab2fa1cdb",
+            "strip_prefix": "bazel_features-1.46.0",
+            "url": "https://github.com/bazel-contrib/bazel_features/releases/download/v1.46.0/bazel_features-v1.46.0.tar.gz",
+            "updated_on": "2026-04-29",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -279,7 +279,7 @@ DEPS = {
                     }],
                 },
             ],
-            "module_version": "1.45.0",
+            "module_version": "1.46.0",
         },
         {
             "name": "com_google_protobuf",
@@ -972,15 +972,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "43-20260428.160151",
+            "version": "43-20260428.160415",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "43-20260428.160151",
+            "tag": "43-20260428.160415",
             "digest": "sha256:ff048c57c78532b3faa8d3f82a9a129368d4bbd4d4ee90dce27e27057f5ad1bb",
-            "updated_on": "2026-04-28",
+            "updated_on": "2026-04-29",
             "platforms": ["linux/amd64"],
-            "module_version": "43.20260428.160151",
+            "module_version": "43.20260428.160415",
         },
         {
             "name": "io_docker_index_library_mariadb",
