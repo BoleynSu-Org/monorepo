@@ -13,5 +13,5 @@ oci_image(
 oci_image(
     name = "oj-c99runner",
     base = "@io_quay_boleynsu_oj_c99runner",
-    target_compatible_with =  ["@platforms//os:linux"],
+    target_compatible_with = ["@platforms//os:linux"],
 )
