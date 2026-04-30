@@ -10,7 +10,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'package_metadata',
-    version = '0.0.7',
+    version = '0.0.10',
 )
 
 test_suite = use_repo_rule(

@@ -559,14 +559,11 @@ bazel_deps:
   module_version: 3.3.1
 - name: package_metadata
   type: http_archive
-  version: v0.0.7
-  version_skip:
-  - 0.0.8
-  - 0.0.9
-  sha256: 8f27dc7393e3f3bdc793bdc4ba36d67a63c22cc9d38cc65d3204654974ea4563
-  strip_prefix: supply-chain-0.0.7/metadata
-  url: https://github.com/bazel-contrib/supply-chain/releases/download/v0.0.7/supply-chain-v0.0.7.tar.gz
-  updated_on: '2025-11-21'
+  version: v0.0.10
+  sha256: bfd9bc7a9932516f997d50a2770287b277bca107db285350d0485f14a1bc2203
+  strip_prefix: supply-chain-0.0.10/metadata
+  url: https://github.com/bazel-contrib/supply-chain/releases/download/v0.0.10/supply-chain-v0.0.10.tar.gz
+  updated_on: '2026-04-30'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -582,7 +579,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 0.0.7
+  module_version: 0.0.10
 - name: helly25_bzl
   type: http_archive
   version: 0.3.1
