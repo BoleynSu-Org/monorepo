@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazelbuild/platforms/archive/refs/tags/1.1.0.tar.gz",
+  "integrity": "sha256-Mk9TgXU6YQ5HL3lWPUTiAmQ4GVBCquTcZguMAh995/U=",
+  "strip_prefix": "platforms-1.1.0"
+}
