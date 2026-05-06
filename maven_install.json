@@ -39,11 +39,11 @@
     "io.opencensus:opencensus-api": 2042364617,
     "io.opencensus:opencensus-contrib-grpc-metrics": 317094357,
     "io.perfmark:perfmark-api": 1019157794,
-    "io.undertow:undertow-core": -954538847,
+    "io.undertow:undertow-core": 1165733670,
     "junit:junit": -744267592,
     "org.apache.commons:commons-text": -1886494041,
-    "org.apache.tomcat.embed:tomcat-embed-core": -2056148420,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 719741470,
+    "org.apache.tomcat.embed:tomcat-embed-core": 431364413,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": -1087712993,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": 852823480,
     "org.mariadb.jdbc:mariadb-java-client": -300360452,
@@ -115,15 +115,15 @@
     "io.opencensus:opencensus-contrib-grpc-metrics": 46677493,
     "io.opencensus:opencensus-contrib-http-util": 601912247,
     "io.perfmark:perfmark-api": -1795841558,
-    "io.smallrye.common:smallrye-common-annotation": -1391642313,
-    "io.smallrye.common:smallrye-common-constraint": 726346902,
-    "io.smallrye.common:smallrye-common-cpu": 244962888,
-    "io.smallrye.common:smallrye-common-expression": 44945955,
-    "io.smallrye.common:smallrye-common-function": 13820157,
-    "io.smallrye.common:smallrye-common-net": 1037589452,
+    "io.smallrye.common:smallrye-common-annotation": -1787586278,
+    "io.smallrye.common:smallrye-common-constraint": 222728017,
+    "io.smallrye.common:smallrye-common-cpu": 947438127,
+    "io.smallrye.common:smallrye-common-expression": 695034162,
+    "io.smallrye.common:smallrye-common-function": 57004911,
+    "io.smallrye.common:smallrye-common-net": 464890774,
     "io.smallrye.common:smallrye-common-os": -189080548,
-    "io.smallrye.common:smallrye-common-ref": 1627050172,
-    "io.undertow:undertow-core": -540560253,
+    "io.smallrye.common:smallrye-common-ref": 1612003526,
+    "io.undertow:undertow-core": 194647261,
     "javax.annotation:javax.annotation-api": -1009230154,
     "junit:junit": -1256429642,
     "net.bytebuddy:byte-buddy": -1159164687,
@@ -132,18 +132,18 @@
     "org.apache.commons:commons-text": 869132518,
     "org.apache.httpcomponents:httpclient": -630303486,
     "org.apache.httpcomponents:httpcore": 67453319,
-    "org.apache.tomcat.embed:tomcat-embed-core": 2015708870,
-    "org.apache.tomcat.embed:tomcat-embed-el": -2091587018,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 1832078952,
-    "org.apache.tomcat:tomcat-annotations-api": 925375027,
+    "org.apache.tomcat.embed:tomcat-embed-core": 592587240,
+    "org.apache.tomcat.embed:tomcat-embed-el": 1305005618,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": 1597311633,
+    "org.apache.tomcat:tomcat-annotations-api": 446816209,
     "org.checkerframework:checker-qual": 1860567376,
     "org.codehaus.mojo:animal-sniffer-annotations": 534312981,
     "org.eclipse.jdt:ecj": 1612030828,
     "org.hamcrest:hamcrest-core": 649657847,
-    "org.jboss.logging:jboss-logging": -197600621,
-    "org.jboss.threads:jboss-threads": -1541897603,
-    "org.jboss.xnio:xnio-api": 1866386053,
-    "org.jboss.xnio:xnio-nio": -1539227932,
+    "org.jboss.logging:jboss-logging": -509243987,
+    "org.jboss.threads:jboss-threads": 370119030,
+    "org.jboss.xnio:xnio-api": 1004984600,
+    "org.jboss.xnio:xnio-nio": -2029405180,
     "org.jetbrains.kotlin:kotlin-stdlib": 1521647863,
     "org.jetbrains.kotlin:kotlin-stdlib-common": 1443260454,
     "org.jetbrains:annotations": 554168982,
@@ -154,8 +154,8 @@
     "org.ow2.asm:asm": 611381606,
     "org.webjars:bootstrap": 474415717,
     "org.webjars:jquery": 59236587,
-    "org.wildfly.client:wildfly-client-config": 1617764685,
-    "org.wildfly.common:wildfly-common": -18123714
+    "org.wildfly.client:wildfly-client-config": 2136189668,
+    "org.wildfly.common:wildfly-common": 1880632105
   },
   "conflict_resolution": {
     "com.google.guava:failureaccess:1.0.1": "com.google.guava:failureaccess:1.0.3",
@@ -506,21 +506,21 @@
     },
     "io.smallrye.common:smallrye-common-annotation": {
       "shasums": {
-        "jar": "da783e44d5796134f751384d4ceb76ec89817c3ff19bc6e752151f9d0c2e3510"
+        "jar": "3c7fdeac90ed7acf97b03eb63d8e3286e9f0fa66c8450613d3453645725db010"
       },
-      "version": "2.6.0"
+      "version": "2.14.0"
     },
     "io.smallrye.common:smallrye-common-constraint": {
       "shasums": {
-        "jar": "90563f245d5a55b71980d9cebbe9cfe2adbec6a092c6350256cb1327e9b2938b"
+        "jar": "9000921eabb4d1a6f76ccf2376d3524041af62038740df1d10cf0f75b5c93630"
       },
-      "version": "2.6.0"
+      "version": "2.12.0"
     },
     "io.smallrye.common:smallrye-common-cpu": {
       "shasums": {
-        "jar": "066ee2fdef8524907a29ad679a86b4a1b5e314eb5776e6441ed45ff2533cc6f2"
+        "jar": "1ee21c46d9c0b8cbdd1e489683fbd9976c0dce93b8e5a5af0543997577eb9969"
       },
-      "version": "2.6.0"
+      "version": "2.14.0"
     },
     "io.smallrye.common:smallrye-common-expression": {
       "shasums": {
@@ -530,15 +530,15 @@
     },
     "io.smallrye.common:smallrye-common-function": {
       "shasums": {
-        "jar": "cfe75a781014af514bc17e58df79b3983324b1cb9719714abe227defe1585dda"
+        "jar": "f0e0c6c213c40665b3c29cede733f668f37e38aa5f3ab4335c55191fdc0c359d"
       },
-      "version": "2.6.0"
+      "version": "2.14.0"
     },
     "io.smallrye.common:smallrye-common-net": {
       "shasums": {
-        "jar": "c303c14b6f8dcfebbb3bf230c1c294e4c3f990e060b4a2c70e8ffcea3c9a6dee"
+        "jar": "91abf905742c8927f8ccce7a609461b15a5bf8f7957cd5c8de0247723caf5dde"
       },
-      "version": "2.4.0"
+      "version": "2.12.0"
     },
     "io.smallrye.common:smallrye-common-os": {
       "shasums": {
@@ -554,9 +554,9 @@
     },
     "io.undertow:undertow-core": {
       "shasums": {
-        "jar": "1364c263d72638079a5354b85340c2cd74ac93d6c94dea875e8259d14dce6ce7"
+        "jar": "5470f8ff7c6a00520d049683418484066842e589bc11729c4af13448ce4c3d1a"
       },
-      "version": "2.3.24.Final"
+      "version": "2.4.0.Final"
     },
     "javax.annotation:javax.annotation-api": {
       "shasums": {
@@ -608,27 +608,27 @@
     },
     "org.apache.tomcat.embed:tomcat-embed-core": {
       "shasums": {
-        "jar": "5dbe19880b5025e0b9de7c3de81cb837ce79636ea1da39c8d00a66d3add25567"
+        "jar": "78cd7cd7c104b6b87142c1b0bd902e1ce005b0245c3cefa8a06759148947200b"
       },
-      "version": "11.0.21"
+      "version": "11.0.22"
     },
     "org.apache.tomcat.embed:tomcat-embed-el": {
       "shasums": {
-        "jar": "3745cb768f4ed74c2f4af8fc2453992143997019718f71c915d4545fdbef1fb3"
+        "jar": "1b34c33b858c141df36c501b4d809e68036c406bca3671a86facae297917c7de"
       },
-      "version": "11.0.21"
+      "version": "11.0.22"
     },
     "org.apache.tomcat.embed:tomcat-embed-jasper": {
       "shasums": {
-        "jar": "b4d97d9bb32ba0bee2a7c6c67e127677e70283f6aa2757a3d5cf29767e6b4168"
+        "jar": "4b572bdaf22892b80aef0d28302d34c9f0432dae8708af6a3cf34e6d1ee8a86c"
       },
-      "version": "11.0.21"
+      "version": "11.0.22"
     },
     "org.apache.tomcat:tomcat-annotations-api": {
       "shasums": {
-        "jar": "2f66697030bb986a69043ca3b55b838384c73de50aff1ef5452ae2c90cfaea70"
+        "jar": "fbe1a2ee12ea472b773bf3a6237d95b66a002c5c4fa6d38a54e69c019558cfd4"
       },
-      "version": "11.0.21"
+      "version": "11.0.22"
     },
     "org.checkerframework:checker-qual": {
       "shasums": {
@@ -656,15 +656,15 @@
     },
     "org.jboss.logging:jboss-logging": {
       "shasums": {
-        "jar": "7bb135b081952f6d32d83374619ae5201b05ca3bf862a28dd111016ce19b2c07"
+        "jar": "f423e07bffce73bf2b6cc872f30981c06fe9cfd5a86a0b4f5fbdd11cfe0148e0"
       },
-      "version": "3.5.0.Final"
+      "version": "3.6.2.Final"
     },
     "org.jboss.threads:jboss-threads": {
       "shasums": {
-        "jar": "42dcd39a28cc42aa18ff153995d24d756bdca23a6c298654461e59cfe5e15c33"
+        "jar": "ac0fd044686122014143267d3688245852ca07c6c4474320c9172062a5af6634"
       },
-      "version": "3.7.0.Final"
+      "version": "3.9.2"
     },
     "org.jboss.xnio:xnio-api": {
       "shasums": {
@@ -2240,6 +2240,7 @@
         "io.undertow.attribute.ResponseReasonPhraseAttribute$Builder",
         "io.undertow.attribute.ResponseTimeAttribute$Builder",
         "io.undertow.attribute.SecureExchangeAttribute$Builder",
+        "io.undertow.attribute.SecureProtocolAttribute$Builder",
         "io.undertow.attribute.SslCipherAttribute$Builder",
         "io.undertow.attribute.SslClientCertAttribute$Builder",
         "io.undertow.attribute.SslSessionIdAttribute$Builder",

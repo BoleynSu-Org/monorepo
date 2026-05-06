@@ -41,7 +41,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'tar.bzl',
-    version = '0.10.2',
+    version = '0.10.4',
 )
 
 toolchains = use_extension(
