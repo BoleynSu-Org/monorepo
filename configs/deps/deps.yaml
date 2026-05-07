@@ -698,16 +698,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260506.133212
+  version: 44-20260507.135410
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260506.133212
-  digest: sha256:35db63e6739dd068b3ca2a8f4a0efcfae22a726f07d676365350322e3f9c5af0
-  updated_on: '2026-05-06'
+  tag: 44-20260507.135410
+  digest: sha256:db77824c43877d3eecd5a6d3e026499e12290ee6f4bd8b9ec95fce0f5e8b4686
+  updated_on: '2026-05-07'
   platforms:
   - linux/amd64
-  module_version: 44.20260506.133212
+  module_version: 44.20260507.135410
 - name: io_docker_index_library_mariadb
   version: 11.8.6
   version_regex: (11\.8\.[0-9]+)
