@@ -1002,8 +1002,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.4.2",
-            "digest": "sha256:41898b976011fd87f2d3037366ad97f7d89fddfebc8aa8b3a7d77d0c465aa37b",
-            "updated_on": "2026-04-17",
+            "digest": "sha256:1c2c6052a0a07d02749d590765ebe5591b8d2b7f337c9b727c9ccf31f7f3597d",
+            "updated_on": "2026-05-08",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
@@ -1105,13 +1105,13 @@ DEPS = {
         },
         {
             "name": "golang",
-            "version": "1.26.2",
-            "updated_on": "2026-04-25",
+            "version": "1.26.3",
+            "updated_on": "2026-05-08",
             "override_updater": [{
                 "type": "shell",
                 "cmd": 'echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r \'[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")\')',
             }],
-            "module_version": "1.26.2",
+            "module_version": "1.26.3",
         },
     ],
 }
