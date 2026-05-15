@@ -197,11 +197,11 @@ bazel_deps:
   module_version: 22.1.5.43.20260506.141627.20260506.170647
 - name: bazel_features
   type: http_archive
-  version: v1.47.0
-  sha256: 5f7f87f50584df12bbfe5e461d358b16a8e15d245a7e596011bf39aaee5f58a9
-  strip_prefix: bazel_features-1.47.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.47.0/bazel_features-v1.47.0.tar.gz
-  updated_on: '2026-05-02'
+  version: v1.47.1
+  sha256: 6a727a78c0134b1b912c97c0937e1c956f35775934ae3e1f4af4156f8d5d1ff4
+  strip_prefix: bazel_features-1.47.1
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.47.1/bazel_features-v1.47.1.tar.gz
+  updated_on: '2026-05-15'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.47.0
+  module_version: 1.47.1
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -515,12 +515,12 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: tar.bzl
   type: http_archive
-  version: v0.10.4
-  sha256: fea07e17117bf264f78bd4fc522c6b07a843cdcd82c6dfbeafa5bdaff70ae198
-  strip_prefix: tar.bzl-0.10.4
-  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.10.4/tar.bzl-v0.10.4.tar.gz
-  updated_on: '2026-05-06'
-  module_version: 0.10.4
+  version: v0.10.5
+  sha256: 2799dfd43131e872c8f9fed41a547a8c5afd571c5df6b809eab6219d44403872
+  strip_prefix: tar.bzl-0.10.5
+  url: https://github.com/bazel-contrib/tar.bzl/releases/download/v0.10.5/tar.bzl-v0.10.5.tar.gz
+  updated_on: '2026-05-15'
+  module_version: 0.10.5
   override_updater:
   - type: deps_updater
     name: bazel_deps

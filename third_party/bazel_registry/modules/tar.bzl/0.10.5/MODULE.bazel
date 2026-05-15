@@ -1,11 +1,11 @@
 module(
     name = 'tar.bzl',
-    version = '0.10.4',
+    version = '0.10.5',
 )
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.47.0',
+    version = '1.47.1',
 )
 
 bazel_dep(
