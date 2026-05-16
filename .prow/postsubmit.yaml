@@ -13,14 +13,12 @@ postsubmits:
       use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:910f839b6f59ae73f3814c3490f792f467ea2ec3e4cfac793fe5e5b1873e16c5
+        - image: quay.io/boleynsu/ci-runner@sha256:a5206b7a2cf279c34f9943075bb3f2b4f769cabce66ed83c437ccc67ce39c23f
           command:
-            - bash
-            - -c
-            - |
-              set -euo pipefail
-              vault write -field=token auth/k3s-cuhk/login role=buildbuddy jwt=- </buildbuddy-secret/token | vault login -no-print -
-              bazel test --config=ci-build-and-test //...
+            - bazel
+            - test
+            - --config=ci-build-and-test
+            - //...
           resources:
             limits:
               memory: 1.5Gi
