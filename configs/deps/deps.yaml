@@ -605,11 +605,11 @@ bazel_deps:
   module_version: 0.3.1
 - name: toml.bzl
   type: http_archive
-  version: v0.3.0
-  sha256: c0642d5bb9d22f8e9fc7b6a7b1489d9634e253835f01cae8163e8fa8ed007014
-  strip_prefix: toml.bzl-0.3.0
-  url: https://github.com/jvolkman/toml.bzl/releases/download/v0.3.0/toml.bzl-v0.3.0.tar.gz
-  updated_on: '2026-04-24'
+  version: v0.4.0
+  sha256: 63633c762bdb4d836add5a9a81deeeae93c4b2edbd62ac032733020b5652b90a
+  strip_prefix: toml.bzl-0.4.0
+  url: https://github.com/jvolkman/toml.bzl/releases/download/v0.4.0/toml.bzl-v0.4.0.tar.gz
+  updated_on: '2026-05-17'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -625,7 +625,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 0.3.0
+  module_version: 0.4.0
 
 pip_deps:
 - name: ruamel.yaml
@@ -741,17 +741,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.63.3
+  version: v2.63.4
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.63.3
-  digest: sha256:289c5dd677c56662440f26eeb44266ed9746fe563d2e9100f546bff558534d70
-  updated_on: '2026-05-06'
+  tag: v2.63.4
+  digest: sha256:69131aef9a415cbb0d62ada500ffdfbfe1a535ab860b429fd360676c00f84d1b
+  updated_on: '2026-05-17'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.63.3
+  module_version: 2.63.4
 - name: io_quay_boleynsu_oj_c99runner
   version: 44-20260514.173543
   version_regex: ([0-9.]*)-([0-9.]*)
