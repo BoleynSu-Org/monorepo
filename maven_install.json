@@ -39,7 +39,7 @@
     "io.opencensus:opencensus-api": 2042364617,
     "io.opencensus:opencensus-contrib-grpc-metrics": 317094357,
     "io.perfmark:perfmark-api": 1019157794,
-    "io.undertow:undertow-core": 1165733670,
+    "io.undertow:undertow-core": -1621681817,
     "junit:junit": -744267592,
     "org.apache.commons:commons-text": -1886494041,
     "org.apache.tomcat.embed:tomcat-embed-core": 431364413,
@@ -123,7 +123,7 @@
     "io.smallrye.common:smallrye-common-net": 464890774,
     "io.smallrye.common:smallrye-common-os": -189080548,
     "io.smallrye.common:smallrye-common-ref": 1612003526,
-    "io.undertow:undertow-core": 194647261,
+    "io.undertow:undertow-core": -798369717,
     "javax.annotation:javax.annotation-api": -1009230154,
     "junit:junit": -1256429642,
     "net.bytebuddy:byte-buddy": -1159164687,
@@ -554,9 +554,9 @@
     },
     "io.undertow:undertow-core": {
       "shasums": {
-        "jar": "5470f8ff7c6a00520d049683418484066842e589bc11729c4af13448ce4c3d1a"
+        "jar": "0067ecea77b758d643e0ed874a4b76f26f6c9a621054df0774e31cb4a1cd8768"
       },
-      "version": "2.4.0.Final"
+      "version": "2.4.1.Final"
     },
     "javax.annotation:javax.annotation-api": {
       "shasums": {

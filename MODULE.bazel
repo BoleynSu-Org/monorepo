@@ -928,10 +928,10 @@ DEPS = {
         },
         {
             "name": "io.undertow:undertow-core",
-            "version": "2.4.0.Final",
+            "version": "2.4.1.Final",
             "version_regex": "(.*)\\.Final",
-            "updated_on": "2026-05-06",
-            "module_version": "2.4.0",
+            "updated_on": "2026-05-19",
+            "module_version": "2.4.1",
         },
         {
             "name": "commons-validator:commons-validator",
