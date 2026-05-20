@@ -220,12 +220,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/releases/download/v34.1/protobuf-34.1.tar.gz
-  sha256: e4e6ff10760cf747a2decd1867741f561b216bd60cc4038c87564713a6da1848
-  strip_prefix: protobuf-34.1
-  version: v34.1
-  updated_on: '2026-03-21'
-  module_version: '34.1'
+  url: https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protobuf-35.0.tar.gz
+  sha256: 8f907baca4b34a3b4854103ba5811e418fb6e2ff11fe0d8df9e8280b11d79926
+  strip_prefix: protobuf-35.0
+  version: v35.0
+  updated_on: '2026-05-20'
+  module_version: '35.0'
   override_updater:
   - type: deps_updater
     name: bazel_deps
