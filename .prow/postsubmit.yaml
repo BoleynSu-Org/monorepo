@@ -13,7 +13,7 @@ postsubmits:
       use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:69e5764a4b973521ee877f5e5afc92a3668c72a5e186b17164b18a9ac0ac0648
+        - image: quay.io/boleynsu/ci-runner@sha256:d0489e6d725fa065dafd8d1ff6c6e749aecbe12acb88d56a94fda20cb8f55531
           command:
             - bazel
             - test
