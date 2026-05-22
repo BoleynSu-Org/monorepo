@@ -314,10 +314,10 @@ bazel_deps:
   module_version: 0.8.1
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.3.20/rules_kotlin-v2.3.20.tar.gz
-  sha256: 13d5b767d697473ced9b55547a18a6ab65ab3fae5440555deee8a44c886b50aa
-  version: v2.3.20
-  updated_on: '2026-03-18'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.3.21/rules_kotlin-v2.3.21.tar.gz
+  sha256: 118fcba9b15a5f35f52be6ea84a3cd98f78658b2071ec0f3a1de6d2863f2e50a
+  version: v2.3.21
+  updated_on: '2026-05-22'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -332,7 +332,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.3.20
+  module_version: 2.3.21
 - name: aspect_bazel_lib
   type: http_archive
   version: v2.22.5
