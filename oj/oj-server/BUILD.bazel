@@ -10,7 +10,6 @@ load("//tools/build/rules:genfile.bzl", "genfile")
 MAVEN_ARTIFACTS = {
     dep["name"]: dep["version"]
     for dep in DEPS["maven_deps"]
-    if "override_target" not in dep
 }
 
 pkg_files(
