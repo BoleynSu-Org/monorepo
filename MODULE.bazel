@@ -1159,7 +1159,10 @@ python.toolchain(
 )
 use_repo(python, python = "python_{}_host".format(PYTHON_VERSION.replace(".", "_")), python_sdk_toolchains = "pythons_hub")
 
-PIP_PACKAGES = {dep["name"]: dep["version"] for dep in DEPS["pip_deps"]}
+PIP_PACKAGES = {
+    dep["name"]: dep["version"]
+    for dep in DEPS["pip_deps"]
+}
 
 pinned_pip = use_repo_rule("//tools/build/repo_rules:pip_lockfile.bzl", "pinned_pip")
 
