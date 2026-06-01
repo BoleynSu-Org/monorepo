@@ -1,6 +1,6 @@
 module(
     name = 'rules_cc',
-    version = '0.2.18',
+    version = '0.2.19',
 )
 
 bazel_dep(
