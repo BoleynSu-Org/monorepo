@@ -1,0 +1,8 @@
+{
+  "url": "https://github.com/bazelbuild/bazel/releases/download/9.1.1/bazel-9.1.1-installer-linux-x86_64.sh",
+  "integrity": "sha256-AxVnH/RdiwWjOMjCP2HU7Tyht0xuM6hRvO2uDFjvHI0=",
+  "overlay": {
+    "BUILD.bazel": "sha256-2Ts2irgDEMGr5gVDvW3NMEA9U8GtjdUh4DI8KcE/Gls="
+  },
+  "archive_type": "zip"
+}
