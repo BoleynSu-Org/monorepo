@@ -40,12 +40,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 4f6a83269e979e3a88da17b720ab8f7b3a041215f27419605acd22b73cdfd97e
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.61.0.tar.gz
-  updated_on: '2026-06-01'
-  version: v0.61.0
-  strip_prefix: rules_go-0.61.0
-  module_version: 0.61.0
+  sha256: 8a0225b5e067af3b1cd814c8e2b9545ca7f62ff8a8ed0c32f0acfacae25ec2be
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.61.1.tar.gz
+  updated_on: '2026-06-05'
+  version: v0.61.1
+  strip_prefix: rules_go-0.61.1
+  module_version: 0.61.1
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.1.tar.gz
@@ -90,12 +90,12 @@ bazel_deps:
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: bf12d1e5852cbe8ae0746d8e3e59d2cedc1cd065a047ddd183f4226a32410cd1
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.51.1.tar.gz
-  updated_on: '2026-06-04'
-  version: v0.51.1
-  strip_prefix: bazel-gazelle-0.51.1
-  module_version: 0.51.1
+  sha256: 30e309e5e55ea920ead5300e99df4b9b3a1cb465b5a9c0746bdd4287e408d87d
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.51.3.tar.gz
+  updated_on: '2026-06-05'
+  version: v0.51.3
+  strip_prefix: bazel-gazelle-0.51.3
+  module_version: 0.51.3
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -175,26 +175,26 @@ bazel_deps:
   module_version: 1.36.1
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260519.041841-20260519.121359
+  version: 43-20260602.040608-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 7386cac73a4537458b40efcf5c73c0b93ae40b98d90a0a6fb460dd934ae1c535
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260519.041841-20260519.121359/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-05-19'
+  sha256: d6d4d784f88f058d55222cb2c71c522473e108d615ae1c2dd066705cfec613f9
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260602.040608-20260604.200716/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-06-05'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260519.41841.20260519.121359
+  module_version: 43.20260602.40608.20260604.200716
 - name: clang_linux_x86_64
   type: http_archive
-  version: 22.1.6-43-20260521.025825-20260521.081109
+  version: 22.1.6-43-20260602.040608-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: e6d83e02127eb3cf333085ef9577560a67c21010a95888791f3c84d9d207fdca
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.6-43-20260521.025825-20260521.081109/clang_linux_x86_64.tar.gz
-  updated_on: '2026-05-21'
-  module_version: 22.1.6.43.20260521.25825.20260521.81109
+  sha256: b014ffc5f69a641186e606389b51def9657fb062891c031038bf46deddc7cf19
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.6-43-20260602.040608-20260604.200716/clang_linux_x86_64.tar.gz
+  updated_on: '2026-06-05'
+  module_version: 22.1.6.43.20260602.40608.20260604.200716
 - name: bazel_features
   type: http_archive
   version: v1.47.1
@@ -698,16 +698,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260602.040608
+  version: 44-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260602.040608
-  digest: sha256:eccfb6430317123e832a46aac408ff9f47b8777cc65f704185109bb2cf7a7d8d
-  updated_on: '2026-06-04'
+  tag: 44-20260604.200716
+  digest: sha256:ce140097519617ecd995f2898dc76de17cc902c288429f4bb549185f0395042c
+  updated_on: '2026-06-05'
   platforms:
   - linux/amd64
-  module_version: 44.20260602.40608
+  module_version: 44.20260604.200716
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -741,52 +741,52 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.63.11
+  version: v2.63.12
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.63.11
-  digest: sha256:d00846661adb65034cd5ce533c2a7ceb2fd008d2147b342a2eb2296051c59107
-  updated_on: '2026-06-04'
+  tag: v2.63.12
+  digest: sha256:fc8c3a46c16bbdf97362b20c50164e97de9c1dd5f63230d28a4cb15248b53ec3
+  updated_on: '2026-06-05'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.63.11
+  module_version: 2.63.12
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260602.040608
+  version: 44-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260602.040608
+  tag: 44-20260604.200716
   digest: sha256:9e1364c8441dd259a394ef11204d29ca0c2a1029ae300b0b65b0021370f836e7
-  updated_on: '2026-06-04'
+  updated_on: '2026-06-05'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260602.40608
+  module_version: 44.20260604.200716
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260602.040608
+  version: 44-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260602.040608
+  tag: 44-20260604.200716
   digest: sha256:a0b7ccda63aa983d6cb9ff54668f796c526850d874112f5b0bf73dcb5f31e61a
-  updated_on: '2026-06-04'
+  updated_on: '2026-06-05'
   platforms:
   - linux/amd64
-  module_version: 44.20260602.40608
+  module_version: 44.20260604.200716
 - name: io_quay_boleynsu_base
-  version: 44-20260602.040608
+  version: 44-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:10de9cb51de7b41459fbca4ebf57a093b52365f95e008690f7689f831f2f65df
-  tag: 44-20260602.040608
-  updated_on: '2026-06-04'
+  tag: 44-20260604.200716
+  updated_on: '2026-06-05'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260602.40608
+  module_version: 44.20260604.200716
 
 toolchain_deps:
 - name: c
