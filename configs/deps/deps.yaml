@@ -189,19 +189,19 @@ bazel_deps:
   module_version: 43.20260602.40608.20260604.200716
 - name: clang_linux_x86_64
   type: http_archive
-  version: 22.1.6-43-20260602.040608-20260604.200716
+  version: 22.1.7-43-20260604.200716-20260607.012701
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: b014ffc5f69a641186e606389b51def9657fb062891c031038bf46deddc7cf19
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.6-43-20260602.040608-20260604.200716/clang_linux_x86_64.tar.gz
-  updated_on: '2026-06-05'
-  module_version: 22.1.6.43.20260602.40608.20260604.200716
+  sha256: 1517aabfd6dd17e9ce46321d1f4e246893078a7f43737c9935cd6d0893efdc25
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.7-43-20260604.200716-20260607.012701/clang_linux_x86_64.tar.gz
+  updated_on: '2026-06-09'
+  module_version: 22.1.7.43.20260604.200716.20260607.12701
 - name: bazel_features
   type: http_archive
-  version: v1.47.1
-  sha256: 6a727a78c0134b1b912c97c0937e1c956f35775934ae3e1f4af4156f8d5d1ff4
-  strip_prefix: bazel_features-1.47.1
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.47.1/bazel_features-v1.47.1.tar.gz
-  updated_on: '2026-05-15'
+  version: v1.48.1
+  sha256: 89eca73d4c334cf664f84920365d2ce04e2c98099b89f7c5b676b5f377c8e754
+  strip_prefix: bazel_features-1.48.1
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.48.1/bazel_features-v1.48.1.tar.gz
+  updated_on: '2026-06-09'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.47.1
+  module_version: 1.48.1
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -698,16 +698,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260604.200716
+  version: 44-20260607.012957
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260604.200716
-  digest: sha256:ce140097519617ecd995f2898dc76de17cc902c288429f4bb549185f0395042c
-  updated_on: '2026-06-05'
+  tag: 44-20260607.012957
+  digest: sha256:32f59db6601547bebdc1a9ddf1e22bae92098f8545942dd90e4e6a0d58753dc3
+  updated_on: '2026-06-09'
   platforms:
   - linux/amd64
-  module_version: 44.20260604.200716
+  module_version: 44.20260607.12957
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -728,8 +728,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:cc64d253db4f016cbcff2ff2f01e60ed07e74f38b4398f84d3c4fae4b5ce0e07
-  updated_on: '2026-05-09'
+  digest: sha256:832668141a338ba93dd7bbf5ee4f5f351d98088b959719cf82b2bca785c7e08c
+  updated_on: '2026-06-09'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -741,17 +741,17 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.63.12
+  version: v2.63.14
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.63.12
-  digest: sha256:fc8c3a46c16bbdf97362b20c50164e97de9c1dd5f63230d28a4cb15248b53ec3
-  updated_on: '2026-06-05'
+  tag: v2.63.14
+  digest: sha256:1ec9b0c68297550c92f4a93feed432850c2993b261706cc3cc2e808f94a95e76
+  updated_on: '2026-06-09'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.63.12
+  module_version: 2.63.14
 - name: io_quay_boleynsu_oj_c99runner
   version: 44-20260604.200716
   version_regex: ([0-9.]*)-([0-9.]*)
