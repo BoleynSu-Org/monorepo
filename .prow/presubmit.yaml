@@ -12,7 +12,7 @@ presubmits:
       use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:8387c1d55efc5282abfdd0e667707adfaeff80254e18b3bb2b9be7a76dd9d536
+        - image: quay.io/boleynsu/ci-runner@sha256:89cddcead9320be7d72919740e5f07c0eb7b5b1e54f99af6c714bf843e254101
           command:
             - bazel
             - test
@@ -44,7 +44,7 @@ presubmits:
       use-buildbuddy.k3s.cuhk.servers.boleyn.su: "true"
     spec:
       containers:
-        - image: quay.io/boleynsu/ci-runner@sha256:8387c1d55efc5282abfdd0e667707adfaeff80254e18b3bb2b9be7a76dd9d536
+        - image: quay.io/boleynsu/ci-runner@sha256:89cddcead9320be7d72919740e5f07c0eb7b5b1e54f99af6c714bf843e254101
           command:
             - bazel
             - run
