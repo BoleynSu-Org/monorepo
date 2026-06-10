@@ -1,0 +1,7 @@
+{
+  "url": "https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260609.180419-20260610.125714/sysroot_linux_x86_64.tar.gz",
+  "integrity": "sha256-UzTM6t8BKEX6dVqsmq8iyqI8M1zHM3SIwqKqGhWN5Gw=",
+  "overlay": {
+    "BUILD.bazel": "sha256-lXFO3iHqwBZgG/ofRiUwsdl/ncGOHn7CEyTje9RuMJQ="
+  }
+}
