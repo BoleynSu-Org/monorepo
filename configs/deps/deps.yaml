@@ -81,12 +81,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 8ba174657d86acae7978b0f4eea14a73e74b1d25ba4dee65315fab4ec9f2c041
-  strip_prefix: grpc-java-1.81.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.81.0.tar.gz
-  updated_on: '2026-05-01'
-  version: v1.81.0
-  module_version: 1.81.0
+  sha256: 079bdef3cb6343e5036e3dd86ce2f535a667e5df540e2b51284b47bfd00a359f
+  strip_prefix: grpc-java-1.82.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.82.0.tar.gz
+  updated_on: '2026-06-11'
+  version: v1.82.0
+  module_version: 1.82.0
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -220,12 +220,12 @@ bazel_deps:
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
-  url: https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protobuf-35.0.tar.gz
-  sha256: 8f907baca4b34a3b4854103ba5811e418fb6e2ff11fe0d8df9e8280b11d79926
-  strip_prefix: protobuf-35.0
-  version: v35.0
-  updated_on: '2026-05-20'
-  module_version: '35.0'
+  url: https://github.com/protocolbuffers/protobuf/releases/download/v35.1/protobuf-35.1.tar.gz
+  sha256: f0b6838e7522a8da96126d487068c959bc624926368f3024ac8fd03abd0a1ac4
+  strip_prefix: protobuf-35.1
+  version: v35.1
+  updated_on: '2026-06-11'
+  module_version: '35.1'
   override_updater:
   - type: deps_updater
     name: bazel_deps
