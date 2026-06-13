@@ -86,6 +86,8 @@ java_binary(
         "src/main/webapp/favicon.ico",
         # js
         "src/main/webapp/static/my.js",
+        # css
+        "src/main/webapp/static/my.css",
         # config
         "src/main/webapp/WEB-INF/web.xml",
     ],

@@ -41,9 +41,8 @@ html, body {
 }
 </style>
 <link rel="stylesheet" href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap.min.css" />
-<link rel="stylesheet"
-    href="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/css/bootstrap-theme.min.css" />
-<script src="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/static/my.css" />
+<script src="/webjars/bootstrap/<%=su.boleyn.oj.server.Versions.BOOTSTRAP_VERSION%>/js/bootstrap.bundle.min.js"></script>
 <script src="/static/my.js"></script>
 </head>
 <body>
@@ -52,7 +51,7 @@ html, body {
             <div class="row">
                 <div class="col-md-4">
                     <header class="page-header">
-                        <h2>Boleyn Su's Online Judge</h2>
+                        <h1>Boleyn Su's Online Judge</h1>
                     </header>
                     <nav>
                         <ul class="nav nav-pills nav-stacked">
@@ -70,7 +69,7 @@ html, body {
                 </div>
                 <div class="col-md-8" id="body">
                     <form class="form-signin col-md-offset-3 col-md-6" method="post">
-                        <h2 class="form-signin-heading">Create a new account</h2>
+                        <h3 class="form-signin-heading">Create a new account</h3>
                         <input class="form-control" type="text" name="username"
                             placeholder="Username" autofocus /> <input class="form-control"
                             type="password" name="password" placeholder="Password" /> <input

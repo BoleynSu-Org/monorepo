@@ -1,0 +1,117 @@
+/* Fix container spacing to match Bootstrap 3 */
+.container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 1170px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Fix row and column spacing */
+.row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+.col-md-4, .col-md-6, .col-md-8 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+/* Bootstrap 3 panel compatibility for Bootstrap 5 */
+.panel-default {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: none;
+    background-color: #fff;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
+.panel-heading {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+}
+.panel-title {
+    font-size: 16px;
+    margin: 0;
+}
+.panel-body {
+    padding: 20px !important;
+}
+
+/* Bootstrap 3 btn-block compatibility for Bootstrap 5 */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Bootstrap 3 nav-pills compatibility for Bootstrap 5 */
+.nav-pills {
+    display: block !important;
+}
+.nav-pills > li {
+    display: block !important;
+    float: none !important;
+}
+.nav-pills > li > a {
+    border-radius: 4px;
+    padding: 8px 12px;
+    display: block !important;
+    width: 100% !important;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #fff !important;
+    background-color: #337ab7 !important;
+    width: 100% !important;
+}
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus {
+    color: #23527c;
+    text-decoration: none;
+    background-color: #eee;
+}
+.nav-pills.nav-stacked > li + li {
+    margin-top: 2px;
+    margin-left: 0;
+}
+
+/* Fix heading sizes to match Bootstrap 3 */
+h1, .page-header h1 { font-size: 30px !important; }
+h2, .page-header h2, .panel-title { font-size: 30px !important; margin-top: 0 !important; }
+.form-signin-heading { font-size: 30px !important; margin-top: 0 !important; }
+h3 { font-size: 24px !important; margin-top: 20px !important; }
+h4 { font-size: 18px !important; margin-top: 15px !important; }
+
+/* Fix table row height */
+table tr td, table tr th { padding: 8px !important; }
+
+/* Fix page-header top margin to match Bootstrap 3 (pushes content down by ~40px) */
+.page-header {
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Fix nav top padding so first nav item starts at correct y-position */
+.col-md-4 > .page-header + nav, .col-md-4 > header + nav {
+    margin-top: 35px !important;
+}
+
+/* Bootstrap 3 form-signin compatibility for Bootstrap 5 */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin-heading {
+    font-size: 24px !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+}
+
+/* Ensure main content area has proper top spacing */
+#body {
+    padding-top: 60px !important;
+}
+
