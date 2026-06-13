@@ -17,6 +17,11 @@
     padding-right: 15px !important;
 }
 
+/* Bootstrap 3 col-md-offset-* compatibility for Bootstrap 5 */
+.col-md-offset-3 {
+    margin-left: 25% !important;
+}
+
 /* Bootstrap 3 panel compatibility for Bootstrap 5 */
 .panel-default {
     border: 1px solid #ddd;
@@ -29,12 +34,14 @@
 .panel-heading {
     background-color: #f5f5f5;
     border-bottom: 1px solid #ddd;
-    padding: 10px 15px;
+    padding: 8px 15px !important;
 }
-.panel-title {
-    font-size: 16px;
-    margin: 0;
+
+h3.panel-title, h2.panel-title {
+    font-size: 18px !important;
+    margin-top: 0 !important;
 }
+
 .panel-body {
     padding: 20px !important;
 }
@@ -77,15 +84,42 @@
     margin-left: 0;
 }
 
+/* Bootstrap 3 nav-tabs compatibility for Bootstrap 5 */
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.nav-tabs > li {
+    float: left !important;
+    margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+    color: #555 !important;
+    padding: 8px 16px;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none !important;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    background-color: #eee !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #555 !important;
+    cursor: default;
+    background-color: #fff !important;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
 /* Fix heading sizes to match Bootstrap 3 */
 h1, .page-header h1 { font-size: 30px !important; }
-h2, .page-header h2, .panel-title { font-size: 30px !important; margin-top: 0 !important; }
+.page-header h2 { font-size: 30px !important; margin-top: 0 !important; }
 .form-signin-heading { font-size: 30px !important; margin-top: 0 !important; }
 h3 { font-size: 24px !important; margin-top: 20px !important; }
 h4 { font-size: 18px !important; margin-top: 15px !important; }
-
-/* Fix table row height */
-table tr td, table tr th { padding: 8px !important; }
 
 /* Fix page-header top margin to match Bootstrap 3 (pushes content down by ~40px) */
 .page-header {
@@ -110,8 +144,112 @@ table tr td, table tr th { padding: 8px !important; }
     margin-bottom: 20px;
 }
 
-/* Ensure main content area has proper top spacing */
-#body {
-    padding-top: 60px !important;
+/* Bootstrap 3 input-sm compatibility for Bootstrap 5 */
+.input-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+/* Bootstrap 3 table-condensed compatibility for Bootstrap 5 */
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+    padding: 0.3rem !important;
+}
+
+/* Bootstrap 3 progress-bar-striped + active animation compatibility */
+.progress-bar-striped.active,
+.progress-bar.active,
+.progress-bar-striped {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+}
+
+.progress-bar-striped.active {
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+    from { background-position: 40px 0; }
+    to { background-position: 0 0; }
+}
+
+/* Bootstrap 3 btn-xs compatibility for Bootstrap 5 (removed in BS4) */
+.btn-xs {
+    padding: .25rem .5rem;
+    font-size: .75rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+/* BS5 form-group row layout - ensure col-md-* spans side by side */
+.form-group.row > .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+/* Bootstrap 3 pagination compatibility for Bootstrap 5 */
+.pagination {
+    display: inline-block !important;
+    padding-left: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline !important;
+    float: left !important;
+}
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.pagination > .active > a,
+.pagination > .active > span {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+/* Remove underline for links (BS5 default is to underline links) */
+a {
+    text-decoration: none !important;
+}
+a:hover {
+    text-decoration: underline !important;
 }
 
