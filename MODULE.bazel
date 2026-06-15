@@ -521,12 +521,12 @@ DEPS = {
         {
             "name": "rules_android",
             "type": "http_archive",
-            "version": "v0.7.2",
-            "sha256": "0da7198c7c8bac7e11e08dca3c434617b8593075858716595672e9aeefbef2a7",
-            "strip_prefix": "rules_android-0.7.2",
-            "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.7.2.tar.gz",
-            "updated_on": "2026-04-24",
-            "module_version": "0.7.2",
+            "version": "v0.7.3",
+            "sha256": "c4cd258d3761eff08ee044c0252179bb6ee8af8ab24f7dafb73b280eeda98243",
+            "strip_prefix": "rules_android-0.7.3",
+            "url": "https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.7.3.tar.gz",
+            "updated_on": "2026-06-15",
+            "module_version": "0.7.3",
         },
         {
             "name": "rules_robolectric",
