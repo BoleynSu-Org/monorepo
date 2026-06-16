@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.6.1
 - name: rules_python
   type: http_archive
-  sha256: 2119ca04726066c53b8f1ff42dffa090ea7f3e42a75679f1cfda937406cf7753
-  strip_prefix: rules_python-2.0.2
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.0.2.tar.gz
-  updated_on: '2026-05-23'
-  version: 2.0.2
-  module_version: 2.0.2
+  sha256: 2610f57b934dc55d1df2728290199519b11cc53508dec34fd5ef0424bcb50242
+  strip_prefix: rules_python-2.0.3
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.0.3.tar.gz
+  updated_on: '2026-06-16'
+  version: 2.0.3
+  module_version: 2.0.3
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -723,8 +723,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:af4b73ddc41b7f7bb5e614eef1f35ba998307be2c8d1c54bf4890e8b946c6e67
-  updated_on: '2026-06-13'
+  digest: sha256:9ead7e126d795c549ce8ad1c7bb8f30a231e061bad769eda704c39c7f609888d
+  updated_on: '2026-06-16'
   platforms:
   - linux/amd64
   - linux/arm/v6

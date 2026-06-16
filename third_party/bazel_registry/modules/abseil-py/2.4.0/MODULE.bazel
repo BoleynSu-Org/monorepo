@@ -10,7 +10,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '2.0.2',
+    version = '2.0.3',
 )
 
 register_toolchains(
