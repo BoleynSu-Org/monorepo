@@ -48,12 +48,12 @@ bazel_deps:
   module_version: 0.61.1
 - name: rules_oci
   type: http_archive
-  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.1.tar.gz
-  sha256: 6d47e0bb9d3c269695cbb35abb603d1db08434376a1210867da8f6f4a9c630ba
-  strip_prefix: rules_oci-2.3.1
-  updated_on: '2026-04-12'
-  version: v2.3.1
-  module_version: 2.3.1
+  url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.2.tar.gz
+  sha256: bd269f985e5dd5004295f859a0dc72bf1d5215052dabc5ea7d321f9a178882ab
+  strip_prefix: rules_oci-2.3.2
+  updated_on: '2026-06-17'
+  version: v2.3.2
+  module_version: 2.3.2
 - name: bazel_skylib
   type: http_archive
   url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.0.tar.gz
@@ -189,19 +189,19 @@ bazel_deps:
   module_version: 43.20260616.42239.20260616.161555
 - name: clang_linux_x86_64
   type: http_archive
-  version: 22.1.7-43-20260616.042239-20260616.161555
+  version: 22.1.8-43-20260616.161555-20260617.133927
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 50b5aac025e57b279bcc0ba5ce313c60b7f46e507ce6bc22980abb5cdc7fb5ab
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.7-43-20260616.042239-20260616.161555/clang_linux_x86_64.tar.gz
-  updated_on: '2026-06-16'
-  module_version: 22.1.7.43.20260616.42239.20260616.161555
+  sha256: b44524a1c52f1b44935863c619f9adbc57308cca9d21214a9cb0458a1fcf9dbc
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.8-43-20260616.161555-20260617.133927/clang_linux_x86_64.tar.gz
+  updated_on: '2026-06-17'
+  module_version: 22.1.8.43.20260616.161555.20260617.133927
 - name: bazel_features
   type: http_archive
-  version: v1.48.1
-  sha256: 89eca73d4c334cf664f84920365d2ce04e2c98099b89f7c5b676b5f377c8e754
-  strip_prefix: bazel_features-1.48.1
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.48.1/bazel_features-v1.48.1.tar.gz
-  updated_on: '2026-06-09'
+  version: v1.49.0
+  sha256: add57e2e086463075805e153c37e03bb74c4737773fc5879336733af08e6f086
+  strip_prefix: bazel_features-1.49.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.49.0/bazel_features-v1.49.0.tar.gz
+  updated_on: '2026-06-17'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.48.1
+  module_version: 1.49.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -314,10 +314,10 @@ bazel_deps:
   module_version: 0.8.1
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.3.21/rules_kotlin-v2.3.21.tar.gz
-  sha256: 118fcba9b15a5f35f52be6ea84a3cd98f78658b2071ec0f3a1de6d2863f2e50a
-  version: v2.3.21
-  updated_on: '2026-05-22'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.4.0/rules_kotlin-v2.4.0.tar.gz
+  sha256: 51278cca853f1d485c2b26018446708ba7a322f5b15767c5fc67cacd3cc1e7c3
+  version: v2.4.0
+  updated_on: '2026-06-17'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -332,7 +332,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.3.21
+  module_version: 2.4.0
 - name: aspect_bazel_lib
   type: http_archive
   version: v2.22.5
@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260616.042239
+  version: 44-20260617.133927
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260616.042239
-  digest: sha256:d6096ea9d339872ed9be62a28c93a7551fe3bf7e71ab648269ee288bde2f84c7
-  updated_on: '2026-06-16'
+  tag: 44-20260617.133927
+  digest: sha256:2a6cc05a9a328724a2d6fdffae708df812127ee0f24c537dc80dbbfa3b1fa2a2
+  updated_on: '2026-06-17'
   platforms:
   - linux/amd64
-  module_version: 44.20260616.42239
+  module_version: 44.20260617.133927
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
