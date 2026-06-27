@@ -81,12 +81,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 079bdef3cb6343e5036e3dd86ce2f535a667e5df540e2b51284b47bfd00a359f
-  strip_prefix: grpc-java-1.82.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.82.0.tar.gz
-  updated_on: '2026-06-11'
-  version: v1.82.0
-  module_version: 1.82.0
+  sha256: 5b0b193657e0e4c38ff37133d7710c020e595cce5e8aadfbc7410eee11ebdb8f
+  strip_prefix: grpc-java-1.82.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.82.1.tar.gz
+  updated_on: '2026-06-27'
+  version: v1.82.1
+  module_version: 1.82.1
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -197,11 +197,11 @@ bazel_deps:
   module_version: 22.1.8.43.20260616.161555.20260617.133927
 - name: bazel_features
   type: http_archive
-  version: v1.49.0
-  sha256: add57e2e086463075805e153c37e03bb74c4737773fc5879336733af08e6f086
-  strip_prefix: bazel_features-1.49.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.49.0/bazel_features-v1.49.0.tar.gz
-  updated_on: '2026-06-17'
+  version: v1.50.0
+  sha256: 094367e732ece23f334eaf84089a720b861d053beeba6a6a68356d3aee1dc32b
+  strip_prefix: bazel_features-1.50.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.50.0/bazel_features-v1.50.0.tar.gz
+  updated_on: '2026-06-27'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.49.0
+  module_version: 1.50.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -471,12 +471,12 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: jq_linux_amd64
   type: http_file
-  version: jq-1.8.1
+  version: jq-1.8.2
   version_regex: jq-([0-9.]+)
-  url: https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux64
-  sha256: 020468de7539ce70ef1bceaf7cde2e8c4f2ca6c3afb84642aabc5c97d9fc2a0d
+  url: https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-linux64
+  sha256: b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f
   executable: true
-  updated_on: '2025-07-13'
+  updated_on: '2026-06-27'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -490,7 +490,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.8.1
+  module_version: 1.8.2
 - name: jq.bzl
   type: http_archive
   version: v0.6.1
@@ -649,13 +649,13 @@ maven_deps:
   updated_on: '2026-06-13'
   module_version: 3.5.9
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.22
-  updated_on: '2026-05-06'
-  module_version: 11.0.22
+  version: 11.0.23
+  updated_on: '2026-06-27'
+  module_version: 11.0.23
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.22
-  updated_on: '2026-05-06'
-  module_version: 11.0.22
+  version: 11.0.23
+  updated_on: '2026-06-27'
+  module_version: 11.0.23
 - name: org.webjars:jquery
   version: 4.0.0
   updated_on: '2026-02-05'
@@ -665,10 +665,10 @@ maven_deps:
   updated_on: '2026-06-13'
   module_version: 5.3.8
 - name: io.undertow:undertow-core
-  version: 2.4.1.Final
+  version: 2.4.2.Final
   version_regex: (.*)\.Final
-  updated_on: '2026-05-19'
-  module_version: 2.4.1
+  updated_on: '2026-06-27'
+  module_version: 2.4.2
 - name: commons-validator:commons-validator
   version: 1.10.1
   updated_on: '2025-11-17'
@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260617.133927
+  version: 44-20260617.224629
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260617.133927
-  digest: sha256:2a6cc05a9a328724a2d6fdffae708df812127ee0f24c537dc80dbbfa3b1fa2a2
-  updated_on: '2026-06-17'
+  tag: 44-20260617.224629
+  digest: sha256:0ce6cf90c48ba7aaeddc4e1be1092ccd874b5005840798b7d486da2b7fc372e6
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
-  module_version: 44.20260617.133927
+  module_version: 44.20260617.224629
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -723,8 +723,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:9ead7e126d795c549ce8ad1c7bb8f30a231e061bad769eda704c39c7f609888d
-  updated_on: '2026-06-16'
+  digest: sha256:4dae499420bb9ba8c5d73745e5c8e02b696acd214b66b5f2946eceee7f171fee
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -736,52 +736,52 @@ container_deps:
   - linux/s390x
   module_version: 5.4.2
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.63.15
+  version: v2.63.17
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.63.15
-  digest: sha256:9805b21cf910f3ef6f4a1c8f441f1dd6cc4197136f9541fe2a1ab6d050706e4b
-  updated_on: '2026-06-13'
+  tag: v2.63.17
+  digest: sha256:271ec822a03112ee8d2fc7042e8434995dfa74421e6a48e031be68c88fcded1c
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.63.15
+  module_version: 2.63.17
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260616.042239
+  version: 44-20260617.224629
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260616.042239
+  tag: 44-20260617.224629
   digest: sha256:a87fcb42d4bbc31389635b2d13e2cef14800640034dc6aaa2e96686bf768ef6d
-  updated_on: '2026-06-16'
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260616.42239
+  module_version: 44.20260617.224629
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260616.042239
+  version: 44-20260617.224629
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260616.042239
+  tag: 44-20260617.224629
   digest: sha256:eb47db1ab9b87b25ff1c96ce380e7e81cbf94af440b75b8fffc3ce1c238214e9
-  updated_on: '2026-06-16'
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
-  module_version: 44.20260616.42239
+  module_version: 44.20260617.224629
 - name: io_quay_boleynsu_base
-  version: 44-20260616.042239
+  version: 44-20260617.224629
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:dcea5c477708a86b220faeaebea662f08cf8e0194a33be1ed489d715b0168210
-  tag: 44-20260616.042239
-  updated_on: '2026-06-16'
+  tag: 44-20260617.224629
+  updated_on: '2026-06-27'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260616.42239
+  module_version: 44.20260617.224629
 
 toolchain_deps:
 - name: c

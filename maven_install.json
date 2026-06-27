@@ -39,11 +39,11 @@
     "io.opencensus:opencensus-api": 2042364617,
     "io.opencensus:opencensus-contrib-grpc-metrics": 317094357,
     "io.perfmark:perfmark-api": 1019157794,
-    "io.undertow:undertow-core": -1621681817,
+    "io.undertow:undertow-core": -114130008,
     "junit:junit": -744267592,
     "org.apache.commons:commons-text": -1886494041,
-    "org.apache.tomcat.embed:tomcat-embed-core": 431364413,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": -1087712993,
+    "org.apache.tomcat.embed:tomcat-embed-core": -1376090050,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": 1399799840,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": 852823480,
     "org.mariadb.jdbc:mariadb-java-client": -2107814915,
@@ -123,7 +123,7 @@
     "io.smallrye.common:smallrye-common-net": 464890774,
     "io.smallrye.common:smallrye-common-os": -189080548,
     "io.smallrye.common:smallrye-common-ref": 1612003526,
-    "io.undertow:undertow-core": -798369717,
+    "io.undertow:undertow-core": 2136051258,
     "javax.annotation:javax.annotation-api": -1009230154,
     "junit:junit": -1256429642,
     "net.bytebuddy:byte-buddy": -1159164687,
@@ -132,10 +132,10 @@
     "org.apache.commons:commons-text": 869132518,
     "org.apache.httpcomponents:httpclient": -630303486,
     "org.apache.httpcomponents:httpcore": 67453319,
-    "org.apache.tomcat.embed:tomcat-embed-core": 592587240,
-    "org.apache.tomcat.embed:tomcat-embed-el": 1305005618,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 1597311633,
-    "org.apache.tomcat:tomcat-annotations-api": 446816209,
+    "org.apache.tomcat.embed:tomcat-embed-core": -432509453,
+    "org.apache.tomcat.embed:tomcat-embed-el": 1101789898,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": 1279503530,
+    "org.apache.tomcat:tomcat-annotations-api": -1086232268,
     "org.checkerframework:checker-qual": 1860567376,
     "org.codehaus.mojo:animal-sniffer-annotations": 534312981,
     "org.eclipse.jdt:ecj": 1612030828,
@@ -554,9 +554,9 @@
     },
     "io.undertow:undertow-core": {
       "shasums": {
-        "jar": "0067ecea77b758d643e0ed874a4b76f26f6c9a621054df0774e31cb4a1cd8768"
+        "jar": "d90ed2bfc9dafed90fa203372c194a183ad64f5decfac29781d5e3317263d638"
       },
-      "version": "2.4.1.Final"
+      "version": "2.4.2.Final"
     },
     "javax.annotation:javax.annotation-api": {
       "shasums": {
@@ -608,27 +608,27 @@
     },
     "org.apache.tomcat.embed:tomcat-embed-core": {
       "shasums": {
-        "jar": "78cd7cd7c104b6b87142c1b0bd902e1ce005b0245c3cefa8a06759148947200b"
+        "jar": "53c4038175e4180182a0d27ef777ddafe7289d9a7acc43d367e556b071f03075"
       },
-      "version": "11.0.22"
+      "version": "11.0.23"
     },
     "org.apache.tomcat.embed:tomcat-embed-el": {
       "shasums": {
-        "jar": "1b34c33b858c141df36c501b4d809e68036c406bca3671a86facae297917c7de"
+        "jar": "bf917bed94ca89a0155a5f448ded801d8c0869eb1622d4b0243059f3ed213120"
       },
-      "version": "11.0.22"
+      "version": "11.0.23"
     },
     "org.apache.tomcat.embed:tomcat-embed-jasper": {
       "shasums": {
-        "jar": "4b572bdaf22892b80aef0d28302d34c9f0432dae8708af6a3cf34e6d1ee8a86c"
+        "jar": "41b9ea9c33365f547eff49ddff9854479260e569b044371b5b67a0adc0516f50"
       },
-      "version": "11.0.22"
+      "version": "11.0.23"
     },
     "org.apache.tomcat:tomcat-annotations-api": {
       "shasums": {
-        "jar": "fbe1a2ee12ea472b773bf3a6237d95b66a002c5c4fa6d38a54e69c019558cfd4"
+        "jar": "289e4a314da4f9f3e5ca7422ef84c6243bfa65995478a0b4bc5f8171493e32c1"
       },
-      "version": "11.0.22"
+      "version": "11.0.23"
     },
     "org.checkerframework:checker-qual": {
       "shasums": {
