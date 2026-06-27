@@ -1,6 +1,6 @@
 module(
     name = 'rules_cc',
-    version = '0.2.19',
+    version = '0.2.20',
 )
 
 bazel_dep(
@@ -40,6 +40,11 @@ register_toolchains(
     '//cc/private/toolchain/test:default_test_runner_toolchain',
 )
 
+bazel_dep(
+    name = 'rules_python',
+    version = '2.0.3',
+)
+
 compatibility_proxy = use_extension(
     '//cc:extensions.bzl',
     'compatibility_proxy',
@@ -48,4 +53,13 @@ compatibility_proxy = use_extension(
 use_repo(
     compatibility_proxy,
     'cc_compatibility_proxy',
+)
+
+local_bazel_import = use_repo_rule(
+    '//:local_bazel.bzl',
+    'local_bazel_import',
+)
+
+local_bazel_import(
+    name = 'local_bazel',
 )

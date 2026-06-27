@@ -12,12 +12,12 @@ DEPS = {
         {
             "name": "rules_cc",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.19.tar.gz",
-            "sha256": "351248f6be41d18694d4d7c390aaebd9f865eea72a4758b2c9d782ae744c97f4",
-            "version": "0.2.19",
-            "strip_prefix": "rules_cc-0.2.19",
-            "updated_on": "2026-06-01",
-            "module_version": "0.2.19",
+            "url": "https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.20.tar.gz",
+            "sha256": "69e05df29f0010ba248ef8dafc1f084c8fd2f5c553da634422d8167f5c4b277b",
+            "version": "0.2.20",
+            "strip_prefix": "rules_cc-0.2.20",
+            "updated_on": "2026-06-27",
+            "module_version": "0.2.20",
         },
         {
             "name": "rules_java",
@@ -139,12 +139,12 @@ DEPS = {
         {
             "name": "toolchains_llvm",
             "type": "http_archive",
-            "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.7.0.tar.gz",
-            "sha256": "973691168f59cb35027190e458e6674871009e9193498325d920bd170d4bc75f",
-            "strip_prefix": "toolchains_llvm-1.7.0",
-            "updated_on": "2026-03-14",
-            "version": "v1.7.0",
-            "module_version": "1.7.0",
+            "url": "https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.8.0.tar.gz",
+            "sha256": "0c133fcbdc4c8162d6032ab92d4644ff86dbd90d776365d04c7c8e13acd3279c",
+            "strip_prefix": "toolchains_llvm-1.8.0",
+            "updated_on": "2026-06-27",
+            "version": "v1.8.0",
+            "module_version": "1.8.0",
         },
         {
             "name": "bazel_linux_x86_64",
@@ -809,11 +809,11 @@ DEPS = {
         {
             "name": "helly25_bzl",
             "type": "http_archive",
-            "version": "0.3.1",
-            "sha256": "c8e28a3cb7e465b4b71f5d4d366c5796cc0ae822fa510a8adf12cf39a9709902",
-            "strip_prefix": "bzl-0.3.1",
-            "url": "https://github.com/helly25/bzl/releases/download/0.3.1/bzl-0.3.1.tar.gz",
-            "updated_on": "2026-01-17",
+            "version": "0.5.0",
+            "sha256": "5f817f3f032ed377675564716bd0c59c6c7e5bce5857ce1004112fa34c9b3394",
+            "strip_prefix": "bzl-0.5.0",
+            "url": "https://github.com/helly25/bzl/releases/download/0.5.0/bzl-0.5.0.tar.gz",
+            "updated_on": "2026-06-27",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -825,7 +825,7 @@ DEPS = {
                 },
                 {
                     "type": "shell",
-                    "cmd": "echo DEPS_UPDATER_url=https://github.com/helly25/bzl/releases/download/0.3.1/bzl-${DEPS_UPDATER_version}.tar.gz\necho DEPS_UPDATER_strip_prefix=bzl-${DEPS_UPDATER_version}\n",
+                    "cmd": "echo DEPS_UPDATER_url=https://github.com/helly25/bzl/releases/download/${DEPS_UPDATER_version}/bzl-${DEPS_UPDATER_version}.tar.gz\necho DEPS_UPDATER_strip_prefix=bzl-${DEPS_UPDATER_version}\n",
                 },
                 {
                     "type": "deps_updater",
@@ -836,7 +836,7 @@ DEPS = {
                     }],
                 },
             ],
-            "module_version": "0.3.1",
+            "module_version": "0.5.0",
         },
         {
             "name": "toml.bzl",

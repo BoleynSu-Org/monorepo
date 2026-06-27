@@ -1,7 +1,7 @@
 module(
     name = 'toolchains_llvm',
     bazel_compatibility = ['>=7.0.0'],
-    version = '1.7.0',
+    version = '1.8.0',
 )
 
 bazel_dep(
@@ -21,7 +21,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.19',
+    version = '0.2.20',
 )
 
 bazel_dep(
@@ -31,7 +31,17 @@ bazel_dep(
 
 bazel_dep(
     name = 'helly25_bzl',
-    version = '0.3.1',
+    version = '0.5.0',
+)
+
+llvm_distributions = use_extension(
+    '//toolchain/extensions:distributions.bzl',
+    'llvm_distributions',
+)
+
+use_repo(
+    llvm_distributions,
+    'llvm_distributions_data',
 )
 
 bazel_dep(

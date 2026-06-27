@@ -38,7 +38,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.19',
+    version = '0.2.20',
 )
 
 go_sdk = use_extension(
