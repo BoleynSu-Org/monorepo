@@ -1,7 +1,7 @@
 module(
     name = 'bazel_lib',
     bazel_compatibility = ['>=6.0.0'],
-    version = '3.3.1',
+    version = '3.4.0',
 )
 
 bazel_dep(
@@ -44,6 +44,9 @@ toolchains.zstd(
 toolchains.expand_template(
 )
 
+toolchains.spawn_binary(
+)
+
 toolchains.bats(
 )
 
@@ -54,6 +57,7 @@ use_repo(
     'copy_to_directory_toolchains',
     'coreutils_toolchains',
     'expand_template_toolchains',
+    'spawn_binary_toolchains',
     'zstd_toolchains',
 )
 
@@ -62,6 +66,7 @@ register_toolchains(
     '@copy_to_directory_toolchains//:all',
     '@coreutils_toolchains//:all',
     '@expand_template_toolchains//:all',
+    '@spawn_binary_toolchains//:all',
     '@bats_toolchains//:all',
     '@zstd_toolchains//:all',
 )
