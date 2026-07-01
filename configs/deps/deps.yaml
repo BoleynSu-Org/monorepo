@@ -175,26 +175,26 @@ bazel_deps:
   module_version: 1.36.2
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260616.042239-20260616.161555
+  version: 43-20260701.042709-20260701.060820
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 2013f6cbb02e4b2e022e5e461b7ca06696763e04ab1eac2ba8ff7e8d7a940c99
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260616.042239-20260616.161555/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-06-16'
+  sha256: 7b2b640f211482a01f19df4825c581a17af51c4e073f2c18e28927d74cce38c7
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260701.042709-20260701.060820/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-07-01'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260616.42239.20260616.161555
+  module_version: 43.20260701.42709.20260701.60820
 - name: clang_linux_x86_64
   type: http_archive
-  version: 22.1.8-43-20260616.161555-20260617.133927
+  version: 22.1.8-43-20260701.042709-20260701.060820
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: b44524a1c52f1b44935863c619f9adbc57308cca9d21214a9cb0458a1fcf9dbc
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.8-43-20260616.161555-20260617.133927/clang_linux_x86_64.tar.gz
-  updated_on: '2026-06-17'
-  module_version: 22.1.8.43.20260616.161555.20260617.133927
+  sha256: fdb92d9703f63a2d9896bf4efc66e3454ca458946e414d8104f945a65deb3890
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.8-43-20260701.042709-20260701.060820/clang_linux_x86_64.tar.gz
+  updated_on: '2026-07-01'
+  module_version: 22.1.8.43.20260701.42709.20260701.60820
 - name: bazel_features
   type: http_archive
   version: v1.50.0
