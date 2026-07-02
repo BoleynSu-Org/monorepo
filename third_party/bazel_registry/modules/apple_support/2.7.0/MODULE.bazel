@@ -1,7 +1,7 @@
 module(
     name = 'apple_support',
     bazel_compatibility = ['>=7.4.0'],
-    version = '2.6.1',
+    version = '2.7.0',
 )
 
 bazel_dep(
@@ -47,4 +47,13 @@ xcode_configure_extension = use_extension(
 use_repo(
     xcode_configure_extension,
     'local_config_xcode',
+)
+
+toolchain_env = use_repo_rule(
+    '//toolchain:toolchain_env.bzl',
+    'toolchain_env',
+)
+
+toolchain_env(
+    name = 'apple_support_toolchain_env',
 )
