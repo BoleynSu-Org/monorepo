@@ -1,11 +1,11 @@
 module(
     name = 'abseil-py',
-    version = '2.4.0',
+    version = '2.5.0',
 )
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.20',
+    version = '0.2.21',
 )
 
 bazel_dep(

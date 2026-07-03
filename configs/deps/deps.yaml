@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.20.tar.gz
-  sha256: 69e05df29f0010ba248ef8dafc1f084c8fd2f5c553da634422d8167f5c4b277b
-  version: 0.2.20
-  strip_prefix: rules_cc-0.2.20
-  updated_on: '2026-06-27'
-  module_version: 0.2.20
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.21.tar.gz
+  sha256: 962251923438d27fc030c2d9d35c058a7f7da4fed42c42ad5342c7b4403d4cf2
+  version: 0.2.21
+  strip_prefix: rules_cc-0.2.21
+  updated_on: '2026-07-03'
+  module_version: 0.2.21
 - name: rules_java
   type: http_archive
   sha256: b9c5ac9dfa76ab8e770ff8c979388878bf818afc850a8056fd7726a215354bf0
@@ -397,12 +397,12 @@ bazel_deps:
 - name: io_abseil_py
   module_name: abseil-py
   type: http_archive
-  version: v2.4.0
-  sha256: 190418ea571aa09a0d91b08e3f71a2598337821dcec3f24872f44a140e8499ee
-  strip_prefix: abseil-py-2.4.0
-  url: https://github.com/abseil/abseil-py/archive/refs/tags/v2.4.0.tar.gz
-  updated_on: '2026-02-03'
-  module_version: 2.4.0
+  version: v2.5.0
+  sha256: f9f336f2c815198bf4d0c9b949c7147bdff7449b97b26bd5275f2019f5861401
+  strip_prefix: abseil-py-2.5.0
+  url: https://github.com/abseil/abseil-py/archive/refs/tags/v2.5.0.tar.gz
+  updated_on: '2026-07-03'
+  module_version: 2.5.0
   module_file_content: |
     module(name = "abseil-py")
 
@@ -723,7 +723,7 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 5.4.2
-  digest: sha256:16121b6ffa38ef14f96baf16e56a22c53834e1bd9bf9007efb0e3142ca55025c
+  digest: sha256:0dceba44e1d4c3c9cf33c9b3ec05613d5e39e90ae8e75dc23cd94cd8a7a37cb4
   updated_on: '2026-07-03'
   platforms:
   - linux/amd64
