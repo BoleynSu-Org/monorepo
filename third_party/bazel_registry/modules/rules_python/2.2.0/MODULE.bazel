@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '2.1.0',
+    version = '2.2.0',
 )
 
 bazel_dep(
@@ -26,6 +26,11 @@ bazel_dep(
 bazel_dep(
     name = 'rules_cc',
     version = '0.2.21',
+)
+
+bazel_dep(
+    name = 'toml.bzl',
+    version = '0.4.1',
 )
 
 bazel_dep(
