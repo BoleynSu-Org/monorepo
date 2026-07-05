@@ -84,7 +84,7 @@ public class User extends Config {
             if (SQL.match(username, password)) {
                 Cookie cookie;
                 if (request.isSecure()) {
-                    cookie = new Cookie("__Host-Http-username", username);
+                    cookie = new Cookie("__Host-username", username);
                     cookie.setSecure(true);
                 } else {
                     cookie = new Cookie("username", username);
@@ -94,7 +94,7 @@ public class User extends Config {
                 cookie.setPath("/");
                 response.addCookie(cookie);
                 if (request.isSecure()) {
-                    cookie = new Cookie("__Host-Http-token", SQL.generateToken(username));
+                    cookie = new Cookie("__Host-token", SQL.generateToken(username));
                     cookie.setSecure(true);
                 } else {
                     cookie = new Cookie("token", SQL.generateToken(username));
@@ -157,11 +157,11 @@ public class User extends Config {
         if (cookies == null)
             return false;
         for (Cookie cookie : cookies) {
-            if (request.isSecure() ? cookie.getName().equals("__Host-Http-username")
+            if (request.isSecure() ? cookie.getName().equals("__Host-username")
                     : cookie.getName().equals("username")) {
                 username = cookie.getValue();
             }
-            if (request.isSecure() ? cookie.getName().equals("__Host-Http-token") : cookie.getName().equals("token")) {
+            if (request.isSecure() ? cookie.getName().equals("__Host-token") : cookie.getName().equals("token")) {
                 token = cookie.getValue();
             }
         }
