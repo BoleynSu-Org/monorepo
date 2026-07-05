@@ -131,4 +131,16 @@
         <servlet-name>custom_test</servlet-name>
         <url-pattern>/custom_test</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>RemoteIpFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.RemoteIpFilter</filter-class>
+        <init-param>
+            <param-name>protocolHeader</param-name>
+            <param-value>X-Forwarded-Proto</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>RemoteIpFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

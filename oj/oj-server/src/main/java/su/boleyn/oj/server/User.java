@@ -83,13 +83,25 @@ public class User extends Config {
             String password = get("password");
             if (SQL.match(username, password)) {
                 Cookie cookie;
-                cookie = new Cookie("username", username);
+                if (request.isSecure()) {
+                    cookie = new Cookie("__Host-Http-username", username);
+                    cookie.setSecure(true);
+                } else {
+                    cookie = new Cookie("username", username);
+                }
                 cookie.setMaxAge(60 * 60 * 24);
                 cookie.setHttpOnly(true);
+                cookie.setPath("/");
                 response.addCookie(cookie);
-                cookie = new Cookie("token", SQL.generateToken(username));
+                if (request.isSecure()) {
+                    cookie = new Cookie("__Host-Http-token", SQL.generateToken(username));
+                    cookie.setSecure(true);
+                } else {
+                    cookie = new Cookie("token", SQL.generateToken(username));
+                }
                 cookie.setMaxAge(60 * 60 * 24);
                 cookie.setHttpOnly(true);
+                cookie.setPath("/");
                 response.addCookie(cookie);
                 return true;
             } else {
@@ -145,10 +157,11 @@ public class User extends Config {
         if (cookies == null)
             return false;
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("username")) {
+            if (request.isSecure() ? cookie.getName().equals("__Host-Http-username")
+                    : cookie.getName().equals("username")) {
                 username = cookie.getValue();
             }
-            if (cookie.getName().equals("token")) {
+            if (request.isSecure() ? cookie.getName().equals("__Host-Http-token") : cookie.getName().equals("token")) {
                 token = cookie.getValue();
             }
         }
