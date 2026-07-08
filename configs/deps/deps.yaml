@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.21.tar.gz
-  sha256: 962251923438d27fc030c2d9d35c058a7f7da4fed42c42ad5342c7b4403d4cf2
-  version: 0.2.21
-  strip_prefix: rules_cc-0.2.21
-  updated_on: '2026-07-03'
-  module_version: 0.2.21
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.22.tar.gz
+  sha256: 81c10a95a5c22d838276ee90d712635d6042419fdfca5ef88328226b6321e53b
+  version: 0.2.22
+  strip_prefix: rules_cc-0.2.22
+  updated_on: '2026-07-08'
+  module_version: 0.2.22
 - name: rules_java
   type: http_archive
   sha256: b9c5ac9dfa76ab8e770ff8c979388878bf818afc850a8056fd7726a215354bf0
@@ -649,13 +649,13 @@ maven_deps:
   updated_on: '2026-06-13'
   module_version: 3.5.9
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.23
-  updated_on: '2026-06-27'
-  module_version: 11.0.23
+  version: 11.0.24
+  updated_on: '2026-07-08'
+  module_version: 11.0.24
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.23
-  updated_on: '2026-06-27'
-  module_version: 11.0.23
+  version: 11.0.24
+  updated_on: '2026-07-08'
+  module_version: 11.0.24
 - name: org.webjars:jquery
   version: 4.0.0
   updated_on: '2026-02-05'
@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260706.192647
+  version: 44-20260707.054700
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260706.192647
-  digest: sha256:a36dd26a51d1f0149cdb882f521d1a9723904af37536d4f723e29ac8c4d743b7
-  updated_on: '2026-07-07'
+  tag: 44-20260707.054700
+  digest: sha256:3f8cfd76b6fe3d0fd8e7f2f5800b6816215705ec2be908ede38cb7f035386b3b
+  updated_on: '2026-07-08'
   platforms:
   - linux/amd64
-  module_version: 44.20260706.192647
+  module_version: 44.20260707.54700
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -748,40 +748,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.18
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260701.120606
+  version: 44-20260707.054700
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260701.120606
-  digest: sha256:51e992f90ec5704447b607f8c21bd9dcf1bbceb2120e27ae4b00f3b1902f86a2
-  updated_on: '2026-07-01'
+  tag: 44-20260707.054700
+  digest: sha256:22f5b7fd619d2587d1807325334562a107525ee3ab83e84803b1a733a01dfb11
+  updated_on: '2026-07-08'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260701.120606
+  module_version: 44.20260707.54700
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260701.120606
+  version: 44-20260707.054700
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260701.120606
-  digest: sha256:fff2c8635a26f8724933e352bedee11b29c4f4b5d0b7976b8abee816022456e8
-  updated_on: '2026-07-01'
+  tag: 44-20260707.054700
+  digest: sha256:302707ed64b41655b8efc2bd3d9f768a812c62a12d8b31d1b6199bdf00b9b47d
+  updated_on: '2026-07-08'
   platforms:
   - linux/amd64
-  module_version: 44.20260701.120606
+  module_version: 44.20260707.54700
 - name: io_quay_boleynsu_base
-  version: 44-20260701.120606
+  version: 44-20260707.054700
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:c956aa2ddbb33150c72c874c8f5209a3c4579346c04782e20acef37fb8ff7862
-  tag: 44-20260701.120606
-  updated_on: '2026-07-01'
+  digest: sha256:85b295b4a204c5519b151e1f625299eb9f4522d95e10ab02115398af255943ec
+  tag: 44-20260707.054700
+  updated_on: '2026-07-08'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260701.120606
+  module_version: 44.20260707.54700
 
 toolchain_deps:
 - name: c
@@ -804,9 +804,9 @@ toolchain_deps:
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://www.python.org/api/v2/downloads/release/?format=json | jq -r '[ .[] | select(.pre_release == false) | .name | split(" ")[1] | select(. != "install") | split(".") | map(tonumber) ] | max | .[:2] | join(".")')
   module_version: '3.14'
 - name: golang
-  version: 1.26.4
-  updated_on: '2026-06-04'
+  version: 1.26.5
+  updated_on: '2026-07-08'
   override_updater:
   - type: shell
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r '[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")')
-  module_version: 1.26.4
+  module_version: 1.26.5
