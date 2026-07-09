@@ -537,11 +537,11 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: bazel_lib
   type: http_archive
-  version: v3.4.0
-  sha256: 3f4abcf708b83ca040cb6b36fa5f8871d60f136b5f7d3c697b6da3343b9ec1da
-  strip_prefix: bazel-lib-3.4.0
-  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.4.0/bazel-lib-v3.4.0.tar.gz
-  updated_on: '2026-06-30'
+  version: v3.5.0
+  sha256: 77f4af7eb3b7573dafa8afab9058ee0d9696209a8b8096ac77646a42d12d0e48
+  strip_prefix: bazel-lib-3.5.0
+  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.5.0/bazel-lib-v3.5.0.tar.gz
+  updated_on: '2026-07-09'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -556,7 +556,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 3.4.0
+  module_version: 3.5.0
 - name: package_metadata
   type: http_archive
   version: v0.0.10
