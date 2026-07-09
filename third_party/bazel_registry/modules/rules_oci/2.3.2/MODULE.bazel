@@ -30,7 +30,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'tar.bzl',
-    version = '0.10.6',
+    version = '0.10.7',
 )
 
 oci = use_extension(
