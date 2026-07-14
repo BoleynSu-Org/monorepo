@@ -149,11 +149,11 @@ DEPS = {
         {
             "name": "bazel_linux_x86_64",
             "type": "http_archive",
-            "version": "9.1.1",
-            "url": "https://github.com/bazelbuild/bazel/releases/download/9.1.1/bazel-9.1.1-installer-linux-x86_64.sh",
+            "version": "9.2.0",
+            "url": "https://github.com/bazelbuild/bazel/releases/download/9.2.0/bazel-9.2.0-installer-linux-x86_64.sh",
             "archive_type": "zip",
-            "sha256": "0315671ff45d8b05a338c8c23f61d4ed3ca1b74c6e33a851bcedae0c58ef1c8d",
-            "updated_on": "2026-06-04",
+            "sha256": "e84888a1e7f533287a28f6a4a96e56bce422b3708ba852ea786336e609bbe0d3",
+            "updated_on": "2026-07-14",
             "executable": True,
             "override_updater": [
                 {
@@ -178,7 +178,7 @@ DEPS = {
                 },
             ],
             "build_file_content": 'exports_files(glob(["**"]))',
-            "module_version": "9.1.1",
+            "module_version": "9.2.0",
         },
         {
             "name": "rules_license",
@@ -965,15 +965,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "44-20260709.043915",
+            "version": "44-20260713.222701",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "44-20260709.043915",
-            "digest": "sha256:71df36fb9a68b860b32d46bbd863e66ade61bdecef042fe4f6be6d479644cfc9",
-            "updated_on": "2026-07-09",
+            "tag": "44-20260713.222701",
+            "digest": "sha256:b3fa886ef1d088e49f95701e0458fa933ed3e7f8f73a4cf6b44ce9e521ed1e43",
+            "updated_on": "2026-07-14",
             "platforms": ["linux/amd64"],
-            "module_version": "44.20260709.43915",
+            "module_version": "44.20260713.222701",
         },
         {
             "name": "io_docker_index_library_mariadb",
