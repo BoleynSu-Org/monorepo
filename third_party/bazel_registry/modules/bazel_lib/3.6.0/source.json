@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazel-contrib/bazel-lib/releases/download/v3.6.0/bazel-lib-v3.6.0.tar.gz",
+  "integrity": "sha256-j3Sx/gyl3cCePVgTKCT61D4T5OB/w/oyjGpppne6sqQ=",
+  "strip_prefix": "bazel-lib-3.6.0"
+}

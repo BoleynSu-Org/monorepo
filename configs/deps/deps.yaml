@@ -56,12 +56,12 @@ bazel_deps:
   module_version: 2.3.2
 - name: bazel_skylib
   type: http_archive
-  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.0.tar.gz
-  sha256: d9b87903b95e412d37d41a2fa6b0b44b8ba52122c3880512674b26facfc985a2
-  updated_on: '2026-01-17'
-  version: 1.9.0
-  strip_prefix: bazel-skylib-1.9.0
-  module_version: 1.9.0
+  url: https://github.com/bazelbuild/bazel-skylib/archive/refs/tags/1.9.2.tar.gz
+  sha256: db8d42f8d70df13733ffc221230272058b71c504b2203819de470d59657c35df
+  updated_on: '2026-07-17'
+  version: 1.9.2
+  strip_prefix: bazel-skylib-1.9.2
+  module_version: 1.9.2
 - name: rules_jvm_external
   type: http_archive
   sha256: db871f27913e00a551986db488168106f297b65ea3ef587bfa56843c4759a443
@@ -537,11 +537,11 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: bazel_lib
   type: http_archive
-  version: v3.5.0
-  sha256: 77f4af7eb3b7573dafa8afab9058ee0d9696209a8b8096ac77646a42d12d0e48
-  strip_prefix: bazel-lib-3.5.0
-  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.5.0/bazel-lib-v3.5.0.tar.gz
-  updated_on: '2026-07-09'
+  version: v3.6.0
+  sha256: 8f74b1fe0ca5ddc09e3d58132824fad43e13e4e07fc3fa328c6a69a677bab2a4
+  strip_prefix: bazel-lib-3.6.0
+  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.6.0/bazel-lib-v3.6.0.tar.gz
+  updated_on: '2026-07-17'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -556,7 +556,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 3.5.0
+  module_version: 3.6.0
 - name: package_metadata
   type: http_archive
   version: v0.0.10
