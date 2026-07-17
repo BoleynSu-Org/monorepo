@@ -719,12 +719,12 @@ container_deps:
   - linux/s390x
   module_version: 11.8.8
 - name: io_docker_index_library_adminer
-  version: 5.4.2
+  version: 5.5.0
   registry: index.docker.io
   repository: library/adminer
-  tag: 5.4.2
-  digest: sha256:983261ecc40a4aaf11e25aeda8ef821f5a43a9f024b3967c81cbcc0e6ce43ba3
-  updated_on: '2026-07-04'
+  tag: 5.5.0
+  digest: sha256:176d66b8ced01b283809a809c5e6cabfbaa112313c0bb8047c5f6c4196b53912
+  updated_on: '2026-07-17'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -732,9 +732,8 @@ container_deps:
   - linux/arm64/v8
   - linux/386
   - linux/ppc64le
-  - linux/riscv64
   - linux/s390x
-  module_version: 5.4.2
+  module_version: 5.5.0
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.63.18
   registry: index.docker.io
