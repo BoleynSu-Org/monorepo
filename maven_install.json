@@ -8,10 +8,10 @@
     "com.google.auto.value:auto-value": 1146221104,
     "com.google.auto.value:auto-value-annotations": -1101276935,
     "com.google.code.findbugs:jsr305": 495355163,
-    "com.google.code.gson:gson": 245099245,
-    "com.google.errorprone:error_prone_annotations": -707968160,
+    "com.google.code.gson:gson": 2063056812,
+    "com.google.errorprone:error_prone_annotations": 911823543,
     "com.google.guava:failureaccess": 1582410452,
-    "com.google.guava:guava": -1791353471,
+    "com.google.guava:guava": 1659141954,
     "com.google.j2objc:j2objc-annotations": 2003271689,
     "com.google.re2j:re2j": 1525409503,
     "com.google.s2a.proto.v2:s2a-proto": 898932763,
@@ -22,20 +22,23 @@
     "commons-codec:commons-codec": -1145956559,
     "commons-io:commons-io": 1305681826,
     "commons-validator:commons-validator": -359676327,
-    "io.netty:netty-buffer": 2012301521,
-    "io.netty:netty-codec": 80555751,
-    "io.netty:netty-codec-http": -176634222,
-    "io.netty:netty-codec-http2": -1265347222,
-    "io.netty:netty-codec-socks": 246541573,
-    "io.netty:netty-common": 1404529926,
-    "io.netty:netty-handler": -690665805,
-    "io.netty:netty-handler-proxy": 1084535026,
-    "io.netty:netty-resolver": 731586635,
+    "dev.cel:common": 19101252,
+    "dev.cel:protobuf": -81735836,
+    "dev.cel:runtime": -2004983251,
+    "io.netty:netty-buffer": 140737463,
+    "io.netty:netty-codec-base": -304859489,
+    "io.netty:netty-codec-http": 1594147286,
+    "io.netty:netty-codec-http2": -380635138,
+    "io.netty:netty-codec-socks": -1717337853,
+    "io.netty:netty-common": -1679983390,
+    "io.netty:netty-handler": 469186965,
+    "io.netty:netty-handler-proxy": -1551758474,
+    "io.netty:netty-resolver": 1623444733,
     "io.netty:netty-tcnative-boringssl-static": -754344644,
     "io.netty:netty-tcnative-classes": -763641772,
-    "io.netty:netty-transport": -682623052,
-    "io.netty:netty-transport-native-epoll": 833393060,
-    "io.netty:netty-transport-native-unix-common": 1230419987,
+    "io.netty:netty-transport": -223290252,
+    "io.netty:netty-transport-native-epoll": -1836954492,
+    "io.netty:netty-transport-native-unix-common": -992863179,
     "io.opencensus:opencensus-api": 2042364617,
     "io.opencensus:opencensus-contrib-grpc-metrics": 317094357,
     "io.perfmark:perfmark-api": 1019157794,
@@ -55,25 +58,25 @@
   },
   "__RESOLVED_ARTIFACTS_HASH": {
     "com.google.android:annotations": 2096496032,
-    "com.google.api.grpc:proto-google-common-protos": -567668975,
-    "com.google.api:api-common": -128991549,
+    "com.google.api.grpc:proto-google-common-protos": 1051373054,
+    "com.google.api:api-common": 2119626727,
     "com.google.auth:google-auth-library-credentials": -973011274,
-    "com.google.auth:google-auth-library-oauth2-http": 1558062040,
+    "com.google.auth:google-auth-library-oauth2-http": -962451883,
     "com.google.auto.value:auto-value": 1110951021,
     "com.google.auto.value:auto-value-annotations": 641018093,
     "com.google.code.findbugs:jsr305": 870839855,
-    "com.google.code.gson:gson": -1399331837,
-    "com.google.errorprone:error_prone_annotations": 577932745,
+    "com.google.code.gson:gson": -1663769307,
+    "com.google.errorprone:error_prone_annotations": 652227016,
     "com.google.guava:failureaccess": 1715931538,
-    "com.google.guava:guava": 1055115931,
+    "com.google.guava:guava": 448198837,
     "com.google.guava:listenablefuture": 1079558157,
-    "com.google.http-client:google-http-client": -1439457597,
-    "com.google.http-client:google-http-client-gson": -420481852,
+    "com.google.http-client:google-http-client": 1427480007,
+    "com.google.http-client:google-http-client-gson": -153967187,
     "com.google.j2objc:j2objc-annotations": -1008747351,
-    "com.google.protobuf:protobuf-java": -1052340688,
+    "com.google.protobuf:protobuf-java": -384462041,
     "com.google.re2j:re2j": -1688126233,
-    "com.google.s2a.proto.v2:s2a-proto": -455295948,
-    "com.google.truth:truth": 1519462103,
+    "com.google.s2a.proto.v2:s2a-proto": -1425064913,
+    "com.google.truth:truth": 734708584,
     "com.googlecode.owasp-java-html-sanitizer:java10-shim": -1979107723,
     "com.googlecode.owasp-java-html-sanitizer:java8-shim": 461010812,
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1621764993,
@@ -86,20 +89,24 @@
     "commons-io:commons-io": 1072619124,
     "commons-logging:commons-logging": -1473372610,
     "commons-validator:commons-validator": -1005285782,
-    "io.grpc:grpc-api": -927478189,
-    "io.grpc:grpc-context": 590387958,
-    "io.grpc:grpc-protobuf": 1157886447,
-    "io.grpc:grpc-protobuf-lite": 1986644699,
-    "io.grpc:grpc-stub": 1418487847,
-    "io.netty:netty-buffer": 732776351,
-    "io.netty:netty-codec": 1756350512,
-    "io.netty:netty-codec-http": -1529038646,
-    "io.netty:netty-codec-http2": 1639222789,
-    "io.netty:netty-codec-socks": -337661134,
-    "io.netty:netty-common": -75149086,
-    "io.netty:netty-handler": 496795958,
-    "io.netty:netty-handler-proxy": -485486365,
-    "io.netty:netty-resolver": 1800559403,
+    "dev.cel:common": 271877618,
+    "dev.cel:protobuf": 1318730106,
+    "dev.cel:runtime": 612389234,
+    "io.grpc:grpc-api": 1529019574,
+    "io.grpc:grpc-context": 1005575149,
+    "io.grpc:grpc-protobuf": 899946372,
+    "io.grpc:grpc-protobuf-lite": -315380237,
+    "io.grpc:grpc-stub": 1684362179,
+    "io.netty:netty-buffer": 380312161,
+    "io.netty:netty-codec-base": -507049948,
+    "io.netty:netty-codec-compression": 508772871,
+    "io.netty:netty-codec-http": -1392597293,
+    "io.netty:netty-codec-http2": 227940863,
+    "io.netty:netty-codec-socks": 1911084687,
+    "io.netty:netty-common": -967449894,
+    "io.netty:netty-handler": -1533905586,
+    "io.netty:netty-handler-proxy": -1342909098,
+    "io.netty:netty-resolver": -1632072846,
     "io.netty:netty-tcnative-boringssl-static": -673632998,
     "io.netty:netty-tcnative-boringssl-static:jar:linux-aarch_64": 298507046,
     "io.netty:netty-tcnative-boringssl-static:jar:linux-x86_64": 1843567897,
@@ -107,13 +114,13 @@
     "io.netty:netty-tcnative-boringssl-static:jar:osx-x86_64": -1820189782,
     "io.netty:netty-tcnative-boringssl-static:jar:windows-x86_64": -602500050,
     "io.netty:netty-tcnative-classes": -695329169,
-    "io.netty:netty-transport": 155358324,
-    "io.netty:netty-transport-classes-epoll": -1697365571,
-    "io.netty:netty-transport-native-epoll:jar:linux-x86_64": 1776335381,
-    "io.netty:netty-transport-native-unix-common": 279328611,
-    "io.opencensus:opencensus-api": -206938486,
-    "io.opencensus:opencensus-contrib-grpc-metrics": 46677493,
-    "io.opencensus:opencensus-contrib-http-util": 601912247,
+    "io.netty:netty-transport": 1890907667,
+    "io.netty:netty-transport-classes-epoll": 861207903,
+    "io.netty:netty-transport-native-epoll:jar:linux-x86_64": 1976400350,
+    "io.netty:netty-transport-native-unix-common": 150289726,
+    "io.opencensus:opencensus-api": 279403283,
+    "io.opencensus:opencensus-contrib-grpc-metrics": -168758619,
+    "io.opencensus:opencensus-contrib-http-util": 1337962727,
     "io.perfmark:perfmark-api": -1795841558,
     "io.smallrye.common:smallrye-common-annotation": -1787586278,
     "io.smallrye.common:smallrye-common-constraint": 222728017,
@@ -152,6 +159,7 @@
     "org.mockito:mockito-core": 2132958898,
     "org.objenesis:objenesis": 1475140909,
     "org.ow2.asm:asm": 611381606,
+    "org.threeten:threeten-extra": 322422590,
     "org.webjars:bootstrap": -3146076,
     "org.webjars:jquery": 59236587,
     "org.wildfly.client:wildfly-client-config": 2136189668,
@@ -213,15 +221,15 @@
     },
     "com.google.code.gson:gson": {
       "shasums": {
-        "jar": "dd0ce1b55a3ed2080cb70f9c655850cda86c206862310009dcb5e5c95265a5e0"
+        "jar": "2cbd119bf1961c28788310963dc80ba65f58cdeec1dd139c8bdb1240faa2c36f"
       },
-      "version": "2.13.2"
+      "version": "2.14.0"
     },
     "com.google.errorprone:error_prone_annotations": {
       "shasums": {
-        "jar": "b49c5c958316ed67a09c699dda9aa749caf434d51d863dea599ef36a49b9c855"
+        "jar": "4667724877f1d37a689202da191e23efa7657c62eef93ccdac406eccfe5cdd0a"
       },
-      "version": "2.48.0"
+      "version": "2.50.0"
     },
     "com.google.guava:failureaccess": {
       "shasums": {
@@ -231,9 +239,9 @@
     },
     "com.google.guava:guava": {
       "shasums": {
-        "jar": "e380b435404653753e894be80ee6fdd5252d55b07f663d8a004b4e5898ecfaa0"
+        "jar": "9532ca9ba8aceb4cd2067171f981c799988b7f5844e3e274811a3bb757034bc4"
       },
-      "version": "33.5.0-android"
+      "version": "33.6.0-android"
     },
     "com.google.guava:listenablefuture": {
       "shasums": {
@@ -261,9 +269,9 @@
     },
     "com.google.protobuf:protobuf-java": {
       "shasums": {
-        "jar": "72bdb32eb38cafb7dcd288262c29a34d57cba2e19101af9685155ba8c0a56008"
+        "jar": "cb9e00d6e3d4b1305f3fdc147490ce347bfe8c05dc821a433b23b2ff28749bb1"
       },
-      "version": "3.25.8"
+      "version": "4.33.5"
     },
     "com.google.re2j:re2j": {
       "shasums": {
@@ -355,6 +363,24 @@
       },
       "version": "1.10.1"
     },
+    "dev.cel:common": {
+      "shasums": {
+        "jar": "d4ccdb74ce41ddf06c53d13750eafda6a0ce500c36df15280b3d0e4cd9bf7a21"
+      },
+      "version": "0.13.0"
+    },
+    "dev.cel:protobuf": {
+      "shasums": {
+        "jar": "d343b22e4d1507c636fca5d61c8272f2394a3fd0c1e1729568a8f575a9002143"
+      },
+      "version": "0.13.0"
+    },
+    "dev.cel:runtime": {
+      "shasums": {
+        "jar": "3deaba45e430e26370953c6982d0c4f6421a1fac575f9be06f5687e0f982d005"
+      },
+      "version": "0.13.0"
+    },
     "io.grpc:grpc-api": {
       "shasums": {
         "jar": "45faf2ac1bf2791e8fdabce53684a86b62c99b84cba26fb13a5ba3f4abf80d6c"
@@ -387,57 +413,63 @@
     },
     "io.netty:netty-buffer": {
       "shasums": {
-        "jar": "386d560b5eb8fa5317190c67be1b657e33163eeecd0b25ab36a15bdf235ff204"
+        "jar": "1361fd9c9ba85b9831cf54a1b2e45ddc3ce34a768931726c099d3f5ef0efe4a3"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
-    "io.netty:netty-codec": {
+    "io.netty:netty-codec-base": {
       "shasums": {
-        "jar": "65d9fd0b5ae80ddda532b3a98bf5adbd4f34ec6ae19ba2439eab2ed3d6d79c5a"
+        "jar": "2c6d39d7270628b8cfc3166fbd7a93d595958e59c461bc32ddb383c8c91bf811"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
+    },
+    "io.netty:netty-codec-compression": {
+      "shasums": {
+        "jar": "4adaa5cdd4d2e9b50b23e4c3eff42e73de6eb40848718b3aa84cd5b454da6ce8"
+      },
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-codec-http": {
       "shasums": {
-        "jar": "cb82f9fd12d9cd3c3bf2306080e2230a29fcddaab388fc8a36bd7b2c7e1e49ec"
+        "jar": "76ae57e87af37b3c4107140f50b9244b1456163a6a225510838f7c5a4458ec22"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-codec-http2": {
       "shasums": {
-        "jar": "0e07715264db137a41b75aa3733b7bb5ab597403abb9668385ea776692ee41d0"
+        "jar": "4a9b052bd815c765d9c05e27b32abbd32a2c7c3e3364ccb992ce71da1a26bc0d"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-codec-socks": {
       "shasums": {
-        "jar": "83a031b42f7b577cd38726ebcc769a3dfc0a904a1b426041c34f2c9784a2a682"
+        "jar": "4230d43481241e49382a83da2fa9d5980c5702668fc5aa5a980346ce03d30828"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-common": {
       "shasums": {
-        "jar": "799930f8e36ea3611f90372f1ed54c212aee8ae70bf38bdf082417d6db672b0a"
+        "jar": "78206aa7f6d197caa926291408c01889b6b910ca0f74017d3fcbdaccf9562959"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-handler": {
       "shasums": {
-        "jar": "b468863c1b0fd13ba20f8b1a2b04f8f23d3d6bb50ee3003d372fd8ec7eb87265"
+        "jar": "99b59e4bea72220d2aed52df8baf37d97431b06ade0b135226cdf73168975eab"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-handler-proxy": {
       "shasums": {
-        "jar": "562c8c851983a0913bcfe2044da774c677dc98afb910891a66b01401eadf0c3c"
+        "jar": "a06aaaaa1a2e6eb26824e53566bfd020ba930a9390d57a1f0bbf57316e357373"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-resolver": {
       "shasums": {
-        "jar": "8b9ee3129bd6f8d0b5b09007b4e41e78c6ea63f18a8d33cb171455ffabcda10e"
+        "jar": "24318497f2a3a645964fed418f48879ba11365cab8e1f8d66c47fa7da15ef19a"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-tcnative-boringssl-static": {
       "shasums": {
@@ -458,27 +490,27 @@
     },
     "io.netty:netty-transport": {
       "shasums": {
-        "jar": "9895abfebf5cb8c185e4534f3936759d7ecd133353cef18d2ae9ae3c58845142"
+        "jar": "9fb671e96651066cf1a28dad3f1382c7c99df5b8326d4a214d9a375b311f8dc1"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-transport-classes-epoll": {
       "shasums": {
-        "jar": "d21448bca3a3691437e88e974f24a36270783a62a79eff3a615fb6f730d6714b"
+        "jar": "be509407fd71a4b83378567c613420db544d659bb522df7b253a1dbe8ca297fe"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-transport-native-epoll": {
       "shasums": {
-        "linux-x86_64": "fdc76fe46e7218ef54547c1002aff69c4597291cc3ef34322d6f1a2f3090c880"
+        "linux-x86_64": "5440e38f5ca2858fee8d7898e65291e05b665736c9e8a14c832e707511f5dba6"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.netty:netty-transport-native-unix-common": {
       "shasums": {
-        "jar": "75681c3be01ff3c5bb6a39a7583e70289f64fd926e4fc29859ce9cf223ad99fc"
+        "jar": "b9ea9fc5ad5eba04e99afdff75b2eb97b5ddfb2ad772e2f2ef5d8f277f3cbd76"
       },
-      "version": "4.1.133.Final"
+      "version": "4.2.15.Final"
     },
     "io.opencensus:opencensus-api": {
       "shasums": {
@@ -726,6 +758,12 @@
       },
       "version": "9.8"
     },
+    "org.threeten:threeten-extra": {
+      "shasums": {
+        "jar": "51e4d21edc4e9447f7760c050e0baee75d7d973f387ba605a17abdc4d24fd6d8"
+      },
+      "version": "1.8.0"
+    },
     "org.webjars:bootstrap": {
       "shasums": {
         "jar": "8d3dbf15d315cf9a32656cc17b5ec42e7c77479550e6a1afcd1ea0c18c7846df"
@@ -834,6 +872,29 @@
       "commons-digester:commons-digester",
       "commons-logging:commons-logging"
     ],
+    "dev.cel:common": [
+      "com.google.auto.value:auto-value-annotations",
+      "com.google.guava:guava",
+      "com.google.protobuf:protobuf-java",
+      "com.google.re2j:re2j",
+      "org.jspecify:jspecify"
+    ],
+    "dev.cel:protobuf": [
+      "com.google.auto.value:auto-value-annotations",
+      "com.google.guava:guava",
+      "com.google.protobuf:protobuf-java",
+      "dev.cel:common",
+      "org.jspecify:jspecify"
+    ],
+    "dev.cel:runtime": [
+      "com.google.auto.value:auto-value-annotations",
+      "com.google.guava:guava",
+      "com.google.protobuf:protobuf-java",
+      "com.google.re2j:re2j",
+      "dev.cel:common",
+      "org.jspecify:jspecify",
+      "org.threeten:threeten-extra"
+    ],
     "io.grpc:grpc-api": [
       "com.google.code.findbugs:jsr305",
       "com.google.errorprone:error_prone_annotations",
@@ -864,21 +925,28 @@
     "io.netty:netty-buffer": [
       "io.netty:netty-common"
     ],
-    "io.netty:netty-codec": [
+    "io.netty:netty-codec-base": [
       "io.netty:netty-buffer",
+      "io.netty:netty-common",
+      "io.netty:netty-transport"
+    ],
+    "io.netty:netty-codec-compression": [
+      "io.netty:netty-buffer",
+      "io.netty:netty-codec-base",
       "io.netty:netty-common",
       "io.netty:netty-transport"
     ],
     "io.netty:netty-codec-http": [
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
+      "io.netty:netty-codec-compression",
       "io.netty:netty-common",
       "io.netty:netty-handler",
       "io.netty:netty-transport"
     ],
     "io.netty:netty-codec-http2": [
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
       "io.netty:netty-codec-http",
       "io.netty:netty-common",
       "io.netty:netty-handler",
@@ -886,13 +954,13 @@
     ],
     "io.netty:netty-codec-socks": [
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
       "io.netty:netty-common",
       "io.netty:netty-transport"
     ],
     "io.netty:netty-handler": [
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
       "io.netty:netty-common",
       "io.netty:netty-resolver",
       "io.netty:netty-transport",
@@ -900,10 +968,11 @@
     ],
     "io.netty:netty-handler-proxy": [
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
       "io.netty:netty-codec-http",
       "io.netty:netty-codec-socks",
       "io.netty:netty-common",
+      "io.netty:netty-handler",
       "io.netty:netty-transport"
     ],
     "io.netty:netty-resolver": [
@@ -1312,6 +1381,30 @@
       "org.apache.commons.validator.routines.checkdigit",
       "org.apache.commons.validator.util"
     ],
+    "dev.cel:common": [
+      "dev.cel.common",
+      "dev.cel.common.annotations",
+      "dev.cel.common.ast",
+      "dev.cel.common.internal",
+      "dev.cel.common.types",
+      "dev.cel.common.values"
+    ],
+    "dev.cel:protobuf": [
+      "dev.cel.common",
+      "dev.cel.common.ast",
+      "dev.cel.common.types",
+      "dev.cel.expr"
+    ],
+    "dev.cel:runtime": [
+      "dev.cel.common",
+      "dev.cel.common.exceptions",
+      "dev.cel.common.internal",
+      "dev.cel.common.types",
+      "dev.cel.common.values",
+      "dev.cel.runtime",
+      "dev.cel.runtime.planner",
+      "dev.cel.runtime.standard"
+    ],
     "io.grpc:grpc-api": [
       "io.grpc"
     ],
@@ -1329,17 +1422,16 @@
       "io.netty.buffer",
       "io.netty.buffer.search"
     ],
-    "io.netty:netty-codec": [
+    "io.netty:netty-codec-base": [
       "io.netty.handler.codec",
       "io.netty.handler.codec.base64",
       "io.netty.handler.codec.bytes",
-      "io.netty.handler.codec.compression",
       "io.netty.handler.codec.json",
-      "io.netty.handler.codec.marshalling",
-      "io.netty.handler.codec.protobuf",
       "io.netty.handler.codec.serialization",
-      "io.netty.handler.codec.string",
-      "io.netty.handler.codec.xml"
+      "io.netty.handler.codec.string"
+    ],
+    "io.netty:netty-codec-compression": [
+      "io.netty.handler.codec.compression"
     ],
     "io.netty:netty-codec-http": [
       "io.netty.handler.codec.http",
@@ -1384,7 +1476,6 @@
       "io.netty.handler.logging",
       "io.netty.handler.pcap",
       "io.netty.handler.ssl",
-      "io.netty.handler.ssl.ocsp",
       "io.netty.handler.ssl.util",
       "io.netty.handler.stream",
       "io.netty.handler.timeout",
@@ -2039,6 +2130,11 @@
       "org.objectweb.asm",
       "org.objectweb.asm.signature"
     ],
+    "org.threeten:threeten-extra": [
+      "org.threeten.extra",
+      "org.threeten.extra.chrono",
+      "org.threeten.extra.scale"
+    ],
     "org.wildfly.client:wildfly-client-config": [
       "org.wildfly.client.config",
       "org.wildfly.client.config._private"
@@ -2102,13 +2198,17 @@
       "commons-io:commons-io",
       "commons-logging:commons-logging",
       "commons-validator:commons-validator",
+      "dev.cel:common",
+      "dev.cel:protobuf",
+      "dev.cel:runtime",
       "io.grpc:grpc-api",
       "io.grpc:grpc-context",
       "io.grpc:grpc-protobuf",
       "io.grpc:grpc-protobuf-lite",
       "io.grpc:grpc-stub",
       "io.netty:netty-buffer",
-      "io.netty:netty-codec",
+      "io.netty:netty-codec-base",
+      "io.netty:netty-codec-compression",
       "io.netty:netty-codec-http",
       "io.netty:netty-codec-http2",
       "io.netty:netty-codec-socks",
@@ -2168,6 +2268,7 @@
       "org.mockito:mockito-core",
       "org.objenesis:objenesis",
       "org.ow2.asm:asm",
+      "org.threeten:threeten-extra",
       "org.webjars:bootstrap",
       "org.webjars:jquery",
       "org.wildfly.client:wildfly-client-config",
@@ -2405,6 +2506,19 @@
       ],
       "org.mariadb.jdbc.plugin.TlsSocketPlugin": [
         "org.mariadb.jdbc.plugin.tls.main.DefaultTlsSocketPlugin"
+      ]
+    },
+    "org.threeten:threeten-extra": {
+      "java.time.chrono.Chronology": [
+        "org.threeten.extra.chrono.BritishCutoverChronology",
+        "org.threeten.extra.chrono.CopticChronology",
+        "org.threeten.extra.chrono.DiscordianChronology",
+        "org.threeten.extra.chrono.EthiopicChronology",
+        "org.threeten.extra.chrono.InternationalFixedChronology",
+        "org.threeten.extra.chrono.JulianChronology",
+        "org.threeten.extra.chrono.PaxChronology",
+        "org.threeten.extra.chrono.Symmetry010Chronology",
+        "org.threeten.extra.chrono.Symmetry454Chronology"
       ]
     }
   },
