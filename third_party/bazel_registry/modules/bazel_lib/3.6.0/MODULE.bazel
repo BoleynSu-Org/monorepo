@@ -73,13 +73,13 @@ register_toolchains(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.52.0',
+    version = '0.52.2',
     dev_dependency = False,
 )
 
 bazel_dep(
     name = 'rules_go',
-    version = '0.61.1',
+    version = '0.62.0',
     dev_dependency = False,
     repo_name = 'io_bazel_rules_go',
 )
