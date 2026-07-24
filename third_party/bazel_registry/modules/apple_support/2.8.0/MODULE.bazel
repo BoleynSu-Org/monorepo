@@ -1,0 +1,83 @@
+module(
+    name = 'apple_support',
+    bazel_compatibility = ['>=7.4.0'],
+    version = '2.8.0',
+)
+
+bazel_dep(
+    name = 'bazel_features',
+    version = '1.51.0',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.9.2',
+)
+
+bazel_dep(
+    name = 'platforms',
+    version = '1.1.0',
+)
+
+bazel_dep(
+    name = 'rules_cc',
+    version = '0.2.22',
+)
+
+apple_cc_configure_extension = use_extension(
+    '//crosstool:setup.bzl',
+    'apple_cc_configure_extension',
+)
+
+use_repo(
+    apple_cc_configure_extension,
+    'local_config_apple_cc',
+    'local_config_apple_cc_toolchains',
+)
+
+register_toolchains(
+    '@local_config_apple_cc_toolchains//:all',
+)
+
+xcode_configure_extension = use_extension(
+    '//xcode:xcode_configure.bzl',
+    'xcode_configure_extension',
+)
+
+use_repo(
+    xcode_configure_extension,
+    'local_config_xcode',
+)
+
+http_archive = use_repo_rule(
+    '@bazel_tools//tools/build_defs/repo:http.bzl',
+    'http_archive',
+)
+
+http_archive(
+    name = 'swift_linux_toolchain',
+    build_file = '//test/linux_toolchain:swift_toolchain.BUILD',
+    dev_dependency = True,
+    integrity = 'sha256-LDrXrXSrcknULxcu47QLyKcpiTAQtKM4S6JvPGHjUAg=',
+    strip_prefix = 'swift-6.3.3-RELEASE-ubuntu22.04',
+    urls = ['https://download.swift.org/swift-6.3.3-release/ubuntu2204/swift-6.3.3-RELEASE/swift-6.3.3-RELEASE-ubuntu22.04.tar.gz'],
+)
+
+http_archive(
+    name = 'swift_linux_sysroot',
+    build_file = '//test/linux_toolchain:linux_sysroot.BUILD',
+    dev_dependency = True,
+    integrity = 'sha256-h8Pq+QjmfA4TqENnEZ4SJzzsHSzT2B99dLs2ci1rYHs=',
+    patch_cmds = ['mv BUILD.bazel x86_64/BUILD.bazel'],
+    strip_prefix = 'swift-6.3.3-RELEASE_static-linux-0.1.0.artifactbundle/swift-6.3.3-RELEASE_static-linux-0.1.0/swift-linux-musl/musl-1.2.5.sdk',
+    urls = ['https://download.swift.org/swift-6.3.3-release/static-sdk/swift-6.3.3-RELEASE/swift-6.3.3-RELEASE_static-linux-0.1.0.artifactbundle.tar.gz'],
+)
+
+toolchain_env = use_repo_rule(
+    '//toolchain:toolchain_env.bzl',
+    'toolchain_env',
+)
+
+toolchain_env(
+    name = 'apple_support_toolchain_env',
+)
