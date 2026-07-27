@@ -736,17 +736,17 @@ container_deps:
   - linux/s390x
   module_version: 5.5.0
 - name: io_docker_index_filebrowser_filebrowser
-  version: v2.63.22
+  version: v2.63.23
   registry: index.docker.io
   repository: filebrowser/filebrowser
-  tag: v2.63.22
-  digest: sha256:827fd9c7ecfd60f672c3b057be595283ac4930f64661a686e67d1dda00b6a108
+  tag: v2.63.23
+  digest: sha256:a469ea076d4a1b4b1d86a41d130f2f536cd9da996a2b1fb39c0d7635f9d89b9a
   updated_on: '2026-07-27'
   platforms:
   - linux/amd64
   - linux/arm64
   - linux/arm/v7
-  module_version: 2.63.22
+  module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
   version: 44-20260723.105206
   version_regex: ([0-9.]*)-([0-9.]*)
