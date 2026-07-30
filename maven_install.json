@@ -19,7 +19,7 @@
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 936437363,
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
-    "commons-codec:commons-codec": -1145956559,
+    "commons-codec:commons-codec": 1341556274,
     "commons-io:commons-io": 1305681826,
     "commons-validator:commons-validator": -359676327,
     "dev.cel:common": 19101252,
@@ -61,7 +61,7 @@
     "com.google.api.grpc:proto-google-common-protos": 1051373054,
     "com.google.api:api-common": 2119626727,
     "com.google.auth:google-auth-library-credentials": -973011274,
-    "com.google.auth:google-auth-library-oauth2-http": -962451883,
+    "com.google.auth:google-auth-library-oauth2-http": -1378094622,
     "com.google.auto.value:auto-value": 1110951021,
     "com.google.auto.value:auto-value-annotations": 641018093,
     "com.google.code.findbugs:jsr305": 870839855,
@@ -70,8 +70,8 @@
     "com.google.guava:failureaccess": 1715931538,
     "com.google.guava:guava": 448198837,
     "com.google.guava:listenablefuture": 1079558157,
-    "com.google.http-client:google-http-client": 1427480007,
-    "com.google.http-client:google-http-client-gson": -153967187,
+    "com.google.http-client:google-http-client": -245054028,
+    "com.google.http-client:google-http-client-gson": 921278631,
     "com.google.j2objc:j2objc-annotations": -1008747351,
     "com.google.protobuf:protobuf-java": -384462041,
     "com.google.re2j:re2j": -1688126233,
@@ -83,7 +83,7 @@
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
     "commons-beanutils:commons-beanutils": 321236186,
-    "commons-codec:commons-codec": -1266557082,
+    "commons-codec:commons-codec": -1304300711,
     "commons-collections:commons-collections": 7509648,
     "commons-digester:commons-digester": 781759527,
     "commons-io:commons-io": 1072619124,
@@ -137,7 +137,7 @@
     "net.bytebuddy:byte-buddy-agent": 2050201226,
     "org.apache.commons:commons-lang3": 1841935436,
     "org.apache.commons:commons-text": 869132518,
-    "org.apache.httpcomponents:httpclient": -630303486,
+    "org.apache.httpcomponents:httpclient": 582894296,
     "org.apache.httpcomponents:httpcore": 67453319,
     "org.apache.tomcat.embed:tomcat-embed-core": -1887671,
     "org.apache.tomcat.embed:tomcat-embed-el": 494223039,
@@ -329,9 +329,9 @@
     },
     "commons-codec:commons-codec": {
       "shasums": {
-        "jar": "d164fe79f262c32d9b18a0b5b2d317d1c27653d5e98fd2b998c24bf901c72ce4"
+        "jar": "78a5d732fbd715e2d10bd7150d2f8030bae57267f8aacc5c88f642cb6c2e5d3f"
       },
-      "version": "1.22.0"
+      "version": "1.22.1"
     },
     "commons-collections:commons-collections": {
       "shasums": {
