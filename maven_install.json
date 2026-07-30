@@ -49,7 +49,7 @@
     "org.apache.tomcat.embed:tomcat-embed-jasper": -407654623,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": 852823480,
-    "org.mariadb.jdbc:mariadb-java-client": -2107814915,
+    "org.mariadb.jdbc:mariadb-java-client": -1994863553,
     "org.mockito:mockito-core": -1925148636,
     "org.webjars:bootstrap": 1446595556,
     "org.webjars:jquery": 1753563134,
@@ -155,7 +155,7 @@
     "org.jetbrains.kotlin:kotlin-stdlib-common": 1443260454,
     "org.jetbrains:annotations": 554168982,
     "org.jspecify:jspecify": 117231129,
-    "org.mariadb.jdbc:mariadb-java-client": -2134051972,
+    "org.mariadb.jdbc:mariadb-java-client": -177396464,
     "org.mockito:mockito-core": 2132958898,
     "org.objenesis:objenesis": 1475140909,
     "org.ow2.asm:asm": 611381606,
@@ -736,9 +736,9 @@
     },
     "org.mariadb.jdbc:mariadb-java-client": {
       "shasums": {
-        "jar": "11e3bb5bbf8ef0e806ae4d6c5d5033fedf7262cc777f0190bde8a2f3c8e6bd8d"
+        "jar": "919b8c1c771d9ee3465811462f242c9543ab401e140c64988ddbf1d8abcb18b2"
       },
-      "version": "3.5.9"
+      "version": "3.5.10"
     },
     "org.mockito:mockito-core": {
       "shasums": {

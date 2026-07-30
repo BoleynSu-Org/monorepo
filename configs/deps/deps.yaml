@@ -645,9 +645,9 @@ maven_deps:
   updated_on: '2026-04-24'
   module_version: 2.22.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.5.9
-  updated_on: '2026-06-13'
-  module_version: 3.5.9
+  version: 3.5.10
+  updated_on: '2026-07-30'
+  module_version: 3.5.10
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.24
   updated_on: '2026-07-08'
@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260728.211135
+  version: 44-20260729.235554
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260728.211135
-  digest: sha256:83cec965e609931d81a5e6a2394bc293c2471fa8b2842a62c8ac5c26b8e653cf
-  updated_on: '2026-07-28'
+  tag: 44-20260729.235554
+  digest: sha256:46892085191c58c26a9377f3990546bfc1646e84c13ff25959bbca961a0f874f
+  updated_on: '2026-07-30'
   platforms:
   - linux/amd64
-  module_version: 44.20260728.211135
+  module_version: 44.20260729.235554
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
