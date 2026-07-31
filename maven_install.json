@@ -21,7 +21,7 @@
     "com.squareup.okio:okio": 795722926,
     "commons-codec:commons-codec": 1341556274,
     "commons-io:commons-io": 1305681826,
-    "commons-validator:commons-validator": -359676327,
+    "commons-validator:commons-validator": -349173223,
     "dev.cel:common": 19101252,
     "dev.cel:protobuf": -81735836,
     "dev.cel:runtime": -2004983251,
@@ -82,13 +82,13 @@
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1621764993,
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
-    "commons-beanutils:commons-beanutils": 321236186,
+    "commons-beanutils:commons-beanutils": 214854525,
     "commons-codec:commons-codec": -1304300711,
     "commons-collections:commons-collections": 7509648,
     "commons-digester:commons-digester": 781759527,
     "commons-io:commons-io": 1072619124,
-    "commons-logging:commons-logging": -1473372610,
-    "commons-validator:commons-validator": -1005285782,
+    "commons-logging:commons-logging": -2039356713,
+    "commons-validator:commons-validator": -232767760,
     "dev.cel:common": 271877618,
     "dev.cel:protobuf": 1318730106,
     "dev.cel:runtime": 612389234,
@@ -353,15 +353,15 @@
     },
     "commons-logging:commons-logging": {
       "shasums": {
-        "jar": "6d7a744e4027649fbb50895df9497d109f98c766a637062fe8d2eabbb3140ba4"
+        "jar": "d175dbd751dd782a63bde28c7a039520e971f25e84b79c19b8435edc3603e0dc"
       },
-      "version": "1.3.5"
+      "version": "1.4.0"
     },
     "commons-validator:commons-validator": {
       "shasums": {
-        "jar": "ed74711a78d793ca37f6075e4a1e93d107233dfd20d0bb17e32bad88d38e56aa"
+        "jar": "b7e1dcdc60d581de82934f4600e25af9ad9366730af1704ddcbf459e4dcc85e5"
       },
-      "version": "1.10.1"
+      "version": "1.11.0"
     },
     "dev.cel:common": {
       "shasums": {
@@ -1365,7 +1365,8 @@
     ],
     "commons-logging:commons-logging": [
       "org.apache.commons.logging",
-      "org.apache.commons.logging.impl"
+      "org.apache.commons.logging.impl",
+      "org.apache.commons.logging.jakarta"
     ],
     "commons-validator:commons-validator": [
       "org.apache.commons.validator",

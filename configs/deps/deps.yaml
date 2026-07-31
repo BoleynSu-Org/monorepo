@@ -670,9 +670,9 @@ maven_deps:
   updated_on: '2026-06-27'
   module_version: 2.4.2
 - name: commons-validator:commons-validator
-  version: 1.10.1
-  updated_on: '2025-11-17'
-  module_version: 1.10.1
+  version: 1.11.0
+  updated_on: '2026-07-31'
+  module_version: 1.11.0
 - name: commons-codec:commons-codec
   version: 1.22.1
   updated_on: '2026-07-30'
