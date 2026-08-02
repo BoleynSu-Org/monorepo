@@ -742,11 +742,11 @@ DEPS = {
         {
             "name": "bazel_lib",
             "type": "http_archive",
-            "version": "v3.7.0",
-            "sha256": "ea1ac844b6ff7cfebd7403e7c48aff3702052a044d1b89f9a9c3587eb10a560a",
-            "strip_prefix": "bazel-lib-3.7.0",
-            "url": "https://github.com/bazel-contrib/bazel-lib/releases/download/v3.7.0/bazel-lib-v3.7.0.tar.gz",
-            "updated_on": "2026-07-31",
+            "version": "v3.7.1",
+            "sha256": "10f232c10df1ba5cbbbfbcde947090463348f0344d4153e25371b13ee3daf0ce",
+            "strip_prefix": "bazel-lib-3.7.1",
+            "url": "https://github.com/bazel-contrib/bazel-lib/releases/download/v3.7.1/bazel-lib-v3.7.1.tar.gz",
+            "updated_on": "2026-08-02",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -772,7 +772,7 @@ DEPS = {
                     }],
                 },
             ],
-            "module_version": "3.7.0",
+            "module_version": "3.7.1",
         },
         {
             "name": "package_metadata",
@@ -965,15 +965,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "44-20260802.055118",
+            "version": "44-20260802.155310",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "44-20260802.055118",
-            "digest": "sha256:d91209cde9934e80a550c1f43b30bef197480dba5924413a5eab82dcafd3f206",
+            "tag": "44-20260802.155310",
+            "digest": "sha256:444301c9bfc9b7f6f9cf16acf582945c0041b439429bd9185a0f2411cff1a248",
             "updated_on": "2026-08-02",
             "platforms": ["linux/amd64"],
-            "module_version": "44.20260802.55118",
+            "module_version": "44.20260802.155310",
         },
         {
             "name": "io_docker_index_library_mariadb",
@@ -999,8 +999,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "5.5.0",
-            "digest": "sha256:73c3e6b38ec134164b44a37217a9dab783528edc136acf67a3e780944f761ce6",
-            "updated_on": "2026-07-31",
+            "digest": "sha256:a1e730bf95a18f1d7c38b409ab58a39d57d07bdb090614b81f5c7b37c6021b96",
+            "updated_on": "2026-08-02",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
