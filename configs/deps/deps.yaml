@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260805.202844
+  version: 44-20260806.070849
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260805.202844
+  tag: 44-20260806.070849
   digest: sha256:97c6339d17916af3c8121c66a0160c3c35c8038d7053f1b7d8969115f58a8eed
   updated_on: '2026-08-06'
   platforms:
   - linux/amd64
-  module_version: 44.20260805.202844
+  module_version: 44.20260806.70849
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -748,40 +748,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260804.020947
+  version: 44-20260806.071237
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260804.020947
+  tag: 44-20260806.071237
   digest: sha256:a408a00252fd8feabe1ad42f9c4272097aa05a1ace24a8a7b12e5551e3179ba4
-  updated_on: '2026-08-04'
+  updated_on: '2026-08-06'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260804.20947
+  module_version: 44.20260806.71237
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260804.020947
+  version: 44-20260806.070849
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260804.020947
+  tag: 44-20260806.070849
   digest: sha256:4de3962be71a2a7c4826e6b2691489cce325d5a148d337b27116c252ebdc043e
-  updated_on: '2026-08-04'
+  updated_on: '2026-08-06'
   platforms:
   - linux/amd64
-  module_version: 44.20260804.20947
+  module_version: 44.20260806.70849
 - name: io_quay_boleynsu_base
-  version: 44-20260804.020947
+  version: 44-20260806.071237
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:947117c017fef8e54225022e564ffd21eadd351fc3e95269f4b1bbe3589d81cd
-  tag: 44-20260804.020947
-  updated_on: '2026-08-04'
+  tag: 44-20260806.071237
+  updated_on: '2026-08-06'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260804.20947
+  module_version: 44.20260806.71237
 
 toolchain_deps:
 - name: c
