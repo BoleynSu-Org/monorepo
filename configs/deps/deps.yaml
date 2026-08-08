@@ -13,12 +13,12 @@ bazel_deps:
   module_version: 0.2.22
 - name: rules_java
   type: http_archive
-  sha256: fda2d3edb929c5be2891960a95781d3734fefe82a4b0d3400e16ecc15b2522d6
-  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/9.7.0.tar.gz
-  strip_prefix: rules_java-9.7.0
-  updated_on: '2026-07-15'
-  version: 9.7.0
-  module_version: 9.7.0
+  sha256: bd0d5cc37e900526cfd6846b3edad9bcf27ad2c4b93e9f087a27d810c84d292c
+  url: https://github.com/bazelbuild/rules_java/archive/refs/tags/9.7.1.tar.gz
+  strip_prefix: rules_java-9.7.1
+  updated_on: '2026-08-08'
+  version: 9.7.1
+  module_version: 9.7.1
 - name: rules_python
   type: http_archive
   sha256: e11d2e1efce1589e5bdfa93986712c74fc7467a0f093143d489d2ef5ebb1ed2a
@@ -693,16 +693,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260806.070849
+  version: 44-20260806.223635
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260806.070849
-  digest: sha256:97c6339d17916af3c8121c66a0160c3c35c8038d7053f1b7d8969115f58a8eed
-  updated_on: '2026-08-06'
+  tag: 44-20260806.223635
+  digest: sha256:0c25c9daef86ed01ea1047b14ed754db1271f7314035e062b0237369ce13a4d2
+  updated_on: '2026-08-08'
   platforms:
   - linux/amd64
-  module_version: 44.20260806.70849
+  module_version: 44.20260806.223635
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
