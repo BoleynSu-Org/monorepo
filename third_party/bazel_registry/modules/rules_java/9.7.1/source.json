@@ -1,5 +1,0 @@
-{
-  "url": "https://github.com/bazelbuild/rules_java/archive/refs/tags/9.7.1.tar.gz",
-  "integrity": "sha256-vQ1cw36QBSbP1oRrPtrZvPJ60sS5Pp8IeifYEMhNKSw=",
-  "strip_prefix": "rules_java-9.7.1"
-}
