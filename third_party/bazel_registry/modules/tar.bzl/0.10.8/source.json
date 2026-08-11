@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/bazel-contrib/tar.bzl/releases/download/v0.10.8/tar.bzl-v0.10.8.tar.gz",
+  "integrity": "sha256-DKL3XbXZiDzuZ0X/02Wh0HZIAXO3spgGDOWUTospOnA=",
+  "strip_prefix": "tar.bzl-0.10.8"
+}

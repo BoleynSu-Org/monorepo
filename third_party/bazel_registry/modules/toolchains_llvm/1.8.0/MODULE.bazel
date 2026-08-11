@@ -46,7 +46,7 @@ use_repo(
 
 bazel_dep(
     name = 'tar.bzl',
-    version = '0.10.7',
+    version = '0.10.8',
 )
 
 toolchains = use_extension(
