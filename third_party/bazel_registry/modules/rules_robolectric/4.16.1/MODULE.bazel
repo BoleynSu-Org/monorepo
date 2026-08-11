@@ -31,7 +31,7 @@ use_repo(
 
 bazel_dep(
     name = 'rules_java',
-    version = '9.7.2',
+    version = '9.8.0',
 )
 
 bazel_dep(
