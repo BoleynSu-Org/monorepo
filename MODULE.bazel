@@ -32,12 +32,12 @@ DEPS = {
         {
             "name": "rules_python",
             "type": "http_archive",
-            "sha256": "e11d2e1efce1589e5bdfa93986712c74fc7467a0f093143d489d2ef5ebb1ed2a",
-            "strip_prefix": "rules_python-2.2.0",
-            "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/2.2.0.tar.gz",
-            "updated_on": "2026-07-04",
-            "version": "2.2.0",
-            "module_version": "2.2.0",
+            "sha256": "70c519e8f0a5d9244c0d3496a6993bd42edf111c4499b68ce2f155c26fc8d4ee",
+            "strip_prefix": "rules_python-2.3.0",
+            "url": "https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.0.tar.gz",
+            "updated_on": "2026-08-14",
+            "version": "2.3.0",
+            "module_version": "2.3.0",
         },
         {
             "name": "rules_proto",
@@ -1102,13 +1102,13 @@ DEPS = {
         },
         {
             "name": "golang",
-            "version": "1.26.5",
-            "updated_on": "2026-07-08",
+            "version": "1.26.6",
+            "updated_on": "2026-08-14",
             "override_updater": [{
                 "type": "shell",
                 "cmd": 'echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r \'[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")\')',
             }],
-            "module_version": "1.26.5",
+            "module_version": "1.26.6",
         },
     ],
 }

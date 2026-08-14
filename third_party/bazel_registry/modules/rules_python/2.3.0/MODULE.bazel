@@ -1,6 +1,6 @@
 module(
     name = 'rules_python',
-    version = '2.2.0',
+    version = '2.3.0',
 )
 
 bazel_dep(
@@ -162,4 +162,24 @@ use_repo(
 
 register_toolchains(
     '@uv//:all',
+)
+
+flag_alias(
+    name = 'build_python_zip',
+    starlark_flag = '//python/config_settings:build_python_zip',
+)
+
+flag_alias(
+    name = 'incompatible_default_to_explicit_init_py',
+    starlark_flag = '//python/config_settings:incompatible_default_to_explicit_init_py',
+)
+
+flag_alias(
+    name = 'python_path',
+    starlark_flag = '//python/config_settings:python_path',
+)
+
+flag_alias(
+    name = 'experimental_python_import_all_repositories',
+    starlark_flag = '//python/config_settings:experimental_python_import_all_repositories',
 )
