@@ -28,8 +28,7 @@ jobs:
           set -euo pipefail
           git archive --format=zip --output=src-and-vendor.zip HEAD
           chmod +r -R third_party/bazel_vendor/
-          rm third_party/bazel_vendor/bazel-external
-          ! ls -lR third_party/bazel_vendor | grep -- '-> /'
+          find third_party/bazel_vendor -type l -lname '/*' -delete
           git diff >vendor.patch
           zip -yuqr src-and-vendor.zip vendor.patch third_party/bazel_vendor/
 
@@ -59,7 +58,9 @@ jobs:
             ip link set dev lo up
             unshare --map-user $id bash -c '
               set -euo pipefail
-              ! bazelisk version
+              if bazelisk version; then
+                exit 1
+              fi
               ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor-ci-build-and-test //...
               ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor-ci-deploy //...
             '
