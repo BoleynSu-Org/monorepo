@@ -1,1 +1,6 @@
 common --registry=http://localhost:1993/third_party/bazel_registry
+common:vendor-ci-build-and-test --config=vendor
+common:vendor-ci-build-and-test --platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
+common:vendor-ci-deploy --config=vendor
+common:vendor-ci-deploy --platforms=//configs/build/platforms:rbe-fedora-linux_x86_64
+common:vendor-ci-deploy --compilation_mode=opt

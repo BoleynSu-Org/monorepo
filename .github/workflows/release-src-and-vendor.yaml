@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Run bazel vendor
         run: |
@@ -19,8 +19,8 @@ jobs:
           python3 -m http.server 1993 2>/dev/null &
           pid=$!
           bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor @bazel_linux_x86_64//:bazel
-          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-build-and-test //...
-          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor --config=ci-deploy //...
+          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor-ci-build-and-test //...
+          bazelisk --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc vendor --lockfile_mode=update --repo_env=PATH=$(pwd)/tools/vendor/bin:$PATH --config=vendor-ci-deploy //...
           kill "$pid"
 
       - name: Package source code and vendored dependencies
@@ -60,12 +60,12 @@ jobs:
             unshare --map-user $id bash -c '
               set -euo pipefail
               ! bazelisk version
-              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-build-and-test --remote_executor= --bes_results_url= --bes_backend= //...
-              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor --config=ci-deploy --remote_executor= --bes_results_url= --bes_backend= //...
+              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor-ci-build-and-test //...
+              ./third_party/bazel_vendor/bazel_linux_x86_64+/bazel --noworkspace_rc --bazelrc=tools/vendor/vendor.bazelrc --bazelrc=.bazelrc test --config=vendor-ci-deploy //...
             '
           "
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: src-and-vendor.zip
