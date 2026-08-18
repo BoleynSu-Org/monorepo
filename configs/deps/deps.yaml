@@ -40,12 +40,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: 988a8856e5cf6ce5bcb1e30919fe87e444af0fe09ae26ae125035c9522bda147
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.62.0.tar.gz
-  updated_on: '2026-07-23'
-  version: v0.62.0
-  strip_prefix: rules_go-0.62.0
-  module_version: 0.62.0
+  sha256: f34d10e44e06fe7cca7709dbcf4a0a1f1f2f99ae666a4e88442d6e3e533b9c5a
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.63.0.tar.gz
+  updated_on: '2026-08-18'
+  version: v0.63.0
+  strip_prefix: rules_go-0.63.0
+  module_version: 0.63.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.2.tar.gz
@@ -420,12 +420,12 @@ bazel_deps:
   module_version: 1.22.1
 - name: abseil-cpp
   type: http_archive
-  version: '20260526.0'
-  sha256: 6e1aee535473414164bf83e4ebc40240dec71a4701f8a642d906e95bea1aea0c
-  strip_prefix: abseil-cpp-20260526.0
-  url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20260526.0.tar.gz
-  updated_on: '2026-06-04'
-  module_version: '20260526.0'
+  version: '20260817.0'
+  sha256: f7e05179df39c45434cad433f5783840bb3788ef322976f9138bc6b72b3a107d
+  strip_prefix: abseil-cpp-20260817.0
+  url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20260817.0.tar.gz
+  updated_on: '2026-08-18'
+  module_version: '20260817.0'
 - name: rules_rust
   type: http_archive
   version: 0.70.0
@@ -649,13 +649,13 @@ maven_deps:
   updated_on: '2026-07-30'
   module_version: 3.5.10
 - name: org.apache.tomcat.embed:tomcat-embed-core
-  version: 11.0.24
-  updated_on: '2026-07-08'
-  module_version: 11.0.24
+  version: 11.0.25
+  updated_on: '2026-08-18'
+  module_version: 11.0.25
 - name: org.apache.tomcat.embed:tomcat-embed-jasper
-  version: 11.0.24
-  updated_on: '2026-07-08'
-  module_version: 11.0.24
+  version: 11.0.25
+  updated_on: '2026-08-18'
+  module_version: 11.0.25
 - name: org.webjars:jquery
   version: 4.0.0
   updated_on: '2026-02-05'
@@ -710,8 +710,8 @@ container_deps:
   registry: index.docker.io
   repository: library/mariadb
   tag: 11.8.8
-  digest: sha256:d9f7eb2637296652f24b484afd5d246f759f49f5babcadc6a9e344c9acb75fbf
-  updated_on: '2026-08-04'
+  digest: sha256:1fe78d53850250aa2560aa0059e3088b4cd230a5db2230f530c70e4b87bcc30c
+  updated_on: '2026-08-18'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -719,22 +719,20 @@ container_deps:
   - linux/s390x
   module_version: 11.8.8
 - name: io_docker_index_library_adminer
-  version: 5.5.1
+  version: 6.0.1
   registry: index.docker.io
   repository: library/adminer
-  tag: 5.5.1
-  digest: sha256:890cffec7caa20159fb6f68c1a521b2e5879f7314f4845d4ebca7cc1cf145971
-  updated_on: '2026-08-04'
+  tag: 6.0.1
+  digest: sha256:afa2a213cfd553566f7578321fec868b4b1e390212c96ae5d849fe69ec3d55db
+  updated_on: '2026-08-18'
   platforms:
   - linux/amd64
   - linux/arm/v6
   - linux/arm/v7
   - linux/arm64/v8
   - linux/386
-  - linux/ppc64le
-  - linux/riscv64
   - linux/s390x
-  module_version: 5.5.1
+  module_version: 6.0.1
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.63.23
   registry: index.docker.io
