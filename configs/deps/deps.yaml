@@ -426,6 +426,14 @@ bazel_deps:
   url: https://github.com/abseil/abseil-cpp/archive/refs/tags/20260817.0.tar.gz
   updated_on: '2026-08-18'
   module_version: '20260817.0'
+- name: gloop
+  type: http_archive
+  version: '20260708.rc1'
+  sha256: 40a58eb478a8045101e4ff37d15f2cbf0b0f1db9e54fbc1ef60dceb10ec7bf01
+  strip_prefix: gloop-20260708.rc1
+  url: https://github.com/abseil/gloop/archive/refs/tags/20260708.rc1.tar.gz
+  updated_on: '2026-08-18'
+  module_version: '20260708'
 - name: rules_rust
   type: http_archive
   version: 0.70.0
