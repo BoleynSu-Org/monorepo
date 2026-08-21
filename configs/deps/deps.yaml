@@ -175,26 +175,26 @@ bazel_deps:
   module_version: 1.36.4
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260811.002638-20260811.051927
+  version: 43-20260819.113754-20260821.152533
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 579bfcaf3be9c5e5ccfeb047bb660763040bcadf98b6030023e2bfcd30a2ffc7
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260811.002638-20260811.051927/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-08-11'
+  sha256: 70f68d0afc9368cd6f1f8a7f8140e35d4a5899eda308f6a7992cc22dde0d98f1
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260819.113754-20260821.152533/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-08-21'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260811.2638.20260811.51927
+  module_version: 43.20260819.113754.20260821.152533
 - name: clang_linux_x86_64
   type: http_archive
-  version: 22.1.8-43-20260701.042709-20260701.060820
+  version: 22.1.8-43-20260819.113754-20260821.152533
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: fdb92d9703f63a2d9896bf4efc66e3454ca458946e414d8104f945a65deb3890
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.8-43-20260701.042709-20260701.060820/clang_linux_x86_64.tar.gz
-  updated_on: '2026-07-01'
-  module_version: 22.1.8.43.20260701.42709.20260701.60820
+  sha256: aeae7821746329ca5caf8d1cdd7f4225b969d8b87ebf58d5727f184f8acfc30f
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/22.1.8-43-20260819.113754-20260821.152533/clang_linux_x86_64.tar.gz
+  updated_on: '2026-08-21'
+  module_version: 22.1.8.43.20260819.113754.20260821.152533
 - name: bazel_features
   type: http_archive
   version: v1.51.0
@@ -272,10 +272,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.8.0/apple_support.2.8.0.tar.gz
-  sha256: 7830e480103a26c9627ae95933adfb17f1f0522a9482fcc38ea0e52093db9b19
-  version: 2.8.0
-  updated_on: '2026-07-24'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.8.1/apple_support.2.8.1.tar.gz
+  sha256: b357bca8aef30b71b910e251ed2ec0613efa73df348c377115d3d60222599a8f
+  version: 2.8.1
+  updated_on: '2026-08-21'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +290,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.8.0
+  module_version: 2.8.1
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260819.113754
+  version: 44-20260821.153645
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260819.113754
-  digest: sha256:181c30792a852efee72696d93329edf159c34b9ffa8c59cb497b44b98ef6fb0b
+  tag: 44-20260821.153645
+  digest: sha256:c2ea22a068702cd7c3be2138d28c0ccb8c28d894bbe6ea8d27b5e922f61be4f7
   updated_on: '2026-08-21'
   platforms:
   - linux/amd64
-  module_version: 44.20260819.113754
+  module_version: 44.20260821.153645
 - name: io_docker_index_library_mariadb
   version: 11.8.8
   version_regex: (11\.8\.[0-9]+)
@@ -756,40 +756,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260819.113754
+  version: 44-20260821.153645
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260819.113754
+  tag: 44-20260821.153645
   digest: sha256:2f025374dd0457ba39cefe13ca7638319f96a784f39ac9ca217ef98048fd90be
   updated_on: '2026-08-21'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260819.113754
+  module_version: 44.20260821.153645
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260819.113754
+  version: 44-20260821.153645
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260819.113754
+  tag: 44-20260821.153645
   digest: sha256:3299bf06c1ea0c302e3a1e4089b938a3cb36f64a1f9cdcbe1dc5f0b6e22ae66d
   updated_on: '2026-08-21'
   platforms:
   - linux/amd64
-  module_version: 44.20260819.113754
+  module_version: 44.20260821.153645
 - name: io_quay_boleynsu_base
-  version: 44-20260819.113754
+  version: 44-20260821.153645
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:2c7f58d7d8b40ddf9aa08dae86713c2d11d9c671601b2b467b2ef86b536e779f
-  tag: 44-20260819.113754
+  tag: 44-20260821.153645
   updated_on: '2026-08-21'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260819.113754
+  module_version: 44.20260821.153645
 
 toolchain_deps:
 - name: c
