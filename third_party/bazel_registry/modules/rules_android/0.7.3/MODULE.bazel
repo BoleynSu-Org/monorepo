@@ -40,7 +40,7 @@ use_repo(
 
 bazel_dep(
     name = 'protobuf',
-    version = '35.1',
+    version = '36.0',
     repo_name = 'com_google_protobuf',
 )
 
@@ -76,7 +76,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.52.2',
+    version = '0.53.0',
     repo_name = 'bazel_gazelle',
 )
 

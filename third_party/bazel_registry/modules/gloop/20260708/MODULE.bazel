@@ -11,7 +11,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'protobuf',
-    version = '35.1',
+    version = '36.0',
 )
 
 bazel_dep(
