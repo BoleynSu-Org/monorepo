@@ -285,8 +285,8 @@ DEPS = {
             "name": "com_google_protobuf",
             "module_name": "protobuf",
             "type": "http_archive",
-            "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protobuf-36.0.tar.gz",
-            "sha256": "399931c793f4ac6db81045b00b06dd07c877b48aeecf36c797f65c541fb533e7",
+            "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protobuf-36.0.bazel.tar.gz",
+            "sha256": "1902386466b5795b166337d2a9d91f9b7cf2bee4ed76c8fb0b73bd39edd30b9d",
             "strip_prefix": "protobuf-36.0",
             "version": "v36.0",
             "updated_on": "2026-08-21",
@@ -302,7 +302,7 @@ DEPS = {
                 },
                 {
                     "type": "shell",
-                    "cmd": "echo DEPS_UPDATER_url=https://github.com/protocolbuffers/protobuf/releases/download/${DEPS_UPDATER_version}/protobuf-${DEPS_UPDATER_version#v}.tar.gz\n",
+                    "cmd": "echo DEPS_UPDATER_url=https://github.com/protocolbuffers/protobuf/releases/download/${DEPS_UPDATER_version}/protobuf-${DEPS_UPDATER_version#v}.bazel.tar.gz\n",
                 },
                 {
                     "type": "deps_updater",
