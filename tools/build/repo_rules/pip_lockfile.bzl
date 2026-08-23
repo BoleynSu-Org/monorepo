@@ -27,6 +27,7 @@ def _pinned_pip_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "")
     repository_ctx.file("BUILD", content = "")
     repository_ctx.symlink(repository_ctx.attr.requirements_txt, "requirements.txt")
+    repository_ctx.file("build-constraint.txt", requirements_txt.replace("\n    --hash=", "\n    # --hash="))
 
 def _unpinned_pip_impl(repository_ctx):
     repository_ctx.file("WORKSPACE", content = "")
