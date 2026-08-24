@@ -712,20 +712,20 @@ container_deps:
   - linux/amd64
   module_version: 44.20260822.15136
 - name: io_docker_index_library_mariadb
-  version: 11.8.8
+  version: 11.8.9
   version_regex: (11\.8\.[0-9]+)
   eol_on: '2028-01-01'
   registry: index.docker.io
   repository: library/mariadb
-  tag: 11.8.8
-  digest: sha256:24e76fcec8c003a0362d0dd53f4806e7e79458d7fdeaf47437760e19496f5a9c
-  updated_on: '2026-08-21'
+  tag: 11.8.9
+  digest: sha256:2439dcd7d14010ecd1ff7a4e1c5abe8e208c34fe35290744deeeaac3569043c3
+  updated_on: '2026-08-24'
   platforms:
   - linux/amd64
   - linux/arm64/v8
   - linux/ppc64le
   - linux/s390x
-  module_version: 11.8.8
+  module_version: 11.8.9
 - name: io_docker_index_library_adminer
   version: 6.0.1
   registry: index.docker.io
