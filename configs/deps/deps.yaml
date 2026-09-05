@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260902.231522
+  version: 44-20260904.220716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260902.231522
-  digest: sha256:3f3121e6333840c7d4e922b610a70eff770c6676d5f5e38239576703a63313ca
-  updated_on: '2026-09-03'
+  tag: 44-20260904.220716
+  digest: sha256:de4fc7621f9ab46906b48668ac0a7c5c0770e7d39a044431a5c9874f7ff8325f
+  updated_on: '2026-09-05'
   platforms:
   - linux/amd64
-  module_version: 44.20260902.231522
+  module_version: 44.20260904.220716
 - name: io_docker_index_library_mariadb
   version: 11.8.9
   version_regex: (11\.8\.[0-9]+)
@@ -756,40 +756,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260902.231522
+  version: 44-20260904.051413
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260902.231522
+  tag: 44-20260904.051413
   digest: sha256:dc65c123868fec617e88a19c2361b077477ddb3f2bb73da787c5822466b29f0d
-  updated_on: '2026-09-03'
+  updated_on: '2026-09-05'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260902.231522
+  module_version: 44.20260904.51413
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260902.231522
+  version: 44-20260904.051413
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260902.231522
+  tag: 44-20260904.051413
   digest: sha256:d9795b9dc9e9e2f471c7487ec3b9258ea22b36a22ac61e027f74831fa84ed7e7
-  updated_on: '2026-09-03'
+  updated_on: '2026-09-05'
   platforms:
   - linux/amd64
-  module_version: 44.20260902.231522
+  module_version: 44.20260904.51413
 - name: io_quay_boleynsu_base
-  version: 44-20260902.231522
+  version: 44-20260904.051413
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:12b33d2e3514588fce00a8e7382ce08611bd4e44337b6b67409a702d0d06a5d4
-  tag: 44-20260902.231522
-  updated_on: '2026-09-03'
+  tag: 44-20260904.051413
+  updated_on: '2026-09-05'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260902.231522
+  module_version: 44.20260904.51413
 
 toolchain_deps:
 - name: c
