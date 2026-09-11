@@ -56,7 +56,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_robolectric',
-    version = '4.16.1',
+    version = '4.17',
     repo_name = 'robolectric',
 )
 
@@ -76,7 +76,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'gazelle',
-    version = '0.53.0',
+    version = '0.54.0',
     repo_name = 'bazel_gazelle',
 )
 
@@ -115,7 +115,7 @@ use_repo(
 
 bazel_dep(
     name = 'rules_python',
-    version = '2.3.2',
+    version = '2.3.3',
     repo_name = 'rules_python',
 )
 

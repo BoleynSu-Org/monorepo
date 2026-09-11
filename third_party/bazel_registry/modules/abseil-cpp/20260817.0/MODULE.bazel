@@ -20,6 +20,6 @@ bazel_dep(
 
 bazel_dep(
     name = 'gloop',
-    version = '20260708',
+    version = '20260828.0',
     repo_name = 'do_not_use_for_gloop_visibility_only',
 )

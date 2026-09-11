@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.9.0
 - name: rules_python
   type: http_archive
-  sha256: 25a00d55e4376ef6d9f28938b68038faca17c95580c9afe6953e7dde013d00e4
-  strip_prefix: rules_python-2.3.2
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.2.tar.gz
-  updated_on: '2026-08-22'
-  version: 2.3.2
-  module_version: 2.3.2
+  sha256: f700c75859a827a2e3e3ba4c9c0ec2d796e191bf0438ac3fee0b7851d83a3d4c
+  strip_prefix: rules_python-2.3.3
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.3.tar.gz
+  updated_on: '2026-09-11'
+  version: 2.3.3
+  module_version: 2.3.3
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -81,21 +81,21 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 0a110b4565bae8fddc646bb731e733331819d2cf89017764aa68b15495297b81
-  strip_prefix: grpc-java-1.83.1
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.83.1.tar.gz
-  updated_on: '2026-07-30'
-  version: v1.83.1
-  module_version: 1.83.1
+  sha256: 4ac03e3244da9565f13f62a24e87f57ee13baa7657033db35ea086e16fc32869
+  strip_prefix: grpc-java-1.84.0
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.84.0.tar.gz
+  updated_on: '2026-09-11'
+  version: v1.84.0
+  module_version: 1.84.0
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
-  sha256: f8b69f71853f1a74a58dad5ac0fc3acbf16d877184d38966a2c7e727279a148d
-  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.53.0.tar.gz
-  updated_on: '2026-08-21'
-  version: v0.53.0
-  strip_prefix: bazel-gazelle-0.53.0
-  module_version: 0.53.0
+  sha256: c11e1becdf5c6fca0235aa728ef5048225e06c8b35936d8d41d4d1dcf759bab5
+  url: https://github.com/bazelbuild/bazel-gazelle/archive/refs/tags/v0.54.0.tar.gz
+  updated_on: '2026-09-11'
+  version: v0.54.0
+  strip_prefix: bazel-gazelle-0.54.0
+  module_version: 0.54.0
 - name: com_github_cdolivet_editarea
   type: http_archive
   url: https://github.com/cdolivet/EditArea/archive/refs/tags/v0.8.2.tar.gz
@@ -175,26 +175,26 @@ bazel_deps:
   module_version: 1.37.0
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260825.051104-20260825.165734
+  version: 43-20260901.051331-20260901.133413
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: acd93c195b8a332645fa779db20eb53fcf4c48597f8a3059dd8f0ce02aff2371
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260825.051104-20260825.165734/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-08-25'
+  sha256: 5ca5cdd1fb021c74f57aee93755418c5b49147005a44f150bae8748f3da31a96
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260901.051331-20260901.133413/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-09-11'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260825.51104.20260825.165734
+  module_version: 43.20260901.51331.20260901.133413
 - name: clang_linux_x86_64
   type: http_archive
-  version: 23.1.0-43-20260829.184042-20260830.000535
+  version: 23.1.1-43-20260910.005729-20260910.225022
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 79ba6e2a93e38c7334e253e29794de5db4ca1a0775e3b797c1cf8533c13ab0d0
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.0-43-20260829.184042-20260830.000535/clang_linux_x86_64.tar.gz
-  updated_on: '2026-08-30'
-  module_version: 23.1.0.43.20260829.184042.20260830.535
+  sha256: 471488d1b3e20eef3e0e31576f26af998e54970d4330dee4a35d915cc40eb9b5
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.1-43-20260910.005729-20260910.225022/clang_linux_x86_64.tar.gz
+  updated_on: '2026-09-11'
+  module_version: 23.1.1.43.20260910.5729.20260910.225022
 - name: bazel_features
   type: http_archive
   version: v1.51.0
@@ -224,7 +224,10 @@ bazel_deps:
   sha256: 1902386466b5795b166337d2a9d91f9b7cf2bee4ed76c8fb0b73bd39edd30b9d
   strip_prefix: protobuf-36.0
   version: v36.0
-  updated_on: '2026-08-21'
+  version_skip:
+  # See https://github.com/protocolbuffers/protobuf/issues/29537
+  - v36.1
+  updated_on: '2026-09-12'
   module_version: '36.0'
   override_updater:
   - type: deps_updater
@@ -272,10 +275,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.8.1/apple_support.2.8.1.tar.gz
-  sha256: b357bca8aef30b71b910e251ed2ec0613efa73df348c377115d3d60222599a8f
-  version: 2.8.1
-  updated_on: '2026-08-21'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.8.2/apple_support.2.8.2.tar.gz
+  sha256: e1638806b6eab56e764803479e62bf522b3183479c1933cf7a2428a84575ae8a
+  version: 2.8.2
+  updated_on: '2026-09-11'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +293,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.8.1
+  module_version: 2.8.2
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
@@ -388,12 +391,12 @@ bazel_deps:
   module_version: 0.7.3
 - name: rules_robolectric
   type: http_archive
-  version: v4.16.1
-  sha256: dae5b7250096188c7989f7db9df3d094be7a5c2ae17047499e4110f8c27fed8b
-  strip_prefix: robolectric-bazel-4.16.1
-  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/v4.16.1.tar.gz
-  updated_on: '2026-01-23'
-  module_version: 4.16.1
+  version: '4.17'
+  sha256: e952afc579f0dfef46c3151e9df03c3ff11214c1d2e5a493972361ca3d29c9b7
+  strip_prefix: robolectric-bazel-4.17
+  url: https://github.com/robolectric/robolectric-bazel/archive/refs/tags/4.17.tar.gz
+  updated_on: '2026-09-11'
+  module_version: '4.17'
 - name: io_abseil_py
   module_name: abseil-py
   type: http_archive
@@ -428,12 +431,12 @@ bazel_deps:
   module_version: '20260817.0'
 - name: gloop
   type: http_archive
-  version: '20260708.rc1'
-  sha256: 40a58eb478a8045101e4ff37d15f2cbf0b0f1db9e54fbc1ef60dceb10ec7bf01
-  strip_prefix: gloop-20260708.rc1
-  url: https://github.com/abseil/gloop/archive/refs/tags/20260708.rc1.tar.gz
-  updated_on: '2026-08-18'
-  module_version: '20260708'
+  version: '20260828.0'
+  sha256: 1d983c6dafae36cd9d8eb5826d3566d6e6d6ce23eb23d8d855922177c19f1487
+  strip_prefix: gloop-20260828.0
+  url: https://github.com/abseil/gloop/archive/refs/tags/20260828.0.tar.gz
+  updated_on: '2026-09-11'
+  module_version: '20260828.0'
 - name: rules_rust
   type: http_archive
   version: 0.70.0
@@ -545,11 +548,11 @@ bazel_deps:
       value: [sha256, strip_prefix]
 - name: bazel_lib
   type: http_archive
-  version: v3.7.1
-  sha256: 10f232c10df1ba5cbbbfbcde947090463348f0344d4153e25371b13ee3daf0ce
-  strip_prefix: bazel-lib-3.7.1
-  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.7.1/bazel-lib-v3.7.1.tar.gz
-  updated_on: '2026-08-02'
+  version: v3.7.2
+  sha256: c75f8c375f9f2c73a565dba188f91a4e8d7ca16dd2b6152d3886c26bbf1c6532
+  strip_prefix: bazel-lib-3.7.2
+  url: https://github.com/bazel-contrib/bazel-lib/releases/download/v3.7.2/bazel-lib-v3.7.2.tar.gz
+  updated_on: '2026-09-11'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -564,7 +567,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 3.7.1
+  module_version: 3.7.2
 - name: package_metadata
   type: http_archive
   version: v0.0.10
