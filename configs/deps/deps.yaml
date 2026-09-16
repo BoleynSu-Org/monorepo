@@ -721,8 +721,8 @@ container_deps:
   registry: index.docker.io
   repository: library/mariadb
   tag: 11.8.9
-  digest: sha256:2d2f4095530294735a857cfe22bb101e19b0849b416911c796ec4aa81b164a62
-  updated_on: '2026-09-10'
+  digest: sha256:ae512748d35260c6ab9fdfed9ca22b1f3fd748faf2ca21019e96c909f731531c
+  updated_on: '2026-09-16'
   platforms:
   - linux/amd64
   - linux/arm64/v8
@@ -734,7 +734,7 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 6.0.1
-  digest: sha256:a5f7cc33413d7c5d284498cc9bd11a44e54cc1f2b89a6007577b5d677da3fef5
+  digest: sha256:2469bdf0d2ca10ab98c22c6b97a234651fbcc0b1e08d8717cc0607c3e238fb59
   updated_on: '2026-09-16'
   platforms:
   - linux/amd64
