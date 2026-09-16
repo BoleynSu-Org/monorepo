@@ -994,7 +994,7 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/mariadb",
             "tag": "11.8.9",
-            "digest": "sha256:ae512748d35260c6ab9fdfed9ca22b1f3fd748faf2ca21019e96c909f731531c",
+            "digest": "sha256:8b5f33ebd85d1775657e974ed10434128bb493c80e826ceaa54074fd1a92a112",
             "updated_on": "2026-09-16",
             "platforms": [
                 "linux/amd64",
