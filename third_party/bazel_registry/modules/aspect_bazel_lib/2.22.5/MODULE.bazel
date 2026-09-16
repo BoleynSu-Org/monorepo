@@ -36,12 +36,12 @@ bazel_dep(
 
 bazel_dep(
     name = 'jq.bzl',
-    version = '0.6.1',
+    version = '0.6.2',
 )
 
 bazel_dep(
     name = 'tar.bzl',
-    version = '0.10.8',
+    version = '0.10.9',
 )
 
 toolchains = use_extension(
