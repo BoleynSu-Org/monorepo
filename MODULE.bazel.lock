@@ -121,7 +121,7 @@
     "@@protobuf+//python/dist:system_python.bzl%system_python_extension": {
       "general": {
         "bzlTransitiveDigest": "qh0n9IrXU/xS94wxKQrG1J63zrLkA1Wy2Y3BQxptPcI=",
-        "usagesDigest": "r0v8ejluW9xlYv6K8UBMrSAfXR4CfNX85hawhoVBOAQ=",
+        "usagesDigest": "729NT5g1WOPoRlz1gj2n8O5W61I2KE7oupR2tCn6Xac=",
         "recordedInputs": [],
         "generatedRepoSpecs": {
           "system_python": {
@@ -221,7 +221,7 @@
     "@@rules_rust+//crate_universe:extension.bzl%crate": {
       "general": {
         "bzlTransitiveDigest": "OObjccUVTm3iGaSmMSlT0KCY2WMwaNR/Agbjg94NqBA=",
-        "usagesDigest": "Me/jW9F8YerDtRsr79QZ5jBGPerv3S1KWVi+tokccec=",
+        "usagesDigest": "x0vrCWeHpY81Qjj7vEW+k03YwVf1a+fL0Y9237dy0E4=",
         "recordedInputs": [
           "ENV:CARGO_BAZEL_DEBUG \\0",
           "ENV:CARGO_BAZEL_GENERATOR_SHA256 \\0",
