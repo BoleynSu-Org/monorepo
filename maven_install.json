@@ -16,7 +16,7 @@
     "com.google.re2j:re2j": 1525409503,
     "com.google.s2a.proto.v2:s2a-proto": 898932763,
     "com.google.truth:truth": 1696781452,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 936437363,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -1395962538,
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
     "commons-codec:commons-codec": 1341556274,
@@ -77,9 +77,7 @@
     "com.google.re2j:re2j": -1688126233,
     "com.google.s2a.proto.v2:s2a-proto": -1425064913,
     "com.google.truth:truth": 734708584,
-    "com.googlecode.owasp-java-html-sanitizer:java10-shim": -1979107723,
-    "com.googlecode.owasp-java-html-sanitizer:java8-shim": 461010812,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1621764993,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -2101183299,
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
     "commons-beanutils:commons-beanutils": 214854525,
@@ -291,23 +289,11 @@
       },
       "version": "1.4.5"
     },
-    "com.googlecode.owasp-java-html-sanitizer:java10-shim": {
-      "shasums": {
-        "jar": "83fe042ed85211bece1b5f2f09c778802f51caa3036177c29705332f21a109eb"
-      },
-      "version": "20260313.1"
-    },
-    "com.googlecode.owasp-java-html-sanitizer:java8-shim": {
-      "shasums": {
-        "jar": "968a4ea6db5395ba01198031c7c4331f3d92e029779495082f920646033377db"
-      },
-      "version": "20260313.1"
-    },
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": {
       "shasums": {
-        "jar": "47800b2dbe419f7ace252577d5247f0969d3fef3f5043904fa775b289461a10a"
+        "jar": "9133582523cd242a369b3d806925a92d9a30c541db913f6bc5470777a8713ce4"
       },
-      "version": "20260313.1"
+      "version": "20260921.1"
     },
     "com.squareup.okhttp:okhttp": {
       "shasums": {
@@ -848,13 +834,6 @@
       "org.jspecify:jspecify",
       "org.ow2.asm:asm"
     ],
-    "com.googlecode.owasp-java-html-sanitizer:java10-shim": [
-      "com.googlecode.owasp-java-html-sanitizer:java8-shim"
-    ],
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": [
-      "com.googlecode.owasp-java-html-sanitizer:java10-shim",
-      "com.googlecode.owasp-java-html-sanitizer:java8-shim"
-    ],
     "com.squareup.okhttp:okhttp": [
       "com.squareup.okio:okio"
     ],
@@ -1278,15 +1257,9 @@
     "com.google.truth:truth": [
       "com.google.common.truth"
     ],
-    "com.googlecode.owasp-java-html-sanitizer:java10-shim": [
-      "org.owasp.shim"
-    ],
-    "com.googlecode.owasp-java-html-sanitizer:java8-shim": [
-      "org.owasp.shim"
-    ],
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": [
       "org.owasp.html",
-      "org.owasp.html.examples"
+      "org.owasp.shim"
     ],
     "com.squareup.okhttp:okhttp": [
       "com.squareup.okhttp",
@@ -2179,8 +2152,6 @@
       "com.google.re2j:re2j",
       "com.google.s2a.proto.v2:s2a-proto",
       "com.google.truth:truth",
-      "com.googlecode.owasp-java-html-sanitizer:java10-shim",
-      "com.googlecode.owasp-java-html-sanitizer:java8-shim",
       "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
       "com.squareup.okhttp:okhttp",
       "com.squareup.okio:okio",
