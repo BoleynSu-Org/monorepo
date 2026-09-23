@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.9.0
 - name: rules_python
   type: http_archive
-  sha256: f700c75859a827a2e3e3ba4c9c0ec2d796e191bf0438ac3fee0b7851d83a3d4c
-  strip_prefix: rules_python-2.3.3
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.3.tar.gz
-  updated_on: '2026-09-11'
-  version: 2.3.3
-  module_version: 2.3.3
+  sha256: a535712f12ba25253d73975ba2932994b5e53773f94b58fb3f8fa7827de8b6b7
+  strip_prefix: rules_python-2.3.4
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.4.tar.gz
+  updated_on: '2026-09-23'
+  version: 2.3.4
+  module_version: 2.3.4
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -156,10 +156,10 @@ bazel_deps:
   module_version: 1.1.0
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.37.0/bin/linux/amd64/kubectl
-  sha256: 6129359f4e1f3848a5572ccb0b26cf28b8ca08cef38c95a765b2f64a2c961a2f
-  version: v1.37.0
-  updated_on: '2026-08-26'
+  url: https://dl.k8s.io/release/v1.37.1/bin/linux/amd64/kubectl
+  sha256: 65691ff77eb6fa44c908b77a1082c9f092c3b9733b5cefabec0d1104890e21a8
+  version: v1.37.1
+  updated_on: '2026-09-23'
   executable: true
   override_updater:
   - type: shell
@@ -172,21 +172,21 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.37.0
+  module_version: 1.37.1
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260920.105230-20260920.131004
+  version: 43-20260922.145803-20260923.041538
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 4e442fa479c55b734403cea9a52d6d16c640069193ef09817e00a6d0b8a841de
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260920.105230-20260920.131004/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-09-20'
+  sha256: 4f7c45f7fdd99e9668296686ee998aac05d62bda59e9005a8a6aa3381277f0ad
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260922.145803-20260923.041538/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-09-23'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260920.105230.20260920.131004
+  module_version: 43.20260922.145803.20260923.41538
 - name: clang_linux_x86_64
   type: http_archive
   version: 23.1.1-43-20260910.005729-20260910.225022
@@ -272,10 +272,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.8.4/apple_support.2.8.4.tar.gz
-  sha256: fe45a2a78d12e9683fbe3ca53c55e0238dff702fa0b2f451f1ef339fc400f478
-  version: 2.8.4
-  updated_on: '2026-09-20'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.9.0/apple_support.2.9.0.tar.gz
+  sha256: 101bb193888ff0755f362bb84c2f44eeb19a1de368d4fc140cdd0bd19111b380
+  version: 2.9.0
+  updated_on: '2026-09-23'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +290,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.8.4
+  module_version: 2.9.0
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
@@ -358,11 +358,11 @@ bazel_deps:
   module_version: 2.22.5
 - name: buildozer
   type: http_archive
-  version: v10.0.1
-  sha256: b0ccae95d4e1cf355b8cc63f8071ebbd469985caa06fa2d2f260c7b5420920d5
-  strip_prefix: buildozer-10.0.1
-  url: https://github.com/fmeum/buildozer/releases/download/v10.0.1/buildozer-v10.0.1.tar.gz
-  updated_on: '2026-09-16'
+  version: v10.1.0
+  sha256: 304b7ffc1843d20c43fb813714f2fafd74b1dc6126ce408802e003a6a3b8ff63
+  strip_prefix: buildozer-10.1.0
+  url: https://github.com/fmeum/buildozer/releases/download/v10.1.0/buildozer-v10.1.0.tar.gz
+  updated_on: '2026-09-23'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -377,7 +377,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 10.0.1
+  module_version: 10.1.0
 - name: rules_android
   type: http_archive
   version: v0.7.3
@@ -727,12 +727,12 @@ container_deps:
   - linux/s390x
   module_version: 11.8.9
 - name: io_docker_index_library_adminer
-  version: 6.0.1
+  version: 6.1.0
   registry: index.docker.io
   repository: library/adminer
-  tag: 6.0.1
-  digest: sha256:51262b555d9e8ac3e1fa197eec41a3f47d05aea5520ac2ccc78a03ffc7d39b3a
-  updated_on: '2026-09-20'
+  tag: 6.1.0
+  digest: sha256:7be7f81fcb43980548639c82b04f747f057bd43d54d3a3a561453185fe4c40a4
+  updated_on: '2026-09-23'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -740,9 +740,8 @@ container_deps:
   - linux/arm64/v8
   - linux/386
   - linux/ppc64le
-  - linux/riscv64
   - linux/s390x
-  module_version: 6.0.1
+  module_version: 6.1.0
 - name: io_docker_index_filebrowser_filebrowser
   version: v2.63.23
   registry: index.docker.io

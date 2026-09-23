@@ -42,7 +42,7 @@ register_toolchains(
 
 bazel_dep(
     name = 'rules_python',
-    version = '2.3.3',
+    version = '2.3.4',
 )
 
 compatibility_proxy = use_extension(
