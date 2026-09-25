@@ -16,7 +16,7 @@
     "com.google.re2j:re2j": 1525409503,
     "com.google.s2a.proto.v2:s2a-proto": 898932763,
     "com.google.truth:truth": 1696781452,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1102053399,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -4336486,
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
     "commons-codec:commons-codec": 1341556274,
@@ -77,7 +77,7 @@
     "com.google.re2j:re2j": -1688126233,
     "com.google.s2a.proto.v2:s2a-proto": -1425064913,
     "com.google.truth:truth": 734708584,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 31814868,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -1433356802,
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
     "commons-beanutils:commons-beanutils": 214854525,
@@ -291,9 +291,9 @@
     },
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": {
       "shasums": {
-        "jar": "ddbbf39e2daaad093c013f727d0d6b345e4e795596f540babe8c7126c9d982ac"
+        "jar": "22f2d6d6beecae6270cbb916d366b66ec8fd7b0e61a977cfd27c6fb4ae1fb610"
       },
-      "version": "20260922.1"
+      "version": "20260924.2"
     },
     "com.squareup.okhttp:okhttp": {
       "shasums": {

@@ -961,9 +961,9 @@ DEPS = {
         },
         {
             "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
-            "version": "20260922.1",
-            "updated_on": "2026-09-23",
-            "module_version": "20260922.1",
+            "version": "20260924.2",
+            "updated_on": "2026-09-25",
+            "module_version": "20260924.2",
         },
         {
             "name": "org.apache.commons:commons-text",
@@ -975,15 +975,15 @@ DEPS = {
     "container_deps": [
         {
             "name": "io_quay_boleynsu_ci_runner",
-            "version": "44-20260924.000142",
+            "version": "44-20260924.221058",
             "version_regex": "([0-9.]*)-([0-9.]*)",
             "registry": "quay.io",
             "repository": "boleynsu/ci-runner",
-            "tag": "44-20260924.000142",
-            "digest": "sha256:e58340b6e9f6126f662490a8c7a76d5f8ce26361058d08047ed047ae35b545fa",
-            "updated_on": "2026-09-24",
+            "tag": "44-20260924.221058",
+            "digest": "sha256:c34516f6845b033c9d4f486e21e0ee859ea6eb7e00f9dbd3072eae12225dc21e",
+            "updated_on": "2026-09-25",
             "platforms": ["linux/amd64"],
-            "module_version": "44.20260924.142",
+            "module_version": "44.20260924.221058",
         },
         {
             "name": "io_docker_index_library_mariadb",
@@ -1009,8 +1009,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/adminer",
             "tag": "6.1.0",
-            "digest": "sha256:7be7f81fcb43980548639c82b04f747f057bd43d54d3a3a561453185fe4c40a4",
-            "updated_on": "2026-09-23",
+            "digest": "sha256:8df93d7bb4313b60cc0d46c773d842f14e39b89ef4c2cedde9d2a17663ec98b5",
+            "updated_on": "2026-09-25",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
