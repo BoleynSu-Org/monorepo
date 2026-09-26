@@ -239,12 +239,12 @@ DEPS = {
         {
             "name": "clang_linux_x86_64",
             "type": "http_archive",
-            "version": "23.1.1-43-20260910.005729-20260910.225022",
+            "version": "23.1.2-43-20260923.061921-20260923.115414",
             "version_regex": "([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)",
-            "sha256": "471488d1b3e20eef3e0e31576f26af998e54970d4330dee4a35d915cc40eb9b5",
-            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.1-43-20260910.005729-20260910.225022/clang_linux_x86_64.tar.gz",
-            "updated_on": "2026-09-11",
-            "module_version": "23.1.1.43.20260910.5729.20260910.225022",
+            "sha256": "3d9db98d6c1023ca61df6ab3d4f762a887091c59ec220dd18c9ec4cf03720017",
+            "url": "https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.2-43-20260923.061921-20260923.115414/clang_linux_x86_64.tar.gz",
+            "updated_on": "2026-09-26",
+            "module_version": "23.1.2.43.20260923.61921.20260923.115414",
         },
         {
             "name": "bazel_features",
@@ -357,10 +357,10 @@ DEPS = {
         {
             "name": "apple_support",
             "type": "http_archive",
-            "url": "https://github.com/bazelbuild/apple_support/releases/download/2.9.0/apple_support.2.9.0.tar.gz",
-            "sha256": "101bb193888ff0755f362bb84c2f44eeb19a1de368d4fc140cdd0bd19111b380",
-            "version": "2.9.0",
-            "updated_on": "2026-09-23",
+            "url": "https://github.com/bazelbuild/apple_support/releases/download/2.9.1/apple_support.2.9.1.tar.gz",
+            "sha256": "3d9b4a73fd3d58dd3303e8cd95497dc705407aacdd415faaf60b22de850a75c6",
+            "version": "2.9.1",
+            "updated_on": "2026-09-26",
             "override_updater": [
                 {
                     "type": "deps_updater",
@@ -383,7 +383,7 @@ DEPS = {
                     }],
                 },
             ],
-            "module_version": "2.9.0",
+            "module_version": "2.9.1",
         },
         {
             "name": "stardoc",
@@ -1005,12 +1005,12 @@ DEPS = {
         },
         {
             "name": "io_docker_index_library_adminer",
-            "version": "6.1.0",
+            "version": "6.1.1",
             "registry": "index.docker.io",
             "repository": "library/adminer",
-            "tag": "6.1.0",
-            "digest": "sha256:8df93d7bb4313b60cc0d46c773d842f14e39b89ef4c2cedde9d2a17663ec98b5",
-            "updated_on": "2026-09-25",
+            "tag": "6.1.1",
+            "digest": "sha256:f2d8070d6416befaa50b9e5f8059dc181c7859b0ab4c0b081de945336e50a2ef",
+            "updated_on": "2026-09-26",
             "platforms": [
                 "linux/amd64",
                 "linux/arm/v6",
@@ -1020,7 +1020,7 @@ DEPS = {
                 "linux/ppc64le",
                 "linux/s390x",
             ],
-            "module_version": "6.1.0",
+            "module_version": "6.1.1",
         },
         {
             "name": "io_docker_index_filebrowser_filebrowser",
