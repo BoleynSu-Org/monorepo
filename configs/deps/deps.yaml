@@ -175,18 +175,18 @@ bazel_deps:
   module_version: 1.37.1
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260922.145803-20260923.041538
+  version: 43-20260929.031619-20260929.084256
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 4f7c45f7fdd99e9668296686ee998aac05d62bda59e9005a8a6aa3381277f0ad
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260922.145803-20260923.041538/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-09-23'
+  sha256: 0a941c4a97b82d9feef488dddc3498805ab54cc228e27ab37cf109d67b54e0e8
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260929.031619-20260929.084256/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-09-29'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260922.145803.20260923.41538
+  module_version: 43.20260929.31619.20260929.84256
 - name: clang_linux_x86_64
   type: http_archive
   version: 23.1.2-43-20260923.061921-20260923.115414
@@ -501,12 +501,12 @@ bazel_deps:
   module_version: 1.8.2
 - name: jq.bzl
   type: http_archive
-  version: v0.6.2
-  sha256: 1a77b8d1f03f189932fd770c5fe0c30b27d39a67b1466d96628875c9ed8d23f1
-  strip_prefix: jq.bzl-0.6.2
-  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.6.2/jq.bzl-v0.6.2.tar.gz
-  updated_on: '2026-09-16'
-  module_version: 0.6.2
+  version: v0.7.0
+  sha256: 3751ea4bf2b454cdace6d19ae830f6c9176c81998f81dd89a57c4bd584eeaa9d
+  strip_prefix: jq.bzl-0.7.0
+  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.7.0/jq.bzl-v0.7.0.tar.gz
+  updated_on: '2026-09-29'
+  module_version: 0.7.0
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -613,11 +613,11 @@ bazel_deps:
   module_version: 0.5.0
 - name: toml.bzl
   type: http_archive
-  version: v0.4.1
-  sha256: 46fab1d526b6da6ecb24b17b958d1f391c569053557daf2697eace3a593dcee9
-  strip_prefix: toml.bzl-0.4.1
-  url: https://github.com/jvolkman/toml.bzl/releases/download/v0.4.1/toml.bzl-v0.4.1.tar.gz
-  updated_on: '2026-05-20'
+  version: v0.5.0
+  sha256: b5bfdd5c5488ad37d60db188d2d17bc093f719b88b20886ce9fb092bff6b0e67
+  strip_prefix: toml.bzl-0.5.0
+  url: https://github.com/jvolkman/toml.bzl/releases/download/v0.5.0/toml.bzl-v0.5.0.tar.gz
+  updated_on: '2026-09-29'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -633,7 +633,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 0.4.1
+  module_version: 0.5.0
 
 pip_deps:
 - name: ruamel.yaml
@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20260924.221058
+  version: 44-20260929.084256
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20260924.221058
-  digest: sha256:c34516f6845b033c9d4f486e21e0ee859ea6eb7e00f9dbd3072eae12225dc21e
-  updated_on: '2026-09-25'
+  tag: 44-20260929.084256
+  digest: sha256:0e8096f674925ee8f95edd454c67538184fa39876cbb642e102af844d5537e3b
+  updated_on: '2026-09-29'
   platforms:
   - linux/amd64
-  module_version: 44.20260924.221058
+  module_version: 44.20260929.84256
 - name: io_docker_index_library_mariadb
   version: 11.8.9
   version_regex: (11\.8\.[0-9]+)
@@ -755,40 +755,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20260924.000142
+  version: 44-20260929.031619
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20260924.000142
-  digest: sha256:e8deea46de540d42f71de19bec4b0bb710df5c9d3d1de2fa5014ab990960d63e
-  updated_on: '2026-09-24'
+  tag: 44-20260929.031619
+  digest: sha256:d0c1b570bbeb0f713ac4045a8f36ad2c41efe0a93569f66df7764b196996cdec
+  updated_on: '2026-09-29'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260924.142
+  module_version: 44.20260929.31619
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20260924.000142
+  version: 44-20260929.031619
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20260924.000142
-  digest: sha256:5a8b6fe482aa4e09400364c49b24f5768e404e68a8ad8ffa4a356f3e89a8f475
-  updated_on: '2026-09-24'
+  tag: 44-20260929.031619
+  digest: sha256:2d0e729da9ca6a1596c7625315d015466f4785024e07f259a158a960d8c530df
+  updated_on: '2026-09-29'
   platforms:
   - linux/amd64
-  module_version: 44.20260924.142
+  module_version: 44.20260929.31619
 - name: io_quay_boleynsu_base
-  version: 44-20260924.000142
+  version: 44-20260929.031619
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:f3fa28b8fdaec68d71e88e177a031b555d1d448eed72e330c3e21151df138f10
-  tag: 44-20260924.000142
-  updated_on: '2026-09-24'
+  digest: sha256:5996450caafd38706ac35691f2c8668dbcc4ccad723369aafebde81a3851f00a
+  tag: 44-20260929.031619
+  updated_on: '2026-09-29'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20260924.142
+  module_version: 44.20260929.31619
 
 toolchain_deps:
 - name: c
