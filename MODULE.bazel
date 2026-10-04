@@ -935,10 +935,10 @@ DEPS = {
         },
         {
             "name": "io.undertow:undertow-core",
-            "version": "2.4.3.Final",
+            "version": "2.4.4.Final",
             "version_regex": "(.*)\\.Final",
-            "updated_on": "2026-08-29",
-            "module_version": "2.4.3",
+            "updated_on": "2026-10-04",
+            "module_version": "2.4.4",
         },
         {
             "name": "commons-validator:commons-validator",
@@ -993,8 +993,8 @@ DEPS = {
             "registry": "index.docker.io",
             "repository": "library/mariadb",
             "tag": "11.8.9",
-            "digest": "sha256:79d59758afc91b89b120b0a8904d637f5a3b3e1c4900f29b740d6d46c72fef68",
-            "updated_on": "2026-09-20",
+            "digest": "sha256:6422478cb8e159f080fb1d8ccf65101e26fe51385787fde7d16c3b165a331f15",
+            "updated_on": "2026-10-04",
             "platforms": [
                 "linux/amd64",
                 "linux/arm64/v8",
