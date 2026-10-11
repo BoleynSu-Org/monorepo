@@ -1177,6 +1177,7 @@ pinned_pip(
     name = "pinned_pip",
     packages = PIP_PACKAGES,
     pin_cmd = "REPIN=1 bazel run @unpinned_pip//:pin",
+    python_version = PYTHON_VERSION,
     requirements_txt = "//:requirements.txt",
 )
 
@@ -1186,6 +1187,7 @@ unpinned_pip(
     name = "unpinned_pip",
     packages = PIP_PACKAGES,
     python_interpreter_target = "@python//:bin/python3",
+    python_version = PYTHON_VERSION,
     requirements_txt = "//:requirements.txt",
 )
 

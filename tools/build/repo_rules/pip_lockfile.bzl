@@ -5,6 +5,7 @@ def _updater_header(repository_ctx, requirements_txt):
         requirements_txt = requirements_txt[requirements_txt.find("\n", len(header)) + 1:]
     data = {
         "packages": repository_ctx.attr.packages,
+        "python_version": repository_ctx.attr.python_version,
         "requirements_txt": requirements_txt,
     }
     return "{}{}\n{}".format(header, hash(json.encode(data)), requirements_txt)
@@ -52,6 +53,8 @@ sh_binary(
 
     repository_ctx.symlink(repository_ctx.attr.requirements_txt, "imported_requirements.txt")
 
+    python_version = repository_ctx.attr.python_version
+
     result = repository_ctx.execute([repository_ctx.attr.python_interpreter_target, "-m", "venv", "venv"])
     if result.return_code:
         fail("failed to run python -m venv: " + result.stderr)
@@ -87,7 +90,7 @@ cp "$requirements_txt" "$BUILD_WORKSPACE_DIRECTORY/{requirements_txt}"
 
     repository_ctx.file("requirements.txt")
     result = repository_ctx.execute(
-        ["./venv/bin/uv", "pip", "compile", "--universal", "--no-header", "--generate-hashes", "--output-file", "requirements.txt", "requirements.in"],
+        ["./venv/bin/uv", "pip", "compile", "--universal", "--no-header", "--generate-hashes", "--python-version", python_version, "--output-file", "requirements.txt", "requirements.in"],
         timeout = 86400,  # use a very large timeout, i.e. one day, to avoid timeout errors
     )
     if result.return_code:
@@ -100,6 +103,7 @@ pinned_pip = repository_rule(
     implementation = _pinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
+        "python_version": attr.string(mandatory = True),
         "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
         "pin_cmd": attr.string(),
     },
@@ -109,6 +113,7 @@ unpinned_pip = repository_rule(
     implementation = _unpinned_pip_impl,
     attrs = {
         "packages": attr.string_dict(),
+        "python_version": attr.string(mandatory = True),
         "requirements_txt": attr.label(allow_single_file = True, mandatory = True),
         "python_interpreter_target": attr.label(allow_single_file = True, mandatory = True),
     },
