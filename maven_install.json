@@ -16,10 +16,10 @@
     "com.google.re2j:re2j": 1525409503,
     "com.google.s2a.proto.v2:s2a-proto": 898932763,
     "com.google.truth:truth": 1696781452,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -4336486,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 610023181,
     "com.squareup.okhttp:okhttp": -1467174407,
     "com.squareup.okio:okio": 795722926,
-    "commons-codec:commons-codec": 1341556274,
+    "commons-codec:commons-codec": 1352059378,
     "commons-io:commons-io": 1305681826,
     "commons-validator:commons-validator": -349173223,
     "dev.cel:common": -1788353211,
@@ -45,8 +45,8 @@
     "io.undertow:undertow-core": -1393993686,
     "junit:junit": -744267592,
     "org.apache.commons:commons-text": -1886494041,
-    "org.apache.tomcat.embed:tomcat-embed-core": 1791481153,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 272403747,
+    "org.apache.tomcat.embed:tomcat-embed-core": -15973310,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": -1535050716,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": 852823480,
     "org.mariadb.jdbc:mariadb-java-client": -1994863553,
@@ -61,7 +61,7 @@
     "com.google.api.grpc:proto-google-common-protos": 1051373054,
     "com.google.api:api-common": 2119626727,
     "com.google.auth:google-auth-library-credentials": -973011274,
-    "com.google.auth:google-auth-library-oauth2-http": -1378094622,
+    "com.google.auth:google-auth-library-oauth2-http": 1379349035,
     "com.google.auto.value:auto-value": 1110951021,
     "com.google.auto.value:auto-value-annotations": 641018093,
     "com.google.code.findbugs:jsr305": 870839855,
@@ -70,18 +70,18 @@
     "com.google.guava:failureaccess": 1715931538,
     "com.google.guava:guava": 448198837,
     "com.google.guava:listenablefuture": 1079558157,
-    "com.google.http-client:google-http-client": -245054028,
-    "com.google.http-client:google-http-client-gson": 921278631,
+    "com.google.http-client:google-http-client": 575824883,
+    "com.google.http-client:google-http-client-gson": -1013045550,
     "com.google.j2objc:j2objc-annotations": -1008747351,
     "com.google.protobuf:protobuf-java": -384462041,
     "com.google.re2j:re2j": -1688126233,
     "com.google.s2a.proto.v2:s2a-proto": -1425064913,
     "com.google.truth:truth": 734708584,
-    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": -1433356802,
+    "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": 1173943208,
     "com.squareup.okhttp:okhttp": 487177086,
     "com.squareup.okio:okio": -491168257,
     "commons-beanutils:commons-beanutils": 214854525,
-    "commons-codec:commons-codec": -1304300711,
+    "commons-codec:commons-codec": 894289123,
     "commons-collections:commons-collections": 7509648,
     "commons-digester:commons-digester": 781759527,
     "commons-io:commons-io": 1072619124,
@@ -135,15 +135,15 @@
     "net.bytebuddy:byte-buddy-agent": 2050201226,
     "org.apache.commons:commons-lang3": 1841935436,
     "org.apache.commons:commons-text": 869132518,
-    "org.apache.httpcomponents:httpclient": 582894296,
+    "org.apache.httpcomponents:httpclient": 1135120627,
     "org.apache.httpcomponents:httpcore": 67453319,
-    "org.apache.tomcat.embed:tomcat-embed-core": 2112148911,
-    "org.apache.tomcat.embed:tomcat-embed-el": -1542758805,
-    "org.apache.tomcat.embed:tomcat-embed-jasper": 1829074735,
-    "org.apache.tomcat:tomcat-annotations-api": -1525835628,
+    "org.apache.tomcat.embed:tomcat-embed-core": 335456611,
+    "org.apache.tomcat.embed:tomcat-embed-el": 1034701215,
+    "org.apache.tomcat.embed:tomcat-embed-jasper": -1862739437,
+    "org.apache.tomcat:tomcat-annotations-api": 1994216500,
     "org.checkerframework:checker-qual": 1860567376,
     "org.codehaus.mojo:animal-sniffer-annotations": 534312981,
-    "org.eclipse.jdt:ecj": 2046613878,
+    "org.eclipse.jdt:ecj": 1691839129,
     "org.hamcrest:hamcrest-core": 649657847,
     "org.jboss.logging:jboss-logging": -509243987,
     "org.jboss.threads:jboss-threads": 370119030,
@@ -291,9 +291,9 @@
     },
     "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer": {
       "shasums": {
-        "jar": "22f2d6d6beecae6270cbb916d366b66ec8fd7b0e61a977cfd27c6fb4ae1fb610"
+        "jar": "d58e71190e17767790a91f55584c62e6f744ad91dcc6aa411a858f3f225ecb8b"
       },
-      "version": "20260924.2"
+      "version": "20261011.1"
     },
     "com.squareup.okhttp:okhttp": {
       "shasums": {
@@ -315,9 +315,9 @@
     },
     "commons-codec:commons-codec": {
       "shasums": {
-        "jar": "78a5d732fbd715e2d10bd7150d2f8030bae57267f8aacc5c88f642cb6c2e5d3f"
+        "jar": "47504a3ce71d73a1b0af07675546b8d8c5af87f82ef12b6381f9eb3c17dd5a5b"
       },
-      "version": "1.22.1"
+      "version": "1.23.0"
     },
     "commons-collections:commons-collections": {
       "shasums": {
@@ -626,27 +626,27 @@
     },
     "org.apache.tomcat.embed:tomcat-embed-core": {
       "shasums": {
-        "jar": "062cf4191139c08aef678673039e41ed9d69b6c1b9b30b44820e5a83d0c09cb6"
+        "jar": "b71785ff101c0df501064b3e3b8c4a02e4f9cc3047a7fa686c41fc4edc2f0cb4"
       },
-      "version": "11.0.26"
+      "version": "11.0.27"
     },
     "org.apache.tomcat.embed:tomcat-embed-el": {
       "shasums": {
-        "jar": "a852c99fb5e4e174c08fb4b13cc6c7cd9de9332d46582020aaa219e95092a309"
+        "jar": "206d6c6b1b6ce67b1c9af9ed0f6f43b4dbbc26164dd47bb49b9aad1583191f33"
       },
-      "version": "11.0.26"
+      "version": "11.0.27"
     },
     "org.apache.tomcat.embed:tomcat-embed-jasper": {
       "shasums": {
-        "jar": "616d75459ed1649935bcb333bc7aea6b80035358ec641c08f3d8de0b969b5c0d"
+        "jar": "8b384869c53baecd0da74e13e56c0f7faf45355fc1a04263c8b582a533765f3f"
       },
-      "version": "11.0.26"
+      "version": "11.0.27"
     },
     "org.apache.tomcat:tomcat-annotations-api": {
       "shasums": {
-        "jar": "5a7b02d0d6bc0c2635f3da841b937485da719e855df4a81b0807e158ecf6caac"
+        "jar": "34e004c54a23b8486a8f0c1541a31594afab12f85fbc84243a3271c4ce1b420b"
       },
-      "version": "11.0.26"
+      "version": "11.0.27"
     },
     "org.checkerframework:checker-qual": {
       "shasums": {
@@ -662,9 +662,9 @@
     },
     "org.eclipse.jdt:ecj": {
       "shasums": {
-        "jar": "d0d43f8e2d7003e5efed612e2cbb5f01870043397d8f1bbe536fd9128f4fcbf7"
+        "jar": "74c93172475fee0cd4e6eefb44233516dd40525642da35d009146d97ea598229"
       },
-      "version": "3.46.0"
+      "version": "3.46.100"
     },
     "org.hamcrest:hamcrest-core": {
       "shasums": {
