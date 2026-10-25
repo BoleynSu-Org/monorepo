@@ -6,7 +6,7 @@ module(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.51.0',
+    version = '1.53.0',
 )
 
 bazel_dep(
@@ -21,7 +21,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.22',
+    version = '0.2.27',
 )
 
 bazel_dep(

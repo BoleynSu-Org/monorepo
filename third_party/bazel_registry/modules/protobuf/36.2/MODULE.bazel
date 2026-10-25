@@ -7,7 +7,7 @@ module(
 
 bazel_dep(
     name = 'apple_support',
-    version = '2.9.1',
+    version = '2.10.1',
     repo_name = 'build_bazel_apple_support',
 )
 
@@ -23,7 +23,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.22',
+    version = '0.2.27',
 )
 
 bazel_dep(
@@ -33,7 +33,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'bazel_features',
-    version = '1.51.0',
+    version = '1.53.0',
     repo_name = 'proto_bazel_features',
 )
 
@@ -49,12 +49,12 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_jvm_external',
-    version = '7.1',
+    version = '7.2',
 )
 
 bazel_dep(
     name = 'rules_kotlin',
-    version = '2.4.20',
+    version = '2.4.21',
 )
 
 bazel_dep(
@@ -69,7 +69,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '2.3.4',
+    version = '2.4.5',
 )
 
 bazel_dep(

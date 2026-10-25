@@ -25,20 +25,20 @@
     "dev.cel:common": -1788353211,
     "dev.cel:protobuf": -1889190299,
     "dev.cel:runtime": 482529582,
-    "io.netty:netty-buffer": 1648289272,
-    "io.netty:netty-codec-base": 1202692320,
-    "io.netty:netty-codec-http": -1193268201,
-    "io.netty:netty-codec-http2": 1126916671,
-    "io.netty:netty-codec-socks": -209786044,
-    "io.netty:netty-common": -172431581,
-    "io.netty:netty-handler": 1976738774,
-    "io.netty:netty-handler-proxy": -44206665,
-    "io.netty:netty-resolver": -1163970754,
+    "io.netty:netty-buffer": -1139126215,
+    "io.netty:netty-codec-base": -1584723167,
+    "io.netty:netty-codec-http": 314283608,
+    "io.netty:netty-codec-http2": -1660498816,
+    "io.netty:netty-codec-socks": 1297765765,
+    "io.netty:netty-common": 1335120228,
+    "io.netty:netty-handler": -810676713,
+    "io.netty:netty-handler-proxy": 1463345144,
+    "io.netty:netty-resolver": 343581055,
     "io.netty:netty-tcnative-boringssl-static": 1294848535,
     "io.netty:netty-tcnative-classes": 1285551407,
-    "io.netty:netty-transport": 1284261557,
-    "io.netty:netty-transport-native-epoll": -329402683,
-    "io.netty:netty-transport-native-unix-common": 514688630,
+    "io.netty:netty-transport": -1503153930,
+    "io.netty:netty-transport-native-epoll": 1178149126,
+    "io.netty:netty-transport-native-unix-common": 2022240439,
     "io.opencensus:opencensus-api": 2042364617,
     "io.opencensus:opencensus-contrib-grpc-metrics": 317094357,
     "io.perfmark:perfmark-api": 1019157794,
@@ -49,7 +49,7 @@
     "org.apache.tomcat.embed:tomcat-embed-jasper": -1535050716,
     "org.checkerframework:checker-qual": -819031361,
     "org.codehaus.mojo:animal-sniffer-annotations": 852823480,
-    "org.mariadb.jdbc:mariadb-java-client": -1994863553,
+    "org.mariadb.jdbc:mariadb-java-client": 1375792560,
     "org.mockito:mockito-core": -1925148636,
     "org.webjars:bootstrap": 1446595556,
     "org.webjars:jquery": 1753563134,
@@ -95,16 +95,16 @@
     "io.grpc:grpc-protobuf": 899946372,
     "io.grpc:grpc-protobuf-lite": -315380237,
     "io.grpc:grpc-stub": 1684362179,
-    "io.netty:netty-buffer": -2075998888,
-    "io.netty:netty-codec-base": 45810061,
-    "io.netty:netty-codec-compression": 1379768791,
-    "io.netty:netty-codec-http": 708426355,
-    "io.netty:netty-codec-http2": -724967326,
-    "io.netty:netty-codec-socks": 583830394,
-    "io.netty:netty-common": -1403977125,
-    "io.netty:netty-handler": -256212204,
-    "io.netty:netty-handler-proxy": 1458957356,
-    "io.netty:netty-resolver": 147992329,
+    "io.netty:netty-buffer": -294787265,
+    "io.netty:netty-codec-base": -709159638,
+    "io.netty:netty-codec-compression": 384728959,
+    "io.netty:netty-codec-http": -2010391696,
+    "io.netty:netty-codec-http2": 53926840,
+    "io.netty:netty-codec-socks": 285090378,
+    "io.netty:netty-common": 505449648,
+    "io.netty:netty-handler": -2123705569,
+    "io.netty:netty-handler-proxy": -1747226557,
+    "io.netty:netty-resolver": -501408686,
     "io.netty:netty-tcnative-boringssl-static": -1349019742,
     "io.netty:netty-tcnative-boringssl-static:jar:linux-aarch_64": -769641714,
     "io.netty:netty-tcnative-boringssl-static:jar:linux-x86_64": -1221034552,
@@ -112,10 +112,10 @@
     "io.netty:netty-tcnative-boringssl-static:jar:osx-x86_64": -2071906825,
     "io.netty:netty-tcnative-boringssl-static:jar:windows-x86_64": 1980640335,
     "io.netty:netty-tcnative-classes": 469062250,
-    "io.netty:netty-transport": -1075172341,
-    "io.netty:netty-transport-classes-epoll": 1263192017,
-    "io.netty:netty-transport-native-epoll:jar:linux-x86_64": 1791719168,
-    "io.netty:netty-transport-native-unix-common": 81535987,
+    "io.netty:netty-transport": 38456572,
+    "io.netty:netty-transport-classes-epoll": -1672653300,
+    "io.netty:netty-transport-native-epoll:jar:linux-x86_64": -2015632271,
+    "io.netty:netty-transport-native-unix-common": 451886035,
     "io.opencensus:opencensus-api": 279403283,
     "io.opencensus:opencensus-contrib-grpc-metrics": -168758619,
     "io.opencensus:opencensus-contrib-http-util": 1337962727,
@@ -153,7 +153,7 @@
     "org.jetbrains.kotlin:kotlin-stdlib-common": 1443260454,
     "org.jetbrains:annotations": 554168982,
     "org.jspecify:jspecify": 117231129,
-    "org.mariadb.jdbc:mariadb-java-client": -177396464,
+    "org.mariadb.jdbc:mariadb-java-client": 1013265298,
     "org.mockito:mockito-core": 2132958898,
     "org.objenesis:objenesis": 1475140909,
     "org.ow2.asm:asm": 611381606,
@@ -399,63 +399,63 @@
     },
     "io.netty:netty-buffer": {
       "shasums": {
-        "jar": "cc36ae9fbd0b03fe755eb4eb4424ca53b59cfd297d7fd47d49e5b1059beded6c"
+        "jar": "0d249178ec0204b35a6ad3e5ac8a6c2ecb3eb496c6cdae40b8eca4fa3cb6a0c7"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-codec-base": {
       "shasums": {
-        "jar": "feb410225938d9970de6b624a0c031d079804fa5cc5e1ec6e9298f16db5998a7"
+        "jar": "3b92bc3b7d231fa6f4889b2b9281cae6b634428b8121fb1b9b5fccba1543d352"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-codec-compression": {
       "shasums": {
-        "jar": "13c8565414dd2115281303ef4ad1f7cc69bd7771d8d12c7d2fb31307dff26d11"
+        "jar": "425b287a1f36986a5c8edd76379a49decdf99d284f3454f3fa607a073bfb2c18"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-codec-http": {
       "shasums": {
-        "jar": "0d16f981de8d0d304a2ab1a81f0a674892089fbaa8a583100aebb4a5b00456ec"
+        "jar": "a5bde91ac82ab90579df6559c0bd7ea6ae37460e3f18116ab4122194283b3669"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-codec-http2": {
       "shasums": {
-        "jar": "fe1ffc7ed6bfb40f91c4e265fe76e3be7f9049deef0e8cf5a992420e4f02b542"
+        "jar": "450af97424cf58d2d72ad4d476d9e290f2fdf69fa181c289a6e6dd176bb86a7b"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-codec-socks": {
       "shasums": {
-        "jar": "e5230b4c467755bb570c846c8e3c0ffadcb1b568c1cd9a3a4ee946734baae54d"
+        "jar": "6b5760cc512cee1f7515e25010892471f3995045f84cd6c1d1b6e6cee534733c"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-common": {
       "shasums": {
-        "jar": "9825ee68a0dc4cd2b53e2f532502401b2211bad9b77e8b04882d9e64487283ff"
+        "jar": "502aae2a6680e9bca3558a3fa098f06dc4d87340b8b714e925a6d690871c092a"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-handler": {
       "shasums": {
-        "jar": "a259ca496da05ac1981f95cd856211f894a328056a6129e9cd70dbbd5df401f7"
+        "jar": "4df11c7520b556c5e2c84b939182699d48fcbb09e97a6bb5e1c0b6835227d126"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-handler-proxy": {
       "shasums": {
-        "jar": "c53706ebaffd2fcef17b5f675b81eab4be13a714886cb4b2a7d0b73275cd39fe"
+        "jar": "94089bea6ba6f3248725f2bf233aa2bc70ac1547c21b9bdfc7548f710a845aa0"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-resolver": {
       "shasums": {
-        "jar": "c9eca6a99036485cf1d186b4a6a595b0a54c53808319ee03924270eae04c32bb"
+        "jar": "7a4b599b9c0c29a505d3b7311f142df883fb27d0f67495a7cbaf533b0e456623"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-tcnative-boringssl-static": {
       "shasums": {
@@ -476,27 +476,27 @@
     },
     "io.netty:netty-transport": {
       "shasums": {
-        "jar": "cfa3f654caff906653385f4b7ddaa539d795b78f5711a622482b17d2b73484c0"
+        "jar": "d2409ce3a735cbab4188d0ea5d82abed823a6a07a8389f49af4a9e1243a562bc"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-transport-classes-epoll": {
       "shasums": {
-        "jar": "9f2b53210db9c8d24e787ed43f3896aaf30d686ed270c7afbb29ab6330c6aa23"
+        "jar": "4e21d8a2e3429d9de967a716d58119f57585786bd2f7213bf5b27770425269de"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-transport-native-epoll": {
       "shasums": {
-        "linux-x86_64": "2e00548e731948881d0c73ee79d2ead759254e750929406a1d595484758f0267"
+        "linux-x86_64": "c295b1d7f46e3c7375c93fa4c8abcc3944398c5e4eb53e31587cbbf0bf559d4f"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.netty:netty-transport-native-unix-common": {
       "shasums": {
-        "jar": "41ca8fe192083d17917be7ddcecded4da4fc1db1d1656d03d0bcb14e2f431155"
+        "jar": "e01aa467b9104de54a57c08c290f70b22e53ec97cf5583c87c112170ef5832cc"
       },
-      "version": "4.2.16.Final"
+      "version": "4.2.17.Final"
     },
     "io.opencensus:opencensus-api": {
       "shasums": {
@@ -722,9 +722,9 @@
     },
     "org.mariadb.jdbc:mariadb-java-client": {
       "shasums": {
-        "jar": "919b8c1c771d9ee3465811462f242c9543ab401e140c64988ddbf1d8abcb18b2"
+        "jar": "bb1211dac59ef4c54b7a8ad4755a913d36d2e81b34ca1d4cb9ffa9d5633df01f"
       },
-      "version": "3.5.10"
+      "version": "4.0.0"
     },
     "org.mockito:mockito-core": {
       "shasums": {
@@ -1988,7 +1988,6 @@
       "org.mariadb.jdbc.message",
       "org.mariadb.jdbc.message.client",
       "org.mariadb.jdbc.message.server",
-      "org.mariadb.jdbc.message.server.util",
       "org.mariadb.jdbc.plugin",
       "org.mariadb.jdbc.plugin.array",
       "org.mariadb.jdbc.plugin.authentication",
@@ -2001,7 +2000,6 @@
       "org.mariadb.jdbc.plugin.authentication.standard.ed25519.spec",
       "org.mariadb.jdbc.plugin.codec",
       "org.mariadb.jdbc.plugin.credential",
-      "org.mariadb.jdbc.plugin.credential.aws",
       "org.mariadb.jdbc.plugin.credential.env",
       "org.mariadb.jdbc.plugin.credential.system",
       "org.mariadb.jdbc.plugin.tls",
@@ -2455,6 +2453,7 @@
         "org.mariadb.jdbc.plugin.codec.PolygonCodec",
         "org.mariadb.jdbc.plugin.codec.ReaderCodec",
         "org.mariadb.jdbc.plugin.codec.ShortCodec",
+        "org.mariadb.jdbc.plugin.codec.SqlXmlCodec",
         "org.mariadb.jdbc.plugin.codec.StreamCodec",
         "org.mariadb.jdbc.plugin.codec.StringCodec",
         "org.mariadb.jdbc.plugin.codec.TimeCodec",
@@ -2464,7 +2463,6 @@
         "org.mariadb.jdbc.plugin.codec.ZonedDateTimeCodec"
       ],
       "org.mariadb.jdbc.plugin.CredentialPlugin": [
-        "org.mariadb.jdbc.plugin.credential.aws.AwsIamCredentialPlugin",
         "org.mariadb.jdbc.plugin.credential.env.EnvCredentialPlugin",
         "org.mariadb.jdbc.plugin.credential.system.PropertiesCredentialPlugin"
       ],

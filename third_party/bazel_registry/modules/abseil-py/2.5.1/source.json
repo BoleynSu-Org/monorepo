@@ -1,0 +1,5 @@
+{
+  "url": "https://github.com/abseil/abseil-py/archive/refs/tags/v2.5.1.tar.gz",
+  "integrity": "sha256-+0i2+Z428zvE12y8Xrtkp8dJoMJA1SdEN3AqyQbfoI0=",
+  "strip_prefix": "abseil-py-2.5.1"
+}

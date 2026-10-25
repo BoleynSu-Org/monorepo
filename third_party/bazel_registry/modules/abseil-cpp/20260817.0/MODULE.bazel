@@ -5,7 +5,7 @@ module(
 
 bazel_dep(
     name = 'rules_cc',
-    version = '0.2.22',
+    version = '0.2.27',
 )
 
 bazel_dep(
@@ -20,6 +20,6 @@ bazel_dep(
 
 bazel_dep(
     name = 'gloop',
-    version = '20260828.0',
+    version = '20261006.0',
     repo_name = 'do_not_use_for_gloop_visibility_only',
 )

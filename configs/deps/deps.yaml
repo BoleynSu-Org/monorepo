@@ -5,12 +5,12 @@ metadata:
 bazel_deps:
 - name: rules_cc
   type: http_archive
-  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.22.tar.gz
-  sha256: 81c10a95a5c22d838276ee90d712635d6042419fdfca5ef88328226b6321e53b
-  version: 0.2.22
-  strip_prefix: rules_cc-0.2.22
-  updated_on: '2026-07-08'
-  module_version: 0.2.22
+  url: https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.2.27.tar.gz
+  sha256: 6bcf1b46d9e629cbe4c96d7bfc56f61034c2193b7b16001201282ea50bef5d91
+  version: 0.2.27
+  strip_prefix: rules_cc-0.2.27
+  updated_on: '2026-10-25'
+  module_version: 0.2.27
 - name: rules_java
   type: http_archive
   sha256: 6990c7b03640611b1bedb1f33a5a9df29fde8985d4469a5b0473db98fd66197b
@@ -21,12 +21,12 @@ bazel_deps:
   module_version: 9.9.0
 - name: rules_python
   type: http_archive
-  sha256: a535712f12ba25253d73975ba2932994b5e53773f94b58fb3f8fa7827de8b6b7
-  strip_prefix: rules_python-2.3.4
-  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.3.4.tar.gz
-  updated_on: '2026-09-23'
-  version: 2.3.4
-  module_version: 2.3.4
+  sha256: 05088402fa356af097064dbccd7082a061171ef39fbd748fab946e9775f46a16
+  strip_prefix: rules_python-2.4.5
+  url: https://github.com/bazelbuild/rules_python/archive/refs/tags/2.4.5.tar.gz
+  updated_on: '2026-10-25'
+  version: 2.4.5
+  module_version: 2.4.5
 - name: rules_proto
   type: http_archive
   sha256: 14a225870ab4e91869652cfd69ef2028277fc1dc4910d65d353b62d6e0ae21f4
@@ -40,12 +40,12 @@ bazel_deps:
 - name: io_bazel_rules_go
   module_name: rules_go
   type: http_archive
-  sha256: f34d10e44e06fe7cca7709dbcf4a0a1f1f2f99ae666a4e88442d6e3e533b9c5a
-  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.63.0.tar.gz
-  updated_on: '2026-08-18'
-  version: v0.63.0
-  strip_prefix: rules_go-0.63.0
-  module_version: 0.63.0
+  sha256: ef9e298a9a9d696fc23843b7158744bffdb594e0b84ef6d91ee3f40eed60d8f2
+  url: https://github.com/bazelbuild/rules_go/archive/refs/tags/v0.65.0.tar.gz
+  updated_on: '2026-10-25'
+  version: v0.65.0
+  strip_prefix: rules_go-0.65.0
+  module_version: 0.65.0
 - name: rules_oci
   type: http_archive
   url: https://github.com/bazel-contrib/rules_oci/archive/refs/tags/v2.3.3.tar.gz
@@ -64,12 +64,12 @@ bazel_deps:
   module_version: 1.9.2
 - name: rules_jvm_external
   type: http_archive
-  sha256: 6cb84bb1d5230ba9d5d2a873dfd68076d9d80370d587ef19098a882fd72aee19
-  strip_prefix: rules_jvm_external-7.1
-  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/7.1.tar.gz
-  updated_on: '2026-07-23'
-  version: '7.1'
-  module_version: '7.1'
+  sha256: bc2b956931a985ea71f120bd2bebfe3834ea5a49549ee5fe59ce3894cb31de95
+  strip_prefix: rules_jvm_external-7.2
+  url: https://github.com/bazelbuild/rules_jvm_external/archive/refs/tags/7.2.tar.gz
+  updated_on: '2026-10-25'
+  version: '7.2'
+  module_version: '7.2'
 - name: rules_pkg
   type: http_archive
   url: https://github.com/bazelbuild/rules_pkg/archive/refs/tags/1.3.tar.gz
@@ -81,12 +81,12 @@ bazel_deps:
 - name: io_grpc_grpc_java
   module_name: grpc-java
   type: http_archive
-  sha256: 4ac03e3244da9565f13f62a24e87f57ee13baa7657033db35ea086e16fc32869
-  strip_prefix: grpc-java-1.84.0
-  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.84.0.tar.gz
-  updated_on: '2026-09-11'
-  version: v1.84.0
-  module_version: 1.84.0
+  sha256: 67436b0b6666cd928dc6b7f32c738fce63c2b1b98984dbf351049af5203a853c
+  strip_prefix: grpc-java-1.85.1
+  url: https://github.com/grpc/grpc-java/archive/refs/tags/v1.85.1.tar.gz
+  updated_on: '2026-10-25'
+  version: v1.85.1
+  module_version: 1.85.1
 - name: bazel_gazelle
   module_name: gazelle
   type: http_archive
@@ -116,11 +116,11 @@ bazel_deps:
   module_version: 1.12.0
 - name: bazel_linux_x86_64
   type: http_archive
-  version: 9.2.0
-  url: https://github.com/bazelbuild/bazel/releases/download/9.2.0/bazel-9.2.0-installer-linux-x86_64.sh
+  version: 9.3.1
+  url: https://github.com/bazelbuild/bazel/releases/download/9.3.1/bazel-9.3.1-installer-linux-x86_64.sh
   archive_type: zip
-  sha256: e84888a1e7f533287a28f6a4a96e56bce422b3708ba852ea786336e609bbe0d3
-  updated_on: '2026-07-14'
+  sha256: 7a72ac7791e93966edd347722af10a79102c8cacc73c662ac479c93b24633bb3
+  updated_on: '2026-10-25'
   executable: true
   override_updater:
   - type: deps_updater
@@ -136,7 +136,7 @@ bazel_deps:
     - name: fields
       value: [sha256]
   build_file_content: exports_files(glob(["**"]))
-  module_version: 9.2.0
+  module_version: 9.3.1
 - name: rules_license
   type: http_archive
   sha256: 75759939aef3aeb726e801417a883deefadadb7fea49946a1f5bb74a5162e81e
@@ -175,33 +175,33 @@ bazel_deps:
   module_version: 1.37.1
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20260929.031619-20260929.084256
+  version: 43-20261020.142150-20261021.041132
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 0a941c4a97b82d9feef488dddc3498805ab54cc228e27ab37cf109d67b54e0e8
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20260929.031619-20260929.084256/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-09-29'
+  sha256: 863b7946fc8c260d72f0741843810c36a2c4599ec318e0fc4d9d6237b6592ddd
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20261020.142150-20261021.041132/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-10-25'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20260929.31619.20260929.84256
+  module_version: 43.20261020.142150.20261021.41132
 - name: clang_linux_x86_64
   type: http_archive
-  version: 23.1.2-43-20260923.061921-20260923.115414
+  version: 23.1.4-43-20261021.041132-20261021.103208
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 3d9db98d6c1023ca61df6ab3d4f762a887091c59ec220dd18c9ec4cf03720017
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.2-43-20260923.061921-20260923.115414/clang_linux_x86_64.tar.gz
-  updated_on: '2026-09-26'
-  module_version: 23.1.2.43.20260923.61921.20260923.115414
+  sha256: 710d300d11255e9324df3b3cf89663e6078a91832d22762712628ecc5e1141fa
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/clang/23.1.4-43-20261021.041132-20261021.103208/clang_linux_x86_64.tar.gz
+  updated_on: '2026-10-25'
+  module_version: 23.1.4.43.20261021.41132.20261021.103208
 - name: bazel_features
   type: http_archive
-  version: v1.51.0
-  sha256: 5450bfb2c8b4bc961c75368838f86156f563cc9adef1be7d504fc5619d54daab
-  strip_prefix: bazel_features-1.51.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.51.0/bazel_features-v1.51.0.tar.gz
-  updated_on: '2026-07-06'
+  version: v1.53.0
+  sha256: 99232c34de353633c384188afa372d86a9dedbd19c4b46f99ac88a1ff11bb299
+  strip_prefix: bazel_features-1.53.0
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.53.0/bazel_features-v1.53.0.tar.gz
+  updated_on: '2026-10-25'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.51.0
+  module_version: 1.53.0
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
@@ -272,10 +272,10 @@ bazel_deps:
   module_version: 1.3.2
 - name: apple_support
   type: http_archive
-  url: https://github.com/bazelbuild/apple_support/releases/download/2.9.1/apple_support.2.9.1.tar.gz
-  sha256: 3d9b4a73fd3d58dd3303e8cd95497dc705407aacdd415faaf60b22de850a75c6
-  version: 2.9.1
-  updated_on: '2026-09-26'
+  url: https://github.com/bazelbuild/apple_support/releases/download/2.10.1/apple_support.2.10.1.tar.gz
+  sha256: 114c1558db9b5683480969281a6dd2446989451200441390b67d8820ac2b04c3
+  version: 2.10.1
+  updated_on: '2026-10-25'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -290,7 +290,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.9.1
+  module_version: 2.10.1
 - name: stardoc
   type: http_archive
   url: https://github.com/bazelbuild/stardoc/releases/download/0.8.1/stardoc-0.8.1.tar.gz
@@ -314,10 +314,10 @@ bazel_deps:
   module_version: 0.8.1
 - name: rules_kotlin
   type: http_archive
-  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.4.20/rules_kotlin-v2.4.20.tar.gz
-  sha256: 1bbc03fc47841964365f18156489c4e7ba481abbecf007a13430653e8d360d66
-  version: v2.4.20
-  updated_on: '2026-09-20'
+  url: https://github.com/bazelbuild/rules_kotlin/releases/download/v2.4.21/rules_kotlin-v2.4.21.tar.gz
+  sha256: aa3255452dbe9b52da2ba7787f0865f107805885109f39c3d5bafc21a521bcb6
+  version: v2.4.21
+  updated_on: '2026-10-25'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -332,7 +332,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 2.4.20
+  module_version: 2.4.21
 - name: aspect_bazel_lib
   type: http_archive
   version: v2.22.5
@@ -380,12 +380,12 @@ bazel_deps:
   module_version: 10.1.0
 - name: rules_android
   type: http_archive
-  version: v0.7.3
-  sha256: c4cd258d3761eff08ee044c0252179bb6ee8af8ab24f7dafb73b280eeda98243
-  strip_prefix: rules_android-0.7.3
-  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.7.3.tar.gz
-  updated_on: '2026-06-15'
-  module_version: 0.7.3
+  version: v0.8.0
+  sha256: ebc0b6e0b9461281310fa3038b76d7ed5b5ed929eca3dd15a075dae3664f5cfa
+  strip_prefix: rules_android-0.8.0
+  url: https://github.com/bazelbuild/rules_android/archive/refs/tags/v0.8.0.tar.gz
+  updated_on: '2026-10-25'
+  module_version: 0.8.0
 - name: rules_robolectric
   type: http_archive
   version: '4.17'
@@ -397,12 +397,12 @@ bazel_deps:
 - name: io_abseil_py
   module_name: abseil-py
   type: http_archive
-  version: v2.5.0
-  sha256: f9f336f2c815198bf4d0c9b949c7147bdff7449b97b26bd5275f2019f5861401
-  strip_prefix: abseil-py-2.5.0
-  url: https://github.com/abseil/abseil-py/archive/refs/tags/v2.5.0.tar.gz
-  updated_on: '2026-07-03'
-  module_version: 2.5.0
+  version: v2.5.1
+  sha256: fb48b6f99e36f33bc4d76cbc5ebb64a7c749a0c240d5274437702ac906dfa08d
+  strip_prefix: abseil-py-2.5.1
+  url: https://github.com/abseil/abseil-py/archive/refs/tags/v2.5.1.tar.gz
+  updated_on: '2026-10-25'
+  module_version: 2.5.1
   module_file_content: |
     module(name = "abseil-py")
 
@@ -428,12 +428,12 @@ bazel_deps:
   module_version: '20260817.0'
 - name: gloop
   type: http_archive
-  version: '20260828.0'
-  sha256: 1d983c6dafae36cd9d8eb5826d3566d6e6d6ce23eb23d8d855922177c19f1487
-  strip_prefix: gloop-20260828.0
-  url: https://github.com/abseil/gloop/archive/refs/tags/20260828.0.tar.gz
-  updated_on: '2026-09-11'
-  module_version: '20260828.0'
+  version: '20261006.0'
+  sha256: 92b0f56d7b018ab1dda2fa5cb33808e343c04a36669b3a891f3847fd7710828f
+  strip_prefix: gloop-20261006.0
+  url: https://github.com/abseil/gloop/archive/refs/tags/20261006.0.tar.gz
+  updated_on: '2026-10-25'
+  module_version: '20261006.0'
 - name: rules_rust
   type: http_archive
   version: 0.70.0
@@ -501,12 +501,12 @@ bazel_deps:
   module_version: 1.8.2
 - name: jq.bzl
   type: http_archive
-  version: v0.7.0
-  sha256: 3751ea4bf2b454cdace6d19ae830f6c9176c81998f81dd89a57c4bd584eeaa9d
-  strip_prefix: jq.bzl-0.7.0
-  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.7.0/jq.bzl-v0.7.0.tar.gz
-  updated_on: '2026-09-29'
-  module_version: 0.7.0
+  version: v0.7.2
+  sha256: c169a9e78d8485567753ceec9db1e76e747e1a3a4c157887a09536754b9ad547
+  strip_prefix: jq.bzl-0.7.2
+  url: https://github.com/bazel-contrib/jq.bzl/releases/download/v0.7.2/jq.bzl-v0.7.2.tar.gz
+  updated_on: '2026-10-25'
+  module_version: 0.7.2
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -653,9 +653,9 @@ maven_deps:
   updated_on: '2026-04-24'
   module_version: 2.22.0
 - name: org.mariadb.jdbc:mariadb-java-client
-  version: 3.5.10
-  updated_on: '2026-07-30'
-  module_version: 3.5.10
+  version: 4.0.0
+  updated_on: '2026-10-25'
+  module_version: 4.0.0
 - name: org.apache.tomcat.embed:tomcat-embed-core
   version: 11.0.27
   updated_on: '2026-10-19'
@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20261011.092532
+  version: 44-20261025.080716
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20261011.092532
-  digest: sha256:eea41306d3a56cd256e1dba892c6bdf2e1063493ba6118848e90f475c9ba1987
-  updated_on: '2026-10-19'
+  tag: 44-20261025.080716
+  digest: sha256:6e463f9ecf7bb29e5d08190525a9ebdd30f61e3529629ab608304390c4bf49d5
+  updated_on: '2026-10-25'
   platforms:
   - linux/amd64
-  module_version: 44.20261011.92532
+  module_version: 44.20261025.80716
 - name: io_docker_index_library_mariadb
   version: 11.8.9
   version_regex: (11\.8\.[0-9]+)
@@ -731,8 +731,8 @@ container_deps:
   registry: index.docker.io
   repository: library/adminer
   tag: 6.1.2
-  digest: sha256:49a7d30e71de97fb18933ffe7d46cc2b343c49fd7a63a7791c8be2548eb65115
-  updated_on: '2026-10-19'
+  digest: sha256:251295c1cd51d3889f1c42ffa4864b24eeab51f0caf395cfe5bf4726c5ec9a2a
+  updated_on: '2026-10-25'
   platforms:
   - linux/amd64
   - linux/arm/v6
@@ -756,40 +756,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20261009.190905
+  version: 44-20261020.142150
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20261009.190905
-  digest: sha256:759b05d311734b735090e5858a2b323fea66a586ecdc6ef410e78192e63baaf7
-  updated_on: '2026-10-19'
+  tag: 44-20261020.142150
+  digest: sha256:6d204c53344c134022c0a7b07c6cfdb161d2809a185a3f397e884ca171bd0c0a
+  updated_on: '2026-10-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20261009.190905
+  module_version: 44.20261020.142150
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20261009.190905
+  version: 44-20261020.142150
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20261009.190905
-  digest: sha256:46f748a2996542ce9fef4fd3a6f336300830412cec182bdf5eadd06e025379f6
-  updated_on: '2026-10-19'
+  tag: 44-20261020.142150
+  digest: sha256:fd93788a449a54a937d80ccf6f69f4a478d0ffa7430061d7e5ec0904d1bbe561
+  updated_on: '2026-10-25'
   platforms:
   - linux/amd64
-  module_version: 44.20261009.190905
+  module_version: 44.20261020.142150
 - name: io_quay_boleynsu_base
-  version: 44-20261009.190905
+  version: 44-20261020.142150
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
-  digest: sha256:46b6fa405b329838e2f7baf1cf6718d030aebc0149b37f943827d83c34dceefe
-  tag: 44-20261009.190905
-  updated_on: '2026-10-19'
+  digest: sha256:bd7ac4bb1c64c1156203e83fc7f756a9c9ed3e9a4e9812e75fe5606ae272b902
+  tag: 44-20261020.142150
+  updated_on: '2026-10-25'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20261009.190905
+  module_version: 44.20261020.142150
 
 toolchain_deps:
 - name: c
@@ -812,9 +812,9 @@ toolchain_deps:
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://www.python.org/api/v2/downloads/release/?format=json | jq -r '[ .[] | select(.pre_release == false) | .name | split(" ")[1] | select(. != "install") | split(".") | map(tonumber) ] | max | .[:2] | join(".")')
   module_version: '3.14'
 - name: golang
-  version: 1.27.1
-  updated_on: '2026-09-03'
+  version: 1.27.3
+  updated_on: '2026-10-25'
   override_updater:
   - type: shell
     cmd: echo DEPS_UPDATER_version=$(curl -sfL https://go.dev/dl/?mode=json | jq -r '[ .[] | select(.stable == true) ] | first | .version | ltrimstr("go")')
-  module_version: 1.27.1
+  module_version: 1.27.3
