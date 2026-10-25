@@ -1,0 +1,19 @@
+module(
+    name = 'mboworks_bzl',
+    version = '0.8.0',
+)
+
+bazel_dep(
+    name = 'bazel_skylib',
+    version = '1.9.2',
+)
+
+fixture_repository = use_repo_rule(
+    '//bzl/runfiles/tests:test_repository.bzl',
+    'fixture_repository',
+)
+
+fixture_repository(
+    name = 'runfiles_fixture',
+    dev_dependency = True,
+)

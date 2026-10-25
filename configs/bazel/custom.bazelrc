@@ -21,6 +21,8 @@ common --@io_bazel_rules_go//go/config:static=true
 # @rules_python
 common --@rules_python//python/config_settings:bootstrap_impl=script
 common --@rules_python//python/config_settings:venvs_use_declare_symlink=no
+## See https://github.com/bazelbuild/bazel/issues/10076
+common --incompatible_default_to_explicit_init_py=true
 
 # Credential Helpers
 ## See https://github.com/bazelbuild/proposals/blob/124b188252d2b4da516898724e1ce6227a1aedaf/designs/2022-06-07-bazel-credential-helpers.md

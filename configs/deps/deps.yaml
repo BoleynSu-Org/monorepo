@@ -108,12 +108,12 @@ bazel_deps:
   module_version: 0.8.2
 - name: toolchains_llvm
   type: http_archive
-  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.8.0.tar.gz
-  sha256: 0c133fcbdc4c8162d6032ab92d4644ff86dbd90d776365d04c7c8e13acd3279c
-  strip_prefix: toolchains_llvm-1.8.0
-  updated_on: '2026-06-27'
-  version: v1.8.0
-  module_version: 1.8.0
+  url: https://github.com/bazel-contrib/toolchains_llvm/archive/refs/tags/v1.12.0.tar.gz
+  sha256: fa9145d89203a564dd6b8cb547f8a136f4376815d5a81dd3d7c2495fa908faba
+  strip_prefix: toolchains_llvm-1.12.0
+  updated_on: '2026-10-25'
+  version: v1.12.0
+  module_version: 1.12.0
 - name: bazel_linux_x86_64
   type: http_archive
   version: 9.2.0
@@ -588,13 +588,13 @@ bazel_deps:
     - name: fields
       value: [sha256]
   module_version: 0.0.10
-- name: helly25_bzl
+- name: mboworks_bzl
   type: http_archive
-  version: 0.5.0
-  sha256: 5f817f3f032ed377675564716bd0c59c6c7e5bce5857ce1004112fa34c9b3394
-  strip_prefix: bzl-0.5.0
-  url: https://github.com/helly25/bzl/releases/download/0.5.0/bzl-0.5.0.tar.gz
-  updated_on: '2026-06-27'
+  version: 0.8.0
+  sha256: 1a1494423bd40de09f01d9a06fd6f811d49a3a095970bfae82c9280191ab5f90
+  strip_prefix: bzl-0.8.0
+  url: https://github.com/mboworks/bzl/releases/download/0.8.0/bzl-0.8.0.tar.gz
+  updated_on: '2026-10-25'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -603,14 +603,14 @@ bazel_deps:
       value: [version]
   - type: shell
     cmd: |
-      echo DEPS_UPDATER_url=https://github.com/helly25/bzl/releases/download/${DEPS_UPDATER_version}/bzl-${DEPS_UPDATER_version}.tar.gz
+      echo DEPS_UPDATER_url=https://github.com/mboworks/bzl/releases/download/${DEPS_UPDATER_version}/bzl-${DEPS_UPDATER_version}.tar.gz
       echo DEPS_UPDATER_strip_prefix=bzl-${DEPS_UPDATER_version}
   - type: deps_updater
     name: bazel_deps
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 0.5.0
+  module_version: 0.8.0
 - name: toml.bzl
   type: http_archive
   version: v0.5.0
@@ -642,7 +642,7 @@ pip_deps:
   module_version: 0.19.1
 - name: PyYAML
   version: 6.0.3
-  updated_on: '2025-09-28'
+  updated_on: '2026-10-25'
   module_version: 6.0.3
 
 maven_deps:
