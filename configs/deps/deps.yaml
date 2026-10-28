@@ -197,11 +197,11 @@ bazel_deps:
   module_version: 23.1.4.43.20261021.41132.20261021.103208
 - name: bazel_features
   type: http_archive
-  version: v1.53.0
-  sha256: 99232c34de353633c384188afa372d86a9dedbd19c4b46f99ac88a1ff11bb299
-  strip_prefix: bazel_features-1.53.0
-  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.53.0/bazel_features-v1.53.0.tar.gz
-  updated_on: '2026-10-25'
+  version: v1.54.1
+  sha256: 790b660c9cb35adb91071a4f6e62d29988a7383cbb948b39aa7c0065eea1e035
+  strip_prefix: bazel_features-1.54.1
+  url: https://github.com/bazel-contrib/bazel_features/releases/download/v1.54.1/bazel_features-v1.54.1.tar.gz
+  updated_on: '2026-10-28'
   override_updater:
   - type: deps_updater
     name: bazel_deps
@@ -216,7 +216,7 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256, strip_prefix]
-  module_version: 1.53.0
+  module_version: 1.54.1
 - name: com_google_protobuf
   module_name: protobuf
   type: http_archive
