@@ -156,10 +156,10 @@ bazel_deps:
   module_version: 1.1.0
 - name: kubectl_linux_amd64
   type: http_file
-  url: https://dl.k8s.io/release/v1.37.1/bin/linux/amd64/kubectl
-  sha256: 65691ff77eb6fa44c908b77a1082c9f092c3b9733b5cefabec0d1104890e21a8
-  version: v1.37.1
-  updated_on: '2026-09-23'
+  url: https://dl.k8s.io/release/v1.37.2/bin/linux/amd64/kubectl
+  sha256: c04487523e7aa7d1493f7808174c899db93d7a9cf57531420cd76b9bd415f8f4
+  version: v1.37.2
+  updated_on: '2026-10-28'
   executable: true
   override_updater:
   - type: shell
@@ -172,21 +172,21 @@ bazel_deps:
     extra_args:
     - name: fields
       value: [sha256]
-  module_version: 1.37.1
+  module_version: 1.37.2
 - name: sysroot_linux_x86_64
   type: http_archive
-  version: 43-20261020.142150-20261021.041132
+  version: 43-20261027.051859-20261028.042643
   version_regex: ([0-9.]*)-([0-9.]*)-([0-9.]*)
-  sha256: 863b7946fc8c260d72f0741843810c36a2c4599ec318e0fc4d9d6237b6592ddd
-  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20261020.142150-20261021.041132/sysroot_linux_x86_64.tar.gz
-  updated_on: '2026-10-25'
+  sha256: 6816a1d5dd662e20ebfa05d59721b810a1366179078c1c40863f29544cf19fbd
+  url: https://public-artifacts.storage.boleyn.su/prebuilt/sysroot/43-20261027.051859-20261028.042643/sysroot_linux_x86_64.tar.gz
+  updated_on: '2026-10-28'
   build_file_content: |
     filegroup(
         name = "sysroot",
         srcs = glob(["**"], exclude = ["etc/shadow", "etc/gshadow"]),
         visibility = ["//visibility:public"],
     )
-  module_version: 43.20261020.142150.20261021.41132
+  module_version: 43.20261027.51859.20261028.42643
 - name: clang_linux_x86_64
   type: http_archive
   version: 23.1.4-43-20261021.041132-20261021.103208
@@ -701,16 +701,16 @@ maven_deps:
 
 container_deps:
 - name: io_quay_boleynsu_ci_runner
-  version: 44-20261027.051859
+  version: 44-20261028.042643
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/ci-runner
-  tag: 44-20261027.051859
-  digest: sha256:b5db1699809ff306d9fa45e9c5b3641e45f2a96772ecccf9b8900eb018d13c11
+  tag: 44-20261028.042643
+  digest: sha256:ca156449b30a34ebcbd39c61d670cc4e13afb2b694a7c20b3f61172cf80824da
   updated_on: '2026-10-28'
   platforms:
   - linux/amd64
-  module_version: 44.20261027.51859
+  module_version: 44.20261028.42643
 - name: io_docker_index_library_mariadb
   version: 11.8.9
   version_regex: (11\.8\.[0-9]+)
@@ -755,40 +755,40 @@ container_deps:
   - linux/arm/v7
   module_version: 2.63.23
 - name: io_quay_boleynsu_oj_c99runner
-  version: 44-20261027.051859
+  version: 44-20261028.042643
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/oj-c99runner
-  tag: 44-20261027.051859
+  tag: 44-20261028.042643
   digest: sha256:95ddcac40f053cec3ac0f9e6a500bae3bdb999fe1d64d12ff5e78b7ac466dbcb
   updated_on: '2026-10-28'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20261027.51859
+  module_version: 44.20261028.42643
 - name: io_quay_boleynsu_rbe_fedora
-  version: 44-20261027.051859
+  version: 44-20261028.042643
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/rbe-fedora
-  tag: 44-20261027.051859
+  tag: 44-20261028.042643
   digest: sha256:5735499795835a7550ad3e1f994f8ab39e1ba6b9e64e2b32c834ba6906f0b835
   updated_on: '2026-10-28'
   platforms:
   - linux/amd64
-  module_version: 44.20261027.51859
+  module_version: 44.20261028.42643
 - name: io_quay_boleynsu_base
-  version: 44-20261027.051859
+  version: 44-20261028.042643
   version_regex: ([0-9.]*)-([0-9.]*)
   registry: quay.io
   repository: boleynsu/base
   digest: sha256:5818b42b611dd06f9a1dfeb6f740d2bf28cd45e07d9e91d2c74fd0dfd83d8fa5
-  tag: 44-20261027.051859
+  tag: 44-20261028.042643
   updated_on: '2026-10-28'
   platforms:
   - linux/amd64
   - linux/arm64/v8
-  module_version: 44.20261027.51859
+  module_version: 44.20261028.42643
 
 toolchain_deps:
 - name: c
