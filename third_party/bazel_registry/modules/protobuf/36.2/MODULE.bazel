@@ -69,7 +69,7 @@ bazel_dep(
 
 bazel_dep(
     name = 'rules_python',
-    version = '2.4.5',
+    version = '2.4.6',
 )
 
 bazel_dep(
