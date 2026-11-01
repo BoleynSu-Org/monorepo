@@ -691,9 +691,9 @@ maven_deps:
   updated_on: '2025-10-25'
   module_version: 2.0.1
 - name: com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer
-  version: '20261011.1'
-  updated_on: '2026-10-19'
-  module_version: '20261011.1'
+  version: '20261031.1'
+  updated_on: '2026-11-01'
+  module_version: '20261031.1'
 - name: org.apache.commons:commons-text
   version: 1.15.0
   updated_on: '2026-01-17'

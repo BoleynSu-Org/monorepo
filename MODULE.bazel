@@ -961,9 +961,9 @@ DEPS = {
         },
         {
             "name": "com.googlecode.owasp-java-html-sanitizer:owasp-java-html-sanitizer",
-            "version": "20261011.1",
-            "updated_on": "2026-10-19",
-            "module_version": "20261011.1",
+            "version": "20261031.1",
+            "updated_on": "2026-11-01",
+            "module_version": "20261031.1",
         },
         {
             "name": "org.apache.commons:commons-text",
